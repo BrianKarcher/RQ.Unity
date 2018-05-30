@@ -1,0 +1,476 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &104784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 445308}
+  - component: {fileID: 11495798}
+  - component: {fileID: 11404022}
+  m_Layer: 13
+  m_Name: States
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &138906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 430924}
+  - component: {fileID: 11469802}
+  - component: {fileID: 11403442}
+  m_Layer: 13
+  m_Name: Invisible Change Scene Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &140690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 406468}
+  - component: {fileID: 11421406}
+  - component: {fileID: 6122822}
+  - component: {fileID: 11471374}
+  - component: {fileID: 11415362}
+  m_Layer: 13
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &172916
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 417072}
+  - component: {fileID: 11490300}
+  - component: {fileID: 11451214}
+  m_Layer: 13
+  m_Name: Enabled
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &175382
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 425262}
+  - component: {fileID: 11409848}
+  - component: {fileID: 11490622}
+  m_Layer: 13
+  m_Name: Disabled
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &406468
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 430924}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &417072
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 445308}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &425262
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 445308}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &430924
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 445308}
+  - {fileID: 406468}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &445308
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 417072}
+  - {fileID: 425262}
+  m_Father: {fileID: 430924}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &6122822
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140690}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &11403442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 045aa0a6-46b6-4ca2-9a3a-a4fce180d612
+  componentName: 
+  _rqName: To Scene 3 RQ.Physics.Components.CollisionComponent
+  _rqName2: f2c5b622-c4ca-4176-adef-02b193f9cde4
+  _componentRepository: {fileID: 11469802}
+  _collisionData:
+    Level: 0
+    Tags: []
+    _levelLayer: 1
+    ReceivesDamage: 1
+    DamageCollider: 0
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _levelOneLayer:
+    _layerIndex: 15
+  _levelTwoLayer:
+    _layerIndex: 16
+  _levelThreeLayer:
+    _layerIndex: 20
+  _sharedLayer:
+    _layerIndex: 18
+  _mainCollider: {fileID: 406468}
+  _autoChangeLayers: 0
+--- !u!114 &11404022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 9ff2497f-1149-4fdc-9590-c3321d5b7f05
+  componentName: 
+  _rqName: States RQ.FSM.V2.StateTransitionTable
+  _rqName2: 66894712-9ffc-4f3c-a2d7-eb83ef8853e6
+  _componentRepository: {fileID: 11469802}
+  Records:
+  - _name: Enabled to Disabled
+    CurrentState: {fileID: 11490300}
+    UniqueId: 
+    Conditions:
+    - UniqueId: c79d9520-b821-4719-982d-de77a275d88e
+      Condition: {fileID: 0}
+      Condition2: {fileID: 0}
+      IsNot: 0
+    Type: 0
+    PreviousState: 0
+    TargetState: {fileID: 11409848}
+    TargetStateSelected: {fileID: 0}
+    IsActive: 1
+  - _name: Disabled to Enabled
+    CurrentState: {fileID: 11409848}
+    UniqueId: 
+    Conditions:
+    - UniqueId: ea88c86a-dfea-4497-ba0a-2e8126fa8cb2
+      Condition: {fileID: 0}
+      Condition2: {fileID: 0}
+      IsNot: 1
+    Type: 0
+    PreviousState: 0
+    TargetState: {fileID: 11490300}
+    TargetStateSelected: {fileID: 0}
+    IsActive: 1
+  ConditionsList: {fileID: 0}
+  ConditionsListTransform: {fileID: 0}
+--- !u!114 &11409848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 0eef22c7-dc28-4d3f-98df-649dbb5957eb
+  componentName: 
+  _rqName: Disabled RQ.FSM.V2.States.RunActionsState
+  _rqName2: 80529dfc-d3bc-4995-aec3-14a7d6ba8bc8
+  _componentRepository: {fileID: 11469802}
+  _stateMachine: {fileID: 11495798}
+--- !u!114 &11415362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 63d3f658-ee5d-4045-a58f-281828fa5eea
+  componentName: 
+  _rqName: Trigger RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 821e9d06-caad-4e6e-a595-346711fc3f41
+  _componentRepository: {fileID: 11469802}
+--- !u!114 &11421406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -709397440, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActOnTriggerEnter: 1
+  _checkTag: 1
+  _tags:
+  - Player
+  _anythingBut: []
+--- !u!114 &11451214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -502829363, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 1ad82ea2-0571-4aae-8d58-999f2fdcb485
+  componentName: 
+  _rqName: Enabled RQ.Controller.Actions.EnableCollider
+  _rqName2: bb361087-d96e-4a7f-812a-f3f190c26860
+  _allColliders: 1
+  _collisionComponentTypes:
+  - {fileID: 11403442}
+  _enableOnEnter: 1
+  _enableOnExit: 1
+--- !u!114 &11469802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 8d1cccf1-21b8-4b7b-9ce4-d28888861cfb
+  componentName: 
+  _rqName: To Scene 3 RQ.Entity.Common.SpriteBaseComponent
+  _rqName2: a17cbdf2-5ad0-441b-ae1a-40807659cf46
+  _recreateOnLoadGame: 1
+  _addToEntityContainer: 1
+  EntityType: 5
+  EntityPrefabUniqueId: fa145dd5-a4fb-4e1b-af90-cc8fd77a03a4
+  _parentRepo: {fileID: 0}
+--- !u!114 &11471374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1714474004, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 3408046c-493b-45e9-a9c8-fc60ee32a9b1
+  componentName: 
+  _rqName: Trigger RQ.Controller.Actions.ChangeScenes
+  _rqName2: d78d1e49-929b-427b-843e-2212ac2fc7e6
+  sceneConfig: {fileID: 0}
+  spawnPointUniqueId: -1
+--- !u!114 &11490300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 5c11bb2a-59b5-4c56-93d3-65c6eba8533d
+  componentName: 
+  _rqName: Enabled RQ.FSM.V2.States.RunActionsState
+  _rqName2: d156af01-cf20-4401-8fd7-6f641a243102
+  _componentRepository: {fileID: 11469802}
+  _stateMachine: {fileID: 11495798}
+--- !u!114 &11490622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -502829363, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: a795edb1-2e7b-4d63-9de5-49073cee2d80
+  componentName: 
+  _rqName: Disabled RQ.Controller.Actions.EnableCollider
+  _rqName2: 2555a9b1-babe-4058-8ca9-58b7d259aad2
+  _allColliders: 1
+  _collisionComponentTypes:
+  - {fileID: 11403442}
+  _enableOnEnter: 0
+  _enableOnExit: 0
+--- !u!114 &11495798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 02edd032-7849-4c75-bafe-1893c37c86d6
+  componentName: 
+  _rqName: States RQ.FSM.V2.StateMachine
+  _rqName2: a8bd5ddc-0235-433f-8521-0bd31f93ac31
+  _componentRepository: {fileID: 11469802}
+  _initialState: {fileID: 11490300}
+  _stateTransitionTable: {fileID: 11404022}
+  _currentState: {fileID: 0}
+  _stateMachineReentry: 0
+  _stateInfo:
+    IsComplete: 0
+    IsStuck: 0
+    SwitchToBattle: 0
+    StateStartTime: 0
+    ChangeScene: 0
+    CurrentStateUniqueId: 
+    StateMachineUniqueId: 02edd032-7849-4c75-bafe-1893c37c86d6
+    StateMachineName: States
+    StateData: []
+  _logTransitions: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _uniqueId
+      value: 63e557cf-10d2-42f1-88a2-f2bd8decfcba
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _componentRepository
+      value: 
+      objectReference: {fileID: 11469802}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 138906}
+  m_IsPrefabParent: 1

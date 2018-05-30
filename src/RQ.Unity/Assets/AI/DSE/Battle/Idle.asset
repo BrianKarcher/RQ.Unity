@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8570261b3b03947aaa4cd24ee5e8c4, type: 3}
+  m_Name: Idle
+  m_EditorClassIdentifier: 
+  UniqueId: 05afe6ec-b71d-4768-9f7f-c77b2d3985aa
+  _dse:
+    _name: Idle
+    _description: idle
+    _decisionEnum: 6
+    _weight: 1
+    _considerations:
+    - _curve:
+        _curveType: 2
+        _m: 50
+        _k: -0.95
+        _b: 1
+        _c: 0.5
+      _isActive: 1
+      _input: 4
+      _parameters:
+      - Key: rangeMin
+        Value: 0
+      - Key: rangeMax
+        Value: .5
+    _fsmTemplate: {fileID: 11400000, guid: 48fa37c87081ce945988048bb3559b16, type: 2}
+    _behaviorTree: {fileID: 0}

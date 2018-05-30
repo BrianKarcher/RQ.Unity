@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8570261b3b03947aaa4cd24ee5e8c4, type: 3}
+  m_Name: Keep Up with Ally
+  m_EditorClassIdentifier: 
+  UniqueId: d48f00f2-028e-4119-b3d9-20f2f37438dc
+  _dse:
+    _name: Keep Up With Ally
+    _description: Keep Up With Ally
+    _decisionEnum: 8
+    _weight: 3
+    _runForAllTargets: 0
+    _lockUntilComplete: 1
+    _considerations:
+    - _curve:
+        _curveType: 0
+        _m: 1.5
+        _k: 4
+        _b: 0
+        _c: 0
+      _isActive: 1
+      _input: 4
+      _parameters:
+      - Key: rangeMin
+        Value: .5
+      - Key: rangeMax
+        Value: .75
+    - _curve:
+        _curveType: 2
+        _m: 3
+        _k: 1
+        _b: 0
+        _c: 0.5
+      _isActive: 1
+      _input: 5
+      _parameters:
+      - Key: rangeMin
+        Value: .5
+      - Key: rangeMax
+        Value: 1
+    _fsmTemplate: {fileID: 11400000, guid: 9dca9e73aa9dd1549924a040051d1a6a, type: 2}
+    _behaviorTree: {fileID: 0}

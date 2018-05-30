@@ -1,0 +1,565 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &101480
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 495302}
+  - 114: {fileID: 11468796}
+  - 114: {fileID: 11455486}
+  m_Layer: 0
+  m_Name: Conditions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &122140
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 412882}
+  - 114: {fileID: 11487776}
+  m_Layer: 0
+  m_Name: Manual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &176726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 499334}
+  - 20: {fileID: 2058492}
+  - 124: {fileID: 12488578}
+  - 92: {fileID: 9224544}
+  - 114: {fileID: 11450486}
+  - 114: {fileID: 11496584}
+  - 114: {fileID: 11468522}
+  - 114: {fileID: 11454224}
+  - 50: {fileID: 5005458}
+  - 114: {fileID: 11413576}
+  - 114: {fileID: 11458948}
+  m_Layer: 0
+  m_Name: BurningCamera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &180310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 427056}
+  - 114: {fileID: 11410550}
+  - 114: {fileID: 11499708}
+  m_Layer: 0
+  m_Name: States
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &196470
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 491990}
+  - 114: {fileID: 11452580}
+  - 114: {fileID: 11464186}
+  m_Layer: 0
+  m_Name: Follow Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412882
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 427056}
+  m_RootOrder: 2
+--- !u!4 &427056
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 495302}
+  - {fileID: 491990}
+  - {fileID: 412882}
+  m_Father: {fileID: 499334}
+  m_RootOrder: 0
+--- !u!4 &491990
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 427056}
+  m_RootOrder: 1
+--- !u!4 &495302
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 427056}
+  m_RootOrder: 0
+--- !u!4 &499334
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .725137234, y: 1.91975999, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 427056}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!20 &2058492
+Camera:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 1.08000004
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4292869887
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
+--- !u!50 &5005458
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!92 &9224544
+Behaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+--- !u!114 &11410550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 4d8b40ce-dd6d-4389-8b1d-802e4f39652b
+  _rqName: States RQ.FSM.V2.StateMachine
+  _rqName2: e05c36b1-90a4-4e76-90e6-73a5e43da693
+  _componentRepository: {fileID: 11458948}
+  _initialState: {fileID: 11452580}
+  _stateTransitionTable: {fileID: 11499708}
+  _currentState: {fileID: 0}
+  _stateMachineReentry: 0
+  _stateInfo:
+    IsComplete: 0
+    IsStuck: 0
+    SwitchToBattle: 0
+    StateStartTime: 0
+    ChangeScene: 0
+    CurrentStateUniqueId: 
+    StateMachineUniqueId: 4d8b40ce-dd6d-4389-8b1d-802e4f39652b
+    StateMachineName: States
+    StateData: []
+--- !u!114 &11413576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 926039264, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 8298642e-34f7-482a-af61-106f400414fc
+  _rqName: BurningCamera RQ.FSM.V2.AIComponent
+  _rqName2: f5a0dc00-a083-45f2-a250-f02640d10b73
+  _componentRepository: {fileID: 11458948}
+  _seeker: {fileID: 0}
+  _target: {fileID: 0}
+  _targets: []
+  TargetTags: []
+  _locations: []
+  _parent: {fileID: 0}
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _follow: {fileID: 0}
+  _targetingData:
+    Waypoints: {fileID: 0}
+    GoToType: 0
+    Target: {fileID: 0}
+    Targets: []
+    TargetTags: []
+  _homePosition:
+    x: 7.15997887
+    y: 6.98050356
+  _homeLevelLayer: 0
+  _homeSickDistance: 0
+  _runHomeSpeed: 0
+  _stateMachine2: {fileID: 0}
+--- !u!114 &11450486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 906819767, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 3198b07f-2295-42e5-a464-36e1b8c961f4
+  _rqName: BurningCamera RQ.CameraClass
+  _rqName2: 91395195-42e8-4d99-a6d3-f9c599dbd686
+  _componentRepository: {fileID: 11458948}
+  _viewportMargin: {x: 0, y: 0}
+--- !u!114 &11452580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 7eecf483-29c6-4f0a-a170-ca76fe89f5b2
+  _rqName: Follow Target RQ.FSM.V2.States.RunActionsState
+  _rqName2: 51c3d7b2-3909-4301-83a5-675c7cb8cb6e
+  _componentRepository: {fileID: 11458948}
+  _stateMachine: {fileID: 11410550}
+--- !u!114 &11454224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 836265462, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: e78bf923-8629-4610-bb82-047856a5d4db
+  _rqName: BurningCamera (1) RQ.Physics.Components.BasicPhysicsComponent
+  _rqName2: 489c8f92-1f7a-497f-8f0e-181574de5198
+  _componentRepository: {fileID: 11458948}
+  _basicPhysicsData:
+    Velocity:
+      x: 0
+      y: 0
+    Size:
+      x: 0
+      y: 0
+    Heading:
+      x: 0
+      y: 0
+    Side:
+      x: -0
+      y: 0
+    Mass: 1
+    MaxSpeed: 2
+    OriginalMaxSpeed: 1
+    MaxSpeedMultiplier: 1
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalForce:
+      x: 0
+      y: 0
+    _inputForce:
+      x: 0
+      y: 0
+    _externalVelocity:
+      x: 0
+      y: 0
+    _inputVelocity:
+      x: 0
+      y: 0
+    OriginalZ: -10
+    _headingDirection: 1
+    MaxForce: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _fieldOfView: 0
+    _lineOfSight: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+  _autoUpdateHeading: 1
+--- !u!114 &11455486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1269162844, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: a99e8c5c-66eb-4614-9a2f-32b643f70f1d
+  _rqName: Conditions RQ.FSM.V2.Conditionals.MessageReceivedCondition2
+  _rqName2: a8ed3855-9341-4388-adc1-bf1baa15d996
+  _name: Manual
+  eventName: Manual
+  _data: 
+--- !u!114 &11458948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: ff481c04-3059-4939-958e-03e4d2a9a486
+  _rqName: BurningCamera RQ.Entity.Common.SpriteBaseComponent
+  _rqName2: f0f21ac2-7955-474f-92f2-22f965f369f8
+  _recreateOnLoadGame: 1
+  _addToEntityContainer: 1
+  EntityType: 5
+  EntityPrefabUniqueId: 7095af0e-4277-41aa-a221-62c153bf17af
+  _parentRepo: {fileID: 0}
+--- !u!114 &11464186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -65433685, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 2d8985bc-01af-4187-bc68-152d37dc652d
+  _rqName: Follow Target RQ.Controller.Actions.LockOnTarget
+  _rqName2: c8e226f4-528a-4ce9-aa43-35eec0c35f7d
+--- !u!114 &11468522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22b3a7095a744a428c134b5e26ad68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  quality: 1
+  blurArea: 3
+  maxBlurSize: 5
+  downsample: 0
+  tiltShiftShader: {fileID: 4800000, guid: bf34d2a25450349699e8ae6456fa7ca9, type: 3}
+--- !u!114 &11468796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1269162844, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 94a967f5-6a9d-4bc5-ab1f-fe084f3e6ce9
+  _rqName: Conditions RQ.FSM.V2.Conditionals.MessageReceivedCondition2
+  _rqName2: 2688566e-866a-409b-b6a8-e818e5042ee5
+  _name: Follow Target
+  eventName: Follow Target
+  _data: 
+--- !u!114 &11487776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 5696e7c1-1e62-4188-baeb-cc00f9f98c05
+  _rqName: Manual RQ.FSM.V2.States.RunActionsState
+  _rqName2: 2b4707e7-2d17-4b49-a4cf-47d8e40aac9f
+  _componentRepository: {fileID: 11458948}
+  _stateMachine: {fileID: 11410550}
+--- !u!114 &11496584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9191284b058eef549b7108b5f04e1117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensityMultiplier: -.5
+  generalIntensity: .5
+  blackIntensity: 1
+  whiteIntensity: 1
+  midGrey: .200000003
+  dx11Grain: 0
+  softness: 0
+  monochrome: 0
+  intensities: {x: 1, y: 1, z: 1}
+  tiling: {x: 64, y: 64, z: 64}
+  monochromeTiling: 64
+  filterMode: 0
+  noiseTexture: {fileID: 2800000, guid: 7a632f967e8ad42f5bd275898151ab6a, type: 3}
+  noiseShader: {fileID: 4800000, guid: b0249d8c935344451aa4de6db76f0688, type: 3}
+  dx11NoiseShader: {fileID: 4800000, guid: 8b30686bb4322ab42ad5eb50a0210b58, type: 3}
+--- !u!114 &11499708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 79a18b63-d493-47ac-ac4d-26ff2388fc34
+  _rqName: States RQ.FSM.V2.StateTransitionTable
+  _rqName2: 67173d9c-f61a-4903-bf80-c2004bbb3025
+  _componentRepository: {fileID: 11458948}
+  Records:
+  - _name: Follow Target to Manual
+    CurrentState: {fileID: 11452580}
+    UniqueId: 
+    Conditions:
+    - UniqueId: 
+      Condition: {fileID: 11455486}
+      Condition2: {fileID: 0}
+      IsNot: 0
+    Type: 0
+    PreviousState: 0
+    TargetState: {fileID: 11487776}
+    TargetStateSelected: {fileID: 0}
+    IsActive: 1
+  - _name: Manual to Follow Target
+    CurrentState: {fileID: 11487776}
+    UniqueId: 
+    Conditions:
+    - UniqueId: 
+      Condition: {fileID: 11468796}
+      Condition2: {fileID: 0}
+      IsNot: 0
+    Type: 0
+    PreviousState: 0
+    TargetState: {fileID: 11452580}
+    TargetStateSelected: {fileID: 0}
+    IsActive: 1
+  ConditionsList: {fileID: 0}
+  ConditionsListTransform: {fileID: 495302}
+--- !u!124 &12488578
+Behaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: intensityMultiplier
+      value: -.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 176726}
+  m_IsPrefabParent: 1

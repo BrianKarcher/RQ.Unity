@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8570261b3b03947aaa4cd24ee5e8c4, type: 3}
+  m_Name: Melee Attack
+  m_EditorClassIdentifier: 
+  UniqueId: 02e349f7-cf14-4055-8b02-951961a3fa49
+  _dse:
+    _name: Melee Attack
+    _description: Melee Attack
+    _decisionEnum: 7
+    _weight: 3
+    _runForAllTargets: 1
+    _lockUntilComplete: 1
+    _considerations:
+    - _curve:
+        _curveType: 1
+        _m: -1
+        _k: 0
+        _b: 1
+        _c: 0
+      _isActive: 1
+      _input: 3
+      _parameters:
+      - Key: rangeMin
+        Value: 0
+      - Key: rangeMax
+        Value: 2
+    - _curve:
+        _curveType: 1
+        _m: 1
+        _k: 0
+        _b: 0
+        _c: 0
+      _isActive: 1
+      _input: 6
+      _parameters:
+      - Key: DSE
+        Value: Melee Attack
+      - Key: Time
+        Value: 5
+    _fsmTemplate: {fileID: 11400000, guid: 4825f6088770fe943aecc7aa032346d8, type: 2}
+    _behaviorTree: {fileID: 0}

@@ -1,0 +1,997 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &123946
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 453876}
+  - component: {fileID: 11452342}
+  m_Layer: 0
+  m_Name: Flying
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &128412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 490768}
+  - component: {fileID: 5003324}
+  - component: {fileID: 11431128}
+  - component: {fileID: 11425380}
+  - component: {fileID: 11479406}
+  - component: {fileID: 11439890}
+  m_Layer: 0
+  m_Name: Bomb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &131188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 435406}
+  - component: {fileID: 3313540}
+  - component: {fileID: 2396746}
+  - component: {fileID: 11452868}
+  m_Layer: 0
+  m_Name: Shadow Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &141118
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 487770}
+  - component: {fileID: 11491318}
+  m_Layer: 0
+  m_Name: KillSelf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &144548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 475142}
+  - component: {fileID: 2380696}
+  - component: {fileID: 3356968}
+  - component: {fileID: 11454780}
+  - component: {fileID: 11400814}
+  - component: {fileID: 11448120}
+  - component: {fileID: 11449682}
+  - component: {fileID: 11430892}
+  - component: {fileID: 114152748193342840}
+  m_Layer: 0
+  m_Name: MainSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &146752
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 453138}
+  - component: {fileID: 11431600}
+  m_Layer: 0
+  m_Name: Explode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &162502
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 408528}
+  - component: {fileID: 11453080}
+  - component: {fileID: 11438880}
+  - component: {fileID: 11405808}
+  m_Layer: 0
+  m_Name: Conditions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &173258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 404608}
+  - component: {fileID: 11445026}
+  - component: {fileID: 11489846}
+  m_Layer: 0
+  m_Name: States
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &404608
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 453876}
+  - {fileID: 453138}
+  - {fileID: 408528}
+  - {fileID: 487770}
+  m_Father: {fileID: 490768}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &408528
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 404608}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &435406
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 490768}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &453138
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 404608}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &453876
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 404608}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &475142
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 490768}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &487770
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 404608}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &490768
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5783203, y: 1.9501806, z: -0.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 475142}
+  - {fileID: 404608}
+  - {fileID: 435406}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &2380696
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144548}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &2396746
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131188}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &3313540
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131188}
+  m_Mesh: {fileID: 0}
+--- !u!33 &3356968
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144548}
+  m_Mesh: {fileID: 0}
+--- !u!50 &5003324
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128412}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &11400814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11482968, guid: 844202ce5dcce0044b46a7d6a5c17d74, type: 2}
+  defaultClipId: 1
+  playAutomatically: 1
+--- !u!114 &11405808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -977135708, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 676f9797-981a-4542-b385-46ddd431f84d
+  componentName: 
+  _rqName: Conditions RQ.Entity.StatesV2.Conditions.SpriteFloatVariableCondition
+  _rqName2: 0fbbf478-6cfe-42b9-8632-1d55646b714d
+  _name: Hit Ground
+  _operator: 3
+  _variable: 0
+  _value: 0
+--- !u!114 &11425380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 5b1db2a9-a775-4d1a-b602-2d3596494184
+  componentName: 
+  _rqName: Bomb RQ.Physics.Components.PhysicsComponent
+  _rqName2: 091ce633-aac7-414f-b80e-0b5029631487
+  _componentRepository: {fileID: 11431128}
+  _physicsData:
+    Velocity:
+      x: 0
+      y: 0
+    Size:
+      x: 0
+      y: 0
+    Heading:
+      x: 0
+      y: 0
+    Side:
+      x: -0
+      y: 0
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 1
+    OriginalMaxSpeed: 1
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalForce:
+      x: 0
+      y: 0
+    _inputForce:
+      x: 0
+      y: 0
+    _externalVelocity:
+      x: 0
+      y: 0
+    _inputVelocity:
+      x: 0
+      y: 0
+    OriginalZ: -0.1
+    _headingDirection: 1
+    MaxForce: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+    Altitude:
+      x: 0
+      y: 0
+    IsAirborn: 1
+    AirVelocity:
+      x: 0
+      y: 0
+    JumpVelocity:
+      x: 0
+      y: 1.5
+    Gravity:
+      x: 0
+      y: -0.05
+  _originalPhysicsData:
+    Velocity:
+      x: 0
+      y: 0
+    Size:
+      x: 0
+      y: 0
+    Heading:
+      x: 0
+      y: 0
+    Side:
+      x: 0
+      y: 0
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 1
+    OriginalMaxSpeed: 1
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalForce:
+      x: 0
+      y: 0
+    _inputForce:
+      x: 0
+      y: 0
+    _externalVelocity:
+      x: 0
+      y: 0
+    _inputVelocity:
+      x: 0
+      y: 0
+    OriginalZ: 0
+    _headingDirection: 1
+    MaxForce: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+    Altitude:
+      x: 0
+      y: 0
+    IsAirborn: 0
+    AirVelocity:
+      x: 0
+      y: 0
+    JumpVelocity:
+      x: 0
+      y: 0
+    Gravity:
+      x: 0
+      y: 0
+  _autoUpdateHeading: 1
+  _steering:
+    TargetAgent1: {fileID: 0}
+    Target:
+      x: 0
+      y: 0
+    Offset: {x: 0, y: 0, z: 0}
+    _steeringForce:
+      x: 0
+      y: 0
+--- !u!114 &11430892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: c00f97f4-64cf-456b-9324-d7fceda4afd2
+  componentName: 
+  _rqName: MainSprite RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: f1df87ff-6b2b-4f93-8beb-d2bdba618008
+  _componentRepository: {fileID: 11431128}
+--- !u!114 &11431128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 4f3257ba-eaf0-4c6c-9f1f-46c93ddd1033
+  componentName: 
+  _rqName: Bomb RQ.Entity.Common.SpriteBaseComponent
+  _rqName2: 4bdfde3a-0bca-4fb4-b7c4-1486452db182
+  _recreateOnLoadGame: 1
+  _addToEntityContainer: 1
+  EntityType: 5
+  EntityPrefabUniqueId: bed0b233-16e0-4899-8bfe-b9cbf0aa0a4e
+  _parentRepo: {fileID: 0}
+--- !u!114 &11431600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 751370667, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 6ceb0c58-bcfc-413f-b338-451920f16db4
+  componentName: 
+  _rqName: Explode RQ.Entity.StatesV2.InstantiatePrefab
+  _rqName2: eae2df75-0e84-4ca6-a0e7-8ef85561dce5
+  _componentRepository: {fileID: 11431128}
+  _stateMachine: {fileID: 11445026}
+  _soundInfo:
+    AudioClips: []
+    ClearPreviousClips: 0
+    StopAudioOnExit: 0
+    PlaySound: 0
+    DelaySound: 0
+    PlayAsOneShot: 0
+    LoopSound: 0
+    PlayOnMusicTrack: 0
+    ForcePlay: 1
+    Volume: 1
+  _takesDamage: 1
+  _setDeflectStatus: 0
+  _deflectValue: 0
+  _animationType: ab9a91d1-f27a-46c5-bb7d-26c9c67ccbea
+  _animationComponent: {fileID: 11449682}
+  _spriteAnimationsConfig: {fileID: 0}
+  _delay: 0
+  _transform: {fileID: 408346, guid: edc880950331d9f4c893d3cb9a414530, type: 2}
+  _offset: {x: 0, y: 0, z: -0.3}
+  _sameLevel: 1
+  _objectLevel: 1
+--- !u!114 &11438880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1635309521, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: fe4bfcf2-8437-428b-9a18-9f7b8d15c1c7
+  componentName: 
+  _rqName: Conditions RQ.Entity.StatesV2.Conditions.IsCompleteCondition
+  _rqName2: 636768a4-8a13-4c89-8e8c-408f7700cb3d
+  _name: Is Complete
+--- !u!114 &11439890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: d0bfb18e-80ed-47b9-afc1-8f5b2a8431ad
+  componentName: 
+  _rqName: Bomb RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 4f71bd1e-2958-4c68-8635-74850e5f22a9
+  _componentRepository: {fileID: 11431128}
+--- !u!114 &11445026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 743ee7b4-5f4b-4625-91e0-7e1007184d36
+  componentName: 
+  _rqName: States RQ.FSM.V2.StateMachine
+  _rqName2: f5d3ae68-8cc6-4dd5-ad66-af3da7ee0409
+  _componentRepository: {fileID: 11431128}
+  _initialState: {fileID: 11452342}
+  _stateTransitionTable: {fileID: 11489846}
+  _currentState: {fileID: 0}
+  _stateMachineReentry: 0
+  _stateInfo:
+    IsComplete: 0
+    IsStuck: 0
+    SwitchToBattle: 0
+    StateStartTime: 0
+    ChangeScene: 0
+    CurrentStateUniqueId: 
+    StateMachineUniqueId: 743ee7b4-5f4b-4625-91e0-7e1007184d36
+    StateMachineName: States
+    StateData: []
+  _logTransitions: 0
+--- !u!114 &11448120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41880b8380ca71346a1bc3912eb8f03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _storedSpriteAnimations:
+  - _type: Ticking
+    _id: ab9a91d1-f27a-46c5-bb7d-26c9c67ccbea
+    _spriteAnimations:
+    - _direction: 10
+      _animationName: bomb
+      _clipId: 1
+      hFlip: 0
+  _spriteAnimationsConfig: {fileID: 0}
+  _manualHFlip: 0
+  _hFlip: 1
+  _directionRotate: 0
+  OrigSpritePosition:
+    x: 0
+    y: 0
+  SpriteOffsetPos:
+    x: 0
+    y: 0
+  anim: {fileID: 11400814}
+--- !u!114 &11449682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1951438886, guid: 12d8c4a4410b9684983f5d6c8463d1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: bd3e0d13-1d53-4b13-a064-fb0997beeeba
+  componentName: 
+  _rqName: MainSprite RQ.Animation.AnimationComponent
+  _rqName2: 40195c9d-19e5-4e52-987e-a91f3238dcb7
+  _componentRepository: {fileID: 11431128}
+  Data:
+    FacingDirectionMode: 0
+    FacingDirection: 1
+    PreviousFacingDirection: 9
+    _isAnimationComplete: 0
+    AutoPlayAnimationType: 
+    PlayAutomatically: 0
+    AutoUpdateFacingDirection: 1
+    AutoFace: 0
+  SpriteAnimator2: {fileID: 11448120}
+  _use8Directions: 0
+  _isMain: 1
+--- !u!114 &11452342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2131402593, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 4dfa9749-e9e9-4332-98be-09745002d114
+  componentName: 
+  _rqName: Flying RQ.Entity.StatesV2.LaunchSelf
+  _rqName2: da63e62f-c047-4eac-ad4d-60e654cc7ac3
+  _componentRepository: {fileID: 11431128}
+  _stateMachine: {fileID: 11445026}
+  _soundInfo:
+    AudioClips: []
+    ClearPreviousClips: 0
+    StopAudioOnExit: 0
+    PlaySound: 0
+    DelaySound: 0
+    PlayAsOneShot: 0
+    LoopSound: 0
+    PlayOnMusicTrack: 0
+    ForcePlay: 1
+    Volume: 1
+  _takesDamage: 1
+  _setDeflectStatus: 0
+  _deflectValue: 0
+  _animationType: ab9a91d1-f27a-46c5-bb7d-26c9c67ccbea
+  _animationComponent: {fileID: 11449682}
+  _spriteAnimationsConfig: {fileID: 0}
+--- !u!114 &11452868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 11459162, guid: f21af56a5c262804f83903a5195ec516, type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 14
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
+--- !u!114 &11453080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -222688750, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11454780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 11459162, guid: f21af56a5c262804f83903a5195ec516, type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 15
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
+--- !u!114 &11479406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 2cfceea8-0ac2-452f-8db3-71d706cc55e3
+  componentName: 
+  _rqName: Bomb RQ.Physics.Components.CollisionComponent
+  _rqName2: 00a5697a-a4a8-4146-8363-bceba28cb887
+  _componentRepository: {fileID: 11431128}
+  _collisionData:
+    Level: 0
+    Tags: []
+    _levelLayer: 1
+    ReceivesDamage: 1
+    DamageCollider: 0
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _levelOneLayer:
+    _layerIndex: 0
+  _levelTwoLayer:
+    _layerIndex: 0
+  _levelThreeLayer:
+    _layerIndex: 0
+  _sharedLayer:
+    _layerIndex: 0
+  _mainCollider: {fileID: 490768}
+  _autoChangeLayers: 0
+--- !u!114 &11489846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: e44031d3-f8c3-434e-88f8-86aa4e096dd3
+  componentName: 
+  _rqName: States RQ.FSM.V2.StateTransitionTable
+  _rqName2: 630bd968-17fe-43e7-af1b-845104d74bdf
+  _componentRepository: {fileID: 11431128}
+  Records:
+  - _name: Flying to Explode
+    CurrentState: {fileID: 11452342}
+    UniqueId: 
+    Conditions:
+    - UniqueId: 
+      Condition: {fileID: 11405808}
+      Condition2: {fileID: 0}
+      IsNot: 0
+    Type: 0
+    PreviousState: 0
+    TargetState: {fileID: 11431600}
+    TargetStateSelected: {fileID: 0}
+    IsActive: 1
+  - _name: Explode to Kill Self
+    CurrentState: {fileID: 11431600}
+    UniqueId: 
+    Conditions:
+    - UniqueId: 
+      Condition: {fileID: 11438880}
+      Condition2: {fileID: 0}
+      IsNot: 0
+    Type: 0
+    PreviousState: 0
+    TargetState: {fileID: 11491318}
+    TargetStateSelected: {fileID: 0}
+    IsActive: 1
+  ConditionsList: {fileID: 11453080}
+  ConditionsListTransform: {fileID: 0}
+--- !u!114 &11491318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1087292713, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: a431e5a8-4a5b-4a93-8b1b-b78545fe6535
+  componentName: 
+  _rqName: KillSelf RQ.Entity.StatesV2.KillSelf
+  _rqName2: 28016d88-3d8c-4b5b-b718-d104bcd0c0c4
+  _componentRepository: {fileID: 11431128}
+  _stateMachine: {fileID: 11445026}
+  _soundInfo:
+    AudioClips: []
+    ClearPreviousClips: 0
+    StopAudioOnExit: 0
+    PlaySound: 0
+    DelaySound: 0
+    PlayAsOneShot: 0
+    LoopSound: 0
+    PlayOnMusicTrack: 0
+    ForcePlay: 1
+    Volume: 1
+  _takesDamage: 1
+  _setDeflectStatus: 0
+  _deflectValue: 0
+  _animationType: ab9a91d1-f27a-46c5-bb7d-26c9c67ccbea
+  _animationComponent: {fileID: 11449682}
+  _spriteAnimationsConfig: {fileID: 0}
+  _killSelfAtom:
+    _delay: 0
+    _killWhenAnimationCompletes: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: ExplosionSprite
+      value: 
+      objectReference: {fileID: 408346, guid: edc880950331d9f4c893d3cb9a414530, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _physicsData.JumpVelocity.y
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _physicsData.OriginalZ
+      value: -.100000001
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 128412}
+  m_IsPrefabParent: 1
+--- !u!114 &114152748193342840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2119558580, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 6a0fd145-5150-4910-bd6f-afe9d26b42f9
+  componentName: 
+  _rqName: MainSprite RQ.Physics.Components.AltitudePhysicsComponent
+  _rqName2: 11672d1e-7a8a-4876-a46a-10e21d9fcdf7
+  _componentRepository: {fileID: 11431128}
+  _altitudeData:
+    Altitude:
+      x: 0
+      y: 0
+    IsAirborn: 1
+    AirVelocity:
+      x: 0
+      y: 0
+    JumpVelocity:
+      x: 0
+      y: 1.5
+    Gravity:
+      x: 0
+      y: -0.05
