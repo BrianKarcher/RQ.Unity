@@ -24,17 +24,16 @@ Shader "Custom/RollingColor"
 		{
 			fixed4 mainColor = tex2D(_MainTex, IN.uv_MainTex) * IN.color;
 			
-			//float timeInc = (_Time.y - (int)_Time.y);
-			float timeInc = _Time.y / 25;
+			float timeInc = _Time.y / 15;
 			
-			float screenAdjustment = (1 + sin((IN.screenPos.x + timeInc) * 350)) / 2;
-			//screenAdjustment += timeInc;
+			float screenAdjustment = (1 + sin((IN.screenPos.x + IN.screenPos.y + timeInc) * 350)) / 2;
+			
+			//screenAdjustment = dot(float3(0,1,0), float3((1 + sin((IN.screenPos.x + timeInc) * 350)) / 2, screenAdjustment, 0));
+			
 			float posAdjustment = screenAdjustment;
 			
-			fixed4 waveColor = mainColor;
-			waveColor *= posAdjustment;
+			fixed4 waveColor = mainColor + fixed4(posAdjustment * .25,posAdjustment * .25, posAdjustment, 0);
 						
-			//fixed4 waveColor = mainColor  * ((1 + _SinTime.z) / 2);
 			o.Albedo = waveColor.rgb;
 			//o.Albedo = mainColor.rgb;
 			//o.Alpha = posAdjustment;			
