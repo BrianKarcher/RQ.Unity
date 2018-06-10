@@ -4,6 +4,7 @@ using RQ.Common.Components;
 using RQ.Entity.Data;
 using RQ.FSM.V2;
 using RQ2.UI;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,29 +38,47 @@ namespace RQ.Physics.Components
             _tileMap = tileMapSetup.TileMap;
         }
 
-        public override void FixedUpdate()
+        public override void OnEnable()
         {
-            base.FixedUpdate();
-            int numLayers = _tileMap.data.NumLayers;
-            var pos = GetComponentRepository().transform.position;
-            bool hideTileFound = false;
-            for (int layerId = 0; layerId < numLayers; ++layerId)
+            base.OnEnable();
+            StartCoroutine(MyFixedUpdate());
+        }
+
+        public override void OnDisable()
+        {
+            base.OnDisable();
+            StopCoroutine(MyFixedUpdate());
+        }
+
+        public IEnumerator MyFixedUpdate()
+        {
+            while (true)
             {
-                //var layer = _tileMap.Layers[layerId];
-                //var layerData = _tileMap.data.tileMapLayers[layerId];
-                var tileId = _tileMap.GetTileIdAtPosition(pos, layerId);
-                if (HideTileIds.Contains(tileId))
+                if (_entityStatsData == null)
+                    yield return null;
+                //base.FixedUpdate();
+                int numLayers = _tileMap.data.NumLayers;
+                var pos = GetComponentRepository().transform.position;
+                bool hideTileFound = false;
+                for (int layerId = 0; layerId < numLayers; ++layerId)
                 {
-                    hideTileFound = true;
-                    break;
+                    //var layer = _tileMap.Layers[layerId];
+                    //var layerData = _tileMap.data.tileMapLayers[layerId];
+                    var tileId = _tileMap.GetTileIdAtPosition(pos, layerId);
+                    if (HideTileIds.Contains(tileId))
+                    {
+                        hideTileFound = true;
+                        break;
+                    }
                 }
+                if (_entityStatsData.IsHiding != hideTileFound)
+                    Debug.LogWarning("Changing hiding status");
+                _entityStatsData.IsHiding = hideTileFound;
+                Color color;
+                color = hideTileFound ? new Color(0f, 1f, 0f) : Color.white;
+                _animComponent.GetSpriteRenderer().SetColor(color);
+                yield return new WaitForSeconds(.1f);
             }
-            if (_entityStatsData.IsHiding != hideTileFound)
-                Debug.LogWarning("Changing hiding status");
-            _entityStatsData.IsHiding = hideTileFound;
-            Color color;
-            color = hideTileFound ? new Color(0f, 1f, 0f) : Color.white;
-            _animComponent.GetSpriteRenderer().SetColor(color);
         }
 
         //public void EnableBT()
