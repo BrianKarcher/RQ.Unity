@@ -606,8 +606,6 @@ namespace RQ2.UI
         private void SetupPanels()
         {
             panels = new Dictionary<RQ.Enum.Panels, UIPanel>();
-            //panels.Add(Panels.MessageBox, FindPanel("MessageBox Panel"));
-            //panels.Add(Panels.TitleScreen, FindPanel("TitleScreen Panel"));
 
             // Create dictionary for faster lookup
             foreach (PanelInfo panel in PanelList)
