@@ -248,11 +248,19 @@ MonoBehaviour:
         x: 244
         y: 194
         width: 140
-        height: 48
+        height: 64
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
+      - fsmEvent:
+          name: BossDied
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Boss Death
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       - fsmEvent:
           name: StartConversation
           isSystemEvent: 0
@@ -274,14 +282,18 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.SendMessage
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.SetBoolVariable
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000001000000015000000
-        actionHashCodes: dac707022334d0002334d000
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000010000000150000001a0000001f000000
+        actionHashCodes: dac707022334d0002334d0002334d00066239401
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -336,6 +348,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -350,16 +368,21 @@ MonoBehaviour:
         - Modal
         - BeginModal
         - 
-        byteData: 010000000000000000010000
+        - BossDied
+        - BossDied
+        - 
+        byteData: 01000000000000000001000000010200000003000000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 0a0000000200000002000000
+        customTypeSizes: 0a00000002000000020000000200000003000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 290000001200000013000000110000001200000028000000030000000c000000030000000100000001000000010000000100000001000000070000000100000017000000010000002800000003000000030000001700000001000000280000000300000003000000
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        - RQ.Animation.BasicAction.Action.SetBoolVariableAtom
+        paramDataType: 290000001200000013000000110000001200000028000000030000000c00000003000000010000000100000001000000010000000100000007000000010000001700000001000000280000000300000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000001100000028000000010000000700000007000000
         paramName:
         - Targets
         - Target
@@ -387,15 +410,25 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 00000000000000000000000000000000010000000000000000000000000000000100000000000000010000000200000003000000040000000500000009000000020000000a000000010000000300000004000000050000000b000000020000000600000007000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000040000000100000000000000010000000000000000000000000000000000000001000000000000000000000000000000
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        - Variable
+        - _atom
+        - Value
+        - ActionTarget
+        - VariableToSet
+        paramDataPos: 00000000000000000000000000000000010000000000000000000000000000000100000000000000010000000200000003000000040000000500000009000000020000000a000000010000000300000004000000050000000b000000020000000600000007000000080000000c00000003000000090000000a00000001000000040000000d0000000e00000012000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000004000000010000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000010000000400000004000000
     - name: Conversation
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 248
-        y: 273
+        x: 249
+        y: 299
         width: 107
         height: 32
       isBreakpoint: 0
@@ -642,8 +675,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 249
-        y: 347
+        x: 250
+        y: 373
         width: 100
         height: 32
       isBreakpoint: 0
@@ -834,18 +867,30 @@ MonoBehaviour:
         x: 456
         y: 132
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Normal
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - RQ.AI.PlayMaker.PlaySequence
+        - Assets.Source.AI.PM_State_Machine.SetBoolVariable
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: a4b2c60366239401
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -862,25 +907,45 @@ MonoBehaviour:
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - BossDeathSequence
+        byteData: 01000200000003000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        customTypeSizes: 0200000003000000
+        customTypeNames:
+        - RQ.AI.Atom.GameManager.PlaySequenceAtom
+        - RQ.Animation.BasicAction.Action.SetBoolVariableAtom
+        paramDataType: 2800000003000000010000001100000028000000010000000700000007000000
+        paramName:
+        - _atom
+        - SequenceName
+        - PlayDirectly
+        - Variable
+        - _atom
+        - Value
+        - ActionTarget
+        - VariableToSet
+        paramDataPos: 0000000000000000000000000000000001000000010000000200000006000000
+        paramByteDataSize: 0000000000000000010000000000000000000000010000000400000004000000
     events:
     - name: FINISHED
       isSystemEvent: 1
+      isGlobal: 0
+    - name: BossDied
+      isSystemEvent: 0
       isGlobal: 0
     - name: Modal
       isSystemEvent: 0
