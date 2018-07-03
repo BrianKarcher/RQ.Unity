@@ -211,15 +211,31 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.RunFSM
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.SendMessage
+        - Assets.Source.AI.PM_State_Machine.SendMessage
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: fe0587002334d000
+        - 
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000030000000800000018000000
+        actionHashCodes: fe0587002334d000dac70702dac70702
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -230,10 +246,60 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams:
@@ -243,7 +309,19 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -254,13 +332,21 @@ MonoBehaviour:
         - PlayerDied
         - PlayerDied
         - 
-        byteData: 00
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 02000000
+        - Playtime
+        - 
+        - Playtime
+        - 
+        byteData: 000000000001000000000100000000010100000001
+        arrayParamSizes: 0000000000000000
+        arrayParamTypes:
+        - System.String
+        - System.String
+        customTypeSizes: 020000000a0000000a000000
         customTypeNames:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 2600000010000000170000001700000001000000280000000300000003000000
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        paramDataType: 2600000010000000170000001700000001000000280000000300000003000000290000001200000013000000110000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000700000001000000290000001200000013000000110000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000700000001000000
         paramName:
         - fsmTemplateControl
         - storeID
@@ -270,8 +356,40 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 0000000000000000000000000100000000000000000000000200000003000000
-        paramByteDataSize: 0000000000000000000000000000000001000000000000000000000000000000
+        - Targets
+        - Target
+        - TargetGO
+        - triggerEnter
+        - collideTag
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        - Targets
+        - Target
+        - TargetGO
+        - triggerEnter
+        - collideTag
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        paramDataPos: 00000000000000000000000001000000000000000000000002000000030000000000000000000000000000000000000001000000010000000400000000000000050000000100000002000000030000000400000005000000060000000a0000000100000002000000010000000100000003000000020000000600000001000000070000000b0000000c0000000d0000000e0000000f0000001000000014000000
+        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000400000001000000
     - name: TitleScreen
       description: 
       colorIndex: 0
