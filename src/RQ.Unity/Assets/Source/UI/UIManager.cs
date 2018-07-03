@@ -81,15 +81,15 @@ namespace RQ2.UI
         /// Click event listener.
         /// </summary>
 
-        [Obsolete]
-        public List<EventDelegate> onClickSave = new List<EventDelegate>();
-        [Obsolete]
-        public List<EventDelegate> onClickNewSave = new List<EventDelegate>();
+        //[Obsolete]
+        //public List<EventDelegate> onClickSave = new List<EventDelegate>();
+        //[Obsolete]
+        //public List<EventDelegate> onClickNewSave = new List<EventDelegate>();
         /// <summary>
         /// Click event listener.
         /// </summary>
-        [Obsolete]
-        public List<EventDelegate> onClickLoad = new List<EventDelegate>();
+        //[Obsolete]
+        //public List<EventDelegate> onClickLoad = new List<EventDelegate>();
         //public event void DialogOkClikedEvent;
         //public event Action DialogOkDelegate;
         //public event Action DialogCancelDelegate;

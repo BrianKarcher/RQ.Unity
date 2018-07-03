@@ -34,9 +34,9 @@ namespace RQ.Editor
             GUI.changed = false;
             base.OnInspectorGUI();
 
-            NGUIEditorTools.DrawEvents("On Click Save", agent, agent.onClickSave, false);
-            NGUIEditorTools.DrawEvents("On Click New Save", agent, agent.onClickNewSave, false);
-            NGUIEditorTools.DrawEvents("On Click Load", agent, agent.onClickLoad, false);
+            //NGUIEditorTools.DrawEvents("On Click Save", agent, agent.onClickSave, false);
+            //NGUIEditorTools.DrawEvents("On Click New Save", agent, agent.onClickNewSave, false);
+            //NGUIEditorTools.DrawEvents("On Click Load", agent, agent.onClickLoad, false);
 
             if (GUI.changed)
             {
