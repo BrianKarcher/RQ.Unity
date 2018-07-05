@@ -3831,6 +3831,7 @@ GameObject:
   - component: {fileID: 114485358590646694}
   - component: {fileID: 61996590568919036}
   - component: {fileID: 114154623304883602}
+  - component: {fileID: 114475555071213504}
   m_Layer: 0
   m_Name: Load Game Button
   m_TagString: Untagged
@@ -14504,19 +14505,6 @@ MonoBehaviour:
     TargetState: {fileID: 114511062795929982}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
-  - _name: Modal to Title Screen
-    CurrentState: {fileID: 114511062795929982}
-    UniqueId: 
-    Conditions:
-    - UniqueId: c530116b-5c68-41df-b589-689cdad11c25
-      Condition: {fileID: 0}
-      Condition2: {fileID: 11400000, guid: c237cfe44f9551141a9dda1816ece505, type: 2}
-      IsNot: 0
-    Type: 0
-    PreviousState: 0
-    TargetState: {fileID: 114697307548235730}
-    TargetStateSelected: {fileID: 0}
-    IsActive: 0
   - _name: Modal to Previous
     CurrentState: {fileID: 114511062795929982}
     UniqueId: 
@@ -14530,26 +14518,13 @@ MonoBehaviour:
     TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
-  - _name: Start to Title
-    CurrentState: {fileID: 114600842449053842}
-    UniqueId: 
-    Conditions:
-    - UniqueId: 5a496b70-ddba-4d07-a9d0-ffa9f0dd2ce7
-      Condition: {fileID: 0}
-      Condition2: {fileID: 11400000, guid: c237cfe44f9551141a9dda1816ece505, type: 2}
-      IsNot: 0
-    Type: 0
-    PreviousState: 0
-    TargetState: {fileID: 114697307548235730}
-    TargetStateSelected: {fileID: 0}
-    IsActive: 0
   - _name: Title Screen to Load
     CurrentState: {fileID: 114697307548235730}
     UniqueId: 
     Conditions:
     - UniqueId: e05b9635-0f16-483e-a70a-1063f02de33a
       Condition: {fileID: 0}
-      Condition2: {fileID: 0}
+      Condition2: {fileID: 11400000, guid: cf98df6a7b04dba4ab815bbc9f220432, type: 2}
       IsNot: 0
     Type: 0
     PreviousState: 0
@@ -14562,7 +14537,7 @@ MonoBehaviour:
     Conditions:
     - UniqueId: 23c35079-e6f5-4bfc-ae56-9cda3ac8dcba
       Condition: {fileID: 0}
-      Condition2: {fileID: 0}
+      Condition2: {fileID: 11400000, guid: cf98df6a7b04dba4ab815bbc9f220432, type: 2}
       IsNot: 0
     Type: 0
     PreviousState: 0
@@ -14618,7 +14593,7 @@ MonoBehaviour:
     Conditions:
     - UniqueId: 60bf818e-f0d2-4902-a243-988b4dea3763
       Condition: {fileID: 0}
-      Condition2: {fileID: 0}
+      Condition2: {fileID: 11400000, guid: cf98df6a7b04dba4ab815bbc9f220432, type: 2}
       IsNot: 0
     Type: 0
     PreviousState: 0
@@ -23368,6 +23343,22 @@ MonoBehaviour:
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
   onClick: []
+--- !u!114 &114475555071213504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679824461183674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2100949060, guid: c47d312bb140f21409c92b406c845994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: be24bdb3-2dcd-456e-8204-9b1f77e2e665
+  componentName: 
+  _rqName: 
+  _rqName2: 
+  _button: LoadMenu
 --- !u!114 &114477129010150448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33232,7 +33223,7 @@ MonoBehaviour:
   mColor: {r: 0.8235294, g: 0.4392157, b: 0.101960786, a: 1}
   mPivot: 3
   mWidth: 36
-  mHeight: 16
+  mHeight: 20
   mDepth: 1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
