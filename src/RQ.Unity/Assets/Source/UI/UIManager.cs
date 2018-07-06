@@ -686,13 +686,15 @@ namespace RQ2.UI
         public void SetHealth(float current, float max)
         {
             HPBar.value = current / max;
-            HPLabel.text = current.ToString();
+            var iCurrent = (int)current;
+            HPLabel.text = String.Format("{0:D3}", iCurrent);
         }
 
         public void SetMP(float current, float max)
         {
             MPBar.value = current / max;
-            MPLabel.text = current.ToString();
+            var iCurrent = (int)current;
+            MPLabel.text = String.Format("{0:D3}", iCurrent);
         }
 
         public void SetLevel(int level)
