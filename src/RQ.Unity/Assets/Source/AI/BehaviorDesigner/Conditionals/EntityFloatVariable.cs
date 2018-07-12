@@ -1,11 +1,6 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 using RQ.FSM.V2.Conditionals;
-using RQ.Physics;
 using RQ.Physics.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace RQ.AI.Conditionals
@@ -14,6 +9,7 @@ namespace RQ.AI.Conditionals
     [TaskCategory("RQ")]
     public class EntityFloatVariable : Conditional
     {
+        protected AltitudePhysicsComponent _altitudePhysicsComponent;
         protected PhysicsComponent _physicsComponent;
         protected EntityStatsComponent _entityStatsComponent;
         [SerializeField]
@@ -28,6 +24,7 @@ namespace RQ.AI.Conditionals
             base.OnStart();
             var entity = GetComponent<BehaviorTreeComponent>().GetComponentRepository();
             _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+            _altitudePhysicsComponent = entity.Components.GetComponent<AltitudePhysicsComponent>();
             _entityStatsComponent = entity.Components.GetComponent<EntityStatsComponent>();
         }
 
@@ -47,7 +44,7 @@ namespace RQ.AI.Conditionals
             switch (_variable)
             {
                 case FloatVariableEnum.Altitude:
-                    return (_physicsComponent.GetPhysicsData() as PhysicsData).Altitude.y;
+                    return _altitudePhysicsComponent.GetAltitudeData().Altitude.y;
                 case FloatVariableEnum.HP:
                     return _entityStatsComponent.GetEntityStats().CurrentHP;
                 case FloatVariableEnum.InputForce:

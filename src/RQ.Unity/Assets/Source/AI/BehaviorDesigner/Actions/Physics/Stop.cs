@@ -41,10 +41,7 @@ namespace Assets.Source.AI.Actions
 
         public override TaskStatus OnUpdate()
         {
-            if (_stopMovingAtom.OnUpdate() == RQ.AI.AtomActionResults.Success)
-                return TaskStatus.Success;
-            else
-                return TaskStatus.Failure;
+            return TaskStatus.Success;
         }
 
         //public override void OnEnd()
