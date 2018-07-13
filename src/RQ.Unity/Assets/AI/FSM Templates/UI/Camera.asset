@@ -68,8 +68,8 @@ MonoBehaviour:
         - 
         actionEnabled: 01010101
         actionIsOpen: 01010101
-        actionStartIndex: 00000000010000000400000007000000
-        actionHashCodes: 9f8e9500efe3bf00efe3bf00efe3bf00
+        actionStartIndex: 0000000001000000060000000b000000
+        actionHashCodes: 9f8e95002334d0002334d0002334d000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -95,33 +95,42 @@ MonoBehaviour:
         stringParams:
         - Manual
         - Manual
+        - 
         - Little Shake
         - Little Shake
+        - 
         - Big Shake
         - Big Shake
-        byteData: 
+        - 
+        byteData: 000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 00000000010000000100000001000000
+        customTypeSizes: 00000000020000000200000002000000
         customTypeNames:
         - RQ.Entity.AtomAction.Action.Physics.LockOnTargetAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 28000000170000002800000003000000170000002800000003000000170000002800000003000000
+        paramDataType: 28000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000
         paramName:
         - _atom
         - Received
+        - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
+        - Data
         - Received
+        - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
+        - Data
         - Received
+        - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
-        paramDataPos: 00000000000000000100000001000000020000000200000003000000040000000300000005000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+        - Data
+        paramDataPos: 00000000000000000000000001000000010000000200000003000000010000000200000004000000050000000600000002000000030000000700000008000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000
     - name: Manual
       description: 
       colorIndex: 0
@@ -172,8 +181,8 @@ MonoBehaviour:
         - 
         actionEnabled: 01010101
         actionIsOpen: 01010101
-        actionStartIndex: 00000000030000000600000009000000
-        actionHashCodes: 2b06d204efe3bf00efe3bf00efe3bf00
+        actionStartIndex: 0000000003000000080000000d000000
+        actionHashCodes: 2b06d2042334d0002334d0002334d000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -199,35 +208,44 @@ MonoBehaviour:
         stringParams:
         - Follow Target
         - Follow Target
+        - 
         - Little Shake
         - Little Shake
+        - 
         - Big Shake
         - Big Shake
-        byteData: 0100000001
+        - 
+        byteData: 0100000001000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 02000000010000000100000001000000
+        customTypeSizes: 02000000020000000200000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetJointAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 280000000700000001000000170000002800000003000000170000002800000003000000170000002800000003000000
+        paramDataType: 280000000700000001000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000
         paramName:
         - _atom
         - ActionTarget
         - SetToNull
         - Received
+        - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
+        - Data
         - Received
+        - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
+        - Data
         - Received
+        - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
-        paramDataPos: 000000000000000004000000000000000100000001000000020000000200000003000000040000000300000005000000
-        paramByteDataSize: 000000000400000001000000000000000000000000000000000000000000000000000000000000000000000000000000
+        - Data
+        paramDataPos: 000000000000000004000000000000000500000001000000010000000200000003000000060000000200000004000000050000000600000007000000030000000700000008000000
+        paramByteDataSize: 000000000400000001000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000
     - name: Big Shake
       description: 
       colorIndex: 0

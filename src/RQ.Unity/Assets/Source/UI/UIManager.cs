@@ -81,15 +81,15 @@ namespace RQ2.UI
         /// Click event listener.
         /// </summary>
 
-        [Obsolete]
-        public List<EventDelegate> onClickSave = new List<EventDelegate>();
-        [Obsolete]
-        public List<EventDelegate> onClickNewSave = new List<EventDelegate>();
+        //[Obsolete]
+        //public List<EventDelegate> onClickSave = new List<EventDelegate>();
+        //[Obsolete]
+        //public List<EventDelegate> onClickNewSave = new List<EventDelegate>();
         /// <summary>
         /// Click event listener.
         /// </summary>
-        [Obsolete]
-        public List<EventDelegate> onClickLoad = new List<EventDelegate>();
+        //[Obsolete]
+        //public List<EventDelegate> onClickLoad = new List<EventDelegate>();
         //public event void DialogOkClikedEvent;
         //public event Action DialogOkDelegate;
         //public event Action DialogCancelDelegate;
@@ -606,8 +606,6 @@ namespace RQ2.UI
         private void SetupPanels()
         {
             panels = new Dictionary<RQ.Enum.Panels, UIPanel>();
-            //panels.Add(Panels.MessageBox, FindPanel("MessageBox Panel"));
-            //panels.Add(Panels.TitleScreen, FindPanel("TitleScreen Panel"));
 
             // Create dictionary for faster lookup
             foreach (PanelInfo panel in PanelList)
@@ -688,13 +686,15 @@ namespace RQ2.UI
         public void SetHealth(float current, float max)
         {
             HPBar.value = current / max;
-            HPLabel.text = current.ToString();
+            var iCurrent = (int)current;
+            HPLabel.text = String.Format("{0:D3}", iCurrent);
         }
 
         public void SetMP(float current, float max)
         {
             MPBar.value = current / max;
-            MPLabel.text = current.ToString();
+            var iCurrent = (int)current;
+            MPLabel.text = String.Format("{0:D3}", iCurrent);
         }
 
         public void SetLevel(int level)
