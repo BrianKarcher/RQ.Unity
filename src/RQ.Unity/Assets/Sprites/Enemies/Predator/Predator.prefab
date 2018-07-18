@@ -29,7 +29,7 @@ GameObject:
   m_Layer: 0
   m_Name: Predator
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 4894637915291222}
   - component: {fileID: 114672990002267992}
   - component: {fileID: 135824258687438736}
+  - component: {fileID: 114110270492464046}
   m_Layer: 0
   m_Name: BodyCollider
   m_TagString: Untagged
@@ -170,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1865542975510832
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +257,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156500504886100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 0.08, z: 0}
+  m_LocalPosition: {x: 1.6800001, y: 2.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4703066455487790}
@@ -653,7 +654,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: {fileID: 1244723022779008}
+        value: {fileID: 0}
       - useVariable: 1
         name: predator
         tooltip: 
@@ -668,6 +669,13 @@ MonoBehaviour:
         value: {fileID: 0}
       objectVariables:
       - useVariable: 1
+        name: detectionRange
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        typeName: UnityEngine.Collider
+        value: {fileID: 0}
+      - useVariable: 1
         name: originPosition
         tooltip: 
         showInInspector: 0
@@ -680,7 +688,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
@@ -722,7 +730,7 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 0}
+  fsmTemplate: {fileID: 11400000, guid: 58f281c7c02337f40bfbea2c1bb4a699, type: 2}
   eventHandlerComponentsAdded: 1
 --- !u!114 &114090408085017450
 MonoBehaviour:
@@ -790,6 +798,22 @@ MonoBehaviour:
     IsHiding: 0
     _dropItems: []
   _playerLevelStatsConfig: {fileID: 0}
+--- !u!114 &114110270492464046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510963955756272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 79bfc05b-8745-4201-a250-45a3086ab3ee
+  componentName: 
+  _rqName: BodyCollider Assets.Source.CollisionProcessor
+  _rqName2: 2496b925-4a44-4469-92dd-bc1629e0e39a
+  _componentRepository: {fileID: 114374114521081708}
 --- !u!114 &114117430766536016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1408,7 +1432,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135653076275182352
 SphereCollider:
