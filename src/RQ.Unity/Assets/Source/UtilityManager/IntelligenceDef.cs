@@ -25,6 +25,7 @@ namespace UtilityManager
         private LinkedList<DSExTarget> _dSExTargets;
         private IEntityContainer _entityContainer;
         private IDecisionMaker _dm;
+        private IComponentRepository _repo;
         // Key = DSE Name, value = last time run
         private Dictionary<string, float> _dseHistory;
 
@@ -33,12 +34,22 @@ namespace UtilityManager
             _entityContainer = entityContainer;
             _dseHistory = new Dictionary<string, float>();
             _dm = dm;
+            _repo = repo;
             CreateDSExTargets(repo);
             // TODO Make the Decision Context values update automatically based on 
             // entities created or destroyed
             // TODO Create a DecisionConext/DSE pairing so we can compare a DSE
             // against multiple targets or allies as we do normal iteration in the DecisionMaker
             //_decisionContext = CreateContext(repo);
+        }
+
+        public void RemoveTarget(string uniqueId)
+        {
+            var targets = _dSExTargets.Where(i => i.GetTarget() != null && i.GetTarget().UniqueId == uniqueId);
+            foreach (var target in targets)
+            {
+                _dSExTargets.Remove(target);
+            }
         }
 
         public DSExTarget ScoreAllDecisions()

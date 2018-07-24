@@ -31,6 +31,11 @@ namespace UtilityManager
             _intelligenceDef.Init(repo, EntityContainer._instance, _dm.GetDecisionMaker());
         }
 
+        public void RemoveTarget(string uniqueId)
+        {
+            _intelligenceDef.RemoveTarget(uniqueId);
+        }
+
         public void OnEnable()
         {
             StartCoroutine(IntelligenceLoop());
