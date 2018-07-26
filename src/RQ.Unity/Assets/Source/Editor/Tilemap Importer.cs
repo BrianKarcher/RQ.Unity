@@ -59,19 +59,53 @@ namespace RQ2.Editor._2D_Toolkit
         //[MenuItem("Tools/Delete select Tilemap Layers")]
 
 
+        //[MenuItem("Tools/Collider Converter")]
+        //public static void ColliderConverter()
+        //{
+        //    Init();
+
+        //    EdgeCollider2D[] edgeColliders = _tileMap.renderData.GetComponentsInChildren<EdgeCollider2D>();
+        //    var polygonColliders = _tileMap.renderData.GetComponentsInChildren<PolygonCollider2D>();
+
+        //    // Only destroy the polygon colliders if there are edge colliders to convert
+        //    // This prevents the user from accidently removing all tile colliders from the map
+        //    // ie, first run turns all edge colliders into polygon colliders.  Second run deletes
+        //    // all polygon colliders.
+        //    if (edgeColliders.Any())
+        //    {
+        //        for (int i = polygonColliders.Count() - 1; i > 0; i--)
+        //        {
+        //            GameObject.DestroyImmediate(polygonColliders[i]);
+        //        }
+        //    }
+
+        //    foreach (var coll in edgeColliders)
+        //    {
+        //        // myPoints.Clear();
+        //        Vector2[] myPoints = coll.points;
+        //        int myEdges = coll.edgeCount;
+        //        PolygonCollider2D myPoly = coll.gameObject.AddComponent<PolygonCollider2D>();
+        //        myPoly.points = myPoints;
+        //        myPoly.pathCount = 1;
+        //        myPoly.SetPath(0, myPoints);
+        //        //if (convertToTriggers) myPoly.isTrigger = true;
+        //        GameObject.DestroyImmediate(coll);
+        //    }
+        //}
+
         [MenuItem("Tools/Collider Converter")]
         public static void ColliderConverter()
         {
             Init();
 
-            EdgeCollider2D[] edgeColliders = _tileMap.renderData.GetComponentsInChildren<EdgeCollider2D>();
+            var meshCollider = _tileMap.renderData.GetComponentsInChildren<MeshCollider>();
             var polygonColliders = _tileMap.renderData.GetComponentsInChildren<PolygonCollider2D>();
 
             // Only destroy the polygon colliders if there are edge colliders to convert
             // This prevents the user from accidently removing all tile colliders from the map
             // ie, first run turns all edge colliders into polygon colliders.  Second run deletes
             // all polygon colliders.
-            if (edgeColliders.Any())
+            if (meshCollider.Any())
             {
                 for (int i = polygonColliders.Count() - 1; i > 0; i--)
                 {
@@ -79,17 +113,94 @@ namespace RQ2.Editor._2D_Toolkit
                 }
             }
 
-            foreach (var coll in edgeColliders)
+            foreach (var coll in meshCollider)
             {
+                // Get triangles and vertices from mesh
+                var triangles = coll.sharedMesh.triangles;
+                var vertices = coll.sharedMesh.vertices;
+                // Get just the outer edges from the mesh's triangles (ignore or remove any shared edges)
+                var edges = new Dictionary<string, KeyValuePair<int, int>>();
+                for (int i = 0; i < triangles.Length; i += 3)
+                {
+                    for (int e = 0; e < 3; e++)
+                    {
+                        int vert1 = triangles[i + e];
+                        int vert2 = triangles[i + e + 1 > i + 2 ? i : i + e + 1];
+                        string edge = Mathf.Min(vert1, vert2) + ":" + Mathf.Max(vert1, vert2);
+                        if (edges.ContainsKey(edge))
+                        {
+                            edges.Remove(edge);
+                        }
+                        else
+                        {
+                            edges.Add(edge, new KeyValuePair<int, int>(vert1, vert2));
+                        }
+                    }
+                }
+
+                // Create edge lookup (Key is first vertex, Value is second vertex, of each edge)
+                var lookup = new Dictionary<int, int>();
+                foreach (KeyValuePair<int, int> edge in edges.Values)
+                {
+                    if (lookup.ContainsKey(edge.Key) == false)
+                        lookup.Add(edge.Key, edge.Value);
+                }
+                // Create empty polygon collider
+                //GameObject.Add
+                PolygonCollider2D polygonCollider = _tileMap.renderData.gameObject.AddComponent<PolygonCollider2D>();
+                polygonCollider.pathCount = 0;
+                // Loop through edge vertices in order
+                int startVert = 0;
+                int nextVert = startVert;
+                int highestVert = startVert;
+                var colliderPath = new List<Vector2>();
+                while (true)
+                {
+                    // Add vertex to collider path
+                    colliderPath.Add(vertices[nextVert]);
+
+                    // Get next vertex
+                    nextVert = lookup[nextVert];
+
+                    // Store highest vertex (to know what shape to move to next)
+                    if (nextVert > highestVert)
+                    {
+                        highestVert = nextVert;
+                    }
+
+                    // Shape complete
+                    if (nextVert == startVert)
+                    {
+                        // Add path to polygon collider
+                        polygonCollider.pathCount++;
+                        polygonCollider.SetPath(polygonCollider.pathCount - 1, colliderPath.ToArray());
+                        colliderPath.Clear();
+
+                        // Go to next shape if one exists
+                        if (lookup.ContainsKey(highestVert + 1))
+                        {
+                            // Set starting and next vertices
+                            startVert = highestVert + 1;
+                            nextVert = startVert;
+
+                            // Continue to next loop
+                            continue;
+                        }
+
+                        // No more verts
+                        break;
+                    }
+                }
+
                 // myPoints.Clear();
-                Vector2[] myPoints = coll.points;
-                int myEdges = coll.edgeCount;
-                PolygonCollider2D myPoly = coll.gameObject.AddComponent<PolygonCollider2D>();
-                myPoly.points = myPoints;
-                myPoly.pathCount = 1;
-                myPoly.SetPath(0, myPoints);
-                //if (convertToTriggers) myPoly.isTrigger = true;
-                GameObject.DestroyImmediate(coll);
+                //Vector2[] myPoints = coll.points;
+                //int myEdges = coll.edgeCount;
+                
+                //myPoly.points = myPoints;
+                //myPoly.pathCount = 1;
+                //myPoly.SetPath(0, myPoints);
+                ////if (convertToTriggers) myPoly.isTrigger = true;
+                //GameObject.DestroyImmediate(coll);
             }
         }
 
@@ -130,7 +241,7 @@ namespace RQ2.Editor._2D_Toolkit
         //            var tileCountY = Mathf.RoundToInt(material.Material.mainTexture.height / 16f);
         //            Debug.Log("Material " + material.Material.mainTexture.name + " tile count: " + 
         //                tileCountX + "x" + tileCountY);
-                    
+
         //            for (int i = 0; i < material.AnimatedTiles.Count; i++)
         //            {
         //                var animatedTile = material.AnimatedTiles[i];
@@ -148,7 +259,7 @@ namespace RQ2.Editor._2D_Toolkit
         //                    var uvy = tileY * animatedTile.y;
         //                    Vector2 pos = new Vector2(uvx, uvy);
         //                    Vector2 size = new Vector2(tileX, tileY);
-                            
+
         //                    Rect uvRect = new Rect(pos, size);
         //                    Debug.Log("uv: " + uvRect);
         //                    //rect.bottom = 1f;
