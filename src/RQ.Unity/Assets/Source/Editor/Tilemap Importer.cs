@@ -113,118 +113,208 @@ namespace RQ2.Editor._2D_Toolkit
                 }
             }
 
-            foreach (var coll in meshCollider)
+            int tileMapWidth = _tileMap.width;
+            int tileMapHeight = _tileMap.height;
+            
+            
+            for (int layerIndex = 0; layerIndex < _tileMap.data.Layers.Count(); layerIndex++)
             {
-                // Get triangles and vertices from mesh
-                var triangles = coll.sharedMesh.triangles;
-                var vertices = coll.sharedMesh.vertices;
-                //PolygonCollider2D polygonCollider = _tileMap.renderData.gameObject.AddComponent<PolygonCollider2D>();
-                var go = new GameObject("poly collider");
-                go.transform.SetParent(coll.gameObject.transform);
+                var layer = _tileMap.data.Layers[layerIndex];
+                if (!layer.name.Contains("Collider"))
+                    continue;
 
-                PolygonCollider2D polygonCollider = go.AddComponent<PolygonCollider2D>();
-                List<Vector2> myPoints = new List<Vector2>();
-                int pathCount = 0;
-                for (int i = 0; i < triangles.Count(); i++)
+                GameObject go = new GameObject("poly collider");
+                if (layer.name.Contains("Level 1"))
+                    go.layer = LayerMask.NameToLayer("Level 1 TC");
+                if (layer.name.Contains("Level 2"))
+                    go.layer = LayerMask.NameToLayer("Level 2 TC");
+                if (layer.name.Contains("Shared"))
+                    go.layer = LayerMask.NameToLayer("Shared TC");
+
+                foreach (Transform collidergo in _tileMap.renderData.transform)
                 {
-                    myPoints.Add(vertices[triangles[i]]);
-                    if (i % 3 == 0)
+                    if (collidergo.name == layer.name)
                     {
-                        polygonCollider.pathCount++;
-                        polygonCollider.SetPath(polygonCollider.pathCount - 1, myPoints.ToArray());
-                        myPoints.Clear();
+                        go.transform.SetParent(collidergo);
+                        break;
                     }
                 }
 
-                //polygonCollider.points = myPoints.ToArray();
-                //polygonCollider.pathCount = 1;
-                //polygonCollider.SetPath(0, myPoints.ToArray());
-
-
-                // Get just the outer edges from the mesh's triangles (ignore or remove any shared edges)
-                //var edges = new Dictionary<string, KeyValuePair<int, int>>();
-                //for (int i = 0; i < triangles.Length; i += 3)
-                //{
-                //    for (int e = 0; e < 3; e++)
-                //    {
-                //        int vert1 = triangles[i + e];
-                //        int vert2 = triangles[i + e + 1 > i + 2 ? i : i + e + 1];
-                //        string edge = Mathf.Min(vert1, vert2) + ":" + Mathf.Max(vert1, vert2);
-                //        if (edges.ContainsKey(edge))
-                //        {
-                //            edges.Remove(edge);
-                //        }
-                //        else
-                //        {
-                //            edges.Add(edge, new KeyValuePair<int, int>(vert1, vert2));
-                //        }
-                //    }
-                //}
-
-                //// Create edge lookup (Key is first vertex, Value is second vertex, of each edge)
-                //var lookup = new Dictionary<int, int>();
-                //foreach (KeyValuePair<int, int> edge in edges.Values)
-                //{
-                //    if (lookup.ContainsKey(edge.Key) == false)
-                //        lookup.Add(edge.Key, edge.Value);
-                //}
-                //// Create empty polygon collider
-                ////GameObject.Add
-                //PolygonCollider2D polygonCollider = _tileMap.renderData.gameObject.AddComponent<PolygonCollider2D>();
-                //polygonCollider.pathCount = 0;
-                //// Loop through edge vertices in order
-                //int startVert = 0;
-                //int nextVert = startVert;
-                //int highestVert = startVert;
-                //var colliderPath = new List<Vector2>();
-                //while (true)
-                //{
-                //    // Add vertex to collider path
-                //    colliderPath.Add(vertices[nextVert]);
-
-                //    // Get next vertex
-                //    nextVert = lookup[nextVert];
-
-                //    // Store highest vertex (to know what shape to move to next)
-                //    if (nextVert > highestVert)
-                //    {
-                //        highestVert = nextVert;
-                //    }
-
-                //    // Shape complete
-                //    if (nextVert == startVert)
-                //    {
-                //        // Add path to polygon collider
-                //        polygonCollider.pathCount++;
-                //        polygonCollider.SetPath(polygonCollider.pathCount - 1, colliderPath.ToArray());
-                //        colliderPath.Clear();
-
-                //        // Go to next shape if one exists
-                //        if (lookup.ContainsKey(highestVert + 1))
-                //        {
-                //            // Set starting and next vertices
-                //            startVert = highestVert + 1;
-                //            nextVert = startVert;
-
-                //            // Continue to next loop
-                //            continue;
-                //        }
-
-                //        // No more verts
-                //        break;
-                //    }
-                //}
-
-                // myPoints.Clear();
-                //Vector2[] myPoints = coll.points;
-                //int myEdges = coll.edgeCount;
-
-                //myPoly.points = myPoints;
-                //myPoly.pathCount = 1;
-                //myPoly.SetPath(0, myPoints);
-                ////if (convertToTriggers) myPoly.isTrigger = true;
-                //GameObject.DestroyImmediate(coll);
+                for (int y = 0; y < tileMapHeight;y++)
+                {
+                    for (int x = 0; x < tileMapWidth; x++)
+                    {
+                        var tileId = _tileMap.GetTile(x, y, layerIndex);
+                        if (tileId == -1)
+                            continue;
+                        var tilePos = _tileMap.GetTilePosition(x, y);
+                        // There is a collider here, create the PolygonCollider!
+                        PolygonCollider2D polygonCollider = go.AddComponent<PolygonCollider2D>();
+                        Vector2[] myPoints = new Vector2[]
+                        {
+                            new Vector2(tilePos.x, tilePos.y),
+                            new Vector2(tilePos.x + 0.16f, tilePos.y),
+                            new Vector2(tilePos.x + 0.16f, tilePos.y + 0.16f),
+                            new Vector2(tilePos.x, tilePos.y + 0.16f)
+                        };
+                        polygonCollider.points = myPoints;
+                        polygonCollider.pathCount = 1;
+                        polygonCollider.SetPath(0, myPoints);
+                        //go.transform.SetParent(coll.gameObject.transform);
+                    }
+                }
+                // Only do first layer for now
+                //break;
             }
+
+            //var colliderLayers = _tileMap.data.Layers.Where(i => i.name.Contains("Collider"));
+            //colliderLayers.First().
+
+            //foreach (var coll in meshCollider)
+            //{
+            //    // Get triangles and vertices from mesh
+            //    var triangles = coll.sharedMesh.triangles;
+            //    var vertices = coll.sharedMesh.vertices;
+            //    //PolygonCollider2D polygonCollider = _tileMap.renderData.gameObject.AddComponent<PolygonCollider2D>();
+            //    var go = new GameObject("poly collider");
+            //    go.transform.SetParent(coll.gameObject.transform);
+
+            //    PolygonCollider2D polygonCollider = go.AddComponent<PolygonCollider2D>();
+            //    List<Vector2> myPoints = new List<Vector2>();
+            //    int pathCount = 0;
+            //    for (int i = 0; i < triangles.Count(); i++)
+            //    {
+            //        myPoints.Add(vertices[triangles[i]]);
+            //        if (i % 3 == 0)
+            //        {
+            //            polygonCollider.pathCount++;
+            //            polygonCollider.SetPath(polygonCollider.pathCount - 1, myPoints.ToArray());
+            //            myPoints.Clear();
+            //        }
+            //    }
+
+            //    //polygonCollider.points = myPoints.ToArray();
+            //    //polygonCollider.pathCount = 1;
+            //    //polygonCollider.SetPath(0, myPoints.ToArray());
+
+
+            //    // Get just the outer edges from the mesh's triangles (ignore or remove any shared edges)
+            //    //var edges = new Dictionary<string, KeyValuePair<int, int>>();
+            //    //for (int i = 0; i < triangles.Length; i += 3)
+            //    //{
+            //    //    for (int e = 0; e < 3; e++)
+            //    //    {
+            //    //        int vert1 = triangles[i + e];
+            //    //        int vert2 = triangles[i + e + 1 > i + 2 ? i : i + e + 1];
+            //    //        string edge = Mathf.Min(vert1, vert2) + ":" + Mathf.Max(vert1, vert2);
+            //    //        if (edges.ContainsKey(edge))
+            //    //        {
+            //    //            edges.Remove(edge);
+            //    //        }
+            //    //        else
+            //    //        {
+            //    //            edges.Add(edge, new KeyValuePair<int, int>(vert1, vert2));
+            //    //        }
+            //    //    }
+            //    //}
+
+            //    //// Create edge lookup (Key is first vertex, Value is second vertex, of each edge)
+            //    //var lookup = new Dictionary<int, int>();
+            //    //foreach (KeyValuePair<int, int> edge in edges.Values)
+            //    //{
+            //    //    if (lookup.ContainsKey(edge.Key) == false)
+            //    //        lookup.Add(edge.Key, edge.Value);
+            //    //}
+            //    //// Create empty polygon collider
+            //    ////GameObject.Add
+            //    //PolygonCollider2D polygonCollider = _tileMap.renderData.gameObject.AddComponent<PolygonCollider2D>();
+            //    //polygonCollider.pathCount = 0;
+            //    //// Loop through edge vertices in order
+            //    //int startVert = 0;
+            //    //int nextVert = startVert;
+            //    //int highestVert = startVert;
+            //    //var colliderPath = new List<Vector2>();
+            //    //while (true)
+            //    //{
+            //    //    // Add vertex to collider path
+            //    //    colliderPath.Add(vertices[nextVert]);
+
+            //    //    // Get next vertex
+            //    //    nextVert = lookup[nextVert];
+
+            //    //    // Store highest vertex (to know what shape to move to next)
+            //    //    if (nextVert > highestVert)
+            //    //    {
+            //    //        highestVert = nextVert;
+            //    //    }
+
+            //    //    // Shape complete
+            //    //    if (nextVert == startVert)
+            //    //    {
+            //    //        // Add path to polygon collider
+            //    //        polygonCollider.pathCount++;
+            //    //        polygonCollider.SetPath(polygonCollider.pathCount - 1, colliderPath.ToArray());
+            //    //        colliderPath.Clear();
+
+            //    //        // Go to next shape if one exists
+            //    //        if (lookup.ContainsKey(highestVert + 1))
+            //    //        {
+            //    //            // Set starting and next vertices
+            //    //            startVert = highestVert + 1;
+            //    //            nextVert = startVert;
+
+            //    //            // Continue to next loop
+            //    //            continue;
+            //    //        }
+
+            //    //        // No more verts
+            //    //        break;
+            //    //    }
+            //    //}
+
+            //    // myPoints.Clear();
+            //    //Vector2[] myPoints = coll.points;
+            //    //int myEdges = coll.edgeCount;
+
+            //    //myPoly.points = myPoints;
+            //    //myPoly.pathCount = 1;
+            //    //myPoly.SetPath(0, myPoints);
+            //    ////if (convertToTriggers) myPoly.isTrigger = true;
+            //    //GameObject.DestroyImmediate(coll);
+            //}
+        }
+
+        [MenuItem("Tools/Delete Converted Tiles")]
+        public static void DeleteConvertedColliders()
+        {
+            Init();
+            //for (int layerIndex = 0; layerIndex < _tileMap.data.Layers.Count(); layerIndex++)
+            //{
+            //    var layer = _tileMap.data.Layers[layerIndex];
+            //    if (!layer.name.Contains("Collider"))
+            //        continue;
+
+            //    GameObject go = new GameObject("poly collider");
+            //    if (layer.name.Contains("Level 1"))
+            //        go.layer = LayerMask.NameToLayer("Level 1 TC");
+            //    if (layer.name.Contains("Level 2"))
+            //        go.layer = LayerMask.NameToLayer("Level 2 TC");
+            //    if (layer.name.Contains("Shared"))
+            //        go.layer = LayerMask.NameToLayer("Shared TC");
+
+            foreach (Transform layergo in _tileMap.renderData.transform)
+            {
+                foreach (Transform collidergo in layergo)
+                {
+                    if (collidergo.name == "poly collider")
+                    {
+                        GameObject.DestroyImmediate(collidergo.gameObject);
+                        //go.transform.SetParent(collidergo);
+                        //break;
+                    }
+                }
+            }
+            //}
         }
 
         //[MenuItem("Tools/Run All")]
@@ -244,105 +334,105 @@ namespace RQ2.Editor._2D_Toolkit
         //    //EditorUtility.DisplayDialog("Import", "Set path settings", "Ok");
         //    //SetPathSettings();
 
-        //    //UpdateSpriteCollectionData();
-        //}
+            //    //UpdateSpriteCollectionData();
+            //}
 
-        //[MenuItem("Tools/Setup Animations")]
-        //public static void UpdateSpriteCollectionData()
-        //{
-        //    Init();
-        //    var collection = _sceneSetup.AnimatedSpriteCollectionsConfig;
-        //    foreach (var spriteCollection in collection.SpriteCollections)
-        //    {
-        //        //spriteCollection.altMaterials
-        //        foreach (var material in collection.Materials)
-        //        {
-        //            if (material.AnimatedTiles.Count == 0)
-        //                continue;
+            //[MenuItem("Tools/Setup Animations")]
+            //public static void UpdateSpriteCollectionData()
+            //{
+            //    Init();
+            //    var collection = _sceneSetup.AnimatedSpriteCollectionsConfig;
+            //    foreach (var spriteCollection in collection.SpriteCollections)
+            //    {
+            //        //spriteCollection.altMaterials
+            //        foreach (var material in collection.Materials)
+            //        {
+            //            if (material.AnimatedTiles.Count == 0)
+            //                continue;
 
-        //            var tileCountX = Mathf.RoundToInt(material.Material.mainTexture.width / material.Frames / 16f);
-        //            var tileCountY = Mathf.RoundToInt(material.Material.mainTexture.height / 16f);
-        //            Debug.Log("Material " + material.Material.mainTexture.name + " tile count: " + 
-        //                tileCountX + "x" + tileCountY);
+            //            var tileCountX = Mathf.RoundToInt(material.Material.mainTexture.width / material.Frames / 16f);
+            //            var tileCountY = Mathf.RoundToInt(material.Material.mainTexture.height / 16f);
+            //            Debug.Log("Material " + material.Material.mainTexture.name + " tile count: " + 
+            //                tileCountX + "x" + tileCountY);
 
-        //            for (int i = 0; i < material.AnimatedTiles.Count; i++)
-        //            {
-        //                var animatedTile = material.AnimatedTiles[i];
-        //                var tileName = material.Name + "/" + animatedTile.Index;
-        //                var texParam = spriteCollection.textureParams.FirstOrDefault(p => p.name == tileName);
-        //                if (texParam != null)
-        //                {
-        //                    var materialIndex = GetMaterialIndex(spriteCollection, material.Material);
-        //                    Debug.Log("Material index " + materialIndex);
-        //                    var tileX = 1f / material.Frames / tileCountX;
-        //                    var tileY = 1f / tileCountY;
-        //                    //var uvx = animatedTile.x / tileCountX / material.Frames;
-        //                    var uvx = tileX * animatedTile.x;
-        //                    //var uvy = animatedTile.y / tileCountY;
-        //                    var uvy = tileY * animatedTile.y;
-        //                    Vector2 pos = new Vector2(uvx, uvy);
-        //                    Vector2 size = new Vector2(tileX, tileY);
+            //            for (int i = 0; i < material.AnimatedTiles.Count; i++)
+            //            {
+            //                var animatedTile = material.AnimatedTiles[i];
+            //                var tileName = material.Name + "/" + animatedTile.Index;
+            //                var texParam = spriteCollection.textureParams.FirstOrDefault(p => p.name == tileName);
+            //                if (texParam != null)
+            //                {
+            //                    var materialIndex = GetMaterialIndex(spriteCollection, material.Material);
+            //                    Debug.Log("Material index " + materialIndex);
+            //                    var tileX = 1f / material.Frames / tileCountX;
+            //                    var tileY = 1f / tileCountY;
+            //                    //var uvx = animatedTile.x / tileCountX / material.Frames;
+            //                    var uvx = tileX * animatedTile.x;
+            //                    //var uvy = animatedTile.y / tileCountY;
+            //                    var uvy = tileY * animatedTile.y;
+            //                    Vector2 pos = new Vector2(uvx, uvy);
+            //                    Vector2 size = new Vector2(tileX, tileY);
 
-        //                    Rect uvRect = new Rect(pos, size);
-        //                    Debug.Log("uv: " + uvRect);
-        //                    //rect.bottom = 1f;
+            //                    Rect uvRect = new Rect(pos, size);
+            //                    Debug.Log("uv: " + uvRect);
+            //                    //rect.bottom = 1f;
 
-        //                    texParam.UseCustomUV = true;
-        //                    //texParam.CustomUV = new Vector2[] {new Vector2(0,0),
-        //                    //                   new Vector2(1,0),
-        //                    //                   new Vector2(0,1),
-        //                    //                   new Vector2(1,1)};
-        //                    texParam.CustomUV = new Vector2[] {new Vector2(uvRect.xMin,uvRect.yMin),
-        //                                       new Vector2(uvRect.xMax,uvRect.yMin),
-        //                                       new Vector2(uvRect.xMin,uvRect.yMax),
-        //                                       new Vector2(uvRect.xMax,uvRect.yMax)};
-        //                    texParam.materialId = materialIndex;
-        //                }
-        //                //else
-        //                //{
-        //                //    texParam.UseCustomUV = false;
-        //                //    texParam.CustomUV = new Vector2[] {new Vector2(0,0),
-        //                //                       new Vector2(0,0),
-        //                //                       new Vector2(0,0),
-        //                //                       new Vector2(0,0)};
-        //                //    texParam.materialId = 0;
-        //                //}
-        //            }
-        //        }
-        //    }
+            //                    texParam.UseCustomUV = true;
+            //                    //texParam.CustomUV = new Vector2[] {new Vector2(0,0),
+            //                    //                   new Vector2(1,0),
+            //                    //                   new Vector2(0,1),
+            //                    //                   new Vector2(1,1)};
+            //                    texParam.CustomUV = new Vector2[] {new Vector2(uvRect.xMin,uvRect.yMin),
+            //                                       new Vector2(uvRect.xMax,uvRect.yMin),
+            //                                       new Vector2(uvRect.xMin,uvRect.yMax),
+            //                                       new Vector2(uvRect.xMax,uvRect.yMax)};
+            //                    texParam.materialId = materialIndex;
+            //                }
+            //                //else
+            //                //{
+            //                //    texParam.UseCustomUV = false;
+            //                //    texParam.CustomUV = new Vector2[] {new Vector2(0,0),
+            //                //                       new Vector2(0,0),
+            //                //                       new Vector2(0,0),
+            //                //                       new Vector2(0,0)};
+            //                //    texParam.materialId = 0;
+            //                //}
+            //            }
+            //        }
+            //    }
 
 
-        //    //var spriteCollection = _sceneSetup.spriteCollection.spriteCollection;
+            //    //var spriteCollection = _sceneSetup.spriteCollection.spriteCollection;
 
-        //    //foreach (var definition in spriteCollection.spriteDefinitions)
-        //    //{
-        //    //    if (definition.name == "Fire Tileset/0")
-        //    //    {
-        //    //        Debug.Log("Found Fire Tileset/0");
-        //    //        definition.materialId = materialId;
-        //    //        definition.material = _sceneSetup.testMaterial;
+            //    //foreach (var definition in spriteCollection.spriteDefinitions)
+            //    //{
+            //    //    if (definition.name == "Fire Tileset/0")
+            //    //    {
+            //    //        Debug.Log("Found Fire Tileset/0");
+            //    //        definition.materialId = materialId;
+            //    //        definition.material = _sceneSetup.testMaterial;
 
-        //    //        definition.uvs = new Vector2[] {new Vector2(0,0),
-        //    //                                   new Vector2(1,0),
-        //    //                                   new Vector2(0,1),
-        //    //                                   new Vector2(1,1)};
-        //    //    }
-        //    //    //definition.materialId
-        //    //}
-        //    //foreach (var definition2 in _sceneSetup.spriteCollection.textureParams)
-        //    //{
-        //    //    if (definition2.name == "Fire Tileset/0")
-        //    //    {
-        //    //        definition2.UseCustomUV = true;
-        //    //        definition2.CustomUV = new Vector2[] {new Vector2(0,0),
-        //    //                                   new Vector2(1,0),
-        //    //                                   new Vector2(0,1),
-        //    //                                   new Vector2(1,1)};
-        //    //        definition2.materialId = materialId;
-        //    //    }
-        //    //}
-        //    //_sceneSetup.TileMap.ForceBuild();
-        //}
+            //    //        definition.uvs = new Vector2[] {new Vector2(0,0),
+            //    //                                   new Vector2(1,0),
+            //    //                                   new Vector2(0,1),
+            //    //                                   new Vector2(1,1)};
+            //    //    }
+            //    //    //definition.materialId
+            //    //}
+            //    //foreach (var definition2 in _sceneSetup.spriteCollection.textureParams)
+            //    //{
+            //    //    if (definition2.name == "Fire Tileset/0")
+            //    //    {
+            //    //        definition2.UseCustomUV = true;
+            //    //        definition2.CustomUV = new Vector2[] {new Vector2(0,0),
+            //    //                                   new Vector2(1,0),
+            //    //                                   new Vector2(0,1),
+            //    //                                   new Vector2(1,1)};
+            //    //        definition2.materialId = materialId;
+            //    //    }
+            //    //}
+            //    //_sceneSetup.TileMap.ForceBuild();
+            //}
 
         [MenuItem("Tools/Tilemap/Import Test")]
         public static bool ImportTestTileMap()
