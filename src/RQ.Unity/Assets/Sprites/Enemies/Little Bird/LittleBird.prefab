@@ -181,6 +181,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1812989804439550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4769857593220670}
+  - component: {fileID: 114030037400651658}
+  m_Layer: 0
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1840720849773924
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +231,6 @@ GameObject:
   - component: {fileID: 114347172030756276}
   - component: {fileID: 114964522508631212}
   - component: {fileID: 54576391662119218}
-  - component: {fileID: 114666412038899226}
   m_Layer: 0
   m_Name: LittleBird
   m_TagString: Untagged
@@ -384,6 +399,19 @@ Transform:
   m_Father: {fileID: 4838595295168684}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4769857593220670
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812989804439550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4838595295168684}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4838595295168684
 Transform:
   m_ObjectHideFlags: 1
@@ -391,7 +419,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896976730737982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.04, y: 0.39999998, z: 0}
+  m_LocalPosition: {x: 1.36, y: 1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4231169473042546}
@@ -406,6 +434,7 @@ Transform:
   - {fileID: 4688615732032192}
   - {fileID: 4363363909493332}
   - {fileID: 4158271829236548}
+  - {fileID: 4769857593220670}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -513,7 +542,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!82 &82787352148765292
 AudioSource:
@@ -653,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: c3d1f3f8-4368-4254-a80b-46c65b0d3ab5
+  _uniqueId: 2d9b7cfc-9e1d-4dc6-9447-d1cf036c9e3f
   componentName: 
   _rqName: BoundingRadius RQ.Physics.Components.CollisionComponent
   _rqName2: 4fccb87f-b74f-4e26-90fb-e6387f2916d7
@@ -677,6 +706,35 @@ MonoBehaviour:
     _layerIndex: 12
   _mainCollider: {fileID: 4363363909493332}
   _autoChangeLayers: 0
+--- !u!114 &114030037400651658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812989804439550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 941695859, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: d7a6e481-c6c6-48b4-9db0-7304858fe538
+  componentName: 
+  _rqName: Attack RQ.Entity.Components.AttackComponent
+  _rqName2: cde0873c-47f6-44bd-b5d4-db04f38a722f
+  _componentRepository: {fileID: 114890941582495346}
+  _skill: {fileID: 0}
+  AttackData:
+    StrikeDelay: 0
+    StopMovingDuringAttack: 1
+    Offset: {x: 0, y: 0}
+    Size: {x: 0, y: 0}
+    Angle: 0
+    Distance: 0
+    Damage: 0
+    TargetTags: []
+    SameLayer: 1
+    Layers: []
+    AttackDirection: 0
 --- !u!114 &114194868345347614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -875,14 +933,32 @@ MonoBehaviour:
     variables:
       floatVariables: []
       intVariables: []
-      boolVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: playerHide
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       stringVariables: []
       vector2Variables: []
       vector3Variables: []
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: littleBird
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: target
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -890,7 +966,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
@@ -1172,7 +1248,7 @@ MonoBehaviour:
   m_Script: {fileID: 899680699, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: ee454cb0-b72c-4280-a3c8-9df7f7247750
+  _uniqueId: 58c9a1dd-6ea5-4d19-bcf6-b683384254aa
   componentName: 
   _rqName: AI RQ.Physics.Components.BehaviorTreeComponent
   _rqName2: 8e9e73b0-ffcc-4c4f-b26a-bd6a290ca412
@@ -1191,35 +1267,6 @@ MonoBehaviour:
   library: {fileID: 11464858, guid: 35b2210493a8b9147a1ebc52676a9d7c, type: 2}
   defaultClipId: 0
   playAutomatically: 0
---- !u!114 &114666412038899226
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1896976730737982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 941695859, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 784fef9f-591c-4c5a-bb35-8234613fae0e
-  componentName: 
-  _rqName: LittleBird RQ.Entity.Components.AttackComponent
-  _rqName2: 397a8de7-67fd-4d12-80ca-e37d7783bec7
-  _componentRepository: {fileID: 114890941582495346}
-  _skill: {fileID: 0}
-  AttackData:
-    StrikeDelay: 0
-    StopMovingDuringAttack: 1
-    Offset: {x: 0, y: 0}
-    Size: {x: 0, y: 0}
-    Angle: 0
-    Distance: 0
-    Damage: 0
-    TargetTags: []
-    SameLayer: 1
-    Layers: []
-    AttackDirection: 0
 --- !u!114 &114712432475195700
 MonoBehaviour:
   m_ObjectHideFlags: 1
