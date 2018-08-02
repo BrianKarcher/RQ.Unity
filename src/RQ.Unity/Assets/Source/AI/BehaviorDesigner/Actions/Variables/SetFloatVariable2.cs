@@ -8,10 +8,10 @@ namespace RQ.Behavior.Actions
 {
     [TaskDescription("Gets the float variable.")]
     [TaskCategory("RQ")]
-    public class GetFloatVariable : Action
+    public class SetFloatVariable2 : Action
     {
 
-        public GetFloatVariableAtom Atom;
+        public SetFloatVariableAtom2 Atom;
         [BehaviorDesigner.Runtime.Tasks.Tooltip("The value to set")]
         public SharedVariable fieldValue;
 

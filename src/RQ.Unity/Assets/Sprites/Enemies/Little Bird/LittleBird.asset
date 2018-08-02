@@ -455,17 +455,15 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.SteeringBehavior
         - Assets.Source.AI.PM_State_Machine.SetSteeringTargetToVector
-        - Assets.Source.AI.PM_State_Machine.SetBoolVariable
-        - HutongGames.PlayMaker.Actions.BoolTest
+        - Assets.Source.AI.PM_State_Machine.SetBoolVariable2
         customNames:
         - 
         - 
         - 
-        - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000020000000b00000010000000
-        actionHashCodes: ae351404c683700266239401a4c8bf00
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000020000000b000000
+        actionHashCodes: ae351404c6837002c0cc1d04
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -508,12 +506,6 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        - useVariable: 1
-          name: playerHide
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -524,16 +516,16 @@ MonoBehaviour:
         - 
         - PlayerHide
         - 
-        byteData: 0000000000000000000000000100000000000000000001
+        byteData: 000000000000000000000000010100000000000000000000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 010000000600000003000000
+        customTypeSizes: 010000000600000004000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
         - RQ.Animation.BasicAction.Action.SetSteeringTargetToVectorAtom
-        - RQ.Animation.BasicAction.Action.SetBoolVariableAtom
-        paramDataType: 280000000700000029000000130000002800000007000000000000000c000000010000000300000003000000110000002800000001000000070000000700000011000000170000001700000001000000
+        - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
+        paramDataType: 280000000700000029000000130000002800000007000000000000000c000000010000000300000003000000110000000100000028000000010000000100000007000000070000001700000017000000
         paramName:
         - _sbAtom
         - SteeringBehavior
@@ -546,17 +538,17 @@ MonoBehaviour:
         - sendToSelf
         - physicsComponentName
         - waypointName
-        - Variable
+        - storeResult
+        - everyFrame
         - _atom
         - Value
+        - InvertValue
         - ActionTarget
-        - VariableToSet
-        - boolVariable
-        - isTrue
-        - isFalse
-        - everyFrame
-        paramDataPos: 00000000000000000000000000000000010000000400000008000000000000000c000000000000000100000000000000020000000d0000000e0000001200000001000000020000000300000016000000
-        paramByteDataSize: 0000000004000000000000000000000000000000040000000400000000000000010000000000000000000000000000000000000001000000040000000400000000000000000000000000000001000000
+        - _variable
+        - TrueEvent
+        - FalseEvent
+        paramDataPos: 00000000000000000000000000000000010000000400000008000000000000000c0000000000000001000000000000000d000000020000000e0000000f00000010000000140000000200000003000000
+        paramByteDataSize: 0000000004000000000000000000000000000000040000000400000000000000010000000000000000000000000000000100000000000000010000000100000004000000040000000000000000000000
     - name: Attack
       description: 
       colorIndex: 0
@@ -589,16 +581,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.Attack
-        - Assets.Source.AI.PM_State_Machine.SetBoolVariable
-        - HutongGames.PlayMaker.Actions.BoolTest
+        - Assets.Source.AI.PM_State_Machine.SetBoolVariable2
         customNames:
         - 
         - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000300000008000000
-        actionHashCodes: 2ab2170466239401a4c8bf00
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 2ab21704c0cc1d04
         unityObjectParams:
         - {fileID: 0}
         fsmGameObjectParams: []
@@ -623,12 +613,6 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        - useVariable: 1
-          name: playerHide
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -638,29 +622,29 @@ MonoBehaviour:
         - 
         - PlayerHide
         - 
-        byteData: 00000000000000000001
+        byteData: 0100000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0200000003000000
+        customTypeSizes: 0200000004000000
         customTypeNames:
         - RQ.Entity.AtomAction.Action.AttackAtom
-        - RQ.Animation.BasicAction.Action.SetBoolVariableAtom
-        paramDataType: 280000000500000003000000110000002800000001000000070000000700000011000000170000001700000001000000
+        - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
+        paramDataType: 280000000500000003000000110000000100000028000000010000000100000007000000070000001700000017000000
         paramName:
         - _attackAtom
         - _skill
         - AttackComponentName
-        - Variable
+        - storeResult
+        - everyFrame
         - _atom
         - Value
+        - InvertValue
         - ActionTarget
-        - VariableToSet
-        - boolVariable
-        - isTrue
-        - isFalse
-        - everyFrame
-        paramDataPos: 000000000000000000000000000000000100000000000000010000000500000001000000010000000200000009000000
-        paramByteDataSize: 000000000000000000000000000000000000000001000000040000000400000000000000000000000000000001000000
+        - _variable
+        - TrueEvent
+        - FalseEvent
+        paramDataPos: 000000000000000000000000000000000000000001000000010000000200000003000000070000000100000002000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000010000000100000004000000040000000000000000000000
     - name: AttackGrass
       description: Attack the grass if come from agressive state
       colorIndex: 0
