@@ -117,30 +117,34 @@ namespace RQ2.Controller.tk2d_Extensions
                     //    break;
                     case "Level 2 Overlay 2":
                         layer.z = 0.001f;
-                        //layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
+                        layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
                         layer.generateCollider = false;
                         break;
                     case "Level 2 Overlay 1":
                         layer.z = 0.001f;
-                        //layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
+                        layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
                         layer.generateCollider = false;
                         break;
                     case "Level 2 Shadows":
                         layer.z = 0.001f;
                         layer.generateCollider = false;
-                        //layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
+                        layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
                         break;
                     case "Level 2 Overlay":
                         layer.z = 0.001f;
                         layer.generateCollider = false;
-                        //layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
+                        layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
                         break;
                     case "Level 2 overlay":
                         layer.z = 0.001f;
                         layer.generateCollider = false;
-                        //layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
+                        layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
                         break;
                     case "Level 2":
+                        layer.z = 0.3f;
+                        layer.generateCollider = false;
+                        layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
+                        break;
                     case "Level 3":
                         layer.z = 0.3f;
                         layer.generateCollider = false;
@@ -187,6 +191,11 @@ namespace RQ2.Controller.tk2d_Extensions
                         layer.generateCollider = false;
                         break;
                     case "Level 1 Overlay 2":
+                        layer.z = 0.001f;
+                        layer.unityLayer = LayerMask.NameToLayer("Level 1 TC");
+                        layer.generateCollider = false;
+                        break;
+                    case "Level 1 Overlay 1":
                         layer.z = 0.001f;
                         layer.unityLayer = LayerMask.NameToLayer("Level 1 TC");
                         layer.generateCollider = false;

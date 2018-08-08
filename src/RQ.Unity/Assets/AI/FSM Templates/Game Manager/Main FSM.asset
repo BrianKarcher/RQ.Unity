@@ -138,12 +138,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - RQ.AI.PlayMaker.AppStart
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 1d688f04
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000001000000
+        actionHashCodes: 1d688f0448c01101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -158,7 +160,13 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1000
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -166,18 +174,22 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - 
+        byteData: 00
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 00000000
         customTypeNames:
         - RQ.AI.Atom.GameManager.AppStartAtom
-        paramDataType: 28000000
+        paramDataType: 280000000f0000001700000001000000
         paramName:
         - _atom
-        paramDataPos: 00000000
-        paramByteDataSize: 00000000
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000000000000000000000000000
+        paramByteDataSize: 00000000000000000000000001000000
     - name: Play
       description: 
       colorIndex: 0
