@@ -165,7 +165,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tornado
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -463,9 +463,18 @@ MonoBehaviour:
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: 37fd8be0-d3f8-4841-8ae2-76af5f5350e5
   _componentRepository: {fileID: 114698953656117946}
-  Records: []
-  ConditionsList: {fileID: 0}
-  ConditionsListTransform: {fileID: 0}
+  Records:
+  - _name: 
+    CurrentState: {fileID: 0}
+    UniqueId: 
+    Conditions: []
+    Type: 0
+    PreviousState: 0
+    TargetState: {fileID: 114919360184795728}
+    TargetStateSelected: {fileID: 0}
+    IsActive: 1
+  ConditionsList: {fileID: 114911575059301448}
+  ConditionsListTransform: {fileID: 4367060322418100}
 --- !u!114 &114122681783616432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -591,7 +600,7 @@ MonoBehaviour:
   _rqName2: 6c0d2fb9-169c-43e7-ae48-d4e54cc59838
   _componentRepository: {fileID: 114698953656117946}
   _initialState: {fileID: 0}
-  _stateTransitionTable: {fileID: 0}
+  _stateTransitionTable: {fileID: 114012377583297032}
   _currentState: {fileID: 0}
   _stateMachineReentry: 0
   _stateInfo:
@@ -625,7 +634,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882606112907064}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
@@ -858,7 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 986810119, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 158684d6-772a-423d-81f2-6ccd566c092d
+  _uniqueId: c68f6b25-5be3-4f05-9638-9124e9e08e29
   componentName: 
   _rqName: Flying RQ.Entity.StatesV2.AnimatorState
   _rqName2: 81965436-0cf4-4038-9b26-3f435265fac0
@@ -931,7 +940,7 @@ MonoBehaviour:
   m_Script: {fileID: -1087292713, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 5d5d1ddd-08e2-4e7b-9cff-131df670e248
+  _uniqueId: e2463d29-c6a7-4224-87f3-2aa39b8d490d
   componentName: 
   _rqName: KillSelf RQ.Entity.StatesV2.KillSelf
   _rqName2: 2eb6f3b4-7cb9-455a-a66b-b9e69b7e1672
@@ -972,7 +981,7 @@ MonoBehaviour:
   componentName: 
   _rqName: Collider RQ.Physics.Components.CollisionComponent
   _rqName2: d3084c37-0298-49c0-ae77-400ab48cf850
-  _componentRepository: {fileID: 0}
+  _componentRepository: {fileID: 114698953656117946}
   _collisionData:
     Level: 3
     Tags:
