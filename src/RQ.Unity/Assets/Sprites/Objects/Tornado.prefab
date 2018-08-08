@@ -46,6 +46,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1138019902932890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4469929845733728}
+  - component: {fileID: 135033365691594648}
+  m_Layer: 0
+  m_Name: PushCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1314486086407196
 GameObject:
   m_ObjectHideFlags: 1
@@ -268,6 +284,19 @@ Transform:
   m_Father: {fileID: 4201130343330504}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4469929845733728
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1138019902932890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4908006406328516}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4604048760863894
 Transform:
   m_ObjectHideFlags: 1
@@ -315,12 +344,13 @@ Transform:
   m_GameObject: {fileID: 1882606112907064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0018518518, y: 0.0018518518, z: 0.0018518518}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4069743415915792}
   - {fileID: 4604048760863894}
   - {fileID: 4201130343330504}
   - {fileID: 4362540017330526}
+  - {fileID: 4469929845733728}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -445,7 +475,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &114012377583297032
 MonoBehaviour:
@@ -867,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 986810119, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: c68f6b25-5be3-4f05-9638-9124e9e08e29
+  _uniqueId: 254825ca-80e5-4621-909a-0d4965800a09
   componentName: 
   _rqName: Flying RQ.Entity.StatesV2.AnimatorState
   _rqName2: 81965436-0cf4-4038-9b26-3f435265fac0
@@ -940,7 +970,7 @@ MonoBehaviour:
   m_Script: {fileID: -1087292713, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: e2463d29-c6a7-4224-87f3-2aa39b8d490d
+  _uniqueId: 4c897fed-a3ba-4f5c-ba5c-ff3fc1a504c4
   componentName: 
   _rqName: KillSelf RQ.Entity.StatesV2.KillSelf
   _rqName2: 2eb6f3b4-7cb9-455a-a66b-b9e69b7e1672
@@ -1024,3 +1054,15 @@ MonoBehaviour:
   - Player
   _anythingBut: []
   _onlyHitMainCollider: 0
+--- !u!135 &135033365691594648
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1138019902932890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
