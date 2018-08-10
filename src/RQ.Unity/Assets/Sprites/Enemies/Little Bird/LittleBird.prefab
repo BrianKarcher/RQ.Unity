@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 4545796784868792}
   - component: {fileID: 23024400907087736}
   - component: {fileID: 33158742536567622}
+  - component: {fileID: 114229715505140036}
   - component: {fileID: 114604049076130018}
   - component: {fileID: 114495173810430598}
   - component: {fileID: 114472051277628110}
@@ -343,7 +344,7 @@ Transform:
   m_GameObject: {fileID: 1751127878088694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4838595295168684}
   m_RootOrder: 1
@@ -458,7 +459,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751127878088694}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -483,14 +484,14 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
 --- !u!23 &23583720519887070
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1920342939768580}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -515,14 +516,14 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!33 &33158742536567622
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751127878088694}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 0}
 --- !u!33 &33294864940148568
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -758,7 +759,7 @@ MonoBehaviour:
   meshCollider: {fileID: 0}
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
-  renderLayer: 0
+  renderLayer: 1
 --- !u!114 &114221624184792802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -795,6 +796,30 @@ MonoBehaviour:
   _rqName2: bd0499e8-56e5-4b36-b5cf-f797600211c9
   _componentRepository: {fileID: 114890941582495346}
   pm: {fileID: 0}
+--- !u!114 &114229715505140036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751127878088694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 114506122042295800, guid: e134283e5ca21ce41891000f0a7e7b7a,
+    type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 26
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 2
 --- !u!114 &114265067615958076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1316,9 +1341,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  library: {fileID: 11464858, guid: 35b2210493a8b9147a1ebc52676a9d7c, type: 2}
-  defaultClipId: 0
-  playAutomatically: 0
+  library: {fileID: 114724911946235604, guid: 7cf49a07f6ee22d44b98841a84c9b0b3, type: 2}
+  defaultClipId: 4
+  playAutomatically: 1
 --- !u!114 &114712432475195700
 MonoBehaviour:
   m_ObjectHideFlags: 1
