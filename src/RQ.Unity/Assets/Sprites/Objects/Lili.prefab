@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 114879010854923280}
   - component: {fileID: 114314037295509098}
   - component: {fileID: 54166280424422108}
+  - component: {fileID: 114760829899885914}
   m_Layer: 2
   m_Name: Lili
   m_TagString: Tilemap
@@ -408,7 +409,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506824051627202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.68, y: 2.72, z: -0.5}
+  m_LocalPosition: {x: 2.72, y: 2.4, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4264097054363334}
@@ -466,7 +467,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 238aaebc85d5aa44982b31c27dde8cc7, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -498,7 +499,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -635,7 +636,7 @@ Animator:
   m_GameObject: {fileID: 1562136623809560}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be6976b6ed2e9ce41ae9985e65fc6543, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -858,6 +859,7 @@ MonoBehaviour:
       x: 0
       y: 0
     Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
     _steeringForce:
       x: 0
       y: 0
@@ -1218,6 +1220,30 @@ MonoBehaviour:
     _layerIndex: 12
   _mainCollider: {fileID: 4856816291981774}
   _autoChangeLayers: 0
+--- !u!114 &114760829899885914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1506824051627202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 851305503, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 2b240722-2219-470d-a52e-1a3235dc989e
+  componentName: 
+  _rqName: Lili RQ.Physics.Components.VariablesComponent
+  _rqName2: eb269686-12ed-4df9-bbb5-6db8c39f4c95
+  _componentRepository: {fileID: 114486825354388632}
+  _variables:
+    StringVariables: []
+    BoolVariables:
+    - Name: Boarded
+      Value: 0
+    FloatVariables: []
+    Vector2Variables: []
+    Vector3Variables: []
 --- !u!114 &114769926709186756
 MonoBehaviour:
   m_ObjectHideFlags: 1

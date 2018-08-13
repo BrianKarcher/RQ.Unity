@@ -16,7 +16,7 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 11400000}
     name: FSM
-    startState: Wait For Player to Board
+    startState: Start
     states:
     - name: WaitForHelix
       description: 
@@ -24,7 +24,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 103.96094
-        y: 255
+        y: 271
         width: 116
         height: 48
       isBreakpoint: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 270
-        y: 342
+        y: 358
         width: 100
         height: 32
       isBreakpoint: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 307
-        y: 102
+        y: 118
         width: 100
         height: 16
       isBreakpoint: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 63
-        y: 178
+        y: 194
         width: 184
         height: 32
       isBreakpoint: 0
@@ -401,8 +401,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 288
-        y: 181
+        x: 315
+        y: 195
         width: 100
         height: 32
       isBreakpoint: 0
@@ -436,7 +436,7 @@ MonoBehaviour:
         - 
         actionEnabled: 00010001010101
         actionIsOpen: 01010101010101
-        actionStartIndex: 00000000050000001500000025000000290000002c0000003c000000
+        actionStartIndex: 000000000600000016000000260000002a0000002d0000003d000000
         actionHashCodes: 07377b0164eb380464eb3804a2c882022b06d20464eb380464eb3804
         unityObjectParams: []
         fsmGameObjectParams:
@@ -591,6 +591,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - 
         - Board
         - 
         - StopMovement
@@ -606,7 +607,7 @@ MonoBehaviour:
         - System.String
         - System.String
         - System.String
-        customTypeSizes: 030000000b0000000b00000003000000020000000b0000000b000000
+        customTypeSizes: 040000000b0000000b00000003000000020000000b0000000b000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
         - RQ.Animation.BasicAction.Action.SendMessageAtom
@@ -615,13 +616,14 @@ MonoBehaviour:
         - RQ.Animation.BasicAction.Action.SetJointAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
-        paramDataType: 11000000280000000100000007000000070000002900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000280000000700000007000000080000002800000007000000010000002900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
+        paramDataType: 1100000028000000010000000700000007000000030000002900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000280000000700000007000000080000002800000007000000010000002900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
         - Variable
         - _atom
         - Value
         - ActionTarget
         - VariableToSet
+        - VariableName
         - Targets
         - Target
         - TargetGO
@@ -693,20 +695,122 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 00000000000000000000000001000000050000000000000000000000000000000100000001000000000000000000000001000000090000000a0000000b0000000c0000000d0000000e0000000f0000001300000001000000020000000100000003000000020000000200000001000000030000001400000015000000160000001700000018000000190000001a0000001e000000030000001f0000002300000027000000040000002f0000003300000002000000040000000200000005000000050000000400000002000000050000003400000035000000360000003700000038000000390000003a0000003e00000003000000060000000300000007000000060000000600000003000000070000003f00000040000000410000004200000043000000440000004500000049000000
-        paramByteDataSize: 00000000000000000100000004000000040000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000400000004000000080000000000000004000000010000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+        paramDataPos: 0000000000000000000000000100000005000000000000000000000000000000000000000100000001000000010000000000000002000000090000000a0000000b0000000c0000000d0000000e0000000f0000001300000001000000020000000100000003000000020000000300000001000000040000001400000015000000160000001700000018000000190000001a0000001e000000030000001f0000002300000027000000040000002f0000003300000002000000040000000200000005000000050000000500000002000000060000003400000035000000360000003700000038000000390000003a0000003e00000003000000060000000300000007000000060000000700000003000000080000003f00000040000000410000004200000043000000440000004500000049000000
+        paramByteDataSize: 0000000000000000010000000400000004000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000400000004000000080000000000000004000000010000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+    - name: Start
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 129
+        y: 110
+        width: 100
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Board
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Board
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Failed
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Wait For Player to Board
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SetBoolVariable2
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: c0cc1d04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: IsBoarded
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Boarded
+        - Board
+        - Failed
+        byteData: 0100000100000005000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 05000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
+        paramDataType: 11000000010000002800000001000000010000000700000007000000030000001700000017000000
+        paramName:
+        - storeResult
+        - everyFrame
+        - _atom
+        - Value
+        - InvertValue
+        - ActionTarget
+        - _variable
+        - VariableName
+        - TrueEvent
+        - FalseEvent
+        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000
+        paramByteDataSize: 00000000010000000000000001000000010000000400000004000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
+    - name: Board
+      isSystemEvent: 0
+      isGlobal: 0
     - name: Disperse Helix
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Failed
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
     variables:
       floatVariables: []
       intVariables: []
-      boolVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: IsBoarded
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       stringVariables: []
       vector2Variables:
       - useVariable: 1
@@ -727,7 +831,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 1

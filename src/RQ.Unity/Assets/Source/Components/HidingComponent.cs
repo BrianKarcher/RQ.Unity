@@ -35,6 +35,8 @@ namespace RQ.Physics.Components
             _entityStatsData = entityStatsComponent.GetEntityStats();
             _animComponent = GetComponentRepository().Components.GetComponent<AnimationComponent>();
             var tileMapSetup = GameObject.FindObjectOfType<TilemapSetup>();
+            if (tileMapSetup == null)
+                return;
             _tileMap = tileMapSetup.TileMap;
         }
 
@@ -57,6 +59,9 @@ namespace RQ.Physics.Components
                 if (_entityStatsData == null)
                     yield return null;
                 //base.FixedUpdate();
+                if (_tileMap == null || _tileMap.data == null)
+                    yield break;
+
                 int numLayers = _tileMap.data.NumLayers;
                 var pos = GetComponentRepository().transform.position;
                 bool hideTileFound = false;
