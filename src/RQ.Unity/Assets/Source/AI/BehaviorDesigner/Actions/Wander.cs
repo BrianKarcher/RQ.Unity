@@ -30,7 +30,7 @@ namespace Assets.Source.AI.Actions
             var entity = GetComponent<BehaviorTreeComponent>().GetComponentRepository();
             _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
             //_animComponent = entity.Components.GetComponent<AnimationComponent>();
-            _steering = _physicsComponent.GetSteering();
+            _steering = _physicsComponent.GetSteering() as SteeringBehaviorManager;
             _steering.TurnOn(behavior_type.wander);
             //animationAtom.Start(entity);
             //if (!string.IsNullOrEmpty(Animation))
