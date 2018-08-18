@@ -79,10 +79,10 @@ namespace RQ.Physics.Components
                 if (_entityStatsData.IsHiding != hideTileFound)
                     Debug.LogWarning("Changing hiding status");
                 _entityStatsData.IsHiding = hideTileFound;
-                Color color;
-                color = hideTileFound ? new Color(0f, 1f, 0f) : Color.white;
-                _animComponent.GetSpriteRenderer().SetColor(color);
-                yield return new WaitForSeconds(.1f);
+                //Color color;
+                //color = hideTileFound ? new Color(0f, 1f, 0f) : Color.white;
+                //_animComponent.GetSpriteRenderer().SetColor(color);
+                yield return new WaitForSeconds(.04f); // 25 FPS
             }
         }
 
