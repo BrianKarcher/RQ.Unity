@@ -42,12 +42,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.SetBoolVariable2
+        - Assets.Source.AI.PM_State_Machine.SetColor
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: c0cc1d04
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 000000000a000000
+        actionHashCodes: c0cc1d04fe4e7a01
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -80,13 +82,14 @@ MonoBehaviour:
         - 
         - FINISHED
         - 
-        byteData: 0100000100000000000000
+        byteData: 01000001000000000000000000803f0000803f0000803f0000803f
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 05000000
+        customTypeSizes: 0500000001000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
-        paramDataType: 11000000010000002800000001000000010000000700000007000000030000001700000017000000
+        - RQ.Animation.BasicAction.Action.SetColorAtom
+        paramDataType: 110000000100000028000000010000000100000007000000070000000300000017000000170000002800000004000000
         paramName:
         - storeResult
         - everyFrame
@@ -98,8 +101,10 @@ MonoBehaviour:
         - VariableName
         - TrueEvent
         - FalseEvent
-        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000
-        paramByteDataSize: 00000000010000000000000001000000010000000400000004000000000000000000000000000000
+        - _atom
+        - color
+        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000010000000b000000
+        paramByteDataSize: 000000000100000000000000010000000100000004000000040000000000000000000000000000000000000010000000
     - name: Hiding
       description: 
       colorIndex: 0
@@ -124,12 +129,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.SetBoolVariable2
+        - Assets.Source.AI.PM_State_Machine.SetColor
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: c0cc1d04
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 000000000a000000
+        actionHashCodes: c0cc1d04fe4e7a01
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -162,13 +169,14 @@ MonoBehaviour:
         - 
         - 
         - FINISHED
-        byteData: 0100000100000000000000
+        byteData: 0100000100000000000000000000000000803f000000000000803f
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 05000000
+        customTypeSizes: 0500000001000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
-        paramDataType: 11000000010000002800000001000000010000000700000007000000030000001700000017000000
+        - RQ.Animation.BasicAction.Action.SetColorAtom
+        paramDataType: 110000000100000028000000010000000100000007000000070000000300000017000000170000002800000004000000
         paramName:
         - storeResult
         - everyFrame
@@ -180,8 +188,10 @@ MonoBehaviour:
         - VariableName
         - TrueEvent
         - FalseEvent
-        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000
-        paramByteDataSize: 00000000010000000000000001000000010000000400000004000000000000000000000000000000
+        - _atom
+        - color
+        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000010000000b000000
+        paramByteDataSize: 000000000100000000000000010000000100000004000000040000000000000000000000000000000000000010000000
     events:
     - name: FINISHED
       isSystemEvent: 1
