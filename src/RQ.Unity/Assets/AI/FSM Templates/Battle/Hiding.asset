@@ -43,13 +43,15 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.SetBoolVariable2
         - Assets.Source.AI.PM_State_Machine.SetColor
+        - Assets.Source.AI.PM_State_Machine.EnableCollider
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 000000000a000000
-        actionHashCodes: c0cc1d04fe4e7a01
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000a0000000c000000
+        actionHashCodes: c0cc1d04fe4e7a01ec2b1f02
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -82,14 +84,16 @@ MonoBehaviour:
         - 
         - FINISHED
         - 
-        byteData: 01000001000000000000000000803f0000803f0000803f0000803f
+        - Aggro
+        byteData: 01000001000000000000000000803f0000803f0000803f0000803f0100
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0500000001000000
+        customTypeSizes: 050000000100000003000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
         - RQ.Animation.BasicAction.Action.SetColorAtom
-        paramDataType: 110000000100000028000000010000000100000007000000070000000300000017000000170000002800000004000000
+        - RQ.Animation.BasicAction.Action.EnableColliderAtom
+        paramDataType: 11000000010000002800000001000000010000000700000007000000030000001700000017000000280000000400000028000000010000000100000003000000
         paramName:
         - storeResult
         - everyFrame
@@ -103,8 +107,12 @@ MonoBehaviour:
         - FalseEvent
         - _atom
         - color
-        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000010000000b000000
-        paramByteDataSize: 000000000100000000000000010000000100000004000000040000000000000000000000000000000000000010000000
+        - _atom
+        - _enableOnEnter
+        - _enableOnExit
+        - name
+        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000010000000b000000020000001b0000001c00000003000000
+        paramByteDataSize: 00000000010000000000000001000000010000000400000004000000000000000000000000000000000000001000000000000000010000000100000000000000
     - name: Hiding
       description: 
       colorIndex: 0
@@ -130,13 +138,15 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.SetBoolVariable2
         - Assets.Source.AI.PM_State_Machine.SetColor
+        - Assets.Source.AI.PM_State_Machine.EnableCollider
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 000000000a000000
-        actionHashCodes: c0cc1d04fe4e7a01
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000a0000000c000000
+        actionHashCodes: c0cc1d04fe4e7a01ec2b1f02
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -169,14 +179,16 @@ MonoBehaviour:
         - 
         - 
         - FINISHED
-        byteData: 0100000100000000000000000000000000803f000000000000803f
+        - Aggro
+        byteData: 0100000100000000000000000000000000803f000000000000803f0001
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0500000001000000
+        customTypeSizes: 050000000100000003000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
         - RQ.Animation.BasicAction.Action.SetColorAtom
-        paramDataType: 110000000100000028000000010000000100000007000000070000000300000017000000170000002800000004000000
+        - RQ.Animation.BasicAction.Action.EnableColliderAtom
+        paramDataType: 11000000010000002800000001000000010000000700000007000000030000001700000017000000280000000400000028000000010000000100000003000000
         paramName:
         - storeResult
         - everyFrame
@@ -190,8 +202,12 @@ MonoBehaviour:
         - FalseEvent
         - _atom
         - color
-        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000010000000b000000
-        paramByteDataSize: 000000000100000000000000010000000100000004000000040000000000000000000000000000000000000010000000
+        - _atom
+        - _enableOnEnter
+        - _enableOnExit
+        - name
+        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000010000000b000000020000001b0000001c00000003000000
+        paramByteDataSize: 00000000010000000000000001000000010000000400000004000000000000000000000000000000000000001000000000000000010000000100000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
