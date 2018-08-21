@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4562525276340954}
   - component: {fileID: 114422778751686762}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HUD Text
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4363363909493332}
   - component: {fileID: 135349139766292334}
   - component: {fileID: 114023723553915776}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BoundingRadius
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4158271829236548}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hud
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 4057189209263820}
   - component: {fileID: 114223309072075660}
   - component: {fileID: 114353341559421238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Logic SM
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 4647800238901110}
   - component: {fileID: 82787352148765292}
   - component: {fileID: 114282019972297700}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Audio
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 4030961559025382}
   - component: {fileID: 114005818306728280}
   - component: {fileID: 114221624184792802}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: States
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4231169473042546}
   - component: {fileID: 114265067615958076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stats
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 114604049076130018}
   - component: {fileID: 114495173810430598}
   - component: {fileID: 114472051277628110}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MainSprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4769857593220670}
   - component: {fileID: 114030037400651658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Attack
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 114964522508631212}
   - component: {fileID: 54576391662119218}
   - component: {fileID: 114595264509050732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LittleBird
   m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 23583720519887070}
   - component: {fileID: 33294864940148568}
   - component: {fileID: 114194868345347614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShadowSprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1920342939768580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4838595295168684}
@@ -421,7 +421,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896976730737982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.08, y: 2.32, z: -0.5}
+  m_LocalPosition: {x: 1.36, y: 1.04, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4231169473042546}
@@ -973,6 +973,12 @@ MonoBehaviour:
       intVariables: []
       boolVariables:
       - useVariable: 1
+        name: isSleeping
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0
+      - useVariable: 1
         name: playerHide
         tooltip: 
         showInInspector: 0
@@ -1004,7 +1010,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
@@ -1014,7 +1020,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -1454,7 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 14ab1a9a-4192-4c8a-b95e-8078522497f2
+  _uniqueId: 0e8ac948-a081-4f93-a3e4-6f26897750ad
   componentName: 
   _rqName: Controller RQ.Physics.Components.PlayMakerStateMachineComponent
   _rqName2: 3eafea01-1694-4667-b404-27171b6efc7b
