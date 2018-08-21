@@ -147,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.76559997, y: 2.7186947, z: -0.45}
+  m_LocalPosition: {x: 2.7606108, y: 1.9059781, z: -0.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 440948}
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 900c0977-25e2-4449-a1ff-aa8178e5427f
+  _uniqueId: dec82a98-835d-4bce-b35f-04f068592f19
   componentName: 
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: f7341858-0926-46ed-b2c3-2d8b0f6a924b
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: -1087292713, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 4a4200de-9af2-4df1-99f6-e13310c8adb8
+  _uniqueId: 54c156b5-e918-4bbc-bc71-0dc67b3dfec6
   componentName: 
   _rqName: Kill RQ.Entity.StatesV2.KillSelf
   _rqName2: 63b9cc2d-62bf-43e6-8f4d-d603ef649e89
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 8d3eb3ef-1a20-43a5-8225-e971975c99bb
+  _uniqueId: ff0f706b-3462-43a3-af96-7df45a5263e9
   componentName: 
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: 71ff3a0a-884a-400b-bc08-faa4424a9c5d
@@ -343,7 +343,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: 8d3eb3ef-1a20-43a5-8225-e971975c99bb
+    StateMachineUniqueId: ff0f706b-3462-43a3-af96-7df45a5263e9
     StateMachineName: States
     StateData: []
   _logTransitions: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 986810119, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 5f0d6d63-ef2c-4726-96e7-d209c734efc3
+  _uniqueId: d9e33813-d9f9-4e3a-9b86-5224d5f72259
   componentName: 
   _rqName: Start RQ.Entity.StatesV2.AnimatorState
   _rqName2: 08c49efc-dd65-4876-9f1d-aa763af21c86
@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 114299923752621342}
   - component: {fileID: 65502005554461904}
   - component: {fileID: 54573094749715552}
+  - component: {fileID: 114644243688782034}
   m_Layer: 0
   m_Name: MovingTrigger
   m_TagString: Untagged
@@ -848,6 +849,7 @@ MonoBehaviour:
     OriginalMaxSpeed: 1.23
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
@@ -911,6 +913,7 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
@@ -960,6 +963,7 @@ MonoBehaviour:
       x: 0
       y: 0
     Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
     _steeringForce:
       x: 0
       y: 0
@@ -1196,6 +1200,22 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 2f944e729274f6c448580ee2b06c6947, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114644243688782034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179843909851818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 8f3e0052-88dd-45b9-b02c-a47d2352909f
+  componentName: 
+  _rqName: MovingTrigger Assets.Source.CollisionProcessor
+  _rqName2: 5e0e6554-5916-476d-bb95-294715373693
+  _componentRepository: {fileID: 11463946}
 --- !u!114 &114649615462771506
 MonoBehaviour:
   m_ObjectHideFlags: 1
