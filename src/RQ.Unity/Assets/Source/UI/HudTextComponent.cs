@@ -8,7 +8,7 @@ namespace RQ2.Physics.Components
     [AddComponentMenu("RQ/Components/Hud Text")]
     public class HudTextComponent : ComponentPersistence<HudTextComponent>
     {
-        public Transform HudTextPrefab;
+        public HUDText HudTextPrefab;
         private HUDText _hudText;
 
         public override void Start()

@@ -62,23 +62,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1322694858898766
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4358178347824288}
-  - component: {fileID: 114628823296980064}
-  - component: {fileID: 114438008808234930}
-  m_Layer: 10
-  m_Name: States
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1337087331038768
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725909762811524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.48, y: 2.6399999, z: 0}
+  m_LocalPosition: {x: 2.48, y: 2.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4070970755720582}
@@ -257,7 +240,6 @@ Transform:
   - {fileID: 4065365935116278}
   - {fileID: 4666140638340432}
   - {fileID: 4947773717362838}
-  - {fileID: 4358178347824288}
   - {fileID: 4864318357909136}
   - {fileID: 4020851243580166}
   - {fileID: 4962927311484582}
@@ -277,7 +259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000617181481042}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4065365935116278
 Transform:
@@ -316,20 +298,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000617181481042}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4358178347824288
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1322694858898766}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4000617181481042}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4420961211699200
 Transform:
@@ -355,7 +324,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000617181481042}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4666140638340432
 Transform:
@@ -381,7 +350,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000617181481042}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4947773717362838
 Transform:
@@ -420,7 +389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000617181481042}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23081625078562296
 MeshRenderer:
@@ -611,7 +580,7 @@ MonoBehaviour:
   _rqName: HUD Text RQ2.Physics.Components.HudTextComponent
   _rqName2: b6d33235-8e3f-42bd-b0a1-f82e743176d5
   _componentRepository: {fileID: 114251591095256496}
-  HudTextPrefab: {fileID: 4947773717362838}
+  HudTextPrefab: {fileID: 11400002, guid: da1dd9b479a126b4b87cee97599c6ed7, type: 2}
 --- !u!114 &114030890514159386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -838,25 +807,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SnapToGrid: 1
   tileOffset: {x: 0.08, y: 0.08, z: 0}
---- !u!114 &114438008808234930
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1322694858898766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: f3fdef8c-2ac6-4665-acb4-ae47e2e52e4c
-  componentName: 
-  _rqName: States RQ.FSM.V2.StateTransitionTable
-  _rqName2: 53fb51ec-74a3-49a1-9673-81e35bf02fa0
-  _componentRepository: {fileID: 114251591095256496}
-  Records: []
-  ConditionsList: {fileID: 0}
-  ConditionsListTransform: {fileID: 0}
 --- !u!114 &114528453697198254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1012,37 +962,6 @@ MonoBehaviour:
     _steeringForce:
       x: 0
       y: 0
---- !u!114 &114628823296980064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1322694858898766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: fb9f776a-9214-4e62-8044-7f51737511f9
-  componentName: 
-  _rqName: States RQ.FSM.V2.StateMachine
-  _rqName2: a1f2b1a9-e884-4056-bcba-1d1adab52bd6
-  _componentRepository: {fileID: 114251591095256496}
-  _initialState: {fileID: 0}
-  _stateTransitionTable: {fileID: 114438008808234930}
-  _currentState: {fileID: 0}
-  _stateMachineReentry: 0
-  _stateInfo:
-    IsComplete: 0
-    IsStuck: 0
-    SwitchToBattle: 0
-    StateStartTime: 0
-    ChangeScene: 0
-    CurrentStateUniqueId: 
-    StateMachineUniqueId: fb9f776a-9214-4e62-8044-7f51737511f9
-    StateMachineName: States
-    StateData: []
-  _logTransitions: 0
 --- !u!114 &114638905317961626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1141,7 +1060,7 @@ MonoBehaviour:
   _sharedLayer:
     _layerIndex: 0
   _mainCollider: {fileID: 4666140638340432}
-  _autoChangeLayers: 0
+  _autoChangeLayers: 1
 --- !u!114 &114731408653508804
 MonoBehaviour:
   m_ObjectHideFlags: 1
