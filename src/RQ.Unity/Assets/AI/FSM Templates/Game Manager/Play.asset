@@ -23,7 +23,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 66
+        x: 210
         y: 113
         width: 113
         height: 48
@@ -100,7 +100,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 60.976562
+        x: 204.97656
         y: 192
         width: 100
         height: 32
@@ -181,7 +181,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 247
+        x: 391
         y: 115
         width: 101
         height: 32
@@ -245,10 +245,10 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 244
+        x: 388
         y: 194
         width: 140
-        height: 64
+        height: 80
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -277,6 +277,14 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: StartMenu
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Start Menu
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.SendMessage
@@ -284,16 +292,18 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
+        - Assets.Source.AI.PM_State_Machine.ButtonPressed
         customNames:
         - 
         - 
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 0000000010000000150000001a0000001f000000
-        actionHashCodes: 64eb38042334d0002334d0002334d00007377b01
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 0000000010000000150000001a0000001f00000025000000
+        actionHashCodes: 64eb38042334d0002334d0002334d00007377b0197bba302
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -365,18 +375,21 @@ MonoBehaviour:
         - BossDied
         - BossDied
         - 
-        byteData: 0100000000000000000001000000010200000003000000
+        - 
+        - StartMenu
+        byteData: 010000000000000000000100000001020000000300000003000000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 0b00000002000000020000000200000003000000
+        customTypeSizes: 0b0000000200000002000000020000000400000001000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
-        paramDataType: 2900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001700000001000000280000000300000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000001100000028000000010000000700000007000000
+        - RQ.AI.Action.ButtonPressedAtom
+        paramDataType: 2900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000110000002800000001000000070000000700000003000000170000002800000007000000
         paramName:
         - Targets
         - Target
@@ -414,14 +427,18 @@ MonoBehaviour:
         - Value
         - ActionTarget
         - VariableToSet
-        paramDataPos: 0000000000000000000000000100000000000000000000000000000001000000000000000100000002000000030000000400000005000000060000000a000000020000000b000000010000000300000004000000050000000c000000020000000600000007000000080000000d00000003000000090000000a00000000000000040000000e0000000f00000013000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000010000000400000004000000
+        - VariableName
+        - Pressed
+        - _buttonPressedAtom
+        - _button
+        paramDataPos: 0000000000000000000000000100000000000000000000000000000001000000000000000100000002000000030000000400000005000000060000000a000000020000000b000000010000000300000004000000050000000c000000020000000600000007000000080000000d00000003000000090000000a00000000000000040000000e0000000f000000130000000b0000000c0000000500000017000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000040000000400000000000000000000000000000004000000
     - name: Conversation
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 249
+        x: 393
         y: 299
         width: 107
         height: 32
@@ -450,7 +467,7 @@ MonoBehaviour:
         - 
         actionEnabled: 01010101
         actionIsOpen: 01010101
-        actionStartIndex: 000000000f0000001e0000002d000000
+        actionStartIndex: 00000000100000002000000030000000
         actionHashCodes: 64eb380464eb380464eb38042334d000
         unityObjectParams: []
         fsmGameObjectParams:
@@ -577,19 +594,19 @@ MonoBehaviour:
         - 
         - EndConversation
         - 
-        byteData: 00000000010000000001000000000103000000010001000000030000000100
+        byteData: 00000000000100000000010000000000010300000001000100000000030000000100
         arrayParamSizes: 000000000000000000000000
         arrayParamTypes:
         - System.String
         - System.String
         - System.String
-        customTypeSizes: 0a0000000a0000000a00000002000000
+        customTypeSizes: 0b0000000b0000000b00000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 2900000012000000130000001200000028000000030000000c00000003000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c00000003000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c00000003000000010000000100000001000000010000000100000007000000010000001700000001000000280000000300000003000000
+        paramDataType: 2900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001700000001000000280000000300000003000000
         paramName:
         - Targets
         - Target
@@ -603,6 +620,7 @@ MonoBehaviour:
         - _sendToAll
         - _sendToMainCharacter
         - _sendToUsableController
+        - _sendToGameController
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
@@ -618,6 +636,7 @@ MonoBehaviour:
         - _sendToAll
         - _sendToMainCharacter
         - _sendToUsableController
+        - _sendToGameController
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
@@ -633,6 +652,7 @@ MonoBehaviour:
         - _sendToAll
         - _sendToMainCharacter
         - _sendToUsableController
+        - _sendToGameController
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
@@ -641,14 +661,14 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 00000000000000000000000001000000000000000000000000000000010000000000000001000000020000000300000004000000050000000900000001000000020000000100000003000000010000000200000001000000030000000a0000000b0000000c0000000d0000000e0000000f0000001300000002000000040000000200000005000000020000000400000002000000050000001400000015000000160000001700000018000000190000001d000000060000001e000000030000000700000008000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000004000000010000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000004000000010000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000004000000010000000000000001000000000000000000000000000000
+        paramDataPos: 0000000000000000000000000100000000000000000000000000000001000000000000000100000002000000030000000400000005000000060000000a00000001000000020000000100000003000000010000000200000001000000030000000b0000000c0000000d0000000e0000000f0000001000000011000000150000000200000004000000020000000500000002000000040000000200000005000000160000001700000018000000190000001a0000001b0000001c000000200000000600000021000000030000000700000008000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000001000000000000000000000000000000
     - name: Modal
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 250
+        x: 394
         y: 373
         width: 100
         height: 32
@@ -675,7 +695,7 @@ MonoBehaviour:
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 000000000f0000001e000000
+        actionStartIndex: 000000001000000020000000
         actionHashCodes: 64eb380464eb38042334d000
         unityObjectParams: []
         fsmGameObjectParams:
@@ -769,17 +789,17 @@ MonoBehaviour:
         - 
         - ButtonClicked
         - Ok
-        byteData: 000000000100000000010001000000030000000100
+        byteData: 0000000000010000000001000100000000030000000100
         arrayParamSizes: 0000000000000000
         arrayParamTypes:
         - System.String
         - System.String
-        customTypeSizes: 0a0000000a00000002000000
+        customTypeSizes: 0b0000000b00000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 2900000012000000130000001200000028000000030000000c00000003000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c00000003000000010000000100000001000000010000000100000007000000010000001700000001000000280000000300000003000000
+        paramDataType: 2900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001700000001000000280000000300000003000000
         paramName:
         - Targets
         - Target
@@ -793,6 +813,7 @@ MonoBehaviour:
         - _sendToAll
         - _sendToMainCharacter
         - _sendToUsableController
+        - _sendToGameController
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
@@ -808,6 +829,7 @@ MonoBehaviour:
         - _sendToAll
         - _sendToMainCharacter
         - _sendToUsableController
+        - _sendToGameController
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
@@ -816,14 +838,14 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 00000000000000000000000001000000000000000000000000000000010000000000000001000000020000000300000004000000050000000900000001000000020000000100000003000000010000000200000001000000030000000a0000000b0000000c0000000d0000000e0000000f000000130000000400000014000000020000000500000006000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000004000000010000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000004000000010000000000000001000000000000000000000000000000
+        paramDataPos: 0000000000000000000000000100000000000000000000000000000001000000000000000100000002000000030000000400000005000000060000000a00000001000000020000000100000003000000010000000200000001000000030000000b0000000c0000000d0000000e0000000f0000001000000011000000150000000400000016000000020000000500000006000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000001000000000000000000000000000000
     - name: Boss Death
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 456
+        x: 600
         y: 132
         width: 100
         height: 32
@@ -880,14 +902,15 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - BossDeathSequence
+        - 
         byteData: 01000200000003000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0200000003000000
+        customTypeSizes: 0200000004000000
         customTypeNames:
         - RQ.AI.Atom.GameManager.PlaySequenceAtom
         - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
-        paramDataType: 2800000003000000010000001100000028000000010000000700000007000000
+        paramDataType: 280000000300000001000000110000002800000001000000070000000700000003000000
         paramName:
         - _atom
         - SequenceName
@@ -897,8 +920,238 @@ MonoBehaviour:
         - Value
         - ActionTarget
         - VariableToSet
-        paramDataPos: 0000000000000000000000000000000001000000010000000200000006000000
-        paramByteDataSize: 0000000000000000010000000000000000000000010000000400000004000000
+        - VariableName
+        paramDataPos: 000000000000000000000000000000000100000001000000020000000600000001000000
+        paramByteDataSize: 000000000000000001000000000000000000000001000000040000000400000000000000
+    - name: Start Menu
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 208
+        y: 263
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Normal
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SendMessage
+        - Assets.Source.AI.PM_State_Machine.SendMessage
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000001000000020000000
+        actionHashCodes: 64eb380464eb38042334d000
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - StartMenu
+        - 
+        - Pause
+        - 
+        - 
+        - ButtonClicked
+        - Return
+        byteData: 0000000000010000000001010000000000000000000100
+        arrayParamSizes: 0000000000000000
+        arrayParamTypes:
+        - System.String
+        - System.String
+        customTypeSizes: 0b0000000b00000002000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 2900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001700000001000000280000000300000003000000
+        paramName:
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        paramDataPos: 0000000000000000000000000100000000000000000000000000000001000000000000000100000002000000030000000400000005000000060000000a00000001000000020000000100000003000000010000000200000001000000030000000b0000000c0000000d0000000e0000000f0000001000000011000000150000000400000016000000020000000500000006000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000001000000000000000000000000000000
+    - name: Load Game
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 193
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -913,6 +1166,9 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 0
     - name: StartCutscene
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: StartMenu
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []

@@ -31,6 +31,8 @@ namespace RQ.Physics.Components
         public override void Start()
         {
             base.Start();
+            if (!Application.isPlaying)
+                return;
             var entityStatsComponent = GetComponentRepository().Components.GetComponent<EntityStatsComponent>();
             _entityStatsData = entityStatsComponent.GetEntityStats();
             _animComponent = GetComponentRepository().Components.GetComponent<AnimationComponent>();
@@ -43,12 +45,16 @@ namespace RQ.Physics.Components
         public override void OnEnable()
         {
             base.OnEnable();
+            if (!Application.isPlaying)
+                return;
             StartCoroutine(MyFixedUpdate());
         }
 
         public override void OnDisable()
         {
             base.OnDisable();
+            if (!Application.isPlaying)
+                return;
             StopCoroutine(MyFixedUpdate());
         }
 
