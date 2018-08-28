@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using WellFired;
+using RQ.Model.Enums;
 //using RQ.Common.UI;
 //using RQ.FSM.Game;
 
@@ -779,7 +780,7 @@ namespace RQ2.UI
         //[SerializeField]
         //private RQ.Entity.StatesV2.SaveLoad _savePanelState;
 
-        public void SetupPersistenceGrid(string mainLabelText, RQ.Entity.StatesV2.SaveLoad savePanelState,
+        public void SetupPersistenceGrid(string mainLabelText, SaveOrLoad savePanelState,
             bool newGameSlot)
         {
             PersistenceMainLabelText = mainLabelText;
