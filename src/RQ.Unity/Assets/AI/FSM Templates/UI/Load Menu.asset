@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: UI Manager
+  m_Name: Load Menu
   m_EditorClassIdentifier: 
   category: General
   fsm:
@@ -32,18 +32,18 @@ MonoBehaviour:
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: TitleScreen
+          name: Load
           isSystemEvent: 0
           isGlobal: 0
-        toState: Title Screen
+        toState: Load Confirmation Dialog
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       - fsmEvent:
-          name: Play
+          name: Cancel
           isSystemEvent: 0
           isGlobal: 0
-        toState: Play
+        toState: End
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -81,12 +81,12 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - TitleScreen
-        - TitleScreen
-        - 
-        - Play
-        - Playtime
-        - 
+        - Cancel
+        - ButtonClicked
+        - Cancel
+        - Load
+        - ButtonClicked
+        - SaveSlot
         byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
@@ -108,38 +108,38 @@ MonoBehaviour:
         - Data
         paramDataPos: 00000000000000000000000001000000020000000300000001000000010000000400000005000000
         paramByteDataSize: 00000000010000000000000000000000000000000000000001000000000000000000000000000000
-    - name: Title Screen
+    - name: Load Confirmation Dialog
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 250
-        y: 114
-        width: 100
+        x: 231
+        y: 115
+        width: 187
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: Load
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
-        toState: Load Menu
+        toState: Process Load
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
-        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.SetModalProperties
         - Assets.Source.AI.PM_State_Machine.ShowPanel
         customNames:
         - 
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000005000000
-        actionHashCodes: 2334d0008186ef04
+        actionStartIndex: 0000000003000000
+        actionHashCodes: b7491c018186ef04
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -163,36 +163,145 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - 
-        - ButtonClicked
-        - LoadMenu
-        byteData: 0000000000
+        - Load game?
+        byteData: 010b000000
         arrayParamSizes: 01000000
         arrayParamTypes:
         - RQ.Enum.Panels
         customTypeSizes: 0200000001000000
         customTypeNames:
-        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        - RQ.AI.Atom.UI.SetModalPropertiesAtom
         - RQ.AI.Atom.UI.ShowPanelAtom
-        paramDataType: 1700000001000000280000000300000003000000280000000c00000007000000
+        paramDataType: 280000000300000001000000280000000c00000007000000
         paramName:
-        - Received
-        - GotoPreviousState
-        - _isMessageReceivedAtom
-        - Message
-        - Data
+        - _atom
+        - ModalText
+        - HasCancelButton
         - _atom
         - _panels
         - 
-        paramDataPos: 0000000000000000000000000100000002000000010000000000000001000000
-        paramByteDataSize: 0000000001000000000000000000000000000000000000000000000004000000
-    - name: Play
+        paramDataPos: 000000000000000000000000010000000000000001000000
+        paramByteDataSize: 000000000000000001000000000000000000000004000000
+    - name: Process Load
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 251
-        y: 199
+        x: 487
+        y: 113
+        width: 108
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: End
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SendMessage
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 64eb3804
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - LoadGame
+        - 
+        byteData: 0000000001000000000001
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - System.String
+        customTypeSizes: 0b000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        paramDataType: 2900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
+        paramName:
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        paramDataPos: 0000000000000000000000000100000000000000000000000000000001000000000000000100000002000000030000000400000005000000060000000a000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+    - name: End
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 279
+        y: 202
         width: 100
         height: 16
       isBreakpoint: 0
@@ -201,24 +310,19 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
-        - Assets.Source.AI.PM_State_Machine.ShowPanel
-        - HutongGames.PlayMaker.Actions.RunFSM
+        - HutongGames.PlayMaker.Actions.FinishFSM
         customNames:
         - 
-        - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000004000000
-        actionHashCodes: 8186ef04fe058700
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 00000000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
-        fsmTemplateControlParams:
-        - fsmTemplate: {fileID: 11400000, guid: ac2b720de49a5eb4b8c989b82e94892c,
-            type: 2}
-          fsmVarOverrides: []
+        fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
@@ -228,141 +332,27 @@ MonoBehaviour:
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
-        fsmIntParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
+        fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams:
-        - 
-        byteData: 0700000009000000
-        arrayParamSizes: 02000000
-        arrayParamTypes:
-        - RQ.Enum.Panels
-        customTypeSizes: 01000000
-        customTypeNames:
-        - RQ.AI.Atom.UI.ShowPanelAtom
-        paramDataType: 280000000c0000000700000007000000260000001000000017000000
-        paramName:
-        - _atom
-        - _panels
-        - 
-        - 
-        - fsmTemplateControl
-        - storeID
-        - finishEvent
-        paramDataPos: 00000000000000000000000004000000000000000000000000000000
-        paramByteDataSize: 00000000000000000400000004000000000000000000000000000000
-    - name: Load Menu
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 447
-        y: 116
-        width: 100
-        height: 48
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: Cancel
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Title Screen
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: Play
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Play
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - Assets.Source.AI.PM_State_Machine.ShowPanel
-        - HutongGames.PlayMaker.Actions.RunFSM
-        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
-        customNames:
-        - 
-        - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000300000006000000
-        actionHashCodes: 8186ef04fe0587002334d000
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams:
-        - fsmTemplate: {fileID: 11400000, guid: 4f33c41e4396ec04990676ad56f319f7,
-            type: 2}
-          fsmVarOverrides: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - 
-        - Play
-        - Playtime
-        - 
-        byteData: 0200000000
-        arrayParamSizes: 01000000
-        arrayParamTypes:
-        - RQ.Enum.Panels
-        customTypeSizes: 0100000002000000
-        customTypeNames:
-        - RQ.AI.Atom.UI.ShowPanelAtom
-        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 280000000c000000070000002600000010000000170000001700000001000000280000000300000003000000
-        paramName:
-        - _atom
-        - _panels
-        - 
-        - fsmTemplateControl
-        - storeID
-        - finishEvent
-        - Received
-        - GotoPreviousState
-        - _isMessageReceivedAtom
-        - Message
-        - Data
-        paramDataPos: 0000000000000000000000000000000000000000000000000100000004000000010000000200000003000000
-        paramByteDataSize: 0000000000000000040000000000000000000000000000000000000001000000000000000000000000000000
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     events:
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
     - name: Cancel
       isSystemEvent: 0
       isGlobal: 0

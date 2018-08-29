@@ -1,5 +1,6 @@
 ﻿using RQ;
 using RQ.FSM.V2.Conditionals;
+using RQ.Messaging;
 using RQ.Model.UI;
 using RQ2.UI;
 //using RQ.UI;
@@ -58,6 +59,7 @@ namespace RQ2.Controller.UI.Grid
             //GameController._instance.SaveGame(FileName);
             UIManager.Instance.ClickedSaveSlotData = GetSaveSlotData();
             ProcessButtonEvents();
+            MessageDispatcher2.Instance.DispatchMsg("ButtonClicked", 0f, string.Empty, null, "SaveSlot");
         }
     }
 }
