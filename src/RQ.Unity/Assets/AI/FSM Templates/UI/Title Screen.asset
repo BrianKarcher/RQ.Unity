@@ -83,13 +83,15 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000005000000
-        actionHashCodes: 2334d0002334d000
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000050000000a000000
+        actionHashCodes: 2334d0002334d0002334d000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -119,14 +121,18 @@ MonoBehaviour:
         - SceneSelect
         - ButtonClicked
         - NewGame
-        byteData: 0000
+        - HowToPlay
+        - ButtonClicked
+        - HowToPlay
+        byteData: 000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0200000002000000
+        customTypeSizes: 020000000200000002000000
         customTypeNames:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 17000000010000002800000003000000030000001700000001000000280000000300000003000000
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000
         paramName:
         - Received
         - GotoPreviousState
@@ -138,8 +144,13 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 00000000000000000000000001000000020000000300000001000000010000000400000005000000
-        paramByteDataSize: 00000000010000000000000000000000000000000000000001000000000000000000000000000000
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        paramDataPos: 000000000000000000000000010000000200000003000000010000000100000004000000050000000600000002000000020000000700000008000000
+        paramByteDataSize: 000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000
     - name: Load Menu
       description: 
       colorIndex: 0
@@ -376,7 +387,7 @@ MonoBehaviour:
         stringParams:
         - FINISHED
         - ButtonClicked
-        - Cancel
+        - Return
         byteData: 0d00000000
         arrayParamSizes: 01000000
         arrayParamTypes:
