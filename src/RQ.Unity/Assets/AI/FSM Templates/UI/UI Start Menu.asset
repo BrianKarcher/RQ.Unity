@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: UI Play
+  m_Name: UI Start Menu
   m_EditorClassIdentifier: 
   category: General
   fsm:
@@ -23,8 +23,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 242
-        y: 193
+        x: 274
+        y: 177
         width: 100
         height: 48
       isBreakpoint: 0
@@ -32,18 +32,18 @@ MonoBehaviour:
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: StartMenu
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
-        toState: Start Menu
+        toState: Return to Game
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       - fsmEvent:
-          name: SkillMenu
+          name: Quit
           isSystemEvent: 0
           isGlobal: 0
-        toState: Skill Menu
+        toState: Main Menu Confirmation
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -51,15 +51,345 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
-        - Assets.Source.AI.PM_State_Machine.SendMessage
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 2334d0002334d000
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - FINISHED
+        - ButtonClicked
+        - Return
+        - Quit
+        - ButtonClicked
+        - MainMenu
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0200000002000000
+        customTypeNames:
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 17000000010000002800000003000000030000001700000001000000280000000300000003000000
+        paramName:
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        paramDataPos: 00000000000000000000000001000000020000000300000001000000010000000400000005000000
+        paramByteDataSize: 00000000010000000000000000000000000000000000000001000000000000000000000000000000
+    - name: Settings
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 449
+        y: 121
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    - name: Save Menu
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 452
+        y: 219
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    - name: Item Menu
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 347
+        y: 282
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    - name: Main Menu Confirmation
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 62
+        y: 279
+        width: 179
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Cancel
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Start
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Quit
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Quit to Main Menu
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.SetModalProperties
+        - Assets.Source.AI.PM_State_Machine.ShowPanel
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000050000000a000000
-        actionHashCodes: 2334d0002334d00064eb3804
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000050000000a0000000d000000
+        actionHashCodes: 2334d0002334d000b7491c018186ef04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Quit
+        - ButtonClicked
+        - Ok
+        - Cancel
+        - ButtonClicked
+        - Cancel
+        - Quit to Main Menu?
+        byteData: 0000010b000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - RQ.Enum.Panels
+        customTypeSizes: 02000000020000000200000001000000
+        customTypeNames:
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        - RQ.AI.Atom.UI.SetModalPropertiesAtom
+        - RQ.AI.Atom.UI.ShowPanelAtom
+        paramDataType: 17000000010000002800000003000000030000001700000001000000280000000300000003000000280000000300000001000000280000000c00000007000000
+        paramName:
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        - _atom
+        - ModalText
+        - HasCancelButton
+        - _atom
+        - _panels
+        - 
+        paramDataPos: 00000000000000000000000001000000020000000300000001000000010000000400000005000000020000000600000002000000030000000000000003000000
+        paramByteDataSize: 00000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000004000000
+    - name: Quit to Main Menu
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 61
+        y: 363
+        width: 139
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SendMessage
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 64eb3804
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -114,35 +444,17 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - StartMenu
-        - StartMenu
+        - TitleScreen
         - 
-        - SkillMenu
-        - SkillMenu
-        - 
-        - PlayUI
-        - 
-        byteData: 00000000000001000000000001
+        byteData: 0000000001000000000001
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 02000000020000000b000000
+        customTypeSizes: 0b000000
         customTypeNames:
-        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
-        paramDataType: 170000000100000028000000030000000300000017000000010000002800000003000000030000002900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
+        paramDataType: 2900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
-        - Received
-        - GotoPreviousState
-        - _isMessageReceivedAtom
-        - Message
-        - Data
-        - Received
-        - GotoPreviousState
-        - _isMessageReceivedAtom
-        - Message
-        - Data
         - Targets
         - Target
         - TargetGO
@@ -159,231 +471,30 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 000000000000000000000000010000000200000003000000010000000100000004000000050000000000000000000000000000000100000002000000060000000000000007000000020000000300000004000000050000000600000007000000080000000c000000
-        paramByteDataSize: 0000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
-    - name: Conversation
+        paramDataPos: 0000000000000000000000000100000000000000000000000000000001000000000000000100000002000000030000000400000005000000060000000a000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+    - name: Return to Game
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 421
-        y: 139
-        width: 107
+        x: 59
+        y: 199
+        width: 123
         height: 16
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions: []
-      actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    - name: Alert
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 439
-        y: 214
-        width: 100
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    - name: Skill Menu
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 402
-        y: 291
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Start
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
       actionData:
         actionNames:
-        - Assets.Source.AI.PM_State_Machine.ShowPanel
-        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
-        - Assets.Source.AI.PM_State_Machine.ButtonPressed
-        - Assets.Source.AI.PM_State_Machine.ButtonPressed
-        - Assets.Source.AI.PM_State_Machine.ButtonPressed
+        - HutongGames.PlayMaker.Actions.FinishFSM
         customNames:
         - 
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 0000000003000000080000000b0000000e000000
-        actionHashCodes: 8186ef042334d00097bba30297bba30297bba302
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - FINISHED
-        - ButtonClicked
-        - Cancel
-        - FINISHED
-        - FINISHED
-        - FINISHED
-        byteData: 1100000000020000000100000003000000
-        arrayParamSizes: 01000000
-        arrayParamTypes:
-        - RQ.Enum.Panels
-        customTypeSizes: 0100000002000000010000000100000001000000
-        customTypeNames:
-        - RQ.AI.Atom.UI.ShowPanelAtom
-        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        - RQ.AI.Action.ButtonPressedAtom
-        - RQ.AI.Action.ButtonPressedAtom
-        - RQ.AI.Action.ButtonPressedAtom
-        paramDataType: 280000000c000000070000001700000001000000280000000300000003000000170000002800000007000000170000002800000007000000170000002800000007000000
-        paramName:
-        - _atom
-        - _panels
-        - 
-        - Received
-        - GotoPreviousState
-        - _isMessageReceivedAtom
-        - Message
-        - Data
-        - Pressed
-        - _buttonPressedAtom
-        - _button
-        - Pressed
-        - _buttonPressedAtom
-        - _button
-        - Pressed
-        - _buttonPressedAtom
-        - _button
-        paramDataPos: 000000000000000000000000000000000400000001000000010000000200000003000000020000000500000004000000030000000900000005000000040000000d000000
-        paramByteDataSize: 0000000000000000040000000000000001000000000000000000000000000000000000000000000004000000000000000000000004000000000000000000000004000000
-    - name: Cutscene
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 152
-        y: 296
-        width: 100
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 00000000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -416,99 +527,32 @@ MonoBehaviour:
         paramName: []
         paramDataPos: 
         paramByteDataSize: 
-    - name: Cutscene Conversation
+    - name: Map
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 111
-        y: 370
-        width: 171
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    - name: Start Menu
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 52
+        x: 93
         y: 109
         width: 100
-        height: 32
+        height: 16
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Start
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
+      transitions: []
       actionData:
-        actionNames:
-        - Assets.Source.AI.PM_State_Machine.ShowPanel
-        - HutongGames.PlayMaker.Actions.RunFSM
-        customNames:
-        - 
-        - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 8186ef04fe058700
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
-        fsmTemplateControlParams:
-        - fsmTemplate: {fileID: 11400000, guid: a1da361f6fc6c26498a5f3bf44c3fcaf,
-            type: 2}
-          fsmVarOverrides: []
+        fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
@@ -518,38 +562,23 @@ MonoBehaviour:
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
-        fsmIntParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
+        fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams:
-        - 
-        byteData: 0a000000
-        arrayParamSizes: 01000000
-        arrayParamTypes:
-        - RQ.Enum.Panels
-        customTypeSizes: 01000000
-        customTypeNames:
-        - RQ.AI.Atom.UI.ShowPanelAtom
-        paramDataType: 280000000c00000007000000260000001000000017000000
-        paramName:
-        - _atom
-        - _panels
-        - 
-        - fsmTemplateControl
-        - storeID
-        - finishEvent
-        paramDataPos: 000000000000000000000000000000000000000000000000
-        paramByteDataSize: 000000000000000004000000000000000000000000000000
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -566,10 +595,7 @@ MonoBehaviour:
     - name: PlayerHide
       isSystemEvent: 0
       isGlobal: 0
-    - name: SkillMenu
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: StartMenu
+    - name: Quit
       isSystemEvent: 0
       isGlobal: 0
     - name: TitleScreen
