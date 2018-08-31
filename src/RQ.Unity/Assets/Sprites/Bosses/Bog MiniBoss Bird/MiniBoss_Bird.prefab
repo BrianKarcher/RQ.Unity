@@ -78,7 +78,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1431621116600820
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725909762811524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.48, y: 2.48, z: 0}
+  m_LocalPosition: {x: 2.48, y: 2.32, z: -0.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4070970755720582}
@@ -422,7 +422,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
 --- !u!23 &23993646687336938
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -612,7 +612,7 @@ MonoBehaviour:
   _rqName2: cd5911d6-9cc1-43d6-90e6-8e53016d62a2
   _componentRepository: {fileID: 114251591095256496}
   _pathFinder: {fileID: 0}
-  _target: {fileID: 0}
+  _target: {fileID: 420414, guid: 66e5e324f55475048a942c682d319e86, type: 2}
   _targets: []
   TargetTags: []
   _locations: []
@@ -773,7 +773,7 @@ MonoBehaviour:
   meshCollider: {fileID: 0}
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
-  renderLayer: 1
+  renderLayer: 0
 --- !u!114 &114251591095256496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1045,7 +1045,7 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
+    _levelLayer: 2
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
@@ -1214,7 +1214,13 @@ MonoBehaviour:
     globalTransitions: []
     variables:
       floatVariables: []
-      intVariables: []
+      intVariables:
+      - useVariable: 1
+        name: step
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       boolVariables: []
       stringVariables: []
       vector2Variables: []
@@ -1222,7 +1228,13 @@ MonoBehaviour:
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: target
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -1230,7 +1242,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
@@ -1384,8 +1396,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.86
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.15
+  m_Center: {x: 0, y: -0.23, z: 0}
 --- !u!135 &135563176454643940
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1396,7 +1408,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.54
+  m_Radius: 0.47
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135768682950597620
 SphereCollider:
