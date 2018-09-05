@@ -476,7 +476,7 @@ namespace RQ2.UI
 
         public string GetGlobalVariable(string variableName)
         {
-            return GameDataController.Instance.Data.Variables[variableName].Value;
+            return GameDataController.Instance.Data.GlobalVariables[variableName].Value;
             //return GameObject.Find(name) != null;
         }
 
@@ -493,7 +493,7 @@ namespace RQ2.UI
 
         public void SetGlobalVariable(string variableName, string value)
         {
-            GameDataController.Instance.Data.Variables[variableName].Value = value;
+            GameDataController.Instance.Data.GlobalVariables[variableName].Value = value;
             //return GameObject.Find(name) != null;
         }
 
