@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 33274832915575692}
   - component: {fileID: 114480301495823484}
   - component: {fileID: 114579487427465050}
+  - component: {fileID: 114678826648953054}
   - component: {fileID: 114306239725107546}
   - component: {fileID: 114594999782250570}
   m_Layer: 10
@@ -309,7 +310,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957894310894916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4945493145381752}
@@ -322,7 +323,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996395038399154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.156, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4945493145381752}
@@ -374,7 +375,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752190754837826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 0.08, z: 0}
+  m_LocalPosition: {x: 1030.96, y: 868.08, z: -0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4236015980773722}
@@ -422,7 +423,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!23 &23333711196799934
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -762,8 +763,8 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  fsmTemplate: {fileID: 11400000, guid: fa8b0d8658cc73645a0eb1839bf61f82, type: 2}
+  eventHandlerComponentsAdded: 1
 --- !u!114 &114306239725107546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1012,7 +1013,7 @@ MonoBehaviour:
   collection: {fileID: 114506122042295800, guid: e134283e5ca21ce41891000f0a7e7b7a,
     type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
-  _scale: {x: 1, y: 1, z: 1}
+  _scale: {x: 0.7, y: 0.7, z: 1}
   _spriteId: 26
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
@@ -1021,7 +1022,7 @@ MonoBehaviour:
   meshCollider: {fileID: 0}
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
-  renderLayer: 0
+  renderLayer: 1
 --- !u!114 &114515702249925374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1257,7 +1258,7 @@ MonoBehaviour:
     Altitude:
       x: 0
       y: 0
-    IsAirborn: 0
+    IsAirborn: 1
     AirVelocity:
       x: 0
       y: 0
@@ -1300,6 +1301,30 @@ MonoBehaviour:
   _rqName2: eb006c26-92da-4f02-a872-36a53748f082
   _componentRepository: {fileID: 114246978454473552}
   FootPositionY: -0.12
+--- !u!114 &114678826648953054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691028655856348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41880b8380ca71346a1bc3912eb8f03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _storedSpriteAnimations: []
+  _spriteAnimationsConfig: {fileID: 11400000, guid: 5e3a11f7518edfb4ba221a0f9c972feb,
+    type: 2}
+  _manualHFlip: 0
+  _hFlip: 1
+  _directionRotate: 0
+  OrigSpritePosition:
+    x: 0
+    y: 0
+  SpriteOffsetPos:
+    x: 0
+    y: 0
+  anim: {fileID: 114579487427465050}
 --- !u!114 &114807492354170184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1313,7 +1338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collection: {fileID: 11459162, guid: f21af56a5c262804f83903a5195ec516, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
-  _scale: {x: 4, y: 4, z: 1}
+  _scale: {x: 3, y: 3, z: 1}
   _spriteId: 14
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
@@ -1396,7 +1421,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135647524113543758
 SphereCollider:
