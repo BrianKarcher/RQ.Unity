@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using RQ.Model.Enums;
 
 namespace RQ2.Controller.UI.Grid
 {
@@ -27,7 +28,7 @@ namespace RQ2.Controller.UI.Grid
         public List<UIButtonPressedCondition> onClickLoad = new List<UIButtonPressedCondition>();
 
         public bool AddNewSaveSlot { get; set; }
-        public SaveLoad SavePanelState { get; set; }
+        public SaveOrLoad SavePanelState { get; set; }
 
         public void PopulateGrid()
         {
@@ -48,7 +49,7 @@ namespace RQ2.Controller.UI.Grid
                     isFirstSlot = false;
                 }
             }
-            if (SavePanelState == SaveLoad.Load)
+            if (SavePanelState == SaveOrLoad.Load)
             {
                 var autoSaveFileName = GameController.Instance.AutoSaveFileName;
                 var autoSaveExists = Persistence.CheckFileExists(autoSaveFileName);
@@ -101,8 +102,8 @@ namespace RQ2.Controller.UI.Grid
             {
                 FileName = fileName,
                 Chapter = "Forest Town",
-                Gold = gameData.GameData.Inventory.Gold,
-                Level = gameData.GameData.EntityStats.Level,
+                Gold = gameData.SceneSnapshot.Inventory.Gold,
+                Level = gameData.SceneSnapshot.EntityStats.Level,
                 SaveCount = saveCount,
                 Date = gameData.SaveDate
             };

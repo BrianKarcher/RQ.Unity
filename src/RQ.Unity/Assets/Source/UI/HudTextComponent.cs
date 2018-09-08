@@ -16,9 +16,12 @@ namespace RQ2.Physics.Components
             base.Start();
             if (!Application.isPlaying)
                 return;
+            if (HudTextPrefab == null)
+                return;
+
             var setupData = new HudTextSetupData()
             {
-                HudText = HudTextPrefab.gameObject,
+                HudText = HudTextPrefab == null ? null : HudTextPrefab.gameObject,
                 Target = this.transform
             };
 

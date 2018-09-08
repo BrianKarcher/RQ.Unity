@@ -15,9 +15,10 @@ namespace RQ.Physics.Components
     {
         //public bool IsHiding;
         public List<int> HideTileIds;
-        private EntityStatsData _entityStatsData;
+        //private EntityStatsData _entityStatsData;
         public tk2dTileMap _tileMap;
         private AnimationComponent _animComponent;
+        private EntityStatsComponent _entityStatsComponent;
 
         //private Behavior _behaviorTree;
 
@@ -31,8 +32,9 @@ namespace RQ.Physics.Components
         public override void Start()
         {
             base.Start();
-            var entityStatsComponent = GetComponentRepository().Components.GetComponent<EntityStatsComponent>();
-            _entityStatsData = entityStatsComponent.GetEntityStats();
+            if (!Application.isPlaying)
+                return;
+            _entityStatsComponent = GetComponentRepository().Components.GetComponent<EntityStatsComponent>();
             _animComponent = GetComponentRepository().Components.GetComponent<AnimationComponent>();
             var tileMapSetup = GameObject.FindObjectOfType<TilemapSetup>();
             if (tileMapSetup == null)
@@ -43,12 +45,16 @@ namespace RQ.Physics.Components
         public override void OnEnable()
         {
             base.OnEnable();
+            if (!Application.isPlaying)
+                return;
             StartCoroutine(MyFixedUpdate());
         }
 
         public override void OnDisable()
         {
             base.OnDisable();
+            if (!Application.isPlaying)
+                return;
             StopCoroutine(MyFixedUpdate());
         }
 
@@ -56,6 +62,9 @@ namespace RQ.Physics.Components
         {
             while (true)
             {
+                if (_entityStatsComponent == null)
+                    yield return null;
+                var _entityStatsData = _entityStatsComponent.GetEntityStats();
                 if (_entityStatsData == null)
                     yield return null;
                 //base.FixedUpdate();
