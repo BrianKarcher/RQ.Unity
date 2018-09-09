@@ -198,7 +198,7 @@ MonoBehaviour:
         - 
         actionEnabled: 01010101
         actionIsOpen: 01010101
-        actionStartIndex: 0000000003000000070000000c000000
+        actionStartIndex: 0000000003000000090000000e000000
         actionHashCodes: 48c011017e7e0e032b347e018fc53304
         unityObjectParams:
         - {fileID: 8300000, guid: 853733c4ed1f9fb47a3b3bd44d9eb630, type: 3}
@@ -231,26 +231,29 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
+        - 
         - Disperse
         - 
-        byteData: 000101000000803f
+        byteData: 00010100000000803f
         arrayParamSizes: 01000000
         arrayParamTypes:
         - UnityEngine.AudioClip
-        customTypeSizes: 030000000300000001000000
+        customTypeSizes: 050000000300000001000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Entity.AtomAction.Action.PlayRandomSoundOneShotAtom
         - RQ.AI.Action.StopMovingAtom
-        paramDataType: 0f0000001700000001000000280000000300000001000000010000002800000001000000020000000c000000050000002800000003000000
+        paramDataType: 0f00000017000000010000002800000003000000030000000100000001000000010000002800000001000000020000000c000000050000002800000003000000
         paramName:
         - time
         - finishEvent
         - realTime
         - _animationAtom
+        - _animComponentName
         - _animation
         - _byType
         - WaitForAnimationCompletion
+        - StopOnExit
         - _soundAtom
         - _playOnMusicTrack
         - _volume
@@ -258,8 +261,8 @@ MonoBehaviour:
         - 
         - _stopMovingAtom
         - _uniqueId
-        paramDataPos: 0000000000000000000000000000000001000000010000000200000001000000030000000400000000000000000000000200000002000000
-        paramByteDataSize: 0000000000000000010000000000000000000000010000000100000000000000010000000400000000000000000000000000000000000000
+        paramDataPos: 00000000000000000000000000000000010000000200000001000000020000000300000001000000040000000500000000000000000000000200000003000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000001000000010000000100000000000000010000000400000000000000000000000000000000000000
     - name: End
       description: 
       colorIndex: 0
@@ -346,7 +349,7 @@ MonoBehaviour:
         - 
         actionEnabled: 000101
         actionIsOpen: 010101
-        actionStartIndex: 000000000500000007000000
+        actionStartIndex: 000000000500000009000000
         actionHashCodes: bf83c900d01e12032ea47200
         unityObjectParams:
         - {fileID: 194792, guid: b8e2792929f891347ac1ccce756cb226, type: 2}
@@ -404,14 +407,14 @@ MonoBehaviour:
         stringParams:
         - Disperse
         - 
-        byteData: 
+        byteData: 00000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0100000001000000
+        customTypeSizes: 0300000001000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.WaitForAnimationCompletionAtom
-        paramDataType: 13000000130000001c0000001c00000013000000280000001b000000280000000300000017000000
+        paramDataType: 13000000130000001c0000001c00000013000000280000001b0000000900000001000000280000000300000017000000
         paramName:
         - gameObject
         - spawnPoint
@@ -420,11 +423,13 @@ MonoBehaviour:
         - storeObject
         - _instantiatePrefabAtom
         - _gameObject
+        - _offset
+        - _rotateOffsetByFacingDirection
         - _animCompleteAtom
         - AnimationType
         - FinishEvent
-        paramDataPos: 00000000010000000000000001000000020000000000000000000000010000000000000001000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000010000000000000001000000020000000000000000000000000000000c000000010000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000c00000001000000000000000000000000000000
     - name: No Action Found
       description: 
       colorIndex: 0
@@ -529,7 +534,7 @@ MonoBehaviour:
         - 
         actionEnabled: 01010101
         actionIsOpen: 01010101
-        actionStartIndex: 0000000003000000070000000c000000
+        actionStartIndex: 0000000003000000090000000e000000
         actionHashCodes: 48c011017e7e0e032b347e018fc53304
         unityObjectParams:
         - {fileID: 8300000, guid: 853733c4ed1f9fb47a3b3bd44d9eb630, type: 3}
@@ -562,26 +567,29 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
+        - 
         - Hammer Pound
         - 
-        byteData: 000101000000803f
+        byteData: 00010100000000803f
         arrayParamSizes: 01000000
         arrayParamTypes:
         - UnityEngine.AudioClip
-        customTypeSizes: 030000000300000001000000
+        customTypeSizes: 050000000300000001000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Entity.AtomAction.Action.PlayRandomSoundOneShotAtom
         - RQ.AI.Action.StopMovingAtom
-        paramDataType: 0f0000001700000001000000280000000300000001000000010000002800000001000000020000000c000000050000002800000003000000
+        paramDataType: 0f00000017000000010000002800000003000000030000000100000001000000010000002800000001000000020000000c000000050000002800000003000000
         paramName:
         - time
         - finishEvent
         - realTime
         - _animationAtom
+        - _animComponentName
         - _animation
         - _byType
         - WaitForAnimationCompletion
+        - StopOnExit
         - _soundAtom
         - _playOnMusicTrack
         - _volume
@@ -589,8 +597,8 @@ MonoBehaviour:
         - 
         - _stopMovingAtom
         - _uniqueId
-        paramDataPos: 0000000000000000000000000000000001000000010000000200000001000000030000000400000000000000000000000200000002000000
-        paramByteDataSize: 0000000000000000010000000000000000000000010000000100000000000000010000000400000000000000000000000000000000000000
+        paramDataPos: 00000000000000000000000000000000010000000200000001000000020000000300000001000000040000000500000000000000000000000200000003000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000001000000010000000100000000000000010000000400000000000000000000000000000000000000
     - name: Seismic Fissure Act
       description: 
       colorIndex: 0
@@ -623,7 +631,7 @@ MonoBehaviour:
         - 
         actionEnabled: 000101
         actionIsOpen: 010101
-        actionStartIndex: 000000000500000007000000
+        actionStartIndex: 000000000500000009000000
         actionHashCodes: bf83c900d01e12032ea47200
         unityObjectParams:
         - {fileID: 1995259694063076, guid: 762d3f9a7aadf634ba4a50f81d97d80b, type: 2}
@@ -681,14 +689,14 @@ MonoBehaviour:
         stringParams:
         - Hammer Pound
         - 
-        byteData: 
+        byteData: 00000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0100000001000000
+        customTypeSizes: 0300000001000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.WaitForAnimationCompletionAtom
-        paramDataType: 13000000130000001c0000001c00000013000000280000001b000000280000000300000017000000
+        paramDataType: 13000000130000001c0000001c00000013000000280000001b0000000900000001000000280000000300000017000000
         paramName:
         - gameObject
         - spawnPoint
@@ -697,11 +705,13 @@ MonoBehaviour:
         - storeObject
         - _instantiatePrefabAtom
         - _gameObject
+        - _offset
+        - _rotateOffsetByFacingDirection
         - _animCompleteAtom
         - AnimationType
         - FinishEvent
-        paramDataPos: 00000000010000000000000001000000020000000000000000000000010000000000000001000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000010000000000000001000000020000000000000000000000000000000c000000010000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000c00000001000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -752,7 +762,7 @@ MonoBehaviour:
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
     ExposedEvents: []
-    RestartOnEnable: 1
+    RestartOnEnable: 0
     EnableDebugFlow: 0
     EnableBreakpoints: 1
     editorFlags: 3
