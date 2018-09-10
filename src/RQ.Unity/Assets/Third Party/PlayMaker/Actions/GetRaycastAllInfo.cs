@@ -24,7 +24,7 @@ namespace HutongGames.PlayMaker.Actions
 		[ArrayEditor(VariableType.Vector3)]
 		public FsmArray normals;
 
-		[Tooltip("Get the distance along the ray to all hit points and store tjem in an array variable.")]
+		[Tooltip("Get the distance along the ray to all hit points and store them in an array variable.")]
 		[UIHint(UIHint.Variable)]
 		[ArrayEditor(VariableType.Float)]
 		public FsmArray distances;

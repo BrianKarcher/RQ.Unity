@@ -17,7 +17,7 @@ namespace HutongGames.PlayMaker.Actions
 		[Tooltip("Divide the float variable by this value.")]
         public FsmFloat divideBy;
 
-        [Tooltip("Repeate every frame. Useful if the variables are changing.")]
+        [Tooltip("Repeat every frame. Useful if the variables are changing.")]
 		public bool everyFrame;
 
 		public override void Reset()

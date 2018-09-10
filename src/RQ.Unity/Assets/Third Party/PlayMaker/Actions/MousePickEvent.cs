@@ -117,7 +117,7 @@ namespace HutongGames.PlayMaker.Actions
 			string errorString = "";
 
 			errorString += ActionHelpers.CheckRayDistance(rayDistance.Value);
-			errorString += ActionHelpers.CheckPhysicsSetup(GameObject);
+			errorString += ActionHelpers.CheckPhysicsSetup(Fsm.GetOwnerDefaultTarget(GameObject));
 
 			return errorString;
 		}

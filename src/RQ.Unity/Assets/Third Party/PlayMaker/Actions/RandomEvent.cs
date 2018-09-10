@@ -23,6 +23,7 @@ namespace HutongGames.PlayMaker.Actions
 		public override void Reset()
 		{
 			delay = null;
+		    noRepeat = false;
 		}
 
 		public override void OnEnter()

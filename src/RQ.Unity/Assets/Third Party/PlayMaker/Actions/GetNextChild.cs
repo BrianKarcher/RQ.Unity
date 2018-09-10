@@ -23,13 +23,18 @@ namespace HutongGames.PlayMaker.Actions
 		[Tooltip("Event to send when there are no more children.")]
 		public FsmEvent finishedEvent;
 
-		public override void Reset()
+        [Tooltip("If you want to reset the iteration, raise this flag to true when you enter the state, it will indicate you want to start from the beginning again")]
+        [UIHint(UIHint.Variable)]
+        public FsmBool resetFlag;
+
+        public override void Reset()
 		{
 			gameObject = null;
 			storeNextChild = null;
 			loopEvent = null;
 			finishedEvent = null;
-		}
+            resetFlag = null;
+        }
 
 		// cache the gameObject so we no if it changes
 		private GameObject go;
@@ -39,8 +44,13 @@ namespace HutongGames.PlayMaker.Actions
 
 		public override void OnEnter()
 		{
+            if (resetFlag.Value)
+            {
+                nextChildIndex = 0;
+                resetFlag.Value = false;
+            }
 
-			DoGetNextChild(Fsm.GetOwnerDefaultTarget(gameObject));
+            DoGetNextChild(Fsm.GetOwnerDefaultTarget(gameObject));
 
 			Finish();
 		}

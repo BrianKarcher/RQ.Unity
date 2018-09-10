@@ -1,12 +1,12 @@
 ﻿// (c) Copyright HutongGames, LLC 2010-2013. All rights reserved.
 
-#if !(UNITY_TVOS || UNITY_IPHONE || UNITY_IOS || UNITY_ANDROID || UNITY_FLASH || UNITY_PS3 || UNITY_PS4 || UNITY_XBOXONE || UNITY_BLACKBERRY || UNITY_WP8 || UNITY_PSM || UNITY_WEBGL)
+#if !(UNITY_SWITCH || UNITY_TVOS || UNITY_IPHONE || UNITY_IOS || UNITY_ANDROID || UNITY_FLASH || UNITY_PS3 || UNITY_PS4 || UNITY_XBOXONE || UNITY_BLACKBERRY || UNITY_WP8 || UNITY_PSM || UNITY_WEBGL || UNITY_SWITCH)
 
 using UnityEngine;
 
 namespace HutongGames.PlayMaker.Actions
 {
-	[ActionCategory("Web Player")]
+	[ActionCategory("WWW")]
 	[Tooltip("Gets data from a url and store it in variables. See Unity WWW docs for more details.")]
 	public class WWWObject : FsmStateAction
 	{

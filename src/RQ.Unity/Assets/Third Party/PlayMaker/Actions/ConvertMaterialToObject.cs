@@ -47,5 +47,12 @@ namespace HutongGames.PlayMaker.Actions
 		{
 			objectVariable.Value = materialVariable.Value;
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return ActionHelpers.AutoNameConvert(this, materialVariable, objectVariable);
+	    }
+#endif
 	}
 }

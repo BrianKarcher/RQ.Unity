@@ -68,7 +68,7 @@ namespace HutongGames.PlayMaker.Actions
 
 		public override string ErrorCheck()
 		{
-			return ActionHelpers.CheckOwnerPhysicsSetup(Owner);
+			return ActionHelpers.CheckPhysicsSetup(Owner);
 		}
 	}
 }

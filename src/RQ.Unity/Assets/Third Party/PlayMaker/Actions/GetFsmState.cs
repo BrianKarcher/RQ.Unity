@@ -12,7 +12,7 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("Drag a PlayMakerFSM component here.")]
 		public PlayMakerFSM fsmComponent;
 
-        [Tooltip("If not specifyng the component above, specify the GameObject that owns the FSM")]
+        [Tooltip("If not specifying the component above, specify the GameObject that owns the FSM")]
 		public FsmOwnerDefault gameObject;
 
 		[UIHint(UIHint.FsmName)]

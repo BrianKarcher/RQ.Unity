@@ -5,13 +5,16 @@ using UnityEngine;
 namespace HutongGames.PlayMaker.Actions
 {
 	[ActionCategory(ActionCategory.Physics)]
-	[Tooltip("Detect collisions between the Owner of this FSM and other Game Objects that have RigidBody components.\nNOTE: The system events, COLLISION ENTER, COLLISION STAY, and COLLISION EXIT are sent automatically on collisions with any object. Use this action to filter collisions by Tag.")]
+	[Tooltip("Detect collisions between Game Objects that have RigidBody/Collider components.")]
 	public class CollisionEvent : FsmStateAction
 	{
+	    [Tooltip("The GameObject to detect collisions on.")]
+	    public FsmOwnerDefault gameObject;
+
         [Tooltip("The type of collision to detect.")]
 		public CollisionType collision;
 		
-        [UIHint(UIHint.Tag)]
+        [UIHint(UIHint.TagMenu)]
 		[Tooltip("Filter by Tag.")]
         public FsmString collideTag;
 		
@@ -25,11 +28,15 @@ namespace HutongGames.PlayMaker.Actions
 		[UIHint(UIHint.Variable)]
         [Tooltip("Store the force of the collision. NOTE: Use Get Collision Info to get more info about the collision.")]
 		public FsmFloat storeForce;
-		
+
+        // cached proxy component for callbacks
+	    private PlayMakerProxyBase cachedProxy;
+
 		public override void Reset()
 		{
+		    gameObject = null;
 			collision = CollisionType.OnCollisionEnter;
-			collideTag = "Untagged";
+			collideTag = "";
 			sendEvent = null;
 			storeCollider = null;
 			storeForce = null;
@@ -37,29 +44,142 @@ namespace HutongGames.PlayMaker.Actions
 
 	    public override void OnPreprocess()
 	    {
-            switch (collision)
-            {
-                case CollisionType.OnCollisionEnter:
-                    Fsm.HandleCollisionEnter = true;
-                    break;
-                case CollisionType.OnCollisionStay:
-                    Fsm.HandleCollisionStay = true;
-                    break;
-                case CollisionType.OnCollisionExit:
-                    Fsm.HandleCollisionExit = true;
-                    break;
-                case CollisionType.OnControllerColliderHit:
-                    Fsm.HandleControllerColliderHit = true;
-                    break;
-                case CollisionType.OnParticleCollision:
-                    Fsm.HandleParticleCollision = true;
-                    break;
-
-            }
-
+	        if (gameObject.OwnerOption == OwnerDefaultOption.UseOwner)
+	        {
+	            switch (collision)
+	            {
+	                case CollisionType.OnCollisionEnter:
+	                    Fsm.HandleCollisionEnter = true;
+	                    break;
+	                case CollisionType.OnCollisionStay:
+	                    Fsm.HandleCollisionStay = true;
+	                    break;
+	                case CollisionType.OnCollisionExit:
+	                    Fsm.HandleCollisionExit = true;
+	                    break;
+	                case CollisionType.OnControllerColliderHit:
+	                    Fsm.HandleControllerColliderHit = true;
+	                    break;
+	                case CollisionType.OnParticleCollision:
+	                    Fsm.HandleParticleCollision = true;
+	                    break;
+	            }
+	        }
+	        else
+	        {
+                // Add proxy components now if we can
+	            GetProxyComponent();
+	        }
 	    }
 
-		void StoreCollisionInfo(Collision collisionInfo)
+	    public override void OnEnter()
+	    {
+	        if (gameObject.OwnerOption == OwnerDefaultOption.UseOwner)
+	            return;
+
+            if (cachedProxy == null)
+                GetProxyComponent();
+
+            AddCallback();
+
+	        gameObject.GameObject.OnChange += UpdateCallback;
+	    }
+
+	    public override void OnExit()
+	    {
+	        if (gameObject.OwnerOption == OwnerDefaultOption.UseOwner)
+	            return;
+
+            RemoveCallback();
+
+	        gameObject.GameObject.OnChange -= UpdateCallback;
+	    }
+
+	    private void UpdateCallback()
+	    {
+	        RemoveCallback();
+	        GetProxyComponent();
+	        AddCallback();
+	    }
+
+	    private void GetProxyComponent()
+	    {
+	        cachedProxy = null;
+	        var source = gameObject.GameObject.Value;
+	        if (source == null)
+	            return;
+
+	        switch (collision)
+	        {
+	            case CollisionType.OnCollisionEnter:
+	                cachedProxy = PlayMakerFSM.GetEventHandlerComponent<PlayMakerCollisionEnter>(source);
+	                break;
+	            case CollisionType.OnCollisionStay:
+	                cachedProxy = PlayMakerFSM.GetEventHandlerComponent<PlayMakerCollisionStay>(source);
+	                break;
+	            case CollisionType.OnCollisionExit:
+	                cachedProxy = PlayMakerFSM.GetEventHandlerComponent<PlayMakerCollisionExit>(source);
+	                break;
+	            case CollisionType.OnParticleCollision:
+	                cachedProxy = PlayMakerFSM.GetEventHandlerComponent<PlayMakerParticleCollision>(source);
+	                break;
+	            case CollisionType.OnControllerColliderHit:
+	                cachedProxy = PlayMakerFSM.GetEventHandlerComponent<PlayMakerControllerColliderHit>(source);
+	                break;
+	        }
+	    }
+
+	    private void AddCallback()
+	    {
+	        if (cachedProxy == null)
+	            return;
+
+	        switch (collision)
+	        {
+                case CollisionType.OnCollisionEnter:
+                    cachedProxy.AddCollisionEventCallback(CollisionEnter);
+                    break;
+                case CollisionType.OnCollisionStay:
+                    cachedProxy.AddCollisionEventCallback(CollisionStay);
+	                break;
+                case CollisionType.OnCollisionExit:
+                    cachedProxy.AddCollisionEventCallback(CollisionExit);
+	                break;
+                case CollisionType.OnParticleCollision:
+                    cachedProxy.AddParticleCollisionEventCallback(ParticleCollision);
+                    break;
+	            case CollisionType.OnControllerColliderHit:
+                    cachedProxy.AddControllerCollisionEventCallback(ControllerColliderHit);
+	                break;
+	        }
+	    }
+
+	    private void RemoveCallback()
+	    {
+	        if (cachedProxy == null)
+	            return;
+
+	        switch (collision)
+	        {
+	            case CollisionType.OnCollisionEnter:
+	                cachedProxy.RemoveCollisionEventCallback(CollisionEnter);
+	                break;
+	            case CollisionType.OnCollisionStay:
+                    cachedProxy.RemoveCollisionEventCallback(CollisionStay);
+	                break;
+	            case CollisionType.OnCollisionExit:
+                    cachedProxy.RemoveCollisionEventCallback(CollisionExit);
+	                break;
+	            case CollisionType.OnParticleCollision:
+	                cachedProxy.RemoveParticleCollisionEventCallback(ParticleCollision);
+	                break;
+	            case CollisionType.OnControllerColliderHit:
+	                cachedProxy.RemoveControllerCollisionEventCallback(ControllerColliderHit);
+	                break;
+	        }
+	    }
+
+	    private void StoreCollisionInfo(Collision collisionInfo)
 		{
 			storeCollider.Value = collisionInfo.gameObject;
 			storeForce.Value = collisionInfo.relativeVelocity.magnitude;
@@ -67,21 +187,51 @@ namespace HutongGames.PlayMaker.Actions
 
 		public override void DoCollisionEnter(Collision collisionInfo)
 		{
-			if (collision == CollisionType.OnCollisionEnter)
-			{
-				if (collisionInfo.collider.gameObject.tag == collideTag.Value)
-				{
-					StoreCollisionInfo(collisionInfo);
-					Fsm.Event(sendEvent);
-				}
-			}
+            if (gameObject.OwnerOption == OwnerDefaultOption.UseOwner)
+                CollisionEnter(collisionInfo);
 		}
 
-		public override void DoCollisionStay(Collision collisionInfo)
+	    public override void DoCollisionStay(Collision collisionInfo)
+	    {
+	        if (gameObject.OwnerOption == OwnerDefaultOption.UseOwner)
+	            CollisionStay(collisionInfo);
+	    }
+
+	    public override void DoCollisionExit(Collision collisionInfo)
+	    {
+	        if (gameObject.OwnerOption == OwnerDefaultOption.UseOwner)
+	            CollisionExit(collisionInfo);
+	    }
+
+        public override void DoControllerColliderHit(ControllerColliderHit collisionInfo)
+	    {
+	        if (gameObject.OwnerOption == OwnerDefaultOption.UseOwner)
+                ControllerColliderHit(collisionInfo);
+	    }
+
+	    public override void DoParticleCollision(GameObject other)
+	    {
+	        if (gameObject.OwnerOption == OwnerDefaultOption.UseOwner)
+	            ParticleCollision(other);
+	    }
+
+	    private void CollisionEnter(Collision collisionInfo)
+	    {
+	        if (collision == CollisionType.OnCollisionEnter)
+	        {
+                if (TagMatches(collideTag, collisionInfo))
+	            {
+	                StoreCollisionInfo(collisionInfo);
+	                Fsm.Event(sendEvent);
+	            }
+	        }
+	    }
+
+	    private void CollisionStay(Collision collisionInfo)
 		{
 			if (collision == CollisionType.OnCollisionStay)
 			{
-				if (collisionInfo.collider.gameObject.tag == collideTag.Value)
+			    if (TagMatches(collideTag, collisionInfo))
 				{
 					StoreCollisionInfo(collisionInfo);
 					Fsm.Event(sendEvent);
@@ -89,11 +239,11 @@ namespace HutongGames.PlayMaker.Actions
 			}
 		}
 
-		public override void DoCollisionExit(Collision collisionInfo)
+	    private void CollisionExit(Collision collisionInfo)
 		{
 			if (collision == CollisionType.OnCollisionExit)
 			{
-				if (collisionInfo.collider.gameObject.tag == collideTag.Value)
+			    if (TagMatches(collideTag, collisionInfo))
 				{
 					StoreCollisionInfo(collisionInfo);
 					Fsm.Event(sendEvent);
@@ -101,11 +251,11 @@ namespace HutongGames.PlayMaker.Actions
 			}
 		}
 
-		public override void DoControllerColliderHit(ControllerColliderHit collisionInfo)
+	    private void ControllerColliderHit(ControllerColliderHit collisionInfo)
 		{
 			if (collision == CollisionType.OnControllerColliderHit)
 			{
-				if (collisionInfo.collider.gameObject.tag == collideTag.Value)
+			    if (TagMatches(collideTag, collisionInfo))
 				{
 					if (storeCollider != null)
 						storeCollider.Value = collisionInfo.gameObject;
@@ -116,11 +266,11 @@ namespace HutongGames.PlayMaker.Actions
 			}
 		}
 
-	    public override void DoParticleCollision(GameObject other)
+	    private void ParticleCollision(GameObject other)
 	    {
 	        if (collision == CollisionType.OnParticleCollision)
 	        {
-                if (other.tag == collideTag.Value)
+                if (TagMatches(collideTag, other))
                 {
                     if (storeCollider != null)
                         storeCollider.Value = other;
@@ -133,7 +283,7 @@ namespace HutongGames.PlayMaker.Actions
 
 		public override string ErrorCheck()
 		{
-			return ActionHelpers.CheckOwnerPhysicsSetup(Owner);
+	        return ActionHelpers.CheckPhysicsSetup(Fsm.GetOwnerDefaultTarget(gameObject));
 		}
 	}
 }

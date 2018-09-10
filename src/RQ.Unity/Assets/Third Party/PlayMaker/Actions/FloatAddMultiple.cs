@@ -5,7 +5,7 @@ using UnityEngine;
 namespace HutongGames.PlayMaker.Actions
 {
     [ActionCategory(ActionCategory.Math)]
-    [Tooltip("Adds multipe float variables to float variable.")]
+    [Tooltip("Adds multiple float variables to float variable.")]
     public class FloatAddMultiple : FsmStateAction
     {
         [UIHint(UIHint.Variable)]

@@ -9,7 +9,7 @@ namespace HutongGames.PlayMaker.Actions
 	public class DrawStateLabel : FsmStateAction
 	{
 		[RequiredField]
-        [Tooltip("Set to True to show State labels, or Fals to hide them.")]
+        [Tooltip("Set to True to show State labels, or False to hide them.")]
 		public FsmBool showLabel;
 
 		public override void Reset()

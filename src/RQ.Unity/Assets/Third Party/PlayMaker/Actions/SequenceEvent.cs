@@ -9,6 +9,10 @@ namespace HutongGames.PlayMaker.Actions
 		[HasFloatSlider(0, 10)]
 		public FsmFloat delay;
 
+        [UIHint(UIHint.Variable)]
+        [Tooltip("Assign a variable to control reset. Set it to True to reset the sequence. Value is set to False after resetting.")]
+        public FsmBool reset;
+
 		DelayedEvent delayedEvent;
 		int eventIndex;
 
@@ -19,6 +23,12 @@ namespace HutongGames.PlayMaker.Actions
 
 		public override void OnEnter()
 		{
+		    if (reset.Value)
+		    {
+		        eventIndex = 0;
+		        reset.Value = false;
+		    }
+
 			var eventCount = State.Transitions.Length;
 
 			if (eventCount > 0)

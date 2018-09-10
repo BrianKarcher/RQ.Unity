@@ -18,7 +18,7 @@ namespace HutongGames.PlayMaker.Actions
 		[Tooltip("A string variable to store the converted value.")]
 		public FsmString stringVariable;
         
-		[Tooltip("Optional Format, allows for leading zeroes. E.g., 0000")]
+		[Tooltip("Optional Format, allows for leading zeros. E.g., 0000")]
         public FsmString format;
 
 		[Tooltip("Repeat every frame. Useful if the float variable is changing.")]
@@ -58,5 +58,12 @@ namespace HutongGames.PlayMaker.Actions
             	stringVariable.Value = floatVariable.Value.ToString(format.Value);
             }
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return ActionHelpers.AutoNameConvert(this, floatVariable, stringVariable);
+	    }
+#endif
 	}
 }

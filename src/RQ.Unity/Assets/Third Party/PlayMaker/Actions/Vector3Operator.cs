@@ -103,7 +103,7 @@ namespace HutongGames.PlayMaker.Actions
 					break;
 
 				case Vector3Operation.Multiply:
-					// I know... this is a far reach and not usefull in 99% of cases. 
+					// I know... this is a far reach and not useful in 99% of cases. 
 					// I do use it when I use vector3 as arrays recipients holding something else than a position in space.
 					var multResult = Vector3.zero;
 					multResult.x = v1.x * v2.x;
@@ -112,7 +112,7 @@ namespace HutongGames.PlayMaker.Actions
 					storeVector3Result.Value = multResult;
 					break;
 
-				case Vector3Operation.Divide: // I know... this is a far reach and not usefull in 99% of cases.
+				case Vector3Operation.Divide: // I know... this is a far reach and not useful in 99% of cases.
 					// I do use it when I use vector3 as arrays recipients holding something else than a position in space.
 					var divResult = Vector3.zero;
 					divResult.x = v1.x / v2.x;

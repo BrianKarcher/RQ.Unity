@@ -7,7 +7,7 @@ namespace HutongGames.PlayMaker.Actions
 	public class ObjectCompare : FsmStateAction
 	{
 		[RequiredField]
-		[UIHint(UIHint.Variable)]
+		[UIHint(UIHint.Variable), Readonly]
 		public FsmObject objectVariable;
 		
 		[RequiredField]
@@ -63,5 +63,12 @@ namespace HutongGames.PlayMaker.Actions
 
 			Fsm.Event(result ? equalEvent : notEqualEvent);
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return ActionHelpers.AutoName(this, objectVariable, compareTo);
+	    }
+#endif
 	}
 }

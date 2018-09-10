@@ -70,5 +70,12 @@ namespace HutongGames.PlayMaker.Actions
 				break;
 			}			
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return ActionHelpers.AutoNameConvert(this, floatVariable, intVariable);
+	    }
+#endif
 	}
 }

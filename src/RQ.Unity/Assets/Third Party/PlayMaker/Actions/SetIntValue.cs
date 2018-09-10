@@ -8,10 +8,15 @@ namespace HutongGames.PlayMaker.Actions
 	{
 		[RequiredField]
 		[UIHint(UIHint.Variable)]
+        [Tooltip("Int Variable to Set")]
 		public FsmInt intVariable;
-		[RequiredField]
-		public FsmInt intValue;
-		public bool everyFrame;
+
+	    [RequiredField]
+        [Tooltip("Int Value")]
+	    public FsmInt intValue;
+
+        [Tooltip("Repeat every frame.")]
+	    public bool everyFrame;
 
 		public override void Reset()
 		{
@@ -23,14 +28,23 @@ namespace HutongGames.PlayMaker.Actions
 		public override void OnEnter()
 		{
 			intVariable.Value = intValue.Value;
-			
-			if (!everyFrame)
-				Finish();		
+
+		    if (!everyFrame)
+		    {
+		        Finish();
+		    }		
 		}
 
 		public override void OnUpdate()
 		{
 			intVariable.Value = intValue.Value;
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return ActionHelpers.AutoNameSetVar(this, intVariable, intValue);
+	    }
+#endif
 	}
 }

@@ -59,5 +59,20 @@ namespace HutongGames.PlayMaker.Actions
             }
         }
 
+
+
+#if UNITY_EDITOR
+
+        public override string AutoName()
+        {
+            return ActionHelpers.AutoName(this, time);
+        }
+
+        public override float GetProgress()
+        {
+            return Mathf.Min(timer / time.Value, 1f);
+        }
+
+#endif
     }
 }

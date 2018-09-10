@@ -12,7 +12,7 @@ namespace HutongGames.PlayMaker.Actions
 		[Tooltip("The game object to rotate.")]
 		public FsmOwnerDefault gameObject;
 
-		[Tooltip("A rotation vector. NOTE: You can override individual axis below.")]
+		[Tooltip("A rotation vector specifying rotation around x, y, and z axis. NOTE: You can override individual axis below.")]
 		[UIHint(UIHint.Variable)]
 		public FsmVector3 vector;
 		
@@ -28,7 +28,10 @@ namespace HutongGames.PlayMaker.Actions
 		[Tooltip("Rotate in local or world space.")]
 		public Space space;
 		
-		[Tooltip("Rotate over one second")]
+		[Tooltip("Rotation is specified in degrees per second. " +
+		         "In other words, the amount to rotate in over one second. " +
+		         "This allows rotations to be frame rate independent. " +
+		         "It is the same as multiplying the rotation by Time.deltaTime.")]
 		public bool perSecond;
 		
 		[Tooltip("Repeat every frame.")]

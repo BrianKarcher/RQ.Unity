@@ -47,5 +47,12 @@ namespace HutongGames.PlayMaker.Actions
         {
             stringVariable.Value = enumVariable.Value != null ? enumVariable.Value.ToString() : "";
         }
+
+#if UNITY_EDITOR
+        public override string AutoName()
+        {
+            return ActionHelpers.AutoNameConvert(this, enumVariable, stringVariable);
+        }
+#endif
     }
 }

@@ -17,7 +17,7 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("The static method to call.")]
         public FsmString methodName;
 
-        [Tooltip("Method paramters. NOTE: these must match the method's signature!")]
+        [Tooltip("Method parameters. NOTE: these must match the method's signature!")]
         public FsmVar[] parameters;
 
         [ActionSection("Store Result")]

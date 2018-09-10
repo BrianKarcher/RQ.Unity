@@ -32,6 +32,13 @@ namespace HutongGames.PlayMaker.Actions
 		{
 			vector3Variable.Value = vector3Value.Value;
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return ActionHelpers.AutoNameSetVar("SetVector3", vector3Variable, vector3Value);
+	    }
+#endif
 	}
 }
 

@@ -70,5 +70,12 @@ namespace HutongGames.PlayMaker.Actions
 						t.TotalMilliseconds,
 						milliseconds_2D);
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return ActionHelpers.AutoNameConvert(this, secondsVariable, stringVariable);
+	    }
+#endif
 	}
 }

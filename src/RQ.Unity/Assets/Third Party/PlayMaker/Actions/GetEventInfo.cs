@@ -60,7 +60,11 @@ namespace HutongGames.PlayMaker.Actions
 
 		public override void OnEnter()
 		{
-			if (Fsm.EventData.SentByFsm != null)
+		    if (Fsm.EventData.SentByGameObject != null)
+		    {
+		        sentByGameObject.Value = Fsm.EventData.SentByGameObject;
+		    }
+			else if (Fsm.EventData.SentByFsm != null)
 			{
 				sentByGameObject.Value = Fsm.EventData.SentByFsm.GameObject;
 				fsmName.Value = Fsm.EventData.SentByFsm.Name;

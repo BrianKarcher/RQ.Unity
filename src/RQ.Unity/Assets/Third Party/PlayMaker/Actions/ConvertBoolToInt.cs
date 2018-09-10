@@ -55,5 +55,12 @@ namespace HutongGames.PlayMaker.Actions
 		{
 			intVariable.Value = boolVariable.Value ? trueValue.Value : falseValue.Value;
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return ActionHelpers.AutoNameConvert(this, boolVariable, intVariable);
+	    }
+#endif
 	}
 }

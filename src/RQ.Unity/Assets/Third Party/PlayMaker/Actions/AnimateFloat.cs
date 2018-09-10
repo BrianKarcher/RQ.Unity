@@ -90,5 +90,14 @@ namespace HutongGames.PlayMaker.Actions
 				}
 			}
 		}
+
+		#if UNITY_EDITOR
+
+		public override float GetProgress()
+		{
+			return Mathf.Min(currentTime/endTime , 1f);
+		}
+
+		#endif
 	}
 }

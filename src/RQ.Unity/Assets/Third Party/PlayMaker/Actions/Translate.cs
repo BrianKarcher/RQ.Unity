@@ -12,7 +12,7 @@ namespace HutongGames.PlayMaker.Actions
 		[Tooltip("The game object to translate.")]
 		public FsmOwnerDefault gameObject;
 		
-		[UIHint(UIHint.Variable)]
+		[UIHint(UIHint.Variable), Readonly]
 		[Tooltip("A translation vector. NOTE: You can override individual axis below.")]
 		public FsmVector3 vector;
 		

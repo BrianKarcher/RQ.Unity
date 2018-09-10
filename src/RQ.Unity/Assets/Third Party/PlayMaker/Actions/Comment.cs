@@ -1,5 +1,7 @@
 // (c) Copyright HutongGames, LLC 2010-2013. All rights reserved.
 
+using System;
+
 namespace HutongGames.PlayMaker.Actions
 {
 	[ActionCategory(ActionCategory.Debug)]
@@ -18,5 +20,12 @@ namespace HutongGames.PlayMaker.Actions
 		{
 			Finish();
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return ": " + comment.Replace("\n","  ");
+	    }
+#endif
 	}
 }

@@ -73,6 +73,14 @@ namespace HutongGames.PlayMaker.Actions
 			GUI.color = guiColor;
 		}
 		
-		
+#if UNITY_EDITOR
+
+		public override float GetProgress()
+		{
+			return Mathf.Min(currentTime/time.Value , 1f);
+		}
+
+#endif
+
 	}
 }

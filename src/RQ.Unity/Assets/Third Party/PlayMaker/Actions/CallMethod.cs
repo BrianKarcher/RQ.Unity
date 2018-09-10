@@ -10,18 +10,22 @@ using HutongGames.PlayMaker;
 namespace HutongGames.PlayMaker.Actions
 {
     [ActionCategory(ActionCategory.ScriptControl)]
-    [Tooltip("Call a method in a behaviour.")]
+    [Tooltip("Call a method in a component on a GameObject.")]
     public class CallMethod : FsmStateAction
     {
-        [ObjectType(typeof(MonoBehaviour))]
-        [Tooltip("Store the component in an Object variable.\nNOTE: Set theObject variable's Object Type to get a component of that type. E.g., set Object Type to UnityEngine.AudioListener to get the AudioListener component on the camera.")]
+        [ObjectType(typeof(Component))]
+        [Tooltip("The behaviour on a GameObject that has the method you want to call. " +
+                 "Drag the script component from the Unity inspector into this slot. " +
+                 "HINT: Use Lock if the script is on another GameObject." +
+                 "\n\nNOTE: Unity Object fields only show the GameObject name, " +
+                 "so for clarity we show the Behaviour name in a readonly field below.")]
         public FsmObject behaviour;
 
         //[UIHint(UIHint.Method)]
         [Tooltip("Name of the method to call on the component")]
         public FsmString methodName;
 
-        [Tooltip("Method paramters. NOTE: these must match the method's signature!")]
+        [Tooltip("Method parameters. NOTE: these must match the method's signature!")]
         public FsmVar[] parameters;
 
         [ActionSection("Store Result")]
@@ -219,9 +223,9 @@ namespace HutongGames.PlayMaker.Actions
 
         public override string ErrorCheck()
         {
-            /* We could only error check if when we recache,
+            /* We could only error check if when we re-cache,
              * however NeedToUpdateCache() is not super robust
-             * So for now we just recache every frame in editor
+             * So for now we just re cache every frame in editor
              * Need to test editor perf...
             if (!NeedToUpdateCache())
             {

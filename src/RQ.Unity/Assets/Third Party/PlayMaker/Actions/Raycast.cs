@@ -19,7 +19,7 @@ namespace HutongGames.PlayMaker.Actions
 		[Tooltip("A vector3 direction vector")]
 		public FsmVector3 direction;
 
-		[Tooltip("Cast the ray in world or local space. Note if no Game Object is specfied, the direction is in world space.")]
+		[Tooltip("Cast the ray in world or local space. Note if no Game Object is specified, the direction is in world space.")]
 		public Space space;
 
 		[Tooltip("The length of the ray. Set to -1 for infinity.")]

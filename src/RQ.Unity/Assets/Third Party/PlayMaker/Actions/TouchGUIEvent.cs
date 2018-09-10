@@ -73,7 +73,7 @@ namespace HutongGames.PlayMaker.Actions
 
 		[ActionSection("")] 
 		
-		[Tooltip("Repeate every frame.")]
+		[Tooltip("Repeat every frame.")]
 		public bool everyFrame;
 
 		// private work variables

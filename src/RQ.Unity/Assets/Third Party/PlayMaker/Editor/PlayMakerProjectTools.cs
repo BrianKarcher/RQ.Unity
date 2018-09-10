@@ -252,31 +252,31 @@ namespace HutongGames.PlayMakerEditor
         }
 #endif
 
-            /* WIP
-            [Localizable(false)]
-            private static void FindAllScenes()
+        /* WIP
+        [Localizable(false)]
+        private static void FindAllScenes()
+        {
+            Debug.Log("Finding all scenes...");
+
+            var searchDirectory = new DirectoryInfo(Application.dataPath);
+            var assetFiles = searchDirectory.GetFiles("*.unity", SearchOption.AllDirectories);
+
+            foreach (var file in assetFiles)
             {
-                Debug.Log("Finding all scenes...");
-
-                var searchDirectory = new DirectoryInfo(Application.dataPath);
-                var assetFiles = searchDirectory.GetFiles("*.unity", SearchOption.AllDirectories);
-
-                foreach (var file in assetFiles)
+                var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "Assets");
+                var obj = AssetDatabase.LoadAssetAtPath(filePath, typeof(Object));
+                if (obj == null)
                 {
-                    var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "Assets");
-                    var obj = AssetDatabase.LoadAssetAtPath(filePath, typeof(Object));
-                    if (obj == null)
-                    {
-                        //Debug.Log(filePath + ": null!");
-                    }
-                    else if (obj.GetType() == typeof(Object))
-                    {
-                        Debug.Log(filePath);// + ": " + obj.GetType().FullName);
-                    }
-                    //var obj = AssetDatabase.
+                    //Debug.Log(filePath + ": null!");
                 }
+                else if (obj.GetType() == typeof(Object))
+                {
+                    Debug.Log(filePath);// + ": " + obj.GetType().FullName);
+                }
+                //var obj = AssetDatabase.
             }
-             */
         }
+         */
+    }
 }
 

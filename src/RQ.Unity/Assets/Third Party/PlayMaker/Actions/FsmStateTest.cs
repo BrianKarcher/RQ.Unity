@@ -38,7 +38,7 @@ namespace HutongGames.PlayMaker.Actions
 		// and have to cache a new fsm
 		private GameObject previousGo;
 		
-		// cach the fsm component since that's an expensive operation
+		// cache the fsm component since that's an expensive operation
         private PlayMakerFSM fsm;
 
 		public override void Reset()

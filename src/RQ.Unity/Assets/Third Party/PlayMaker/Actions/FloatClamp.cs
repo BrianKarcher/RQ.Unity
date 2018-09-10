@@ -21,7 +21,7 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("The maximum value.")]
 		public FsmFloat maxValue;
 
-        [Tooltip("Repeate every frame. Useful if the float variable is changing.")]
+        [Tooltip("Repeat every frame. Useful if the float variable is changing.")]
 		public bool everyFrame;
 
 		public override void Reset()

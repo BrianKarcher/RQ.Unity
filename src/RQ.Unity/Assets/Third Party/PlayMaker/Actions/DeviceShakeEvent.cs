@@ -13,7 +13,7 @@ namespace HutongGames.PlayMaker.Actions
 		public FsmFloat shakeThreshold;
 		
 		[RequiredField]
-		[Tooltip("Event to send when Shake Threshold is exceded.")]
+		[Tooltip("Event to send when Shake Threshold is exceeded.")]
 		public FsmEvent sendEvent;
 
 		public override void Reset()

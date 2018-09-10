@@ -25,8 +25,8 @@ MonoBehaviour:
         serializedVersion: 2
         x: 58
         y: 113
-        width: 118
-        height: 48
+        width: 128
+        height: 64
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -40,8 +40,16 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
+          name: Killed
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: KillTornado
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Disperse Helix
+          isSystemEvent: 0
           isGlobal: 0
         toState: Deflect
         linkStyle: 0
@@ -106,8 +114,8 @@ MonoBehaviour:
         - PlayerTouched
         - 
         - 
-        - 
-        - FINISHED
+        - Killed
+        - Disperse Helix
         - DisperseHelixPush
         - 
         - FINISHED
@@ -405,6 +413,12 @@ MonoBehaviour:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
+    - name: Disperse Helix
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Killed
+      isSystemEvent: 0
+      isGlobal: 0
     - name: PlayerTouched
       isSystemEvent: 0
       isGlobal: 0
@@ -484,6 +498,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0

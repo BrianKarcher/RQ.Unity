@@ -92,5 +92,13 @@ namespace HutongGames.PlayMaker.Actions
 				break;
 			}
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return "GetTimeInfo : " + getInfo + " > " + ActionHelpers.GetValueLabel(storeValue);
+	    }
+#endif
+
 	}
 }

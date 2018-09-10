@@ -65,5 +65,22 @@ namespace HutongGames.PlayMaker.Actions
                 Fsm.Event(eventTarget, sendEvent);
 			}
 		}
+
+#if UNITY_EDITOR
+
+	    public override string AutoName()
+	    {
+	        return "SendEvent : " + (eventTarget.target != FsmEventTarget.EventTarget.Self ? " " + eventTarget.target + " ": "")
+	                              + (sendEvent != null ? sendEvent.Name : "None")
+	                              + (delay.Value > 0f ? " " + delay.Value + "s" : "");
+	    }
+
+	    public override float GetProgress()
+	    {
+            if (delayedEvent != null)
+	            return Mathf.Min(delayedEvent.GetProgress());
+	        return 0f;
+	    }
+#endif
 	}
 }

@@ -7,7 +7,7 @@ namespace HutongGames.PlayMaker.Actions
 	public class BoolTest : FsmStateAction
 	{
 		[RequiredField]
-		[UIHint(UIHint.Variable)]
+		[UIHint(UIHint.Variable),Readonly]
         [Tooltip("The Bool variable to test.")]
 		public FsmBool boolVariable;
 

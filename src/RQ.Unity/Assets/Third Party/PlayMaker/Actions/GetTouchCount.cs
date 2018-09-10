@@ -10,8 +10,11 @@ namespace HutongGames.PlayMaker.Actions
 	{
 		[RequiredField]
 		[UIHint(UIHint.Variable)]
+        [Tooltip("Store the current number of touches in an Int Variable.")]
 		public FsmInt storeCount;
-		public bool everyFrame;
+
+        [Tooltip("Repeat every frame.")]
+        public bool everyFrame;
 		
 		public override void Reset()
 		{

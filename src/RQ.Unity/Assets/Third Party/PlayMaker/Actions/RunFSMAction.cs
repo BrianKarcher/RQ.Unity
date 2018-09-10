@@ -145,12 +145,15 @@ namespace HutongGames.PlayMaker.Actions
 
         public override void DoControllerColliderHit(ControllerColliderHit collisionInfo)
         {
-            runFsm.OnControllerColliderHit(collisionInfo);
+            if (runFsm.HandleControllerColliderHit)
+            {
+                runFsm.OnControllerColliderHit(collisionInfo);
+            }       
         }
 
         public override void DoTriggerEnter2D(Collider2D other)
         {
-            if (runFsm.HandleTriggerEnter)
+            if (runFsm.HandleTriggerEnter2D)
             {
                 runFsm.OnTriggerEnter2D(other);
             }
@@ -158,7 +161,7 @@ namespace HutongGames.PlayMaker.Actions
 
         public override void DoTriggerStay2D(Collider2D other)
         {
-            if (runFsm.HandleTriggerStay)
+            if (runFsm.HandleTriggerStay2D)
             {
                 runFsm.OnTriggerStay2D(other);
             }
@@ -166,7 +169,7 @@ namespace HutongGames.PlayMaker.Actions
 
         public override void DoTriggerExit2D(Collider2D other)
         {
-            if (runFsm.HandleTriggerExit)
+            if (runFsm.HandleTriggerExit2D)
             {
                 runFsm.OnTriggerExit2D(other);
             }
@@ -174,7 +177,7 @@ namespace HutongGames.PlayMaker.Actions
 
         public override void DoCollisionEnter2D(Collision2D collisionInfo)
         {
-            if (runFsm.HandleCollisionEnter)
+            if (runFsm.HandleCollisionEnter2D)
             {
                 runFsm.OnCollisionEnter2D(collisionInfo);
             }
@@ -182,7 +185,7 @@ namespace HutongGames.PlayMaker.Actions
 
         public override void DoCollisionStay2D(Collision2D collisionInfo)
         {
-            if (runFsm.HandleCollisionStay)
+            if (runFsm.HandleCollisionStay2D)
             {
                 runFsm.OnCollisionStay2D(collisionInfo);
             }
@@ -190,7 +193,7 @@ namespace HutongGames.PlayMaker.Actions
 
         public override void DoCollisionExit2D(Collision2D collisionInfo)
         {
-            if (runFsm.HandleCollisionExit)
+            if (runFsm.HandleCollisionExit2D)
             {
                 runFsm.OnCollisionExit2D(collisionInfo);
             }

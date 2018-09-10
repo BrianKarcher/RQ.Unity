@@ -41,5 +41,13 @@ namespace HutongGames.PlayMaker.Actions
 			
 			storeResult.Value = floatValue.Value * Time.deltaTime;
 		}
+
+#if UNITY_EDITOR
+	    public override string AutoName()
+	    {
+	        return ActionHelpers.AutoNameGetProperty(this, floatValue, storeResult);
+	    }
+#endif
+
 	}
 }
