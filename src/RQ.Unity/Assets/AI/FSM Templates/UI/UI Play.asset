@@ -293,17 +293,20 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.ButtonPressed
         - Assets.Source.AI.PM_State_Machine.ButtonPressed
         - Assets.Source.AI.PM_State_Machine.ButtonPressed
+        - Assets.Source.AI.PM_State_Machine.SkillMenu
         customNames:
         - 
         - 
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 0000000003000000080000000c00000010000000
-        actionHashCodes: 8186ef042334d000f74b7803f74b7803f74b7803
-        unityObjectParams: []
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 0000000003000000080000000c0000001000000014000000
+        actionHashCodes: 8186ef042334d000f74b7803f74b7803f74b7803eb4b2703
+        unityObjectParams:
+        - {fileID: 0}
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
@@ -320,19 +323,19 @@ MonoBehaviour:
         fsmFloatParams: []
         fsmIntParams: []
         fsmBoolParams:
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: 0
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: 0
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
@@ -350,18 +353,20 @@ MonoBehaviour:
         - FINISHED
         - FINISHED
         - FINISHED
-        byteData: 1100000000020000000100000003000000
-        arrayParamSizes: 01000000
+        byteData: 110000000002000000010000000300000006000000
+        arrayParamSizes: 0100000001000000
         arrayParamTypes:
         - RQ.Enum.Panels
-        customTypeSizes: 0100000002000000010000000100000001000000
+        - RQ.Model.Item.ItemClass
+        customTypeSizes: 010000000200000001000000010000000100000002000000
         customTypeNames:
         - RQ.AI.Atom.UI.ShowPanelAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.AI.Action.ButtonPressedAtom
         - RQ.AI.Action.ButtonPressedAtom
         - RQ.AI.Action.ButtonPressedAtom
-        paramDataType: 280000000c000000070000001700000001000000280000000300000003000000170000001100000028000000070000001700000011000000280000000700000017000000110000002800000007000000
+        - RQ.Animation.BasicAction.Action.SkillMenuAtom
+        paramDataType: 280000000c000000070000001700000001000000280000000300000003000000170000001100000028000000070000001700000011000000280000000700000017000000110000002800000007000000280000000c0000000700000005000000
         paramName:
         - _atom
         - _panels
@@ -383,8 +388,12 @@ MonoBehaviour:
         - storeResult
         - _buttonPressedAtom
         - _button
-        paramDataPos: 000000000000000000000000000000000400000001000000010000000200000003000000000000000200000005000000040000000100000003000000090000000500000002000000040000000d000000
-        paramByteDataSize: 0000000000000000040000000000000001000000000000000000000000000000000000000000000000000000040000000000000000000000000000000400000000000000000000000000000004000000
+        - _atom
+        - _itemClasses
+        - 
+        - _inventoryGrid
+        paramDataPos: 000000000000000000000000000000000400000001000000010000000200000003000000000000000200000005000000040000000100000003000000090000000500000002000000040000000d00000005000000010000001100000000000000
+        paramByteDataSize: 000000000000000004000000000000000100000000000000000000000000000000000000000000000000000004000000000000000000000000000000040000000000000000000000000000000400000000000000000000000400000000000000
     - name: Cutscene
       description: 
       colorIndex: 0
@@ -654,6 +663,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0

@@ -64,6 +64,7 @@ namespace RQ2.UI
         public PersistenceGrid PersistenceGrid;
         [SerializeField]
         public InventoryGrid InventoryGrid;
+        public InventoryGrid SkillGrid;
 
         public UITexture HUDSkill;
 
