@@ -48,7 +48,7 @@ namespace RQ.AI.Conditionals
                 case FloatVariableEnum.HP:
                     return _entityStatsComponent.GetEntityStats().CurrentHP;
                 case FloatVariableEnum.InputForce:
-                    return _physicsComponent.GetPhysicsData().InputForce.Length();
+                    return _physicsComponent.GetPhysicsAffector("input").Force.magnitude;
             }
             return 0f;
         }
