@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 12488578}
   - component: {fileID: 9224544}
   - component: {fileID: 11450486}
-  - component: {fileID: 11499134}
+  - component: {fileID: 114170504790667286}
   - component: {fileID: 5038246}
   - component: {fileID: 11495490}
   - component: {fileID: 11495986}
@@ -439,9 +439,9 @@ MonoBehaviour:
   _rqName2: 38ea4467-136f-4689-bcb2-2f0b1bfc0f04
   _componentRepository: {fileID: 11495986}
   _viewportMargin: {x: 0.32, y: 0.32}
-  minCamera: {x: 4.3399262, y: 1.08}
+  minCamera: {x: NaN, y: 1.08}
   maxCamera: {x: 0, y: 0}
-  _screenSize: {x: 8.6798525, y: 2.16}
+  _screenSize: {x: NaN, y: 2.16}
   _lockX: 0
   _lockY: 0
   _lockPos:
@@ -573,83 +573,6 @@ MonoBehaviour:
     StateMachineName: States
     StateData: []
   _logTransitions: 0
---- !u!114 &11499134
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 836265462, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 3693c7ed-e158-49f3-8ce9-d3e5dd2ffddc
-  componentName: 
-  _rqName: NormalCamera RQ.Physics.Components.BasicPhysicsComponent
-  _rqName2: 75eb8ce9-5d66-440b-8681-cf53e1395eaa
-  _componentRepository: {fileID: 11495986}
-  _basicPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
-    Size:
-      x: 0
-      y: 0
-    Heading:
-      x: 0
-      y: 0
-    Side:
-      x: -0
-      y: 0
-    Offset:
-      x: 0
-      y: 0
-    Mass: 1
-    MaxSpeed: 2
-    OriginalMaxSpeed: 1
-    MaxSpeedMultiplier: 1
-    BoundingRadius: 0
-    _directionRotate: 0
-    DamagedBounceForce: 1
-    DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
-    _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
-      x: 0
-      y: 0
-    OriginalZ: -10
-    _headingDirection: 1
-    MaxForce: 1
-    _friction: 0
-    _maxTurnRate: 6
-    _footOffset:
-      x: 0
-      y: 0
-    _fieldOfView: 0
-    _lineOfSight: 0
-    _dragForce: 0
-    ZDepthByY: 0
-    ZOffsetByLevel: 0
-    ZOffset: 0
-  _autoUpdateHeading: 1
-  _steering:
-    TargetAgent1: {fileID: 0}
-    Target:
-      x: 0
-      y: 0
-    Offset: {x: 0, y: 0, z: 0}
-    SteeringMode: 
-    _steeringForce:
-      x: 0
-      y: 0
 --- !u!124 &12488578
 Behaviour:
   m_ObjectHideFlags: 1
@@ -747,6 +670,152 @@ Transform:
   m_Father: {fileID: 499334}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114170504790667286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: efde6015-ad34-453b-841c-003b431ef0ac
+  componentName: 
+  _rqName: Normal Camera RQ.Physics.Components.PhysicsComponent
+  _rqName2: e3d71a4e-9775-427b-aa28-d58060c34cff
+  _componentRepository: {fileID: 11495986}
+  _physicsData:
+    Velocity:
+      x: 0
+      y: 0
+    Size:
+      x: 0
+      y: 0
+    Heading:
+      x: 0
+      y: 0
+    Side:
+      x: 0
+      y: 0
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 2
+    OriginalMaxSpeed: 2
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    MaxDistanceToTarget: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalVelocity:
+      x: 0
+      y: 0
+    OriginalZ: -10
+    _headingDirection: 1
+    MaxForce: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+    Altitude:
+      x: 0
+      y: 0
+    IsAirborn: 0
+    AirVelocity:
+      x: 0
+      y: 0
+    JumpVelocity:
+      x: 0
+      y: 0
+    Gravity:
+      x: 0
+      y: 0
+  _steeringPhysicsAffector:
+    _velocity: {x: 0, y: 0}
+    _originaVelocity: {x: 0, y: 0}
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _maxSpeed: 2
+    _maxSpeedMultiplier: 1
+    Friction: 0
+    Mass: 1
+  _originalPhysicsData:
+    Velocity:
+      x: 0
+      y: 0
+    Size:
+      x: 0
+      y: 0
+    Heading:
+      x: 0
+      y: 0
+    Side:
+      x: 0
+      y: 0
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 2
+    OriginalMaxSpeed: 2
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    MaxDistanceToTarget: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalVelocity:
+      x: 0
+      y: 0
+    OriginalZ: -10
+    _headingDirection: 1
+    MaxForce: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+    Altitude:
+      x: 0
+      y: 0
+    IsAirborn: 0
+    AirVelocity:
+      x: 0
+      y: 0
+    JumpVelocity:
+      x: 0
+      y: 0
+    Gravity:
+      x: 0
+      y: 0
+  _autoUpdateHeading: 1
+  _steering:
+    TargetAgent1: {fileID: 0}
+    Target:
+      x: 0
+      y: 0
+    Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
+    _steeringForce:
+      x: 0
+      y: 0
 --- !u!114 &114253140919588240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -758,6 +827,7 @@ MonoBehaviour:
   m_Script: {fileID: 1079068393, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetFSMs: []
 --- !u!114 &114318129202631490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1239,6 +1309,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 1
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0

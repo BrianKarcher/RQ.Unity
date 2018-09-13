@@ -3784,6 +3784,13 @@ MonoBehaviour:
   _componentRepository: {fileID: 11418054}
   _inputEnabled: 0
   _alwaysOn: 0
+  _inputPhysicsAffector:
+    _velocity: {x: 0, y: 0}
+    _originaVelocity: {x: 0, y: 0}
+    _force: {x: 0, y: 0}
+    _maxForce: 1.2
+    _maxSpeed: 1.2
+    _maxSpeedMultiplier: 1
   _reverseTimeLimit: 5
   _levelUp: {fileID: 0}
   _dizzyParent: {fileID: 103068}
@@ -5457,16 +5464,7 @@ MonoBehaviour:
     _directionRotate: 0
     DamagedBounceForce: 1.2
     DamageDrag: 1.2
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: -0.1
@@ -5496,6 +5494,15 @@ MonoBehaviour:
     Gravity:
       x: 0
       y: 0
+  _steeringPhysicsAffector:
+    _velocity: {x: 0, y: 0}
+    _originaVelocity: {x: 0, y: 0}
+    _force: {x: 0, y: 0}
+    _maxForce: 0
+    _maxSpeed: 0
+    _maxSpeedMultiplier: 1
+    Friction: 0
+    Mass: 1
   _originalPhysicsData:
     Velocity:
       x: 0
@@ -5521,16 +5528,7 @@ MonoBehaviour:
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: 0
@@ -6717,6 +6715,7 @@ MonoBehaviour:
   m_Script: {fileID: 1079068393, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetFSMs: []
 --- !u!114 &114217799586760478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6917,6 +6916,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -7115,6 +7115,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -7248,6 +7249,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -7381,6 +7383,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 1
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
