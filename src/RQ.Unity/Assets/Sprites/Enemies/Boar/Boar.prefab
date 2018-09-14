@@ -1385,6 +1385,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -1821,6 +1822,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -1931,16 +1933,7 @@ MonoBehaviour:
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: -0.1
@@ -1957,19 +1950,17 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
+  _steeringPhysicsAffector:
+    _velocity: {x: 0, y: 0}
+    _originaVelocity: {x: 0, y: 0}
+    _force: {x: 0, y: 0}
+    _maxForce: 3
+    _originalMaxForce: 1
+    _maxSpeed: 0.3
+    _maxSpeedMultiplier: 1
+    _mass: 1
+    _enabled: 1
+    Friction: 0
   _originalPhysicsData:
     Velocity:
       x: 0
@@ -1995,16 +1986,7 @@ MonoBehaviour:
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: 0
@@ -2021,19 +2003,6 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
   _autoUpdateHeading: 1
   _steering:
     TargetAgent1: {fileID: 0}
@@ -2101,7 +2070,7 @@ MonoBehaviour:
   _rqName: HUD Text RQ.Physics.Components.HudTextComponent
   _rqName2: 45eb4cb8-f62a-40eb-8df9-90b5e804c400
   _componentRepository: {fileID: 114139793779844086}
-  HudTextPrefab: {fileID: 400000, guid: da1dd9b479a126b4b87cee97599c6ed7, type: 2}
+  HudTextPrefab: {fileID: 0}
 --- !u!114 &114942676272388248
 MonoBehaviour:
   m_ObjectHideFlags: 1
