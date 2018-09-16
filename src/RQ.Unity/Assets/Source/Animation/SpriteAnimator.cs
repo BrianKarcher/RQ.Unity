@@ -66,9 +66,9 @@ namespace RQ2.AnimationV2
             anim.Resume();            
         }
 
-        public Texture[] GetTextures()
+        public Texture2D[] GetTextures()
         {
-            return anim.Sprite.Collection.textures;
+            return anim.Sprite.Collection.textureInsts;
         }
 
         public void SetSpriteAnimation(ISpriteAnimationsConfig spriteAnimationConfig)
