@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1907405172270122}
+  m_RootGameObject: {fileID: 1753537197479434}
   m_IsPrefabParent: 1
---- !u!1 &1446227870291482
+--- !u!1 &1115253167669864
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4545198201960342}
-  - component: {fileID: 114126511818309612}
-  - component: {fileID: 114978567892666384}
+  - component: {fileID: 4844009218718598}
+  - component: {fileID: 114642031527129882}
+  - component: {fileID: 114528241125653248}
   m_Layer: 0
   m_Name: Logic SM
   m_TagString: Untagged
@@ -28,21 +28,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1522303858627396
+--- !u!1 &1753537197479434
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4088179911575362}
-  - component: {fileID: 23564981554107344}
-  - component: {fileID: 33053078082781294}
-  - component: {fileID: 114770362750592642}
-  - component: {fileID: 114330948682816910}
-  - component: {fileID: 114658857096911904}
-  - component: {fileID: 114281887599960848}
-  - component: {fileID: 114070525022998746}
+  - component: {fileID: 4052875809590852}
+  - component: {fileID: 114408032701073288}
+  - component: {fileID: 114518643707577070}
+  m_Layer: 0
+  m_Name: Boss_RightVine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1773273154825620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4343924034860194}
+  - component: {fileID: 23854427712559736}
+  - component: {fileID: 33849212362526264}
+  - component: {fileID: 114132400011217368}
+  - component: {fileID: 114204350516214422}
+  - component: {fileID: 114446375311604404}
+  - component: {fileID: 114148394187298122}
+  - component: {fileID: 114738525178801618}
   m_Layer: 10
   m_Name: MainSprite
   m_TagString: Untagged
@@ -50,70 +67,53 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1907405172270122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4957163132555586}
-  - component: {fileID: 114653739522944492}
-  - component: {fileID: 114637711628246688}
-  m_Layer: 0
-  m_Name: Boss_LeftVine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4088179911575362
+--- !u!4 &4052875809590852
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522303858627396}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4957163132555586}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4545198201960342
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1446227870291482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4957163132555586}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4957163132555586
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1907405172270122}
+  m_GameObject: {fileID: 1753537197479434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4088179911575362}
-  - {fileID: 4545198201960342}
+  - {fileID: 4343924034860194}
+  - {fileID: 4844009218718598}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23564981554107344
+--- !u!4 &4343924034860194
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773273154825620}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4052875809590852}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4844009218718598
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115253167669864}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4052875809590852}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23854427712559736
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522303858627396}
+  m_GameObject: {fileID: 1773273154825620}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -140,66 +140,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33053078082781294
+--- !u!33 &33849212362526264
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522303858627396}
+  m_GameObject: {fileID: 1773273154825620}
   m_Mesh: {fileID: 0}
---- !u!114 &114070525022998746
+--- !u!114 &114132400011217368
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522303858627396}
+  m_GameObject: {fileID: 1773273154825620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 2119558580, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: bff7ad96-a1d3-4c01-81cf-9fd4644bdc91
-  componentName: 
-  _rqName: MainSprite RQ.Physics.Components.AltitudePhysicsComponent
-  _rqName2: 4956e3d8-9921-462c-82a9-697ba4797acd
-  _componentRepository: {fileID: 114653739522944492}
-  _altitudeData:
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 1
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
---- !u!114 &114126511818309612
+  collection: {fileID: 114506122042295800, guid: e134283e5ca21ce41891000f0a7e7b7a,
+    type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: -0.7, y: 0.7, z: 1}
+  _spriteId: 100
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
+--- !u!114 &114148394187298122
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1446227870291482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: cd2d8d6b-ceb1-4bf4-8304-a45731d471ec
-  componentName: 
-  _rqName: Logic SM RQ.Physics.Components.PlayMakerStateMachineComponent
-  _rqName2: f33cc519-ec69-47fd-a5d3-260709a7303b
-  _componentRepository: {fileID: 114653739522944492}
-  pm: {fileID: 0}
---- !u!114 &114281887599960848
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522303858627396}
+  m_GameObject: {fileID: 1773273154825620}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1951438886, guid: 12d8c4a4410b9684983f5d6c8463d1d9, type: 3}
@@ -209,7 +186,7 @@ MonoBehaviour:
   componentName: 
   _rqName: MainSprite RQ.Animation.AnimationComponent
   _rqName2: 8c2d39a9-8ab4-43d3-9af1-c64093f16769
-  _componentRepository: {fileID: 114653739522944492}
+  _componentRepository: {fileID: 114408032701073288}
   Data:
     FacingDirectionMode: 0
     FacingDirection: 1
@@ -219,15 +196,15 @@ MonoBehaviour:
     PlayAutomatically: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
-  SpriteAnimator2: {fileID: 114658857096911904}
+  SpriteAnimator2: {fileID: 114446375311604404}
   _use8Directions: 0
   _isMain: 1
---- !u!114 &114330948682816910
+--- !u!114 &114204350516214422
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522303858627396}
+  m_GameObject: {fileID: 1773273154825620}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
@@ -236,28 +213,12 @@ MonoBehaviour:
   library: {fileID: 114724911946235604, guid: 7cf49a07f6ee22d44b98841a84c9b0b3, type: 2}
   defaultClipId: 12
   playAutomatically: 1
---- !u!114 &114637711628246688
+--- !u!114 &114408032701073288
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1907405172270122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 47c9acc6-cb83-4f59-8b7c-cbda80900ac0
-  componentName: 
-  _rqName: Boss_LeftVine RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: 9e0e7ef7-fd3a-4805-9159-ee0608910aee
-  _componentRepository: {fileID: 114653739522944492}
---- !u!114 &114653739522944492
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1907405172270122}
+  m_GameObject: {fileID: 1753537197479434}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
@@ -272,12 +233,12 @@ MonoBehaviour:
   EntityType: 6
   EntityPrefabUniqueId: 9e7c06db-d155-42c1-ac62-192787a97df2
   _parentRepo: {fileID: 0}
---- !u!114 &114658857096911904
+--- !u!114 &114446375311604404
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522303858627396}
+  m_GameObject: {fileID: 1773273154825620}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41880b8380ca71346a1bc3912eb8f03f, type: 3}
@@ -295,37 +256,29 @@ MonoBehaviour:
   SpriteOffsetPos:
     x: 0
     y: 0
-  anim: {fileID: 114330948682816910}
---- !u!114 &114770362750592642
+  anim: {fileID: 114204350516214422}
+--- !u!114 &114518643707577070
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522303858627396}
+  m_GameObject: {fileID: 1753537197479434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 114506122042295800, guid: e134283e5ca21ce41891000f0a7e7b7a,
-    type: 2}
-  _color: {r: 1, g: 1, b: 1, a: 1}
-  _scale: {x: 0.7, y: 0.7, z: 1}
-  _spriteId: 100
-  boxCollider2D: {fileID: 0}
-  polygonCollider2D: []
-  edgeCollider2D: []
-  boxCollider: {fileID: 0}
-  meshCollider: {fileID: 0}
-  meshColliderPositions: []
-  meshColliderMesh: {fileID: 0}
-  renderLayer: 0
---- !u!114 &114978567892666384
+  _uniqueId: 47c9acc6-cb83-4f59-8b7c-cbda80900ac0
+  componentName: 
+  _rqName: Boss_LeftVine RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 9e0e7ef7-fd3a-4805-9159-ee0608910aee
+  _componentRepository: {fileID: 114408032701073288}
+--- !u!114 &114528241125653248
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1446227870291482}
+  m_GameObject: {fileID: 1115253167669864}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
@@ -454,3 +407,50 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: fbdd90183434bd34691a6121ca2b96a4, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114642031527129882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115253167669864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: cd2d8d6b-ceb1-4bf4-8304-a45731d471ec
+  componentName: 
+  _rqName: Logic SM RQ.Physics.Components.PlayMakerStateMachineComponent
+  _rqName2: f33cc519-ec69-47fd-a5d3-260709a7303b
+  _componentRepository: {fileID: 114408032701073288}
+  pm: {fileID: 0}
+--- !u!114 &114738525178801618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773273154825620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2119558580, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: bff7ad96-a1d3-4c01-81cf-9fd4644bdc91
+  componentName: 
+  _rqName: MainSprite RQ.Physics.Components.AltitudePhysicsComponent
+  _rqName2: 4956e3d8-9921-462c-82a9-697ba4797acd
+  _componentRepository: {fileID: 114408032701073288}
+  _altitudeData:
+    Altitude:
+      x: 0
+      y: 0
+    IsAirborn: 1
+    AirVelocity:
+      x: 0
+      y: 0
+    JumpVelocity:
+      x: 0
+      y: 0
+    Gravity:
+      x: 0
+      y: 0
