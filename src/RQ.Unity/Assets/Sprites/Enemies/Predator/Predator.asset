@@ -23,7 +23,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 53
+        x: 85
         y: 231
         width: 122
         height: 64
@@ -43,7 +43,7 @@ MonoBehaviour:
           name: PlayerDetected
           isSystemEvent: 0
           isGlobal: 0
-        toState: Attack
+        toState: Startled
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -51,31 +51,25 @@ MonoBehaviour:
           name: AttackSucesfull
           isSystemEvent: 0
           isGlobal: 0
-        toState: Attack
+        toState: Startled
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.StopMoving
-        - HutongGames.PlayMaker.Actions.RandomFloat
-        - HutongGames.PlayMaker.Actions.GetTimeInfo
-        - HutongGames.PlayMaker.Actions.GetTimeInfo
-        - HutongGames.PlayMaker.Actions.FloatCompare
         - Assets.Source.AI.PM_State_Machine.OnTrigger
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - HutongGames.PlayMaker.Actions.RandomWait
         customNames:
         - 
         - 
         - 
         - 
-        - 
-        - 
-        - 
-        actionEnabled: 01010101010101
-        actionIsOpen: 01010101010101
-        actionStartIndex: 000000000200000005000000080000000b0000001200000019000000
-        actionHashCodes: 8fc533042ee0170457587501575875011bcdca0418dc36007e7e0e03
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000030000000a00000010000000
+        actionHashCodes: 8fc5330418dc36007e7e0e030d5f5c01
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -115,42 +109,6 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 4
-        - useVariable: 1
-          name: timeForNextRoll
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: timeFromLastRoll
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: gameTime
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: gameTime
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: timeFromLastRoll
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: timeForNextRoll
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -160,42 +118,26 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        - 
-        - 
-        - PredatorRoll
+        - Steering
         - PlayerDetected
         - 
         - 
         - 
         - 
-        byteData: 040000000004000000010100000000000100
+        - PredatorRoll
+        byteData: 0000000000010000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 010000000200000005000000
+        customTypeSizes: 020000000200000005000000
         customTypeNames:
         - RQ.AI.Action.StopMovingAtom
         - RQ.Animation.BasicAction.Action.OnTriggerAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
-        paramDataType: 28000000030000000f0000000f0000000f000000070000000f00000001000000070000000f000000010000000f0000000f0000000f0000001700000017000000170000000100000007000000130000001200000017000000280000000300000003000000280000000300000003000000010000000100000001000000
+        paramDataType: 280000000300000003000000070000001300000012000000170000002800000003000000030000002800000003000000030000000100000001000000010000000f0000000f0000001700000001000000
         paramName:
         - _stopMovingAtom
         - _uniqueId
-        - min
-        - max
-        - storeResult
-        - getInfo
-        - storeValue
-        - everyFrame
-        - getInfo
-        - storeValue
-        - everyFrame
-        - float1
-        - float2
-        - tolerance
-        - equal
-        - lessThan
-        - greaterThan
-        - everyFrame
+        - _physicsAffector
         - trigger
         - _storeCollider
         - collideTag
@@ -209,14 +151,18 @@ MonoBehaviour:
         - _byType
         - WaitForAnimationCompletion
         - StopOnExit
-        paramDataPos: 00000000000000000000000001000000020000000000000003000000040000000500000004000000090000000500000006000000070000000100000002000000030000000a0000000b0000000000000000000000040000000100000005000000060000000200000007000000080000000f0000001000000011000000
-        paramByteDataSize: 00000000000000000000000000000000000000000400000000000000010000000400000000000000010000000000000000000000000000000000000000000000000000000100000004000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000
+        - min
+        - max
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000000000000010000000000000000000000000000000200000001000000030000000400000002000000050000000600000004000000050000000600000000000000010000000700000007000000
+        paramByteDataSize: 0000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000000000000000000000000000001000000
     - name: Roll
       description: Roll a cross the grass to change his location
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 408
+        x: 440
         y: 235
         width: 215
         height: 48
@@ -257,7 +203,7 @@ MonoBehaviour:
         - 
         actionEnabled: 010101000101
         actionIsOpen: 010101010101
-        actionStartIndex: 00000000020000000c00000013000000190000001e000000
+        actionStartIndex: 00000000020000000c00000013000000190000001f000000
         actionHashCodes: ae351404d332050218dc36007e7e0e03a082bf001bcdca04
         unityObjectParams: []
         fsmGameObjectParams:
@@ -344,6 +290,7 @@ MonoBehaviour:
         - 
         - 
         - 
+        - 
         - ReturnIdlle
         - ReturnIdlle
         - 
@@ -351,14 +298,14 @@ MonoBehaviour:
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 0100000006000000020000000500000002000000
+        customTypeSizes: 0100000006000000020000000500000003000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
         - RQ.Animation.BasicAction.Action.SetSteeringTargetToVectorAtom
         - RQ.Animation.BasicAction.Action.OnTriggerAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
-        paramDataType: 28000000070000002900000013000000010000002800000007000000000000000c000000010000000300000003000000070000001300000012000000170000002800000003000000030000002800000003000000030000000100000001000000010000000f000000010000002800000002000000070000000f0000000f0000000f00000017000000170000001700000001000000
+        paramDataType: 28000000070000002900000013000000010000002800000007000000000000000c000000010000000300000003000000070000001300000012000000170000002800000003000000030000002800000003000000030000000100000001000000010000000f00000001000000280000000200000007000000030000000f0000000f0000000f00000017000000170000001700000001000000
         paramName:
         - _sbAtom
         - SteeringBehavior
@@ -390,6 +337,7 @@ MonoBehaviour:
         - _getFloatVariableAtom
         - Value
         - _variable
+        - VariableName
         - float1
         - float2
         - tolerance
@@ -397,14 +345,14 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 0000000000000000000000000000000004000000010000000500000009000000000000000d00000000000000010000000e000000010000000000000002000000020000000300000004000000030000000500000006000000120000001300000014000000000000001500000004000000160000001a0000000100000002000000030000000700000008000000090000001e000000
-        paramByteDataSize: 00000000040000000000000000000000010000000000000004000000040000000000000001000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000000000000100000000000000040000000400000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 0000000000000000000000000000000004000000010000000500000009000000000000000d00000000000000010000000e000000010000000000000002000000020000000300000004000000030000000500000006000000120000001300000014000000000000001500000004000000160000001a0000000700000001000000020000000300000008000000090000000a0000001e000000
+        paramByteDataSize: 0000000004000000000000000000000001000000000000000400000004000000000000000100000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000000000000010000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000
     - name: SetUp
       description: Find Parent
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 108
+        x: 140
         y: 105
         width: 100
         height: 32
@@ -502,14 +450,15 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
+        stringParams:
+        - Steering
         byteData: 000000403f00
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 02000000
+        customTypeSizes: 03000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetMaxSpeedAtom
-        paramDataType: 1400000013000000120000001200000013000000130000001800000001000000280000000200000001000000
+        paramDataType: 140000001300000012000000120000001300000013000000180000000100000028000000020000000100000003000000
         paramName:
         - gameObject
         - storeResult
@@ -522,14 +471,15 @@ MonoBehaviour:
         - _setMaxSpeedAtom
         - _speed
         - _resetToOriginal
-        paramDataPos: 0000000000000000000000000100000001000000020000000000000000000000000000000100000005000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000000000000400000001000000
+        - PhysicsAffectorName
+        paramDataPos: 000000000000000000000000010000000100000002000000000000000000000000000000010000000500000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000000000000040000000100000000000000
     - name: Attack
       description: Attack Rolan when he enters in his detection range
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 251
+        x: 283
         y: 389
         width: 227
         height: 64
@@ -566,17 +516,27 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.Attack
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.SetVelocity
+        - Assets.Source.AI.PM_State_Machine.OnTrigger
         customNames:
         - 
         - 
         - 
-        actionEnabled: 000101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000300000009000000
-        actionHashCodes: 2ab217047e7e0e032334d000
+        - 
+        - 
+        actionEnabled: 0001010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000003000000090000000e0000001b000000
+        actionHashCodes: 2ab217047e7e0e032334d0005278820018dc3600
         unityObjectParams:
         - {fileID: 0}
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -584,7 +544,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Water
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -604,15 +570,23 @@ MonoBehaviour:
         - Counter
         - 
         - 
-        byteData: 01010000
+        - 
+        - 
+        - Steering
+        - FallInWater
+        - 
+        - 
+        byteData: 010100000000000000000000000000000100000000000000000000000000803f0000803f01010000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 020000000500000002000000
+        customTypeSizes: 0200000005000000020000000b00000002000000
         customTypeNames:
         - RQ.Entity.AtomAction.Action.AttackAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 2800000005000000030000002800000003000000030000000100000001000000010000001700000001000000280000000300000003000000
+        - RQ.AI.Action.SetVelocityAtom
+        - RQ.Animation.BasicAction.Action.OnTriggerAtom
+        paramDataType: 28000000050000000300000028000000030000000300000001000000010000000100000017000000010000002800000003000000030000002800000003000000080000000200000003000000070000000800000002000000020000000100000007000000030000000100000007000000130000001200000017000000280000000300000003000000
         paramName:
         - _attackAtom
         - _skill
@@ -628,14 +602,34 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 0000000000000000000000000100000001000000020000000000000001000000020000000300000003000000020000000400000005000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000100000001000000010000000000000001000000000000000000000000000000
+        - _atom
+        - _uniqueId
+        - _offset
+        - _delay
+        - _physicsComponentName
+        - _shootTarget
+        - _location
+        - _minSpeed
+        - _maxSpeed
+        - _sameLevel
+        - _objectLevel
+        - _physicsAffector
+        - everyFrame
+        - trigger
+        - _storeCollider
+        - collideTag
+        - sendEvent
+        - _atom
+        - triggerType
+        - collideTag
+        paramDataPos: 00000000000000000000000001000000010000000200000000000000010000000200000003000000030000000200000004000000050000000300000006000000040000000c0000000700000010000000140000001c00000020000000240000002500000008000000290000002a000000000000000000000009000000040000000a0000000b000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000010000000100000000000000010000000000000000000000000000000000000000000000080000000400000000000000040000000800000004000000040000000100000004000000000000000100000004000000000000000000000000000000000000000000000000000000
     - name: DamagingPlayer
       description: Make damage to the player
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 686
+        x: 718
         y: 567
         width: 164
         height: 32
@@ -695,7 +689,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 681
+        x: 713
         y: 403
         width: 181.5
         height: 32
@@ -767,7 +761,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 249
+        x: 281
         y: 716
         width: 344
         height: 32
@@ -838,7 +832,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 698
+        x: 730
         y: 726
         width: 134
         height: 16
@@ -894,7 +888,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 951.02344
+        x: 983.02344
         y: 418
         width: 132
         height: 16
@@ -946,6 +940,78 @@ MonoBehaviour:
         - SteeringBehavior
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000004000000
+    - name: Startled
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 65
+        y: 394
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Attack
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 48c01101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        byteData: 00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f0000001700000001000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 000000000000000000000000
+        paramByteDataSize: 000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -976,24 +1042,6 @@ MonoBehaviour:
       floatVariables:
       - useVariable: 1
         name: distanceToWaypoint
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      - useVariable: 1
-        name: gameTime
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      - useVariable: 1
-        name: timeForNextRoll
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      - useVariable: 1
-        name: timeFromLastRoll
         tooltip: 
         showInInspector: 0
         networkSync: 0
@@ -1033,7 +1081,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
@@ -1043,7 +1091,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -1072,6 +1120,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
