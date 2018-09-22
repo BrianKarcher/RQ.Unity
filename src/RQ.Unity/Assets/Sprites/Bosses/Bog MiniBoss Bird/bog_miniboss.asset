@@ -23,7 +23,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 306
+        x: 402
         y: 100
         width: 100
         height: 32
@@ -123,9 +123,9 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 59
-        y: 371
-        width: 181
+        x: 57.9375
+        y: 395.84375
+        width: 191
         height: 32
       isBreakpoint: 0
       isSequence: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Select Action
+        toState: AfterIdle
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101
+        actionEnabled: 010001
         actionIsOpen: 010101
         actionStartIndex: 000000000300000006000000
         actionHashCodes: 66a62105603dd90548c01101
@@ -218,8 +218,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 602
-        y: 421
+        x: 649.9922
+        y: 396.75
         width: 102
         height: 32
       isBreakpoint: 0
@@ -238,13 +238,17 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.IntAdd
         - Assets.Source.AI.PM_State_Machine.ShootObject
+        - HutongGames.PlayMaker.Actions.SetBoolValue
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 603dd9059c71e404
+        - 
+        - 
+        actionEnabled: 00010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000030000000e00000011000000
+        actionHashCodes: 603dd9059c71e40427fbe10348c01101
         unityObjectParams:
         - {fileID: 4789108452975174, guid: aa0022306336be5459691761f3a7df71, type: 2}
         fsmGameObjectParams: []
@@ -260,7 +264,13 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmIntParams:
         - useVariable: 1
           name: step
@@ -274,7 +284,19 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: isTornadoNext
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -282,13 +304,14 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        byteData: 00000000009a9919bf0000000001000000000000009a9919bfcdcc4c3e9a99993e0101000000
+        - FINISHED
+        byteData: 00000000009a9919bf0000000001000000000000009a9919bfcdcc4c3e9a99993e01010000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 0a000000
         customTypeNames:
         - RQ.AI.Action.ShootObjectAtom
-        paramDataType: 1000000010000000010000002800000003000000050000000800000002000000070000000800000002000000020000000100000007000000
+        paramDataType: 10000000100000000100000028000000030000000500000008000000020000000700000008000000020000000200000001000000070000001100000011000000010000000f0000001700000001000000
         paramName:
         - intVariable
         - add
@@ -304,14 +327,20 @@ MonoBehaviour:
         - _maxSpeed
         - _sameLevel
         - _objectLevel
-        paramDataPos: 00000000010000000000000000000000000000000000000001000000090000000d00000011000000190000001d0000002100000022000000
-        paramByteDataSize: 0000000000000000010000000000000000000000000000000800000004000000040000000800000004000000040000000100000004000000
+        - boolVariable
+        - boolValue
+        - everyFrame
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000010000000000000000000000000000000000000001000000090000000d00000011000000190000001d0000002100000022000000000000000100000026000000000000000100000027000000
+        paramByteDataSize: 0000000000000000010000000000000000000000000000000800000004000000040000000800000004000000040000000100000004000000000000000000000001000000000000000000000001000000
     - name: Stop Flying
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1187
+        x: 1283
         y: 460
         width: 100
         height: 32
@@ -336,7 +365,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101
+        actionEnabled: 010001
         actionIsOpen: 010101
         actionStartIndex: 000000000300000006000000
         actionHashCodes: 66a62105603dd90548c01101
@@ -406,8 +435,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 217
-        y: 195
+        x: 240.83594
+        y: 253.76562
         width: 100
         height: 32
       isBreakpoint: 0
@@ -415,8 +444,8 @@ MonoBehaviour:
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: Idle
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
         toState: Idle
         linkStyle: 0
@@ -426,13 +455,17 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetIntValue
         - HutongGames.PlayMaker.Actions.IntCompare
+        - HutongGames.PlayMaker.Actions.SetIntValue
+        - HutongGames.PlayMaker.Actions.SetBoolValue
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 603dd90509faa102
+        - 
+        - 
+        actionEnabled: 00000101
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000003000000090000000c000000
+        actionHashCodes: 603dd90509faa102603dd90527fbe103
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -473,7 +506,31 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        fsmBoolParams: []
+        - useVariable: 1
+          name: TornadoCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmBoolParams:
+        - useVariable: 1
+          name: isTornadoNext
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -483,12 +540,12 @@ MonoBehaviour:
         - Idle
         - 
         - 
-        byteData: 0000
+        byteData: 00000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 100000001000000001000000100000001000000017000000170000001700000001000000
+        paramDataType: 100000001000000001000000100000001000000017000000170000001700000001000000100000001000000001000000110000001100000001000000
         paramName:
         - intVariable
         - intValue
@@ -499,15 +556,21 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 000000000100000000000000020000000300000000000000010000000200000001000000
-        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000001000000
+        - intVariable
+        - intValue
+        - everyFrame
+        - boolVariable
+        - boolValue
+        - everyFrame
+        paramDataPos: 000000000100000000000000020000000300000000000000010000000200000001000000040000000500000002000000000000000100000003000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000001000000000000000000000001000000000000000000000001000000
     - name: Select Action
       description: 
-      colorIndex: 0
+      colorIndex: 6
       position:
         serializedVersion: 2
-        x: 246
-        y: 549
+        x: 143
+        y: 745
         width: 106
         height: 80
       isBreakpoint: 0
@@ -561,7 +624,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101010101
+        actionEnabled: 000000000000
         actionIsOpen: 010101010101
         actionStartIndex: 00000000060000000c00000012000000180000001e000000
         actionHashCodes: 09faa10209faa10209faa10209faa10209faa10209faa102
@@ -725,11 +788,11 @@ MonoBehaviour:
         paramByteDataSize: 000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000
     - name: CheckAction
       description: Check Next after StopFlying
-      colorIndex: 0
+      colorIndex: 6
       position:
         serializedVersion: 2
-        x: 580
-        y: 282
+        x: 616.8828
+        y: 153.25781
         width: 153
         height: 48
       isBreakpoint: 0
@@ -755,12 +818,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.IntCompare
+        - HutongGames.PlayMaker.Actions.IntCompare
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 09faa102
+        - 
+        actionEnabled: 0001
+        actionIsOpen: 0101
+        actionStartIndex: 0000000006000000
+        actionHashCodes: 09faa10209faa102
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -789,6 +854,18 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 14
+        - useVariable: 1
+          name: TornadoCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 4
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -799,12 +876,15 @@ MonoBehaviour:
         - Idle
         - FINISHED
         - Idle
-        byteData: 01
+        - Idle
+        - FINISHED
+        - Idle
+        byteData: 0101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 100000001000000017000000170000001700000001000000
+        paramDataType: 100000001000000017000000170000001700000001000000100000001000000017000000170000001700000001000000
         paramName:
         - integer1
         - integer2
@@ -812,15 +892,21 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 000000000100000000000000010000000200000000000000
-        paramByteDataSize: 000000000000000000000000000000000000000001000000
+        - integer1
+        - integer2
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        paramDataPos: 000000000100000000000000010000000200000000000000020000000300000003000000040000000500000001000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000
     - name: OneTornado
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 446
-        y: 572
+        x: 760.5547
+        y: 534.8828
         width: 101
         height: 32
       isBreakpoint: 0
@@ -838,16 +924,18 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.IntAdd
+        - HutongGames.PlayMaker.Actions.IntAdd
         - HutongGames.PlayMaker.Actions.SetFloatValue
         - Assets.Source.AI.PM_State_Machine.ShootObject
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000300000006000000
-        actionHashCodes: 603dd9059845b3059c71e404
+        - 
+        actionEnabled: 01000101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000030000000600000009000000
+        actionHashCodes: 603dd905603dd9059845b3059c71e404
         unityObjectParams:
         - {fileID: 4908006406328516, guid: 51c0a9630a2c45b408d7f7edc100df3e, type: 2}
         fsmGameObjectParams: []
@@ -878,6 +966,18 @@ MonoBehaviour:
           value: 2
         fsmIntParams:
         - useVariable: 1
+          name: TornadoCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 1
           name: step
           tooltip: 
           showInInspector: 0
@@ -897,14 +997,17 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        byteData: 0000000000009a9919bf000000000100000000000000000000003333333f3333333f0002000000
+        byteData: 000000000000009a9919bf000000000100000000000000000000003333333f3333333f0002000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 0a000000
         customTypeNames:
         - RQ.AI.Action.ShootObjectAtom
-        paramDataType: 1000000010000000010000000f0000000f000000010000002800000003000000050000000800000002000000070000000800000002000000020000000100000007000000
+        paramDataType: 1000000010000000010000001000000010000000010000000f0000000f000000010000002800000003000000050000000800000002000000070000000800000002000000020000000100000007000000
         paramName:
+        - intVariable
+        - add
+        - everyFrame
         - intVariable
         - add
         - everyFrame
@@ -922,15 +1025,15 @@ MonoBehaviour:
         - _maxSpeed
         - _sameLevel
         - _objectLevel
-        paramDataPos: 000000000100000000000000000000000100000001000000000000000000000000000000020000000a0000000e000000120000001a0000001e0000002200000023000000
-        paramByteDataSize: 0000000000000000010000000000000000000000010000000000000000000000000000000800000004000000040000000800000004000000040000000100000004000000
+        paramDataPos: 000000000100000000000000020000000300000001000000000000000100000002000000000000000000000000000000030000000b0000000f000000130000001b0000001f0000002300000024000000
+        paramByteDataSize: 0000000000000000010000000000000000000000010000000000000000000000010000000000000000000000000000000800000004000000040000000800000004000000040000000100000004000000
     - name: TwoTornadoes
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 436
-        y: 636
+        x: 726.84375
+        y: 627.75
         width: 117
         height: 32
       isBreakpoint: 0
@@ -948,6 +1051,7 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.IntAdd
+        - HutongGames.PlayMaker.Actions.IntAdd
         - HutongGames.PlayMaker.Actions.SetFloatValue
         - Assets.Source.AI.PM_State_Machine.ShootObject
         - Assets.Source.AI.PM_State_Machine.ShootObject
@@ -956,10 +1060,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000030000000600000011000000
-        actionHashCodes: 603dd9059845b3059c71e4049c71e404
+        - 
+        actionEnabled: 0100010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000003000000060000000900000014000000
+        actionHashCodes: 603dd905603dd9059845b3059c71e4049c71e404
         unityObjectParams:
         - {fileID: 4908006406328516, guid: 51c0a9630a2c45b408d7f7edc100df3e, type: 2}
         - {fileID: 4908006406328516, guid: 51c0a9630a2c45b408d7f7edc100df3e, type: 2}
@@ -991,6 +1096,18 @@ MonoBehaviour:
           value: 3
         fsmIntParams:
         - useVariable: 1
+          name: TornadoCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 1
           name: step
           tooltip: 
           showInInspector: 0
@@ -1011,15 +1128,18 @@ MonoBehaviour:
         stringParams:
         - 
         - 
-        byteData: 0000000000bf9a9919bf000000000100000000000000000000003333333f3333333f00020000000000003f9a9919bf000000000100000000000000000000003333333f3333333f0002000000
+        byteData: 000000000000bf9a9919bf000000000100000000000000000000003333333f3333333f00020000000000003f9a9919bf000000000100000000000000000000003333333f3333333f0002000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 0a0000000a000000
         customTypeNames:
         - RQ.AI.Action.ShootObjectAtom
         - RQ.AI.Action.ShootObjectAtom
-        paramDataType: 1000000010000000010000000f0000000f0000000100000028000000030000000500000008000000020000000700000008000000020000000200000001000000070000002800000003000000050000000800000002000000070000000800000002000000020000000100000007000000
+        paramDataType: 1000000010000000010000001000000010000000010000000f0000000f0000000100000028000000030000000500000008000000020000000700000008000000020000000200000001000000070000002800000003000000050000000800000002000000070000000800000002000000020000000100000007000000
         paramName:
+        - intVariable
+        - add
+        - everyFrame
         - intVariable
         - add
         - everyFrame
@@ -1048,15 +1168,15 @@ MonoBehaviour:
         - _maxSpeed
         - _sameLevel
         - _objectLevel
-        paramDataPos: 000000000100000000000000000000000100000001000000000000000000000000000000020000000a0000000e000000120000001a0000001e0000002200000023000000010000000100000001000000270000002f00000033000000370000003f000000430000004700000048000000
-        paramByteDataSize: 00000000000000000100000000000000000000000100000000000000000000000000000008000000040000000400000008000000040000000400000001000000040000000000000000000000000000000800000004000000040000000800000004000000040000000100000004000000
+        paramDataPos: 000000000100000000000000020000000300000001000000000000000100000002000000000000000000000000000000030000000b0000000f000000130000001b0000001f00000023000000240000000100000001000000010000002800000030000000340000003800000040000000440000004800000049000000
+        paramByteDataSize: 00000000000000000100000000000000000000000100000000000000000000000100000000000000000000000000000008000000040000000400000008000000040000000400000001000000040000000000000000000000000000000800000004000000040000000800000004000000040000000100000004000000
     - name: ThreeTornadoes
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 430
-        y: 703
+        x: 738.375
+        y: 701.96875
         width: 127
         height: 32
       isBreakpoint: 0
@@ -1073,6 +1193,7 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.SetIntValue
         - HutongGames.PlayMaker.Actions.IntAdd
         - HutongGames.PlayMaker.Actions.SetFloatValue
         - Assets.Source.AI.PM_State_Machine.ShootObject
@@ -1084,10 +1205,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 000000000300000006000000110000001c000000
-        actionHashCodes: 603dd9059845b3059c71e4049c71e4049c71e404
+        - 
+        actionEnabled: 010001010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 00000000030000000600000009000000140000001f000000
+        actionHashCodes: 603dd905603dd9059845b3059c71e4049c71e4049c71e404
         unityObjectParams:
         - {fileID: 4908006406328516, guid: 51c0a9630a2c45b408d7f7edc100df3e, type: 2}
         - {fileID: 4908006406328516, guid: 51c0a9630a2c45b408d7f7edc100df3e, type: 2}
@@ -1120,6 +1242,18 @@ MonoBehaviour:
           value: 4
         fsmIntParams:
         - useVariable: 1
+          name: TornadoCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 1
           name: step
           tooltip: 
           showInInspector: 0
@@ -1141,7 +1275,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        byteData: 0000000000009a9919bf000000000100000000000000000000003333333f3333333f00020000000000003f9a9919bf000000000100000000000000000000003333333f3333333f0002000000000000bf9a9919bf000000000100000000000000000000003333333f3333333f0002000000
+        byteData: 000000000000009a9919bf000000000100000000000000000000003333333f3333333f00020000000000003f9a9919bf000000000100000000000000000000003333333f3333333f0002000000000000bf9a9919bf000000000100000000000000000000003333333f3333333f0002000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 0a0000000a0000000a000000
@@ -1149,8 +1283,11 @@ MonoBehaviour:
         - RQ.AI.Action.ShootObjectAtom
         - RQ.AI.Action.ShootObjectAtom
         - RQ.AI.Action.ShootObjectAtom
-        paramDataType: 1000000010000000010000000f0000000f00000001000000280000000300000005000000080000000200000007000000080000000200000002000000010000000700000028000000030000000500000008000000020000000700000008000000020000000200000001000000070000002800000003000000050000000800000002000000070000000800000002000000020000000100000007000000
+        paramDataType: 1000000010000000010000001000000010000000010000000f0000000f00000001000000280000000300000005000000080000000200000007000000080000000200000002000000010000000700000028000000030000000500000008000000020000000700000008000000020000000200000001000000070000002800000003000000050000000800000002000000070000000800000002000000020000000100000007000000
         paramName:
+        - intVariable
+        - intValue
+        - everyFrame
         - intVariable
         - add
         - everyFrame
@@ -1190,14 +1327,14 @@ MonoBehaviour:
         - _maxSpeed
         - _sameLevel
         - _objectLevel
-        paramDataPos: 000000000100000000000000000000000100000001000000000000000000000000000000020000000a0000000e000000120000001a0000001e0000002200000023000000010000000100000001000000270000002f00000033000000370000003f0000004300000047000000480000000200000002000000020000004c00000054000000580000005c00000064000000680000006c0000006d000000
-        paramByteDataSize: 000000000000000001000000000000000000000001000000000000000000000000000000080000000400000004000000080000000400000004000000010000000400000000000000000000000000000008000000040000000400000008000000040000000400000001000000040000000000000000000000000000000800000004000000040000000800000004000000040000000100000004000000
+        paramDataPos: 000000000100000000000000020000000300000001000000000000000100000002000000000000000000000000000000030000000b0000000f000000130000001b0000001f000000230000002400000001000000010000000100000028000000300000003400000038000000400000004400000048000000490000000200000002000000020000004d00000055000000590000005d00000065000000690000006d0000006e000000
+        paramByteDataSize: 000000000000000001000000000000000000000001000000000000000000000001000000000000000000000000000000080000000400000004000000080000000400000004000000010000000400000000000000000000000000000008000000040000000400000008000000040000000400000001000000040000000000000000000000000000000800000004000000040000000800000004000000040000000100000004000000
     - name: Land
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1015
+        x: 1111
         y: 590
         width: 100
         height: 32
@@ -1218,14 +1355,16 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.SetAirVelocity
         - Assets.Source.AI.PM_State_Machine.SetFloatVariable2
         - HutongGames.PlayMaker.Actions.FloatCompare
+        - HutongGames.PlayMaker.Actions.SetBoolValue
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000300000009000000
-        actionHashCodes: 66a62105a082bf001bcdca04
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000030000000900000010000000
+        actionHashCodes: 66a62105a082bf001bcdca0427fbe103
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1266,7 +1405,19 @@ MonoBehaviour:
           networkSync: 0
           value: 0
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: isTornadoNext
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -1277,14 +1428,14 @@ MonoBehaviour:
         - FINISHED
         - FINISHED
         - 
-        byteData: 00000000cdccccbd0101000000000000000001
+        byteData: 00000000cdccccbd010100000000000000000100
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 0200000003000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetAirVelocityAtom
         - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
-        paramDataType: 2800000008000000010000000f00000001000000280000000200000007000000030000000f0000000f0000000f00000017000000170000001700000001000000
+        paramDataType: 2800000008000000010000000f00000001000000280000000200000007000000030000000f0000000f0000000f00000017000000170000001700000001000000110000001100000001000000
         paramName:
         - _atom
         - AirVelocity
@@ -1302,15 +1453,18 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 0000000000000000080000000000000009000000010000000a0000000e0000000000000001000000020000000300000001000000020000000300000012000000
-        paramByteDataSize: 00000000080000000100000000000000010000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000
+        - boolVariable
+        - boolValue
+        - everyFrame
+        paramDataPos: 0000000000000000080000000000000009000000010000000a0000000e0000000000000001000000020000000300000001000000020000000300000012000000000000000100000013000000
+        paramByteDataSize: 00000000080000000100000000000000010000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000000000000000000001000000
     - name: Fly
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 932
-        y: 346
+        x: 991.91406
+        y: 296.51562
         width: 100
         height: 32
       isBreakpoint: 0
@@ -1321,7 +1475,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: CheckAction
+        toState: Idle
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -1416,6 +1570,233 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 0000000000000000080000000000000009000000010000000a0000000e0000000000000001000000020000000300000001000000020000000300000012000000
         paramByteDataSize: 00000000080000000100000000000000010000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000
+    - name: SelectTornadoes
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 429.46094
+        y: 591.77344
+        width: 140
+        height: 64
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Tornado1
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: OneTornado
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Tornado2
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: TwoTornadoes
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Tornado3
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: ThreeTornadoes
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.IntCompare
+        - HutongGames.PlayMaker.Actions.IntCompare
+        - HutongGames.PlayMaker.Actions.IntCompare
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000060000000c000000
+        actionHashCodes: 09faa10209faa10209faa102
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: TornadoCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 1
+          name: TornadoCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 2
+        - useVariable: 1
+          name: TornadoCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Tornado1
+        - 
+        - 
+        - Tornado2
+        - 
+        - 
+        - Tornado3
+        - 
+        - 
+        byteData: 000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 100000001000000017000000170000001700000001000000100000001000000017000000170000001700000001000000100000001000000017000000170000001700000001000000
+        paramName:
+        - integer1
+        - integer2
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        - integer1
+        - integer2
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        - integer1
+        - integer2
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        paramDataPos: 000000000100000000000000010000000200000000000000020000000300000003000000040000000500000001000000040000000500000006000000070000000800000002000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000
+    - name: AfterIdle
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 275.28125
+        y: 462.375
+        width: 100
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: SelectTornadoes
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Ruins
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Attack Ruins
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.BoolTest
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: a4c8bf00
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: isTornadoNext
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - FINISHED
+        - Ruins
+        byteData: 01
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 11000000170000001700000001000000
+        paramName:
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        paramDataPos: 00000000000000000100000000000000
+        paramByteDataSize: 00000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -1458,12 +1839,24 @@ MonoBehaviour:
         value: 0
       intVariables:
       - useVariable: 1
+        name: TornadoCount
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 1
+      - useVariable: 1
         name: step
         tooltip: 
         showInInspector: 0
         networkSync: 0
         value: 0
-      boolVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: isTornadoNext
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       stringVariables: []
       vector2Variables: []
       vector3Variables: []
@@ -1484,7 +1877,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
@@ -1494,7 +1887,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
