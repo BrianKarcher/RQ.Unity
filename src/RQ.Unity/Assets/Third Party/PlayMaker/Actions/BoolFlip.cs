@@ -11,7 +11,10 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("Bool variable to flip.")]
 		public FsmBool boolVariable;
 
-		public override void Reset()
+        [Tooltip("Repeat every frame.")]
+        public bool everyFrame;
+
+        public override void Reset()
 		{
 			boolVariable = null;
 		}
@@ -19,7 +22,16 @@ namespace HutongGames.PlayMaker.Actions
 		public override void OnEnter()
 		{
 			boolVariable.Value = !boolVariable.Value;
-			Finish();		
-		}
-	}
+            if (!everyFrame)
+            {
+                Finish();
+            }
+        }
+
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+            boolVariable.Value = !boolVariable.Value;
+        }
+    }
 }
