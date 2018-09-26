@@ -232,10 +232,10 @@ MonoBehaviour:
         stringParams:
         - FINISHED
         - 
-        - Disperse
+        - RaiseHammerSkill
         - 
         - Input
-        byteData: 00010100000000803f
+        byteData: 00010000000000803f
         arrayParamSizes: 01000000
         arrayParamTypes:
         - UnityEngine.AudioClip
@@ -270,8 +270,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 611
-        y: 182
+        x: 1045.5156
+        y: 180
         width: 100
         height: 16
       isBreakpoint: 0
@@ -336,44 +336,24 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: End
+        toState: Disperse Helix Hold
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.CreateObject
         - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
         - Assets.Source.AI.PM_State_Machine.WaitForAnimationCompletion
         customNames:
         - 
         - 
-        - 
-        actionEnabled: 000101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000500000009000000
-        actionHashCodes: bf83c900d01e12032ea47200
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000004000000
+        actionHashCodes: d01e12032ea47200
         unityObjectParams:
         - {fileID: 194792, guid: b8e2792929f891347ac1ccce756cb226, type: 2}
-        fsmGameObjectParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 194792, guid: b8e2792929f891347ac1ccce756cb226, type: 2}
-        - useVariable: 1
-          name: Spawn Point
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
+        fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -390,24 +370,12 @@ MonoBehaviour:
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
-        fsmVector3Params:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {x: 0, y: 0, z: 0}
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {x: 0, y: 0, z: 0}
+        fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - Disperse
+        - RaiseHammerSkill
         - 
         byteData: 9a99993e000000000000000001
         arrayParamSizes: 
@@ -416,13 +384,8 @@ MonoBehaviour:
         customTypeNames:
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.WaitForAnimationCompletionAtom
-        paramDataType: 13000000130000001c0000001c00000013000000280000001b0000000900000001000000280000000300000017000000
+        paramDataType: 280000001b0000000900000001000000280000000300000017000000
         paramName:
-        - gameObject
-        - spawnPoint
-        - position
-        - rotation
-        - storeObject
         - _instantiatePrefabAtom
         - _gameObject
         - _offset
@@ -430,8 +393,8 @@ MonoBehaviour:
         - _animCompleteAtom
         - AnimationType
         - FinishEvent
-        paramDataPos: 00000000010000000000000001000000020000000000000000000000000000000c000000010000000000000001000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000c00000001000000000000000000000000000000
+        paramDataPos: 0000000000000000000000000c000000010000000000000001000000
+        paramByteDataSize: 00000000000000000c00000001000000000000000000000000000000
     - name: No Action Found
       description: 
       colorIndex: 0
@@ -626,38 +589,18 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.CreateObject
         - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
         - Assets.Source.AI.PM_State_Machine.WaitForAnimationCompletion
         customNames:
         - 
         - 
-        - 
-        actionEnabled: 000101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000500000009000000
-        actionHashCodes: bf83c900d01e12032ea47200
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000004000000
+        actionHashCodes: d01e12032ea47200
         unityObjectParams:
         - {fileID: 1995259694063076, guid: 762d3f9a7aadf634ba4a50f81d97d80b, type: 2}
-        fsmGameObjectParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 194792, guid: b8e2792929f891347ac1ccce756cb226, type: 2}
-        - useVariable: 1
-          name: Spawn Point
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
+        fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -674,19 +617,7 @@ MonoBehaviour:
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
-        fsmVector3Params:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {x: 0, y: 0, z: 0}
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {x: 0, y: 0, z: 0}
+        fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
@@ -700,13 +631,8 @@ MonoBehaviour:
         customTypeNames:
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.WaitForAnimationCompletionAtom
-        paramDataType: 13000000130000001c0000001c00000013000000280000001b0000000900000001000000280000000300000017000000
+        paramDataType: 280000001b0000000900000001000000280000000300000017000000
         paramName:
-        - gameObject
-        - spawnPoint
-        - position
-        - rotation
-        - storeObject
         - _instantiatePrefabAtom
         - _gameObject
         - _offset
@@ -714,8 +640,211 @@ MonoBehaviour:
         - _animCompleteAtom
         - AnimationType
         - FinishEvent
-        paramDataPos: 00000000010000000000000001000000020000000000000000000000000000000c000000010000000000000001000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000c00000001000000000000000000000000000000
+        paramDataPos: 0000000000000000000000000c000000010000000000000001000000
+        paramByteDataSize: 00000000000000000c00000001000000000000000000000000000000
+    - name: Disperse Helix Hold
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 587
+        y: 108
+        width: 160
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Disperse Helix End
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.ButtonDown
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 48c01101f5599401
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.3
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        byteData: 00000101000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 01000000
+        customTypeNames:
+        - RQ.AI.Action.ButtonDownAtom
+        paramDataType: 0f000000170000000100000011000000170000001700000001000000010000002800000007000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        - Down
+        - DownEvent
+        - UpEvent
+        - FinishWhenDown
+        - FinishWhenUp
+        - _atom
+        - _button
+        paramDataPos: 00000000000000000000000000000000010000000200000001000000020000000000000003000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000001000000010000000000000004000000
+    - name: Disperse Helix End
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 806
+        y: 110
+        width: 154
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: End
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SendMessage
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 64eb3804
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - DisperseHelixRelease
+        - 
+        byteData: 0001000000000000000001
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - System.String
+        customTypeSizes: 0b000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        paramDataType: 2900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
+        paramName:
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        paramDataPos: 0000000000000000000000000100000000000000000000000000000001000000000000000100000002000000030000000400000005000000060000000a000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
