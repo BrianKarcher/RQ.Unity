@@ -278,7 +278,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Player Control
+        toState: Damage End
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -291,6 +291,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.FloatCompare
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.SendMessage
         customNames:
         - 
         - 
@@ -299,12 +300,19 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01010101000101
-        actionIsOpen: 01010101010101
-        actionStartIndex: 0000000003000000060000000b00000010000000170000001c000000
-        actionHashCodes: 9572fc0048c011012334d0002334d0001bcdca042334d0007e7e0e03
+        - 
+        actionEnabled: 0101010100010101
+        actionIsOpen: 0101010101010101
+        actionStartIndex: 0000000002000000050000000a0000000f000000160000001b00000021000000
+        actionHashCodes: 9572fc0048c011012334d0002334d0001bcdca042334d0007e7e0e0364eb3804
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -312,10 +320,35 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams:
         - useVariable: 0
@@ -350,7 +383,6 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - 
         - FINISHED
         - VictoryPose
         - VictoryPose
@@ -366,20 +398,23 @@ MonoBehaviour:
         - 
         - 
         - Idle
-        byteData: 010000000100010000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 0200000002000000020000000200000005000000
+        - PlayerDamaged
+        - 
+        byteData: 0100000001000100000001000000000000000001
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - System.String
+        customTypeSizes: 01000000020000000200000002000000050000000b000000
         customTypeNames:
         - RQ.AI.Action.DamageBounceAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
-        paramDataType: 2800000003000000010000000f0000001700000001000000170000000100000028000000030000000300000017000000010000002800000003000000030000000f0000000f0000000f000000170000001700000017000000010000001700000001000000280000000300000003000000280000000300000003000000010000000100000001000000
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        paramDataType: 28000000010000000f0000001700000001000000170000000100000028000000030000000300000017000000010000002800000003000000030000000f0000000f0000000f0000001700000017000000170000000100000017000000010000002800000003000000030000002800000003000000030000000100000001000000010000002900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
         - _damageBounceAtom
-        - _uniqueId
         - UseDamageColor
         - time
         - finishEvent
@@ -412,8 +447,24 @@ MonoBehaviour:
         - _byType
         - WaitForAnimationCompletion
         - StopOnExit
-        paramDataPos: 0000000000000000000000000000000001000000010000000200000002000000010000000300000004000000050000000300000002000000060000000700000001000000020000000300000008000000090000000a000000040000000b00000005000000030000000c0000000d000000040000000e0000000f000000060000000700000008000000
-        paramByteDataSize: 00000000000000000100000000000000000000000100000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000001000000000000000000000000000000000000000000000000000000010000000100000001000000
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        paramDataPos: 000000000000000000000000000000000100000001000000020000000100000002000000030000000400000003000000020000000500000006000000010000000200000003000000070000000800000009000000040000000a00000005000000030000000b0000000c000000040000000d0000000e00000006000000070000000800000000000000000000000000000001000000050000000f0000000000000010000000090000000a0000000b0000000c0000000d0000000e0000000f00000013000000
+        paramByteDataSize: 00000000010000000000000000000000010000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000100000000000000000000000000000000000000000000000000000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
     - name: Deflected
       description: 
       colorIndex: 0
@@ -530,8 +581,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 424
-        y: 325.0078
+        x: 444
+        y: 402.03125
         width: 100
         height: 16
       isBreakpoint: 0
@@ -1155,6 +1206,74 @@ MonoBehaviour:
         - Data
         paramDataPos: 0000000000000000000000000100000002000000
         paramByteDataSize: 0000000001000000000000000000000000000000
+    - name: Damage End
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 465
+        y: 272
+        width: 112
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Player Control
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.StopMoving
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 8fc53304
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 02000000
+        customTypeNames:
+        - RQ.AI.Action.StopMovingAtom
+        paramDataType: 280000000300000003000000
+        paramName:
+        - _stopMovingAtom
+        - _uniqueId
+        - _physicsAffector
+        paramDataPos: 000000000000000001000000
+        paramByteDataSize: 000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
