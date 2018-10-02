@@ -62,7 +62,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010100000101
+        actionEnabled: 010100010101
         actionIsOpen: 010101010101
         actionStartIndex: 00000000060000000c0000000f0000001300000016000000
         actionHashCodes: a082bf007e7e0e0348c01101d9483304343beb0157587501
@@ -100,11 +100,11 @@ MonoBehaviour:
           networkSync: 0
           value: 5
         - useVariable: 1
-          name: WaitInSeconds
+          name: timeWaiting
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 5
+          value: 0
         - useVariable: 1
           name: timeWaiting
           tooltip: 
@@ -664,7 +664,7 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.FloatOperator
-        - HutongGames.PlayMaker.Actions.FloatAdd
+        - Assets.Source.AI.PM_State_Machine.SetFloatVariable2
         - HutongGames.PlayMaker.Actions.FloatCompare
         - Assets.Source.AI.PM_State_Machine.Damaged
         - HutongGames.PlayMaker.Actions.Wait
@@ -676,8 +676,8 @@ MonoBehaviour:
         - 
         actionEnabled: 0101010101
         actionIsOpen: 0101010101
-        actionStartIndex: 0000000005000000090000001000000012000000
-        actionHashCodes: 0cdb04052a6e8a001bcdca04601b1e0348c01101
+        actionStartIndex: 00000000050000000b0000001200000014000000
+        actionHashCodes: 0cdb0405a082bf001bcdca04601b1e0348c01101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -717,12 +717,6 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: -1
         - useVariable: 1
           name: HP
           tooltip: 
@@ -755,27 +749,31 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - 
         - Killed
         - Killed
         - 
         - FINISHED
-        byteData: 01000000000000010100
+        byteData: 0100000000010000000001000000010100
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 01000000
+        customTypeSizes: 0300000001000000
         customTypeNames:
+        - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
         - RQ.AI.Action.DamagedAtom
-        paramDataType: 0f0000000f000000070000000f000000010000000f0000000f00000001000000010000000f0000000f0000000f0000001700000017000000170000000100000028000000010000000f0000001700000001000000
+        paramDataType: 0f0000000f000000070000000f000000010000000f00000001000000280000000200000007000000030000000f0000000f0000000f0000001700000017000000170000000100000028000000010000000f0000001700000001000000
         paramName:
         - float1
         - float2
         - operation
         - storeResult
         - everyFrame
-        - floatVariable
-        - add
+        - storeResult
         - everyFrame
-        - perSecond
+        - _getFloatVariableAtom
+        - Value
+        - _variable
+        - VariableName
         - float1
         - float2
         - tolerance
@@ -788,8 +786,8 @@ MonoBehaviour:
         - time
         - finishEvent
         - realTime
-        paramDataPos: 000000000100000000000000020000000400000003000000040000000500000006000000050000000600000007000000000000000100000002000000070000000000000008000000080000000300000009000000
-        paramByteDataSize: 000000000000000004000000000000000100000000000000000000000100000001000000000000000000000000000000000000000000000000000000010000000000000001000000000000000000000001000000
+        paramDataPos: 0000000001000000000000000200000004000000030000000500000000000000060000000a000000000000000400000005000000060000000100000002000000030000000e000000010000000f000000070000000400000010000000
+        paramByteDataSize: 0000000000000000040000000000000001000000000000000100000000000000040000000400000000000000000000000000000000000000000000000000000000000000010000000000000001000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1

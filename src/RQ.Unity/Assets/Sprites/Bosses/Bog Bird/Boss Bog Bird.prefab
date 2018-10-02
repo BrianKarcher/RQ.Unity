@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4073384278756408}
   - component: {fileID: 135501516236440228}
   - component: {fileID: 114428527656761176}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: BoundingRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1058,15 +1058,14 @@ MonoBehaviour:
   _componentRepository: {fileID: 114246978454473552}
   _damageData:
     DamageTargetOnCollision: 1
-    DamageTargetOnTrigger: 0
+    DamageTargetOnTrigger: 1
     DamageOnTouch: 1
     TakesDamage: 1
     TakesSkillDamage: 1
     Vulnerable: 1
     CollisionDamageType: 1
   _ourDamageTags:
-  - Player
-  - Companion
+  - Enemy
   _useDamageColor: 1
   _damageColor: {r: 1, g: 0, b: 0, a: 1}
   _tagsYouDamage:
@@ -1372,10 +1371,12 @@ MonoBehaviour:
   _componentRepository: {fileID: 114246978454473552}
   _collisionData:
     Level: 0
-    Tags: []
+    Tags:
+    - Player
+    - Companion
     _levelLayer: 1
     ReceivesDamage: 1
-    DamageCollider: 0
+    DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
