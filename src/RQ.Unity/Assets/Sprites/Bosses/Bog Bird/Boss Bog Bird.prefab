@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 114311111513862442}
   m_Layer: 10
   m_Name: BodyCollider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,13 +196,13 @@ GameObject:
   - component: {fileID: 4536691621256080}
   - component: {fileID: 114451591308308838}
   - component: {fileID: 135547887328619822}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: TileCollider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1997919653757544
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 114594999782250570}
   m_Layer: 10
   m_Name: MainSprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,7 +477,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752190754837826}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1064,10 +1064,14 @@ MonoBehaviour:
     TakesSkillDamage: 1
     Vulnerable: 1
     CollisionDamageType: 1
-  _ourDamageTags: []
-  _useDamageColor: 0
-  _damageColor: {r: 0, g: 0, b: 0, a: 0}
-  _tagsYouDamage: []
+  _ourDamageTags:
+  - Player
+  - Companion
+  _useDamageColor: 1
+  _damageColor: {r: 1, g: 0, b: 0, a: 1}
+  _tagsYouDamage:
+  - Player
+  - Companion
   _hitEffect: {fileID: 0}
   _killSound: {fileID: 0}
   _damageSound: {fileID: 0}
@@ -1107,7 +1111,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752190754837826}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
@@ -1118,9 +1122,7 @@ MonoBehaviour:
   _rqName2: a1c2d7d2-c0e9-40f6-92ae-4ac1176a683b
   _componentRepository: {fileID: 114246978454473552}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
@@ -1145,7 +1147,7 @@ MonoBehaviour:
     _externalVelocity:
       x: 0
       y: 0
-    OriginalZ: 0
+    OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 1
     _friction: 0
@@ -1160,8 +1162,6 @@ MonoBehaviour:
     ZOffsetByLevel: 0
     ZOffset: 0
   _steeringPhysicsAffector:
-    _velocity: {x: 0, y: 0}
-    _originaVelocity: {x: 0, y: 0}
     _force: {x: 0, y: 0}
     _maxForce: 1
     _originalMaxForce: 1
@@ -1171,9 +1171,7 @@ MonoBehaviour:
     _enabled: 1
     Friction: 0
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
