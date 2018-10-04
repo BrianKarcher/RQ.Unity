@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114136702243745116}
   m_Layer: 10
   m_Name: BodyCollider
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1337087331038768
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 114030890514159386}
   - component: {fileID: 114805130120183118}
   - component: {fileID: 114971282935206568}
+  - component: {fileID: 114340710209569094}
   m_Layer: 10
   m_Name: MainSprite
   m_TagString: Untagged
@@ -231,7 +232,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725909762811524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.48, y: 2.32, z: -0.39}
+  m_LocalPosition: {x: 2.32, y: 2.48, z: -0.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4070970755720582}
@@ -719,17 +720,20 @@ MonoBehaviour:
   _rqName2: 66d8e70b-52a2-428d-9870-6f82b64b7e99
   _componentRepository: {fileID: 114251591095256496}
   _damageData:
-    DamageTargetOnCollision: 0
-    DamageTargetOnTrigger: 0
+    DamageTargetOnCollision: 1
+    DamageTargetOnTrigger: 1
     DamageOnTouch: 1
     TakesDamage: 1
     TakesSkillDamage: 1
     Vulnerable: 1
     CollisionDamageType: 1
-  _ourDamageTags: []
-  _useDamageColor: 0
-  _damageColor: {r: 0, g: 0, b: 0, a: 0}
-  _tagsYouDamage: []
+  _ourDamageTags:
+  - Boss
+  _useDamageColor: 1
+  _damageColor: {r: 1, g: 0.03676468, b: 0.03676468, a: 1}
+  _tagsYouDamage:
+  - Player
+  - Companion
   _hitEffect: {fileID: 0}
   _killSound: {fileID: 0}
   _damageSound: {fileID: 0}
@@ -794,6 +798,29 @@ MonoBehaviour:
   EntityType: 6
   EntityPrefabUniqueId: 
   _parentRepo: {fileID: 0}
+--- !u!114 &114340710209569094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621144886375356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41880b8380ca71346a1bc3912eb8f03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _storedSpriteAnimations: []
+  _spriteAnimationsConfig: {fileID: 0}
+  _manualHFlip: 0
+  _hFlip: 0
+  _directionRotate: 0
+  OrigSpritePosition:
+    x: 0
+    y: 0
+  SpriteOffsetPos:
+    x: 0
+    y: 0
+  anim: {fileID: 114030890514159386}
 --- !u!114 &114426492405422094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -824,9 +851,7 @@ MonoBehaviour:
   _rqName2: de59dad0-13ab-4e81-83d5-eff35efe88b6
   _componentRepository: {fileID: 114251591095256496}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
@@ -866,8 +891,6 @@ MonoBehaviour:
     ZOffsetByLevel: 0
     ZOffset: 0
   _steeringPhysicsAffector:
-    _velocity: {x: 0, y: 0}
-    _originaVelocity: {x: 0, y: 0}
     _force: {x: 0, y: 0}
     _maxForce: 1
     _originalMaxForce: 1
@@ -877,9 +900,7 @@ MonoBehaviour:
     _enabled: 1
     Friction: 0
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
@@ -1105,7 +1126,7 @@ MonoBehaviour:
     PlayAutomatically: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
-  SpriteAnimator2: {fileID: 0}
+  SpriteAnimator2: {fileID: 114340710209569094}
   _use8Directions: 0
   _isMain: 1
 --- !u!114 &114878726118874678
