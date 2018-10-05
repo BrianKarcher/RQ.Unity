@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 114530576387279234}
   - component: {fileID: 114261391645836282}
   - component: {fileID: 54639403793069028}
+  - component: {fileID: 114798816402084912}
   m_Layer: 0
   m_Name: Predator
   m_TagString: Enemy
@@ -64,6 +65,7 @@ GameObject:
   - component: {fileID: 114758189382007186}
   - component: {fileID: 114634412910794868}
   - component: {fileID: 114596965317284932}
+  - component: {fileID: 114031157239499732}
   m_Layer: 0
   m_Name: MainSprite
   m_TagString: Enemy
@@ -148,7 +150,7 @@ GameObject:
   - component: {fileID: 114672990002267992}
   - component: {fileID: 135824258687438736}
   - component: {fileID: 114110270492464046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BodyCollider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -182,7 +184,7 @@ GameObject:
   - component: {fileID: 4634830877284608}
   - component: {fileID: 135653076275182352}
   - component: {fileID: 114831014467065668}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BoundingRadius
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -234,7 +236,7 @@ GameObject:
   - component: {fileID: 4628756495966022}
   - component: {fileID: 114913582501300968}
   - component: {fileID: 135377263806910210}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: TileCollider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -274,7 +276,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156500504886100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6800001, y: 2.32, z: 0}
+  m_LocalPosition: {x: 1.5200001, y: 0.39999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4703066455487790}
@@ -595,6 +597,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114031157239499732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1244723022779008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41880b8380ca71346a1bc3912eb8f03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _storedSpriteAnimations: []
+  _spriteAnimationsConfig: {fileID: 0}
+  _manualHFlip: 0
+  _hFlip: 0
+  _directionRotate: 0
+  OrigSpritePosition:
+    x: 0
+    y: 0
+  SpriteOffsetPos:
+    x: 0
+    y: 0
+  anim: {fileID: 0}
 --- !u!114 &114051391243039464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -785,7 +810,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938157955874662}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
   m_Name: 
@@ -1051,12 +1076,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938157955874662}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 899680699, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 0545d1ce-4a64-4931-b51d-17f165c3ca72
+  _uniqueId: 50d061dc-4695-454b-aeed-6fe31debfa88
   componentName: 
   _rqName: AI RQ.Physics.Components.BehaviorTreeComponent
   _rqName2: 342479a9-7093-4155-b35a-34f4e0d005fe
@@ -1141,9 +1166,7 @@ MonoBehaviour:
   _rqName2: 8d79da42-75b3-49f3-a5a3-6df9977a37c6
   _componentRepository: {fileID: 114374114521081708}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
@@ -1183,8 +1206,6 @@ MonoBehaviour:
     ZOffsetByLevel: 0
     ZOffset: 0
   _steeringPhysicsAffector:
-    _velocity: {x: 0, y: 0}
-    _originaVelocity: {x: 0, y: 0}
     _force: {x: 0, y: 0}
     _maxForce: 1
     _originalMaxForce: 1
@@ -1194,9 +1215,7 @@ MonoBehaviour:
     _enabled: 1
     Friction: 0
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
@@ -1320,7 +1339,7 @@ MonoBehaviour:
     PlayAutomatically: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
-  SpriteAnimator2: {fileID: 0}
+  SpriteAnimator2: {fileID: 114031157239499732}
   _use8Directions: 0
   _isMain: 1
 --- !u!114 &114659446666146196
@@ -1389,6 +1408,45 @@ MonoBehaviour:
   library: {fileID: 114674764434198612, guid: f826383fa40e86a4ebe9fc3a0cd2a19c, type: 2}
   defaultClipId: 3
   playAutomatically: 1
+--- !u!114 &114798816402084912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1156500504886100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 926039264, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 1725eb3a-4224-441c-a979-ad488f40826d
+  componentName: 
+  _rqName: Predator RQ.FSM.V2.AIComponent
+  _rqName2: 5fa32231-58e8-4742-9263-0fa467348352
+  _componentRepository: {fileID: 114374114521081708}
+  _pathFinder: {fileID: 0}
+  _target: {fileID: 0}
+  _targets: []
+  TargetTags: []
+  _locations: []
+  _parent: {fileID: 0}
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _follow: {fileID: 0}
+  _targetingData:
+    Waypoints: {fileID: 0}
+    GoToType: 0
+    Target: {fileID: 0}
+    Targets: []
+    TargetTags: []
+  _homePosition:
+    x: 1.5200001
+    y: 0.39999998
+  _homeLevelLayer: 0
+  _homeSickDistance: 0
+  _runHomeSpeed: 0
+  _stateMachine2: {fileID: 0}
 --- !u!114 &114831014467065668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1400,7 +1458,7 @@ MonoBehaviour:
   m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: d0142c73-6a1f-47fc-8770-71af7ad008e0
+  _uniqueId: e9db1621-1bc5-4aa4-94e3-56a51d6ac114
   componentName: 
   _rqName: BoundingRadius RQ.Physics.Components.CollisionComponent
   _rqName2: 161417d9-44a5-4fd5-803c-2ea50b47b347
@@ -1444,7 +1502,7 @@ MonoBehaviour:
     Level: 0
     Tags: []
     _levelLayer: 1
-    ReceivesDamage: 1
+    ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
@@ -1469,7 +1527,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135653076275182352
 SphereCollider:
@@ -1478,7 +1536,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1830837623489718}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -1493,5 +1551,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
