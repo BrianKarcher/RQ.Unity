@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4545198201960342}
   - component: {fileID: 114126511818309612}
   - component: {fileID: 114978567892666384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Logic SM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,25 @@ GameObject:
   - component: {fileID: 114070525022998746}
   m_Layer: 10
   m_Name: MainSprite
-  m_TagString: Untagged
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1634605912999780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4923587115309480}
+  - component: {fileID: 114062953203324824}
+  - component: {fileID: 65046266526757238}
+  - component: {fileID: 114119192155895342}
+  m_Layer: 10
+  m_Name: Trigger
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,10 +77,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4957163132555586}
   - component: {fileID: 114653739522944492}
-  - component: {fileID: 114637711628246688}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Boss_LeftVine
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +110,19 @@ Transform:
   m_Father: {fileID: 4957163132555586}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4923587115309480
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634605912999780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4957163132555586}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4957163132555586
 Transform:
   m_ObjectHideFlags: 1
@@ -100,11 +130,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907405172270122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.1268594, y: 1.7421843, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4088179911575362}
   - {fileID: 4545198201960342}
+  - {fileID: 4923587115309480}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -147,6 +178,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1522303858627396}
   m_Mesh: {fileID: 0}
+--- !u!65 &65046266526757238
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634605912999780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.65, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114062953203324824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634605912999780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 41c5d687-db6c-4887-bbf2-86fbd5286d75
+  componentName: 
+  _rqName: Trigger Assets.Source.CollisionProcessor
+  _rqName2: a2fd64d6-ea10-4f39-a485-0d3ec32e0f63
+  _componentRepository: {fileID: 114653739522944492}
 --- !u!114 &114070525022998746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,6 +236,41 @@ MonoBehaviour:
     Gravity:
       x: 0
       y: 0
+--- !u!114 &114119192155895342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634605912999780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: e0fe5262-4633-49b1-9377-a0678faa949d
+  componentName: 
+  _rqName: Trigger RQ.Physics.Components.CollisionComponent
+  _rqName2: 9065183d-3f79-4884-ad69-f0ecf98da113
+  _componentRepository: {fileID: 114653739522944492}
+  _collisionData:
+    Level: 0
+    Tags: []
+    _levelLayer: 1
+    ReceivesDamage: 1
+    DamageCollider: 1
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _levelOneLayer:
+    _layerIndex: 10
+  _levelTwoLayer:
+    _layerIndex: 10
+  _levelThreeLayer:
+    _layerIndex: 0
+  _sharedLayer:
+    _layerIndex: 0
+  _mainCollider: {fileID: 4923587115309480}
+  _autoChangeLayers: 0
 --- !u!114 &114126511818309612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,22 +330,6 @@ MonoBehaviour:
   library: {fileID: 114724911946235604, guid: 7cf49a07f6ee22d44b98841a84c9b0b3, type: 2}
   defaultClipId: 12
   playAutomatically: 1
---- !u!114 &114637711628246688
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1907405172270122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 47c9acc6-cb83-4f59-8b7c-cbda80900ac0
-  componentName: 
-  _rqName: Boss_LeftVine RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: 9e0e7ef7-fd3a-4805-9159-ee0608910aee
-  _componentRepository: {fileID: 114653739522944492}
 --- !u!114 &114653739522944492
 MonoBehaviour:
   m_ObjectHideFlags: 1
