@@ -20,6 +20,10 @@ namespace Assets.Source.AI.PM_State_Machine
         //[PM.Tooltip("Repeat every frame.")]
         //public bool everyFrame;
 
+        [UIHint(UIHint.Variable)]
+        [PM.Tooltip("Fire when skill is selected.")]
+        public FsmEvent IsComplete;
+
         public SkillMenuAtom _atom;
         private IComponentRepository _entity;
         private PhysicsComponent _physicsComponent;
@@ -56,7 +60,11 @@ namespace Assets.Source.AI.PM_State_Machine
             //storeResult.Value = _getSpeedAtom.Speed;
             var result = _atom.OnUpdate();
             if (result == RQ.AI.AtomActionResults.Success)
+            {
                 Finish();
+                if (IsComplete != null)
+                    Fsm.Event(IsComplete);
+            }
         }
     }
 }

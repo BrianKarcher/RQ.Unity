@@ -985,11 +985,17 @@ MonoBehaviour:
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 000000000400000009000000
-        actionHashCodes: d01e1203ffa3f2048fc53304
+        actionStartIndex: 00000000050000000a000000
+        actionHashCodes: ee6bbe01ffa3f2048fc53304
         unityObjectParams:
         - {fileID: 122172, guid: 2689bbab4f49c3544aad2e940b500640, type: 2}
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -1022,8 +1028,9 @@ MonoBehaviour:
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
         - RQ.AI.Action.StopMovingAtom
-        paramDataType: 280000001b00000009000000010000002800000007000000020000000100000003000000280000000300000003000000
+        paramDataType: 13000000280000001b00000009000000010000002800000007000000020000000100000003000000280000000300000003000000
         paramName:
+        - storeResult
         - _instantiatePrefabAtom
         - _gameObject
         - _offset
@@ -1036,8 +1043,8 @@ MonoBehaviour:
         - _stopMovingAtom
         - _uniqueId
         - _physicsAffector
-        paramDataPos: 0000000000000000000000000c000000010000000d000000110000001500000000000000020000000100000002000000
-        paramByteDataSize: 00000000000000000c000000010000000000000004000000040000000100000000000000000000000000000000000000
+        paramDataPos: 000000000000000000000000000000000c000000010000000d000000110000001500000000000000020000000100000002000000
+        paramByteDataSize: 0000000000000000000000000c000000010000000000000004000000040000000100000000000000000000000000000000000000
     - name: Boarded
       description: 
       colorIndex: 0
