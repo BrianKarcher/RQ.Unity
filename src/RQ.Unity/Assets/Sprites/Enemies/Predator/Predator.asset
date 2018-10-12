@@ -621,7 +621,7 @@ MonoBehaviour:
         - 
         - Lunge
         - Counter
-        - 
+        - Damaged
         - 
         - 
         - 
@@ -768,19 +768,23 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Flee
+        toState: HeadShake
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
+        - Assets.Source.AI.PM_State_Machine.SteeringBehavior
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 7e7e0e03
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000200000008000000
+        actionHashCodes: ae3514047e7e0e0348c01101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -795,7 +799,13 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.2
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -805,23 +815,30 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
+        - Hit
         - 
-        byteData: 010100
+        byteData: 0300000001010000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 05000000
+        customTypeSizes: 0100000005000000
         customTypeNames:
+        - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
-        paramDataType: 280000000300000003000000010000000100000001000000
+        paramDataType: 28000000070000002800000003000000030000000100000001000000010000000f0000001700000001000000
         paramName:
+        - _sbAtom
+        - SteeringBehavior
         - _animationAtom
         - _animComponentName
         - _animation
         - _byType
         - WaitForAnimationCompletion
         - StopOnExit
-        paramDataPos: 000000000000000001000000000000000100000002000000
-        paramByteDataSize: 000000000000000000000000010000000100000001000000
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000000000000010000000000000001000000040000000500000006000000000000000200000007000000
+        paramByteDataSize: 0000000004000000000000000000000000000000010000000100000001000000000000000000000001000000
     - name: FallInWater
       description: The attack dont be sucesfull because there are a spot of water
         between him and Rolan
@@ -978,8 +995,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 951.02344
-        y: 418
+        x: 1133.0625
+        y: 471
         width: 132
         height: 16
       isBreakpoint: 0
@@ -1142,6 +1159,85 @@ MonoBehaviour:
         - _rotateOffsetByFacingDirection
         paramDataPos: 0000000000000000000000000000000001000000020000000100000003000000040000000100000002000000030000000400000002000000050000000000000003000000000000000900000015000000
         paramByteDataSize: 0000000000000000010000000000000000000000000000000000000000000000000000000100000001000000010000000100000000000000040000000000000000000000000000000c00000001000000
+    - name: HeadShake
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 951
+        y: 404
+        width: 105
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Flee
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.StopMoving
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 8fc533047e7e0e03
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        - 
+        byteData: 010100
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0200000005000000
+        customTypeNames:
+        - RQ.AI.Action.StopMovingAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        paramDataType: 280000000300000003000000280000000300000003000000010000000100000001000000
+        paramName:
+        - _stopMovingAtom
+        - _uniqueId
+        - _physicsAffector
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - _byType
+        - WaitForAnimationCompletion
+        - StopOnExit
+        paramDataPos: 000000000000000001000000010000000200000003000000000000000100000002000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000010000000100000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -1227,7 +1323,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
