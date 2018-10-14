@@ -1,0 +1,1903 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: Predator Lunge
+  m_EditorClassIdentifier: 
+  category: General
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 11400000}
+    name: FSM
+    startState: SetUp
+    states:
+    - name: SetUp
+      description: Find Parent
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 268
+        y: 105
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Lunge
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SetGameObjectVariable2
+        - HutongGames.PlayMaker.Actions.GetParent
+        - HutongGames.PlayMaker.Actions.FindGameObject
+        - HutongGames.PlayMaker.Actions.GetTransform
+        - Assets.Source.AI.PM_State_Machine.SetMaxSpeed
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0101000101
+        actionIsOpen: 0101010101
+        actionStartIndex: 000000000300000005000000080000000b000000
+        actionHashCodes: 45f0a300d97b7202786b390243f014034303fc02
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: target
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: predator
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: target
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: predator
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Player
+        fsmObjectParams:
+        - useVariable: 1
+          name: originPosition
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.Transform
+          value: {fileID: 0}
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Steering
+        byteData: 00000000000000403f00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0100000003000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SetGameObjectVariableAtom2
+        - RQ.Animation.BasicAction.Action.SetMaxSpeedAtom
+        paramDataType: 130000002800000007000000140000001300000012000000120000001300000013000000180000000100000028000000020000000100000003000000
+        paramName:
+        - Variable
+        - _atom
+        - Type
+        - gameObject
+        - storeResult
+        - objectName
+        - withTag
+        - store
+        - gameObject
+        - storeTransform
+        - everyFrame
+        - _setMaxSpeedAtom
+        - _speed
+        - _resetToOriginal
+        - PhysicsAffectorName
+        paramDataPos: 000000000000000000000000000000000100000000000000010000000200000003000000000000000400000001000000050000000900000000000000
+        paramByteDataSize: 000000000000000004000000000000000000000000000000000000000000000000000000000000000100000000000000040000000100000000000000
+    - name: Run
+      description: Attack Rolan when he enters in his detection range
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 468
+        y: 506
+        width: 245
+        height: 96
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Counter
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: PlayerCounter
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: DamagingPlayer
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Target Trigger
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Rumble
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: FallInWater
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: FallInWater
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Flee
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Leave
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.Attack
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.SetVelocity
+        - Assets.Source.AI.PM_State_Machine.OnTrigger
+        - Assets.Source.AI.PM_State_Machine.SetSteeringTargetToEntity
+        - HutongGames.PlayMaker.Actions.DestroyObject
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.OnTrigger
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 000101000100010101
+        actionIsOpen: 010101010101010101
+        actionStartIndex: 0000000003000000080000000d0000001a00000021000000290000002c0000002f000000
+        actionHashCodes: 2ab217047e7e0e032334d0008486480018dc36007fbd4f049ff80c0248c0110118dc3600
+        unityObjectParams:
+        - {fileID: 0}
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: alertGO
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Water
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Player
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - Run
+        - Counter
+        - Damaged
+        - 
+        - 
+        - 
+        - FallInWater
+        - 
+        - 
+        - 
+        - 
+        - Flee
+        - Target Trigger
+        - 
+        - 
+        byteData: 0100000000000000000000000000000100000000000000000000000000803f0000803f01010000000000000000000000000000000000
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - System.String
+        customTypeSizes: 0200000004000000020000000a000000020000000400000002000000
+        customTypeNames:
+        - RQ.Entity.AtomAction.Action.AttackAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        - RQ.AI.Action.SetVelocityAtom
+        - RQ.Animation.BasicAction.Action.OnTriggerAtom
+        - RQ.Animation.BasicAction.Action.SetSteeringTargetToEntityAtom
+        - RQ.Animation.BasicAction.Action.OnTriggerAtom
+        paramDataType: 28000000050000000300000028000000030000000300000001000000010000001700000001000000280000000300000003000000250000002800000008000000020000000300000007000000080000000200000002000000010000000700000003000000010000000700000013000000120000001700000028000000030000000300000029000000130000001100000028000000070000000c0000000300000003000000130000000f000000110000000f000000170000000100000007000000130000001200000017000000280000000300000003000000
+        paramName:
+        - _attackAtom
+        - _skill
+        - AttackComponentName
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        - Velocity
+        - _atom
+        - _offset
+        - _delay
+        - _physicsComponentName
+        - _shootTarget
+        - _location
+        - _minSpeed
+        - _maxSpeed
+        - _sameLevel
+        - _objectLevel
+        - _physicsAffector
+        - everyFrame
+        - trigger
+        - _storeCollider
+        - collideTag
+        - sendEvent
+        - _atom
+        - triggerType
+        - collideTag
+        - _messageReceivers
+        - _messageReceiver
+        - _sendToSelf
+        - _setSteeringAtom
+        - _goToType
+        - _messageReceivers
+        - physicsComponentName
+        - waypointName
+        - gameObject
+        - delay
+        - detachChildren
+        - time
+        - finishEvent
+        - realTime
+        - trigger
+        - _storeCollider
+        - collideTag
+        - sendEvent
+        - _atom
+        - triggerType
+        - collideTag
+        paramDataPos: 000000000000000000000000010000000100000002000000000000000100000003000000020000000200000004000000050000000000000003000000030000000b000000060000000f000000130000001b0000001f000000230000002400000007000000280000002900000000000000000000000800000004000000090000000a000000000000000100000000000000050000002d000000000000000b0000000c000000020000000000000001000000010000000d000000310000003200000003000000010000000e000000060000000f00000010000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000010000000100000000000000010000000000000000000000000000000000000000000000080000000400000000000000040000000800000004000000040000000100000004000000000000000100000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000100000004000000000000000000000000000000000000000000000000000000
+    - name: DamagingPlayer
+      description: Make damage to the player
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 846
+        y: 567
+        width: 164
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Flee
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    - name: PlayerCounter
+      description: Player counter the predator attack
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 841
+        y: 403
+        width: 181.5
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: HeadShake
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SetVelocity
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.SetSteeringTargetToVector
+        - Assets.Source.AI.PM_State_Machine.SteeringBehavior
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0101010000
+        actionIsOpen: 0101010101
+        actionStartIndex: 000000000d00000012000000150000001f000000
+        actionHashCodes: 848648007e7e0e0348c01101d3320502ae351404
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.3
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        - Hit
+        - 
+        - 
+        - 
+        byteData: 0000000000000000000000000600000000000000000000000000803f0000803f0101000000000100000000000000000000000103000000
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - System.String
+        customTypeSizes: 0a000000040000000600000001000000
+        customTypeNames:
+        - RQ.AI.Action.SetVelocityAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Animation.BasicAction.Action.SetSteeringTargetToVectorAtom
+        - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
+        paramDataType: 2500000028000000080000000200000003000000070000000800000002000000020000000100000007000000030000000100000028000000030000000300000001000000010000000f00000017000000010000002900000013000000010000002800000007000000000000000c0000000100000003000000030000002800000007000000
+        paramName:
+        - Velocity
+        - _atom
+        - _offset
+        - _delay
+        - _physicsComponentName
+        - _shootTarget
+        - _location
+        - _minSpeed
+        - _maxSpeed
+        - _sameLevel
+        - _objectLevel
+        - _physicsAffector
+        - everyFrame
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - time
+        - finishEvent
+        - realTime
+        - _messageReceivers
+        - _messageReceiver
+        - everyFrame
+        - _setSteeringAtom
+        - _goToType
+        - WaypointIndex
+        - _messageReceivers
+        - sendToSelf
+        - physicsComponentName
+        - waypointName
+        - _sbAtom
+        - SteeringBehavior
+        paramDataPos: 00000000000000000000000008000000000000000c00000010000000180000001c000000200000002100000001000000250000000100000002000000030000002600000027000000000000000400000028000000000000000000000029000000020000002a0000002e000000000000003200000005000000060000000300000033000000
+        paramByteDataSize: 000000000000000008000000040000000000000004000000080000000400000004000000010000000400000000000000010000000000000000000000000000000100000001000000000000000000000001000000000000000000000001000000000000000400000004000000000000000100000000000000000000000000000004000000
+    - name: FallInWater
+      description: The attack dont be sucesfull because there are a spot of water
+        between him and Rolan
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 409
+        y: 716
+        width: 344
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Death
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.StopMoving
+        - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000500000008000000
+        actionHashCodes: 7e7e0e038fc53304ee6bbe01
+        unityObjectParams:
+        - {fileID: 122172, guid: 6cc7849c502facd48b8b6d03265ad422, type: 2}
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - Drowning
+        - 
+        - 
+        byteData: 01000000000000000000cdccccbd0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 040000000200000004000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.AI.Action.StopMovingAtom
+        - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
+        paramDataType: 280000000300000003000000010000000100000028000000030000000300000013000000280000001b000000090000000100000001000000
+        paramName:
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - _stopMovingAtom
+        - _uniqueId
+        - _physicsAffector
+        - storeResult
+        - _instantiatePrefabAtom
+        - _gameObject
+        - _offset
+        - _rotateOffsetByFacingDirection
+        - _rotateHorizontalOffsetByFacingDirection
+        paramDataPos: 0000000000000000010000000000000001000000010000000200000003000000000000000200000000000000020000000e0000000f000000
+        paramByteDataSize: 00000000000000000000000001000000010000000000000000000000000000000000000000000000000000000c0000000100000001000000
+    - name: Death
+      description: Predator Death in the water.
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 858
+        y: 726
+        width: 134
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.KillSelf
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 927b0a04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 00000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.KillSelfAtom
+        paramDataType: 28000000
+        paramName:
+        - _killSelfAtom
+        paramDataPos: 00000000
+        paramByteDataSize: 00000000
+    - name: Flee
+      description: Predator runaway from Rolan
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 1293.0625
+        y: 471
+        width: 161.5
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Kill Self
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SetVelocity
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000d00000012000000
+        actionHashCodes: 848648007e7e0e0348c01101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        - Run Scared
+        - FINISHED
+        byteData: 0000000000000000000000000400000000000000000000000000803f0000803f010100000000010000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0a00000004000000
+        customTypeNames:
+        - RQ.AI.Action.SetVelocityAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        paramDataType: 2500000028000000080000000200000003000000070000000800000002000000020000000100000007000000030000000100000028000000030000000300000001000000010000000f0000001700000001000000
+        paramName:
+        - Velocity
+        - _atom
+        - _offset
+        - _delay
+        - _physicsComponentName
+        - _shootTarget
+        - _location
+        - _minSpeed
+        - _maxSpeed
+        - _sameLevel
+        - _objectLevel
+        - _physicsAffector
+        - everyFrame
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000000000000000000008000000000000000c00000010000000180000001c000000200000002100000001000000250000000100000002000000030000002600000027000000000000000400000028000000
+        paramByteDataSize: 000000000000000008000000040000000000000004000000080000000400000004000000010000000400000000000000010000000000000000000000000000000100000001000000000000000000000001000000
+    - name: HeadShake
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 1111
+        y: 404
+        width: 105
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Flee
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.StopMoving
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 8fc533047e7e0e03
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        - Headshake
+        byteData: 0100
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0200000004000000
+        customTypeNames:
+        - RQ.AI.Action.StopMovingAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        paramDataType: 2800000003000000030000002800000003000000030000000100000001000000
+        paramName:
+        - _stopMovingAtom
+        - _uniqueId
+        - _physicsAffector
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        paramDataPos: 0000000000000000010000000100000002000000030000000000000001000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000100000001000000
+    - name: Lunge
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 510
+        y: 406
+        width: 125
+        height: 64
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Counter
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: PlayerCounter
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Target Trigger
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Rumble
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Run
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SetMaxSpeed
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.SetSteeringTargetToEntity
+        - Assets.Source.AI.PM_State_Machine.SetSteeringTargetToVector
+        - Assets.Source.AI.PM_State_Machine.SetVelocity
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.WaitForAnimationCompletion
+        - Assets.Source.AI.PM_State_Machine.OnTrigger
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0101010101010101
+        actionIsOpen: 0101010101010101
+        actionStartIndex: 000000000400000009000000110000001b000000280000002d00000030000000
+        actionHashCodes: 4303fc027e7e0e037fbd4f04d3320502848648002334d0002ea4720018dc3600
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Player
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - Lunge
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - Counter
+        - Damaged
+        - 
+        - Lunge
+        - FINISHED
+        - Target Trigger
+        - 
+        - 
+        byteData: 00000040000100000000000000000000000000000100000000000000000000000001000000000000000000000000000040000000400101000000000000000000
+        arrayParamSizes: 0000000000000000
+        arrayParamTypes:
+        - System.String
+        - System.String
+        customTypeSizes: 030000000400000004000000060000000a000000020000000100000002000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SetMaxSpeedAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Animation.BasicAction.Action.SetSteeringTargetToEntityAtom
+        - RQ.Animation.BasicAction.Action.SetSteeringTargetToVectorAtom
+        - RQ.AI.Action.SetVelocityAtom
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        - RQ.Animation.BasicAction.Action.WaitForAnimationCompletionAtom
+        - RQ.Animation.BasicAction.Action.OnTriggerAtom
+        paramDataType: 28000000020000000100000003000000280000000300000003000000010000000100000029000000130000001100000028000000070000000c00000003000000030000002900000013000000010000002800000007000000000000000c00000001000000030000000300000025000000280000000800000002000000030000000700000008000000020000000200000001000000070000000300000001000000170000000100000028000000030000000300000028000000030000001700000007000000130000001200000017000000280000000300000003000000
+        paramName:
+        - _setMaxSpeedAtom
+        - _speed
+        - _resetToOriginal
+        - PhysicsAffectorName
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - _messageReceivers
+        - _messageReceiver
+        - _sendToSelf
+        - _setSteeringAtom
+        - _goToType
+        - _messageReceivers
+        - physicsComponentName
+        - waypointName
+        - _messageReceivers
+        - _messageReceiver
+        - everyFrame
+        - _setSteeringAtom
+        - _goToType
+        - WaypointIndex
+        - _messageReceivers
+        - sendToSelf
+        - physicsComponentName
+        - waypointName
+        - Velocity
+        - _atom
+        - _offset
+        - _delay
+        - _physicsComponentName
+        - _shootTarget
+        - _location
+        - _minSpeed
+        - _maxSpeed
+        - _sameLevel
+        - _objectLevel
+        - _physicsAffector
+        - everyFrame
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        - _animCompleteAtom
+        - AnimationType
+        - FinishEvent
+        - trigger
+        - _storeCollider
+        - collideTag
+        - sendEvent
+        - _atom
+        - triggerType
+        - collideTag
+        paramDataPos: 000000000000000004000000000000000100000001000000020000000500000006000000000000000000000000000000020000000700000000000000030000000400000001000000010000000b000000030000000c00000010000000010000001400000005000000060000000000000004000000150000001d0000000700000021000000250000002d000000310000003500000036000000080000003a000000090000003b000000050000000a0000000b000000060000000c0000000d0000003c00000002000000000000000e000000070000000f00000010000000
+        paramByteDataSize: 00000000040000000100000000000000000000000000000000000000010000000100000000000000000000000000000000000000040000000000000000000000000000000000000000000000010000000000000004000000040000000000000001000000000000000000000000000000000000000800000004000000000000000400000008000000040000000400000001000000040000000000000001000000000000000100000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000
+    - name: Kill Self
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 1525.0312
+        y: 499.28125
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.KillSelf
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 927b0a04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 00000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.KillSelfAtom
+        paramDataType: 28000000
+        paramName:
+        - _killSelfAtom
+        paramDataPos: 00000000
+        paramByteDataSize: 00000000
+    - name: Leave
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 233
+        y: 510
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Kill
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SetVelocity
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000d00000012000000
+        actionHashCodes: 848648007e7e0e0348c01101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        - Run
+        - FINISHED
+        byteData: 0000000000000000000000000400000000000000000000000000803f0000803f010100000000010000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0a00000004000000
+        customTypeNames:
+        - RQ.AI.Action.SetVelocityAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        paramDataType: 2500000028000000080000000200000003000000070000000800000002000000020000000100000007000000030000000100000028000000030000000300000001000000010000000f0000001700000001000000
+        paramName:
+        - Velocity
+        - _atom
+        - _offset
+        - _delay
+        - _physicsComponentName
+        - _shootTarget
+        - _location
+        - _minSpeed
+        - _maxSpeed
+        - _sameLevel
+        - _objectLevel
+        - _physicsAffector
+        - everyFrame
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000000000000000000008000000000000000c00000010000000180000001c000000200000002100000001000000250000000100000002000000030000002600000027000000000000000400000028000000
+        paramByteDataSize: 000000000000000008000000040000000000000004000000080000000400000004000000010000000400000000000000010000000000000000000000000000000100000001000000000000000000000001000000
+    - name: Kill
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 214
+        y: 569
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.KillSelf
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 927b0a04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 00000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.KillSelfAtom
+        paramDataType: 28000000
+        paramName:
+        - _killSelfAtom
+        paramDataPos: 00000000
+        paramByteDataSize: 00000000
+    - name: Rumble
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 266
+        y: 402
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Rumble End
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
+        - Assets.Source.AI.PM_State_Machine.StopMoving
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - Assets.Source.AI.PM_State_Machine.SetVisibility
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 000101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 0000000006000000090000000e0000001200000015000000
+        actionHashCodes: 07377b018fc53304b2cf1000e4f1a20348c01101ee6bbe01
+        unityObjectParams:
+        - {fileID: 122172, guid: 0c21cd38b42528140913bca53ef63c79, type: 2}
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: predator
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: rumbleGO
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: target
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 2
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        - 
+        byteData: 00020000000200000001000000000000000000000000cdccccbd0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 04000000020000000200000004000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
+        - RQ.AI.Action.StopMovingAtom
+        - RQ.Animation.BasicAction.Action.SetVisibilityAtom
+        - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
+        paramDataType: 1100000028000000010000000700000007000000030000002800000003000000030000001400000011000000110000000100000001000000130000002800000001000000010000000f000000170000000100000013000000280000001b000000090000000100000001000000
+        paramName:
+        - Variable
+        - _atom
+        - Value
+        - ActionTarget
+        - VariableToSet
+        - VariableName
+        - _stopMovingAtom
+        - _uniqueId
+        - _physicsAffector
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        - EntityToAffect
+        - _atom
+        - VisibilityOnEnter
+        - VisibilityOnExit
+        - time
+        - finishEvent
+        - realTime
+        - storeResult
+        - _instantiatePrefabAtom
+        - _gameObject
+        - _offset
+        - _rotateOffsetByFacingDirection
+        - _rotateHorizontalOffsetByFacingDirection
+        paramDataPos: 000000000000000000000000010000000500000000000000010000000100000002000000000000000100000002000000090000000a00000000000000020000000b0000000c00000000000000030000000d0000000100000003000000000000000e0000001a0000001b000000
+        paramByteDataSize: 0000000000000000010000000400000004000000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000001000000010000000000000000000000010000000000000000000000000000000c0000000100000001000000
+    - name: Rumble End
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 63.90625
+        y: 402
+        width: 107
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Damage Player
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.DestroyObject
+        - Assets.Source.AI.PM_State_Machine.DamageEntity
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010000
+        actionIsOpen: 010101
+        actionStartIndex: 000000000300000006000000
+        actionHashCodes: 9ff80c020f19100548c01101
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: rumbleGO
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: target
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.01
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        byteData: 0000803f00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 01000000
+        customTypeNames:
+        - RQ.AI.Action.DamageEntityAtom
+        paramDataType: 130000000f000000110000001300000028000000020000000f0000001700000001000000
+        paramName:
+        - gameObject
+        - delay
+        - detachChildren
+        - EntityToDamage
+        - _atom
+        - Amount
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 000000000000000000000000010000000000000000000000010000000000000004000000
+        paramByteDataSize: 000000000000000000000000000000000000000004000000000000000000000001000000
+    - name: Damage Player
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 471
+        width: 131
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Kill
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
+        - Assets.Source.AI.PM_State_Machine.DamageEntity
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000006000000
+        actionHashCodes: 07377b010f191005
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: target
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        byteData: 0002000000020000000000803f
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0400000001000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
+        - RQ.AI.Action.DamageEntityAtom
+        paramDataType: 110000002800000001000000070000000700000003000000130000002800000002000000
+        paramName:
+        - Variable
+        - _atom
+        - Value
+        - ActionTarget
+        - VariableToSet
+        - VariableName
+        - EntityToDamage
+        - _atom
+        - Amount
+        paramDataPos: 000000000000000000000000010000000500000000000000000000000100000009000000
+        paramByteDataSize: 000000000000000001000000040000000400000000000000000000000000000004000000
+    events:
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: AttackSucesfull
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Counter
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: FallInWater
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Flee
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Killed
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: PlayerDetected
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: PredatorRoll
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: ReturnIdlle
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: RolanAttacks
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Target Trigger
+      isSystemEvent: 0
+      isGlobal: 0
+    globalTransitions: []
+    variables:
+      floatVariables:
+      - useVariable: 1
+        name: distanceToWaypoint
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: alertGO
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: predator
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: rumbleGO
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: target
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      objectVariables:
+      - useVariable: 1
+        name: originPosition
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        typeName: UnityEngine.Transform
+        value: {fileID: 0}
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 1
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 0
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
