@@ -2552,7 +2552,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9158fe683b2e2814d952951803a95d68, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5445,6 +5445,7 @@ MonoBehaviour:
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -5494,6 +5495,7 @@ MonoBehaviour:
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -6416,6 +6418,7 @@ GameObject:
   - component: {fileID: 4825817996405500}
   - component: {fileID: 114217799586760478}
   - component: {fileID: 114047250188828732}
+  - component: {fileID: 114655928653567550}
   m_Layer: 9
   m_Name: Attack
   m_TagString: Untagged
@@ -6660,6 +6663,7 @@ MonoBehaviour:
   _rqName2: 507b4fa8-5104-4756-9d2f-c66f89a349d7
   _componentRepository: {fileID: 11418054}
   _skill: {fileID: 0}
+  _messageToSend: 
   AttackData:
     StrikeDelay: 0.2
     StopMovingDuringAttack: 1
@@ -6704,6 +6708,7 @@ MonoBehaviour:
   _rqName2: b6978f67-64d9-47d2-a912-ea3cafb73bc8
   _componentRepository: {fileID: 11418054}
   _skill: {fileID: 0}
+  _messageToSend: 
   AttackData:
     StrikeDelay: 0.2
     StopMovingDuringAttack: 1
@@ -6946,6 +6951,39 @@ MonoBehaviour:
     _layerIndex: 0
   _mainCollider: {fileID: 4820537762380000}
   _autoChangeLayers: 0
+--- !u!114 &114655928653567550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148874789738972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 941695859, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 57bf51bd-463d-44c6-8049-6ca49550d78e
+  componentName: ChargeSlash
+  _rqName: Attack RQ.Entity.Components.AttackComponent
+  _rqName2: 1c6df8cd-db5c-41eb-aff3-efb9aab94145
+  _componentRepository: {fileID: 11418054}
+  _skill: {fileID: 0}
+  _messageToSend: ChargeSlash
+  AttackData:
+    StrikeDelay: 0.2
+    StopMovingDuringAttack: 1
+    Offset: {x: 0, y: 0}
+    Size: {x: 0.32, y: 0.32}
+    Angle: 0
+    Distance: 1
+    Damage: 1
+    TargetTags:
+    - Enemy
+    - Boss
+    SameLayer: 0
+    Layers:
+    - _layerIndex: 10
+    AttackDirection: 0
 --- !u!114 &114695512136496600
 MonoBehaviour:
   m_ObjectHideFlags: 1
