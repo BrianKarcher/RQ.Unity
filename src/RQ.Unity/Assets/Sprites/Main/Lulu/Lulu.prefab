@@ -692,7 +692,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142002}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
   m_Name: 
@@ -754,12 +754,11 @@ MonoBehaviour:
   _rqName2: fe773355-48ae-40e7-94c9-b8b3b8d13280
   _componentRepository: {fileID: 11461292}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -796,8 +795,6 @@ MonoBehaviour:
     ZOffsetByLevel: 0
     ZOffset: 0
   _steeringPhysicsAffector:
-    _velocity: {x: 0, y: 0}
-    _originaVelocity: {x: 0, y: 0}
     _force: {x: 0, y: 0}
     _maxForce: 1
     _originalMaxForce: 1
@@ -807,12 +804,11 @@ MonoBehaviour:
     _enabled: 1
     Friction: 0
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -1178,7 +1174,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142002}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
@@ -1703,6 +1699,7 @@ MonoBehaviour:
   _rqName2: 185ab3a9-01f7-4e05-ace4-f663a671d023
   _componentRepository: {fileID: 11461292}
   _skill: {fileID: 0}
+  _messageToSend: 
   AttackData:
     StrikeDelay: 0.2
     StopMovingDuringAttack: 1

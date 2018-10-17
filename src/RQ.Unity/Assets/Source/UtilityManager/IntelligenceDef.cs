@@ -45,11 +45,22 @@ namespace UtilityManager
 
         public void RemoveTarget(string uniqueId)
         {
-            var targets = _dSExTargets.Where(i => i.GetTarget() != null && i.GetTarget().UniqueId == uniqueId);
-            foreach (var target in targets)
+            var target = _dSExTargets.First;
+            while (target != null)
             {
-                _dSExTargets.Remove(target);
+                if (target.Value.GetTarget().UniqueId == uniqueId)
+                {
+                    Debug.LogError("(IntelligenceDef RemoveTarget) Removing unique Id " + uniqueId);
+                    _dSExTargets.Remove(target);
+                }
+                target = target.Next;               
             }
+            //var targets = _dSExTargets.Where(i => i.GetTarget() != null && i.GetTarget().UniqueId == uniqueId);
+            //Debug.LogError("Removing " + targets.Count() + " entities of unique Id " + uniqueId);
+            //foreach (var target in targets)
+            //{
+            //    _dSExTargets.Remove(target);
+            //}
         }
 
         public DSExTarget ScoreAllDecisions()
