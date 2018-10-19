@@ -45,15 +45,39 @@ namespace UtilityManager
 
         public void RemoveTarget(string uniqueId)
         {
-            var target = _dSExTargets.First;
-            while (target != null)
+            var dsexTarget = _dSExTargets.First;
+            while (dsexTarget != null)
             {
-                if (target.Value.GetTarget().UniqueId == uniqueId)
+                if (dsexTarget.Value.GetTarget().UniqueId == uniqueId)
                 {
                     Debug.LogError("(IntelligenceDef RemoveTarget) Removing unique Id " + uniqueId);
-                    _dSExTargets.Remove(target);
+                    _dSExTargets.Remove(dsexTarget);
                 }
-                target = target.Next;               
+                var context = dsexTarget.Value.GetContext();
+                if (context != null)
+                {
+                    for (int i = context.EnemyEntities.Count - 1; i >= 0; i--)
+                    {
+                        if (context.EnemyEntities[i].Repo.UniqueId == uniqueId)
+                        {
+                            Debug.LogError("(IntelligenceDef) Removing EnemyEntity " + context.EnemyEntities[i].Repo.UniqueId + " " + context.EnemyEntities[i].Repo.name);
+                            context.EnemyEntities.RemoveAt(i);
+                        }
+                    }
+                    //List<IAICharacter> entitiesToRemove;
+                    //var entitiesToRemove2 = context.EnemyEntities.Where(i => i.Repo.UniqueId == uniqueId);
+                    //foreach (var entity in entitiesToRemove2)
+
+                    //foreach (var entityToRemove in entitiesToRemove)
+                    //{
+                    //    Debug.LogError("(IntelligenceDef) Removing EnemyEntity " + entityToRemove.Repo.UniqueId + " " + entityToRemove.Repo.name);
+                    //    context.EnemyEntities.Remove(entityToRemove);
+                    //}
+
+                    //context.EnemyEntities = context.EnemyEntities.Where(i => i.Repo.UniqueId != uniqueId);
+                }
+                    
+                dsexTarget = dsexTarget.Next;               
             }
             //var targets = _dSExTargets.Where(i => i.GetTarget() != null && i.GetTarget().UniqueId == uniqueId);
             //Debug.LogError("Removing " + targets.Count() + " entities of unique Id " + uniqueId);

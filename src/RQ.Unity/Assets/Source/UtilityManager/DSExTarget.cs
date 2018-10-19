@@ -12,6 +12,7 @@ namespace UtilityManager
     {
         private IDSE _dse;
         private IEntity _target;
+        private string _targetUniqueId;
         private IDecisionContext _context;
         private IEntityContainer _entityContainer;
 
@@ -22,6 +23,9 @@ namespace UtilityManager
 
         public void CreateContext(IntelligenceDef intelligenceDef, IDSE dse, IComponentRepository repo, string[] allyTags, string[] enemyTags, IEntity target)
         {
+            _target = target;
+            if (target != null)
+                _targetUniqueId = target.UniqueId;
             _dse = dse;
             var dc = new DecisionContext();
             dc.Self = new AICharacter(repo, intelligenceDef);
@@ -33,7 +37,7 @@ namespace UtilityManager
             if (enemyTags != null && enemyTags.Any())
             {
                 var allEnemies = _entityContainer.GetEntitiesFromTags(enemyTags);
-                dc.EnemyEntities = allEnemies.Select(i => new AICharacter((IComponentRepository)i, null)).Cast<IAICharacter>();
+                dc.EnemyEntities = allEnemies.Select(i => new AICharacter((IComponentRepository)i, null)).Cast<IAICharacter>().ToList();
             }
             if (target != null)
             {

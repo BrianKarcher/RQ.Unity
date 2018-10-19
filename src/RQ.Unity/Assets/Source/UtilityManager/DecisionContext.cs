@@ -10,6 +10,6 @@ namespace UtilityManager
         public IAICharacter Self { get; set; }
         public IAICharacter EnemyEntity { get; set; }
         public IAICharacter AllyEntity { get; set; }
-        public IEnumerable<IAICharacter> EnemyEntities { get; set; }
+        public IList<IAICharacter> EnemyEntities { get; set; }
     }
 }
