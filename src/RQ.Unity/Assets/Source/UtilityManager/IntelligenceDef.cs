@@ -45,17 +45,26 @@ namespace UtilityManager
 
         public void RemoveTarget(string uniqueId)
         {
-            var dsexTarget = _dSExTargets.First;
-            while (dsexTarget != null)
+            //var dsexTarget = _dSExTargets.First;
+            //while (dsexTarget != null)
+            //{
+            var nodesToRemove = new List<LinkedListNode<DSExTarget>>();
+            for (var dsexTarget = _dSExTargets.First; dsexTarget != null; dsexTarget = dsexTarget.Next)
             {
-                if (dsexTarget.Value.GetTarget().UniqueId == uniqueId)
+                var value = dsexTarget.Value;
+                var target = value.GetTarget();
+                if (target != null && target.UniqueId == uniqueId)
                 {
                     Debug.LogError("(IntelligenceDef RemoveTarget) Removing unique Id " + uniqueId);
-                    _dSExTargets.Remove(dsexTarget);
-                    dsexTarget = dsexTarget.Next;
-                    continue;
+                    //_dSExTargets.Remove(dsexTarget);
+                    nodesToRemove.Add(dsexTarget);
+                    if (_currentDSExTarget == dsexTarget.Value)
+                        _currentDSExTarget = null;
+                    //dsexTarget = dsexTarget.Next;
+                    //continue;
                 }
-                var context = dsexTarget.Value.GetContext();
+                
+                var context = value.GetContext();
                 if (context != null)
                 {
                     for (int i = context.EnemyEntities.Count - 1; i >= 0; i--)
@@ -66,6 +75,7 @@ namespace UtilityManager
                             context.EnemyEntities.RemoveAt(i);
                         }
                     }
+                    //dsexTarget.Value = value;
                     //List<IAICharacter> entitiesToRemove;
                     //var entitiesToRemove2 = context.EnemyEntities.Where(i => i.Repo.UniqueId == uniqueId);
                     //foreach (var entity in entitiesToRemove2)
@@ -79,7 +89,12 @@ namespace UtilityManager
                     //context.EnemyEntities = context.EnemyEntities.Where(i => i.Repo.UniqueId != uniqueId);
                 }
                     
-                dsexTarget = dsexTarget.Next;               
+                //dsexTarget = dsexTarget.Next;               
+            }
+
+            foreach (var node in nodesToRemove)
+            {
+                _dSExTargets.Remove(node);
             }
             //var targets = _dSExTargets.Where(i => i.GetTarget() != null && i.GetTarget().UniqueId == uniqueId);
             //Debug.LogError("Removing " + targets.Count() + " entities of unique Id " + uniqueId);
