@@ -52,6 +52,8 @@ namespace UtilityManager
                 {
                     Debug.LogError("(IntelligenceDef RemoveTarget) Removing unique Id " + uniqueId);
                     _dSExTargets.Remove(dsexTarget);
+                    dsexTarget = dsexTarget.Next;
+                    continue;
                 }
                 var context = dsexTarget.Value.GetContext();
                 if (context != null)

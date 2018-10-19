@@ -166,6 +166,8 @@ namespace UtilityManager
             float closestDistSq = 9999f;
             foreach (var enemy in context.EnemyEntities)
             {
+                if (enemy.Repo == null)
+                    continue;
                 var dist = (enemy.GetPos() - allyPos).sqrMagnitude;
                 if (dist < closestDistSq)
                 {
