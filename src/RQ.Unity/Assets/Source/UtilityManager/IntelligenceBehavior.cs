@@ -58,8 +58,9 @@ namespace UtilityManager
                         var dse = _intelligenceDef.ScoreAllDecisions();
                         if (dse != null)
                         {
-                            _intelligenceDef.RunDecision(dse);
-                            _currentDse = dse.GetDSE().Name;
+                            var newDecision =_intelligenceDef.RunDecision(dse);
+                            if (newDecision)
+                                _currentDse = dse.GetDSE().Name;
                         }
                         else
                             Debug.LogWarning("Could not determine decision.");

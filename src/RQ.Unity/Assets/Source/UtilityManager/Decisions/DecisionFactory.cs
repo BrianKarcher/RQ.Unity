@@ -18,8 +18,9 @@
                     return new SetTargetRunFsm();
                 case DecisionEnum.SetAllyRunFsm:
                     return new SetAllyRunFsm();
+                default:
+                    return new RunFsm();
             }
-            return null;
         }
     }
 }

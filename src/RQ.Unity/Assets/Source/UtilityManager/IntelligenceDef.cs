@@ -55,11 +55,15 @@ namespace UtilityManager
                 var target = value.GetTarget();
                 if (target != null && target.UniqueId == uniqueId)
                 {
-                    Debug.LogError("(IntelligenceDef RemoveTarget) Removing unique Id " + uniqueId);
+                    //Debug.LogError("(IntelligenceDef RemoveTarget) Removing unique Id " + uniqueId);
                     //_dSExTargets.Remove(dsexTarget);
                     nodesToRemove.Add(dsexTarget);
                     if (_currentDSExTarget == dsexTarget.Value)
-                        _currentDSExTarget = null;
+                    {
+                        // Current target got destroyed, need to make a new decision
+                        ScoreAndRunNewDecision();
+                    }
+                        //_currentDSExTarget = null;
                     //dsexTarget = dsexTarget.Next;
                     //continue;
                 }
@@ -71,7 +75,7 @@ namespace UtilityManager
                     {
                         if (context.EnemyEntities[i].Repo.UniqueId == uniqueId)
                         {
-                            Debug.LogError("(IntelligenceDef) Removing EnemyEntity " + context.EnemyEntities[i].Repo.UniqueId + " " + context.EnemyEntities[i].Repo.name);
+                            //Debug.LogError("(IntelligenceDef) Removing EnemyEntity " + context.EnemyEntities[i].Repo.UniqueId + " " + context.EnemyEntities[i].Repo.name);
                             context.EnemyEntities.RemoveAt(i);
                         }
                     }
@@ -104,6 +108,15 @@ namespace UtilityManager
             //}
         }
 
+        public void ScoreAndRunNewDecision()
+        {
+            var dse = ScoreAllDecisions();
+            if (dse != null)
+            {
+                var newDecision = RunDecision(dse);
+            }
+        }
+
         public DSExTarget ScoreAllDecisions()
         {
             //var dm = _dm.GetDecisionMaker();
@@ -123,20 +136,24 @@ namespace UtilityManager
             return dse.IsDSELocked();
         }
 
-        public void RunDecision(DSExTarget dsexTarget)
+        public bool RunDecision(DSExTarget dsexTarget)
         {
             // Currently running? Do not disturb unless finished
             if (_currentDSExTarget != null && !_currentDSExTarget.GetDSE().IsFinished() && _currentDSExTarget == dsexTarget)
-                return;
+                return false;
             if (_currentDSExTarget != null)
             {
+                Debug.LogError("Finishing DSE " + _currentDSExTarget.GetDSE().Name);
                 _currentDSExTarget.GetDSE().Stop(_currentDSExTarget.GetContext());
-                // Log the last use of a DSE at the end of it.
+                // Log the last use of a DSE at the end of it.                
                 AddOrUpdateDseHistory(_currentDSExTarget.GetDSE().Name, Time.time);
             }            
             _currentDSExTarget = dsexTarget;
+            Debug.LogError("Running DSE " + dsexTarget.GetDSE().Name);
             _currentDSExTarget.GetDSE().RunDecision(_currentDSExTarget.GetContext());
-            
+            // Log the last use of a DSE at the start of it.                
+            //AddOrUpdateDseHistory(_currentDSExTarget.GetDSE().Name, Time.time);
+            return true;
         }
 
         private void AddOrUpdateDseHistory(string name, float value)
