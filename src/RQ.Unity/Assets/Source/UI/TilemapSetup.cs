@@ -70,7 +70,10 @@ namespace RQ2.UI
         {
             //CameraClass cameraClass = GameController.Instance.GetCamera();
             //var cameraClass = GameController.Instance.GetSceneSetup().camera
-
+            if (_camera == null)
+            {
+                Debug.LogError("(TilemapSetup) No camera set, cannot call SetMaxBounds.");
+            }
             if (_camera != null && TileMap != null)
             {
                 //cameraClass.Init();

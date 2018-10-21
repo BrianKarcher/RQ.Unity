@@ -796,7 +796,7 @@ MonoBehaviour:
     ZOffset: 0
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
-    _maxForce: 1
+    _maxForce: 50
     _originalMaxForce: 1
     _maxSpeed: 1
     _maxSpeedMultiplier: 1
@@ -1704,15 +1704,16 @@ MonoBehaviour:
     StrikeDelay: 0.2
     StopMovingDuringAttack: 1
     Offset: {x: 0, y: 0}
-    Size: {x: 0.32, y: 0.32}
+    Size: {x: 1, y: 0.5}
     Angle: 0
-    Distance: 0.6
+    Distance: 0.8
     Damage: 1
     TargetTags:
     - Enemy
     - Boss
-    SameLayer: 1
-    Layers: []
+    SameLayer: 0
+    Layers:
+    - _layerIndex: 10
     AttackDirection: 0
 --- !u!114 &114800197168427520
 MonoBehaviour:
@@ -1738,7 +1739,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445268909447274}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
   m_Name: 

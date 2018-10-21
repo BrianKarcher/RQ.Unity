@@ -152,16 +152,13 @@ namespace UtilityManager
             Debug.LogError("Running DSE " + dsexTarget.GetDSE().Name);
             _currentDSExTarget.GetDSE().RunDecision(_currentDSExTarget.GetContext());
             // Log the last use of a DSE at the start of it.                
-            //AddOrUpdateDseHistory(_currentDSExTarget.GetDSE().Name, Time.time);
+            AddOrUpdateDseHistory(_currentDSExTarget.GetDSE().Name, Time.time);
             return true;
         }
 
         private void AddOrUpdateDseHistory(string name, float value)
         {
-            if (_dseHistory.ContainsKey(name))
-                _dseHistory[name] = value;
-            else
-                _dseHistory.Add(name, value);
+            _dseHistory[name] = value;
         }
 
         public float GetHistory(string dseName)

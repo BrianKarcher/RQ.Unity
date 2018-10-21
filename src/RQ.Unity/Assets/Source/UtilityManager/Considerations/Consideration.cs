@@ -15,7 +15,7 @@ namespace UtilityManager
             MyHealth = 0,
             TargetHealth = 1,
             AllyHealth = 2,
-            DistanceToTarget = 3,
+            MyDistanceToTarget = 3,
             DistanceToAlly = 4,
             AllyThreat = 5,
             DecisionEvaluatorCooldown = 6
@@ -104,7 +104,7 @@ namespace UtilityManager
                     return TargetHealthScore(context);
                 case InputEnum.AllyHealth:
                     return AllyHealthScore(context);
-                case InputEnum.DistanceToTarget:
+                case InputEnum.MyDistanceToTarget:
                     return DistanceToEntity(context.Self, context.EnemyEntity);
                 case InputEnum.DistanceToAlly:
                     return DistanceToEntity(context.Self, context.AllyEntity);
