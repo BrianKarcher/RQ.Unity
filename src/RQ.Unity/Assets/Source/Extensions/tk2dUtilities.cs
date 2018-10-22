@@ -80,6 +80,12 @@ namespace RQ2.Controller.tk2d_Extensions
                 //float z = 0.01f;
                 switch (layer.name)
                 {
+                    case "Water Level 1 Collider":
+                        layer.z = 0.001f;
+                        layer.unityLayer = LayerMask.NameToLayer("Water");
+                        layer.skipMeshGeneration = true;
+                        layer.generateCollider = true;
+                        break;
                     case "Level 1 Colliders":
                     case "Level 1 Collider ":
                     case "Level 1 Collider":
