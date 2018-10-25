@@ -63,7 +63,7 @@ namespace RQ2.Controller.UI.Grid
             slot.Item = itemGridData.Data;
             slot.LabelText = itemGridData.Config.Title;
             slot.Value = itemGridData.Config.Value;
-            slot.ItemConfig = itemGridData.Config;
+            slot.ItemConfig = itemGridData.Config as ItemConfig;
             slot.SetScrollView(ScrollView);
             return slot;
         }
