@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 33158742536567622}
   - component: {fileID: 114229715505140036}
   - component: {fileID: 114604049076130018}
+  - component: {fileID: 114978140725583342}
   - component: {fileID: 114495173810430598}
   - component: {fileID: 114472051277628110}
   m_Layer: 10
@@ -725,6 +726,7 @@ MonoBehaviour:
   _rqName2: cde0873c-47f6-44bd-b5d4-db04f38a722f
   _componentRepository: {fileID: 114890941582495346}
   _skill: {fileID: 0}
+  _messageToSend: 
   AttackData:
     StrikeDelay: 0
     StopMovingDuringAttack: 1
@@ -1378,11 +1380,11 @@ MonoBehaviour:
     FacingDirection: 1
     PreviousFacingDirection: 9
     _isAnimationComplete: 0
-    AutoPlayAnimationType: 
+    AutoPlayAnimationType: bded0d0f-8366-45b1-bb05-6d467a8e23bb
     PlayAutomatically: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
-  SpriteAnimator2: {fileID: 0}
+  SpriteAnimator2: {fileID: 114978140725583342}
   _use8Directions: 0
   _isMain: 1
 --- !u!114 &114513086991447166
@@ -1485,12 +1487,11 @@ MonoBehaviour:
   _rqName2: 2ebd796d-81aa-4981-b16e-5ca9fa34bf45
   _componentRepository: {fileID: 114890941582495346}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -1527,8 +1528,6 @@ MonoBehaviour:
     ZOffsetByLevel: 0
     ZOffset: 0
   _steeringPhysicsAffector:
-    _velocity: {x: 0, y: 0}
-    _originaVelocity: {x: 0, y: 0}
     _force: {x: 0, y: 0}
     _maxForce: 0.5
     _originalMaxForce: 0.5
@@ -1538,12 +1537,11 @@ MonoBehaviour:
     _enabled: 1
     Friction: 0
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -1662,6 +1660,30 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &114978140725583342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751127878088694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41880b8380ca71346a1bc3912eb8f03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _storedSpriteAnimations: []
+  _spriteAnimationsConfig: {fileID: 11400000, guid: 5e3a11f7518edfb4ba221a0f9c972feb,
+    type: 2}
+  _manualHFlip: 0
+  _hFlip: 0
+  _directionRotate: 0
+  OrigSpritePosition:
+    x: 0
+    y: 0
+  SpriteOffsetPos:
+    x: 0
+    y: 0
+  anim: {fileID: 114604049076130018}
 --- !u!135 &135066120349240030
 SphereCollider:
   m_ObjectHideFlags: 1

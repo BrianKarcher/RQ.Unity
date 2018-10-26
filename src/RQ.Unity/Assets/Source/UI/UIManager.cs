@@ -338,7 +338,8 @@ namespace RQ2.UI
             {
                 //var gold = (int)data.ExtraInfo;
                 var itemUniqueId = (string)data.ExtraInfo;
-                var itemConfig = ConfigsContainer.Instance.GetConfig<ItemConfig>(itemUniqueId);
+                //var itemConfig = ConfigsContainer.Instance.GetConfig<ItemConfig>(itemUniqueId);
+                var itemConfig = GameDataController.Instance.GetGameConfig().GetAsset<ItemConfig>(itemUniqueId);
                 HUDSkill.mainTexture = itemConfig.GridTexture;
                 SetHUDSkillColor();
                 //MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
