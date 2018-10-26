@@ -130,6 +130,8 @@ namespace RQ2.Editor._2D_Toolkit
                     go.layer = LayerMask.NameToLayer("Level 2 TC");
                 if (layer.name.Contains("Shared"))
                     go.layer = LayerMask.NameToLayer("Shared TC");
+                if (layer.name.Contains("Water"))
+                    go.layer = LayerMask.NameToLayer("Water");
 
                 foreach (Transform collidergo in _tileMap.renderData.transform)
                 {
