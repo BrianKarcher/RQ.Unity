@@ -613,8 +613,8 @@ MonoBehaviour:
         - 
         actionEnabled: 010100010101
         actionIsOpen: 010101010101
-        actionStartIndex: 0000000002000000070000000e0000001400000016000000
-        actionHashCodes: 8fc53304a082bf001bcdca047e7e0e03978a9b033afc0201
+        actionStartIndex: 000000000300000009000000100000001500000017000000
+        actionHashCodes: 8fc53304a082bf001bcdca047e7e0e03978a9b036d7bd700
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -691,7 +691,13 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 4
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -702,15 +708,18 @@ MonoBehaviour:
         - 
         - 
         - 
+        - 
+        - 
         - PathFinder
         - 
         - Idle
         - Seek
         - PathFinder
-        byteData: 01000000000300000001010000ffffffff
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 0100000002000000050000000200000000000000
+        byteData: 010000000003000000010000ffffffff
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmInt
+        customTypeSizes: 0200000003000000040000000200000000000000
         customTypeNames:
         - RQ.AI.Action.StopMovingAtom
         - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
@@ -718,15 +727,17 @@ MonoBehaviour:
         - RQ.AI.Action.HasLOSAtom
         - System.Collections.Generic.List`1[[System.String, mscorlib, Version=2.0.0.0,
           Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-        paramDataType: 28000000030000000f000000010000002800000002000000070000000f0000000f0000000f0000001700000017000000170000000100000028000000030000000300000001000000010000000100000029000000270000002800000000000000280000001700000017000000
+        paramDataType: 2800000003000000030000000f00000001000000280000000200000007000000030000000f0000000f0000000f00000017000000170000001700000001000000280000000300000003000000010000000100000029000000270000000c000000100000002800000000000000280000001700000017000000
         paramName:
         - _stopMovingAtom
         - _uniqueId
+        - _physicsAffector
         - storeResult
         - everyFrame
         - _getFloatVariableAtom
         - Value
         - _variable
+        - VariableName
         - float1
         - float2
         - tolerance
@@ -737,18 +748,19 @@ MonoBehaviour:
         - _animationAtom
         - _animComponentName
         - _animation
-        - _byType
         - WaitForAnimationCompletion
         - StopOnExit
         - array
         - resetValue
+        - ObstacleLayer
+        - 
         - _atom
         - _obstacleLayerMask
         - _tagsThatCancelRaycast
         - HasLOSEvent
         - HasNoLOSEvent
-        paramDataPos: 00000000000000000000000000000000010000000100000005000000010000000200000003000000010000000200000003000000090000000200000004000000050000000a0000000b0000000c0000000000000000000000030000000d000000040000000600000007000000
-        paramByteDataSize: 000000000000000000000000010000000000000004000000040000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000010000000100000000000000000000000000000004000000000000000000000000000000
+        paramDataPos: 000000000000000001000000000000000000000001000000010000000500000002000000010000000200000003000000030000000400000005000000090000000200000006000000070000000a0000000b00000000000000000000000000000000000000030000000c000000040000000800000009000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000040000000400000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000100000001000000000000000000000000000000000000000000000004000000000000000000000000000000
     - name: End
       description: 
       colorIndex: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 11400000}
     name: FSM
-    startState: Player Control
+    startState: Setup
     states:
     - name: Player Control
       description: 
@@ -24,7 +24,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 258
-        y: 212
+        y: 308
         width: 160
         height: 96
       isBreakpoint: 0
@@ -84,6 +84,7 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.SetVectorVariable2
         - HutongGames.PlayMaker.Actions.Raycast
         - HutongGames.PlayMaker.Actions.RayCast2d
         customNames:
@@ -100,10 +101,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01000101010101010100000101
-        actionIsOpen: 01010101010101010101010101
-        actionStartIndex: 0000000003000000090000000c0000000f00000014000000190000001e00000023000000290000002e0000003300000044000000
-        actionHashCodes: fe05870007377b01343beb01343beb012334d0002334d0002334d0002334d00007377b012334d0002334d000d3bd7b0561566a03
+        - 
+        actionEnabled: 0100010101010101010000010101
+        actionIsOpen: 0101010101010101010101010101
+        actionStartIndex: 0000000003000000090000000c0000000f00000014000000190000001e00000023000000290000002e000000330000003800000049000000
+        actionHashCodes: fe05870007377b01343beb01343beb012334d0002334d0002334d0002334d00007377b012334d0002334d000cb5eaf05d3bd7b0561566a03
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -119,7 +121,7 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
-        - ownerOption: 0
+        - ownerOption: 1
           gameObject:
             useVariable: 0
             name: 
@@ -127,7 +129,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 0}
-        - ownerOption: 0
+        - ownerOption: 1
           gameObject:
             useVariable: 0
             name: 
@@ -306,7 +308,13 @@ MonoBehaviour:
           value: 1
         fsmVector2Params:
         - useVariable: 1
-          name: 
+          name: footPosition
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        - useVariable: 1
+          name: footPosition
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -331,7 +339,7 @@ MonoBehaviour:
           value: {x: 0, y: 0}
         fsmVector3Params:
         - useVariable: 1
-          name: 
+          name: footPosition
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -395,12 +403,12 @@ MonoBehaviour:
         - 
         - FallInWater
         - FallInWater
-        byteData: 00010000000200000001000000020000000000000000010000000000000000000000000000000000
+        byteData: 0001000000020000000100000002000000000000000001000000000000000000010000000000000000070000000000000000000000
         arrayParamSizes: 0100000001000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmInt
         - HutongGames.PlayMaker.FsmInt
-        customTypeSizes: 04000000010000000100000002000000020000000200000002000000040000000200000002000000
+        customTypeSizes: 0400000001000000010000000200000002000000020000000200000004000000020000000200000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
         - RQ.AI.Conditions.IsDamagedConditionAI
@@ -412,7 +420,8 @@ MonoBehaviour:
         - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 260000001000000017000000110000002800000001000000070000000700000003000000170000002800000007000000170000002800000007000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000170000000100000028000000030000000300000011000000280000000100000007000000070000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000140000001c0000001c000000070000000f0000001700000011000000130000001c0000001c0000000f000000100000000c00000010000000110000001900000011000000140000002500000025000000070000000f000000100000001000000017000000110000001300000025000000250000000f0000000f000000100000000c00000010000000110000001900000011000000
+        - RQ.Entity.AtomAction.SetVectorVariableAtom2
+        paramDataType: 2600000010000000170000001100000028000000010000000700000007000000030000001700000028000000070000001700000028000000070000001700000001000000280000000300000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000110000002800000001000000070000000700000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000002500000001000000280000000800000007000000140000001c0000001c000000070000000f0000001700000011000000130000001c0000001c0000000f000000100000000c00000010000000110000001900000011000000140000002500000025000000070000000f000000100000001000000017000000110000001300000025000000250000000f0000000f000000100000000c00000010000000110000001900000011000000
         paramName:
         - fsmTemplateControl
         - storeID
@@ -465,6 +474,11 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
+        - storeResult
+        - everyFrame
+        - _atom
+        - Value
+        - _variable
         - fromGameObject
         - fromPosition
         - direction
@@ -502,15 +516,15 @@ MonoBehaviour:
         - invertMask
         - debugColor
         - debug
-        paramDataPos: 00000000000000000000000000000000000000000000000001000000050000000100000002000000010000000900000003000000020000000d000000040000001100000003000000050000000600000007000000120000000400000008000000090000000a00000013000000050000000b0000000c0000000d00000014000000060000000e0000000f000000010000000700000015000000160000001a00000010000000110000001e000000080000001200000013000000140000001f00000009000000150000001600000000000000000000000100000020000000000000001700000002000000000000000200000003000000010000000100000000000000020000000300000000000000040000000100000000000000010000002400000002000000030000000400000018000000050000000100000002000000030000000300000004000000050000000100000006000000060000000100000007000000
-        paramByteDataSize: 00000000000000000000000000000000000000000100000004000000040000000000000000000000000000000400000000000000000000000400000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000010000000400000004000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000000000000000000000000000000000000000000001000000050000000100000002000000010000000900000003000000020000000d000000040000001100000003000000050000000600000007000000120000000400000008000000090000000a00000013000000050000000b0000000c0000000d00000014000000060000000e0000000f000000010000000700000015000000160000001a00000010000000110000001e000000080000001200000013000000140000001f00000009000000150000001600000000000000200000000a00000021000000290000000000000000000000010000002d000000000000001700000002000000000000000200000003000000010000000100000000000000020000000300000000000000040000000100000001000000020000003100000002000000030000000400000018000000050000000100000003000000040000000300000004000000050000000100000006000000060000000100000007000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000040000000400000000000000000000000000000004000000000000000000000004000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000004000000040000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000080000000400000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     - name: Damaged
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 481
-        y: 213
+        y: 309
         width: 100
         height: 32
       isBreakpoint: 0
@@ -713,7 +727,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 277
-        y: 352
+        y: 448
         width: 100
         height: 32
       isBreakpoint: 0
@@ -822,7 +836,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 460
-        y: 402.03125
+        y: 498.03125
         width: 100
         height: 16
       isBreakpoint: 0
@@ -878,7 +892,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 66.953125
-        y: 225
+        y: 321
         width: 123
         height: 32
       isBreakpoint: 0
@@ -948,8 +962,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 261.71094
-        y: 100.515625
+        x: 273.71094
+        y: 103.515625
         width: 113
         height: 32
       isBreakpoint: 0
@@ -1009,7 +1023,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 480
-        y: 101
+        y: 197
         width: 160
         height: 32
       isBreakpoint: 0
@@ -1198,7 +1212,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 484
-        y: 148
+        y: 244
         width: 118
         height: 32
       isBreakpoint: 0
@@ -1291,7 +1305,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 67
-        y: 318
+        y: 414
         width: 100
         height: 32
       isBreakpoint: 0
@@ -1386,7 +1400,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 70
-        y: 106
+        y: 202
         width: 100
         height: 32
       isBreakpoint: 0
@@ -1457,7 +1471,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 481
-        y: 272
+        y: 368
         width: 112
         height: 32
       isBreakpoint: 0
@@ -1525,7 +1539,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 64
-        y: 395
+        y: 491
         width: 117
         height: 32
       isBreakpoint: 0
@@ -1536,7 +1550,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Get out of water
+        toState: Splash
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -1544,13 +1558,15 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.StopMoving
         - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 8fc5330448c01101
+        - 
+        actionEnabled: 010001
+        actionIsOpen: 010101
+        actionStartIndex: 000000000300000006000000
+        actionHashCodes: 8fc5330448c011017e7e0e03
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1583,13 +1599,16 @@ MonoBehaviour:
         - 
         - 
         - 
-        byteData: 00
+        - 
+        - Fall in
+        byteData: 000100
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 02000000
+        customTypeSizes: 0200000004000000
         customTypeNames:
         - RQ.AI.Action.StopMovingAtom
-        paramDataType: 2800000003000000030000000f0000001700000001000000
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        paramDataType: 2800000003000000030000000f00000017000000010000002800000003000000030000000100000001000000
         paramName:
         - _stopMovingAtom
         - _uniqueId
@@ -1597,15 +1616,20 @@ MonoBehaviour:
         - time
         - finishEvent
         - realTime
-        paramDataPos: 000000000000000001000000000000000200000000000000
-        paramByteDataSize: 000000000000000000000000000000000000000001000000
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        paramDataPos: 0000000000000000010000000000000002000000000000000100000003000000040000000100000002000000
+        paramByteDataSize: 0000000000000000000000000000000000000000010000000000000000000000000000000100000001000000
     - name: Get out of water
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 55
-        y: 453
+        x: 53
+        y: 614
         width: 138
         height: 32
       isBreakpoint: 0
@@ -1623,14 +1647,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.LocateNearbySafeTile
-        - Assets.Source.AI.PM_State_Machine.SetPosition
+        - Assets.Source.AI.PM_State_Machine.GetVectorVariable
         customNames:
         - 
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000005000000
-        actionHashCodes: 9cb456037943b701
+        actionStartIndex: 0000000006000000
+        actionHashCodes: 9cb45603fe4ef000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1656,13 +1680,13 @@ MonoBehaviour:
         fsmBoolParams: []
         fsmVector2Params:
         - useVariable: 1
-          name: tempVector
+          name: footPosition
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {x: 0, y: 0}
         - useVariable: 1
-          name: tempVector
+          name: footPosition
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -1671,30 +1695,207 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 00000000010000000800000000000000000000000000000000000000
+        stringParams:
+        - 
+        - 
+        byteData: 000000000ad7a33d00000000000000000007000000
         arrayParamSizes: 01000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmInt
-        customTypeSizes: 0100000004000000
+        customTypeSizes: 0200000004000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.LocateNearbySafeTileAtom
-        - RQ.Animation.BasicAction.Action.SetPositionAtom
-        paramDataType: 0c00000010000000250000002800000000000000250000002800000007000000070000000800000008000000
+        - RQ.Animation.BasicAction.Action.GetVectorVariableAtom
+        paramDataType: 0c000000100000002500000028000000000000000200000025000000010000002800000008000000070000000300000003000000
         paramName:
         - UnsafeLayerMask
         - 
         - storeVector
         - _atom
         - UnsafeLayerMask
-        - ManualPosition
+        - ExpandIteration
+        - Variable
+        - everyFrame
         - _atom
-        - ActionTarget
-        - PositionReference
-        - ManualVector
-        - Offset
-        paramDataPos: 0000000000000000000000000000000000000000010000000100000004000000080000000c00000014000000
-        paramByteDataSize: 0000000000000000000000000000000004000000000000000000000004000000040000000800000008000000
+        - Value
+        - VariableToSet
+        - VariableName
+        - PhysicsAffector
+        paramDataPos: 00000000000000000000000000000000000000000400000001000000080000000100000009000000110000000000000001000000
+        paramByteDataSize: 00000000000000000000000000000000040000000400000000000000010000000000000008000000040000000000000000000000
+    - name: Splash
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 59
+        y: 550
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Get out of water
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.SetVisibility
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000600000009000000
+        actionHashCodes: ee6bbe0148c01101e4f1a203
+        unityObjectParams:
+        - {fileID: 122172, guid: 6cc7849c502facd48b8b6d03265ad422, type: 2}
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: Self
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        byteData: 0000000000000000cdccccbd0000000001
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0400000002000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
+        - RQ.Animation.BasicAction.Action.SetVisibilityAtom
+        paramDataType: 13000000280000001b0000000900000001000000010000000f000000170000000100000013000000280000000100000001000000
+        paramName:
+        - storeResult
+        - _instantiatePrefabAtom
+        - _gameObject
+        - _offset
+        - _rotateOffsetByFacingDirection
+        - _rotateHorizontalOffsetByFacingDirection
+        - time
+        - finishEvent
+        - realTime
+        - EntityToAffect
+        - _atom
+        - VisibilityOnEnter
+        - VisibilityOnExit
+        paramDataPos: 000000000000000000000000000000000c0000000d00000000000000000000000e00000001000000010000000f00000010000000
+        paramByteDataSize: 0000000000000000000000000c000000010000000100000000000000000000000100000000000000000000000100000001000000
+    - name: Setup
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 277.9453
+        y: 221
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Player Control
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SetGameObjectVariable2
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 45f0a300
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Self
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 01000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 01000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SetGameObjectVariableAtom2
+        paramDataType: 130000002800000007000000
+        paramName:
+        - Variable
+        - _atom
+        - Type
+        paramDataPos: 000000000000000000000000
+        paramByteDataSize: 000000000000000004000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -1764,6 +1965,12 @@ MonoBehaviour:
       stringVariables: []
       vector2Variables:
       - useVariable: 1
+        name: footPosition
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 0, y: 0}
+      - useVariable: 1
         name: tempVector
         tooltip: 
         showInInspector: 0
@@ -1779,7 +1986,13 @@ MonoBehaviour:
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: Self
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -1787,7 +2000,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
