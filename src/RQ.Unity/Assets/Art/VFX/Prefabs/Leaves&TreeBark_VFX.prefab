@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4164896211928762}
   - component: {fileID: 33242377760283330}
   - component: {fileID: 23523148178921634}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: VFXCollider
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,8 +38,26 @@ GameObject:
   - component: {fileID: 4993764541895176}
   - component: {fileID: 198718625913533124}
   - component: {fileID: 199715917793957376}
-  m_Layer: 0
+  - component: {fileID: 114271362361230332}
+  m_Layer: 15
   m_Name: TreeBark_VFX
+  m_TagString: Environment
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1309746001277542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4188069740976982}
+  - component: {fileID: 114422276019917760}
+  - component: {fileID: 114299872397493342}
+  m_Layer: 15
+  m_Name: FSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,9 +73,27 @@ GameObject:
   - component: {fileID: 4260133743096308}
   - component: {fileID: 198248074417947924}
   - component: {fileID: 199180121555007602}
-  m_Layer: 0
+  - component: {fileID: 114908602176506336}
+  m_Layer: 15
   m_Name: Leaves_VFX
-  m_TagString: Untagged
+  m_TagString: Environment
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1699582298534632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4759654815770210}
+  - component: {fileID: 65694324425296338}
+  - component: {fileID: 114600541557951450}
+  m_Layer: 15
+  m_Name: Trigger
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,11 +106,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4514638557426430}
+  - component: {fileID: 114522240551568566}
   - component: {fileID: 65976528843552270}
-  - component: {fileID: 114281475126534064}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Leaves&TreeBark_VFX
-  m_TagString: Enemy
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +128,19 @@ Transform:
   m_Father: {fileID: 4514638557426430}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -9.919001, y: 0, z: 0}
+--- !u!4 &4188069740976982
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1309746001277542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4514638557426430}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4260133743096308
 Transform:
   m_ObjectHideFlags: 1
@@ -112,14 +161,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1749950037060720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2183018, y: 1.6415234, z: 0}
+  m_LocalPosition: {x: 1.24, y: 0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4260133743096308}
   - {fileID: 4993764541895176}
   - {fileID: 4164896211928762}
+  - {fileID: 4759654815770210}
+  - {fileID: 4188069740976982}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4759654815770210
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699582298534632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4514638557426430}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4993764541895176
 Transform:
@@ -140,7 +204,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073732436327528}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -173,6 +237,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073732436327528}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65694324425296338
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699582298534632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.41737032, y: 0.5986328, z: 1}
+  m_Center: {x: 0.017263174, y: 0.23520994, z: 0}
 --- !u!65 &65976528843552270
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -185,13 +261,46 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.41737032, y: 0.5986328, z: 1}
   m_Center: {x: 0.017263174, y: 0.23520994, z: 0}
---- !u!114 &114281475126534064
+--- !u!114 &114271362361230332
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1749950037060720}
-  m_Enabled: 0
+  m_GameObject: {fileID: 1153176182970894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: e58f0375-97ac-405d-a71d-383ad3c400bf
+  componentName: TreeBarkFX
+  _rqName: TreeBark_VFX RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 7cb040c2-dfab-410d-984f-c0b625241c01
+  _componentRepository: {fileID: 114522240551568566}
+--- !u!114 &114299872397493342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1309746001277542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 701abeb9-4c78-420c-b857-0f43855faffe
+  componentName: 
+  _rqName: FSM RQ.Physics.Components.PlayMakerStateMachineComponent
+  _rqName2: 02dca01a-1cad-4756-9769-1184c49697c1
+  _componentRepository: {fileID: 114522240551568566}
+  pm: {fileID: 114422276019917760}
+--- !u!114 &114422276019917760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1309746001277542}
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
@@ -549,7 +658,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -584,6 +693,58 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 57f1be95c27587e41b555b847519c26b, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114522240551568566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749950037060720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 11695757-a46d-4589-b285-1e50e0d85b0a
+  componentName: 
+  _rqName: Leaves&TreeBark_VFX RQ.Entity.Common.SpriteBaseComponent
+  _rqName2: a8dac243-99cf-49bb-9a55-f6986296b6f2
+  _recreateOnLoadGame: 1
+  _addToEntityContainer: 1
+  EntityType: 0
+  EntityPrefabUniqueId: 
+  _parentRepo: {fileID: 0}
+--- !u!114 &114600541557951450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699582298534632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 34d51ff0-9b08-4a35-a003-7411f0ed38d9
+  componentName: 
+  _rqName: Trigger Assets.Source.CollisionProcessor
+  _rqName2: 5b2638eb-b937-4bbb-b883-f38806abbe6f
+  _componentRepository: {fileID: 114522240551568566}
+--- !u!114 &114908602176506336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370821188582674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 7e4a48bb-5085-442e-a16e-4afa2cb27e23
+  componentName: LeavesFX
+  _rqName: Leaves_VFX RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 75640102-10b0-4b59-9131-23afe8be3f04
+  _componentRepository: {fileID: 114522240551568566}
 --- !u!198 &198248074417947924
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -643,7 +804,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -603998198
+  randomSeed: -1003870851
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3916,7 +4077,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1434400794
+  randomSeed: -1925665153
   InitialModule:
     serializedVersion: 3
     enabled: 1
