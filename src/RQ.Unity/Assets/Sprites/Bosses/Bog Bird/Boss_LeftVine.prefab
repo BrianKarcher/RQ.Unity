@@ -67,7 +67,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1907405172270122
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4957163132555586}
   - component: {fileID: 114653739522944492}
+  - component: {fileID: 114440569912603946}
   m_Layer: 10
   m_Name: Boss_LeftVine
   m_TagString: Enemy
@@ -117,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634605912999780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4957163132555586}
@@ -130,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907405172270122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1268594, y: 1.7421843, z: 0}
+  m_LocalPosition: {x: -1.2176464, y: 1.9426323, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4088179911575362}
@@ -188,7 +189,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 1, z: 1}
+  m_Size: {x: 0.65, y: 1.9, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114062953203324824
 MonoBehaviour:
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 41c5d687-db6c-4887-bbf2-86fbd5286d75
-  componentName: 
+  componentName: Trigger
   _rqName: Trigger Assets.Source.CollisionProcessor
   _rqName2: a2fd64d6-ea10-4f39-a485-0d3ec32e0f63
   _componentRepository: {fileID: 114653739522944492}
@@ -330,6 +331,40 @@ MonoBehaviour:
   library: {fileID: 114724911946235604, guid: 7cf49a07f6ee22d44b98841a84c9b0b3, type: 2}
   defaultClipId: 12
   playAutomatically: 1
+--- !u!114 &114440569912603946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907405172270122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 541568650, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 720c6d6f-ea7e-4c7a-9b78-913593850d17
+  componentName: 
+  _rqName: Boss_LeftVine (1) RQ.Physics.Components.DamageComponent
+  _rqName2: f3680bb7-3a81-4fb1-a461-c21c4621d315
+  _componentRepository: {fileID: 114653739522944492}
+  _damageData:
+    DamageTargetOnCollision: 1
+    DamageTargetOnTrigger: 1
+    DamageOnTouch: 1
+    TakesDamage: 0
+    TakesSkillDamage: 0
+    Vulnerable: 0
+    CollisionDamageType: 1
+  _ourDamageTags: []
+  _useDamageColor: 0
+  _damageColor: {r: 1, g: 0, b: 0, a: 1}
+  _tagsYouDamage:
+  - Player
+  - Companion
+  _hitEffect: {fileID: 139848, guid: a199e99bdc92eef4f8561f5a0b7e84a6, type: 2}
+  _killSound: {fileID: 0}
+  _damageSound: {fileID: 0}
+  _death: {fileID: 0}
 --- !u!114 &114653739522944492
 MonoBehaviour:
   m_ObjectHideFlags: 1

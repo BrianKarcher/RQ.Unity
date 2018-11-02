@@ -16,15 +16,15 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 11400000}
     name: FSM
-    startState: IdleFlying
+    startState: Setup
     states:
     - name: IdleFlying
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 62
-        y: 116
+        x: 59
+        y: 186
         width: 112
         height: 48
       isBreakpoint: 0
@@ -51,19 +51,15 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
-        - HutongGames.PlayMaker.Actions.Wait
-        - HutongGames.PlayMaker.Actions.GetTimeInfo
-        - HutongGames.PlayMaker.Actions.FloatAdd
+        - Assets.Source.AI.PM_State_Machine.WaitPersist
         customNames:
         - 
         - 
         - 
-        - 
-        - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 00000000060000000b0000000e00000011000000
-        actionHashCodes: 7e7e0e032334d00048c01101575875012a6e8a00
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000050000000a000000
+        actionHashCodes: 7e7e0e032334d000d9483304
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -86,25 +82,19 @@ MonoBehaviour:
           networkSync: 0
           value: 5
         - useVariable: 1
-          name: timeDeltaTime
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: timeWaiting
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: timeDeltaTime
+          name: timePersist
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: 0
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -117,19 +107,18 @@ MonoBehaviour:
         - DisperseHelixPull
         - 
         - FINISHED
-        byteData: 010000000000000000010100
+        byteData: 000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0500000002000000
+        customTypeSizes: 0400000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 28000000030000000300000001000000010000000100000017000000010000002800000003000000030000000f0000001700000001000000070000000f000000010000000f0000000f0000000100000001000000
+        paramDataType: 280000000300000003000000010000000100000017000000010000002800000003000000030000000f0000000f0000001100000017000000
         paramName:
         - _animationAtom
         - _animComponentName
         - _animation
-        - _byType
         - WaitForAnimationCompletion
         - StopOnExit
         - Received
@@ -138,24 +127,18 @@ MonoBehaviour:
         - Message
         - Data
         - time
-        - finishEvent
-        - realTime
-        - getInfo
-        - storeValue
-        - everyFrame
-        - floatVariable
-        - add
-        - everyFrame
-        - perSecond
-        paramDataPos: 000000000000000001000000000000000100000002000000020000000300000001000000030000000400000000000000050000000400000005000000010000000900000002000000030000000a0000000b000000
-        paramByteDataSize: 000000000000000000000000010000000100000001000000000000000100000000000000000000000000000000000000000000000100000004000000000000000100000000000000000000000100000001000000
+        - storeResult
+        - StoreTimesUp
+        - FinishEvent
+        paramDataPos: 0000000000000000010000000000000001000000020000000200000001000000030000000400000000000000010000000000000005000000
+        paramByteDataSize: 0000000000000000000000000100000001000000000000000100000000000000000000000000000000000000000000000000000000000000
     - name: HitByDisperseHelix
       description: Nullify the disperse helix
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 508
-        y: 113
+        x: 502
+        y: 182
         width: 166
         height: 32
       isBreakpoint: 0
@@ -172,19 +155,25 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.FloatOperator
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
         - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.SendMessage
         customNames:
         - 
         - 
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 00000000050000000b000000
-        actionHashCodes: 0cdb04057e7e0e0348c01101
+        actionStartIndex: 000000000500000008000000
+        actionHashCodes: 7e7e0e0348c0110164eb3804
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -192,30 +181,37 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams:
-        - useVariable: 1
-          name: waitInSeconds
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 5
-        - useVariable: 1
-          name: timeWaiting
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: waitInSeconds
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 5
         - useVariable: 0
           name: 
           tooltip: 
@@ -233,37 +229,51 @@ MonoBehaviour:
         - 
         - Gust
         - FINISHED
-        byteData: 010000000001000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 05000000
+        - HeavyWind
+        - 
+        byteData: 0000000001000000000000000001
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - System.String
+        customTypeSizes: 040000000b000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.AnimationAtom
-        paramDataType: 0f0000000f000000070000000f000000010000002800000003000000030000000100000001000000010000000f0000001700000001000000
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        paramDataType: 28000000030000000300000001000000010000000f00000017000000010000002900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
-        - float1
-        - float2
-        - operation
-        - storeResult
-        - everyFrame
         - _animationAtom
         - _animComponentName
         - _animation
-        - _byType
         - WaitForAnimationCompletion
         - StopOnExit
         - time
         - finishEvent
         - realTime
-        paramDataPos: 0000000001000000000000000200000004000000000000000000000001000000050000000600000007000000030000000200000008000000
-        paramByteDataSize: 0000000000000000040000000000000001000000000000000000000000000000010000000100000001000000000000000000000001000000
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        paramDataPos: 00000000000000000100000000000000010000000000000002000000020000000000000000000000000000000100000001000000030000000000000004000000030000000400000005000000060000000700000008000000090000000d000000
+        paramByteDataSize: 000000000000000000000000010000000100000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
     - name: Finish FSM
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 314
-        y: 275
+        x: 308
+        y: 344
         width: 100
         height: 16
       isBreakpoint: 0
@@ -311,6 +321,83 @@ MonoBehaviour:
         paramName: []
         paramDataPos: 
         paramByteDataSize: 
+    - name: Setup
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 65
+        y: 102
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: IdleFlying
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetFloatValue
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 9845b305
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: timePersist
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f0000000f00000001000000
+        paramName:
+        - floatVariable
+        - floatValue
+        - everyFrame
+        paramDataPos: 000000000100000000000000
+        paramByteDataSize: 000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -322,13 +409,7 @@ MonoBehaviour:
     variables:
       floatVariables:
       - useVariable: 1
-        name: timeDeltaTime
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      - useVariable: 1
-        name: timeWaiting
+        name: timePersist
         tooltip: 
         showInInspector: 0
         networkSync: 0
@@ -355,7 +436,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 1

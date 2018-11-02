@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1115253167669864
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4052875809590852}
   - component: {fileID: 114408032701073288}
+  - component: {fileID: 114475187668236482}
   m_Layer: 10
   m_Name: Boss_RightVine
   m_TagString: Enemy
@@ -91,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1753537197479434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.68086016, y: 2.1669223, z: 0}
+  m_LocalPosition: {x: -3.7851548, y: 2.062293, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4343924034860194}
@@ -107,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1004543359261472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4052875809590852}
@@ -188,7 +189,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 1, z: 1}
+  m_Size: {x: 0.65, y: 1.9, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114132400011217368
 MonoBehaviour:
@@ -225,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: -1951438886, guid: 12d8c4a4410b9684983f5d6c8463d1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: e14911d3-8e77-4be4-b027-40344a09ae77
+  _uniqueId: 22d864bd-5979-4dfe-8a2c-5be6f77ef849
   componentName: 
   _rqName: MainSprite RQ.Animation.AnimationComponent
   _rqName2: 8c2d39a9-8ab4-43d3-9af1-c64093f16769
@@ -267,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: feb37f54-cbf4-4f62-a04c-c552f0be7514
+  _uniqueId: 9d1ae962-ccb2-4070-8dc2-a89887032088
   componentName: 
   _rqName: Boss_LeftVine RQ.Entity.Common.SpriteBaseComponent
   _rqName2: 8281c65f-b2b9-4349-a2a9-c8ec18ab4143
@@ -335,6 +336,40 @@ MonoBehaviour:
     x: 0
     y: 0
   anim: {fileID: 114204350516214422}
+--- !u!114 &114475187668236482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1753537197479434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 541568650, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 90391fe6-c1e7-4cc0-a5c2-364e948d7e4d
+  componentName: 
+  _rqName: Boss_RightVine RQ.Physics.Components.DamageComponent
+  _rqName2: 3957192a-4d80-4afe-87fc-dae11273d2a4
+  _componentRepository: {fileID: 114408032701073288}
+  _damageData:
+    DamageTargetOnCollision: 1
+    DamageTargetOnTrigger: 1
+    DamageOnTouch: 1
+    TakesDamage: 0
+    TakesSkillDamage: 0
+    Vulnerable: 0
+    CollisionDamageType: 1
+  _ourDamageTags: []
+  _useDamageColor: 0
+  _damageColor: {r: 1, g: 0, b: 0, a: 1}
+  _tagsYouDamage:
+  - Player
+  - Companion
+  _hitEffect: {fileID: 0}
+  _killSound: {fileID: 0}
+  _damageSound: {fileID: 0}
+  _death: {fileID: 0}
 --- !u!114 &114528241125653248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -480,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: cd2d8d6b-ceb1-4bf4-8304-a45731d471ec
+  _uniqueId: 23ef4393-e1bb-449d-9097-eaffabdb5d28
   componentName: 
   _rqName: Logic SM RQ.Physics.Components.PlayMakerStateMachineComponent
   _rqName2: f33cc519-ec69-47fd-a5d3-260709a7303b
@@ -497,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 2119558580, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: bff7ad96-a1d3-4c01-81cf-9fd4644bdc91
+  _uniqueId: c6a588e1-5fe6-4966-b40a-a352aa926c92
   componentName: 
   _rqName: MainSprite RQ.Physics.Components.AltitudePhysicsComponent
   _rqName2: 4956e3d8-9921-462c-82a9-697ba4797acd
@@ -528,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: a8cff566-0cd7-4431-8b8c-db6729a3ba83
-  componentName: 
+  componentName: Trigger
   _rqName: Trigger Assets.Source.CollisionProcessor
   _rqName2: 1f8e73b4-7aa3-472f-9395-4d39d0f434eb
   _componentRepository: {fileID: 114408032701073288}
