@@ -41,14 +41,13 @@ GameObject:
   - component: {fileID: 114720222036018542}
   - component: {fileID: 114605451034460628}
   - component: {fileID: 114955893854497404}
-  - component: {fileID: 114761163216471288}
   - component: {fileID: 114704259485754830}
   - component: {fileID: 54125463017160548}
   - component: {fileID: 114266084390559004}
   m_Layer: 10
   m_Name: Vine Snake
   m_TagString: Enemy
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -112,8 +111,9 @@ GameObject:
   - component: {fileID: 4917999151121144}
   - component: {fileID: 114478574561985632}
   - component: {fileID: 135346895974169742}
+  - component: {fileID: 114383967837601038}
   m_Layer: 10
-  m_Name: TileCollider
+  m_Name: Body Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,7 +435,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1275464143996258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.08, y: 2.32, z: -0.5}
+  m_LocalPosition: {x: 3.28, y: 1.6800001, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4190856901050152}
@@ -927,6 +927,22 @@ MonoBehaviour:
   EntityType: 1
   EntityPrefabUniqueId: 
   _parentRepo: {fileID: 0}
+--- !u!114 &114383967837601038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392004329435396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: b4986232-6f77-4517-9501-39bec3a73e89
+  componentName: 
+  _rqName: TileCollider Assets.Source.CollisionProcessor
+  _rqName2: 4200306f-7bb0-48e2-98ec-0592c8590fe1
+  _componentRepository: {fileID: 114377946090814848}
 --- !u!114 &114393939302611486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1002,7 +1018,7 @@ MonoBehaviour:
     FacingDirection: 1
     PreviousFacingDirection: 9
     _isAnimationComplete: 0
-    AutoPlayAnimationType: bded0d0f-8366-45b1-bb05-6d467a8e23bb
+    AutoPlayAnimationType: 
     PlayAutomatically: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
@@ -1035,9 +1051,9 @@ MonoBehaviour:
     CurrentlyDeflecting: 0
     IsEnabled: 1
   _levelOneLayer:
-    _layerIndex: 13
+    _layerIndex: 10
   _levelTwoLayer:
-    _layerIndex: 14
+    _layerIndex: 10
   _levelThreeLayer:
     _layerIndex: 0
   _sharedLayer:
@@ -1139,17 +1155,19 @@ MonoBehaviour:
   _rqName2: 9a5ea023-522e-4ebe-8fbf-3727dfc162bb
   _componentRepository: {fileID: 114377946090814848}
   _damageData:
-    DamageTargetOnCollision: 0
-    DamageTargetOnTrigger: 0
+    DamageTargetOnCollision: 1
+    DamageTargetOnTrigger: 1
     DamageOnTouch: 1
     TakesDamage: 1
     TakesSkillDamage: 1
     Vulnerable: 1
     CollisionDamageType: 1
-  _ourDamageTags: []
+  _ourDamageTags:
+  - Enemy
   _useDamageColor: 0
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
-  _tagsYouDamage: []
+  _tagsYouDamage:
+  - Player
   _hitEffect: {fileID: 0}
   _killSound: {fileID: 0}
   _damageSound: {fileID: 0}
@@ -1339,22 +1357,6 @@ MonoBehaviour:
     _steeringForce:
       x: 0
       y: 0
---- !u!114 &114761163216471288
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1275464143996258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 2dc13cff-9e2b-4260-b7a7-8af070704c62
-  componentName: 
-  _rqName: LittleBird RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: 8cac008f-9a38-4a6a-b43d-d87d385adaf2
-  _componentRepository: {fileID: 114377946090814848}
 --- !u!114 &114842229102906520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1655,7 +1657,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1392004329435396}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
