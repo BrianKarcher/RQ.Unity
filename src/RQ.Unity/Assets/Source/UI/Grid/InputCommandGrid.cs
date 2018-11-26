@@ -16,11 +16,11 @@ namespace RQ2.Controller.UI.Grid
         {
             base.PopulateGrid(itemGridDatas, (slot, data) =>
             {
-                var inputCommandSlotData = new InputCommandSlotData();
-                inputCommandSlotData.InputAction = data.InputAction;
-                inputCommandSlotData.KeyboardInputCommand = data.KeyboardInputCommand;
-                inputCommandSlotData.ControllerInputCommand = data.ControllerInputCommand;
-                slot.inputCommandSlotData = inputCommandSlotData;
+                //var inputCommandSlotData = new InputCommandSlotData();
+                //inputCommandSlotData.InputAction = data.InputAction;
+                //inputCommandSlotData.KeyboardInputCommand = data.KeyboardInputCommand;
+                //inputCommandSlotData.ControllerInputCommand = data.ControllerInputCommand;
+                slot.inputCommandSlotData = data;
 
                 //slot.Texture = data.Config.GridTexture;
                 //slot.Quantity = data.Data.Quantity;
