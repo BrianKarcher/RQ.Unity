@@ -317,23 +317,26 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        byteData: 02000000
-        arrayParamSizes: 01000000
+        - SaveLoad
+        byteData: 
+        arrayParamSizes: 0000000001000000
         arrayParamTypes:
         - RQ.Enum.Panels
-        customTypeSizes: 01000000
+        - System.String
+        customTypeSizes: 02000000
         customTypeNames:
         - RQ.AI.Atom.UI.ShowPanelAtom
-        paramDataType: 260000001000000017000000280000000c00000007000000
+        paramDataType: 260000001000000017000000280000000c0000000c00000003000000
         paramName:
         - fsmTemplateControl
         - storeID
         - finishEvent
         - _atom
         - _panels
+        - panels
         - 
-        paramDataPos: 000000000000000000000000000000000000000000000000
-        paramByteDataSize: 000000000000000000000000000000000000000004000000
+        paramDataPos: 00000000000000000000000000000000000000000100000001000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000
     - name: Item Menu
       description: 
       colorIndex: 0
@@ -378,21 +381,24 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 0c000000
-        arrayParamSizes: 01000000
+        stringParams:
+        - MainInventory
+        byteData: 
+        arrayParamSizes: 0000000001000000
         arrayParamTypes:
         - RQ.Enum.Panels
-        customTypeSizes: 01000000
+        - System.String
+        customTypeSizes: 02000000
         customTypeNames:
         - RQ.AI.Atom.UI.ShowPanelAtom
-        paramDataType: 280000000c00000007000000
+        paramDataType: 280000000c0000000c00000003000000
         paramName:
         - _atom
         - _panels
+        - panels
         - 
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000004000000
+        paramDataPos: 00000000000000000100000000000000
+        paramByteDataSize: 00000000000000000000000000000000
     - name: Main Menu Confirmation
       description: 
       colorIndex: 0
@@ -467,17 +473,19 @@ MonoBehaviour:
         - ButtonClicked
         - Cancel
         - Quit to Main Menu?
-        byteData: 0000010b000000
-        arrayParamSizes: 01000000
+        - ModalDialog
+        byteData: 000001
+        arrayParamSizes: 0000000001000000
         arrayParamTypes:
         - RQ.Enum.Panels
-        customTypeSizes: 02000000020000000200000001000000
+        - System.String
+        customTypeSizes: 02000000020000000200000002000000
         customTypeNames:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.AI.Atom.UI.SetModalPropertiesAtom
         - RQ.AI.Atom.UI.ShowPanelAtom
-        paramDataType: 17000000010000002800000003000000030000001700000001000000280000000300000003000000280000000300000001000000280000000c00000007000000
+        paramDataType: 17000000010000002800000003000000030000001700000001000000280000000300000003000000280000000300000001000000280000000c0000000c00000003000000
         paramName:
         - Received
         - GotoPreviousState
@@ -494,9 +502,10 @@ MonoBehaviour:
         - HasCancelButton
         - _atom
         - _panels
+        - panels
         - 
-        paramDataPos: 00000000000000000000000001000000020000000300000001000000010000000400000005000000020000000600000002000000030000000000000003000000
-        paramByteDataSize: 00000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000004000000
+        paramDataPos: 0000000000000000000000000100000002000000030000000100000001000000040000000500000002000000060000000200000003000000000000000100000007000000
+        paramByteDataSize: 0000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000000000000000000000000000000000000
     - name: Quit to Main Menu
       description: 
       colorIndex: 0
@@ -686,7 +695,7 @@ MonoBehaviour:
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
+        actionStartIndex: 0000000004000000
         actionHashCodes: 8186ef042334d000
         unityObjectParams: []
         fsmGameObjectParams: []
@@ -711,29 +720,32 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - WorldMap
         - 
         - ButtonClicked
         - Return
-        byteData: 1200000000
-        arrayParamSizes: 01000000
+        byteData: 00
+        arrayParamSizes: 0000000001000000
         arrayParamTypes:
         - RQ.Enum.Panels
-        customTypeSizes: 0100000002000000
+        - System.String
+        customTypeSizes: 0200000002000000
         customTypeNames:
         - RQ.AI.Atom.UI.ShowPanelAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 280000000c000000070000001700000001000000280000000300000003000000
+        paramDataType: 280000000c0000000c000000030000001700000001000000280000000300000003000000
         paramName:
         - _atom
         - _panels
+        - panels
         - 
         - Received
         - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 0000000000000000000000000000000004000000010000000100000002000000
-        paramByteDataSize: 0000000000000000040000000000000001000000000000000000000000000000
+        paramDataPos: 000000000000000001000000000000000100000000000000010000000200000003000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000000000000000000000000000
     - name: Load Menu
       description: 
       colorIndex: 0
@@ -774,7 +786,7 @@ MonoBehaviour:
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 000000000300000008000000
+        actionStartIndex: 000000000400000009000000
         actionHashCodes: 8186ef042334d000fe058700
         unityObjectParams: []
         fsmGameObjectParams: []
@@ -808,22 +820,25 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - SaveLoad
         - Play
         - Playtime
         - 
         - FINISHED
-        byteData: 0200000000
-        arrayParamSizes: 01000000
+        byteData: 00
+        arrayParamSizes: 0000000001000000
         arrayParamTypes:
         - RQ.Enum.Panels
-        customTypeSizes: 0100000002000000
+        - System.String
+        customTypeSizes: 0200000002000000
         customTypeNames:
         - RQ.AI.Atom.UI.ShowPanelAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 280000000c000000070000001700000001000000280000000300000003000000260000001000000017000000
+        paramDataType: 280000000c0000000c000000030000001700000001000000280000000300000003000000260000001000000017000000
         paramName:
         - _atom
         - _panels
+        - panels
         - 
         - Received
         - GotoPreviousState
@@ -833,8 +848,8 @@ MonoBehaviour:
         - fsmTemplateControl
         - storeID
         - finishEvent
-        paramDataPos: 0000000000000000000000000000000004000000010000000100000002000000000000000000000003000000
-        paramByteDataSize: 0000000000000000040000000000000001000000000000000000000000000000000000000000000000000000
+        paramDataPos: 000000000000000001000000000000000100000000000000010000000200000003000000000000000000000004000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000
     - name: Prepare Return
       description: 
       colorIndex: 0
@@ -997,6 +1012,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
