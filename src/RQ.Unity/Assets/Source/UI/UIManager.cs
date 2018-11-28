@@ -65,6 +65,7 @@ namespace RQ2.UI
         [SerializeField]
         public InventoryGrid InventoryGrid;
         public InventoryGrid SkillGrid;
+        public InputCommandGrid InputGrid;
 
         public UITexture HUDSkill;
 
@@ -101,7 +102,8 @@ namespace RQ2.UI
         //private StateMachine _stateMachine = null;
 
 
-        Dictionary<RQ.Enum.Panels, UIPanel> panels;
+        //Dictionary<RQ.Enum.Panels, UIPanel> panels;
+        Dictionary<string, UIPanel> panels;
         [SerializeField]
         private AudioClip _levelUp;
         //private GameManager _gameManager;
@@ -382,7 +384,7 @@ namespace RQ2.UI
 
         }
 
-        public void EnablePanelButtons(IEnumerable<RQ.Enum.Panels> panels, bool state)
+        public void EnablePanelButtons(IEnumerable<string> panels, bool state)
         {
             var buttons = GetAllPanelButtons(panels);
             foreach (var button in buttons)
@@ -393,7 +395,7 @@ namespace RQ2.UI
             }
         }
 
-        protected IEnumerable<UIButton> GetAllPanelButtons(IEnumerable<RQ.Enum.Panels> panels)
+        protected IEnumerable<UIButton> GetAllPanelButtons(IEnumerable<string> panels)
         {
             var buttons = new List<UIButton>();
             foreach (var panel in panels)
@@ -405,7 +407,7 @@ namespace RQ2.UI
             return buttons;
         }
 
-        protected UIButton[] GetPanelButtons(RQ.Enum.Panels panel)
+        protected UIButton[] GetPanelButtons(string panel)
         {
             var uiPanel = GetPanel(panel);
             if (uiPanel == null)
@@ -587,19 +589,19 @@ namespace RQ2.UI
         {
             if (panels != null)
             {
-                foreach (KeyValuePair<RQ.Enum.Panels, UIPanel> panel in panels)
+                foreach (var panel in panels)
                 {
                     ShowPanel(panel.Value, false);
                 }
             }
         }
 
-        public void ShowPanel(RQ.Enum.Panels panel, bool state)
+        public void ShowPanel(string panel, bool state)
         {
             ShowPanel(panels[panel], state);
         }
 
-        public UIPanel GetPanel(RQ.Enum.Panels panel)
+        public UIPanel GetPanel(string panel)
         {
             if (panels == null)
                 SetupPanels();
@@ -608,12 +610,12 @@ namespace RQ2.UI
 
         private void SetupPanels()
         {
-            panels = new Dictionary<RQ.Enum.Panels, UIPanel>();
+            panels = new Dictionary<string, UIPanel>();
 
             // Create dictionary for faster lookup
             foreach (PanelInfo panel in PanelList)
             {
-                panels.Add(panel.Panel, panel.UIPanel);
+                panels.Add(panel.Name, panel.UIPanel);
             }
         }
 
@@ -648,7 +650,7 @@ namespace RQ2.UI
             // Default action is to simply close the message box after OK is clicked
             ShowMessageBox(text, () =>
                 {
-                    ShowPanel(RQ.Enum.Panels.MessageBox, false);
+                    ShowPanel("MessageBox", false);
                     // By default, set the state back to what the old state was prior to the dialog box
                     //GameController._instance.GetFSM().RevertToPreviousState();
                 });
@@ -661,7 +663,7 @@ namespace RQ2.UI
             //ButtonManager.DialogOkDelegate += eventDelegate;
             //_eventDelegate = eventDelegate;
             //HideAllPanels();
-            ShowPanel(RQ.Enum.Panels.MessageBox, true);
+            ShowPanel("MessageBox", true);
         }
 
         public override bool HandleMessage(Telegram msg)
@@ -766,7 +768,7 @@ namespace RQ2.UI
             ContinueButton.SetState(UIButtonColor.State.Pressed, true);
         }
 
-        public void ClearTogglesForPanel(RQ.Enum.Panels panel)
+        public void ClearTogglesForPanel(string panel)
         {
             var worldMap = GetPanel(panel);
             var toggles = worldMap.GetComponentsInChildren<UIToggle>();

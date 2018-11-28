@@ -31,7 +31,7 @@ namespace RQ.Animation.BasicAction.Action
             //_inventoryGrid = GameObject.FindObjectOfType<InventoryGrid>();
             _inventoryGrid.ClearGrid();
             var itemGridData = InventoryController.Instance.GetInventoryAsGrid(_itemClasses);
-            _inventoryGrid.PopulateGrid<SkillSlot>(itemGridData);
+            _inventoryGrid.PopulateGrid(itemGridData);
         }
 
         public override void StartListening(IComponentRepository entity)

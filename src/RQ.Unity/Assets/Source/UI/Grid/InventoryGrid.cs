@@ -15,57 +15,25 @@ using UnityEngine;
 namespace RQ2.Controller.UI.Grid
 {
     [AddComponentMenu("RQ/Item/Inventory Grid")]
-    public class InventoryGrid : GridBase
-    {   
-        public ItemSlot Slot;
+    public class InventoryGrid : GridBase<ItemSlot>
+    {
+        //public ItemSlot Slot;
         //public List<UIButtonPressedCondition> onClick = new List<UIButtonPressedCondition>();
-        [SerializeField]
-        private UIButton _cancelButton;
 
-        public void PopulateGrid<T>(IEnumerable<ItemGridData> itemGridData) where T : ItemSlot
+        public void PopulateGrid(IEnumerable<ItemGridData> itemGridDatas)
         {
-            bool isFirst = true;
-            foreach (var item in itemGridData)
+            base.PopulateGrid(itemGridDatas, (slot, data) =>
             {
-                var gridItem = AddSlotToGrid<T>(item);
-                if (isFirst)
-                {
-                    SetFirstItemSettings(gridItem);
-                    isFirst = false;
-                }
-            }
-            Grid.Reposition();
-            ScrollView.ResetPosition();
-            if (!itemGridData.Any())
-            {
-                UICamera.hoveredObject = _cancelButton.gameObject;
-            }
-        }
-
-        private void SetFirstSaveButtonSettings(SaveSlot button)
-        {
-            var keyNavigator = button.GetComponent<UIKeyNavigation>();
-            keyNavigator.startsSelected = true;
-        }
-
-        private ItemSlot AddSlotToGrid<T>(ItemGridData itemGridData) where T : ItemSlot
-        {
-            var saveSlotGO = GridUtilities.AddItemToGrid(Grid, Slot.gameObject);
-            var slot = saveSlotGO.GetComponent<T>();
-
-            // Loads the onClick events
-            //slot.AddButtonEvents(onClick);
-            //slot.SetItemSelectedCondition(InventoryController.Instance.ItemClickedCondition);
-            slot.Texture = itemGridData.Config.GridTexture;
-            slot.Quantity = itemGridData.Data.Quantity;
-            slot.UniqueId = itemGridData.Data.UniqueId;
-            slot.ItemUniqueId = itemGridData.Data.ItemUniqueId;
-            slot.Item = itemGridData.Data;
-            slot.LabelText = itemGridData.Config.Title;
-            slot.Value = itemGridData.Config.Value;
-            slot.ItemConfig = itemGridData.Config as ItemConfig;
-            slot.SetScrollView(ScrollView);
-            return slot;
+                slot.Texture = data.Config.GridTexture;
+                slot.Quantity = data.Data.Quantity;
+                slot.UniqueId = data.Data.UniqueId;
+                slot.ItemUniqueId = data.Data.ItemUniqueId;
+                slot.Item = data.Data;
+                slot.LabelText = data.Config.Title;
+                slot.Value = data.Config.Value;
+                slot.ItemConfig = data.Config as ItemConfig;
+                slot.SetScrollView(ScrollView);
+            });
         }
     }
 }

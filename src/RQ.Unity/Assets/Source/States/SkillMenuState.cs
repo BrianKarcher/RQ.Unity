@@ -21,7 +21,7 @@ namespace RQ.Controller.StatesV2.UI
             base.Enter();
             _inventoryGrid.ClearGrid();
             var itemGridData = InventoryController.Instance.GetInventoryAsGrid(_itemClasses);
-            _inventoryGrid.PopulateGrid<SkillSlot>(itemGridData);
+            _inventoryGrid.PopulateGrid(itemGridData);
             //InputManager.Instance.
         }
 

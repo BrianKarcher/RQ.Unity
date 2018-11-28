@@ -20,7 +20,7 @@ namespace RQ2.Controller.Actions
             base.Act(otherRigidBody);
             UIManager.Instance.InventoryGrid.ClearGrid();
             var itemGridData = InventoryController.Instance.GetInventoryAsGrid(itemClasses);
-            UIManager.Instance.InventoryGrid.PopulateGrid<RQ2.Controller.UI.Grid.ItemSlot>(itemGridData);
+            UIManager.Instance.InventoryGrid.PopulateGrid(itemGridData);
         }
     }
 }

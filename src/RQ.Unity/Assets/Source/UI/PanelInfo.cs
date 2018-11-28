@@ -10,6 +10,7 @@ namespace RQ2.UI
     public class PanelInfo
     {
         public Panels Panel;
+        public string Name;
         public UIPanel UIPanel;
 
         public PanelInfo()
