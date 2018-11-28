@@ -456,29 +456,41 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 431
-        y: 239.97656
+        x: 450
+        y: 242.97656
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: KillEntity
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
+        - Assets.Source.AI.PM_State_Machine.StopMoving
         - Assets.Source.AI.PM_State_Machine.SendMessage
         - Assets.Source.AI.PM_State_Machine.PlayRandomSoundOneShot
         - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
         - Assets.Source.AI.PM_State_Machine.KillSelf
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
         customNames:
         - 
         - 
         - 
         - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 0000000010000000150000001a000000
-        actionHashCodes: 64eb38042b347e01ee6bbe01927b0a04
+        - 
+        - 
+        actionEnabled: 010100000001
+        actionIsOpen: 010101010101
+        actionStartIndex: 000000000300000013000000180000001e0000001f000000
+        actionHashCodes: 8fc5330464eb38042b347e01ee6bbe01927b0a047e7e0e03
         unityObjectParams:
         - {fileID: 8300000, guid: ac2c8b5116e2c2643b2e5d27a37a9cdc, type: 3}
         - {fileID: 193456, guid: ff2f434da5b0c6d4fbbd851cb6c674eb, type: 2}
@@ -489,7 +501,7 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
@@ -541,21 +553,30 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - 
+        - 
         - Little Shake
         - 
-        byteData: 0001000000000000000001010000803f00000000000000000000000000
+        - 
+        - Death
+        byteData: 0001000000000000000001010000803f00000000000000000000000000000100
         arrayParamSizes: 0000000001000000
         arrayParamTypes:
         - System.String
         - UnityEngine.AudioClip
-        customTypeSizes: 0b000000030000000300000000000000
+        customTypeSizes: 020000000b00000003000000040000000000000004000000
         customTypeNames:
+        - RQ.AI.Action.StopMovingAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Entity.AtomAction.Action.PlayRandomSoundOneShotAtom
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.KillSelfAtom
-        paramDataType: 2900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002800000001000000020000000c0000000500000013000000280000001b000000090000000100000028000000
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        paramDataType: 2800000003000000030000002900000012000000130000001200000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002800000001000000020000000c0000000500000013000000280000001b000000090000000100000001000000280000002800000003000000030000000100000001000000
         paramName:
+        - _stopMovingAtom
+        - _uniqueId
+        - _physicsAffector
         - Targets
         - Target
         - TargetGO
@@ -582,9 +603,15 @@ MonoBehaviour:
         - _gameObject
         - _offset
         - _rotateOffsetByFacingDirection
+        - _rotateHorizontalOffsetByFacingDirection
         - _killSelfAtom
-        paramDataPos: 0000000000000000000000000100000000000000000000000000000001000000000000000100000002000000030000000400000005000000060000000a000000010000000b0000000c0000000100000000000000010000000200000001000000100000001c00000003000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000010000000400000000000000000000000000000000000000000000000c0000000100000000000000
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        paramDataPos: 0000000000000000010000000000000000000000000000000100000001000000020000000000000003000000000000000100000002000000030000000400000005000000060000000a000000020000000b0000000c0000000100000000000000010000000300000001000000100000001c0000001d000000040000000500000004000000050000001e0000001f000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000010000000400000000000000000000000000000000000000000000000c0000000100000001000000000000000000000000000000000000000100000001000000
     - name: Seismic Push
       description: 
       colorIndex: 0
@@ -682,6 +709,88 @@ MonoBehaviour:
         - finishEvent
         paramDataPos: 00000000000000000000000004000000010000000100000002000000020000000500000009000000000000000000000003000000
         paramByteDataSize: 00000000040000000000000001000000000000000000000000000000000000000400000001000000000000000000000000000000
+    - name: KillEntity
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 632
+        y: 259
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.PlayRandomSoundOneShot
+        - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
+        - Assets.Source.AI.PM_State_Machine.KillSelf
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000050000000b000000
+        actionHashCodes: 2b347e01ee6bbe01927b0a04
+        unityObjectParams:
+        - {fileID: 8300000, guid: ac2c8b5116e2c2643b2e5d27a37a9cdc, type: 3}
+        - {fileID: 193456, guid: ff2f434da5b0c6d4fbbd851cb6c674eb, type: 2}
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 010000803f0000000000000000000000000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - UnityEngine.AudioClip
+        customTypeSizes: 030000000400000000000000
+        customTypeNames:
+        - RQ.Entity.AtomAction.Action.PlayRandomSoundOneShotAtom
+        - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
+        - RQ.Animation.BasicAction.Action.KillSelfAtom
+        paramDataType: 2800000001000000020000000c0000000500000013000000280000001b00000009000000010000000100000028000000
+        paramName:
+        - _soundAtom
+        - _playOnMusicTrack
+        - _volume
+        - _audioClips
+        - 
+        - storeResult
+        - _instantiatePrefabAtom
+        - _gameObject
+        - _offset
+        - _rotateOffsetByFacingDirection
+        - _rotateHorizontalOffsetByFacingDirection
+        - _killSelfAtom
+        paramDataPos: 000000000000000001000000000000000000000000000000010000000100000005000000110000001200000002000000
+        paramByteDataSize: 00000000010000000400000000000000000000000000000000000000000000000c000000010000000100000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -761,7 +870,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
