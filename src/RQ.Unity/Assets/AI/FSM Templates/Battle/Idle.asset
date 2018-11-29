@@ -40,8 +40,8 @@ MonoBehaviour:
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000004000000
-        actionHashCodes: 7e7e0e038fc53304
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 7e7e0e039f005d00
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -65,25 +65,30 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - 
         - Idle
         - 
-        byteData: 0101
+        - 
+        byteData: 010001
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0300000001000000
+        customTypeSizes: 0400000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.AI.Action.StopMovingAtom
-        paramDataType: 280000000300000001000000010000002800000003000000
+        paramDataType: 280000000300000003000000010000000100000001000000280000000300000003000000
         paramName:
         - _animationAtom
+        - _animComponentName
         - _animation
-        - _byType
         - WaitForAnimationCompletion
+        - StopOnExit
+        - everyFrame
         - _stopMovingAtom
         - _uniqueId
-        paramDataPos: 000000000000000000000000010000000100000001000000
-        paramByteDataSize: 000000000000000001000000010000000000000000000000
+        - _physicsAffector
+        paramDataPos: 000000000000000001000000000000000100000002000000010000000200000003000000
+        paramByteDataSize: 000000000000000000000000010000000100000001000000000000000000000000000000
     events: []
     globalTransitions: []
     variables:
@@ -143,6 +148,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
