@@ -16,6 +16,7 @@ namespace RQ2.AnimationV2
     {
         public tk2dSpriteAnimator anim;
         public event Action AnimComplete;
+        private Dictionary<string, Color> colors = new Dictionary<string, Color>();
 
         public void Awake(/*IBaseGameEntity sprite*/)
         {
@@ -87,12 +88,29 @@ namespace RQ2.AnimationV2
                 anim.Library = spriteAnimation;
         }
 
-        public override void SetColor(Color color)
+        public override void SetColor(string name, Color color)
         {
             if (anim.Sprite == null)
                 Debug.LogError("Sprite not found");
+            colors[name] = color;
+            ProcessColor();
+        }
 
-            anim.Sprite.color = color;
+        public override void RemoveColor(string name)
+        {
+            if (colors.ContainsKey(name))
+                colors.Remove(name);
+            ProcessColor();
+        }
+
+        private void ProcessColor()
+        {
+            var newColor = Color.white;
+            foreach (var oneColor in colors)
+            {
+                newColor = newColor * oneColor.Value;
+            }
+            anim.Sprite.color = newColor;
         }
 
         /// <summary>
