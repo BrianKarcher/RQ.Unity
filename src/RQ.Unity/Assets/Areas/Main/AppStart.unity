@@ -207,6 +207,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1046118525}
   - component: {fileID: 1046118526}
+  - component: {fileID: 1046118528}
+  - component: {fileID: 1046118527}
   m_Layer: 0
   m_Name: Load Persistent Scene
   m_TagString: Untagged
@@ -361,3 +363,40 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 37b5e07e79966504ab14efcb3bd277c3, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &1046118527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046118524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 522f2cd4-7e68-487b-9746-ac0ecb481557
+  componentName: 
+  _rqName: Load Persistent Scene RQ.Physics.Components.PlayMakerStateMachineComponent
+  _rqName2: 3f43f283-911d-47f0-be70-56bdf98542f7
+  _componentRepository: {fileID: 1046118528}
+  pm: {fileID: 1046118526}
+--- !u!114 &1046118528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046118524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 708b4f1c-fd47-4e03-8023-d3a9b57cdefa
+  componentName: 
+  _rqName: Load Persistent Scene RQ.Entity.Common.SpriteBaseComponent
+  _rqName2: 3a2be013-5519-4b3e-82b6-42aff06d23e4
+  _recreateOnLoadGame: 1
+  _addToEntityContainer: 1
+  EntityType: 0
+  EntityPrefabUniqueId: 
+  _parentRepo: {fileID: 0}

@@ -50,12 +50,18 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.BoolTest
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - RQ.AI.PlayMaker.SceneSetupExists
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: a4c8bf00
+        - 
+        - 
+        - 
+        actionEnabled: 00000001
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000004000000090000000e000000
+        actionHashCodes: a4c8bf002334d0002334d000d8973105
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -87,19 +93,41 @@ MonoBehaviour:
         stringParams:
         - FINISHED
         - Failed
-        byteData: 00
+        - FINISHED
+        - AutoStart
+        - 
+        - Failed
+        - AppStart
+        - 
+        - FINISHED
+        - Failed
+        byteData: 000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 11000000170000001700000001000000
+        customTypeSizes: 0200000002000000
+        customTypeNames:
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 11000000170000001700000001000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000017000000
         paramName:
         - boolVariable
         - isTrue
         - isFalse
         - everyFrame
-        paramDataPos: 00000000000000000100000000000000
-        paramByteDataSize: 00000000000000000000000001000000
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        - Exists
+        - NotExists
+        paramDataPos: 00000000000000000100000000000000020000000100000000000000030000000400000005000000020000000100000006000000070000000800000009000000
+        paramByteDataSize: 00000000000000000000000001000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000
     - name: AppStart
       description: 
       colorIndex: 0
