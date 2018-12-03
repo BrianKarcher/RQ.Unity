@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace RQ2.Controller.UI.Grid
 {
-    [AddComponentMenu("RQ/Item/Input Command Slot")]
+    [AddComponentMenu("RQ/UI/Input Command Slot")]
     public class InputCommandSlot : GridItem
     {
         public OnClickHandler KeyboardClickHandler;

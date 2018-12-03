@@ -614,8 +614,8 @@ MonoBehaviour:
         serializedVersion: 2
         x: 261
         y: 114
-        width: 105
-        height: 32
+        width: 114
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -625,6 +625,14 @@ MonoBehaviour:
           isSystemEvent: 0
           isGlobal: 0
         toState: Title Screen
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: InputMapper
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Input Mapper
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -639,7 +647,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 00010001
+        actionEnabled: 01010001
         actionIsOpen: 01010101
         actionStartIndex: 0000000005000000090000000c000000
         actionHashCodes: 2334d0008186ef04fe0587002334d000
@@ -675,9 +683,9 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - Load
+        - InputMapper
         - ButtonClicked
-        - LoadMenu
+        - InputMapper
         - AppStart
         - 
         - TitleScreen
@@ -714,11 +722,95 @@ MonoBehaviour:
         - Data
         paramDataPos: 0000000000000000000000000100000002000000010000000000000001000000030000000000000000000000040000000500000001000000020000000600000007000000
         paramByteDataSize: 0000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
+    - name: Input Mapper
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 445
+        y: 111
+        width: 118
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: App Start
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.ShowPanel
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000004000000
+        actionHashCodes: 8186ef042334d000
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Controls
+        - 
+        - ButtonClicked
+        - Done
+        byteData: 00
+        arrayParamSizes: 0000000001000000
+        arrayParamTypes:
+        - RQ.Enum.Panels
+        - System.String
+        customTypeSizes: 0200000002000000
+        customTypeNames:
+        - RQ.AI.Atom.UI.ShowPanelAtom
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 280000000c0000000c000000030000001700000001000000280000000300000003000000
+        paramName:
+        - _atom
+        - _panels
+        - panels
+        - 
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        paramDataPos: 000000000000000001000000000000000100000000000000010000000200000003000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
     - name: Cancel
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: InputMapper
       isSystemEvent: 0
       isGlobal: 0
     - name: Load
