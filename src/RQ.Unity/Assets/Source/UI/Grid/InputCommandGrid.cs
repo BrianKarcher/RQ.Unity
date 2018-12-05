@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace RQ2.Controller.UI.Grid
 {
-    [AddComponentMenu("RQ/Item/Input Command Grid")]
+    [AddComponentMenu("RQ/UI/Input Command Grid")]
     public class InputCommandGrid : GridBase<InputCommandSlot>
     {
         //public ItemSlot Slot;

@@ -763,6 +763,11 @@ namespace RQ2.UI
             PersistenceGrid.ClearGrid();
         }
 
+        //public void ClearInputCommandGrid()
+        //{
+        //    InputGrid.ClearGrid();
+        //}
+
         public void SelectContinueButtion()
         {
             ContinueButton.SetState(UIButtonColor.State.Pressed, true);
@@ -793,6 +798,12 @@ namespace RQ2.UI
             PersistenceGrid.SavePanelState = savePanelState;
             PersistenceGrid.PopulateGrid();
         }
+
+        //public void SetupInputCommandGrid()
+        //{
+        //    //InputGrid.ClearGrid();
+        //    //InputGrid.PopulateGrid();
+        //}
 
         public void SetupModal(bool hasCancelButton)
         {
