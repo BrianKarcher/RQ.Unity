@@ -33,7 +33,8 @@ namespace RQ2.Controller.UI.Grid
         public virtual void Start()
         {
             ActionLabel.text = inputCommandSlotData.InputAction;
-            KeyboardLabel.text = inputCommandSlotData.KeyboardInputCommand.KeyCode.ToString();
+            KeyboardLabel.text = inputCommandSlotData.KeyboardInputCommand == null ? string.Empty :
+                inputCommandSlotData.KeyboardInputCommand.KeyCode.ToString();
             var controllerLabel = inputCommandSlotData.ControllerInputCommand.IsAxis ? inputCommandSlotData.ControllerInputCommand.AxisName : inputCommandSlotData.ControllerInputCommand.KeyCode.ToString();
             ControllerLabel.text = controllerLabel;
             KeyboardClickHandler.SetClickAction(() =>
