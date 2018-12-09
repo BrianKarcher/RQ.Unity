@@ -1,4 +1,6 @@
-﻿using RQ.Common.UI;
+﻿using RQ;
+using RQ.Common.UI;
+using RQ.Messaging;
 using UnityEngine;
 
 namespace RQ2.Controller.UI.Grid
@@ -24,9 +26,11 @@ namespace RQ2.Controller.UI.Grid
         public UILabel ActionLabel;
         public UILabel KeyboardLabel;
         public UILabel ControllerLabel;
+        public string KeyboardClickMessage;
+        public string ControllerClickMessage;
         //public UILabel Qty;
         //public UITexture NGUIImage;
-        public string UIMessage;
+        //public string UIMessage;
         //[SerializeField]
         //private ManualCondition _itemSelected;
 
@@ -39,11 +43,15 @@ namespace RQ2.Controller.UI.Grid
             ControllerLabel.text = controllerLabel;
             KeyboardClickHandler.SetClickAction(() =>
             {
+                GameStateController.Instance.CurrentSelectedInputCommand = inputCommandSlotData.KeyboardInputCommand;
                 Debug.LogError("Keyboard button clicked " + inputCommandSlotData.KeyboardInputCommand.KeyCode.ToString());
+                MessageDispatcher2.Instance.DispatchMsg(KeyboardClickMessage, 0f, null, "UI Manager", null);
             });
             ControllerClickHandler.SetClickAction(() =>
             {
+                GameStateController.Instance.CurrentSelectedInputCommand = inputCommandSlotData.ControllerInputCommand;
                 Debug.LogError("Controller button clicked " + controllerLabel);
+                MessageDispatcher2.Instance.DispatchMsg(ControllerClickMessage, 0f, null, "UI Manager", null);
             });
             //Label.text = LabelText;
             //Qty.text = Quantity.ToString();
