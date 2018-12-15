@@ -77,7 +77,9 @@ namespace UtilityManager
                 float response = consideration.ComputeResponseCurve(score);
                 finalScore *= Mathf.Clamp01(response);
             }
-            finalScore = MakeUpFactor(Considerations.Count(), (float) finalScore / bonus) * bonus;
+            var normalizedFinalScore = (float)finalScore / bonus;
+            int considerationCount = Considerations.Count();
+            finalScore = MakeUpFactor(considerationCount, normalizedFinalScore) * bonus;
             return finalScore;
         }
 
