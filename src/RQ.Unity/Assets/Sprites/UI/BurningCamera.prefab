@@ -5,11 +5,11 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 495302}
-  - 114: {fileID: 11468796}
-  - 114: {fileID: 11455486}
+  - component: {fileID: 495302}
+  - component: {fileID: 11468796}
+  - component: {fileID: 11455486}
   m_Layer: 0
   m_Name: Conditions
   m_TagString: Untagged
@@ -22,10 +22,10 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 412882}
-  - 114: {fileID: 11487776}
+  - component: {fileID: 412882}
+  - component: {fileID: 11487776}
   m_Layer: 0
   m_Name: Manual
   m_TagString: Untagged
@@ -38,19 +38,18 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 499334}
-  - 20: {fileID: 2058492}
-  - 124: {fileID: 12488578}
-  - 92: {fileID: 9224544}
-  - 114: {fileID: 11450486}
-  - 114: {fileID: 11496584}
-  - 114: {fileID: 11468522}
-  - 114: {fileID: 11454224}
-  - 50: {fileID: 5005458}
-  - 114: {fileID: 11413576}
-  - 114: {fileID: 11458948}
+  - component: {fileID: 499334}
+  - component: {fileID: 2058492}
+  - component: {fileID: 12488578}
+  - component: {fileID: 9224544}
+  - component: {fileID: 11450486}
+  - component: {fileID: 11496584}
+  - component: {fileID: 11468522}
+  - component: {fileID: 5005458}
+  - component: {fileID: 11413576}
+  - component: {fileID: 11458948}
   m_Layer: 0
   m_Name: BurningCamera
   m_TagString: MainCamera
@@ -63,11 +62,11 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 427056}
-  - 114: {fileID: 11410550}
-  - 114: {fileID: 11499708}
+  - component: {fileID: 427056}
+  - component: {fileID: 11410550}
+  - component: {fileID: 11499708}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -80,11 +79,11 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 491990}
-  - 114: {fileID: 11452580}
-  - 114: {fileID: 11464186}
+  - component: {fileID: 491990}
+  - component: {fileID: 11452580}
+  - component: {fileID: 11464186}
   m_Layer: 0
   m_Name: Follow Target
   m_TagString: Untagged
@@ -104,6 +103,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427056}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &427056
 Transform:
   m_ObjectHideFlags: 1
@@ -119,6 +119,7 @@ Transform:
   - {fileID: 412882}
   m_Father: {fileID: 499334}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &491990
 Transform:
   m_ObjectHideFlags: 1
@@ -131,6 +132,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427056}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &495302
 Transform:
   m_ObjectHideFlags: 1
@@ -143,6 +145,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427056}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &499334
 Transform:
   m_ObjectHideFlags: 1
@@ -150,12 +153,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .725137234, y: 1.91975999, z: -10}
+  m_LocalPosition: {x: 0.72513723, y: 1.91976, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 427056}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2058492
 Camera:
   m_ObjectHideFlags: 1
@@ -165,18 +169,18 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.08000004
+  orthographic size: 1.08
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -184,23 +188,30 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
+  m_AllowMSAA: 1
+  m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
-  m_StereoSeparation: .0219999999
+  m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
 --- !u!50 &5005458
 Rigidbody2D:
-  serializedVersion: 2
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176726}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_IsKinematic: 0
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -224,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 4d8b40ce-dd6d-4389-8b1d-802e4f39652b
+  componentName: 
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: e05c36b1-90a4-4e76-90e6-73a5e43da693
   _componentRepository: {fileID: 11458948}
@@ -241,6 +253,7 @@ MonoBehaviour:
     StateMachineUniqueId: 4d8b40ce-dd6d-4389-8b1d-802e4f39652b
     StateMachineName: States
     StateData: []
+  _logTransitions: 0
 --- !u!114 &11413576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,10 +266,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 8298642e-34f7-482a-af61-106f400414fc
+  componentName: 
   _rqName: BurningCamera RQ.FSM.V2.AIComponent
   _rqName2: f5a0dc00-a083-45f2-a250-f02640d10b73
   _componentRepository: {fileID: 11458948}
-  _seeker: {fileID: 0}
+  _pathFinder: {fileID: 0}
   _target: {fileID: 0}
   _targets: []
   TargetTags: []
@@ -273,8 +287,8 @@ MonoBehaviour:
     Targets: []
     TargetTags: []
   _homePosition:
-    x: 7.15997887
-    y: 6.98050356
+    x: 7.159979
+    y: 6.9805036
   _homeLevelLayer: 0
   _homeSickDistance: 0
   _runHomeSpeed: 0
@@ -291,10 +305,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 3198b07f-2295-42e5-a464-36e1b8c961f4
+  componentName: 
   _rqName: BurningCamera RQ.CameraClass
   _rqName2: 91395195-42e8-4d99-a6d3-f9c599dbd686
   _componentRepository: {fileID: 11458948}
   _viewportMargin: {x: 0, y: 0}
+  minCamera: {x: 0, y: 0}
+  maxCamera: {x: 0, y: 0}
+  _screenSize: {x: 0, y: 0}
+  _lockX: 0
+  _lockY: 0
+  _lockPos:
+    x: 0
+    y: 0
 --- !u!114 &11452580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,70 +330,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 7eecf483-29c6-4f0a-a170-ca76fe89f5b2
+  componentName: 
   _rqName: Follow Target RQ.FSM.V2.States.RunActionsState
   _rqName2: 51c3d7b2-3909-4301-83a5-675c7cb8cb6e
   _componentRepository: {fileID: 11458948}
   _stateMachine: {fileID: 11410550}
---- !u!114 &11454224
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 836265462, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: e78bf923-8629-4610-bb82-047856a5d4db
-  _rqName: BurningCamera (1) RQ.Physics.Components.BasicPhysicsComponent
-  _rqName2: 489c8f92-1f7a-497f-8f0e-181574de5198
-  _componentRepository: {fileID: 11458948}
-  _basicPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
-    Size:
-      x: 0
-      y: 0
-    Heading:
-      x: 0
-      y: 0
-    Side:
-      x: -0
-      y: 0
-    Mass: 1
-    MaxSpeed: 2
-    OriginalMaxSpeed: 1
-    MaxSpeedMultiplier: 1
-    _directionRotate: 0
-    DamagedBounceForce: 1
-    DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
-    _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
-      x: 0
-      y: 0
-    OriginalZ: -10
-    _headingDirection: 1
-    MaxForce: 1
-    _friction: 0
-    _maxTurnRate: 6
-    _footOffset:
-      x: 0
-      y: 0
-    _fieldOfView: 0
-    _lineOfSight: 0
-    ZDepthByY: 0
-    ZOffsetByLevel: 0
-  _autoUpdateHeading: 1
 --- !u!114 &11455486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,6 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: a99e8c5c-66eb-4614-9a2f-32b643f70f1d
+  componentName: 
   _rqName: Conditions RQ.FSM.V2.Conditionals.MessageReceivedCondition2
   _rqName2: a8ed3855-9341-4388-adc1-bf1baa15d996
   _name: Manual
@@ -400,6 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: ff481c04-3059-4939-958e-03e4d2a9a486
+  componentName: 
   _rqName: BurningCamera RQ.Entity.Common.SpriteBaseComponent
   _rqName2: f0f21ac2-7955-474f-92f2-22f965f369f8
   _recreateOnLoadGame: 1
@@ -419,6 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 2d8985bc-01af-4187-bc68-152d37dc652d
+  componentName: 
   _rqName: Follow Target RQ.Controller.Actions.LockOnTarget
   _rqName2: c8e226f4-528a-4ce9-aa43-35eec0c35f7d
 --- !u!114 &11468522
@@ -450,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 94a967f5-6a9d-4bc5-ab1f-fe084f3e6ce9
+  componentName: 
   _rqName: Conditions RQ.FSM.V2.Conditionals.MessageReceivedCondition2
   _rqName2: 2688566e-866a-409b-b6a8-e818e5042ee5
   _name: Follow Target
@@ -467,6 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 5696e7c1-1e62-4188-baeb-cc00f9f98c05
+  componentName: 
   _rqName: Manual RQ.FSM.V2.States.RunActionsState
   _rqName2: 2b4707e7-2d17-4b49-a4cf-47d8e40aac9f
   _componentRepository: {fileID: 11458948}
@@ -482,11 +451,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9191284b058eef549b7108b5f04e1117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityMultiplier: -.5
-  generalIntensity: .5
+  intensityMultiplier: -0.5
+  generalIntensity: 0.5
   blackIntensity: 1
   whiteIntensity: 1
-  midGrey: .200000003
+  midGrey: 0.2
   dx11Grain: 0
   softness: 0
   monochrome: 0
@@ -509,6 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 79a18b63-d493-47ac-ac4d-26ff2388fc34
+  componentName: 
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: 67173d9c-f61a-4903-bf80-c2004bbb3025
   _componentRepository: {fileID: 11458948}

@@ -46,6 +46,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1273155970135384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4405469914626208}
+  - component: {fileID: 114137839395474088}
+  - component: {fileID: 65587285324351116}
+  - component: {fileID: 114139097934237092}
+  m_Layer: 10
+  m_Name: HelixTrigger
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1753537197479434
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,12 +110,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1753537197479434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7851548, y: 2.062293, z: 0}
+  m_LocalPosition: {x: -4.460658, y: 0.62899786, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4343924034860194}
   - {fileID: 4844009218718598}
   - {fileID: 4291771691432980}
+  - {fileID: 4405469914626208}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126,6 +145,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4052875809590852}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4405469914626208
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273155970135384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.82, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4052875809590852}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4844009218718598
 Transform:
@@ -191,6 +223,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.65, y: 1.9, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65587285324351116
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273155970135384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.65, y: 1.9, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114132400011217368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,6 +259,57 @@ MonoBehaviour:
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
   renderLayer: 0
+--- !u!114 &114137839395474088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273155970135384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: f34ed1bc-1983-4cc0-a426-416d1af4add3
+  componentName: 
+  _rqName: HelixTrigger Assets.Source.CollisionProcessor
+  _rqName2: cefb7e56-a504-4b98-b7da-7de5212f5844
+  _componentRepository: {fileID: 114408032701073288}
+--- !u!114 &114139097934237092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273155970135384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 5d62d0ff-6050-4fb2-91f8-f665a2dafa69
+  componentName: 
+  _rqName: HelixTrigger RQ.Physics.Components.CollisionComponent
+  _rqName2: 150b1b37-d08f-4e51-af9f-91ef37960738
+  _componentRepository: {fileID: 114408032701073288}
+  _collisionData:
+    Level: 0
+    Tags: []
+    _levelLayer: 1
+    ReceivesDamage: 1
+    DamageCollider: 0
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _levelOneLayer:
+    _layerIndex: 10
+  _levelTwoLayer:
+    _layerIndex: 10
+  _levelThreeLayer:
+    _layerIndex: 0
+  _sharedLayer:
+    _layerIndex: 0
+  _mainCollider: {fileID: 4405469914626208}
+  _autoChangeLayers: 0
 --- !u!114 &114148394187298122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -551,6 +646,7 @@ MonoBehaviour:
     Gravity:
       x: 0
       y: 0
+    StopWhenHitGround: 0
 --- !u!114 &114954003542961942
 MonoBehaviour:
   m_ObjectHideFlags: 1

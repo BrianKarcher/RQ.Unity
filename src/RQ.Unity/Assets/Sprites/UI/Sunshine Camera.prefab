@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 12460122}
   - component: {fileID: 9264878}
   - component: {fileID: 11404350}
-  - component: {fileID: 11441820}
   - component: {fileID: 5052698}
   - component: {fileID: 11425894}
   - component: {fileID: 11422398}
@@ -358,10 +357,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 06440255-b643-4d66-9222-4ec4fba2682d
+  componentName: 
   _rqName: Normal Camera RQ.CameraClass
   _rqName2: 38ea4467-136f-4689-bcb2-2f0b1bfc0f04
   _componentRepository: {fileID: 11422398}
   _viewportMargin: {x: 0.32, y: 0.32}
+  minCamera: {x: 0, y: 0}
+  maxCamera: {x: 0, y: 0}
+  _screenSize: {x: 0, y: 0}
+  _lockX: 0
+  _lockY: 0
+  _lockPos:
+    x: 0
+    y: 0
 --- !u!114 &11410286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -374,6 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: fdc1b6cc-3d2a-4c87-b523-7d7e523a4ae4
+  componentName: 
   _rqName: Follow Target RQ.Controller.Actions.LockOnTarget
   _rqName2: a47094a4-5563-473e-a149-56e0b8ae7351
 --- !u!114 &11418266
@@ -388,6 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 1a7a4994-0fc5-4389-aaee-bda89ff95a6b
+  componentName: 
   _rqName: Conditions RQ.FSM.V2.Conditionals.MessageReceivedCondition2
   _rqName2: a460a12b-accc-4827-92e2-2df71b03e539
   _name: Manual
@@ -405,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: b3b90867-126b-4ed4-bcbc-112ce24bb8e2
+  componentName: 
   _rqName: Normal Camera RQ.Entity.Common.SpriteBaseComponent
   _rqName2: 918a777b-e227-4a8f-bc4c-c449378d226c
   _recreateOnLoadGame: 1
@@ -424,10 +435,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: e721483f-d393-4151-937c-6c7eb8207b69
+  componentName: 
   _rqName: NormalCamera RQ.FSM.V2.AIComponent
   _rqName2: 1ce2e6c1-b8c4-41b3-a8b4-63b4f03c097d
   _componentRepository: {fileID: 11422398}
-  _seeker: {fileID: 0}
+  _pathFinder: {fileID: 0}
   _target: {fileID: 0}
   _targets: []
   TargetTags: []
@@ -462,6 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 3f618306-1396-4241-bc27-122a04ae4061
+  componentName: 
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: 0ebbaf1f-288e-42e8-8fb5-d4c7216f9f68
   _componentRepository: {fileID: 11422398}
@@ -479,6 +492,7 @@ MonoBehaviour:
     StateMachineUniqueId: 3f618306-1396-4241-bc27-122a04ae4061
     StateMachineName: States
     StateData: []
+  _logTransitions: 0
 --- !u!114 &11438520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,71 +505,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: e271444b-b2ff-4ebe-998d-5cadf8be38c3
+  componentName: 
   _rqName: Conditions RQ.FSM.V2.Conditionals.MessageReceivedCondition2
   _rqName2: 974a083e-9aa3-4463-9d21-2a4b1e4f7c01
   _name: Follow Target
   eventName: Follow Target
   _data: 
---- !u!114 &11441820
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 836265462, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 3693c7ed-e158-49f3-8ce9-d3e5dd2ffddc
-  _rqName: NormalCamera RQ.Physics.Components.BasicPhysicsComponent
-  _rqName2: 75eb8ce9-5d66-440b-8681-cf53e1395eaa
-  _componentRepository: {fileID: 11422398}
-  _basicPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
-    Size:
-      x: 0
-      y: 0
-    Heading:
-      x: 0
-      y: 0
-    Side:
-      x: -0
-      y: 0
-    Mass: 1
-    MaxSpeed: 2
-    OriginalMaxSpeed: 1
-    MaxSpeedMultiplier: 1
-    _directionRotate: 0
-    DamagedBounceForce: 1
-    DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
-    _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
-      x: 0
-      y: 0
-    OriginalZ: -10
-    _headingDirection: 1
-    MaxForce: 1
-    _friction: 0
-    _maxTurnRate: 6
-    _footOffset:
-      x: 0
-      y: 0
-    _fieldOfView: 0
-    _lineOfSight: 0
-    ZDepthByY: 0
-    ZOffsetByLevel: 0
-  _autoUpdateHeading: 1
 --- !u!114 &11462338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -568,6 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 3ef3b3c9-2205-4e5f-b60a-2a923cc5ed6f
+  componentName: 
   _rqName: Shake RQ.Entity.StatesV2.Physics.ShakeState
   _rqName2: 4bf32e26-735d-4224-b621-5a217b4ee97b
   _componentRepository: {fileID: 11422398}
@@ -603,6 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 5f74ea6e-3e3b-4615-9805-c006c1a10bc9
+  componentName: 
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: 1ff9a340-e65e-4f2e-a77f-798426135699
   _componentRepository: {fileID: 11422398}
@@ -686,6 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: d21f0e63-d6f0-4ab6-b089-e27bed0aa6ca
+  componentName: 
   _rqName: Follow Target RQ.FSM.V2.States.RunActionsState
   _rqName2: 4d721d1e-16a3-4404-899f-da01e31a0bef
   _componentRepository: {fileID: 11422398}
@@ -702,6 +660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: bfd6e805-10d3-4639-8902-7ef7c500316b
+  componentName: 
   _rqName: Manual RQ.FSM.V2.States.RunActionsState
   _rqName2: 9ffef491-0704-45dc-829b-37703ce13ea3
   _componentRepository: {fileID: 11422398}

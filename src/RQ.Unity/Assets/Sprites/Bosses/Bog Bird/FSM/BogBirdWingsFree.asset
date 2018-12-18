@@ -314,11 +314,19 @@ MonoBehaviour:
         x: 326
         y: 135
         width: 106
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: FlySnared
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.SendMessage
@@ -328,7 +336,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101
+        actionEnabled: 000101
         actionIsOpen: 010101
         actionStartIndex: 000000001000000015000000
         actionHashCodes: 64eb38047e7e0e0348c01101
