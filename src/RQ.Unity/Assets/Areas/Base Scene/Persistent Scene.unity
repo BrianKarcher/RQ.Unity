@@ -2782,7 +2782,7 @@ MonoBehaviour:
   m_Script: {fileID: -409635550, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 2ec21ff3-cbd7-4adb-8916-6fb6d77683f5
+  _uniqueId: 4edae8a6-d392-49ad-aad8-9451754b006c
   componentName: 
   _rqName: TitleScreen State
   _rqName2: 162dd489-a46a-4efd-af92-cbc15cf5bfa4
@@ -3469,7 +3469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f669fa2dab0a2234193204b1f6254ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 4f20b18b-44c8-4827-89fc-0f41317010f2
+  _uniqueId: 229140d9-8c75-4405-9c26-178fa4971f9d
   componentName: 
   _rqName: Skill Select Menu RQ.Controller.StatesV2.UI.SkillMenuState
   _rqName2: 26dcb703-9fdc-411a-8769-cdd8a2e5aaf9
@@ -4259,6 +4259,12 @@ MonoBehaviour:
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
+--- !u!114 &149367517 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11452084, guid: 03b9a6db219d12e4f8ec2934e0c7e721,
+    type: 2}
+  m_PrefabInternal: {fileID: 714720873}
+  m_Script: {fileID: 11500000, guid: edac79059a45d244a8050315593a7e9e, type: 3}
 --- !u!1 &154448802
 GameObject:
   m_ObjectHideFlags: 0
@@ -4982,7 +4988,7 @@ MonoBehaviour:
   m_Script: {fileID: -1406683269, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 91f9fcca-3ed6-4b2c-9d60-3b8d2626b755
+  _uniqueId: 05500be7-671d-48ca-b592-7762bb84d69e
   componentName: 
   _rqName: Game Loaded Dialog State
   _rqName2: 62f494a7-ae41-4e16-9de8-0f68ba5a5763
@@ -5754,7 +5760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &200213174
 GameObject:
   m_ObjectHideFlags: 0
@@ -6157,6 +6163,9 @@ MonoBehaviour:
   - Panel: 18
     Name: Controls
     UIPanel: {fileID: 372797999}
+  - Panel: 18
+    Name: HudTextPanel
+    UIPanel: {fileID: 843142587}
   - Panel: 18
     Name: CommandView
     UIPanel: {fileID: 109214911}
@@ -10041,7 +10050,7 @@ MonoBehaviour:
   m_Script: {fileID: -425597770, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 7b78e19b-7f87-40b6-b976-b7308020c79c
+  _uniqueId: 5dae430a-232b-42b8-9b50-41e9020695b3
   componentName: 
   _rqName: Play State
   _rqName2: acd01a7f-0c93-4480-83ae-67735388d58c
@@ -11938,7 +11947,7 @@ MonoBehaviour:
   m_Script: {fileID: -409635550, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 0a30cbb4-8be8-49c1-bf29-6b5e266f6153
+  _uniqueId: 55d19a6f-ca62-4f50-acfe-d6ad07826c85
   componentName: 
   _rqName: Intro RQ.Entity.StatesV2.PanelState
   _rqName2: 8c119596-5630-43d5-9346-0a5a168fc018
@@ -12297,6 +12306,7 @@ GameObject:
   - component: {fileID: 446171338}
   - component: {fileID: 446171337}
   - component: {fileID: 446171336}
+  - component: {fileID: 446171339}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -12361,7 +12371,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 446171337}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 446171339}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &446171337
@@ -12397,6 +12418,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 446171334}
+--- !u!114 &446171339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 446171334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2100949060, guid: c47d312bb140f21409c92b406c845994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: bb0122df-966f-484d-9acb-31d11d71c2b1
+  componentName: 
+  _rqName: Play Button RQ.Common.UI.OnClickHandler
+  _rqName2: 775ad0b1-fad3-444b-a0b1-52b2608b3769
+  _button: Playtime
 --- !u!114 &449455131 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11481334, guid: 284784aea7692d54495fab4bdf4f9080,
@@ -14459,6 +14496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 571422542}
   - component: {fileID: 571422543}
+  - component: {fileID: 571422544}
   m_Layer: 0
   m_Name: Unity GUI
   m_TagString: Untagged
@@ -14498,6 +14536,22 @@ MonoBehaviour:
   FullScreenToggle: {fileID: 1639406724}
   ResolutionDropdown: {fileID: 1775044335}
   QuitButton: {fileID: 1392919625}
+--- !u!114 &571422544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 571422541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 14533e5a-2353-472f-aeb5-332d9fac97da
+  componentName: AppStart
+  _rqName: Unity GUI RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 59f56b21-6069-497b-ad99-6946041bb795
+  _componentRepository: {fileID: 200213182}
 --- !u!1 &575299405
 GameObject:
   m_ObjectHideFlags: 0
@@ -15935,7 +15989,7 @@ MonoBehaviour:
   m_Script: {fileID: 398232751, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: a083805e-4e22-41c1-9fc0-ace0e5cc2d25
+  _uniqueId: 47acf279-d631-4d94-8191-bb047d38fdd2
   componentName: 
   _rqName: 
   _rqName2: 
@@ -17237,10 +17291,6 @@ Prefab:
       propertyPath: _rewiredInputManager
       value: 
       objectReference: {fileID: 1741361028}
-    - target: {fileID: 11452084, guid: 03b9a6db219d12e4f8ec2934e0c7e721, type: 2}
-      propertyPath: _openOnStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 152114, guid: 03b9a6db219d12e4f8ec2934e0c7e721, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -17250,8 +17300,16 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11452084, guid: 03b9a6db219d12e4f8ec2934e0c7e721, type: 2}
-      propertyPath: _showMouse
+      propertyPath: _showPlayers
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452084, guid: 03b9a6db219d12e4f8ec2934e0c7e721, type: 2}
+      propertyPath: _openOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423344, guid: 03b9a6db219d12e4f8ec2934e0c7e721, type: 2}
+      propertyPath: breakPoints.Array.data[1].referenceResolution.x
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03b9a6db219d12e4f8ec2934e0c7e721, type: 2}
@@ -19385,7 +19443,7 @@ MonoBehaviour:
   m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 852d78ec-3171-4e9f-95d4-65c701aa8afa
+  _uniqueId: b23377fc-767b-46d3-8141-6fe6f41412f2
   componentName: 
   _rqName: ProcessItem State
   _rqName2: e11e5eaf-d02f-440c-9d21-b0af7be5e31c
@@ -19823,7 +19881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &816655920
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20135,7 +20193,7 @@ MonoBehaviour:
   m_Script: {fileID: -409635550, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 485df1da-a5e4-453c-b63c-7b5cf1f47db3
+  _uniqueId: 6dc986fa-c8c8-4ba1-aa91-c45235ea3c47
   componentName: 
   _rqName: Start Menu State
   _rqName2: e35aa8e6-4536-48fc-a0b3-de28d14f4b7e
@@ -20168,7 +20226,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 69166365-9223-4db7-80f5-59a75596d29f
+  _uniqueId: c9ef6ab7-586c-48e9-9a50-96cd6d571719
   componentName: 
   _rqName: Start Menu RQ.FSM.V2.StateTransitionTable
   _rqName2: d3d39bf6-8841-4425-9846-5bf959fd8ed7
@@ -20330,7 +20388,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 8d6766dd-2dff-47b5-810f-c7037317874a
+  _uniqueId: 31aa9db6-04b6-486f-9e67-15e0ccfee0b7
   componentName: 
   _rqName: Start Menu RQ.FSM.V2.StateMachine
   _rqName2: ae42a57f-0367-4b60-8105-90ff16d612b5
@@ -20346,7 +20404,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: 8d6766dd-2dff-47b5-810f-c7037317874a
+    StateMachineUniqueId: 31aa9db6-04b6-486f-9e67-15e0ccfee0b7
     StateMachineName: Start Menu
     StateData: []
   _logTransitions: 0
@@ -21108,7 +21166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &843142586
 Transform:
   m_ObjectHideFlags: 0
@@ -22707,7 +22765,7 @@ MonoBehaviour:
   m_Script: {fileID: -409635550, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: e3e9d8ef-ca8a-42d6-b68a-d0a6444c0b07
+  _uniqueId: cdba2824-20b4-4caa-9410-89775b93a74e
   componentName: 
   _rqName: Cutscene RQ.Entity.StatesV2.PanelState
   _rqName2: 1f46d1ca-64ef-4d0c-b60f-be8dcf50fdc8
@@ -22740,7 +22798,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 5d056c02-aa62-4235-af61-a61956d61868
+  _uniqueId: 7fe6d4d7-5b58-405b-aaa4-d867d9af156e
   componentName: 
   _rqName: 
   _rqName2: 
@@ -22786,7 +22844,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: d81e5a06-9c3a-4632-9ede-03311e881361
+  _uniqueId: e1b6a888-23ff-46ec-bb95-872b55b64414
   componentName: 
   _rqName: 
   _rqName2: 
@@ -22802,7 +22860,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: d81e5a06-9c3a-4632-9ede-03311e881361
+    StateMachineUniqueId: e1b6a888-23ff-46ec-bb95-872b55b64414
     StateMachineName: Cutscene
     StateData: []
   _logTransitions: 0
@@ -22998,7 +23056,7 @@ MonoBehaviour:
   m_Script: {fileID: 1587229325, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: b9b9185c-8f84-4459-9b9b-f8a9bf67e0ba
+  _uniqueId: 741603d0-ecac-4634-922e-5a725d5cd941
   componentName: 
   _rqName: Save Menu State
   _rqName2: 8a4e7340-f531-4b74-927c-9659765cab7b
@@ -23034,7 +23092,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 356d75e7-39b7-4ec3-bec5-35b623e30c16
+  _uniqueId: e7a2b185-8be5-4287-b911-e81c4a2cc99d
   componentName: 
   _rqName: Save Menu RQ.FSM.V2.StateTransitionTable
   _rqName2: 1083bc5e-55f2-4229-804f-d33915e5a203
@@ -23149,7 +23207,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 734002b3-3315-4ae3-a4d4-43a6f8c34e6e
+  _uniqueId: 343a429a-22a6-4e44-a914-e9a8559b4ada
   componentName: 
   _rqName: Save Menu RQ.FSM.V2.StateMachine
   _rqName2: e9e27900-d577-4df0-96b4-182c77473b1a
@@ -23165,7 +23223,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: 734002b3-3315-4ae3-a4d4-43a6f8c34e6e
+    StateMachineUniqueId: 343a429a-22a6-4e44-a914-e9a8559b4ada
     StateMachineName: Save Menu
     StateData: []
   _logTransitions: 0
@@ -23668,7 +23726,7 @@ MonoBehaviour:
   m_Script: {fileID: 2146995647, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: c6cd916d-7388-4016-acad-5e678efe4514
+  _uniqueId: 24eb8852-e9e4-4717-8c9b-d968aad42cfc
   componentName: 
   _rqName: Process Load State
   _rqName2: cec7cc1b-42e3-411f-a711-42195e389316
@@ -24351,7 +24409,7 @@ MonoBehaviour:
   m_Script: {fileID: -1406683269, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 8afde383-0dc5-4c75-a331-92530ded3934
+  _uniqueId: 94347f79-ab3d-4596-8add-c19f4880c035
   componentName: 
   _rqName: Modal State
   _rqName2: bcbd53d3-1ae0-4d20-9fdd-8c813cfd7df6
@@ -25030,6 +25088,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114535369869809250, guid: 1d7c68a85833f884cbdfdca197600014,
         type: 2}
+      propertyPath: _userData.players.Array.data[1]._defaultKeyboardMaps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535369869809250, guid: 1d7c68a85833f884cbdfdca197600014,
+        type: 2}
       propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -25279,6 +25342,16 @@ Prefab:
         type: 2}
       propertyPath: _userData.mouseMaps.Array.data[0].actionElementMaps.Array.data[1]._elementIdentifierId
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535369869809250, guid: 1d7c68a85833f884cbdfdca197600014,
+        type: 2}
+      propertyPath: _userData.configVars.maxJoysticksPerPlayer
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535369869809250, guid: 1d7c68a85833f884cbdfdca197600014,
+        type: 2}
+      propertyPath: _userData.players.Array.data[1]._defaultKeyboardMaps.Array.data[0]._enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d7c68a85833f884cbdfdca197600014, type: 2}
@@ -25648,7 +25721,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 94613769-fa23-4ec3-974c-7f7bc9c5ea9e
+  _uniqueId: cec03a06-a115-4065-8d6d-73d1fdbc4cdf
   componentName: 
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: d9b90042-927d-4e45-a256-a8a0d024862f
@@ -25664,7 +25737,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: 94613769-fa23-4ec3-974c-7f7bc9c5ea9e
+    StateMachineUniqueId: cec03a06-a115-4065-8d6d-73d1fdbc4cdf
     StateMachineName: States
     StateData: []
   _logTransitions: 0
@@ -25680,7 +25753,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 2a73dffe-6d64-44cf-9292-9a00cd6002a0
+  _uniqueId: 7903a00f-9dd9-490a-a33d-7ecacc647423
   componentName: 
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: 98765bb2-ee4d-4dec-a1c3-5667aad09301
@@ -27379,7 +27452,7 @@ MonoBehaviour:
   m_Script: {fileID: -409635550, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 354ebede-9e32-4fd7-add1-148eea4cf0ea
+  _uniqueId: 69d09fe0-18d4-4565-ab81-43b096850c72
   componentName: 
   _rqName: How to Play RQ.Entity.StatesV2.PanelState
   _rqName2: b65508e6-583d-4575-a4c1-b8a478f8eeaf
@@ -28759,7 +28832,7 @@ MonoBehaviour:
   m_Script: {fileID: 1095146950, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 84caecc2-0442-4f73-8bd5-d939f8b63f61
+  _uniqueId: 9ea1b7cc-7ea7-4747-b35c-f8c90cd4c348
   componentName: 
   _rqName: End State
   _rqName2: 10c99b09-0ba2-42c8-9404-74bfd37c577a
@@ -28794,7 +28867,7 @@ MonoBehaviour:
   m_Script: {fileID: 478293275, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: b30e2ad4-b5df-4c81-804f-41c0c354124f
+  _uniqueId: f551e268-7022-43b4-9d25-c002d49823a0
   componentName: 
   _rqName: Start State
   _rqName2: b4fac57d-81ca-46b9-bc66-c3470270f5af
@@ -30352,7 +30425,7 @@ MonoBehaviour:
   m_Script: {fileID: 1095146950, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: c35c7c53-1a4f-45ef-93fe-6bcaa6f66e9d
+  _uniqueId: 6fefc598-9ba8-47a3-bdd0-d62270de546f
   componentName: 
   _rqName: End RQ.FSM.V2.States.StateEndState
   _rqName2: f452d5b7-c28f-4abd-9839-4e286aaa6040
@@ -31299,7 +31372,7 @@ MonoBehaviour:
   m_Script: {fileID: 478293275, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: d1ccbcfc-5eab-494e-8c0f-b8d858997001
+  _uniqueId: d7d68373-ae54-4e7d-bea1-ab5b1e5ea89f
   componentName: 
   _rqName: 
   _rqName2: 
@@ -31439,7 +31512,7 @@ MonoBehaviour:
   m_Script: {fileID: 665076375, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: ba03ddc5-5b67-401b-9dc3-600bea5978b1
+  _uniqueId: 19a9cca8-a77d-4f1a-85e3-2db059abc028
   componentName: 
   _rqName: Item Menu State
   _rqName2: c372a844-dad4-409f-a3f2-cf02d3f8ba66
@@ -31473,7 +31546,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 4656778b-4cc4-42ed-a20f-f628a2524e4c
+  _uniqueId: 2339bdad-750b-475c-b6f6-2c238917483b
   componentName: 
   _rqName: Item Menu RQ.FSM.V2.StateTransitionTable
   _rqName2: b34c4e49-93e3-4d30-9cae-3f290d9305df
@@ -31592,7 +31665,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: f7381206-2dad-408d-92ef-8cc498b11fee
+  _uniqueId: ae284892-0531-4e63-a4cd-e8978e1ba047
   componentName: 
   _rqName: Item Menu RQ.FSM.V2.StateMachine
   _rqName2: 47af4001-3c0c-4311-b955-5196ef59d23b
@@ -31608,7 +31681,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: f7381206-2dad-408d-92ef-8cc498b11fee
+    StateMachineUniqueId: ae284892-0531-4e63-a4cd-e8978e1ba047
     StateMachineName: Item Menu
     StateData: []
   _logTransitions: 0
@@ -33537,7 +33610,7 @@ MonoBehaviour:
   m_Script: {fileID: 478293275, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 62b16bdc-58a6-45ab-a673-82cb51556939
+  _uniqueId: 7fd16ed2-7de1-435a-9bac-24b9bca10027
   componentName: 
   _rqName: Start RQ.Entity.StatesV2.EmptyState
   _rqName2: 45858d68-3641-4acf-ac3d-6a256623a714
@@ -33586,7 +33659,7 @@ MonoBehaviour:
   m_Script: {fileID: -1406683269, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: c04de8de-3b1d-4d9a-9c68-de0a6c6adb4f
+  _uniqueId: c39d902c-5e4d-4cce-bb14-c03473cff576
   componentName: 
   _rqName: Confirmation Dialog State
   _rqName2: 4127d861-f5ff-4902-8a16-39004c0cb7b5
@@ -34330,7 +34403,7 @@ MonoBehaviour:
   m_Script: {fileID: 1095146950, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: c181f29b-eddb-4732-81ee-9d0ee0f07e89
+  _uniqueId: f47b417a-8929-45a1-a953-deb67e8ce737
   componentName: 
   _rqName: End State
   _rqName2: 9a01b09e-c474-43ec-83d2-520684a01bfa
@@ -35017,7 +35090,7 @@ MonoBehaviour:
   m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 587a8738-f154-455d-9671-26dda6d1b46b
+  _uniqueId: 45768d42-87f4-49ce-9fe7-9ec6baa505ed
   componentName: 
   _rqName: Process Load State
   _rqName2: beea584c-0dd1-4a9f-beb5-64f82ffa9a9d
@@ -35777,7 +35850,7 @@ MonoBehaviour:
   m_Script: {fileID: -1945360146, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 872a950e-e87d-47c6-89ba-7ae190eaf658
+  _uniqueId: 91ebcf4d-7350-417e-9556-a86df3ba5e42
   componentName: 
   _rqName: ProcessSave State
   _rqName2: c743a761-5115-420b-8a8d-1843c98bdbc4
@@ -36158,7 +36231,7 @@ MonoBehaviour:
   m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: bedf98d1-9a7f-47ac-bb01-e96de08af8b4
+  _uniqueId: 406c1352-209b-401c-b0af-493e9591e14b
   componentName: 
   _rqName: Start State
   _rqName2: bf82f18c-95dd-4bf9-8a77-bbf930def39f
@@ -36899,7 +36972,7 @@ MonoBehaviour:
   m_Script: {fileID: -1406683269, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: c93c211d-0d9e-477f-abaa-d3ac3fdec345
+  _uniqueId: 0594f66c-0247-4d73-b728-0cdf317dac19
   componentName: 
   _rqName: Game Saved Dialog State
   _rqName2: 18e7f627-3de1-4ee3-9354-d8c2530f2545
@@ -37671,12 +37744,6 @@ MonoBehaviour:
   mAtlas: {fileID: 11420510, guid: 38c18ec67d42f0b49b0a05b18938ac9d, type: 2}
   mSpriteName: Scroll-bar background
   mFillCenter: 1
---- !u!114 &1565160076 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11452084, guid: 03b9a6db219d12e4f8ec2934e0c7e721,
-    type: 2}
-  m_PrefabInternal: {fileID: 269502318}
-  m_Script: {fileID: 11500000, guid: edac79059a45d244a8050315593a7e9e, type: 3}
 --- !u!1 &1565291470
 GameObject:
   m_ObjectHideFlags: 0
@@ -38091,7 +38158,7 @@ MonoBehaviour:
   m_Script: {fileID: -1406683269, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: ce3d71ae-08f5-4047-aaf7-1146cc6b4499
+  _uniqueId: 588eacb6-455a-4f2c-b915-a6dca5cae7a9
   componentName: 
   _rqName: Save Confirmation Dialog State
   _rqName2: efaaef7f-30c4-4883-b484-1e886681ed1e
@@ -38484,7 +38551,7 @@ MonoBehaviour:
   m_Script: {fileID: -409635550, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: c8334358-e649-48da-a534-63aaf9b1094d
+  _uniqueId: 5a274c10-d692-470c-be20-e02eeacd5dbc
   componentName: 
   _rqName: How to Play RQ.Entity.StatesV2.PanelState
   _rqName2: b65508e6-583d-4575-a4c1-b8a478f8eeaf
@@ -39523,7 +39590,7 @@ MonoBehaviour:
   m_Script: {fileID: 478293275, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 2e239c22-b712-4a4b-b94c-db71c24e10d2
+  _uniqueId: 855bbe7b-537f-420f-b133-ef2acffbf7d4
   componentName: 
   _rqName: Start State
   _rqName2: b14fcf70-3b0d-4390-a8aa-7a091ef9aa4a
@@ -40771,7 +40838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -21.320004}
+  m_AnchoredPosition: {x: 0, y: -21.319946}
   m_SizeDelta: {x: 870.1, y: 356.7}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1686375148
@@ -41286,7 +41353,7 @@ MonoBehaviour:
   m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 7a88c6b5-3f31-4879-a34c-b6fad7026415
+  _uniqueId: 2a97ae16-b054-45a2-9553-43389ce69727
   componentName: 
   _rqName: Quit to Main Menu RQ.FSM.V2.States.RunActionsState
   _rqName2: 743ee05b-1e38-47e5-9c67-6275b90b72d2
@@ -41817,7 +41884,7 @@ MonoBehaviour:
   m_Script: {fileID: -409635550, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 0356b5af-ef87-4cac-b46f-bc4797754d52
+  _uniqueId: 3bc523f2-250b-40c4-9aa9-415970af3772
   componentName: 
   _rqName: TitleScreen State
   _rqName2: 162dd489-a46a-4efd-af92-cbc15cf5bfa4
@@ -42501,7 +42568,7 @@ MonoBehaviour:
   m_Script: {fileID: 398232751, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 471e5f13-5cb4-4f12-92f1-5b8206b54f79
+  _uniqueId: d588109f-f694-4af3-9d90-0be8aecdf79a
   componentName: 
   _rqName: Conversation State
   _rqName2: c4fe12c8-83bc-4428-abeb-82c446a3d625
@@ -43597,7 +43664,7 @@ MonoBehaviour:
   m_Script: {fileID: 478293275, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: cbe6221f-70ee-44e1-ad8c-8199bacffa57
+  _uniqueId: 4394e374-0a67-4da0-ad24-d877e5f5f5cd
   componentName: 
   _rqName: Start State
   _rqName2: c1dd4d66-720f-4989-ab24-2c6ccf315a26
@@ -44753,7 +44820,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565160076}
+      - m_Target: {fileID: 149367517}
         m_MethodName: Open
         m_Mode: 1
         m_Arguments:
@@ -48018,7 +48085,7 @@ MonoBehaviour:
   m_Script: {fileID: -1406683269, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 44c7c86d-7c48-4ddd-8fe2-fcd7fc3158e7
+  _uniqueId: e66a33b7-0bcb-4bbc-aa51-3af42b914c5f
   componentName: 
   _rqName: Save Confirmation Dialog State
   _rqName2: efaaef7f-30c4-4883-b484-1e886681ed1e
@@ -48448,7 +48515,7 @@ MonoBehaviour:
   m_Script: {fileID: 1587229325, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: a974a844-835a-4358-afff-26fdfb3610e1
+  _uniqueId: 6935fb5d-3fab-4f78-9913-9aa8124b514d
   componentName: 
   _rqName: Load Menu State
   _rqName2: 124a4ad2-bb1a-4c43-9582-77990bdcc06e
@@ -48484,7 +48551,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: ad88a3a2-1c6b-430e-84b5-b8c4e828eada
+  _uniqueId: b17c06c5-34df-44c2-831a-8c093234c16d
   componentName: 
   _rqName: Load Menu RQ.FSM.V2.StateMachine
   _rqName2: a1456e13-646c-4374-aec6-ca46d3644a1d
@@ -48500,7 +48567,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: ad88a3a2-1c6b-430e-84b5-b8c4e828eada
+    StateMachineUniqueId: b17c06c5-34df-44c2-831a-8c093234c16d
     StateMachineName: Load Menu
     StateData: []
   _logTransitions: 0
@@ -48516,7 +48583,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: c3bfcbbb-1aaa-4153-8a4d-38a34ecf67f8
+  _uniqueId: 3fa3583b-d65b-4545-94ea-8655b3029f03
   componentName: 
   _rqName: Load Menu RQ.FSM.V2.StateTransitionTable
   _rqName2: fe3f1fdc-0310-424b-a2fb-540041877d09
@@ -49098,7 +49165,7 @@ MonoBehaviour:
   m_Script: {fileID: -1406683269, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 106ae0e3-69ce-4860-8ecb-2a474b51cb7e
+  _uniqueId: d7177af0-b7b4-47db-b8f7-4fca23112154
   componentName: 
   _rqName: Load Confirmation Dialog State
   _rqName2: 312adf47-5cfc-44ba-822a-a248fac52350
@@ -49451,7 +49518,7 @@ MonoBehaviour:
   m_Script: {fileID: -1406683269, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 6df2c5eb-0e10-4542-9003-3101bdc94e3a
+  _uniqueId: 266711a6-f7ec-491d-ae14-92dd8799e5bd
   componentName: 
   _rqName: Could not use item State
   _rqName2: ae74b2c1-98ac-4767-8f70-4a2a283c9471
@@ -49703,7 +49770,7 @@ MonoBehaviour:
   _rqName: New Game Button RQ.Common.UI.OnClickLoadScene
   _rqName2: 9c18e1dd-3688-418a-8507-0d60a0d9f825
   _button: StartNew
-  _scene: {fileID: 11400000, guid: a24affb388c8d0d46806e936ac88b157, type: 2}
+  _scene: {fileID: 11400000, guid: 79b4430824c892d43b143b37698fe094, type: 2}
 --- !u!1 &2066896013
 GameObject:
   m_ObjectHideFlags: 0
@@ -51018,7 +51085,7 @@ MonoBehaviour:
   m_Script: {fileID: 1095146950, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 3c139d60-7134-41e9-8298-9a134960011e
+  _uniqueId: d97369fb-4cc9-4a81-b02b-18b32535a800
   componentName: 
   _rqName: End State
   _rqName2: 9bd8f209-9334-45cb-b5b5-489147b9e1bb
@@ -51069,7 +51136,7 @@ MonoBehaviour:
   m_Script: {fileID: -425597770, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 34cd7445-6106-4067-a9e3-bfdc9721117c
+  _uniqueId: ff567045-f3a8-47f5-91a6-9a41225a579f
   componentName: 
   _rqName: Play State
   _rqName2: f62d93a3-aa97-47a8-acca-19276c6884fd
@@ -51104,7 +51171,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 64c25900-cc44-4c41-9ff6-96b021c5938c
+  _uniqueId: f164278f-183e-4511-a856-8805ae2ad3bc
   componentName: 
   _rqName: Play RQ.FSM.V2.StateTransitionTable
   _rqName2: 40a2fd6a-345a-4ce0-a90a-5958f06f5a8c
@@ -51253,7 +51320,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: af32a454-b168-49cc-bcd0-a14cbe623284
+  _uniqueId: c8aa8b54-f7a3-4668-a447-d6f0dbf9bc7a
   componentName: 
   _rqName: Play RQ.FSM.V2.StateMachine
   _rqName2: f8cba6fb-8787-460b-bdbe-321195e7d7e1
@@ -51269,7 +51336,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: af32a454-b168-49cc-bcd0-a14cbe623284
+    StateMachineUniqueId: c8aa8b54-f7a3-4668-a447-d6f0dbf9bc7a
     StateMachineName: Play
     StateData: []
   _logTransitions: 0
