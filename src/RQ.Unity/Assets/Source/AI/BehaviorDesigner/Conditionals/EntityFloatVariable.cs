@@ -47,8 +47,8 @@ namespace RQ.AI.Conditionals
                     return _altitudePhysicsComponent.GetAltitudeData().Altitude.y;
                 case FloatVariableEnum.HP:
                     return _entityStatsComponent.GetEntityStats().CurrentHP;
-                case FloatVariableEnum.InputForce:
-                    return _physicsComponent.GetPhysicsAffector("input").Force.magnitude;
+                case FloatVariableEnum.InputVelocity:
+                    return _physicsComponent.GetPhysicsData().InputVelocity.magnitude;
             }
             return 0f;
         }

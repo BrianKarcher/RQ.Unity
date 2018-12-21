@@ -895,21 +895,28 @@ MonoBehaviour:
         - RQ.AI.PlayMaker.PlaySequence
         - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
         - Assets.Source.AI.PM_State_Machine.PlayRandomSoundOneShot
+        - RQ.AI.PlayMaker.uSequencer
+        - HutongGames.PlayMaker.Actions.RunFSM
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000300000009000000
-        actionHashCodes: a4b2c60307377b012b347e01
+        - 
+        - 
+        actionEnabled: 0101010001
+        actionIsOpen: 0101010101
+        actionStartIndex: 00000000040000000a0000000f00000011000000
+        actionHashCodes: 8745350407377b012b347e0133b79e02fe058700
         unityObjectParams:
         - {fileID: 8300000, guid: 2ac7e466e002b9646896dff67af45ef4, type: 3}
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
-        fsmTemplateControlParams: []
+        fsmTemplateControlParams:
+        - fsmTemplate: {fileID: 11400000, guid: 3b8d336caa928cb418a56bfb72be57a5,
+            type: 2}
+          fsmVarOverrides: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
@@ -919,7 +926,13 @@ MonoBehaviour:
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -933,19 +946,24 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - FINISHED
         - BossDeathSequence
         - 
-        byteData: 01000200000003000000010000803f
+        - FINISHED
+        - 
+        byteData: 00000200000003000000010000803f
         arrayParamSizes: 01000000
         arrayParamTypes:
         - UnityEngine.AudioClip
-        customTypeSizes: 020000000400000003000000
+        customTypeSizes: 02000000040000000300000000000000
         customTypeNames:
         - RQ.AI.Atom.GameManager.PlaySequenceAtom
         - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
         - RQ.Entity.AtomAction.Action.PlayRandomSoundOneShotAtom
-        paramDataType: 2800000003000000010000001100000028000000010000000700000007000000030000002800000001000000020000000c00000005000000
+        - RQ.AI.Atom.GameManager.uSequencerAtom
+        paramDataType: 170000002800000003000000010000001100000028000000010000000700000007000000030000002800000001000000020000000c000000050000002800000017000000260000001000000017000000
         paramName:
+        - Complete
         - _atom
         - SequenceName
         - PlayDirectly
@@ -960,8 +978,13 @@ MonoBehaviour:
         - _volume
         - _audioClips
         - 
-        paramDataPos: 000000000000000000000000000000000100000001000000020000000600000001000000020000000a0000000b0000000000000000000000
-        paramByteDataSize: 0000000000000000010000000000000000000000010000000400000004000000000000000000000001000000040000000000000000000000
+        - _atom
+        - AllComplete
+        - fsmTemplateControl
+        - storeID
+        - finishEvent
+        paramDataPos: 00000000000000000100000000000000000000000100000001000000020000000600000002000000020000000a0000000b00000000000000000000000300000003000000000000000000000004000000
+        paramByteDataSize: 0000000000000000000000000100000000000000000000000100000004000000040000000000000000000000010000000400000000000000000000000000000000000000000000000000000000000000
     - name: Start Menu
       description: 
       colorIndex: 0
