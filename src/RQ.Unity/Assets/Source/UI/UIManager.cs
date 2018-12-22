@@ -184,7 +184,8 @@ namespace RQ2.UI
             if (!Application.isPlaying)
                 return;
             if (UICamera != null)
-                InputManager.Instance.SetCamera(UICamera.GetComponent<RQ.Common.UI.IUICamera>());
+                GameController.Instance.SetCamera(UICamera.GetComponent<RQ.Common.UI.IUICamera>());
+                //InputManager.Instance.SetCamera(UICamera.GetComponent<RQ.Common.UI.IUICamera>());
         }
 
         public override void Update()

@@ -27,41 +27,41 @@ namespace Assets.Source.Actions
             _inputGrid.ClearGrid();
             var gamePrefs = GameStateController.Instance.GetGamePrefs();
             var slotDatas = new List<InputCommandSlotData>();
-            foreach (var inputActions in gamePrefs.InputCommands)
-            {
-                var slotData = new InputCommandSlotData();
-                InputCommand controllerCommand;
-                inputActions.Value.TryGetValue(InputType.Controller, out controllerCommand);
-                slotData.ControllerInputCommand = controllerCommand;
-                InputCommand keyboardCommand;
-                inputActions.Value.TryGetValue(InputType.Keyboard, out keyboardCommand);
-                slotData.KeyboardInputCommand = keyboardCommand;
-                slotData.InputAction = inputActions.Key.ToFriendlyName();
-                // TODO Put this somewhere else
-                //switch (inputActions.Key)
-                //{
-                //    case InputAction.MoveDown:
-                //        slotData.InputAction = "Move Down";
-                //        break;
-                //    case InputAction.MoveLeft:
-                //        slotData.InputAction = "Move Left";
-                //        break;
-                //    case InputAction.MoveRight:
-                //        slotData.InputAction = "Move Right";
-                //        break;
-                //    case InputAction.MoveUp:
-                //        slotData.InputAction = "Move Up";
-                //        break;
-                //    case InputAction.SkillMenu:
-                //        slotData.InputAction = "Skill Menu";
-                //        break;
-                //    default:
-                //        slotData.InputAction = inputActions.Key.ToString();
-                //        break;
-                //}
-                //inputActions.Key
-                slotDatas.Add(slotData);
-            }
+            //foreach (var inputActions in gamePrefs.InputCommands)
+            //{
+            //    var slotData = new InputCommandSlotData();
+            //    InputCommand controllerCommand;
+            //    inputActions.Value.TryGetValue(InputType.Controller, out controllerCommand);
+            //    slotData.ControllerInputCommand = controllerCommand;
+            //    InputCommand keyboardCommand;
+            //    inputActions.Value.TryGetValue(InputType.Keyboard, out keyboardCommand);
+            //    slotData.KeyboardInputCommand = keyboardCommand;
+            //    slotData.InputAction = inputActions.Key.ToFriendlyName();
+            //    // TODO Put this somewhere else
+            //    //switch (inputActions.Key)
+            //    //{
+            //    //    case InputAction.MoveDown:
+            //    //        slotData.InputAction = "Move Down";
+            //    //        break;
+            //    //    case InputAction.MoveLeft:
+            //    //        slotData.InputAction = "Move Left";
+            //    //        break;
+            //    //    case InputAction.MoveRight:
+            //    //        slotData.InputAction = "Move Right";
+            //    //        break;
+            //    //    case InputAction.MoveUp:
+            //    //        slotData.InputAction = "Move Up";
+            //    //        break;
+            //    //    case InputAction.SkillMenu:
+            //    //        slotData.InputAction = "Skill Menu";
+            //    //        break;
+            //    //    default:
+            //    //        slotData.InputAction = inputActions.Key.ToString();
+            //    //        break;
+            //    //}
+            //    //inputActions.Key
+            //    slotDatas.Add(slotData);
+            //}
             //var itemGridData = InventoryController.Instance.GetInventoryAsGrid(_itemClasses);
             _inputGrid.PopulateGrid(slotDatas);
         }
