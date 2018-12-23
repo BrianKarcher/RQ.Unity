@@ -370,6 +370,7 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.Wait
         - Assets.Source.AI.PM_State_Machine.DamageBounce
+        - Assets.Source.AI.PM_State_Machine.PlayEntitySound
         - Assets.Source.AI.PM_State_Machine.PlayRandomSoundOneShot
         - HutongGames.PlayMaker.Actions.SetBoolValue
         customNames:
@@ -377,10 +378,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 0000000003000000060000000b000000
-        actionHashCodes: 48c011019572fc002b347e0127fbe103
+        - 
+        actionEnabled: 0101010001
+        actionIsOpen: 0101010101
+        actionStartIndex: 000000000300000005000000090000000e000000
+        actionHashCodes: 48c011019572fc00fcd324042b347e0127fbe103
         unityObjectParams:
         - {fileID: 8300000, guid: a7092625bdc7b1540b4ffb5834c9b755, type: 3}
         fsmGameObjectParams: []
@@ -424,23 +426,26 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
-        - 
-        byteData: 0001010000803f00
+        byteData: 0001010000803f00000000010000803f00
         arrayParamSizes: 01000000
         arrayParamTypes:
         - UnityEngine.AudioClip
-        customTypeSizes: 0200000003000000
+        customTypeSizes: 010000000300000003000000
         customTypeNames:
         - RQ.AI.Action.DamageBounceAtom
+        - RQ.Entity.AtomAction.Action.PlayEntitySoundAtom
         - RQ.Entity.AtomAction.Action.PlayRandomSoundOneShotAtom
-        paramDataType: 0f00000017000000010000002800000003000000010000002800000001000000020000000c00000005000000110000001100000001000000
+        paramDataType: 0f00000017000000010000002800000001000000280000000100000002000000070000002800000001000000020000000c00000005000000110000001100000001000000
         paramName:
         - time
         - finishEvent
         - realTime
         - _damageBounceAtom
-        - _uniqueId
         - UseDamageColor
+        - _soundAtom
+        - _playOnMusicTrack
+        - _volume
+        - EntitySound
         - _soundAtom
         - _playOnMusicTrack
         - _volume
@@ -449,8 +454,8 @@ MonoBehaviour:
         - boolVariable
         - boolValue
         - everyFrame
-        paramDataPos: 0000000000000000000000000000000001000000010000000100000002000000030000000000000000000000000000000100000007000000
-        paramByteDataSize: 0000000000000000010000000000000000000000010000000000000001000000040000000000000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000001000000020000000300000007000000020000000b0000000c0000000000000000000000000000000100000010000000
+        paramByteDataSize: 0000000000000000010000000000000001000000000000000100000004000000040000000000000001000000040000000000000000000000000000000000000001000000
     - name: Kill
       description: 
       colorIndex: 0
@@ -725,6 +730,7 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
+        - Assets.Source.AI.PM_State_Machine.PlayEntitySound
         - Assets.Source.AI.PM_State_Machine.PlayRandomSoundOneShot
         - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
         - Assets.Source.AI.PM_State_Machine.KillSelf
@@ -732,10 +738,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000050000000b000000
-        actionHashCodes: 2b347e01ee6bbe01927b0a04
+        - 
+        actionEnabled: 01000101
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000004000000090000000f000000
+        actionHashCodes: fcd324042b347e01ee6bbe01927b0a04
         unityObjectParams:
         - {fileID: 8300000, guid: ac2c8b5116e2c2643b2e5d27a37a9cdc, type: 3}
         - {fileID: 193456, guid: ff2f434da5b0c6d4fbbd851cb6c674eb, type: 2}
@@ -767,17 +774,22 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 010000803f0000000000000000000000000000
+        byteData: 010000803f01000000010000803f0000000000000000000000000000
         arrayParamSizes: 01000000
         arrayParamTypes:
         - UnityEngine.AudioClip
-        customTypeSizes: 030000000400000000000000
+        customTypeSizes: 03000000030000000400000000000000
         customTypeNames:
+        - RQ.Entity.AtomAction.Action.PlayEntitySoundAtom
         - RQ.Entity.AtomAction.Action.PlayRandomSoundOneShotAtom
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.KillSelfAtom
-        paramDataType: 2800000001000000020000000c0000000500000013000000280000001b00000009000000010000000100000028000000
+        paramDataType: 280000000100000002000000070000002800000001000000020000000c0000000500000013000000280000001b00000009000000010000000100000028000000
         paramName:
+        - _soundAtom
+        - _playOnMusicTrack
+        - _volume
+        - EntitySound
         - _soundAtom
         - _playOnMusicTrack
         - _volume
@@ -790,8 +802,8 @@ MonoBehaviour:
         - _rotateOffsetByFacingDirection
         - _rotateHorizontalOffsetByFacingDirection
         - _killSelfAtom
-        paramDataPos: 000000000000000001000000000000000000000000000000010000000100000005000000110000001200000002000000
-        paramByteDataSize: 00000000010000000400000000000000000000000000000000000000000000000c000000010000000100000000000000
+        paramDataPos: 0000000000000000010000000500000001000000090000000a00000000000000000000000000000002000000010000000e0000001a0000001b00000003000000
+        paramByteDataSize: 0000000001000000040000000400000000000000010000000400000000000000000000000000000000000000000000000c000000010000000100000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
