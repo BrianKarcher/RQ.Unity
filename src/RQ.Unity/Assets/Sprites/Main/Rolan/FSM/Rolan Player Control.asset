@@ -58,6 +58,7 @@ MonoBehaviour:
       actionData:
         actionNames:
         - Rewired.Integration.PlayMaker.RewiredPlayerGetButtonDown
+        - Rewired.Integration.PlayMaker.RewiredPlayerGetButtonDown
         - Assets.Source.AI.PM_State_Machine.ButtonPressed
         - Assets.Source.AI.PM_State_Machine.ButtonPressed
         - Assets.Source.AI.PM_State_Machine.SetFloatVariable2
@@ -74,10 +75,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0100010101010100
-        actionIsOpen: 0101010101010101
-        actionStartIndex: 00000000070000000b0000000f000000150000001c0000002100000022000000
-        actionHashCodes: b9d24e00f74b7803f74b7803a082bf001bcdca047e7e0e03866e76009c59e501
+        - 
+        actionEnabled: 010100000101010100
+        actionIsOpen: 010101010101010101
+        actionStartIndex: 00000000070000000e00000012000000160000001c00000023000000280000002b000000
+        actionHashCodes: b9d24e00b9d24e00f74b7803f74b7803a082bf001bcdca047e7e0e03866e76009c59e501
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -94,6 +96,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Attack
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Special
         - useVariable: 0
           name: 
           tooltip: 
@@ -136,7 +144,19 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: 
           tooltip: 
@@ -164,6 +184,9 @@ MonoBehaviour:
         - Primary Action
         - 
         - 
+        - Secondary Action
+        - 
+        - 
         - Primary Action
         - Secondary Action
         - 
@@ -172,18 +195,25 @@ MonoBehaviour:
         - Run
         - 
         - Idle
-        byteData: 0100000000010000000100000000020000000101000000000001
+        byteData: 0101000000000100000001000000000200000001010001000000000001
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0100000001000000030000000400000000000000
+        customTypeSizes: 0100000001000000030000000400000002000000
         customTypeNames:
         - RQ.AI.Action.ButtonPressedAtom
         - RQ.AI.Action.ButtonPressedAtom
         - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Entity.AtomAction.Action.PlayerMoveAtom
-        paramDataType: 1100000017000000170000001700000012000000100000000100000017000000110000002800000007000000170000001100000028000000070000000f00000001000000280000000200000007000000030000000f0000000f0000000f00000017000000170000001700000001000000280000000300000003000000010000000100000028000000070000001200000001000000
+        paramDataType: 110000001700000017000000170000001200000010000000010000001100000017000000170000001700000012000000100000000100000017000000110000002800000007000000170000001100000028000000070000000f00000001000000280000000200000007000000030000000f0000000f0000000f000000170000001700000017000000010000002800000003000000030000000100000001000000280000000100000001000000070000001200000001000000
         paramName:
+        - storeValue
+        - isTrueEvent
+        - isFalseEvent
+        - valueChangedEvent
+        - actionName
+        - playerId
+        - everyFrame
         - storeValue
         - isTrueEvent
         - isFalseEvent
@@ -218,11 +248,13 @@ MonoBehaviour:
         - WaitForAnimationCompletion
         - StopOnExit
         - _playerMoveAtom
+        - MoveOnEnter
+        - MoveOnExit
         - logLevel
         - text
         - sendToUnityLog
-        paramDataPos: 0000000000000000010000000200000000000000000000000000000003000000010000000000000001000000040000000200000001000000050000000000000009000000020000000a0000000e000000050000000100000002000000030000000600000007000000080000001200000003000000090000000a000000130000001400000004000000150000000100000019000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000000000000000000000000000040000000000000000000000000000000400000000000000010000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000100000000000000040000000000000001000000
+        paramDataPos: 00000000000000000100000002000000000000000000000000000000010000000300000004000000050000000100000001000000010000000600000002000000000000000200000007000000030000000100000006000000000000000a000000020000000b0000000f00000008000000010000000200000003000000090000000a0000000b00000013000000030000000c0000000d000000140000001500000004000000160000001700000018000000020000001c000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000000000000000000000400000000000000000000000000000004000000000000000100000000000000040000000400000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000100000001000000000000000100000001000000040000000000000001000000
     - name: Run
       description: 
       colorIndex: 0
@@ -262,6 +294,8 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - Rewired.Integration.PlayMaker.RewiredPlayerGetButtonDown
+        - Rewired.Integration.PlayMaker.RewiredPlayerGetButtonDown
         - Assets.Source.AI.PM_State_Machine.ButtonPressed
         - Assets.Source.AI.PM_State_Machine.ButtonPressed
         - Assets.Source.AI.PM_State_Machine.SetFloatVariable2
@@ -277,10 +311,12 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01010101010100
-        actionIsOpen: 01010101010101
-        actionStartIndex: 0000000004000000080000000e000000150000001a0000001b000000
-        actionHashCodes: f74b7803f74b7803a082bf001bcdca047e7e0e03866e76009c59e501
+        - 
+        - 
+        actionEnabled: 010100000101010100
+        actionIsOpen: 010101010101010101
+        actionStartIndex: 00000000070000000e00000012000000160000001c00000023000000280000002b000000
+        actionHashCodes: b9d24e00b9d24e00f74b7803f74b7803a082bf001bcdca047e7e0e03866e76009c59e501
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -291,6 +327,18 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Attack
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Special
         - useVariable: 0
           name: 
           tooltip: 
@@ -326,8 +374,32 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: 
           tooltip: 
@@ -347,6 +419,12 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - Primary Action
+        - 
+        - 
+        - Secondary Action
+        - 
+        - 
+        - Primary Action
         - Secondary Action
         - 
         - Idle
@@ -354,18 +432,32 @@ MonoBehaviour:
         - 
         - 
         - Run
-        byteData: 00000000010000000100000000020000000101000000000001
+        byteData: 0101000000000100000001000000000200000001010001000000000001
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0100000001000000030000000400000000000000
+        customTypeSizes: 0100000001000000030000000400000002000000
         customTypeNames:
         - RQ.AI.Action.ButtonPressedAtom
         - RQ.AI.Action.ButtonPressedAtom
         - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Entity.AtomAction.Action.PlayerMoveAtom
-        paramDataType: 17000000110000002800000007000000170000001100000028000000070000000f00000001000000280000000200000007000000030000000f0000000f0000000f00000017000000170000001700000001000000280000000300000003000000010000000100000028000000070000001200000001000000
+        paramDataType: 110000001700000017000000170000001200000010000000010000001100000017000000170000001700000012000000100000000100000017000000110000002800000007000000170000001100000028000000070000000f00000001000000280000000200000007000000030000000f0000000f0000000f000000170000001700000017000000010000002800000003000000030000000100000001000000280000000100000001000000070000001200000001000000
         paramName:
+        - storeValue
+        - isTrueEvent
+        - isFalseEvent
+        - valueChangedEvent
+        - actionName
+        - playerId
+        - everyFrame
+        - storeValue
+        - isTrueEvent
+        - isFalseEvent
+        - valueChangedEvent
+        - actionName
+        - playerId
+        - everyFrame
         - Pressed
         - storeResult
         - _buttonPressedAtom
@@ -393,11 +485,13 @@ MonoBehaviour:
         - WaitForAnimationCompletion
         - StopOnExit
         - _playerMoveAtom
+        - MoveOnEnter
+        - MoveOnExit
         - logLevel
         - text
         - sendToUnityLog
-        paramDataPos: 0000000000000000000000000000000001000000010000000100000004000000000000000800000002000000090000000d0000000200000001000000020000000300000003000000040000000500000011000000030000000600000007000000120000001300000004000000140000000000000018000000
-        paramByteDataSize: 000000000000000000000000040000000000000000000000000000000400000000000000010000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000100000000000000040000000000000001000000
+        paramDataPos: 00000000000000000100000002000000000000000000000000000000010000000300000004000000050000000100000001000000010000000600000002000000000000000200000007000000030000000100000006000000000000000a000000020000000b0000000f00000008000000010000000200000003000000090000000a0000000b00000013000000030000000c0000000d000000140000001500000004000000160000001700000018000000020000001c000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000000000000000000000400000000000000000000000000000004000000000000000100000000000000040000000400000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000100000001000000000000000100000001000000040000000000000001000000
     - name: Primary Action
       description: 
       colorIndex: 0
