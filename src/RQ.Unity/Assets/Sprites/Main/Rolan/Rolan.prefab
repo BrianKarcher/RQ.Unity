@@ -724,7 +724,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 488554}
-  - component: {fileID: 6151450}
+  - component: {fileID: 135066111966654898}
   - component: {fileID: 11480854}
   - component: {fileID: 11477298}
   - component: {fileID: 11428224}
@@ -2659,31 +2659,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180942}
   m_Mesh: {fileID: 0}
---- !u!61 &6151450
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146250}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.5}
-  m_EdgeRadius: 0
 --- !u!82 &8297446
 AudioSource:
   m_ObjectHideFlags: 1
@@ -3777,6 +3752,7 @@ MonoBehaviour:
   _dizzyParent: {fileID: 103068}
   _dizzyTransform: {fileID: 197736, guid: 7a348bd770c995e488124dc506a4904d, type: 2}
   _moveOnInput: 1
+  _setFacingDirectionOnInput: 1
 --- !u!114 &11431430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4350,11 +4326,11 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11454790}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   - _name: Victory Pose to Previous
-    CurrentState: {fileID: 11454790}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: acdac75c-ad8c-473c-96e5-46d91c40c7a7
@@ -4514,6 +4490,7 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
+  _avoidLayersMasks: []
   _follow: {fileID: 0}
   _targetingData:
     Waypoints: {fileID: 0}
@@ -5438,6 +5415,7 @@ MonoBehaviour:
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 10
     _maxTurnRate: 6
     _footOffset:
@@ -5458,6 +5436,7 @@ MonoBehaviour:
     _mass: 1
     _enabled: 1
     Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
     InitialVelocity: {x: 0, y: 0}
     Size:
@@ -5488,6 +5467,7 @@ MonoBehaviour:
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -8153,7 +8133,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: a4b2c603
+        actionHashCodes: 87453504
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -8177,6 +8157,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - 
         - VictoryPose
         byteData: 01
         arrayParamSizes: 
@@ -8184,13 +8165,14 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - RQ.AI.Atom.GameManager.PlaySequenceAtom
-        paramDataType: 280000000300000001000000
+        paramDataType: 17000000280000000300000001000000
         paramName:
+        - Complete
         - _atom
         - SequenceName
         - PlayDirectly
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000001000000
+        paramDataPos: 00000000000000000100000000000000
+        paramByteDataSize: 00000000000000000000000001000000
     - name: DamagedLiftIntoAir
       description: 
       colorIndex: 0
@@ -10244,6 +10226,18 @@ MonoBehaviour:
   _rqName2: f5ed903c-a2f1-4cf2-adb9-456c676c0f55
   _componentRepository: {fileID: 11418054}
   pm: {fileID: 114747485462126734}
+--- !u!135 &135066111966654898
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135898029429026182
 SphereCollider:
   m_ObjectHideFlags: 1
