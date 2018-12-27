@@ -683,10 +683,8 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: Of course! I forget my manners..I am Hunter. As in Hunter is my name
-          and I also hunt for a living. Pretty funny eh? I accidentally tripped over
-          one of my traps while cornering a mangy rabbit and now I am here, hanging
-          out.
-        type: 4
+          and I also hunt for a living. Pretty funny eh?
+        type: 0
         typeString: 
       - title: Parenthetical
         value: 
@@ -694,7 +692,7 @@ MonoBehaviour:
         typeString: 
       - title: Audio Files
         value: '[]'
-        type: 3
+        type: 0
         typeString: 
       - title: Video File
         value: 
@@ -723,7 +721,7 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 4
         destinationConversationID: 1
-        destinationDialogueID: 5
+        destinationDialogueID: 11
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1175,7 +1173,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: Bah! Kids these days don't take time to learn the basics. Listen closely
           laddie..
-        type: 4
+        type: 0
         typeString: 
       - title: Parenthetical
         value: 
@@ -1183,7 +1181,7 @@ MonoBehaviour:
         typeString: 
       - title: Audio Files
         value: '[]'
-        type: 3
+        type: 0
         typeString: 
       - title: Video File
         value: 
@@ -1212,7 +1210,7 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 10
         destinationConversationID: 1
-        destinationDialogueID: 11
+        destinationDialogueID: 12
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1231,7 +1229,7 @@ MonoBehaviour:
     - id: 11
       fields:
       - title: Title
-        value: New Dialogue
+        value: I am Hunter
         type: 0
         typeString: 
       - title: Pictures
@@ -1255,9 +1253,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Hold the Attack button until you start glowing. Aye, that means you
-          are charging your hammer! When the glowing stops cut me down from here!
-        type: 4
+        value: I accidentally tripped over one of my traps while cornering a mangy
+          rabbit and now I am here, hanging out.
+        type: 0
         typeString: 
       - title: Parenthetical
         value: 
@@ -1265,7 +1263,89 @@ MonoBehaviour:
         typeString: 
       - title: Audio Files
         value: '[]'
+        type: 0
+        typeString: 
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Lipsync Files
+        value: '[]'
         type: 3
+        typeString: 
+      - title: Animation Files
+        value: '[]'
+        type: 3
+        typeString: 
+      - title: Mood
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: White
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 4
+        destinationConversationID: 1
+        destinationDialogueID: 5
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+      canvasRect:
+        serializedVersion: 2
+        x: 20
+        y: 10
+        width: 160
+        height: 30
+    - id: 12
+      fields:
+      - title: Title
+        value: Listen closely laddie..
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Hold the Attack button until you start glowing. Aye, that means your
+          hammer is charged! Then cut me down from here!
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
         typeString: 
       - title: Video File
         value: 
@@ -1300,8 +1380,8 @@ MonoBehaviour:
           PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 20
+        y: 10
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}

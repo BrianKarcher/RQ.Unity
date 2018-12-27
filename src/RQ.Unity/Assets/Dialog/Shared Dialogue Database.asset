@@ -33,7 +33,7 @@ MonoBehaviour:
     italic: 0
     underline: 0
   actors:
-  - id: 25
+  - id: 26
     fields:
     - title: Name
       value: Player
@@ -53,7 +53,7 @@ MonoBehaviour:
       typeString: 
     portrait: {fileID: 0}
     alternatePortraits: []
-  - id: 26
+  - id: 27
     fields:
     - title: Name
       value: NPC
@@ -113,6 +113,23 @@ MonoBehaviour:
       value: 26
       type: 5
       typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      responseTimeout: 0
     nodeColor: 
     dialogueEntries:
     - id: 0
@@ -177,6 +194,11 @@ MonoBehaviour:
         priority: 2
       conditionsString: 
       userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -239,12 +261,19 @@ MonoBehaviour:
       outgoingLinks: []
       conditionsString: 
       userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
         x: 30
         y: 70
         width: 160
         height: 30
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 1
   syncInfo:
     syncActors: 0
     syncItems: 0

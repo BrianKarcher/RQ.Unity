@@ -3969,6 +3969,93 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!1 &135373523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1718054686630188, guid: ff3b15b48fd2a7e4dbd2066b11ae951e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 135373524}
+  - component: {fileID: 135373525}
+  m_Layer: 0
+  m_Name: Window
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &135373524
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4603487575977194, guid: ff3b15b48fd2a7e4dbd2066b11ae951e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 135373523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 254567562}
+  m_Father: {fileID: 970213400}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &135373525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114357693451143012, guid: ff3b15b48fd2a7e4dbd2066b11ae951e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 135373523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 86
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: -86
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 1
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 139
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 1007
+  mHeight: 253
+  mDepth: 1
+  mMat: {fileID: 0}
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 3.9802372
+  mType: 1
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
+  mFlip: 0
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
+  mAtlas: {fileID: 11420510, guid: 38c18ec67d42f0b49b0a05b18938ac9d, type: 2}
+  mSpriteName: dialog-box_blue
+  mFillCenter: 1
 --- !u!1 &137167657
 GameObject:
   m_ObjectHideFlags: 0
@@ -7725,13 +7812,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 254567561}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 398, y: -96, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 401.00003, y: -89.00003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 811029668}
-  m_Father: {fileID: 970213400}
-  m_RootOrder: 1
+  m_Father: {fileID: 135373524}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &254567563
 MonoBehaviour:
@@ -7808,20 +7895,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnchor:
-    target: {fileID: 970213400}
-    relative: 1
+    target: {fileID: 0}
+    relative: 0
     absolute: -196
   rightAnchor:
-    target: {fileID: 970213400}
+    target: {fileID: 0}
     relative: 1
     absolute: -16
   bottomAnchor:
-    target: {fileID: 970213400}
+    target: {fileID: 0}
     relative: 0
     absolute: 12
   topAnchor:
-    target: {fileID: 970213400}
-    relative: 0
+    target: {fileID: 0}
+    relative: 1
     absolute: 48
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
@@ -23825,7 +23912,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 970213400}
-  - component: {fileID: 970213401}
   m_Layer: 0
   m_Name: Conversation Text Window Sprite
   m_TagString: Untagged
@@ -23845,65 +23931,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1526887836}
-  - {fileID: 254567562}
+  - {fileID: 1575513903}
+  - {fileID: 135373524}
   m_Father: {fileID: 1598608131}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &970213401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114312464129844766, guid: ff3b15b48fd2a7e4dbd2066b11ae951e,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 970213399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 86
-  rightAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: -86
-  bottomAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 1
-  topAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 139
-  updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
-  mPivot: 4
-  mWidth: 1007
-  mHeight: 253
-  mDepth: 1
-  mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
-  hideIfOffScreen: 0
-  keepAspectRatio: 0
-  aspectRatio: 3.9802372
-  mType: 1
-  mFillDirection: 4
-  mFillAmount: 1
-  mInvert: 0
-  mFlip: 0
-  mApplyGradient: 0
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
-  centerType: 1
-  leftType: 1
-  rightType: 1
-  bottomType: 1
-  topType: 1
-  mAtlas: {fileID: 11420510, guid: 38c18ec67d42f0b49b0a05b18938ac9d, type: 2}
-  mSpriteName: dialog-box_blue
-  mFillCenter: 1
 --- !u!1 &970280889
 GameObject:
   m_ObjectHideFlags: 0
@@ -38071,6 +38103,92 @@ Transform:
   m_Father: {fileID: 77443821}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1575513902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1972347477595848, guid: ff3b15b48fd2a7e4dbd2066b11ae951e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1575513903}
+  - component: {fileID: 1575513904}
+  m_Layer: 0
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1575513903
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4628264384908640, guid: ff3b15b48fd2a7e4dbd2066b11ae951e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1575513902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 970213400}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1575513904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114899117478686116, guid: ff3b15b48fd2a7e4dbd2066b11ae951e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1575513902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 86
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: -86
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 1
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 139
+  updateAnchors: 1
+  mColor: {r: 0.38235295, g: 0.38235295, b: 0.38235295, a: 1}
+  mPivot: 4
+  mWidth: 1006
+  mHeight: 252
+  mDepth: 0
+  mMat: {fileID: 0}
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 3.9920635
+  mType: 1
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
+  mFlip: 0
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
+  mAtlas: {fileID: 11420510, guid: 38c18ec67d42f0b49b0a05b18938ac9d, type: 2}
+  mSpriteName: Flat
+  mFillCenter: 1
 --- !u!1 &1577300888
 GameObject:
   m_ObjectHideFlags: 0
@@ -46266,7 +46384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1889530136
 Transform:
   m_ObjectHideFlags: 0
@@ -46343,7 +46461,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3000
+  startingRenderQueue: 3001
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -49909,7 +50027,7 @@ MonoBehaviour:
   _rqName: New Game Button RQ.Common.UI.OnClickLoadScene
   _rqName2: 9c18e1dd-3688-418a-8507-0d60a0d9f825
   _button: StartNew
-  _scene: {fileID: 11400000, guid: 73675eacb321d62419b27e94ff9c49a2, type: 2}
+  _scene: {fileID: 11400000, guid: a24affb388c8d0d46806e936ac88b157, type: 2}
 --- !u!1 &2066896013
 GameObject:
   m_ObjectHideFlags: 0
