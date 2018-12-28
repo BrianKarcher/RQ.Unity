@@ -102,12 +102,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.OnTrigger
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 18dc3600
+        - 
+        actionEnabled: 0001
+        actionIsOpen: 0101
+        actionStartIndex: 0000000007000000
+        actionHashCodes: 18dc36002334d000
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -146,13 +148,17 @@ MonoBehaviour:
         - FINISHED
         - 
         - 
-        byteData: 00000000
+        - FINISHED
+        - ChargeSlash
+        - 
+        byteData: 0000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 02000000
+        customTypeSizes: 0200000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.OnTriggerAtom
-        paramDataType: 07000000130000001200000017000000280000000300000003000000
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 070000001300000012000000170000002800000003000000030000001700000001000000280000000300000003000000
         paramName:
         - trigger
         - _storeCollider
@@ -161,8 +167,13 @@ MonoBehaviour:
         - _atom
         - triggerType
         - collideTag
-        paramDataPos: 00000000000000000000000000000000000000000100000002000000
-        paramByteDataSize: 04000000000000000000000000000000000000000000000000000000
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        paramDataPos: 000000000000000000000000000000000000000001000000020000000300000004000000010000000400000005000000
+        paramByteDataSize: 040000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
     - name: Conversation 1
       description: 
       colorIndex: 0
@@ -179,12 +190,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - RQ.AI.PlayMaker.UI.StartConversation
+        - RQ.AI.PlayMaker.PlaySequence
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 6a030c03
+        - 
+        actionEnabled: 0001
+        actionIsOpen: 0101
+        actionStartIndex: 0000000002000000
+        actionHashCodes: 6a030c0387453504
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -209,18 +222,25 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        byteData: 
+        - 
+        - SavedSequence
+        byteData: 00
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 01000000
+        customTypeSizes: 0100000002000000
         customTypeNames:
         - RQ.AI.Atom.UI.StartConversationAtom
-        paramDataType: 2800000003000000
+        - RQ.AI.Atom.GameManager.PlaySequenceAtom
+        paramDataType: 280000000300000017000000280000000300000001000000
         paramName:
         - _atom
         - ComponentName
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000000000000
+        - Complete
+        - _atom
+        - SequenceName
+        - PlayDirectly
+        paramDataPos: 000000000000000001000000010000000200000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
