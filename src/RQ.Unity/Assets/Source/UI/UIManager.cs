@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using WellFired;
 using RQ.Model.Enums;
+using RQ.Controller.Sequencer;
 //using RQ.Common.UI;
 //using RQ.FSM.Game;
 
@@ -77,7 +78,7 @@ namespace RQ2.UI
         private RQ.UI.ConversationLink _conversationLink = null;
 
         //public USSequencer StartSequenceOnConversationEnd { get; set; }
-        public USSequencer CurrentSequence { get; set; }
+        public SequencerLink CurrentSequence { get; set; }
 
         public SaveSlotData ClickedSaveSlotData { get; set; }
         /// <summary>
