@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4342012464249510}
   - component: {fileID: 114084742092540386}
-  - component: {fileID: 114273526136306686}
+  - component: {fileID: 114657952473371656}
   m_Layer: 13
   m_Name: SavedConversation
   m_TagString: NPC
@@ -158,7 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4786390985874160}
   - component: {fileID: 114297584819477182}
-  - component: {fileID: 114568313894680112}
+  - component: {fileID: 114297383444096482}
   m_Layer: 0
   m_Name: PlayActionsEvent
   m_TagString: Untagged
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1752918253640312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 567319595, guid: b5a7519e94754fb4a8ea0c272031db78, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e2c2a6631002944d9b39d43412301e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   once: 1
@@ -599,7 +599,7 @@ MonoBehaviour:
   exclusive: 0
   conversant: {fileID: 4449049998113122}
   useConversationTitlePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 7cb9a7b0591066e4dabb5988f9383b42, type: 2}
+  selectedDatabase: {fileID: 0}
   actor: {fileID: 0}
   trigger: 8
   stopConversationOnTriggerExit: 0
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1073692718115702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 567319595, guid: b5a7519e94754fb4a8ea0c272031db78, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e2c2a6631002944d9b39d43412301e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   once: 0
@@ -759,10 +759,10 @@ MonoBehaviour:
     lastEvaluationValue: 0
   skipIfNoValidEntries: 0
   exclusive: 0
-  conversant: {fileID: 0}
+  conversant: {fileID: 4449049998113122}
   useConversationTitlePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 7cb9a7b0591066e4dabb5988f9383b42, type: 2}
-  actor: {fileID: 4449049998113122}
+  selectedDatabase: {fileID: 11400000, guid: 38c7b35a41c122245923530f43ffe4de, type: 2}
+  actor: {fileID: 0}
   trigger: 32
   stopConversationOnTriggerExit: 0
 --- !u!114 &114113900693155450
@@ -813,12 +813,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1252737972029832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1810267305, guid: b5a7519e94754fb4a8ea0c272031db78, type: 3}
+  m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideName: Hunter
-  internalName: 
-  useLocalizedNameInDatabase: 0
+  actor: Hunter
+  persistentDataName: 
+  portrait: {fileID: 0}
+  barkUISettings:
+    barkUI: {fileID: 0}
+    barkUIOffset: {x: 0, y: 2, z: 0}
+  standardDialogueUISettings:
+    subtitlePanelNumber: 0
+    customSubtitlePanel: {fileID: 0}
+    menuPanelNumber: 0
+    customMenuPanel: {fileID: 0}
+    portraitAnimatorController: {fileID: 0}
+    setSubtitleColor: 0
+    applyColorToPrependedName: 0
+    prependActorNameSeparator: ': '
+    subtitleColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &114180382309370602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -881,22 +894,24 @@ MonoBehaviour:
   affectedObject: {fileID: 0}
   affectedObjectPath: 
   index: -1
---- !u!114 &114273526136306686
+--- !u!114 &114297383444096482
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1073692718115702}
+  m_GameObject: {fileID: 1642259189759098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -228577805, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Script: {fileID: 11500000, guid: c3ee07f5e718e504cbbcd0fdf5efd2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: fb95149d-9bab-48be-be58-fceb3f5c4009
-  componentName: SavedConversation
-  _rqName: SavedConversation RQ.Physics.Components.ConversationTriggerComponent
-  _rqName2: 0ab2610f-d10e-4cbc-9783-0adbd8508495
-  _componentRepository: {fileID: 114923192451001284}
+  _uniqueId: 3ae79066-886e-44e5-be20-a81eab5a571f
+  componentName: 
+  _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
+  _rqName2: 3e92d58c-379b-4b2a-8f02-aae4e3741f62
+  _trigger: {fileID: 0}
+  _atom:
+    ComponentName: SavedConversation
 --- !u!114 &114297584819477182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1052,24 +1067,6 @@ MonoBehaviour:
   layersToIgnore:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &114568313894680112
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1642259189759098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -840757662, guid: a8ccd5a3f4d739a41ab5cd9fa724a43a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 77370378-3b9f-4272-be7b-fae1ebfcf70d
-  componentName: 
-  _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
-  _rqName2: bbc6d82b-499d-438a-8e66-f67ae85e1548
-  _trigger: {fileID: 0}
-  _atom:
-    ComponentName: SavedConversation
 --- !u!114 &114588238803857206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1191,6 +1188,22 @@ MonoBehaviour:
     _steeringForce:
       x: 0
       y: 0
+--- !u!114 &114657952473371656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073692718115702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6c0097ba3f3f146b917418874fee2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 3b7162e4-2e03-4e0f-8e35-808ecd313be2
+  componentName: SavedConversation
+  _rqName: SavedConversation RQ.Physics.Components.ConversationTriggerComponent
+  _rqName2: b6157be5-88f3-4424-acfa-60b51bac00aa
+  _componentRepository: {fileID: 114923192451001284}
 --- !u!114 &114711041665550540
 MonoBehaviour:
   m_ObjectHideFlags: 1

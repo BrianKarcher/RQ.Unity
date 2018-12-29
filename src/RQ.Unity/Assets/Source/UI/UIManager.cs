@@ -1,5 +1,5 @@
 ﻿using PixelCrushers.DialogueSystem;
-using PixelCrushers.DialogueSystem.NGUI;
+//using PixelCrushers.DialogueSystem.NGUI;
 using RQ;
 using RQ.Common.Container;
 using RQ.Common.Controllers;
@@ -22,6 +22,7 @@ using UnityEngine;
 using WellFired;
 using RQ.Model.Enums;
 using RQ.Controller.Sequencer;
+using PixelCrushers.DialogueSystem.NGUISupport;
 //using RQ.Common.UI;
 //using RQ.FSM.Game;
 

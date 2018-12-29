@@ -1,0 +1,71 @@
+using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace PixelCrushers.DialogueSystem.NGUISupport
+{
+
+    /// <summary>
+    /// Contains all dialogue (conversation) controls for an NGUI Dialogue UI.
+    /// </summary>
+    [System.Serializable]
+    public class NGUIDialogueControls : AbstractDialogueUIControls
+    {
+
+        /// <summary>
+        /// The panel containing the dialogue controls. A panel is optional, but you may want one
+        /// so you can include a background image, panel-wide effects, etc.
+        /// </summary>
+        public global::UIPanel panel;
+
+        /// <summary>
+        /// The NPC subtitle controls.
+        /// </summary>
+        public NGUISubtitleControls npcSubtitle;
+
+        /// <summary>
+        /// The PC subtitle controls.
+        /// </summary>
+        public NGUISubtitleControls pcSubtitle;
+
+        /// <summary>
+        /// The response menu controls.
+        /// </summary>
+        public NGUIResponseMenuControls responseMenu;
+
+        public override AbstractUISubtitleControls npcSubtitleControls
+        {
+            get { return npcSubtitle; }
+        }
+
+        public override AbstractUISubtitleControls pcSubtitleControls
+        {
+            get { return pcSubtitle; }
+        }
+
+        public override AbstractUIResponseMenuControls responseMenuControls
+        {
+            get { return responseMenu; }
+        }
+
+        public override void ShowPanel()
+        {
+            if (panel != null) NGUIDialogueUIControls.SetControlActive(panel.gameObject, true);
+        }
+
+        public override void SetActive(bool value)
+        {
+            base.SetActive(value);
+            if (panel != null) NGUIDialogueUIControls.SetControlActive(panel.gameObject, value);
+            if (value == false)
+            {
+                if (npcSubtitle != null) npcSubtitle.Hide();
+                if (pcSubtitle != null) pcSubtitle.Hide();
+                if (responseMenu != null) responseMenu.Hide();
+            }
+        }
+
+    }
+
+}

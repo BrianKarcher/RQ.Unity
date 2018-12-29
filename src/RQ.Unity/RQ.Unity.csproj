@@ -13,12 +13,14 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectGenerator>VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.1.1p1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -145,12 +147,6 @@
     </Reference>
     <Reference Include="Pathfinding.Poly2Tri">
       <HintPath>Assets/Third Party/AstarPathfindingProject/Plugins/Poly2Tri/Pathfinding.Poly2Tri.dll</HintPath>
-    </Reference>
-    <Reference Include="DialogueSystem">
-      <HintPath>Assets/Third Party/Dialogue System/DLLs/DialogueSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="LuaInterpreter">
-      <HintPath>Assets/Third Party/Dialogue System/DLLs/LuaInterpreter.dll</HintPath>
     </Reference>
     <Reference Include="ConditionalExpression">
       <HintPath>Assets/Third Party/PlayMaker/ConditionalExpression.dll</HintPath>
@@ -696,6 +692,31 @@
     <Compile Include="Assets\HUD Text\Scripts\HUDText.cs" />
     <Compile Include="Assets\HUD Text\Scripts\UIFollowTarget.cs" />
     <Compile Include="Assets\iTween\iTween.cs" />
+    <Compile Include="Assets\Pixel Crushers\Common\Third Party Support\Rewired Support\InputDeviceManagerRewired.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\Miscellaneous\NGUIButtonKeyTrigger.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\Miscellaneous\NGUIContinueButtonFastForward.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\Miscellaneous\NGUISelectorDisplay.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Bark UI\NGUIBarkUI.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Bark UI\NGUIFollowTarget.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Bark UI\UIBarkRoot.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIAlertControls.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIDialogueControls.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIDialogueUIControls.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIQTEControls.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIResponseButton.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIResponseMenuControls.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUISubtitleControls.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUITimer.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIUIRoot.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUIDialogueBarkUI.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUIDialogueUI.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Dialogue UI\NGUITextFieldUI.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Quest Log Window\NGUIQuestGroupTemplate.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Quest Log Window\NGUIQuestLogWindow.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Quest Log Window\NGUIQuestTemplate.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Quest Log Window\NGUIQuestTitle.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Quest Log Window\NGUIQuestTracker.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\NGUI Quest Log Window\NGUIQuestTrackTemplate.cs" />
     <Compile Include="Assets\Rewired\Examples\ControlRemapping1\Scripts\ControlRemappingDemo1.cs" />
     <Compile Include="Assets\Rewired\Examples\CustomControllersTilt\Scripts\CustomControllersTiltDemo.cs" />
     <Compile Include="Assets\Rewired\Examples\CustomControllersTouch\Scripts\CustomControllerDemo.cs" />
@@ -764,6 +785,7 @@
     <Compile Include="Assets\Rewired\Internal\Scripts\Misc\ExternalTools.cs" />
     <Compile Include="Assets\Rewired\Internal\Scripts\Platforms\Ouya\OuyaInputSource.cs" />
     <Compile Include="Assets\Source\Actions\Item\PopulateInventoryGrid.cs" />
+    <Compile Include="Assets\Source\Actions\StartConversation.cs" />
     <Compile Include="Assets\Source\AI\BehaviorDesigner\Actions\Idle.cs" />
     <Compile Include="Assets\Source\AI\BehaviorDesigner\Actions\Physics\Stop.cs" />
     <Compile Include="Assets\Source\AI\BehaviorDesigner\Actions\PlayAnimation.cs" />
@@ -787,19 +809,23 @@
     <Compile Include="Assets\Source\Animation\AnimatedTilesetConfig.cs" />
     <Compile Include="Assets\Source\Animation\SpriteAnimationsConfig.cs" />
     <Compile Include="Assets\Source\Animation\SpriteAnimator.cs" />
+    <Compile Include="Assets\Source\AtomActions\Dialog\StartConversationAtom.cs" />
     <Compile Include="Assets\Source\AtomActions\InputCommand\InputCommandGridAtom.cs" />
     <Compile Include="Assets\Source\AtomActions\SetTileAtom.cs" />
     <Compile Include="Assets\Source\AtomActions\SkillMenuAtom.cs" />
     <Compile Include="Assets\Source\CollisionCheck.cs" />
+    <Compile Include="Assets\Source\Components\ConversationLink.cs" />
     <Compile Include="Assets\Source\Components\HidingComponent.cs" />
     <Compile Include="Assets\Source\Components\InputCommandDisplay.cs" />
     <Compile Include="Assets\Source\Components\InputCommandEntry.cs" />
+    <Compile Include="Assets\Source\Components\SetDialogDatabase.cs" />
     <Compile Include="Assets\Source\Extensions\tk2dTileMapImporter.cs" />
     <Compile Include="Assets\Source\Extensions\tk2dTileMapUtility.cs" />
     <Compile Include="Assets\Source\Extensions\tk2dUtilities.cs" />
     <Compile Include="Assets\Source\Playmaker\InputCommandGrid.cs" />
     <Compile Include="Assets\Source\Playmaker\SetTile.cs" />
     <Compile Include="Assets\Source\Playmaker\SkillMenu.cs" />
+    <Compile Include="Assets\Source\Playmaker\StartConversation.cs" />
     <Compile Include="Assets\Source\SequencerEvents\InitLightning.cs" />
     <Compile Include="Assets\Source\SequencerEvents\PlayActionsEvent.cs" />
     <Compile Include="Assets\Source\SequencerEvents\PlayAnimation.cs" />
@@ -814,6 +840,7 @@
     <Compile Include="Assets\Source\States\SkillMenuState.cs" />
     <Compile Include="Assets\Source\Tilemap\GenerateColliderMesh.cs" />
     <Compile Include="Assets\Source\UI\CanvasScalerEnforcer.cs" />
+    <Compile Include="Assets\Source\UI\Dialog\ConversationTriggerComponent.cs" />
     <Compile Include="Assets\Source\UI\DisplayDebugInfo.cs" />
     <Compile Include="Assets\Source\UI\Grid\GridBase.cs" />
     <Compile Include="Assets\Source\UI\Grid\GridItem.cs" />
@@ -981,122 +1008,6 @@
     <Compile Include="Assets\Third Party\AstarPathfindingProject\Utilities\PathUtilities.cs" />
     <Compile Include="Assets\Third Party\AstarPathfindingProject\Utilities\ProfileHelper.cs" />
     <Compile Include="Assets\Third Party\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Chat Mapper\ChatMapperTools.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Sequencer Commands\SequencerCommandAudioWaitOnce.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Sequencer Commands\SequencerCommandLoadLevel.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Sequencer Commands\SequencerCommandSetTimeout.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Bark\BarkBehaviour.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Bark\BarkClip.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Bark\BarkMixerBehaviour.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Bark\BarkTrack.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Conversation\ConversationMixerBehaviour.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Conversation\ConversationTrack.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Conversation\StartConversationBehaviour.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Conversation\StartConversationClip.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\QuestState\QuestStateMixerBehaviour.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\QuestState\QuestStateTrack.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\QuestState\SetQuestStateBehaviour.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\QuestState\SetQuestStateClip.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\ShowAlert\AlertMixerBehaviour.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\ShowAlert\AlertTrack.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\ShowAlert\ShowAlertBehaviour.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\ShowAlert\ShowAlertClip.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Utility\PreviewUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Sequencer Commands\SequencerCommandTimeline.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Triggers\TimelineTrigger.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Bark UI\UnityUIBarkUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\Animated Portraits\AnimatedPortrait.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\Animated Portraits\UseAnimatedPortraits.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\OverrideUnityUIDialogueControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUIAlertControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUIBarkSubtitleDialogueUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUIDialogueControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUIDialogueUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUIQTEControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUIResponseButton.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUIResponseMenuControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUIRoot.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUISubtitleControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUITextFieldUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Dialogue UI\UnityUITimer.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Effects\LocalizeUIText.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Effects\UnityUIColorText.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Effects\UnityUIContinueButtonFastForward.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Effects\UnityUIIgnorePauseCodes.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Effects\UnityUIScrollbarEnabler.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Effects\UnityUITypewriterEffect.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Effects\UpdateLocalizedUITexts.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Quest Log Window\UnityUIQuestGroupTemplate.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Quest Log Window\UnityUIQuestLogWindow.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Quest Log Window\UnityUIQuestTemplate.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Quest Log Window\UnityUIQuestTemplateAlternateDescriptions.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Quest Log Window\UnityUIQuestTitle.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Quest Log Window\UnityUIQuestTracker.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Quest Log Window\UnityUIQuestTrackTemplate.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Selector\UnityUISelectorDisplay.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Selector\UnityUISelectorElements.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Selector\UsableUnityUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Tools\PreloadActorPortraits.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Tools\UIButtonKeyTrigger.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Tools\UIShowHideController.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\Tools\UITools.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\AlwaysFaceCamera.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\ConversationLogger.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\DialogueSystemEvents.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\DieOnTakeDamage.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\ExtraDatabases.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\From Unity3D Community\SmoothCameraWithBumper.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\IncrementOnDestroy.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\LocalizeTextMesh.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\LuaNetworkCommands.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\NavigateOnMouseClick.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\PauseGameOnConversation.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\PersistentDestructible.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\ProximitySelector.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\QuestLogWindowHotkey.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\QuestStateDispatcher.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\QuestStateIndicator.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\QuestStateListener.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\QuestTracker.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\RangeTrigger.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\SelectionDelegates.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\Selector.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\SelectorFollowTarget.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\SimpleController.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\Usable.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Templates\Aurora\TemplateNWScript.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Templates\PersistentDataTemplate.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Templates\SequencerCommandTemplate.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Templates\TemplateBarkUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Templates\TemplateCustomLua.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Templates\TemplateDialogueUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Templates\TemplateQuestLogWindow.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Templates\TemplateTextFieldUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Example\Dual Subtitle Example\DualSubtitleNGUIDialogueUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\Miscellaneous\NGUIButtonKeyTrigger.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\Miscellaneous\NGUIContinueButtonFastForward.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\Miscellaneous\NGUISelectorDisplay.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Bark UI\NGUIBarkUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Bark UI\NGUIFollowTarget.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Bark UI\UIBarkRoot.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIAlertControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIDialogueControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIDialogueUIControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIQTEControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIResponseButton.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIResponseMenuControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUISubtitleControls.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUITimer.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUI Dialogue Controls\NGUIUIRoot.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUIDialogueBarkUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUIDialogueUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Dialogue UI\NGUITextFieldUI.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Quest Log Window\NGUIQuestGroupTemplate.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Quest Log Window\NGUIQuestLogWindow.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Quest Log Window\NGUIQuestTemplate.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Quest Log Window\NGUIQuestTitle.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Quest Log Window\NGUIQuestTracker.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\NGUI Quest Log Window\NGUIQuestTrackTemplate.cs" />
     <Compile Include="Assets\Third Party\NGUI\Scripts\Interaction\EnvelopContent.cs" />
     <Compile Include="Assets\Third Party\NGUI\Scripts\Interaction\LanguageSelection.cs" />
     <Compile Include="Assets\Third Party\NGUI\Scripts\Interaction\TypewriterEffect.cs" />
@@ -2300,13 +2211,13 @@
     <None Include="Assets\Areas\South\Forest Town\Burned\Scene 6\Section 6 Burned.xml" />
     <None Include="Assets\Areas\South\Forest Town\Burning\Scene 2\Section 2_Burning.xml" />
     <None Include="Assets\Areas\South\Forest Town\Burning\Scene 4\Section 4_Burning.xml" />
-    <None Include="Assets\Areas\South\Forest Town\Day\Lamms House Basement\Section 2_Lamm&apos;s House_Basement Floor.xml" />
-    <None Include="Assets\Areas\South\Forest Town\Day\Lamms House\Section 2_Lamm&apos;s House.xml" />
-    <None Include="Assets\Areas\South\Forest Town\Day\Rogers House Floor 2\Section 4_Roger&apos;sHouse_2ndFlr.xml" />
-    <None Include="Assets\Areas\South\Forest Town\Day\Rogers House\Section 4_Roger&apos;sHouse_1stFlr.xml" />
-    <None Include="Assets\Areas\South\Forest Town\Day\Rolans House F1\Section 3_Rolan&apos;s House_1stFlr.xml" />
-    <None Include="Assets\Areas\South\Forest Town\Day\Rolans House F2\Section 3_Rolan&apos;s House_2ndFlr.xml" />
-    <None Include="Assets\Areas\South\Forest Town\Day\Sarahs House\Section 4_Sara&apos;sHouse.xml" />
+    <None Include="Assets\Areas\South\Forest Town\Day\Lamms House Basement\Section 2_Lamm's House_Basement Floor.xml" />
+    <None Include="Assets\Areas\South\Forest Town\Day\Lamms House\Section 2_Lamm's House.xml" />
+    <None Include="Assets\Areas\South\Forest Town\Day\Rogers House Floor 2\Section 4_Roger'sHouse_2ndFlr.xml" />
+    <None Include="Assets\Areas\South\Forest Town\Day\Rogers House\Section 4_Roger'sHouse_1stFlr.xml" />
+    <None Include="Assets\Areas\South\Forest Town\Day\Rolans House F1\Section 3_Rolan's House_1stFlr.xml" />
+    <None Include="Assets\Areas\South\Forest Town\Day\Rolans House F2\Section 3_Rolan's House_2ndFlr.xml" />
+    <None Include="Assets\Areas\South\Forest Town\Day\Sarahs House\Section 4_Sara'sHouse.xml" />
     <None Include="Assets\Areas\South\Forest Town\Day\Scene 1\Section 1.xml" />
     <None Include="Assets\Areas\South\Forest Town\Day\Scene 2 Underground\Section 2_Secret Underground.xml" />
     <None Include="Assets\Areas\South\Forest Town\Day\Scene 2\Section 2.xml" />
@@ -2330,7 +2241,7 @@
     <None Include="Assets\Art\Environment\Forest\Sprites\Doors\Chief Door.txt" />
     <None Include="Assets\Art\Environment\Forest\Sprites\Doors\Door1_3.txt" />
     <None Include="Assets\Art\Environment\Forest\Sprites\Doors\Door2_3.txt" />
-    <None Include="Assets\Art\Environment\Shared\Fire\Sprites\fire-reflection_chief&apos;s-house.txt" />
+    <None Include="Assets\Art\Environment\Shared\Fire\Sprites\fire-reflection_chief's-house.txt" />
     <None Include="Assets\Behavior Designer\Editor\GridShader.shader" />
     <None Include="Assets\HUD Text\Examples\Atlases\Arimo20.txt" />
     <None Include="Assets\HUD Text\Examples\Atlases\Large.txt" />
@@ -2352,6 +2263,38 @@
     <None Include="Assets\Materials\Shaders\Overlay.shader" />
     <None Include="Assets\Materials\Shaders\Sprites-Diffuse.shader" />
     <None Include="Assets\Materials\Shaders\ddInvert.shader" />
+    <None Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Common\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Demo\Art\Sounds\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Demo\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Art\Fonts\Orbitron\SIL Open Font License.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Art\Textures\UnityUI\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Camera Angle Studio\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Circle\Textures\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Computer\Bitwise Font\!license.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Necromancer\Necromancer GUI\Kingthings.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Necromancer\Necromancer GUI\Readme.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Necromancer\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Shared Audio\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Shared Textures\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Wheel\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Unity UI Prefabs\Mobile\_IMPORTANT_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Unity UI Prefabs\Speech Bubble\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Unity UI Prefabs\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI Subsystem\Legacy\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI Subsystem\Unity UI\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Link\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Link\link.xml" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Link\link_asmdef.xml" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Scripts\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Third Party Support\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Deprecated Wrappers\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Shaders\LinesColoredBlended.shader" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\_README.txt" />
     <None Include="Assets\Prototypes\Forest Town\Test_Level Design_Plant Bombthrower_Case 3.xml" />
     <None Include="Assets\Rewired\Documentation\ReadMe.txt" />
     <None Include="Assets\Rewired\Documentation\ReleaseNotes.txt" />
@@ -2447,34 +2390,6 @@
     <None Include="Assets\Third Party\AstarPathfindingProject\Readme.txt" />
     <None Include="Assets\Third Party\AstarPathfindingProject\Readme_upgrading.txt" />
     <None Include="Assets\Third Party\AstarPathfindingProject\link.xml" />
-    <None Include="Assets\Third Party\Dialogue System\DLLs\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Documentation\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Circle\Textures\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Computer\Bitwise Font\!license.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Computer\Typing.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Necromancer\Necromancer GUI\Kingthings.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Necromancer\Necromancer GUI\Readme.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Necromancer\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Shared Audio\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Shared Fonts\Orbitron\SIL Open Font License.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Shared Textures\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Wheel\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Unity UI Prefabs\Mobile\_IMPORTANT_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Unity UI Prefabs\Speech Bubble\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Unity UI Prefabs\Unity UI Assets\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Unity UI Prefabs\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\iOS\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\iOS\link.xml" />
-    <None Include="Assets\Third Party\Dialogue System\Scripts\Shaders\LinesColoredBlended.shader" />
-    <None Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Scripts\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Example\Dual Subtitle Example\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Third Party Support\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\_README.txt" />
     <None Include="Assets\Third Party\NGUI\ReadMe - 3.11.4.txt" />
     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />

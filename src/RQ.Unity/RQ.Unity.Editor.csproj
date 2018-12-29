@@ -194,15 +194,6 @@
     <Reference Include="Pathfinding.Poly2Tri">
       <HintPath>Assets/Third Party/AstarPathfindingProject/Plugins/Poly2Tri/Pathfinding.Poly2Tri.dll</HintPath>
     </Reference>
-    <Reference Include="DialogueSystem">
-      <HintPath>Assets/Third Party/Dialogue System/DLLs/DialogueSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="LuaInterpreter">
-      <HintPath>Assets/Third Party/Dialogue System/DLLs/LuaInterpreter.dll</HintPath>
-    </Reference>
-    <Reference Include="DialogueSystemEditors">
-      <HintPath>Assets/Third Party/Dialogue System/DLLs/Editor/DialogueSystemEditors.dll</HintPath>
-    </Reference>
     <Reference Include="ConditionalExpression">
       <HintPath>Assets/Third Party/PlayMaker/ConditionalExpression.dll</HintPath>
     </Reference>
@@ -243,9 +234,9 @@
       <Project>{0442F669-2344-AE4E-4195-1714235708CE}</Project>
       <Name>RQ.Unity</Name>
     </ProjectReference>
-    <ProjectReference Include="RQ.Unity.unityproj">
-      <Project>{0442F669-2344-AE4E-4195-1714235708CE}</Project>
-      <Name>RQ.Unity</Name>
+    <ProjectReference Include="RQ.Unity.Editor.Plugins.csproj">
+      <Project>{2CBD84C2-626C-E036-7FB1-A616A26F072A}</Project>
+      <Name>RQ.Unity.Editor.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -267,6 +258,7 @@
     <Compile Include="Assets\Editor\ImageEffects\TonemappingEditor.cs" />
     <Compile Include="Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
     <Compile Include="Assets\iTween\PlayMaker\Editor\iTweenMoveToActionEditor.cs" />
+    <Compile Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\Scripts\Editor\NGUIMenuItems.cs" />
     <Compile Include="Assets\Rewired\Extras\ControlMapper\Scripts\Editor\ControlMapperInspector.cs" />
     <Compile Include="Assets\Rewired\Extras\ControlMapper\Scripts\Editor\CustomButtonInspector.cs" />
     <Compile Include="Assets\Rewired\Extras\ControlMapper\Scripts\Editor\CustomSliderInspector.cs" />
@@ -317,22 +309,6 @@
     <Compile Include="Assets\Third Party\AstarPathfindingProject\Editor\RVOSimulatorEditor.cs" />
     <Compile Include="Assets\Third Party\AstarPathfindingProject\Editor\RVOSquareObstacleEditor.cs" />
     <Compile Include="Assets\Third Party\AstarPathfindingProject\Editor\SeekerEditor.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Editor\Converters\AbstractConverterWindow.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Editor\Converters\ConverterWindowTemplate.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Editor\Converters\CSVConverterWindow.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Editor\Custom Field Types\CustomFieldType_SceneType.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Editor\Custom Field Types\CustomFieldType_TemplateType.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Editor\Inspectors\DialogueSystemControllerEditor.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Editor\Wizards\DialogueManagerWizard.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Editor\Wizards\NPCSetupWizard.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Editor\Wizards\PlayerSetupWizard.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Editor\Wizards\WelcomeWindow.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Bark\Editor\BarkDrawer.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\Conversation\Editor\StartConversationBehaviourDrawer.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\QuestState\Editor\SetQuestStateBehaviourDrawer.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Timeline\Playables\ShowAlert\Editor\ShowAlertBehaviourDrawer.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\Editor\SupplementalMenuItems.cs" />
-    <Compile Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Scripts\Editor\NGUIMenuItems.cs" />
     <Compile Include="Assets\Third Party\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />
     <Compile Include="Assets\Third Party\NGUI\Scripts\Editor\BMFontReader.cs" />
     <Compile Include="Assets\Third Party\NGUI\Scripts\Editor\ComponentSelector.cs" />
@@ -702,6 +678,38 @@
     <None Include="Assets\Materials\Shaders\Overlay.shader" />
     <None Include="Assets\Materials\Shaders\Sprites-Diffuse.shader" />
     <None Include="Assets\Materials\Shaders\ddInvert.shader" />
+    <None Include="Assets\Pixel Crushers\Dialogue System\Third Party Support\NGUI Support\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Common\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Demo\Art\Sounds\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Demo\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Art\Fonts\Orbitron\SIL Open Font License.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Art\Textures\UnityUI\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Camera Angle Studio\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Circle\Textures\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Computer\Bitwise Font\!license.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Necromancer\Necromancer GUI\Kingthings.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Necromancer\Necromancer GUI\Readme.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Necromancer\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Shared Audio\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Shared Textures\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\Wheel\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Legacy Unity GUI Prefabs\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Unity UI Prefabs\Mobile\_IMPORTANT_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Unity UI Prefabs\Speech Bubble\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Deprecated\Unity UI Prefabs\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI Subsystem\Legacy\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI Subsystem\Unity UI\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Link\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Link\link.xml" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Link\link_asmdef.xml" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Scripts\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Third Party Support\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Deprecated Wrappers\_README.txt" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Shaders\LinesColoredBlended.shader" />
+    <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\_README.txt" />
     <None Include="Assets\Prototypes\Forest Town\Test_Level Design_Plant Bombthrower_Case 3.xml" />
     <None Include="Assets\Rewired\Documentation\ReadMe.txt" />
     <None Include="Assets\Rewired\Documentation\ReleaseNotes.txt" />
@@ -797,34 +805,6 @@
     <None Include="Assets\Third Party\AstarPathfindingProject\Readme.txt" />
     <None Include="Assets\Third Party\AstarPathfindingProject\Readme_upgrading.txt" />
     <None Include="Assets\Third Party\AstarPathfindingProject\link.xml" />
-    <None Include="Assets\Third Party\Dialogue System\DLLs\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Documentation\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Circle\Textures\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Computer\Bitwise Font\!license.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Computer\Typing.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Necromancer\Necromancer GUI\Kingthings.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Necromancer\Necromancer GUI\Readme.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Necromancer\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Shared Audio\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Shared Fonts\Orbitron\SIL Open Font License.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Shared Textures\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\Wheel\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Legacy Unity GUI Prefabs\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Unity UI Prefabs\Mobile\_IMPORTANT_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Unity UI Prefabs\Speech Bubble\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Unity UI Prefabs\Unity UI Assets\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\Unity UI Prefabs\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\iOS\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Prefabs\iOS\link.xml" />
-    <None Include="Assets\Third Party\Dialogue System\Scripts\Shaders\LinesColoredBlended.shader" />
-    <None Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\UI\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Scripts\Supplemental\Utility\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Scripts\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\Example\Dual Subtitle Example\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Third Party Support\NGUI\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\Third Party Support\_README.txt" />
-    <None Include="Assets\Third Party\Dialogue System\_README.txt" />
     <None Include="Assets\Third Party\NGUI\ReadMe - 3.11.4.txt" />
     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
