@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 428692}
   - component: {fileID: 135954350591093530}
   - component: {fileID: 11435674}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Foot Collider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3928,13 +3928,13 @@ MonoBehaviour:
     CurrentlyDeflecting: 0
     IsEnabled: 1
   _levelOneLayer:
-    _layerIndex: 13
+    _layerIndex: 15
   _levelTwoLayer:
-    _layerIndex: 14
+    _layerIndex: 15
   _levelThreeLayer:
     _layerIndex: 20
   _sharedLayer:
-    _layerIndex: 17
+    _layerIndex: 15
   _mainCollider: {fileID: 428692}
   _autoChangeLayers: 1
 --- !u!114 &11436130
@@ -5412,7 +5412,7 @@ MonoBehaviour:
     _externalVelocity:
       x: 0
       y: 0
-    OriginalZ: -0.1
+    OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
     ForceMultiplier: 1
@@ -5426,7 +5426,7 @@ MonoBehaviour:
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: 0
+    ZOffset: -0.5
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 0
@@ -5754,6 +5754,16 @@ MonoBehaviour:
     minPixelHeight: 0
   broadcastToChildren: 0
   actorTransform: {fileID: 0}
+  onSelectedUsable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PixelCrushers.DialogueSystem.UsableUnityEvent, Assembly-CSharp-firstpass,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onDeselectedUsable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PixelCrushers.DialogueSystem.UsableUnityEvent, Assembly-CSharp-firstpass,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &11481772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6196,9 +6206,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideName: Rolan
-  internalName: 
-  useLocalizedNameInDatabase: 0
+  actor: Rolan
+  persistentDataName: 
+  portrait: {fileID: 0}
+  barkUISettings:
+    barkUI: {fileID: 0}
+    barkUIOffset: {x: 0, y: 2, z: 0}
+  standardDialogueUISettings:
+    subtitlePanelNumber: 0
+    customSubtitlePanel: {fileID: 0}
+    menuPanelNumber: 0
+    customMenuPanel: {fileID: 0}
+    portraitAnimatorController: {fileID: 0}
+    setSubtitleColor: 0
+    applyColorToPrependedName: 0
+    prependActorNameSeparator: ': '
+    subtitleColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11499104
 MonoBehaviour:
   m_ObjectHideFlags: 1

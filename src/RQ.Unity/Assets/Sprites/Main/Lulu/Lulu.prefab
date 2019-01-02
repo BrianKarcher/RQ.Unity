@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 487546}
   - component: {fileID: 11414430}
   - component: {fileID: 135978611067376476}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Foot Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,6 +623,7 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
+  _avoidLayersMasks: []
   _follow: {fileID: 0}
   _targetingData:
     Waypoints: {fileID: 0}
@@ -677,13 +678,13 @@ MonoBehaviour:
     CurrentlyDeflecting: 0
     IsEnabled: 1
   _levelOneLayer:
-    _layerIndex: 13
+    _layerIndex: 15
   _levelTwoLayer:
-    _layerIndex: 14
+    _layerIndex: 15
   _levelThreeLayer:
     _layerIndex: 20
   _sharedLayer:
-    _layerIndex: 17
+    _layerIndex: 15
   _mainCollider: {fileID: 487546}
   _autoChangeLayers: 1
 --- !u!114 &11414800
@@ -769,8 +770,8 @@ MonoBehaviour:
       x: 0
       y: 0
     Mass: 1
-    MaxSpeed: 1
-    OriginalMaxSpeed: 1
+    MaxSpeed: 1.5
+    OriginalMaxSpeed: 1.5
     MaxSpeedMultiplier: 1
     BoundingRadius: 0.2
     MaxDistanceToTarget: 0
@@ -780,7 +781,7 @@ MonoBehaviour:
     _externalVelocity:
       x: 0
       y: 0
-    OriginalZ: -0.1
+    OriginalZ: 0
     _headingDirection: 1
     MaxForce: 5
     ForceMultiplier: 1
@@ -794,13 +795,13 @@ MonoBehaviour:
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: 0
+    ZOffset: -0.5
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 50
     _originalMaxForce: 50
-    _maxSpeed: 1
-    _maxSpeedMultiplier: 1
+    _maxSpeed: 1.5
+    _maxSpeedMultiplier: 1.5
     _mass: 1
     _enabled: 1
     Friction: 0
