@@ -86,8 +86,8 @@ GameObject:
   - component: {fileID: 11416456}
   - component: {fileID: 11404554}
   - component: {fileID: 11414800}
-  - component: {fileID: 11472428}
   - component: {fileID: 54987692204520516}
+  - component: {fileID: 114333761088676950}
   m_Layer: 11
   m_Name: Lulu
   m_TagString: Companion
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 487546}
   - component: {fileID: 11414430}
   - component: {fileID: 135978611067376476}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Foot Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,6 +623,7 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
+  _avoidLayersMasks: []
   _follow: {fileID: 0}
   _targetingData:
     Waypoints: {fileID: 0}
@@ -670,20 +671,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 20
-  _sharedLayer:
-    _layerIndex: 17
   _mainCollider: {fileID: 487546}
   _autoChangeLayers: 1
 --- !u!114 &11414800
@@ -769,8 +761,8 @@ MonoBehaviour:
       x: 0
       y: 0
     Mass: 1
-    MaxSpeed: 1
-    OriginalMaxSpeed: 1
+    MaxSpeed: 1.5
+    OriginalMaxSpeed: 1.5
     MaxSpeedMultiplier: 1
     BoundingRadius: 0.2
     MaxDistanceToTarget: 0
@@ -780,7 +772,7 @@ MonoBehaviour:
     _externalVelocity:
       x: 0
       y: 0
-    OriginalZ: -0.1
+    OriginalZ: 0
     _headingDirection: 1
     MaxForce: 5
     ForceMultiplier: 1
@@ -794,13 +786,13 @@ MonoBehaviour:
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: 0
+    ZOffset: -0.5
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 50
     _originalMaxForce: 50
-    _maxSpeed: 1
-    _maxSpeedMultiplier: 1
+    _maxSpeed: 1.5
+    _maxSpeedMultiplier: 1.5
     _mass: 1
     _enabled: 1
     Friction: 0
@@ -1171,22 +1163,6 @@ MonoBehaviour:
   _rqName2: 7a1e1082-cbfb-4fa8-8f4a-e37174bb4917
   _componentRepository: {fileID: 11461292}
   _stateMachine: {fileID: 11440872}
---- !u!114 &11472428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142002}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 8ce52352-1709-4f95-8583-5dc1915b46e1
-  componentName: 
-  _rqName: Lulu RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: 4f7f9e29-abd7-45f9-951b-7b9f711de222
-  _componentRepository: {fileID: 11461292}
 --- !u!114 &11472620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1229,20 +1205,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 11
-  _levelTwoLayer:
-    _layerIndex: 11
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 477648}
   _autoChangeLayers: 0
 --- !u!114 &11485134
@@ -1459,6 +1426,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.24, z: 1}
   m_Center: {x: 0.01, y: 0, z: 0}
+--- !u!114 &114333761088676950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 7cafe2dd-d5ff-4316-9cc4-c2fa5e20ef01
+  componentName: 
+  _rqName: Lulu RQ.Physics.Components.FloorComponent
+  _rqName2: 09adda8e-9108-4f59-8690-a2bddb68a56d
+  _componentRepository: {fileID: 11461292}
+  Floor: 1
 --- !u!114 &114390066838586950
 MonoBehaviour:
   m_ObjectHideFlags: 1

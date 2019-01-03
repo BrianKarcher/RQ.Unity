@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{A7A7B85E-0B76-2F64-DC5A-0E82718D8F19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_1;UNITY_2017_1;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;PLAYMAKER;PLAYMAKER_1_8_5_OR_NEWER;PLAYMAKER_1_8_OR_NEWER;PLAYMAKER_1_9;PLAYMAKER_1_9_0;PLAYMAKER_1_9_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Message System\MessageEventsEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Misc\AssetUtility.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Misc\EnablePhysics2DMenuItem.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Misc\HelpBoxAttributeDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Misc\MoreEditorGuiUtility.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Misc\MoreEditorUtility.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Misc\TypeUtility.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Save System\PlayerPrefsSavedGameDataStorerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Save System\SaveSystemEditorUtility.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Text\CSVUtility.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Text\StringFieldDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Text\StringFieldTextAreaAttributeDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Text\TextTableEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Text\TextTableEditorWindow.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\UILocalizationManagerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\UITextFieldDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UnityEvents\TagMaskDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\Editor\Text\StringAssetMenu.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\Editor\Text\TextTableAssetMenu.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\Base Types\CustomFieldType_Actor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\Base Types\CustomFieldType_Boolean.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\Base Types\CustomFieldType_Files.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\Base Types\CustomFieldType_Item.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\Base Types\CustomFieldType_Location.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\Base Types\CustomFieldType_QuestState.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\Base Types\CustomFieldType_Text.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\CustomFieldType.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\CustomFieldTypeService.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Custom Field Types\Examples\CustomFieldType_SceneType.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\LocalizedText\LocalizedTextTableEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\AlertTriggerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\BarkOnDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\BarkTriggerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\ConversationTriggerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\LuaOnDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\LuaTriggerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\QuestTriggerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\SendMessageOnDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\SequenceTriggerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\SetActiveOnDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\SetAnimationOnDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\SetAnimatorStateOnDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\SetComponentEnabledOnDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\SetEnabledOnDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\SetQuestStateOnDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Deprecated\Triggers\StartConversationOnDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\AssetFoldouts.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueDatabaseEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindow.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowActorSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowAssetLists.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowAssetSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowConversationSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowDatabaseSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowDialogueTreeSearchBar.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowDialogueTreeSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowFieldMultinodeSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowFieldsSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowGUIStyles.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowItemSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowLanguageList.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowLocalization.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowMain.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowTemplateSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowUpdateTemplateSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowVariableSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowWatchSection.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\Exporters\ChatMapperExporter.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\Exporters\CSVExporter.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\Exporters\LanguageTextExporter.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\Exporters\VoiceoverScriptExporter.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\Node Editor\DialogueEditorWindowConversationNodeEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\Node Editor\DialogueEditorWindowConversationNodeEditorAutoArrange.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\Node Editor\DialogueEditorWindowConversationNodeEditorBase.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\Node Editor\DialogueEditorWindowConversationNodeEditorTopControls.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\Toolbar.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Bark Subsystem\BarkGroupManagerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Dialogue Manager\DialogueSystemControllerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Dialogue Manager\DialogueSystemControllerHierarchyIcon.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\MVC Editors\DialogueActorEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\MVC Editors\SequencerShortcutsEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Save Subsystem\PersistentActiveDataEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\ActorPicker.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\ActorPopupDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\BarkOnIdleEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\ConditionEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\ConditionObserverEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\ConditionPropertyDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\ConversationPicker.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\ConversationPopupDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\DialogueSystemTriggerEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\DialogueSystemTriggerEventDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\DialogueTriggerEventDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\ItemPicker.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\ItemPopupDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\QuestConditionPropertyDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\QuestPicker.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\QuestPopupDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\QuestStateDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\ReferenceDatabaseDialogueEventEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\VariablePicker.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Trigger Editors\VariablePopupDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Timeline\BarkDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Timeline\PlaySequenceBehaviourDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Timeline\SetQuestStateBehaviourDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Timeline\ShowAlertBehaviourDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Timeline\StartConversationBehaviourDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Camera Angle Editor\CameraAngleEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\DialogueSystemMenuItems.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\AbstractConverterWindow.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\ArticyConverterWindow.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\ArticyConverterWindowDisabled.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\ArticyEditorTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\ArticySchemaEditorTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\ConverterPrefsEditorTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\Schemas\Articy 1.4\Articy_1_4_EditorTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\Schemas\Articy 2.2\Articy_2_2_EditorTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\Schemas\Articy 2.4\Articy_2_4_EditorTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\Schemas\Articy 3.1\Articy_3_1_EditorTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Aurora\AuroraConverterWindow.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Aurora\AuroraConverterWindowDisabled.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Aurora\AuroraPredefinedTokens.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Aurora\Dlg.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Aurora\Jrl.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Chat Mapper\ChatMapperConverter.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\CSV\CSVConverterWindow.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Setup Wizards\DialogueManagerWizard.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Setup Wizards\NPCSetupWizard.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Setup Wizards\PlayerSetupWizard.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Setup Wizards\WelcomeWindow.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Unique ID Tool\UniqueIDWindowPrefs.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Updater\DialogueSystem1xTo2xUpdater.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\UI\Standard UI\Dialogue UI\StandardUIMenuPanelEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\UI\Standard UI\Dialogue UI\StandardUISubtitlePanelEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\UI\Standard UI\Selector UI\SelectorUseStandardUIElementsEditor.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\BitMaskDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\DialogueEditorStyles.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\EditorTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\EditorWindowTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\EditorZoomArea.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\LuaConditionsWizardDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\LuaConditionWizard.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\LuaScriptWizard.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\LuaScriptWizardDrawer.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\LuaWizardBase.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\RelationsInspector\RelationsInspectorLink.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\SequenceEditorTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\TemplateTools.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Scripts\Editor\ConverterWindowTemplate.cs" />
+     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Scripts\Editor\CustomFieldType_TemplateType.cs" />
+     <None Include="Assets\Areas\Prototypes\predatorPrototype.xml" />
+     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\Third Party\NGUI\ReadMe - 3.11.4.txt" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\Areas\South\Bog Maze\Bog Maze Section 2.xml" />
+     <None Include="Assets\Areas\South\Sunshine Woods\Day\Scene 7_12\Section 7_12.xml" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Masked 2.shader" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
+     <None Include="Assets\UI\Fonts\Arial\Arial.txt" />
+     <None Include="Assets\Materials\Shaders\Lit2D Blend AnimatedShader4.shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\LitSolidVertexColor.shader" />
+     <None Include="Assets\Third Party\WellFired\shared\Uncompiled\Resources\Transitions\WellFiredWipeLeft.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
+     <None Include="Assets\Third Party\PlayMaker\Templates\readme.txt" />
+     <None Include="Assets\Materials\Shaders\BlendMode.cginc" />
+     <None Include="Assets\Third Party\PlayMaker\Readme.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\SolidVertexColor.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 5 Underground\Section 5-Underground Level.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
+     <None Include="Assets\Areas\Prototypes\PB Scene 1\Test_Monster Behavior_Plant Bombthrower_2.xml" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Colored 2.shader" />
+     <None Include="Assets\Third Party\WellFired\shared\Uncompiled\Resources\Transitions\WellFiredDissolve.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\Third Party\WellFired\shared\Uncompiled\Resources\Transitions\WellFiredWipeDown.shader" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 3.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2dUI\Shaders\DepthMask.shader" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 2 Underground\Section 2_Secret Underground.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+     <None Include="Assets\Areas\Prototypes\Test_Lili_1.xml" />
+     <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
+     <None Include="Assets\Areas\South\Forest Town\Burned\Scene 6\File size.txt" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\Plugins\Poly2Tri\Poly2TriLicense.txt" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 5 Underground\Section 5-Underground Level Lights.xml" />
+     <None Include="Assets\UI\Fonts\Nonstop\Nonstop.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\Areas\South\Sunshine Woods\Day\Scene 10\Section 10.xml" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\LitPremulVertexColor.shader" />
+     <None Include="Assets\Areas\South\Bog Maze\Bog Maze_Section 4.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\PremulVertexColor.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Colored (TextureClip).shader" />
+     <None Include="Assets\Materials\Shaders\Sprites-Diffuse.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
+     <None Include="Assets\Third Party\PlayMaker\Editor\Resources\CustomVariableTypes.txt" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Rogers House\Section 4_Roger&apos;sHouse_1stFlr.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Lamms House\Section 2_Lamm&apos;s House.xml" />
+     <None Include="Assets\Rewired\Documentation\licences.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\goodies\PackedTextMesh.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\Materials\Shaders\Lit2DAnimatedShader4.shader" />
+     <None Include="Assets\Materials\Shaders\Overlay.shader" />
+     <None Include="Assets\Rewired\Documentation\ReadMe.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 4\Section 4.xml" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 4\Size.txt" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\Blend2TexVertexColor.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 3\Section 3.xml" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 5\Scene Size.txt" />
+     <None Include="Assets\Areas\Prototypes\PB Scene 1\Test_Monster Behavior_Boar_1.xml" />
+     <None Include="Assets\UI\Fonts\Utsaah\Ustaah.txt" />
+     <None Include="Assets\Materials\Shaders\2DToolkitAnimatedTexture.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+     <None Include="Assets\Sprites\NPC\Lamm\Lamm_kicked.txt" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Masked 3.shader" />
+     <None Include="Assets\Materials\Shaders\LitUVScroll BlendVertexColor.shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2dUI\Shaders\DepthMaskSolid.shader" />
+     <None Include="Assets\Areas\South\Bog Maze\Bog_Maze_Section 3.xml" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
+     <None Include="Assets\Areas\Prototypes\LittleBirdPrototype.xml" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
+     <None Include="Assets\Third Party\WellFired\shared\Uncompiled\Resources\Transitions\WellFiredWipeUp.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Burned\Scene 6\Section 6 Burned.xml" />
+     <None Include="Assets\Sprites\UI\Fonts\Mana.fnt" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\Plugins\dependencies.txt" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 5 Underground\Section 5-Underground Level No Lights.xml" />
+     <None Include="Assets\Areas\South\Sunshine Woods\Day\Scene 13\Section 13.xml" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
+     <None Include="Assets\Areas\South\Sunshine Woods\Day\Maim Prison\Section 13_Underground.xml" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
+     <None Include="Assets\Areas\South\Bog Maze\BogMaze_Section_3.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\resources\BlendVertexColor.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Burning\Scene 2\Section 2_Burning.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Sarahs House\Section 4_Sara&apos;sHouse.xml" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\Readme_upgrading.txt" />
+     <None Include="Assets\Areas\Prototypes\PB Scene 1\Test_Monster Behavior_Plant Bombthrower_1.xml" />
+     <None Include="Assets\Areas\South\Bog Maze\BogMaze_Section6.xml" />
+     <None Include="Assets\Materials\Shaders\2DToolkitAnimatedBlend2Tex.shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\LitCutoutVertexColor.shader" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\Plugins\Clipper\ClipperLicense.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\Areas\South\Bog Maze\Bog_Maze_Section_4_and_5.xml" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\Materials\Shaders\LitUVScroll.shader" />
+     <None Include="Assets\Areas\South\Bog Maze\Bog_Maze_Section 6_old.xml" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Lamms House Basement\Section 2_Lamm&apos;s House_Basement Floor.xml" />
+     <None Include="Assets\Materials\Shaders\Effects\RollingColor.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
+     <None Include="Assets\UI\Fonts\Arial Black\Arial Black.txt" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+     <None Include="Assets\HUD Text\ReadMe - 1.13.txt" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 2\Size.txt" />
+     <None Include="Assets\Art\Environment\Forest\Sprites\Doors\Door2_3.txt" />
+     <None Include="Assets\Art\Environment\Forest\Sprites\Doors\Chief Door.txt" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\Readme.txt" />
+     <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+     <None Include="Assets\Art\Environment\Shared\Fire\Sprites\fire-reflection_chief&apos;s-house.txt" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 1\Section 1.xml" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Text.shader" />
+     <None Include="Assets\Materials\Shaders\Mask.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\Materials\Shaders\Effects\RollingColor2.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\CutoutVertexColor.shader" />
+     <None Include="Assets\Materials\Shaders\ColorBurn.shader" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Rogers House Floor 2\Section 4_Roger&apos;sHouse_2ndFlr.xml" />
+     <None Include="Assets\Third Party\PlayMaker\Resources\PlayMakerAssemblies.txt" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Rolans House F1\Section 3_Rolan&apos;s House_1stFlr.xml" />
+     <None Include="Assets\Areas\South\Sunshine Woods\Day\Scene 8\Section 8.xml" />
+     <None Include="Assets\UI\Fonts\SourceSansPro\SourceSansPro.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
+     <None Include="Assets\HUD Text\Examples\Atlases\Arimo20.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionEffect.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GrayscaleEffect.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\TwirlEffect.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\VortexEffect.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 2\Section 2.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
+     <None Include="Assets\Rewired\Documentation\ReleaseNotes.txt" />
+     <None Include="Assets\Areas\Prototypes\predatorTestBehaviour.xml" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 5\Section 5.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\LitBlendVertexColor.shader" />
+     <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
+     <None Include="Assets\Materials\Shaders\Lit2D Diffuse AnimatedShader4.shader" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\Plugins\JsonFx\JsonFxLicense.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Burning\Scene 4\Section 4_Burning.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\Areas\South\Bog Maze\BogMaze_Section1.xml" />
+     <None Include="Assets\Areas\South\Forest Town\Burned\Scene 5\Section 5_Burned.xml" />
+     <None Include="Assets\Third Party\WellFired\shared\Uncompiled\Resources\Transitions\WellFiredWipeRight.shader" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
+     <None Include="Assets\Materials\Shaders\Lit2DToolkitAnimatedTexture.shader" />
+     <None Include="Assets\Third Party\PlayMaker\Editor\Install\readme.txt" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Transparent Masked.shader" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Scene 6\Section 6.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\Prototypes\Forest Town\Test_Level Design_Plant Bombthrower_Case 3.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\UI\Fonts\Fixedsys\Fixedsys.txt" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\Areas\South\Sunshine Woods\Day\Scene 11\Section 11.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
+     <None Include="Assets\Third Party\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\Materials\Shaders\ddInvert.shader" />
+     <None Include="Assets\HUD Text\Examples\Atlases\Large.txt" />
+     <None Include="Assets\Areas\South\Forest Town\Day\Rolans House F2\Section 3_Rolan&apos;s House_2ndFlr.xml" />
+     <None Include="Assets\Materials\Shaders\LitUVScroll Alpha Blend.shader" />
+     <None Include="Assets\Art\Environment\Forest\Sprites\Doors\Door1_3.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
+     <None Include="Assets\Sprites\UI\Fonts\Freedom.fnt" />
+     <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+     <None Include="Assets\Behavior Designer\Editor\GridShader.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\Third Party\PlayMaker\Versions\readme.txt" />
+     <None Include="Assets\Third Party\WellFired\usequencer\Uncompiled\uSequencer - License.txt" />
+     <None Include="Assets\Third Party\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />
+     <None Include="Assets\Third Party\PlayMaker\Editor\UnityEngine.UI.xml" />
+     <None Include="Assets\Third Party\AstarPathfindingProject\link.xml" />
+     <None Include="Assets\UI\Fonts\Calibri\Calibri.txt" />
+     <None Include="Assets\Areas\South\Sunshine Woods\Day\Scene 9\Section 9.xml" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\UI\Fonts\Underwhelmed\Underwhelmed.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Timeline">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TreeEditor">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.HoloLens">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Purchasing">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/Editor/UnityEditor.Purchasing.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.VR">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+ <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+ </Reference>
+ <Reference Include="BehaviorDesignerEditor">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Behavior Designer/Editor/BehaviorDesignerEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="BehaviorDesignerRuntime">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Behavior Designer/Runtime/BehaviorDesignerRuntime.dll</HintPath>
+ </Reference>
+ <Reference Include="log4net">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/log4net.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.AI">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.AI.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Animation">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.Animation.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Audio">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.Audio.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Common">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.Common.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Controller">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.Controller.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Entity">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.Entity.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.FSM">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.FSM.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Input">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.Input.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Messaging">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.Messaging.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Model">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.Model.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Physics">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.Physics.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Render">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/RQ.Render.dll</HintPath>
+ </Reference>
+ <Reference Include="zlib.net">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/zlib.net.dll</HintPath>
+ </Reference>
+ <Reference Include="RQ.Editor">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/Editor/RQ.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMaker">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Plugins/PlayMaker/PlayMaker.dll</HintPath>
+ </Reference>
+ <Reference Include="Rewired_Editor">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Rewired/Internal/Libraries/Editor/Rewired_Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Rewired_Core">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Core.dll</HintPath>
+ </Reference>
+ <Reference Include="Rewired_Windows_Lib">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Windows_Lib.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.ClipperLib">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/AstarPathfindingProject/Plugins/Clipper/Pathfinding.ClipperLib.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.JsonFx">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Poly2Tri">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/AstarPathfindingProject/Plugins/Poly2Tri/Pathfinding.Poly2Tri.dll</HintPath>
+ </Reference>
+ <Reference Include="ConditionalExpression">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/PlayMaker/ConditionalExpression.dll</HintPath>
+ </Reference>
+ <Reference Include="ConditionalExpressionEditor">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/PlayMaker/Editor/ConditionalExpressionEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/PlayMaker/Editor/PlayMakerEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditorResources">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/PlayMaker/Editor/PlayMakerEditorResources.dll</HintPath>
+ </Reference>
+ <Reference Include="tk2dExternal">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/TK2DROOT/tk2d/Editor/tk2dExternal.dll</HintPath>
+ </Reference>
+ <Reference Include="tk2dSkin">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/TK2DROOT/tk2d/Editor/tk2dSkin.dll</HintPath>
+ </Reference>
+ <Reference Include="sharedEditor">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/WellFired/shared/Compiled/Editor/sharedEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="sharedRuntime">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/WellFired/shared/Compiled/Runtime/sharedRuntime.dll</HintPath>
+ </Reference>
+ <Reference Include="usequencerEditor">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/WellFired/usequencer/Compiled/Editor/usequencerEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="usequencerRuntime">
+ <HintPath>C:/Projects/RQ.Unity/src/RQ.Unity/Assets/Third Party/WellFired/usequencer/Compiled/Runtime/usequencerRuntime.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{04B93543-EC46-7A11-2972-B03078C2D23F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

@@ -736,20 +736,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 9
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 9
   _mainCollider: {fileID: 126019997}
   _autoChangeLayers: 0
 --- !u!65 &126020000
@@ -1628,6 +1619,7 @@ GameObject:
   - component: {fileID: 277441849}
   - component: {fileID: 277441848}
   - component: {fileID: 277441847}
+  - component: {fileID: 277441861}
   m_Layer: 9
   m_Name: Rolan
   m_TagString: Player
@@ -1800,9 +1792,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideName: Rolan
-  internalName: 
-  useLocalizedNameInDatabase: 0
+  actor: Rolan
+  persistentDataName: 
+  portrait: {fileID: 0}
+  barkUISettings:
+    barkUI: {fileID: 0}
+    barkUIOffset: {x: 0, y: 2, z: 0}
+  standardDialogueUISettings:
+    subtitlePanelNumber: 0
+    customSubtitlePanel: {fileID: 0}
+    menuPanelNumber: 0
+    customMenuPanel: {fileID: 0}
+    portraitAnimatorController: {fileID: 0}
+    setSubtitleColor: 0
+    applyColorToPrependedName: 0
+    prependActorNameSeparator: ': '
+    subtitleColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &277441855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,7 +1899,7 @@ MonoBehaviour:
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: 0
+    ZOffset: -0.5
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 0
@@ -2043,6 +2048,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277441861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114500476103595010, guid: 66e5e324f55475048a942c682d319e86,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277441846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: ca0baee5-7fbf-4145-979e-c37e822f4024
+  componentName: 
+  _rqName: Rolan RQ.Physics.Components.FloorComponent
+  _rqName2: 7989b91b-f3cf-4964-b7e5-85b2b3949fcc
+  _componentRepository: {fileID: 277441857}
+  Floor: 1
 --- !u!1 &316886053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,20 +2781,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 484427762}
   _autoChangeLayers: 0
 --- !u!114 &484427758
@@ -3197,20 +3211,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 9
-  _levelThreeLayer:
-    _layerIndex: 20
-  _sharedLayer:
-    _layerIndex: 18
   _mainCollider: {fileID: 597313759}
   _autoChangeLayers: 0
 --- !u!65 &597313761
@@ -4780,20 +4785,11 @@ MonoBehaviour:
     Level: 3
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 999453398}
   _autoChangeLayers: 0
 --- !u!135 &999453401
@@ -6419,14 +6415,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 33223727669223350, guid: 5ea28a761de4af3478a9732bfb61dca1,
+    - target: {fileID: 23995524671449958, guid: 5ea28a761de4af3478a9732bfb61dca1,
         type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 33770726116156192, guid: 5ea28a761de4af3478a9732bfb61dca1,
-        type: 2}
-      propertyPath: m_Mesh
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 23899262117263578, guid: 5ea28a761de4af3478a9732bfb61dca1,
@@ -6434,9 +6425,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 23995524671449958, guid: 5ea28a761de4af3478a9732bfb61dca1,
+    - target: {fileID: 33770726116156192, guid: 5ea28a761de4af3478a9732bfb61dca1,
         type: 2}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33223727669223350, guid: 5ea28a761de4af3478a9732bfb61dca1,
+        type: 2}
+      propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6589,6 +6585,16 @@ MonoBehaviour:
     minPixelHeight: 0
   broadcastToChildren: 0
   actorTransform: {fileID: 0}
+  onSelectedUsable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PixelCrushers.DialogueSystem.UsableUnityEvent, Assembly-CSharp-firstpass,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onDeselectedUsable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PixelCrushers.DialogueSystem.UsableUnityEvent, Assembly-CSharp-firstpass,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!135 &1371846949
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10418,20 +10424,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 20
-  _sharedLayer:
-    _layerIndex: 17
   _mainCollider: {fileID: 1714516778}
   _autoChangeLayers: 1
 --- !u!135 &1714516780
@@ -12102,20 +12099,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 9
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 1937464822}
   _autoChangeLayers: 0
 --- !u!114 &1937464824
