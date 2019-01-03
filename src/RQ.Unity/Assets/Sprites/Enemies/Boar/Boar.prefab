@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 114888015881597422}
   - component: {fileID: 54646230309326696}
   - component: {fileID: 114224308382976322}
+  - component: {fileID: 114216385664679374}
   m_Layer: 10
   m_Name: Boar
   m_TagString: Enemy
@@ -527,7 +528,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246299693397778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.08, y: 0.8, z: -0.5}
+  m_LocalPosition: {x: 1.44, y: 2.24, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4108579591324200}
@@ -891,20 +892,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 1
     CurrentlyDeflecting: 1
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4860134354268188}
   _autoChangeLayers: 0
 --- !u!114 &114106744964296146
@@ -1055,22 +1047,30 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 12
-  _levelTwoLayer:
-    _layerIndex: 12
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 12
   _mainCollider: {fileID: 4726563539103770}
   _autoChangeLayers: 0
+--- !u!114 &114216385664679374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246299693397778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 05485683-e4e3-481d-bbad-40f72d1dbd8b
+  componentName: 
+  _rqName: Boar RQ.Physics.Components.FloorComponent
+  _rqName2: 152f9559-4bad-4325-8158-1d8e576bb58e
+  _componentRepository: {fileID: 114139793779844086}
+  Floor: 1
 --- !u!114 &114224308382976322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1486,20 +1486,11 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 15
-  _levelTwoLayer:
-    _layerIndex: 15
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4466399350043182}
   _autoChangeLayers: 1
 --- !u!114 &114528927627972628
@@ -1886,20 +1877,11 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4873011615790518}
   _autoChangeLayers: 0
 --- !u!114 &114858489884976926
@@ -1959,7 +1941,7 @@ MonoBehaviour:
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: 0
+    ZOffset: -0.5
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 3

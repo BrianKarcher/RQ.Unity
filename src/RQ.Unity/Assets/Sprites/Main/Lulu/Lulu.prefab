@@ -86,8 +86,8 @@ GameObject:
   - component: {fileID: 11416456}
   - component: {fileID: 11404554}
   - component: {fileID: 11414800}
-  - component: {fileID: 11472428}
   - component: {fileID: 54987692204520516}
+  - component: {fileID: 114333761088676950}
   m_Layer: 11
   m_Name: Lulu
   m_TagString: Companion
@@ -671,20 +671,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 15
-  _levelTwoLayer:
-    _layerIndex: 15
-  _levelThreeLayer:
-    _layerIndex: 20
-  _sharedLayer:
-    _layerIndex: 15
   _mainCollider: {fileID: 487546}
   _autoChangeLayers: 1
 --- !u!114 &11414800
@@ -1172,22 +1163,6 @@ MonoBehaviour:
   _rqName2: 7a1e1082-cbfb-4fa8-8f4a-e37174bb4917
   _componentRepository: {fileID: 11461292}
   _stateMachine: {fileID: 11440872}
---- !u!114 &11472428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142002}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 8ce52352-1709-4f95-8583-5dc1915b46e1
-  componentName: 
-  _rqName: Lulu RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: 4f7f9e29-abd7-45f9-951b-7b9f711de222
-  _componentRepository: {fileID: 11461292}
 --- !u!114 &11472620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1230,20 +1205,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 11
-  _levelTwoLayer:
-    _layerIndex: 11
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 477648}
   _autoChangeLayers: 0
 --- !u!114 &11485134
@@ -1460,6 +1426,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.24, z: 1}
   m_Center: {x: 0.01, y: 0, z: 0}
+--- !u!114 &114333761088676950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 7cafe2dd-d5ff-4316-9cc4-c2fa5e20ef01
+  componentName: 
+  _rqName: Lulu RQ.Physics.Components.FloorComponent
+  _rqName2: 09adda8e-9108-4f59-8690-a2bddb68a56d
+  _componentRepository: {fileID: 11461292}
+  Floor: 1
 --- !u!114 &114390066838586950
 MonoBehaviour:
   m_ObjectHideFlags: 1
