@@ -255,12 +255,20 @@ namespace RQ2.UI
                             continue;
                         var tilePos = _tileMap.GetTilePosition(x, y);
                         // Create points representing a square polygon at this spot.
+                        //List<Vector2> polygon = new List<Vector2>()
+                        //{
+                        //        new Vector2(tilePos.x, tilePos.y),
+                        //        new Vector2(tilePos.x, tilePos.y + 0.16f),
+                        //        new Vector2(tilePos.x + 0.16f, tilePos.y),
+                        //        new Vector2(tilePos.x + 0.16f, tilePos.y + 0.16f)                                
+                        //};
+                        // Square
                         List<Vector2> polygon = new List<Vector2>()
                         {
                                 new Vector2(tilePos.x, tilePos.y),
                                 new Vector2(tilePos.x, tilePos.y + 0.16f),
-                                new Vector2(tilePos.x + 0.16f, tilePos.y),
-                                new Vector2(tilePos.x + 0.16f, tilePos.y + 0.16f)                                
+                                new Vector2(tilePos.x + 0.16f, tilePos.y + 0.16f),
+                                new Vector2(tilePos.x + 0.16f, tilePos.y)                                
                         };
                         polygons.Add(polygon);
 
@@ -281,7 +289,8 @@ namespace RQ2.UI
                 }
 
                 //polygons = UnitePolygons(polygons);
-                CreateMeshCollider(polygons, go);
+                //CreateMeshCollider(polygons, go);
+                CreateBoxCollider(polygons, go);
                 //sdf
                 // Only do first layer for now
                 //break;
@@ -617,6 +626,79 @@ namespace RQ2.UI
             //gameObject.colliderObj(typeof(MeshRenderer));
             MeshCollider filter = colliderObj.AddComponent(typeof(MeshCollider)) as MeshCollider;
             filter.sharedMesh = msh;
+        }
+
+        //create the collider in unity from the list of polygons
+        public void CreateBoxCollider(List<List<Vector2>> polygons, GameObject colliderObj)
+        {
+            //GameObject colliderObj = new GameObject("LevelCollision");
+            //colliderObj.layer = GR.inst.GetLayerID(Layer.PLATFORM);
+            //colliderObj.transform.SetParent(level.levelObj.transform);
+
+            //PolygonCollider2D collider = colliderObj.AddComponent<PolygonCollider2D>();
+
+            //collider.pathCount = polygons.Count;
+
+            //for (int i = 0; i < polygons.Count; i++)
+            //{
+            //    Vector2[] points = polygons[i].ToArray();
+
+            //    collider.SetPath(i, points);
+            //}
+
+            //var vertices2D = polygons.SelectMany(i => i).ToArray();
+
+            // Use the triangulator to get indices for creating triangles
+            //Triangulator tr = new Triangulator(vertices2D);
+            //int[] indices = tr.Triangulate();
+
+            //List<int> indices = new List<int>();
+            //List<Vector3> vertices = new List<Vector3>();
+            //int vertexCount = 0;
+            foreach (var polygon in polygons)
+            {
+                BoxCollider boxCollider = colliderObj.AddComponent(typeof(BoxCollider)) as BoxCollider;
+                var bottomLeft = polygon[0];
+                var topLeft = polygon[1];
+                var topRight = polygon[2];
+                var bottomRight = polygon[3];
+                boxCollider.center = new Vector3((bottomLeft.x + bottomRight.x) / 2f, (topLeft.y + bottomLeft.y) / 2f);
+                boxCollider.size = new Vector3((bottomRight.x - bottomLeft.x) / 2f, (bottomLeft.y - topLeft.y) / 2f, .1f);
+                //int vertexInPolygonCount = 0;
+                //for (int i = 0; i < polygon.Count; i++)
+                //{
+                //    vertices.Add(polygon[i]);
+                //    if (i >= 2)
+                //    {
+                //        // Create triangle
+                //        indices.Add(vertexCount - 2);
+                //        indices.Add(vertexCount - 1);
+                //        indices.Add(vertexCount);
+                //    }
+                //    vertexCount++;
+                //}
+            }
+
+            // Create the Vector3 vertices
+            //Vector3[] vertices = new Vector3[vertices2D.Length];
+            //for (int i = 0; i < vertices.Length; i++)
+            //{
+            //    vertices[i] = new Vector3(vertices2D[i].x, vertices2D[i].y, 0);
+            //}
+
+            // Create the mesh
+            //Mesh msh = new Mesh();
+            //msh.vertices = vertices.ToArray();
+            //msh.triangles = indices.ToArray();
+            ////msh.vertices = new Vector3[] { new Vector3(0, 0), new Vector3(0, 5), new Vector3(5, 0), new Vector3(5, 5) };
+            ////msh.triangles = new int[] { 0, 1, 2, 1, 3, 2 };
+            //msh.RecalculateNormals();
+            //msh.RecalculateBounds();
+
+            //// Set up game object with mesh;
+            ////gameObject.colliderObj(typeof(MeshRenderer));
+            //MeshCollider filter = colliderObj.AddComponent(typeof(MeshCollider)) as MeshCollider;
+            //filter.sharedMesh = msh;
         }
 
         public List<List<Vector2>> RemoveClosePointsInPolygons(List<List<Vector2>> polygons)
