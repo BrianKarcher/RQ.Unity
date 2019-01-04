@@ -35,7 +35,8 @@ namespace Assets.Source.AI
 
         public void StartPathProcessing(Vector3 pos, Vector3 target, int graphMask)
         {
-            _seeker.StartPath(pos, target, null, graphMask);
+            _seeker.StartPath(pos, target);
+            //_seeker.StartPath(pos, target, null, graphMask);
         }
 
         private void ProcessPath(Path _p)
