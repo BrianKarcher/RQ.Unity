@@ -9,144 +9,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: BogBirdIdleFlying
+  m_Name: Master_BogMazeBoss
   m_EditorClassIdentifier: 
   category: General
   fsm:
     dataVersion: 2
     usedInTemplate: {fileID: 11400000}
     name: FSM
-    startState: Setup
+    startState: Landing
     states:
-    - name: IdleFlying
-      description: 
+    - name: Landing
+      description: The boss are flying, take land and shout before start the combat.
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 59
-        y: 186
-        width: 112
-        height: 48
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: DisperseHelix
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: HitByDisperseHelix
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Finish FSM
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - Assets.Source.AI.PM_State_Machine.PlayAnimation
-        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
-        - Assets.Source.AI.PM_State_Machine.WaitPersist
-        customNames:
-        - 
-        - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000060000000b000000
-        actionHashCodes: 827373002334d000d9483304
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Fly
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 1
-          name: waitInSeconds
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 5
-        - useVariable: 1
-          name: timePersist
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmIntParams: []
-        fsmBoolParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - 
-        - Fly
-        - DisperseHelix
-        - DisperseHelixPull
-        - 
-        - FINISHED
-        byteData: 000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 0400000002000000
-        customTypeNames:
-        - RQ.Animation.BasicAction.Action.AnimationAtom
-        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 12000000280000000300000003000000010000000100000017000000010000002800000003000000030000000f0000000f0000001100000017000000
-        paramName:
-        - _animation
-        - _animationAtom
-        - _animComponentName
-        - _animation
-        - WaitForAnimationCompletion
-        - StopOnExit
-        - Received
-        - GotoPreviousState
-        - _isMessageReceivedAtom
-        - Message
-        - Data
-        - time
-        - storeResult
-        - StoreTimesUp
-        - FinishEvent
-        paramDataPos: 000000000000000000000000010000000000000001000000020000000200000001000000030000000400000000000000010000000000000005000000
-        paramByteDataSize: 000000000000000000000000000000000100000001000000000000000100000000000000000000000000000000000000000000000000000000000000
-    - name: HitByDisperseHelix
-      description: Nullify the disperse helix
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 502
-        y: 182
-        width: 166
+        x: 54
+        y: 114
+        width: 266
         height: 32
       isBreakpoint: 0
       isSequence: 0
@@ -156,159 +35,28 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: IdleFlying
+        toState: WingsFree
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
-        - Assets.Source.AI.PM_State_Machine.PlayAnimation
-        - HutongGames.PlayMaker.Actions.Wait
-        - Assets.Source.AI.PM_State_Machine.SendMessage
-        customNames:
-        - 
-        - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000600000009000000
-        actionHashCodes: 8273730048c0110164eb3804
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Gust
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          type: -1
-          objectTypeName: UnityEngine.Object
-          floatValues: []
-          intValues: 
-          boolValues: 
-          stringValues: []
-          vector4Values: []
-          objectReferences: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 2
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - 
-        - Gust
-        - FINISHED
-        - HeavyWind
-        - 
-        byteData: 0000000001000000000000000001
-        arrayParamSizes: 00000000
-        arrayParamTypes:
-        - System.String
-        customTypeSizes: 040000000b000000
-        customTypeNames:
-        - RQ.Animation.BasicAction.Action.AnimationAtom
-        - RQ.Animation.BasicAction.Action.SendMessageAtom
-        paramDataType: 1200000028000000030000000300000001000000010000000f00000017000000010000002900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
-        paramName:
-        - _animation
-        - _animationAtom
-        - _animComponentName
-        - _animation
-        - WaitForAnimationCompletion
-        - StopOnExit
-        - time
-        - finishEvent
-        - realTime
-        - Targets
-        - Target
-        - TargetGO
-        - collideTag
-        - _sendMessageAtom
-        - Message
-        - TargetUniqueIds
-        - collideTag
-        - _sendToSelf
-        - _sendToAll
-        - _sendToMainCharacter
-        - _sendToUsableController
-        - _sendToGameController
-        - _sendToUIManager
-        - SendMessageTime
-        - _finishOnFirstMessageSent
-        paramDataPos: 0000000000000000000000000100000000000000010000000000000002000000020000000000000001000000000000000200000001000000030000000000000004000000030000000400000005000000060000000700000008000000090000000d000000
-        paramByteDataSize: 00000000000000000000000000000000010000000100000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
-    - name: Finish FSM
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 308
-        y: 344
-        width: 100
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.FinishFSM
+        - HutongGames.PlayMaker.Actions.RunFSM
         customNames:
         - 
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 00000000
+        actionHashCodes: fe058700
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
-        fsmTemplateControlParams: []
+        fsmTemplateControlParams:
+        - fsmTemplate: {fileID: 11400000, guid: bf125e1258df5684f9d9d7afcb5fea46,
+            type: 2}
+          fsmVarOverrides: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
@@ -318,30 +66,190 @@ MonoBehaviour:
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
+        stringParams:
+        - FINISHED
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    - name: Setup
+        paramDataType: 260000001000000017000000
+        paramName:
+        - fsmTemplateControl
+        - storeID
+        - finishEvent
+        paramDataPos: 000000000000000000000000
+        paramByteDataSize: 000000000000000000000000
+    - name: WingsFree
+      description: Whip Attack Until the wing is snared.
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 722
+        y: 143
+        width: 177.5
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: OneWingSnared
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.RunFSM
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: fe058700
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams:
+        - fsmTemplate: {fileID: 11400000, guid: 5f07a28fe8fbfa24c88e675952a6572d,
+            type: 2}
+          fsmVarOverrides: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - FINISHED
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 260000001000000017000000
+        paramName:
+        - fsmTemplateControl
+        - storeID
+        - finishEvent
+        paramDataPos: 000000000000000000000000
+        paramByteDataSize: 000000000000000000000000
+    - name: OneWingSnared
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 65
-        y: 102
+        x: 1006
+        y: 154
+        width: 128
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Snared
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.RunFSM
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: fe058700
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams:
+        - fsmTemplate: {fileID: 11400000, guid: ee91d40a5a10aea44b63117fee5bc252,
+            type: 2}
+          fsmVarOverrides: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - FINISHED
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 260000001000000017000000
+        paramName:
+        - fsmTemplateControl
+        - storeID
+        - finishEvent
+        paramDataPos: 000000000000000000000000
+        paramByteDataSize: 000000000000000000000000
+    - name: Snared
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 757
+        y: 373
         width: 100
         height: 32
       isBreakpoint: 0
@@ -352,25 +260,28 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: IdleFlying
+        toState: WingsFree
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.SetFloatValue
+        - HutongGames.PlayMaker.Actions.RunFSM
         customNames:
         - 
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 9845b305
+        actionHashCodes: fe058700
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
-        fsmTemplateControlParams: []
+        fsmTemplateControlParams:
+        - fsmTemplate: {fileID: 11400000, guid: ffdb81f8690fcfb4d8590295e34ccdc6,
+            type: 2}
+          fsmVarOverrides: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
@@ -379,39 +290,34 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams:
+        fsmFloatParams: []
+        fsmIntParams:
         - useVariable: 1
-          name: timePersist
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: 0
-        fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 00
+        stringParams:
+        - FINISHED
+        byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f00000001000000
+        paramDataType: 260000001000000017000000
         paramName:
-        - floatVariable
-        - floatValue
-        - everyFrame
-        paramDataPos: 000000000100000000000000
-        paramByteDataSize: 000000000000000001000000
+        - fsmTemplateControl
+        - storeID
+        - finishEvent
+        paramDataPos: 000000000000000000000000
+        paramByteDataSize: 000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -423,7 +329,19 @@ MonoBehaviour:
     variables:
       floatVariables:
       - useVariable: 1
-        name: timePersist
+        name: altitude
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: timeDeltaTime
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: timeWaiting
         tooltip: 
         showInInspector: 0
         networkSync: 0
@@ -450,7 +368,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1

@@ -59,6 +59,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1497629049659462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4424415784214914}
+  - component: {fileID: 114746090068566954}
+  m_Layer: 10
+  m_Name: Waypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1686216167852136
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +110,7 @@ GameObject:
   - component: {fileID: 114238613380513540}
   - component: {fileID: 54330830660239834}
   - component: {fileID: 114447409945884240}
+  - component: {fileID: 114928584901166646}
   m_Layer: 10
   m_Name: Boss Bog Bird
   m_TagString: Boss
@@ -329,6 +346,19 @@ Transform:
   m_Father: {fileID: 4945493145381752}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4424415784214914
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497629049659462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4945493145381752}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4536691621256080
 Transform:
   m_ObjectHideFlags: 1
@@ -375,7 +405,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752190754837826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.84, y: 2, z: -0.39}
+  m_LocalPosition: {x: 1.84, y: 2, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4236015980773722}
@@ -389,6 +419,7 @@ Transform:
   - {fileID: 4073384278756408}
   - {fileID: 4307615523357974}
   - {fileID: 4002893514261330}
+  - {fileID: 4424415784214914}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -607,12 +638,12 @@ MonoBehaviour:
   _componentRepository: {fileID: 114246978454473552}
   Data:
     FacingDirectionMode: 0
-    FacingDirection: 1
+    FacingDirection: 3
     PreviousFacingDirection: 9
     _isAnimationComplete: 0
     AutoPlayAnimationType: 
     PlayAutomatically: 0
-    AutoUpdateFacingDirection: 1
+    AutoUpdateFacingDirection: 0
     AutoFace: 0
   SpriteAnimator2: {fileID: 114035562025146506}
   _use8Directions: 0
@@ -840,7 +871,7 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: fa8b0d8658cc73645a0eb1839bf61f82, type: 2}
+  fsmTemplate: {fileID: 11400000, guid: a9e34c38296485d40bfbd7081d5f4bd0, type: 2}
   eventHandlerComponentsAdded: 1
 --- !u!114 &114311111513862442
 MonoBehaviour:
@@ -920,20 +951,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 12
-  _levelTwoLayer:
-    _layerIndex: 12
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 12
   _mainCollider: {fileID: 4073384278756408}
   _autoChangeLayers: 0
 --- !u!114 &114440313028696804
@@ -991,6 +1013,7 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
+  _avoidLayersMasks: []
   _follow: {fileID: 0}
   _targetingData:
     Waypoints: {fileID: 0}
@@ -1024,20 +1047,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4536691621256080}
   _autoChangeLayers: 0
 --- !u!114 &114474397182359370
@@ -1137,7 +1151,7 @@ MonoBehaviour:
       x: 0
       y: 0
     Mass: 1
-    MaxSpeed: 1
+    MaxSpeed: 2
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
@@ -1150,29 +1164,29 @@ MonoBehaviour:
       y: 0
     OriginalZ: -0.39
     _headingDirection: 1
-    MaxForce: 1
-    ForceMultiplier: 1
+    MaxForce: 10
+    ForceMultiplier: 2
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
       x: 0
       y: 0
-    _fieldOfView: 0
-    _lineOfSight: 0
+    _fieldOfView: 10
+    _lineOfSight: 5
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: 0
+    ZOffset: -0.5
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
-    _maxForce: 1
-    _originalMaxForce: 1
-    _maxSpeed: 1
+    _maxForce: 10
+    _originalMaxForce: 10
+    _maxSpeed: 2
     _maxSpeedMultiplier: 1
     _mass: 0
     _enabled: 1
     Friction: 0
-    ForceMultiplier: 1
+    ForceMultiplier: 2
   _originalPhysicsData:
     InitialVelocity: {x: 0, y: 0}
     Size:
@@ -1321,6 +1335,25 @@ MonoBehaviour:
   _rqName2: eb006c26-92da-4f02-a872-36a53748f082
   _componentRepository: {fileID: 114246978454473552}
   FootPositionY: -0.12
+--- !u!114 &114746090068566954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497629049659462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2109884187, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: f31bcfd9-b6ec-471d-8d72-eb62f78a9b9f
+  componentName: 
+  _rqName: Waypoints RQ.Physics.Components.WaypointComponent
+  _rqName2: a879ab63-c93a-41d5-9964-3b0d481ce10b
+  _componentRepository: {fileID: 114246978454473552}
+  _waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114807492354170184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1344,6 +1377,23 @@ MonoBehaviour:
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
   renderLayer: 0
+--- !u!114 &114928584901166646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752190754837826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: a4c08f8a-3e92-4804-80aa-395fddcb2588
+  componentName: 
+  _rqName: Boss Bog Bird RQ.Physics.Components.FloorComponent
+  _rqName2: 0e05fa37-4374-4554-90d2-eb9dd58bbb8a
+  _componentRepository: {fileID: 114246978454473552}
+  Floor: 2
 --- !u!114 &114977490022387602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1381,20 +1431,11 @@ MonoBehaviour:
     Tags:
     - Player
     - Companion
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4069035042247528}
   _autoChangeLayers: 0
 --- !u!135 &135501516236440228
