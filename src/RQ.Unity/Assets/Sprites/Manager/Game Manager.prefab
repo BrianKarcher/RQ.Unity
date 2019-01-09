@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 432070}
   - component: {fileID: 11430282}
-  - component: {fileID: 11481334}
+  - component: {fileID: 114088610864725474}
   m_Layer: 0
   m_Name: Dialogue Manager
   m_TagString: Untagged
@@ -2536,7 +2536,7 @@ MonoBehaviour:
   m_Script: {fileID: 827501934, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: dd79581f-9895-487f-b6e5-295783b67477
+  _uniqueId: eaeecb45-9e8a-4064-83b9-5594d1ca582d
   componentName: 
   _rqName: Normal RQ.Controller.StatesV2.GameManager.NormalStateGM
   _rqName2: 92a68e99-e9ce-446b-9273-15ce1f1b99b2
@@ -2628,7 +2628,7 @@ MonoBehaviour:
   m_Script: {fileID: -1242730108, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 2f2febee-c6e7-41c6-8e2f-897ca6f9a1dc
+  _uniqueId: 976f245f-8b6b-4abe-8f6f-6a97449b91e7
   componentName: 
   _rqName: Play RQ.Controller.StatesV2.GameManager.PlayStateGM
   _rqName2: a4c625c2-3b93-487d-9619-31a69bd791c6
@@ -3283,7 +3283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8b685e62a9aeb4a9472b30ec2d86d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDatabase: {fileID: 11400000, guid: 6ea56954fd436bf49a3d5b483573516a, type: 2}
+  initialDatabase: {fileID: 0}
   displaySettings:
     conversationOverrideSettings:
       useOverrides: 0
@@ -3301,12 +3301,13 @@ MonoBehaviour:
       defaultResponseMenuSequence: 
       overrideInputSettings: 0
       alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
       responseTimeout: 0
     dialogueUI: {fileID: 0}
     localizationSettings:
       language: 
       useSystemLanguage: 0
-      localizedText: {fileID: 0}
+      textTable: {fileID: 0}
     subtitleSettings:
       showNPCSubtitlesDuringLine: 1
       showNPCSubtitlesWithResponses: 1
@@ -3333,6 +3334,7 @@ MonoBehaviour:
       responseTimeout: 0
       responseTimeoutAction: 0
       emTagForOldResponses: 0
+      emTagForInvalidResponses: 0
       qteButtons:
       - Fire1
       - Fire2
@@ -3357,14 +3359,19 @@ MonoBehaviour:
     includeAllItemData: 0
     includeLocationData: 0
     includeStatusAndRelationshipData: 1
+    includeAllConversationFields: 0
+    saveConversationSimStatusWithField: 
+    saveDialogueEntrySimStatusWithField: 
     asyncGameObjectBatchSize: 1000
     asyncDialogueEntryBatchSize: 100
+    initializeNewVariables: 1
   allowSimultaneousConversations: 0
   includeSimStatus: 0
   preloadResources: 1
   instantiateDatabase: 0
   dontDestroyOnLoad: 0
   allowOnlyOneInstance: 1
+  dialogueTimeMode: 0
   debugLevel: 0
 --- !u!114 &11430392
 MonoBehaviour:
@@ -3495,7 +3502,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: ce46709f-5ef6-4117-917e-0e2493b8f3dd
+  _uniqueId: 5244fea0-e1b0-4234-bd2e-30aeb5f78e05
   componentName: 
   _rqName: Play RQ.FSM.V2.StateTransitionTable
   _rqName2: 80e6e75d-a48c-43b3-9cfe-76c54235e0f8
@@ -3641,11 +3648,11 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11414124}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   - _name: Boss Death to Normal
-    CurrentState: {fileID: 11414124}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: 58133370-1525-4eae-8f0a-bd1736ffe93a
@@ -4582,7 +4589,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: ad147c31-b969-4d48-953d-fe3e5322f1ba
+  _uniqueId: 97bd6134-d5fc-4242-b039-f9bf51612088
   componentName: 
   _rqName: Play RQ.FSM.V2.StateMachine
   _rqName2: 6184d00d-ba9c-4114-a205-2e607d33f6cd
@@ -4598,7 +4605,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: ad147c31-b969-4d48-953d-fe3e5322f1ba
+    StateMachineUniqueId: 97bd6134-d5fc-4242-b039-f9bf51612088
     StateMachineName: Play
     StateData: []
   _logTransitions: 0
@@ -4811,17 +4818,6 @@ MonoBehaviour:
     Delay: 0.01
   _audioMessage: FadeVolumeOut
   _gameControllerMessageAfterFade: Complete
---- !u!114 &11481334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1447808426, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11481588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5239,6 +5235,17 @@ MonoBehaviour:
   _rqName2: aa8aada2-68c1-44f7-aa53-ae30b5bd71a2
   _componentRepository: {fileID: 11404276}
   pm: {fileID: 114354444627462232}
+--- !u!114 &114088610864725474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74abf5c67ae74b744a7a53a0bdbbb267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114251258545143372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5339,7 +5346,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 1
+        value: 0
       stringVariables: []
       vector2Variables: []
       vector3Variables: []
@@ -5368,8 +5375,8 @@ MonoBehaviour:
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
-    EnableBreakpoints: 1
-    editorFlags: 3
+    EnableBreakpoints: 0
+    editorFlags: 7
     activeStateName: 
     mouseEvents: 0
     handleLevelLoaded: 0

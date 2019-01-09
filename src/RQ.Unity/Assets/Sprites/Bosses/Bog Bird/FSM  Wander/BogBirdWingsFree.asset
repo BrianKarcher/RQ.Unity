@@ -23,8 +23,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 301.26562
-        y: 493.26562
+        x: 309.26562
+        y: 512.2656
         width: 112
         height: 48
       isBreakpoint: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Flyin 2
+        toState: Attack cooldown
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -1394,6 +1394,95 @@ MonoBehaviour:
         - finishEvent
         paramDataPos: 00000000000000000400000005000000010000000000000000000000000000000000000001000000
         paramByteDataSize: 00000000040000000100000004000000000000000000000000000000000000000000000000000000
+    - name: Attack cooldown
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 68
+        y: 469
+        width: 139
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Flyin 2
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 48c0110182737300
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Fly
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - Fly
+        byteData: 000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 04000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        paramDataType: 0f0000001700000001000000120000002800000003000000030000000100000001000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        paramDataPos: 000000000000000000000000000000000000000001000000020000000100000002000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000100000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -1427,7 +1516,13 @@ MonoBehaviour:
         value: 2.5
       intVariables: []
       boolVariables: []
-      stringVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: FlyAnim
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 
       vector2Variables:
       - useVariable: 1
         name: FlyForce
@@ -1447,7 +1542,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1

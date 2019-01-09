@@ -23,7 +23,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 282
+        x: 298
         y: 575.5547
         width: 112
         height: 48
@@ -35,7 +35,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Flyin 2
+        toState: Attack Cooldown
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 517
+        x: 533
         y: 592.5547
         width: 100
         height: 32
@@ -243,7 +243,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 700
+        x: 716
         y: 605.5547
         width: 100
         height: 32
@@ -362,7 +362,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 878
+        x: 894
         y: 612.5547
         width: 138
         height: 32
@@ -452,7 +452,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1076
+        x: 1092
         y: 614.5547
         width: 100
         height: 16
@@ -506,7 +506,7 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 285.53125
+        x: 301.53125
         y: 184.01562
         width: 139
         height: 64
@@ -762,7 +762,7 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 601.34375
+        x: 617.34375
         y: 182.82812
         width: 176
         height: 32
@@ -913,7 +913,7 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 291.53125
+        x: 307.53125
         y: 100.015625
         width: 100
         height: 32
@@ -1080,7 +1080,7 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 53.5
+        x: 69.5
         y: 187.52344
         width: 139
         height: 32
@@ -1209,7 +1209,7 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 661.53125
+        x: 677.53125
         y: 272.01562
         width: 110
         height: 32
@@ -1293,7 +1293,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 287.8203
+        x: 303.8203
         y: 466.1875
         width: 100
         height: 32
@@ -1419,7 +1419,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 288
+        x: 304
         y: 348
         width: 100
         height: 32
@@ -1486,6 +1486,95 @@ MonoBehaviour:
         - realTime
         paramDataPos: 000000000000000000000000
         paramByteDataSize: 000000000000000001000000
+    - name: Attack Cooldown
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 54
+        y: 556
+        width: 141
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Flyin 2
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 48c0110182737300
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: FlySnared
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - Fly
+        byteData: 000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 04000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        paramDataType: 0f0000001700000001000000120000002800000003000000030000000100000001000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        paramDataPos: 000000000000000000000000000000000000000001000000020000000100000002000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000100000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -1559,7 +1648,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0

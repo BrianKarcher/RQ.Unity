@@ -92,12 +92,19 @@ namespace RQ2.AnimationV2
         {
             if (anim.Sprite == null)
                 Debug.LogError("Sprite not found");
+            if (name == null)
+            {
+                Debug.LogError("(SetColor) name is null");
+                return;
+            }
             colors[name] = color;
             ProcessColor();
         }
 
         public override void RemoveColor(string name)
         {
+            if (name == null)
+                return;
             if (colors.ContainsKey(name))
                 colors.Remove(name);
             ProcessColor();
