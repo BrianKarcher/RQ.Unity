@@ -819,7 +819,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 426274}
-  - component: {fileID: 11454790}
   m_Layer: 9
   m_Name: Victory Pose
   m_TagString: Untagged
@@ -3111,7 +3110,7 @@ MonoBehaviour:
   _tagsYouDamage: []
   _hitEffect: {fileID: 139848, guid: a199e99bdc92eef4f8561f5a0b7e84a6, type: 2}
   _killSound: {fileID: 0}
-  _damageSound: {fileID: 0}
+  _damageSound: {fileID: 8300000, guid: 4a011269d947aab43b6433112ce88b69, type: 3}
   _death: {fileID: 0}
 --- !u!114 &11414998
 MonoBehaviour:
@@ -3948,6 +3947,8 @@ MonoBehaviour:
   _audioSource: {fileID: 8297446}
   _tweenSpeed: 0
   _fadeOut: 0
+  _masterVolume: 1
+  _isMusicTrack: 0
 --- !u!114 &11436238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4730,24 +4731,6 @@ MonoBehaviour:
   affectedObject: {fileID: 420414}
   affectedObjectPath: /Rolan
   index: 1
---- !u!114 &11454790
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1883000874, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 79c6c923-f424-49a7-ae85-c199158c5fb4
-  componentName: 
-  _rqName: Victory Pose RQ.Entity.StatesV2.Cutscene.PlaySequence
-  _rqName2: f9704ec9-43ec-4d09-a936-be33c5b4ac09
-  _componentRepository: {fileID: 11418054}
-  _stateMachine: {fileID: 11453024}
-  _sequencer: {fileID: 11457930}
 --- !u!114 &11455200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7151,7 +7134,7 @@ MonoBehaviour:
         x: 258
         y: 308
         width: 160
-        height: 96
+        height: 112
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -7189,6 +7172,14 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       - fsmEvent:
+          name: Board
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Boarded
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
           name: FallInWater
           isSystemEvent: 0
           isGlobal: 0
@@ -7198,6 +7189,7 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - RQ.Entity.AI.PlayMaker.PlayerMove
         - HutongGames.PlayMaker.Actions.RunFSM
         - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
         - Assets.Source.AI.PM_State_Machine.IsDamaged
@@ -7227,10 +7219,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0100010101010101010000010101
-        actionIsOpen: 0101010101010101010101010101
-        actionStartIndex: 0000000003000000090000000c0000000f00000014000000190000001e00000023000000290000002e000000330000003800000049000000
-        actionHashCodes: fe05870007377b01343beb01343beb012334d0002334d0002334d0002334d00007377b012334d0002334d000cb5eaf05d3bd7b0561566a03
+        - 
+        actionEnabled: 000100010101010101010100010101
+        actionIsOpen: 010101010101010101010101010101
+        actionStartIndex: 0000000004000000070000000d0000001000000013000000180000001d00000022000000270000002d00000032000000370000003c0000004d000000
+        actionHashCodes: 866e7600fe05870007377b01343beb01343beb012334d0002334d0002334d0002334d00007377b012334d0002334d000cb5eaf05d3bd7b0561566a03
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -7528,13 +7521,14 @@ MonoBehaviour:
         - 
         - FallInWater
         - FallInWater
-        byteData: 0001000000020000000100000002000000000000000001000000000000000000010000000000000000070000000000000000000000
+        byteData: 0100000000000001000000020000000100000002000000000000000001000000000000000000010000000000000000070000000000000000000000
         arrayParamSizes: 0100000001000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmInt
         - HutongGames.PlayMaker.FsmInt
-        customTypeSizes: 0400000001000000010000000200000002000000020000000200000004000000020000000200000002000000
+        customTypeSizes: 030000000400000001000000010000000200000002000000020000000200000004000000020000000200000002000000
         customTypeNames:
+        - RQ.Entity.AtomAction.Action.PlayerMoveAtom
         - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
         - RQ.AI.Conditions.IsDamagedConditionAI
         - RQ.AI.Conditions.IsDamagedConditionAI
@@ -7546,8 +7540,12 @@ MonoBehaviour:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.SetVectorVariableAtom2
-        paramDataType: 2600000010000000170000001100000028000000010000000700000007000000030000001700000028000000070000001700000028000000070000001700000001000000280000000300000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000110000002800000001000000070000000700000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000002500000001000000280000000800000007000000140000001c0000001c000000070000000f0000001700000011000000130000001c0000001c0000000f000000100000000c00000010000000110000001900000011000000140000002500000025000000070000000f000000100000001000000017000000110000001300000025000000250000000f0000000f000000100000000c00000010000000110000001900000011000000
+        paramDataType: 280000000100000000000000010000002600000010000000170000001100000028000000010000000700000007000000030000001700000028000000070000001700000028000000070000001700000001000000280000000300000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000110000002800000001000000070000000700000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000002500000001000000280000000800000007000000140000001c0000001c000000070000000f0000001700000011000000130000001c0000001c0000000f000000100000000c00000010000000110000001900000011000000140000002500000025000000070000000f000000100000001000000017000000110000001300000025000000250000000f0000000f000000100000000c00000010000000110000001900000011000000
         paramName:
+        - _playerMoveAtom
+        - MoveOnEnter
+        - Priority
+        - MoveOnExit
         - fsmTemplateControl
         - storeID
         - finishEvent
@@ -7641,8 +7639,8 @@ MonoBehaviour:
         - invertMask
         - debugColor
         - debug
-        paramDataPos: 00000000000000000000000000000000000000000000000001000000050000000100000002000000010000000900000003000000020000000d000000040000001100000003000000050000000600000007000000120000000400000008000000090000000a00000013000000050000000b0000000c0000000d00000014000000060000000e0000000f000000010000000700000015000000160000001a00000010000000110000001e000000080000001200000013000000140000001f00000009000000150000001600000000000000200000000a00000021000000290000000000000000000000010000002d000000000000001700000002000000000000000200000003000000010000000100000000000000020000000300000000000000040000000100000001000000020000003100000002000000030000000400000018000000050000000100000003000000040000000300000004000000050000000100000006000000060000000100000007000000
-        paramByteDataSize: 000000000000000000000000000000000000000001000000040000000400000000000000000000000000000004000000000000000000000004000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000004000000040000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000080000000400000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000000000000100000005000000000000000000000000000000000000000100000006000000070000000b0000000100000002000000020000000f000000030000000300000013000000040000001700000004000000050000000600000007000000180000000500000008000000090000000a00000019000000060000000b0000000c0000000d0000001a000000070000000e0000000f00000001000000080000001b0000001c0000002000000010000000110000002400000009000000120000001300000014000000250000000a000000150000001600000000000000260000000b000000270000002f00000000000000000000000100000033000000000000001700000002000000000000000200000003000000010000000100000000000000020000000300000000000000040000000100000001000000020000003700000002000000030000000400000018000000050000000100000003000000040000000300000004000000050000000100000006000000060000000100000007000000
+        paramByteDataSize: 00000000010000000400000001000000000000000000000000000000000000000000000001000000040000000400000000000000000000000000000004000000000000000000000004000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000004000000040000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000080000000400000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     - name: Damaged
       description: 
       colorIndex: 0
@@ -7674,6 +7672,7 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
         - Assets.Source.AI.PM_State_Machine.SendMessage
+        - Assets.Source.AI.PM_State_Machine.PlayEntitySound
         customNames:
         - 
         - 
@@ -7683,10 +7682,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010100010101
-        actionIsOpen: 0101010101010101
-        actionStartIndex: 0000000002000000050000000a0000000f000000160000001b00000020000000
-        actionHashCodes: 9572fc0048c011012334d0002334d0001bcdca042334d0007e7e0e0364eb3804
+        - 
+        actionEnabled: 010101010001010101
+        actionIsOpen: 010101010101010101
+        actionStartIndex: 0000000002000000050000000a0000000f000000160000001b0000002100000032000000
+        actionHashCodes: 9572fc0048c011012334d0002334d0001bcdca042334d00082737300ac126d04fcd32404
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -7703,6 +7703,12 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Idle
         - useVariable: 1
           name: 
           tooltip: 
@@ -7782,11 +7788,11 @@ MonoBehaviour:
         - Idle
         - PlayerDamaged
         - 
-        byteData: 01000000010000000001000000000000000001
+        byteData: 0100000001000000000001000000000000000001000000803f00000000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 01000000020000000200000002000000040000000b000000
+        customTypeSizes: 01000000020000000200000002000000040000000b00000003000000
         customTypeNames:
         - RQ.AI.Action.DamageBounceAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
@@ -7794,7 +7800,8 @@ MonoBehaviour:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
-        paramDataType: 28000000010000000f0000001700000001000000170000000100000028000000030000000300000017000000010000002800000003000000030000000f0000000f0000000f00000017000000170000001700000001000000170000000100000028000000030000000300000028000000030000000300000001000000010000002900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
+        - RQ.Entity.AtomAction.Action.PlayEntitySoundAtom
+        paramDataType: 28000000010000000f0000001700000001000000170000000100000028000000030000000300000017000000010000002800000003000000030000000f0000000f0000000f000000170000001700000017000000010000001700000001000000280000000300000003000000120000002800000003000000030000000100000001000000290000001200000013000000120000000100000028000000030000000c00000003000000010000000100000001000000010000000100000001000000070000000100000028000000010000000200000007000000
         paramName:
         - _damageBounceAtom
         - UseDamageColor
@@ -7823,6 +7830,7 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
+        - _animation
         - _animationAtom
         - _animComponentName
         - _animation
@@ -7832,6 +7840,7 @@ MonoBehaviour:
         - Target
         - TargetGO
         - collideTag
+        - Log
         - _sendMessageAtom
         - Message
         - TargetUniqueIds
@@ -7844,8 +7853,12 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 000000000000000000000000000000000100000001000000020000000100000002000000030000000400000003000000020000000500000006000000010000000200000003000000070000000800000009000000040000000a00000005000000030000000b0000000c000000040000000d0000000e000000060000000700000000000000000000000000000001000000050000000f000000000000001000000008000000090000000a0000000b0000000c0000000d0000000e00000012000000
-        paramByteDataSize: 000000000100000000000000000000000100000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000001000000000000000000000000000000000000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+        - _soundAtom
+        - _playOnMusicTrack
+        - _volume
+        - EntitySound
+        paramDataPos: 000000000000000000000000000000000100000001000000020000000100000002000000030000000400000003000000020000000500000006000000010000000200000003000000070000000800000009000000040000000a00000005000000030000000b0000000c00000000000000040000000d0000000e00000006000000070000000000000001000000000000000200000008000000050000000f0000000000000010000000090000000a0000000b0000000c0000000d0000000e0000000f0000001300000006000000140000001500000019000000
+        paramByteDataSize: 000000000100000000000000000000000100000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000001000000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000010000000400000004000000
     - name: Deflected
       description: 
       colorIndex: 0
@@ -7987,8 +8000,8 @@ MonoBehaviour:
         - 
         actionEnabled: 000101
         actionIsOpen: 010101
-        actionStartIndex: 000000000100000006000000
-        actionHashCodes: 927b0a047e7e0e039f005d00
+        actionStartIndex: 000000000100000007000000
+        actionHashCodes: 927b0a04827373009f005d00
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -7998,7 +8011,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Deah
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -8024,9 +8043,10 @@ MonoBehaviour:
         - RQ.Animation.BasicAction.Action.KillSelfAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.AI.Action.StopMovingAtom
-        paramDataType: 28000000280000000300000003000000010000000100000001000000280000000300000003000000
+        paramDataType: 2800000012000000280000000300000003000000010000000100000001000000280000000300000003000000
         paramName:
         - _killSelfAtom
+        - _animation
         - _animationAtom
         - _animComponentName
         - _animation
@@ -8036,8 +8056,8 @@ MonoBehaviour:
         - _stopMovingAtom
         - _uniqueId
         - _physicsAffector
-        paramDataPos: 00000000010000000000000001000000000000000100000002000000020000000200000003000000
-        paramByteDataSize: 00000000000000000000000000000000010000000100000001000000000000000000000000000000
+        paramDataPos: 0000000000000000010000000000000001000000000000000100000002000000020000000200000003000000
+        paramByteDataSize: 0000000000000000000000000000000000000000010000000100000001000000000000000000000000000000
     - name: Cutscene
       description: 
       colorIndex: 0
@@ -8118,7 +8138,7 @@ MonoBehaviour:
         y: 103.515625
         width: 113
         height: 32
-      isBreakpoint: 1
+      isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
@@ -8213,6 +8233,7 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.SetVelocity
         - Assets.Source.AI.PM_State_Machine.SetPhysicsFloatValue
         - HutongGames.PlayMaker.Actions.RunFSM
+        - Assets.Source.AI.PM_State_Machine.PlayEntitySound
         customNames:
         - 
         - 
@@ -8226,10 +8247,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 000101010101010001010101
-        actionIsOpen: 010101010101010101010101
-        actionStartIndex: 0000000002000000050000000a0000000f00000014000000190000001d00000021000000230000003000000035000000
-        actionHashCodes: 9572fc0048c011012334d0002334d0002334d0007e7e0e039f005d00ec2b1f02601b1e0384864800ffa3f204fe058700
+        - 
+        actionEnabled: 00010101010101000101010101
+        actionIsOpen: 01010101010101010101010101
+        actionStartIndex: 0000000002000000050000000a0000000f000000140000001a0000001e0000002200000024000000310000003600000039000000
+        actionHashCodes: 9572fc0048c011012334d0002334d0002334d000827373009f005d00ec2b1f02601b1e0384864800ffa3f204fe058700fcd32404
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -8306,7 +8328,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Ejection
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -8357,10 +8385,10 @@ MonoBehaviour:
         - DamageBounce
         - Steering
         - 
-        byteData: 01000000000100000001010000000000000000000000000500000000000000000000000000a0400000a04001010000000102000000000040c000
+        byteData: 01000000000100000001010000000000000000000000000500000000000000000000000000a0400000a04001010000000102000000000040c000000000803f00000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 01000000020000000200000002000000040000000200000003000000010000000a00000004000000
+        customTypeSizes: 01000000020000000200000002000000040000000200000003000000010000000a0000000400000003000000
         customTypeNames:
         - RQ.AI.Action.DamageBounceAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
@@ -8372,7 +8400,8 @@ MonoBehaviour:
         - RQ.AI.Action.DamagedAtom
         - RQ.AI.Action.SetVelocityAtom
         - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
-        paramDataType: 28000000010000000f0000001700000001000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000280000000300000003000000010000000100000001000000280000000300000003000000280000000100000001000000030000002800000001000000250000002800000008000000020000000300000007000000080000000200000002000000010000000700000003000000010000002800000007000000020000000100000003000000260000001000000017000000
+        - RQ.Entity.AtomAction.Action.PlayEntitySoundAtom
+        paramDataType: 28000000010000000f00000017000000010000001700000001000000280000000300000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000001200000028000000030000000300000001000000010000000100000028000000030000000300000028000000010000000100000003000000280000000100000025000000280000000800000002000000030000000700000008000000020000000200000001000000070000000300000001000000280000000700000002000000010000000300000026000000100000001700000028000000010000000200000007000000
         paramName:
         - _damageBounceAtom
         - UseDamageColor
@@ -8394,6 +8423,7 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
+        - _animation
         - _animationAtom
         - _animComponentName
         - _animation
@@ -8430,8 +8460,12 @@ MonoBehaviour:
         - fsmTemplateControl
         - storeID
         - finishEvent
-        paramDataPos: 0000000000000000000000000000000001000000010000000200000001000000020000000300000004000000030000000200000005000000060000000700000004000000030000000800000009000000040000000a0000000b000000050000000600000007000000050000000c0000000d0000000600000008000000090000000e000000070000000a00000000000000080000000b000000130000000f000000170000001b00000023000000270000002b0000002c00000010000000300000000900000031000000350000003900000011000000000000000000000012000000
-        paramByteDataSize: 0000000001000000000000000000000001000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000100000001000000000000000000000000000000000000000100000001000000000000000000000001000000000000000000000008000000040000000000000004000000080000000400000004000000010000000400000000000000010000000000000004000000040000000100000000000000000000000000000000000000
+        - _soundAtom
+        - _playOnMusicTrack
+        - _volume
+        - EntitySound
+        paramDataPos: 000000000000000000000000000000000100000001000000020000000100000002000000030000000400000003000000020000000500000006000000070000000400000003000000080000000900000000000000040000000a0000000b000000050000000600000007000000050000000c0000000d0000000600000008000000090000000e000000070000000a00000000000000080000000b000000130000000f000000170000001b00000023000000270000002b0000002c000000100000003000000009000000310000003500000039000000110000000000000000000000120000000a0000003a0000003b0000003f000000
+        paramByteDataSize: 00000000010000000000000000000000010000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000000010000000100000000000000000000000000000000000000010000000100000000000000000000000100000000000000000000000800000004000000000000000400000008000000040000000400000001000000040000000000000001000000000000000400000004000000010000000000000000000000000000000000000000000000010000000400000004000000
     - name: Damage Dust
       description: 
       colorIndex: 0
@@ -8551,21 +8585,60 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.EnableCollider
         - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
+        - RQ.Entity.AI.PlayMaker.PlayerMove
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - HutongGames.PlayMaker.Actions.RunFSM
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000040000000a000000
-        actionHashCodes: ec2b1f0207377b012334d000
+        - 
+        - 
+        actionEnabled: 0100010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 00000000040000000a0000000e00000013000000
+        actionHashCodes: ec2b1f0207377b01866e76002334d000fe058700
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
-        fsmTemplateControlParams: []
+        fsmTemplateControlParams:
+        - fsmTemplate: {fileID: 11400000, guid: e1bbc46073f778f4098105528271cc1d,
+            type: 2}
+          fsmVarOverrides:
+          - variable:
+              useVariable: 1
+              name: Speed
+              tooltip: Speed of entity
+              showInInspector: 1
+              networkSync: 0
+            fsmVar:
+              variableName: Speed
+              objectType: 
+              useVariable: 0
+              type: 0
+              floatValue: 0
+              intValue: 0
+              boolValue: 0
+              stringValue: 
+              vector4Value: {x: 0, y: 0, z: 0, w: 0}
+              objectReference: {fileID: 0}
+              arrayValue:
+                useVariable: 0
+                name: 
+                tooltip: 
+                showInInspector: 0
+                networkSync: 0
+                type: -1
+                objectTypeName: 
+                floatValues: []
+                intValues: 
+                boolValues: 
+                stringValues: []
+                vector4Values: []
+                objectReferences: []
+            isEdited: 0
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
@@ -8575,7 +8648,13 @@ MonoBehaviour:
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -8594,15 +8673,17 @@ MonoBehaviour:
         - FINISHED
         - IsUnboarded
         - 
-        byteData: 000100010000000200000000
+        - 
+        byteData: 000100010000000200000000020000000100
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 030000000400000002000000
+        customTypeSizes: 03000000040000000300000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.EnableColliderAtom
         - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
+        - RQ.Entity.AtomAction.Action.PlayerMoveAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 280000000100000001000000030000001100000028000000010000000700000007000000030000001700000001000000280000000300000003000000
+        paramDataType: 28000000010000000100000003000000110000002800000001000000070000000700000003000000280000000100000000000000010000001700000001000000280000000300000003000000260000001000000017000000
         paramName:
         - _atom
         - _enableOnEnter
@@ -8614,13 +8695,20 @@ MonoBehaviour:
         - ActionTarget
         - VariableToSet
         - VariableName
+        - _playerMoveAtom
+        - MoveOnEnter
+        - Priority
+        - MoveOnExit
         - Received
         - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 00000000000000000100000000000000000000000100000002000000030000000700000001000000020000000b000000020000000300000004000000
-        paramByteDataSize: 000000000100000001000000000000000000000000000000010000000400000004000000000000000000000001000000000000000000000000000000
+        - fsmTemplateControl
+        - storeID
+        - finishEvent
+        paramDataPos: 00000000000000000100000000000000000000000100000002000000030000000700000001000000020000000b0000000c000000100000000200000011000000030000000300000004000000000000000000000005000000
+        paramByteDataSize: 00000000010000000100000000000000000000000000000001000000040000000400000000000000000000000100000004000000010000000000000001000000000000000000000000000000000000000000000000000000
     - name: Paused
       description: 
       colorIndex: 0
@@ -8794,7 +8882,7 @@ MonoBehaviour:
         actionEnabled: 010001
         actionIsOpen: 010101
         actionStartIndex: 000000000400000007000000
-        actionHashCodes: 9f005d0048c011017e7e0e03
+        actionHashCodes: 9f005d0048c0110182737300
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -8804,7 +8892,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Fall in
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -8836,7 +8930,7 @@ MonoBehaviour:
         customTypeNames:
         - RQ.AI.Action.StopMovingAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
-        paramDataType: 010000002800000003000000030000000f00000017000000010000002800000003000000030000000100000001000000
+        paramDataType: 010000002800000003000000030000000f0000001700000001000000120000002800000003000000030000000100000001000000
         paramName:
         - everyFrame
         - _stopMovingAtom
@@ -8845,13 +8939,14 @@ MonoBehaviour:
         - time
         - finishEvent
         - realTime
+        - _animation
         - _animationAtom
         - _animComponentName
         - _animation
         - WaitForAnimationCompletion
         - StopOnExit
-        paramDataPos: 000000000000000000000000010000000000000002000000010000000100000003000000040000000200000003000000
-        paramByteDataSize: 010000000000000000000000000000000000000000000000010000000000000000000000000000000100000001000000
+        paramDataPos: 00000000000000000000000001000000000000000200000001000000000000000100000003000000040000000200000003000000
+        paramByteDataSize: 01000000000000000000000000000000000000000000000001000000000000000000000000000000000000000100000001000000
     - name: Get out of water
       description: 
       colorIndex: 0
@@ -9146,7 +9241,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 64eb3804
+        actionHashCodes: ac126d04
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -9203,19 +9298,20 @@ MonoBehaviour:
         stringParams:
         - ProcessPlayerDeath
         - 
-        byteData: 0100000000000000000001
+        byteData: 000100000000000000000001
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
         customTypeSizes: 0b000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SendMessageAtom
-        paramDataType: 2900000012000000130000001200000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
+        paramDataType: 290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
         - Targets
         - Target
         - TargetGO
         - collideTag
+        - Log
         - _sendMessageAtom
         - Message
         - TargetUniqueIds
@@ -9228,8 +9324,8 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 0000000000000000000000000100000000000000000000000000000001000000000000000100000002000000030000000400000005000000060000000a000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+        paramDataPos: 000000000000000000000000010000000000000000000000000000000000000001000000010000000200000003000000040000000500000006000000070000000b000000
+        paramByteDataSize: 0000000000000000000000000000000001000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -9346,7 +9442,7 @@ MonoBehaviour:
     keepDelayedEventsOnStateExit: 0
     preprocessed: 1
     ExposedEvents: []
-    RestartOnEnable: 1
+    RestartOnEnable: 0
     EnableDebugFlow: 0
     EnableBreakpoints: 1
     editorFlags: 1
@@ -9394,28 +9490,158 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
     name: FSM
-    startState: State 1
+    startState: Vulnerable
     states:
-    - name: State 1
+    - name: Invulnerable
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 50
         y: 100
-        width: 100
-        height: 16
+        width: 114
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Vulnerable
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.EnableComponent
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.SetColor
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0101000001
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000006000000090000000d00000012000000
+        actionHashCodes: 07377b0148c011012f2ef2042334d000fe4e7a01
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - MainFSM
+        - 
+        - UnPause
+        - 
+        - Vuln
+        byteData: 000100000001000000000000000000803f0000803f0000803f986e123f
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 04000000030000000200000002000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
+        - RQ.Animation.BasicAction.Action.EnableComponentAtom
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        - RQ.Animation.BasicAction.Action.SetColorAtom
+        paramDataType: 1100000028000000010000000700000007000000030000000f0000001700000001000000280000000100000001000000030000001700000001000000280000000300000003000000280000000300000004000000
+        paramName:
+        - Variable
+        - _atom
+        - Value
+        - ActionTarget
+        - VariableToSet
+        - VariableName
+        - time
+        - finishEvent
+        - realTime
+        - _atom
+        - EnableOnEnter
+        - EnableOnExit
+        - ComponentName
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        - _atom
+        - name
+        - color
+        paramDataPos: 000000000000000000000000010000000500000000000000000000000100000009000000010000000a0000000b00000002000000030000000c00000002000000040000000500000003000000060000000d000000
+        paramByteDataSize: 000000000000000001000000040000000400000000000000000000000000000001000000000000000100000001000000000000000000000001000000000000000000000000000000000000000000000010000000
+    - name: Vulnerable
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 258
+        y: 101
+        width: 101
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Invulnerable
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.SetColor
+        - Assets.Source.AI.PM_State_Machine.EnableComponent
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 01010100
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000060000000b0000000e000000
+        actionHashCodes: 07377b012334d000fe4e7a012f2ef204
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -9432,23 +9658,60 @@ MonoBehaviour:
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - 
+        - FINISHED
+        - Damaged
+        - 
+        - Vuln
+        - MainFSM
+        byteData: 000100000001000000000000803f0000803f0000803f0000803f0101
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    events: []
+        customTypeSizes: 04000000020000000200000003000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        - RQ.Animation.BasicAction.Action.SetColorAtom
+        - RQ.Animation.BasicAction.Action.EnableComponentAtom
+        paramDataType: 110000002800000001000000070000000700000003000000170000000100000028000000030000000300000028000000030000000400000028000000010000000100000003000000
+        paramName:
+        - Variable
+        - _atom
+        - Value
+        - ActionTarget
+        - VariableToSet
+        - VariableName
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        - _atom
+        - name
+        - color
+        - _atom
+        - EnableOnEnter
+        - EnableOnExit
+        - ComponentName
+        paramDataPos: 000000000000000000000000010000000500000000000000010000000900000001000000020000000300000002000000040000000a000000030000001a0000001b00000005000000
+        paramByteDataSize: 000000000000000001000000040000000400000000000000000000000100000000000000000000000000000000000000000000001000000000000000010000000100000000000000
+    events:
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
     globalTransitions: []
     variables:
       floatVariables: []
