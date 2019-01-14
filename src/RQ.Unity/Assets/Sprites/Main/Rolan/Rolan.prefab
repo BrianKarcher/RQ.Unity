@@ -819,6 +819,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 426274}
+  - component: {fileID: 114791891567731158}
   m_Layer: 9
   m_Name: Victory Pose
   m_TagString: Untagged
@@ -1551,7 +1552,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5200001, y: 1.6800001, z: -0.5}
+  m_LocalPosition: {x: 1.6800001, y: 0.71999997, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414904}
@@ -1573,6 +1574,7 @@ Transform:
   - {fileID: 4868023564401008}
   - {fileID: 4988330501467684}
   - {fileID: 4367154330755236}
+  - {fileID: 4643115973178714}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3110,7 +3112,7 @@ MonoBehaviour:
   _tagsYouDamage: []
   _hitEffect: {fileID: 139848, guid: a199e99bdc92eef4f8561f5a0b7e84a6, type: 2}
   _killSound: {fileID: 0}
-  _damageSound: {fileID: 8300000, guid: 4a011269d947aab43b6433112ce88b69, type: 3}
+  _damageSound: {fileID: 0}
   _death: {fileID: 0}
 --- !u!114 &11414998
 MonoBehaviour:
@@ -5392,7 +5394,7 @@ MonoBehaviour:
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: -0.5
+    ZOffset: -0.01
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 0
@@ -6388,6 +6390,62 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1297837529970154
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4999616993444898}
+  - component: {fileID: 23601462531961358}
+  - component: {fileID: 33620949297187460}
+  - component: {fileID: 114122486922624794}
+  - component: {fileID: 114644611587074702}
+  - component: {fileID: 114223006451923654}
+  m_Layer: 9
+  m_Name: FX_HammerCharge_U
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1387400326413192
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4563832085580536}
+  - component: {fileID: 23621544798481276}
+  - component: {fileID: 33537725362979720}
+  - component: {fileID: 114539075979811836}
+  - component: {fileID: 114513674183760856}
+  - component: {fileID: 114855296402808672}
+  m_Layer: 9
+  m_Name: FX_HammerCharge_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1423823021570016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4643115973178714}
+  - component: {fileID: 114963610542840348}
+  m_Layer: 9
+  m_Name: Charge_FX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1489241316938954
 GameObject:
   m_ObjectHideFlags: 0
@@ -6405,6 +6463,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1552038060145232
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4377439876155640}
+  - component: {fileID: 23255486345553064}
+  - component: {fileID: 33886366972842148}
+  - component: {fileID: 114663067826274534}
+  - component: {fileID: 114915480736034000}
+  - component: {fileID: 114691949591910934}
+  m_Layer: 9
+  m_Name: FX_HammerCharge_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1555262163369586
 GameObject:
   m_ObjectHideFlags: 0
@@ -6417,6 +6495,23 @@ GameObject:
   - component: {fileID: 114830128623541804}
   m_Layer: 9
   m_Name: HidingFSM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1571390152405734
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4530364750329524}
+  - component: {fileID: 114720481189012492}
+  - component: {fileID: 114411605333919382}
+  m_Layer: 9
+  m_Name: FSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6458,6 +6553,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1818338994372340
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4267697682602956}
+  - component: {fileID: 23695840332475666}
+  - component: {fileID: 33453433526620478}
+  - component: {fileID: 114775554308990396}
+  - component: {fileID: 114654612053689106}
+  - component: {fileID: 114879271731694270}
+  m_Layer: 9
+  m_Name: FX_HammerCharge_D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &4247825346570046
 Transform:
   m_ObjectHideFlags: 1
@@ -6470,6 +6585,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 420414}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4267697682602956
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818338994372340}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.086, y: 0.069, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4643115973178714}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4367154330755236
 Transform:
@@ -6484,6 +6612,45 @@ Transform:
   m_Father: {fileID: 420414}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4377439876155640
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552038060145232}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.11992705, y: 0.06918371, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4643115973178714}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4530364750329524
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571390152405734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4643115973178714}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4563832085580536
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387400326413192}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.119927, y: 0.06918371, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4643115973178714}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4572880425568804
 Transform:
   m_ObjectHideFlags: 1
@@ -6496,6 +6663,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 420414}
   m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4643115973178714
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423823021570016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4377439876155640}
+  - {fileID: 4563832085580536}
+  - {fileID: 4267697682602956}
+  - {fileID: 4999616993444898}
+  - {fileID: 4530364750329524}
+  m_Father: {fileID: 420414}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4820537762380000
 Transform:
@@ -6549,6 +6734,175 @@ Transform:
   m_Father: {fileID: 420414}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4999616993444898
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297837529970154}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.09, y: 0.042, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4643115973178714}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23255486345553064
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552038060145232}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23601462531961358
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297837529970154}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23621544798481276
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387400326413192}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23695840332475666
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818338994372340}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33453433526620478
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818338994372340}
+  m_Mesh: {fileID: 0}
+--- !u!33 &33537725362979720
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387400326413192}
+  m_Mesh: {fileID: 0}
+--- !u!33 &33620949297187460
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297837529970154}
+  m_Mesh: {fileID: 0}
+--- !u!33 &33886366972842148
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552038060145232}
+  m_Mesh: {fileID: 0}
 --- !u!54 &54076525726530210
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -6637,6 +6991,29 @@ MonoBehaviour:
     Layers:
     - _layerIndex: 10
     AttackDirection: 0
+--- !u!114 &114122486922624794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297837529970154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 11450116, guid: 54053ae1315d89149b57bbfca9831bee, type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 6
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
 --- !u!114 &114205705527168240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6683,6 +7060,22 @@ MonoBehaviour:
     Layers:
     - _layerIndex: 10
     AttackDirection: 0
+--- !u!114 &114223006451923654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297837529970154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 86f42276-834a-4199-bbd2-f44ec635e872
+  componentName: Charge_U
+  _rqName: FX_HammerCharge RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 3adf6b2e-772c-4ab0-95fb-148d803b5816
+  _componentRepository: {fileID: 11418054}
 --- !u!114 &114260931056941046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6998,6 +7391,23 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: d8ff23cb7bef92f49bddd15e35b4122f, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114411605333919382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571390152405734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 5a7d96af-87d4-4c89-915a-bb9c6a8afbd0
+  componentName: 
+  _rqName: FSM RQ.Physics.Components.PlayMakerStateMachineComponent
+  _rqName2: 67ec6ca0-cce0-4fb7-bf4f-9b3112dac789
+  _componentRepository: {fileID: 11418054}
+  pm: {fileID: 0}
 --- !u!114 &114416972617372510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7059,6 +7469,43 @@ MonoBehaviour:
   _rqName2: 7989b91b-f3cf-4964-b7e5-85b2b3949fcc
   _componentRepository: {fileID: 11418054}
   Floor: 1
+--- !u!114 &114513674183760856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387400326413192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11425136, guid: cd0c395182f994e4980bfeb13cfc9084, type: 2}
+  defaultClipId: 39
+  playAutomatically: 1
+--- !u!114 &114539075979811836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387400326413192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 11450116, guid: 54053ae1315d89149b57bbfca9831bee, type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 6
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
 --- !u!114 &114584092930513386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7076,6 +7523,34 @@ MonoBehaviour:
   _rqName2: e1cea4b3-f725-4dc0-a23f-8f82e4039502
   _componentRepository: {fileID: 11418054}
   WindTag: Wind
+--- !u!114 &114644611587074702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297837529970154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11425136, guid: cd0c395182f994e4980bfeb13cfc9084, type: 2}
+  defaultClipId: 39
+  playAutomatically: 1
+--- !u!114 &114654612053689106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818338994372340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11425136, guid: cd0c395182f994e4980bfeb13cfc9084, type: 2}
+  defaultClipId: 39
+  playAutomatically: 1
 --- !u!114 &114655928653567550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7109,6 +7584,45 @@ MonoBehaviour:
     Layers:
     - _layerIndex: 10
     AttackDirection: 0
+--- !u!114 &114663067826274534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552038060145232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 11450116, guid: 54053ae1315d89149b57bbfca9831bee, type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 6
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
+--- !u!114 &114691949591910934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552038060145232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: f1c8319f-bcc7-44c3-8e8c-58ffa1a113db
+  componentName: Charge_R
+  _rqName: FX_HammerCharge RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 3adf6b2e-772c-4ab0-95fb-148d803b5816
+  _componentRepository: {fileID: 11418054}
 --- !u!114 &114695512136496600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7134,7 +7648,7 @@ MonoBehaviour:
         x: 258
         y: 308
         width: 160
-        height: 112
+        height: 96
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -7172,14 +7686,6 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       - fsmEvent:
-          name: Board
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Boarded
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
           name: FallInWater
           isSystemEvent: 0
           isGlobal: 0
@@ -7189,7 +7695,6 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - RQ.Entity.AI.PlayMaker.PlayerMove
         - HutongGames.PlayMaker.Actions.RunFSM
         - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
         - Assets.Source.AI.PM_State_Machine.IsDamaged
@@ -7219,11 +7724,10 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
-        actionEnabled: 000100010101010101010100010101
-        actionIsOpen: 010101010101010101010101010101
-        actionStartIndex: 0000000004000000070000000d0000001000000013000000180000001d00000022000000270000002d00000032000000370000003c0000004d000000
-        actionHashCodes: 866e7600fe05870007377b01343beb01343beb012334d0002334d0002334d0002334d00007377b012334d0002334d000cb5eaf05d3bd7b0561566a03
+        actionEnabled: 0100010101010101010000010101
+        actionIsOpen: 0101010101010101010101010101
+        actionStartIndex: 0000000003000000090000000c0000000f00000014000000190000001e00000023000000290000002e000000330000003800000049000000
+        actionHashCodes: fe05870007377b01343beb01343beb012334d0002334d0002334d0002334d00007377b012334d0002334d000cb5eaf05d3bd7b0561566a03
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -7521,14 +8025,13 @@ MonoBehaviour:
         - 
         - FallInWater
         - FallInWater
-        byteData: 0100000000000001000000020000000100000002000000000000000001000000000000000000010000000000000000070000000000000000000000
+        byteData: 0001000000020000000100000002000000000000000001000000000000000000010000000000000000070000000000000000000000
         arrayParamSizes: 0100000001000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmInt
         - HutongGames.PlayMaker.FsmInt
-        customTypeSizes: 030000000400000001000000010000000200000002000000020000000200000004000000020000000200000002000000
+        customTypeSizes: 0400000001000000010000000200000002000000020000000200000004000000020000000200000002000000
         customTypeNames:
-        - RQ.Entity.AtomAction.Action.PlayerMoveAtom
         - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
         - RQ.AI.Conditions.IsDamagedConditionAI
         - RQ.AI.Conditions.IsDamagedConditionAI
@@ -7540,12 +8043,8 @@ MonoBehaviour:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Entity.AtomAction.SetVectorVariableAtom2
-        paramDataType: 280000000100000000000000010000002600000010000000170000001100000028000000010000000700000007000000030000001700000028000000070000001700000028000000070000001700000001000000280000000300000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000110000002800000001000000070000000700000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000002500000001000000280000000800000007000000140000001c0000001c000000070000000f0000001700000011000000130000001c0000001c0000000f000000100000000c00000010000000110000001900000011000000140000002500000025000000070000000f000000100000001000000017000000110000001300000025000000250000000f0000000f000000100000000c00000010000000110000001900000011000000
+        paramDataType: 2600000010000000170000001100000028000000010000000700000007000000030000001700000028000000070000001700000028000000070000001700000001000000280000000300000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000001700000001000000280000000300000003000000110000002800000001000000070000000700000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000002500000001000000280000000800000007000000140000001c0000001c000000070000000f0000001700000011000000130000001c0000001c0000000f000000100000000c00000010000000110000001900000011000000140000002500000025000000070000000f000000100000001000000017000000110000001300000025000000250000000f0000000f000000100000000c00000010000000110000001900000011000000
         paramName:
-        - _playerMoveAtom
-        - MoveOnEnter
-        - Priority
-        - MoveOnExit
         - fsmTemplateControl
         - storeID
         - finishEvent
@@ -7639,8 +8138,8 @@ MonoBehaviour:
         - invertMask
         - debugColor
         - debug
-        paramDataPos: 00000000000000000100000005000000000000000000000000000000000000000100000006000000070000000b0000000100000002000000020000000f000000030000000300000013000000040000001700000004000000050000000600000007000000180000000500000008000000090000000a00000019000000060000000b0000000c0000000d0000001a000000070000000e0000000f00000001000000080000001b0000001c0000002000000010000000110000002400000009000000120000001300000014000000250000000a000000150000001600000000000000260000000b000000270000002f00000000000000000000000100000033000000000000001700000002000000000000000200000003000000010000000100000000000000020000000300000000000000040000000100000001000000020000003700000002000000030000000400000018000000050000000100000003000000040000000300000004000000050000000100000006000000060000000100000007000000
-        paramByteDataSize: 00000000010000000400000001000000000000000000000000000000000000000000000001000000040000000400000000000000000000000000000004000000000000000000000004000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000004000000040000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000080000000400000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000000000000000000000000000000000000000000001000000050000000100000002000000010000000900000003000000020000000d000000040000001100000003000000050000000600000007000000120000000400000008000000090000000a00000013000000050000000b0000000c0000000d00000014000000060000000e0000000f000000010000000700000015000000160000001a00000010000000110000001e000000080000001200000013000000140000001f00000009000000150000001600000000000000200000000a00000021000000290000000000000000000000010000002d000000000000001700000002000000000000000200000003000000010000000100000000000000020000000300000000000000040000000100000001000000020000003100000002000000030000000400000018000000050000000100000003000000040000000300000004000000050000000100000006000000060000000100000007000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000040000000400000000000000000000000000000004000000000000000000000004000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000004000000040000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000080000000400000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     - name: Damaged
       description: 
       colorIndex: 0
@@ -7672,7 +8171,6 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
         - Assets.Source.AI.PM_State_Machine.SendMessage
-        - Assets.Source.AI.PM_State_Machine.PlayEntitySound
         customNames:
         - 
         - 
@@ -7682,11 +8180,10 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
-        actionEnabled: 010101010001010101
-        actionIsOpen: 010101010101010101
-        actionStartIndex: 0000000002000000050000000a0000000f000000160000001b0000002100000032000000
-        actionHashCodes: 9572fc0048c011012334d0002334d0001bcdca042334d00082737300ac126d04fcd32404
+        actionEnabled: 0101010100010101
+        actionIsOpen: 0101010101010101
+        actionStartIndex: 0000000002000000050000000a0000000f000000160000001b00000021000000
+        actionHashCodes: 9572fc0048c011012334d0002334d0001bcdca042334d00082737300ac126d04
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -7788,11 +8285,11 @@ MonoBehaviour:
         - Idle
         - PlayerDamaged
         - 
-        byteData: 0100000001000000000001000000000000000001000000803f00000000
+        byteData: 0100000001000000000001000000000000000001
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 01000000020000000200000002000000040000000b00000003000000
+        customTypeSizes: 01000000020000000200000002000000040000000b000000
         customTypeNames:
         - RQ.AI.Action.DamageBounceAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
@@ -7800,8 +8297,7 @@ MonoBehaviour:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
-        - RQ.Entity.AtomAction.Action.PlayEntitySoundAtom
-        paramDataType: 28000000010000000f0000001700000001000000170000000100000028000000030000000300000017000000010000002800000003000000030000000f0000000f0000000f000000170000001700000017000000010000001700000001000000280000000300000003000000120000002800000003000000030000000100000001000000290000001200000013000000120000000100000028000000030000000c00000003000000010000000100000001000000010000000100000001000000070000000100000028000000010000000200000007000000
+        paramDataType: 28000000010000000f0000001700000001000000170000000100000028000000030000000300000017000000010000002800000003000000030000000f0000000f0000000f000000170000001700000017000000010000001700000001000000280000000300000003000000120000002800000003000000030000000100000001000000290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
         - _damageBounceAtom
         - UseDamageColor
@@ -7853,12 +8349,8 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        - _soundAtom
-        - _playOnMusicTrack
-        - _volume
-        - EntitySound
-        paramDataPos: 000000000000000000000000000000000100000001000000020000000100000002000000030000000400000003000000020000000500000006000000010000000200000003000000070000000800000009000000040000000a00000005000000030000000b0000000c00000000000000040000000d0000000e00000006000000070000000000000001000000000000000200000008000000050000000f0000000000000010000000090000000a0000000b0000000c0000000d0000000e0000000f0000001300000006000000140000001500000019000000
-        paramByteDataSize: 000000000100000000000000000000000100000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000001000000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000010000000400000004000000
+        paramDataPos: 000000000000000000000000000000000100000001000000020000000100000002000000030000000400000003000000020000000500000006000000010000000200000003000000070000000800000009000000040000000a00000005000000030000000b0000000c00000000000000040000000d0000000e00000006000000070000000000000001000000000000000200000008000000050000000f0000000000000010000000090000000a0000000b0000000c0000000d0000000e0000000f00000013000000
+        paramByteDataSize: 0000000001000000000000000000000001000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000010000000000000000000000000000000000000000000000000000000000000001000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
     - name: Deflected
       description: 
       colorIndex: 0
@@ -8138,7 +8630,7 @@ MonoBehaviour:
         y: 103.515625
         width: 113
         height: 32
-      isBreakpoint: 0
+      isBreakpoint: 1
       isSequence: 0
       hideUnused: 0
       transitions:
@@ -8233,7 +8725,6 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.SetVelocity
         - Assets.Source.AI.PM_State_Machine.SetPhysicsFloatValue
         - HutongGames.PlayMaker.Actions.RunFSM
-        - Assets.Source.AI.PM_State_Machine.PlayEntitySound
         customNames:
         - 
         - 
@@ -8247,11 +8738,10 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
-        actionEnabled: 00010101010101000101010101
-        actionIsOpen: 01010101010101010101010101
-        actionStartIndex: 0000000002000000050000000a0000000f000000140000001a0000001e0000002200000024000000310000003600000039000000
-        actionHashCodes: 9572fc0048c011012334d0002334d0002334d000827373009f005d00ec2b1f02601b1e0384864800ffa3f204fe058700fcd32404
+        actionEnabled: 000101010101010001010101
+        actionIsOpen: 010101010101010101010101
+        actionStartIndex: 0000000002000000050000000a0000000f000000140000001a0000001e00000022000000240000003100000036000000
+        actionHashCodes: 9572fc0048c011012334d0002334d0002334d000827373009f005d00ec2b1f02601b1e0384864800ffa3f204fe058700
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -8385,10 +8875,10 @@ MonoBehaviour:
         - DamageBounce
         - Steering
         - 
-        byteData: 01000000000100000001010000000000000000000000000500000000000000000000000000a0400000a04001010000000102000000000040c000000000803f00000000
+        byteData: 01000000000100000001010000000000000000000000000500000000000000000000000000a0400000a04001010000000102000000000040c000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 01000000020000000200000002000000040000000200000003000000010000000a0000000400000003000000
+        customTypeSizes: 01000000020000000200000002000000040000000200000003000000010000000a00000004000000
         customTypeNames:
         - RQ.AI.Action.DamageBounceAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
@@ -8400,8 +8890,7 @@ MonoBehaviour:
         - RQ.AI.Action.DamagedAtom
         - RQ.AI.Action.SetVelocityAtom
         - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
-        - RQ.Entity.AtomAction.Action.PlayEntitySoundAtom
-        paramDataType: 28000000010000000f00000017000000010000001700000001000000280000000300000003000000170000000100000028000000030000000300000017000000010000002800000003000000030000001200000028000000030000000300000001000000010000000100000028000000030000000300000028000000010000000100000003000000280000000100000025000000280000000800000002000000030000000700000008000000020000000200000001000000070000000300000001000000280000000700000002000000010000000300000026000000100000001700000028000000010000000200000007000000
+        paramDataType: 28000000010000000f000000170000000100000017000000010000002800000003000000030000001700000001000000280000000300000003000000170000000100000028000000030000000300000012000000280000000300000003000000010000000100000001000000280000000300000003000000280000000100000001000000030000002800000001000000250000002800000008000000020000000300000007000000080000000200000002000000010000000700000003000000010000002800000007000000020000000100000003000000260000001000000017000000
         paramName:
         - _damageBounceAtom
         - UseDamageColor
@@ -8460,12 +8949,8 @@ MonoBehaviour:
         - fsmTemplateControl
         - storeID
         - finishEvent
-        - _soundAtom
-        - _playOnMusicTrack
-        - _volume
-        - EntitySound
-        paramDataPos: 000000000000000000000000000000000100000001000000020000000100000002000000030000000400000003000000020000000500000006000000070000000400000003000000080000000900000000000000040000000a0000000b000000050000000600000007000000050000000c0000000d0000000600000008000000090000000e000000070000000a00000000000000080000000b000000130000000f000000170000001b00000023000000270000002b0000002c000000100000003000000009000000310000003500000039000000110000000000000000000000120000000a0000003a0000003b0000003f000000
-        paramByteDataSize: 00000000010000000000000000000000010000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000000010000000100000000000000000000000000000000000000010000000100000000000000000000000100000000000000000000000800000004000000000000000400000008000000040000000400000001000000040000000000000001000000000000000400000004000000010000000000000000000000000000000000000000000000010000000400000004000000
+        paramDataPos: 000000000000000000000000000000000100000001000000020000000100000002000000030000000400000003000000020000000500000006000000070000000400000003000000080000000900000000000000040000000a0000000b000000050000000600000007000000050000000c0000000d0000000600000008000000090000000e000000070000000a00000000000000080000000b000000130000000f000000170000001b00000023000000270000002b0000002c00000010000000300000000900000031000000350000003900000011000000000000000000000012000000
+        paramByteDataSize: 000000000100000000000000000000000100000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000100000001000000000000000000000000000000000000000100000001000000000000000000000001000000000000000000000008000000040000000000000004000000080000000400000004000000010000000400000000000000010000000000000004000000040000000100000000000000000000000000000000000000
     - name: Damage Dust
       description: 
       colorIndex: 0
@@ -8585,60 +9070,21 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.EnableCollider
         - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
-        - RQ.Entity.AI.PlayMaker.PlayerMove
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
-        - HutongGames.PlayMaker.Actions.RunFSM
         customNames:
         - 
         - 
         - 
-        - 
-        - 
-        actionEnabled: 0100010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 00000000040000000a0000000e00000013000000
-        actionHashCodes: ec2b1f0207377b01866e76002334d000fe058700
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000040000000a000000
+        actionHashCodes: ec2b1f0207377b012334d000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
-        fsmTemplateControlParams:
-        - fsmTemplate: {fileID: 11400000, guid: e1bbc46073f778f4098105528271cc1d,
-            type: 2}
-          fsmVarOverrides:
-          - variable:
-              useVariable: 1
-              name: Speed
-              tooltip: Speed of entity
-              showInInspector: 1
-              networkSync: 0
-            fsmVar:
-              variableName: Speed
-              objectType: 
-              useVariable: 0
-              type: 0
-              floatValue: 0
-              intValue: 0
-              boolValue: 0
-              stringValue: 
-              vector4Value: {x: 0, y: 0, z: 0, w: 0}
-              objectReference: {fileID: 0}
-              arrayValue:
-                useVariable: 0
-                name: 
-                tooltip: 
-                showInInspector: 0
-                networkSync: 0
-                type: -1
-                objectTypeName: 
-                floatValues: []
-                intValues: 
-                boolValues: 
-                stringValues: []
-                vector4Values: []
-                objectReferences: []
-            isEdited: 0
+        fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
@@ -8648,13 +9094,7 @@ MonoBehaviour:
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
-        fsmIntParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
+        fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -8673,17 +9113,15 @@ MonoBehaviour:
         - FINISHED
         - IsUnboarded
         - 
-        - 
-        byteData: 000100010000000200000000020000000100
+        byteData: 000100010000000200000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 03000000040000000300000002000000
+        customTypeSizes: 030000000400000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.EnableColliderAtom
         - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
-        - RQ.Entity.AtomAction.Action.PlayerMoveAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 28000000010000000100000003000000110000002800000001000000070000000700000003000000280000000100000000000000010000001700000001000000280000000300000003000000260000001000000017000000
+        paramDataType: 280000000100000001000000030000001100000028000000010000000700000007000000030000001700000001000000280000000300000003000000
         paramName:
         - _atom
         - _enableOnEnter
@@ -8695,20 +9133,13 @@ MonoBehaviour:
         - ActionTarget
         - VariableToSet
         - VariableName
-        - _playerMoveAtom
-        - MoveOnEnter
-        - Priority
-        - MoveOnExit
         - Received
         - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
         - Data
-        - fsmTemplateControl
-        - storeID
-        - finishEvent
-        paramDataPos: 00000000000000000100000000000000000000000100000002000000030000000700000001000000020000000b0000000c000000100000000200000011000000030000000300000004000000000000000000000005000000
-        paramByteDataSize: 00000000010000000100000000000000000000000000000001000000040000000400000000000000000000000100000004000000010000000000000001000000000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000000000000100000000000000000000000100000002000000030000000700000001000000020000000b000000020000000300000004000000
+        paramByteDataSize: 000000000100000001000000000000000000000000000000010000000400000004000000000000000000000001000000000000000000000000000000
     - name: Paused
       description: 
       colorIndex: 0
@@ -9440,9 +9871,9 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
-    RestartOnEnable: 0
+    RestartOnEnable: 1
     EnableDebugFlow: 0
     EnableBreakpoints: 1
     editorFlags: 1
@@ -9475,12 +9906,12 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 33bcda08be0a5144c8812dddbb5be116, type: 2}
   eventHandlerComponentsAdded: 1
---- !u!114 &114747485462126734
+--- !u!114 &114720481189012492
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1489241316938954}
+  m_GameObject: {fileID: 1571390152405734}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
@@ -9490,158 +9921,28 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
     name: FSM
-    startState: Vulnerable
+    startState: State 1
     states:
-    - name: Invulnerable
+    - name: State 1
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 50
         y: 100
-        width: 114
-        height: 32
+        width: 100
+        height: 16
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Vulnerable
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
+      transitions: []
       actionData:
-        actionNames:
-        - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
-        - HutongGames.PlayMaker.Actions.Wait
-        - Assets.Source.AI.PM_State_Machine.EnableComponent
-        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
-        - Assets.Source.AI.PM_State_Machine.SetColor
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 0101000001
-        actionIsOpen: 0101010101
-        actionStartIndex: 0000000006000000090000000d00000012000000
-        actionHashCodes: 07377b0148c011012f2ef2042334d000fe4e7a01
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 3
-        fsmIntParams: []
-        fsmBoolParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - 
-        - 
-        - MainFSM
-        - 
-        - UnPause
-        - 
-        - Vuln
-        byteData: 000100000001000000000000000000803f0000803f0000803f986e123f
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 04000000030000000200000002000000
-        customTypeNames:
-        - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
-        - RQ.Animation.BasicAction.Action.EnableComponentAtom
-        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        - RQ.Animation.BasicAction.Action.SetColorAtom
-        paramDataType: 1100000028000000010000000700000007000000030000000f0000001700000001000000280000000100000001000000030000001700000001000000280000000300000003000000280000000300000004000000
-        paramName:
-        - Variable
-        - _atom
-        - Value
-        - ActionTarget
-        - VariableToSet
-        - VariableName
-        - time
-        - finishEvent
-        - realTime
-        - _atom
-        - EnableOnEnter
-        - EnableOnExit
-        - ComponentName
-        - Received
-        - GotoPreviousState
-        - _isMessageReceivedAtom
-        - Message
-        - Data
-        - _atom
-        - name
-        - color
-        paramDataPos: 000000000000000000000000010000000500000000000000000000000100000009000000010000000a0000000b00000002000000030000000c00000002000000040000000500000003000000060000000d000000
-        paramByteDataSize: 000000000000000001000000040000000400000000000000000000000000000001000000000000000100000001000000000000000000000001000000000000000000000000000000000000000000000010000000
-    - name: Vulnerable
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 258
-        y: 101
-        width: 101
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Invulnerable
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
-        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
-        - Assets.Source.AI.PM_State_Machine.SetColor
-        - Assets.Source.AI.PM_State_Machine.EnableComponent
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 01010100
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000060000000b0000000e000000
-        actionHashCodes: 07377b012334d000fe4e7a012f2ef204
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -9658,60 +9959,157 @@ MonoBehaviour:
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
+        fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams:
-        - 
-        - FINISHED
-        - Damaged
-        - 
-        - Vuln
-        - MainFSM
-        byteData: 000100000001000000000000803f0000803f0000803f0000803f0101
+        stringParams: []
+        byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 04000000020000000200000003000000
-        customTypeNames:
-        - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
-        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        - RQ.Animation.BasicAction.Action.SetColorAtom
-        - RQ.Animation.BasicAction.Action.EnableComponentAtom
-        paramDataType: 110000002800000001000000070000000700000003000000170000000100000028000000030000000300000028000000030000000400000028000000010000000100000003000000
-        paramName:
-        - Variable
-        - _atom
-        - Value
-        - ActionTarget
-        - VariableToSet
-        - VariableName
-        - Received
-        - GotoPreviousState
-        - _isMessageReceivedAtom
-        - Message
-        - Data
-        - _atom
-        - name
-        - color
-        - _atom
-        - EnableOnEnter
-        - EnableOnExit
-        - ComponentName
-        paramDataPos: 000000000000000000000000010000000500000000000000010000000900000001000000020000000300000002000000040000000a000000030000001a0000001b00000005000000
-        paramByteDataSize: 000000000000000001000000040000000400000000000000000000000100000000000000000000000000000000000000000000001000000000000000010000000100000000000000
-    events:
-    - name: FINISHED
-      isSystemEvent: 1
-      isGlobal: 0
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables: []
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 1
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 4988972b2388cc24eaac6561397e22d2, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &114747485462126734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489241316938954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
     globalTransitions: []
     variables:
       floatVariables: []
@@ -10019,6 +10417,29 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: fcc745f712b2e414ead47803de86a6ed, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114775554308990396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818338994372340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 11450116, guid: 54053ae1315d89149b57bbfca9831bee, type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 6
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
 --- !u!114 &114784638530217550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10376,6 +10797,17 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 8779a2bc5a0bb0c49b12396536b21638, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114791891567731158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114830128623541804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10413,6 +10845,22 @@ MonoBehaviour:
   _playMultipleTimes: 0
   _disableMainInput: 1
   _sequenceName: VictoryPose
+--- !u!114 &114855296402808672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387400326413192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 381c726c-6613-4b5f-ad97-e50a0ea4c51f
+  componentName: Charge_L
+  _rqName: FX_HammerCharge RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 3adf6b2e-772c-4ab0-95fb-148d803b5816
+  _componentRepository: {fileID: 11418054}
 --- !u!114 &114863011377184048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10461,6 +10909,36 @@ MonoBehaviour:
       x: 0
       y: 0
     StopWhenHitGround: 0
+--- !u!114 &114879271731694270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818338994372340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 171c55bd-b9f5-455e-8300-faab50c1a6eb
+  componentName: Charge_D
+  _rqName: FX_HammerCharge RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 3adf6b2e-772c-4ab0-95fb-148d803b5816
+  _componentRepository: {fileID: 11418054}
+--- !u!114 &114915480736034000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552038060145232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11425136, guid: cd0c395182f994e4980bfeb13cfc9084, type: 2}
+  defaultClipId: 39
+  playAutomatically: 1
 --- !u!114 &114931560673205120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10494,6 +10972,26 @@ MonoBehaviour:
   _rqName2: f5ed903c-a2f1-4cf2-adb9-456c676c0f55
   _componentRepository: {fileID: 11418054}
   pm: {fileID: 114747485462126734}
+--- !u!114 &114963610542840348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423823021570016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: f961ee39-88db-4b7b-9802-7aaabdd87e4c
+  componentName: 
+  _rqName: Charge_FX RQ.Entity.Common.SpriteBaseComponent
+  _rqName2: 764ac1e1-a7ea-433d-b0c4-f8f4a809c161
+  _recreateOnLoadGame: 1
+  _addToEntityContainer: 1
+  EntityType: 2
+  EntityPrefabUniqueId: 36c123ab-9a77-47a4-8350-fa49d67fcff8
+  _parentRepo: {fileID: 0}
 --- !u!135 &135066111966654898
 SphereCollider:
   m_ObjectHideFlags: 1
