@@ -43,18 +43,22 @@ namespace RQ.Controller.ManageScene
 
         public void Save()
         {
+            Debug.LogError("Save button clicked");
             GameStateController.Instance.SaveGamePrefsToFile();
             // New original in case Settings gets reentered
-            //_originalGamePrefsData = GameStateController.Instance.GetGamePrefs().Clone();
-            MessageDispatcher2.Instance.DispatchMsg(SaveMessage, 0f, this.UniqueId, "Game Controller", null);
+            _originalGamePrefsData = GameStateController.Instance.GetGamePrefs().Clone();
+            MessageDispatcher2.Instance.DispatchMsg(SaveMessage, 0f, this.UniqueId, "UI Manager", null);
         }
 
         public void Cancel()
         {
+            Debug.LogError("Cancel button clicked");
+            MusicVolumeSlider.value = _originalGamePrefsData.MusicVolume;
+            SoundEffectVolumeSlider.value = _originalGamePrefsData.SoundEffectVolume;
             GameStateController.Instance.GetGamePrefs().SetGamePrefs(_originalGamePrefsData);
             // Volume got reset, send the update to revert to the original value
             MessageDispatcher2.Instance.DispatchMsg("UpdateVolume", 0f, this.UniqueId, null, null);
-            MessageDispatcher2.Instance.DispatchMsg(CancelMessage, 0f, this.UniqueId, "Game Controller", null);
+            MessageDispatcher2.Instance.DispatchMsg(CancelMessage, 0f, this.UniqueId, "UI Manager", null);
         }
     }
 }
