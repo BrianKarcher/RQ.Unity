@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 58de831f-9c46-4264-8f79-8dedc6f99f04
+  componentName: 
   _rqName: Actions RQ.Controller.Actions.ActionController
   _rqName2: 15263341-0851-4629-a903-b48cb8b72de9
   _componentRepository: {fileID: 854482214}
@@ -274,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: c0744c11-8ca9-417f-bab3-fd8cc44e18a7
+  componentName: 
   _rqName: Actions RQ.Entity.Common.SpriteBaseComponent
   _rqName2: 03e7e4b1-7029-4311-bbf0-82ba2e64712d
   _recreateOnLoadGame: 0
@@ -291,6 +293,7 @@ GameObject:
   - component: {fileID: 973708741}
   - component: {fileID: 973708743}
   - component: {fileID: 973708742}
+  - component: {fileID: 973708744}
   m_Layer: 0
   m_Name: Begin
   m_TagString: Untagged
@@ -323,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 2832f671-4e63-4377-908c-15324385ada6
+  componentName: 
   _rqName: Begin RQ.Controller.Actions.TweenOverlayToColor
   _rqName2: eff8c0e3-6182-49c7-a4cc-e20b96afb449
   _overlayColor:
@@ -342,8 +346,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 09b10239-b18b-42ab-a7c5-ef1cafe35e74
+  componentName: 
   _rqName: Begin RQ.Controller.Actions.ActionSequence
   _rqName2: b55d3082-68b2-4b1d-b6b7-15fce3d51ed7
   _actionSequenceType: Start
   ActionController: {fileID: 854482212}
   _runOnce: 0
+--- !u!114 &973708744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 973708740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1883973987, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 53406dd5-ae18-440b-9c77-061a9c2d74bc
+  componentName: 
+  _rqName: Begin RQ.Controller.Actions.AudioPlay2
+  _rqName2: 7a09c49b-9bf7-403f-927b-652e64df9cda
+  _soundInfo:
+    AudioClips:
+    - {fileID: 8300000, guid: 463d2a9cee703744cb380576e32ec0ad, type: 3}
+    ClearPreviousClips: 0
+    StopAudioOnExit: 0
+    PlaySound: 1
+    DelaySound: 0
+    PlayAsOneShot: 0
+    LoopSound: 0
+    PlayOnMusicTrack: 1
+    ForcePlay: 1
+    Volume: 1
