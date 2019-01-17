@@ -8509,7 +8509,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 244215647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 923897265}
@@ -14051,7 +14051,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 450522365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2064780253}
@@ -18363,8 +18363,8 @@ MonoBehaviour:
   constraint: 0
   onUp: {fileID: 227888116}
   onDown: {fileID: 227888116}
-  onLeft: {fileID: 45717227}
-  onRight: {fileID: 2064780246}
+  onLeft: {fileID: 2064780246}
+  onRight: {fileID: 1770280580}
   onClick: {fileID: 0}
   onTab: {fileID: 0}
   startsSelected: 0
@@ -32548,7 +32548,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1129797008}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 260, y: -272.00003, z: 0}
+  m_LocalPosition: {x: -135, y: -272.00003, z: 0}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children:
   - {fileID: 1544026389}
@@ -32585,10 +32585,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constraint: 0
-  onUp: {fileID: 0}
-  onDown: {fileID: 0}
+  onUp: {fileID: 509187704}
+  onDown: {fileID: 1606458068}
   onLeft: {fileID: 0}
-  onRight: {fileID: 0}
+  onRight: {fileID: 1606458068}
   onClick: {fileID: 0}
   onTab: {fileID: 0}
   startsSelected: 0
@@ -34400,7 +34400,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1198403227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 626309034}
@@ -39603,7 +39603,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1417020506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 299, z: 0}
+  m_LocalPosition: {x: 20, y: 298, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 450522366}
@@ -45217,7 +45217,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1606458068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -217, y: -272, z: 0}
+  m_LocalPosition: {x: 371, y: -272, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 513500561}
@@ -45254,9 +45254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constraint: 0
-  onUp: {fileID: 0}
-  onDown: {fileID: 0}
-  onLeft: {fileID: 0}
+  onUp: {fileID: 509187704}
+  onDown: {fileID: 470552930}
+  onLeft: {fileID: 1129797008}
   onRight: {fileID: 0}
   onClick: {fileID: 0}
   onTab: {fileID: 0}
@@ -49555,7 +49555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constraint: 0
-  onUp: {fileID: 227888116}
+  onUp: {fileID: 1772477128}
   onDown: {fileID: 227888116}
   onLeft: {fileID: 45717227}
   onRight: {fileID: 2064780246}
@@ -49737,8 +49737,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constraint: 0
-  onUp: {fileID: 2064780246}
-  onDown: {fileID: 2064780246}
+  onUp: {fileID: 1770280580}
+  onDown: {fileID: 1770280580}
   onLeft: {fileID: 227888116}
   onRight: {fileID: 227888116}
   onClick: {fileID: 0}
@@ -52235,6 +52235,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1856580183}
+  - component: {fileID: 1856580185}
+  - component: {fileID: 1856580184}
   m_Layer: 0
   m_Name: Sound Effect Volume
   m_TagString: Untagged
@@ -52258,6 +52260,50 @@ Transform:
   m_Father: {fileID: 1438865674}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1856580184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856580182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643ea4bc79b55444d974ddbd31a6cd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constraint: 0
+  onUp: {fileID: 470552930}
+  onDown: {fileID: 1129797008}
+  onLeft: {fileID: 0}
+  onRight: {fileID: 0}
+  onClick: {fileID: 0}
+  onTab: {fileID: 0}
+  startsSelected: 0
+--- !u!114 &1856580185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856580182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 470552930}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
 --- !u!1 &1864576960
 GameObject:
   m_ObjectHideFlags: 0
@@ -55634,7 +55680,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1967754731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 263, z: 0}
+  m_LocalPosition: {x: 0, y: 264, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1438865674}
@@ -55717,6 +55763,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1974429156}
+  - component: {fileID: 1974429158}
+  - component: {fileID: 1974429157}
   m_Layer: 0
   m_Name: Music Volume
   m_TagString: Untagged
@@ -55740,6 +55788,50 @@ Transform:
   m_Father: {fileID: 1438865674}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1974429157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1974429155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643ea4bc79b55444d974ddbd31a6cd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constraint: 0
+  onUp: {fileID: 1606458068}
+  onDown: {fileID: 509187704}
+  onLeft: {fileID: 0}
+  onRight: {fileID: 0}
+  onClick: {fileID: 0}
+  onTab: {fileID: 0}
+  startsSelected: 1
+--- !u!114 &1974429158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1974429155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 470552930}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
 --- !u!1 &1980461135
 GameObject:
   m_ObjectHideFlags: 0
@@ -57699,8 +57791,8 @@ MonoBehaviour:
   constraint: 0
   onUp: {fileID: 1772477128}
   onDown: {fileID: 0}
-  onLeft: {fileID: 626309027}
-  onRight: {fileID: 45717227}
+  onLeft: {fileID: 1770280580}
+  onRight: {fileID: 626309027}
   onClick: {fileID: 0}
   onTab: {fileID: 0}
   startsSelected: 1
