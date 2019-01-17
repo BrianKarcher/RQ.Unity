@@ -789,12 +789,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.RunFSM
+        - Assets.Source.AI.PM_State_Machine.PlayerChargeSlashState
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: fe058700
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: fe0587008e269202
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -863,15 +865,17 @@ MonoBehaviour:
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 260000001000000017000000
+        customTypeSizes: 00000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.PlayerChargeSlashStateAtom
+        paramDataType: 26000000100000001700000028000000
         paramName:
         - fsmTemplateControl
         - storeID
         - finishEvent
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000000000000
+        - _atom
+        paramDataPos: 00000000000000000000000000000000
+        paramByteDataSize: 00000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1

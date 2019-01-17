@@ -344,8 +344,13 @@ namespace RQ2.UI
                 //var gold = (int)data.ExtraInfo;
                 var itemUniqueId = (string)data.ExtraInfo;
                 //var itemConfig = ConfigsContainer.Instance.GetConfig<ItemConfig>(itemUniqueId);
+                if (itemUniqueId == null)
+                {
+                    HUDSkill.mainTexture = null;
+                    return;
+                }
                 var itemConfig = GameDataController.Instance.GetGameConfig().GetAsset<ItemConfig>(itemUniqueId);
-                HUDSkill.mainTexture = itemConfig.GridTexture;
+                HUDSkill.mainTexture = itemConfig == null ? null : itemConfig.GridTexture;
                 SetHUDSkillColor();
                 //MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
             });
@@ -446,10 +451,10 @@ namespace RQ2.UI
         private void SetHUDSkillColor()
         {
             Color color;
-            if (Utility.IsSelectedSkillAffordable())
+            //if (Utility.IsSelectedSkillAffordable())
                 color = new Color(1, 1, 1, 1);
-            else
-                color = new Color(.8f, 0, 0, .9f);
+            //else
+            //    color = new Color(.8f, 0, 0, .9f);
             HUDSkill.color = color;
         }
 
