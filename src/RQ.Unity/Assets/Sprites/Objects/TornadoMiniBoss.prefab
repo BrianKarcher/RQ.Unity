@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 114527748619221816}
   - component: {fileID: 114699883536587086}
   - component: {fileID: 114216558869657488}
-  - component: {fileID: 114122681783616432}
+  - component: {fileID: 114103565705595472}
   m_Layer: 0
   m_Name: TornadoMiniBoss
   m_TagString: Untagged
@@ -391,7 +391,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882606112907064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4202602, y: 1.1070702, z: 0}
+  m_LocalPosition: {x: -1.5995247, y: 1.8654771, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4069743415915792}
@@ -555,7 +555,7 @@ MonoBehaviour:
   _rqName2: 3786b1be-adea-41f2-9841-76b2a9672d2a
   _componentRepository: {fileID: 114698953656117946}
   pm: {fileID: 0}
---- !u!114 &114122681783616432
+--- !u!114 &114103565705595472
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -563,14 +563,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1882606112907064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 33308253-c1e4-4413-821e-ef635cb67269
+  _uniqueId: e518afcd-f6af-4621-a279-d03b2d797c8c
   componentName: 
-  _rqName: Tornado RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: 403b9c8c-b05e-40d3-9e59-9d90cb58eb52
+  _rqName: TornadoMiniBoss (1) RQ.Physics.Components.FloorComponent
+  _rqName2: a89b453f-7225-4da6-8e17-e1025a9c81ba
   _componentRepository: {fileID: 114698953656117946}
+  Floor: 2
 --- !u!114 &114123367044763438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -775,20 +776,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 4908006406328516}
   _autoChangeLayers: 0
 --- !u!114 &114240320332020400
@@ -1044,12 +1036,11 @@ MonoBehaviour:
   _rqName2: c35cd37b-c6b9-4ec7-96d7-7f5181b35e22
   _componentRepository: {fileID: 114698953656117946}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -1074,6 +1065,7 @@ MonoBehaviour:
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -1084,10 +1076,8 @@ MonoBehaviour:
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: 0
+    ZOffset: -0.5
   _steeringPhysicsAffector:
-    _velocity: {x: 0, y: 0}
-    _originaVelocity: {x: 0, y: 0}
     _force: {x: 0, y: 0}
     _maxForce: 1
     _originalMaxForce: 1
@@ -1096,13 +1086,13 @@ MonoBehaviour:
     _mass: 1
     _enabled: 1
     Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -1127,6 +1117,7 @@ MonoBehaviour:
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -1188,7 +1179,7 @@ MonoBehaviour:
   _damageData:
     DamageTargetOnCollision: 1
     DamageTargetOnTrigger: 1
-    DamageOnTouch: 0
+    DamageOnTouch: 1
     TakesDamage: 0
     TakesSkillDamage: 0
     Vulnerable: 0
@@ -1236,7 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 986810119, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 254825ca-80e5-4621-909a-0d4965800a09
+  _uniqueId: 8444f742-da76-45fd-b01f-1865cf227388
   componentName: 
   _rqName: Flying RQ.Entity.StatesV2.AnimatorState
   _rqName2: 81965436-0cf4-4038-9b26-3f435265fac0
@@ -1309,7 +1300,7 @@ MonoBehaviour:
   m_Script: {fileID: -1087292713, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 4c897fed-a3ba-4f5c-ba5c-ff3fc1a504c4
+  _uniqueId: e924ff6c-1536-4345-9664-8a3cb484b39a
   componentName: 
   _rqName: KillSelf RQ.Entity.StatesV2.KillSelf
   _rqName2: 2eb6f3b4-7cb9-455a-a66b-b9e69b7e1672
@@ -1355,20 +1346,11 @@ MonoBehaviour:
     Level: 3
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 4362540017330526}
   _autoChangeLayers: 0
 --- !u!114 &114932343883423754

@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 114731408653508804}
   - component: {fileID: 54595343729686974}
   - component: {fileID: 114041561638068626}
+  - component: {fileID: 114400411773117364}
   m_Layer: 10
   m_Name: MiniBoss_Bird
   m_TagString: Boss
@@ -232,7 +233,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725909762811524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.32, y: 2.48, z: -0.39}
+  m_LocalPosition: {x: 3.12, y: 2.6399999, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4070970755720582}
@@ -455,7 +456,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
 --- !u!33 &33713142161123942
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -621,6 +622,7 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
+  _avoidLayersMasks: []
   _follow: {fileID: 0}
   _targetingData:
     Waypoints: {fileID: 0}
@@ -670,6 +672,8 @@ MonoBehaviour:
   _audioSource: {fileID: 82353404261767710}
   _tweenSpeed: 0
   _fadeOut: 0
+  _volume: 1
+  AudioType: 0
 --- !u!114 &114112917785342950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -821,6 +825,23 @@ MonoBehaviour:
     x: 0
     y: 0
   anim: {fileID: 114030890514159386}
+--- !u!114 &114400411773117364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725909762811524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 82254759-85b6-4e31-bc92-74d571b809b0
+  componentName: 
+  _rqName: MiniBoss_Bird RQ.Physics.Components.FloorComponent
+  _rqName2: 8ac1ee4b-2328-4f7b-b296-1980b95ce01a
+  _componentRepository: {fileID: 114251591095256496}
+  Floor: 2
 --- !u!114 &114426492405422094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -840,7 +861,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725909762811524}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
@@ -877,9 +898,10 @@ MonoBehaviour:
     _externalVelocity:
       x: 0
       y: 0
-    OriginalZ: 0
+    OriginalZ: -1.5
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -890,7 +912,7 @@ MonoBehaviour:
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: 0
+    ZOffset: -0.5
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 1
@@ -900,6 +922,7 @@ MonoBehaviour:
     _mass: 0
     _enabled: 1
     Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
     InitialVelocity: {x: 0, y: 0}
     Size:
@@ -930,6 +953,7 @@ MonoBehaviour:
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -971,20 +995,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4065365935116278}
   _autoChangeLayers: 0
 --- !u!114 &114655477612630060
@@ -1036,20 +1051,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 2
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4666140638340432}
   _autoChangeLayers: 1
 --- !u!114 &114731408653508804
@@ -1088,20 +1094,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 12
-  _levelTwoLayer:
-    _layerIndex: 12
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 12
   _mainCollider: {fileID: 4962927311484582}
   _autoChangeLayers: 0
 --- !u!114 &114805130120183118
@@ -1204,15 +1201,51 @@ MonoBehaviour:
     events: []
     globalTransitions: []
     variables:
-      floatVariables: []
+      floatVariables:
+      - useVariable: 1
+        name: altitude
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: hp
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: timeGrounded
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 3
+      - useVariable: 1
+        name: waitPersist
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       intVariables:
+      - useVariable: 1
+        name: TornadoCount
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 1
       - useVariable: 1
         name: step
         tooltip: 
         showInInspector: 0
         networkSync: 0
         value: 0
-      boolVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: isTornadoNext
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       stringVariables: []
       vector2Variables: []
       vector3Variables: []
@@ -1233,7 +1266,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
@@ -1347,7 +1380,7 @@ MonoBehaviour:
   meshCollider: {fileID: 0}
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
-  renderLayer: 1
+  renderLayer: 0
 --- !u!114 &114971282935206568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1378,6 +1411,7 @@ MonoBehaviour:
     Gravity:
       x: 0
       y: 0
+    StopWhenHitGround: 0
 --- !u!135 &135436028647904778
 SphereCollider:
   m_ObjectHideFlags: 1
