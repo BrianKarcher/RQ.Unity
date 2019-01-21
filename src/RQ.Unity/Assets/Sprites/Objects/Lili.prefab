@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4229079511567296}
   - component: {fileID: 114445215975803214}
   - component: {fileID: 135900288803366152}
-  m_Layer: 2
+  m_Layer: 15
   m_Name: TileCollider
   m_TagString: Tilemap
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506824051627202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.72, y: 2.4, z: -0.5}
+  m_LocalPosition: {x: 2.56, y: 2.56, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4264097054363334}
@@ -768,7 +768,7 @@ MonoBehaviour:
     _dragForce: 0.4
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: 0
+    ZOffset: -0.5
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 1
@@ -865,20 +865,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 15
-  _levelTwoLayer:
-    _layerIndex: 15
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4806874284287448}
   _autoChangeLayers: 0
 --- !u!114 &114254516537038436
@@ -985,20 +976,11 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 2
-  _levelTwoLayer:
-    _layerIndex: 2
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4229079511567296}
   _autoChangeLayers: 1
 --- !u!114 &114486825354388632
@@ -1173,20 +1155,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 12
-  _levelTwoLayer:
-    _layerIndex: 12
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 12
   _mainCollider: {fileID: 4856816291981774}
   _autoChangeLayers: 0
 --- !u!114 &114760829899885914
@@ -1209,7 +1182,7 @@ MonoBehaviour:
     StringVariables: []
     BoolVariables:
     - Name: Boarded
-      Value: 0
+      Value: 1
     FloatVariables: []
     Vector2Variables: []
     Vector3Variables: []
@@ -1232,6 +1205,8 @@ MonoBehaviour:
   _audioSource: {fileID: 82688556159251652}
   _tweenSpeed: 0
   _fadeOut: 0
+  _volume: 1
+  AudioType: 0
 --- !u!114 &114836252879981860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1294,20 +1269,11 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 2
-  _levelTwoLayer:
-    _layerIndex: 2
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4320798611357612}
   _autoChangeLayers: 0
 --- !u!114 &114848573386849606

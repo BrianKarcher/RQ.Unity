@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 114964522508631212}
   - component: {fileID: 54576391662119218}
   - component: {fileID: 114595264509050732}
+  - component: {fileID: 114694632188552086}
   m_Layer: 10
   m_Name: LittleBird
   m_TagString: Enemy
@@ -693,20 +694,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 12
-  _levelTwoLayer:
-    _layerIndex: 12
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 12
   _mainCollider: {fileID: 4363363909493332}
   _autoChangeLayers: 0
 --- !u!114 &114030037400651658
@@ -871,6 +863,8 @@ MonoBehaviour:
   _audioSource: {fileID: 82787352148765292}
   _tweenSpeed: 0
   _fadeOut: 0
+  _volume: 1
+  AudioType: 0
 --- !u!114 &114347172030756276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1076,20 +1070,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4906453184179698}
   _autoChangeLayers: 0
 --- !u!114 &114373608705554118
@@ -1111,20 +1096,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4158528548441992}
   _autoChangeLayers: 0
 --- !u!114 &114417695129341338
@@ -1359,6 +1335,7 @@ MonoBehaviour:
     Gravity:
       x: 0
       y: 0
+    StopWhenHitGround: 0
 --- !u!114 &114495173810430598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1425,6 +1402,7 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
+  _avoidLayersMasks: []
   _follow: {fileID: 0}
   _targetingData:
     Waypoints: {fileID: 0}
@@ -1470,6 +1448,23 @@ MonoBehaviour:
   _rqName2: 3eafea01-1694-4667-b404-27171b6efc7b
   _componentRepository: {fileID: 114890941582495346}
   pm: {fileID: 114417695129341338}
+--- !u!114 &114694632188552086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896976730737982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 63cb75ca-c318-4dcb-9b04-2105b3d0fc61
+  componentName: 
+  _rqName: LittleBird RQ.Physics.Components.FloorComponent
+  _rqName2: fdd73e3c-71b8-4d13-adb8-20196d18c8be
+  _componentRepository: {fileID: 114890941582495346}
+  Floor: 1
 --- !u!114 &114712432475195700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1516,6 +1511,7 @@ MonoBehaviour:
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 0.5
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -1526,7 +1522,7 @@ MonoBehaviour:
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: 0
+    ZOffset: -0.5
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 0.5
@@ -1536,6 +1532,7 @@ MonoBehaviour:
     _mass: 1
     _enabled: 1
     Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
     InitialVelocity: {x: 0, y: 0}
     Size:
@@ -1566,6 +1563,7 @@ MonoBehaviour:
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 0.01
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
