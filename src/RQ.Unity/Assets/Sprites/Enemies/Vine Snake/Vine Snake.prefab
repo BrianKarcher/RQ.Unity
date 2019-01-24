@@ -837,6 +837,7 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
+  _avoidLayersMasks: []
   _follow: {fileID: 0}
   _targetingData:
     Waypoints: {fileID: 0}
@@ -1044,20 +1045,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4917999151121144}
   _autoChangeLayers: 0
 --- !u!114 &114534902071749724
@@ -1090,6 +1082,7 @@ MonoBehaviour:
     Gravity:
       x: 0
       y: 0
+    StopWhenHitGround: 0
 --- !u!114 &114552861005148374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1122,20 +1115,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 12
-  _levelTwoLayer:
-    _layerIndex: 12
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 12
   _mainCollider: {fileID: 4242958632894120}
   _autoChangeLayers: 0
 --- !u!114 &114605451034460628
@@ -1285,6 +1269,7 @@ MonoBehaviour:
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 0.5
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -1305,6 +1290,7 @@ MonoBehaviour:
     _mass: 1
     _enabled: 1
     Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
     InitialVelocity: {x: 0, y: 0}
     Size:
@@ -1335,6 +1321,7 @@ MonoBehaviour:
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 0.01
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -1558,20 +1545,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4511381101002102}
   _autoChangeLayers: 0
 --- !u!114 &114906097235255018
@@ -1593,6 +1571,8 @@ MonoBehaviour:
   _audioSource: {fileID: 82056038380977428}
   _tweenSpeed: 0
   _fadeOut: 0
+  _volume: 1
+  AudioType: 0
 --- !u!114 &114925318432036612
 MonoBehaviour:
   m_ObjectHideFlags: 1
