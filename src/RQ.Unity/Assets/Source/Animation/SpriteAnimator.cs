@@ -94,7 +94,7 @@ namespace RQ2.AnimationV2
                 Debug.LogError("Sprite not found");
             if (name == null)
             {
-                Debug.LogError("(SetColor) name is null");
+                //Debug.LogError("(SetColor) name is null");
                 return;
             }
             colors[name] = color;

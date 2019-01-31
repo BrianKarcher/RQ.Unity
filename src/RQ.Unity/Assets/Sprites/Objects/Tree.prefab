@@ -59,8 +59,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 409944}
-  - component: {fileID: 6159524}
   - component: {fileID: 11493962}
+  - component: {fileID: 65038664276520468}
   m_Layer: 13
   m_Name: Base Collider
   m_TagString: Untagged
@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 11425308}
   - component: {fileID: 11497490}
   - component: {fileID: 11491274}
+  - component: {fileID: 114920016474570724}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -230,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.92, y: 2.4, z: -0.5}
+  m_LocalPosition: {x: 7.52, y: 3.68, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 409982}
@@ -266,7 +267,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -298,7 +299,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -331,31 +332,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103324}
   m_Mesh: {fileID: 0}
---- !u!61 &6159524
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158622}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.39}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.22}
-  m_EdgeRadius: 0
 --- !u!114 &11401936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -724,20 +700,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 19
-  _sharedLayer:
-    _layerIndex: 17
   _mainCollider: {fileID: 409944}
   _autoChangeLayers: 0
 --- !u!114 &11497490
@@ -757,12 +724,11 @@ MonoBehaviour:
   _rqName2: 4f394d83-987e-4aae-b6d2-a77785273cdc
   _componentRepository: {fileID: 11489688}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -777,24 +743,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -806,26 +765,22 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _originalMaxForce: 1
+    _maxSpeed: 1
+    _maxSpeedMultiplier: 1
+    _mass: 0
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -840,24 +795,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -869,19 +817,6 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
   _autoUpdateHeading: 1
   _steering:
     TargetAgent1: {fileID: 0}
@@ -889,6 +824,7 @@ MonoBehaviour:
       x: 0
       y: 0
     Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
     _steeringForce:
       x: 0
       y: 0
@@ -903,3 +839,32 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 177178}
   m_IsPrefabParent: 1
+--- !u!65 &65038664276520468
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.22, z: 0.5}
+  m_Center: {x: 0, y: -0.39, z: 0}
+--- !u!114 &114920016474570724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 2197bd8d-678f-46e7-b888-da20f212c909
+  componentName: 
+  _rqName: Tree RQ.Physics.Components.FloorComponent
+  _rqName2: f42ab126-8bae-4c7d-bf25-772c5b28e484
+  _componentRepository: {fileID: 11489688}
+  Floor: 1

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 11439890}
   - component: {fileID: 11431694}
   m_Layer: 0
-  m_Name: Heal Pod
+  m_Name: Gem Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410086}
-  - component: {fileID: 6177640}
+  - component: {fileID: 65868711710865930}
   - component: {fileID: 11456818}
   - component: {fileID: 11461198}
   m_Layer: 0
@@ -115,9 +115,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 468106}
-  - component: {fileID: 6112584}
   - component: {fileID: 11494812}
-  m_Layer: 0
+  - component: {fileID: 65745498955213552}
+  m_Layer: 15
   m_Name: Body Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3164208, y: 1.7196565, z: -0.5}
+  m_LocalPosition: {x: 5.923555, y: 3.6485095, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 410868}
@@ -264,7 +264,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 20a07074aa9be974ea2e6dde878ae704, type: 2}
+  - {fileID: 2100000, guid: 2df2d0d4c044bc146b82e300bb8aa284, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -290,56 +290,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183516}
   m_Mesh: {fileID: 0}
---- !u!61 &6112584
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185832}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
---- !u!61 &6177640
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146608}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
 --- !u!114 &11417330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -418,12 +368,11 @@ MonoBehaviour:
   _rqName2: 38b83a68-abd9-444e-8234-5fe792a66439
   _componentRepository: {fileID: 11494352}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -438,24 +387,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -467,26 +409,22 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _originalMaxForce: 1
+    _maxSpeed: 1
+    _maxSpeedMultiplier: 1
+    _mass: 0
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -501,24 +439,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -530,19 +461,6 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
   _autoUpdateHeading: 1
   _steering:
     TargetAgent1: {fileID: 0}
@@ -550,6 +468,7 @@ MonoBehaviour:
       x: 0
       y: 0
     Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
     _steeringForce:
       x: 0
       y: 0
@@ -606,20 +525,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 19
-  _sharedLayer:
-    _layerIndex: 17
   _mainCollider: {fileID: 410086}
   _autoChangeLayers: 0
 --- !u!114 &11457878
@@ -669,7 +579,7 @@ MonoBehaviour:
   - Player
   _excludedTags: []
   _message: 
-  _bubbleText: 
+  _bubbleText: Heal
   _castRay: 0
   _usable: {fileID: 454826}
   _usableObjects: []
@@ -697,9 +607,9 @@ MonoBehaviour:
     FacingDirection: 1
     PreviousFacingDirection: 9
     _isAnimationComplete: 0
-    AutoPlayAnimationType: 
-    PlayAutomatically: 0
-    AutoUpdateFacingDirection: 1
+    AutoPlayAnimationType: 57250273-2fd4-4eaf-90ad-b82f948138da
+    PlayAutomatically: 1
+    AutoUpdateFacingDirection: 0
     AutoFace: 0
   SpriteAnimator2: {fileID: 11492538}
   _use8Directions: 0
@@ -746,7 +656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 0}
+  collection: {fileID: 114594741054311606, guid: df34bd1b95140084c8f3694de6a1a02e,
+    type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
   _spriteId: 0
@@ -804,7 +715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _storedSpriteAnimations: []
-  _spriteAnimationsConfig: {fileID: 0}
+  _spriteAnimationsConfig: {fileID: 11400000, guid: 4e7bf8c50bb55424cb674a6cb04c3b9e,
+    type: 2}
   _manualHFlip: 0
   _hFlip: 0
   _directionRotate: 0
@@ -854,20 +766,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 15
-  _levelTwoLayer:
-    _layerIndex: 16
-  _levelThreeLayer:
-    _layerIndex: 20
-  _sharedLayer:
-    _layerIndex: 18
   _mainCollider: {fileID: 468106}
   _autoChangeLayers: 0
 --- !u!114 &11497284
@@ -881,7 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  library: {fileID: 11482968, guid: 844202ce5dcce0044b46a7d6a5c17d74, type: 2}
+  library: {fileID: 114984412661701918, guid: 8be832186274ff747aa16871a6c89ca8, type: 2}
   defaultClipId: 0
   playAutomatically: 1
 --- !u!1001 &100100000
@@ -931,3 +834,27 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 103666}
   m_IsPrefabParent: 1
+--- !u!65 &65745498955213552
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65868711710865930
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
