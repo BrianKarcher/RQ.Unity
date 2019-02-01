@@ -83,7 +83,8 @@ namespace RQ2.Controller.tk2d_Extensions
                 switch (layer.name)
                 {
                     case "Water Level 1 Collider":
-                        layer.z = 0.001f;
+                        //layer.z = 0.001f;
+                        layer.z = 0.5f;
                         layer.unityLayer = LayerMask.NameToLayer("Water");
                         layer.skipMeshGeneration = true;
                         layer.generateCollider = true;
@@ -94,14 +95,16 @@ namespace RQ2.Controller.tk2d_Extensions
                     case "Level 1 Collission":
                     case "Collider":
                     case "Colliders":
-                        layer.z = 0.001f;
+                        layer.z = 0.5f;
+                        //layer.z = 0.001f;
                         layer.unityLayer = LayerMask.NameToLayer("Environment");
                         layer.skipMeshGeneration = true;
                         layer.generateCollider = true;
                         break;
                     case "Level 2 Colliders":
                     case "Level 2 Collider":
-                        layer.z = 0.001f;
+                        layer.z = 0.5f;
+                        //layer.z = 0.001f;
                         layer.unityLayer = LayerMask.NameToLayer("Environment");
                         layer.skipMeshGeneration = true;
                         layer.generateCollider = true;
@@ -149,12 +152,14 @@ namespace RQ2.Controller.tk2d_Extensions
                         layer.unityLayer = LayerMask.NameToLayer("Environment");
                         break;
                     case "Level 2":
-                        layer.z = 1.0f;
+                        //layer.z = 1.0f;
+                        layer.z = 0.5f;
                         layer.generateCollider = false;
                         layer.unityLayer = LayerMask.NameToLayer("Environment");
                         break;
                     case "Level 3":
-                        layer.z = 1.0f;
+                        //layer.z = 1.0f;
+                        layer.z = 0.5f;
                         layer.generateCollider = false;
                         //layer.unityLayer = LayerMask.NameToLayer("Level 2 TC");
                         break;
@@ -162,7 +167,8 @@ namespace RQ2.Controller.tk2d_Extensions
                     case "Top Layer":
                     case "Top Level":
                     case "Top":
-                        layer.z = 1.0f;
+                        //layer.z = 1.0f;
+                        layer.z = 0.5f;
                         layer.generateCollider = false;
                         break;
                     case "No Collide (ex: Doors)":
