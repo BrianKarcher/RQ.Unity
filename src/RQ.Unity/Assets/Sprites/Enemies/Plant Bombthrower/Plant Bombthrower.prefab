@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 405964}
   - component: {fileID: 11466588}
   - component: {fileID: 135817958489105572}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: TileCollider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &175660
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,8 +307,8 @@ GameObject:
   - component: {fileID: 11466082}
   - component: {fileID: 11431570}
   - component: {fileID: 11492148}
-  - component: {fileID: 11496422}
   - component: {fileID: 54846508049134326}
+  - component: {fileID: 114930001559457562}
   m_Layer: 10
   m_Name: Plant Bombthrower
   m_TagString: Enemy
@@ -548,7 +548,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.92, y: 1.44, z: -0.5}
+  m_LocalPosition: {x: 6.56, y: 1.28, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 447564}
@@ -836,8 +836,8 @@ MonoBehaviour:
   _rqName: Conditions RQ.Entity.StatesV2.Conditions.TimerCondition
   _rqName2: f36cfd23-fd35-4b9d-a32f-fb965ed2b443
   _name: Short Timer
-  _startTime: 1
-  _endTime: 2
+  _startTime: 2
+  _endTime: 2.5
 --- !u!114 &11411264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: -138522970, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 3a71d837-0afe-49cb-9f0f-cef2177c9d34
+  _uniqueId: 7f8a2203-928d-42ac-9acb-5e366fd10de7
   componentName: 
   _rqName: Wander RQ.Entity.StatesV2.WalkWander
   _rqName2: 72941a36-8706-456c-ba31-27620845c626
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 75557d16-e286-4303-beca-4b21c1611c01
+  _uniqueId: ad9cb2b0-57d6-40db-9211-dd8323f5f543
   componentName: 
   _rqName: Idleb RQ.FSM.V2.States.RunActionsState
   _rqName2: f9cd9038-9a73-4e94-9bea-1e45cde78f2b
@@ -960,7 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 61954937, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 64740ea2-0d39-4061-8d5b-61f5b3448f1d
+  _uniqueId: ca6a4062-fe7a-4c4c-ab3b-e22c6a2bbf64
   componentName: 
   _rqName: Damaged RQ.Entity.StatesV2.Damaged
   _rqName2: 41edd3b5-f3ae-4876-9d67-7a9b001771a9
@@ -996,7 +996,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 37ce70d6-124b-4e7b-b3c6-6c9857fbbc26
+  _uniqueId: 9a073c32-bf81-4844-9d22-f73bebb35ccb
   componentName: 
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: 04d31d00-f8af-4f5a-9f0e-90688ba3427c
@@ -1012,7 +1012,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: 37ce70d6-124b-4e7b-b3c6-6c9857fbbc26
+    StateMachineUniqueId: 9a073c32-bf81-4844-9d22-f73bebb35ccb
     StateMachineName: States
     StateData: []
   _logTransitions: 0
@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: af56558b-e142-49dd-b042-f2d87cfc7833
+  _uniqueId: 7b27b2fb-a81f-46a7-9f0f-9f60727d7158
   componentName: 
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: 53c83e2f-7c99-4e2c-8f36-ee74c7f2245b
@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_Script: {fileID: -1555305176, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: a30e4155-a1f0-4d35-a413-b289b51565ad
+  _uniqueId: 44f2b971-7442-4d41-91e1-f7bcdd91359d
   componentName: 
   _rqName: LaunchBomb RQ.Entity.StatesV2.ShootObject
   _rqName2: 0c44f92e-85a1-4db2-af28-0a17f4782b8e
@@ -1228,7 +1228,7 @@ MonoBehaviour:
   m_Script: {fileID: 986810119, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: f7e61bdf-c6f2-4053-88d4-c142f652cd31
+  _uniqueId: 79ea6f29-de0a-40cb-b558-47c8eee91c23
   componentName: 
   _rqName: Regrow RQ.Entity.StatesV2.AnimatorState
   _rqName2: ec92f79f-a480-48d8-9791-c6a04e94f816
@@ -1273,7 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 1800164302, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 171dbe17-120a-451f-bb16-2f05fb9ddec9
+  _uniqueId: 3d8423d6-727c-40f7-8b6a-371d095ce086
   componentName: 
   _rqName: Death RQ.Entity.StatesV2.EnemyDiedState
   _rqName2: 6e3610d3-71eb-4428-94d7-ab4016dbefa6
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 197446374, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 91fc5aba-1ae6-4882-9b47-0d45b7dee4d0
+  _uniqueId: 88d9f0cd-e9f3-47a6-bc62-a92a60bddf82
   componentName: 
   _rqName: Idle RQ.Entity.StatesV2.Idle
   _rqName2: 65bee64b-43c5-4a2d-a8b3-9bb7087a1a5b
@@ -1451,6 +1451,7 @@ MonoBehaviour:
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 3
+    ForceMultiplier: 2
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -1465,12 +1466,13 @@ MonoBehaviour:
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 3
-    _originalMaxForce: 1
+    _originalMaxForce: 3
     _maxSpeed: 0.2
     _maxSpeedMultiplier: 1
     _mass: 0
     _enabled: 1
     Friction: 0
+    ForceMultiplier: 2
   _originalPhysicsData:
     InitialVelocity: {x: 0, y: 0}
     Size:
@@ -1501,6 +1503,7 @@ MonoBehaviour:
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -1543,20 +1546,11 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 405964}
   _autoChangeLayers: 1
 --- !u!114 &11468028
@@ -1578,6 +1572,8 @@ MonoBehaviour:
   _audioSource: {fileID: 8274766}
   _tweenSpeed: 0
   _fadeOut: 0
+  _volume: 1
+  AudioType: 0
 --- !u!114 &11471588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1615,20 +1611,11 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 448960}
   _autoChangeLayers: 0
 --- !u!114 &11473476
@@ -1660,7 +1647,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 1d4df395-2710-4158-9f8a-27156d82055b
+  _uniqueId: 17a3b7dd-6bc0-468f-a510-f5712ee66c5a
   componentName: 
   _rqName: Active RQ.FSM.V2.StateTransitionTable
   _rqName2: a2bd78d8-485e-4a1d-9d2a-811a0914bb44
@@ -1791,7 +1778,7 @@ MonoBehaviour:
   m_Script: {fileID: -138522970, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 4be09c71-4a69-4b2c-93f1-10c8033002cc
+  _uniqueId: 5194d055-cdaf-4d56-b5bc-9f344f43d6e8
   componentName: 
   _rqName: Wanderb RQ.Entity.StatesV2.WalkWander
   _rqName2: b66262b3-1b4f-4db6-a4da-a88303b297a9
@@ -1858,7 +1845,7 @@ MonoBehaviour:
   m_Script: {fileID: 197446374, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 83664094-2062-4ea8-b96f-a4ad36cfa4b4
+  _uniqueId: 305ce446-bad9-496f-a0fb-ee273ff71114
   componentName: 
   _rqName: Purgatory RQ.Entity.StatesV2.Idle
   _rqName2: 9f93f839-18e8-48d1-a5ff-f81ad396bab7
@@ -1892,7 +1879,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 3d8d7d2f-102a-4c05-bdee-d6a982619b0d
+  _uniqueId: 1ed63e3b-ed94-4843-845e-8c4f5af2f114
   componentName: 
   _rqName: Active RQ.FSM.V2.StateMachine
   _rqName2: 3402de1f-846b-42de-af8f-e2f6193afccf
@@ -1908,7 +1895,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: 3d8d7d2f-102a-4c05-bdee-d6a982619b0d
+    StateMachineUniqueId: 1ed63e3b-ed94-4843-845e-8c4f5af2f114
     StateMachineName: Active
     StateData: []
   _logTransitions: 0
@@ -1974,7 +1961,7 @@ MonoBehaviour:
   m_Script: {fileID: 1594702555, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: c6566f3b-c298-4e23-b979-9f0ab15a650d
+  _uniqueId: 6e662eda-535d-4a22-9a7f-3463febd2937
   componentName: 
   _rqName: Active RQ.Entity.StatesV2.Active
   _rqName2: 74058dc8-eb3d-4e74-b7c8-e46ce5ba6ee4
@@ -2054,22 +2041,6 @@ MonoBehaviour:
   _rqName: Conditions RQ.Entity.StatesV2.Conditions.AnimationCompleteCondition
   _rqName2: c73c404a-f263-4574-80e7-5570a8211e8f
   _name: Animation Complete
---- !u!114 &11496422
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: ecc52a0e-bbd7-466c-a450-51bc30a149bf
-  componentName: 
-  _rqName: Plant Bombthrower RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: 6a1110b2-5fba-4776-af5d-4905eeb5ce47
-  _componentRepository: {fileID: 11411264}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -2126,7 +2097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1789992504313794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,7 +2114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1806176907570724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,7 +2227,7 @@ MonoBehaviour:
   m_Script: {fileID: 903306556, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 0fe782c7-2cd6-46fe-b2bd-bad777264b32
+  _uniqueId: 413e4d7e-7109-4ab0-8931-eb2e092266ae
   componentName: 
   _rqName: Logic SM RQ.Physics.Components.UnityStateMachineComponent
   _rqName2: 59127c98-5a57-4e2e-8fa1-2501218de9af
@@ -2314,20 +2285,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 12
-  _levelTwoLayer:
-    _layerIndex: 12
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 12
   _mainCollider: {fileID: 4884654712009252}
   _autoChangeLayers: 0
 --- !u!114 &114306369320499062
@@ -2360,6 +2322,7 @@ MonoBehaviour:
     Gravity:
       x: 0
       y: 0
+    StopWhenHitGround: 0
 --- !u!114 &114688589105727022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2548,6 +2511,23 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 451a7ca02ac8e5f46964f407aeabfda4, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114930001559457562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 8aff5506-65ad-4bae-abc5-20a80902044d
+  componentName: 
+  _rqName: Plant Bombthrower RQ.Physics.Components.FloorComponent
+  _rqName2: 255fe863-5d02-4896-bd70-c60832550ab8
+  _componentRepository: {fileID: 11411264}
+  Floor: 1
 --- !u!135 &135519931220024906
 SphereCollider:
   m_ObjectHideFlags: 1

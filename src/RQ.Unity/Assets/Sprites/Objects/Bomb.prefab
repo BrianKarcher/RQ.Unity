@@ -24,11 +24,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 490768}
-  - component: {fileID: 5003324}
   - component: {fileID: 11431128}
   - component: {fileID: 11425380}
   - component: {fileID: 11479406}
-  - component: {fileID: 11439890}
+  - component: {fileID: 54247648499854714}
+  - component: {fileID: 114386398026195042}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -84,7 +84,6 @@ GameObject:
   - component: {fileID: 11400814}
   - component: {fileID: 11448120}
   - component: {fileID: 11449682}
-  - component: {fileID: 11430892}
   - component: {fileID: 114152748193342840}
   m_Layer: 0
   m_Name: MainSprite
@@ -246,7 +245,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5783203, y: 1.9501806, z: -0.15}
+  m_LocalPosition: {x: 7.4844813, y: 4.4060636, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475142}
@@ -268,7 +267,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -300,7 +299,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -333,26 +332,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144548}
   m_Mesh: {fileID: 0}
---- !u!50 &5003324
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128412}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &11400814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -403,12 +382,11 @@ MonoBehaviour:
   _rqName2: 091ce633-aac7-414f-b80e-0b5029631487
   _componentRepository: {fileID: 11431128}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -423,24 +401,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -452,26 +423,22 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 1
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 1.5
-    Gravity:
-      x: 0
-      y: -0.05
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _originalMaxForce: 1
+    _maxSpeed: 1
+    _maxSpeedMultiplier: 1
+    _mass: 0
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -486,24 +453,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -515,19 +475,6 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
   _autoUpdateHeading: 1
   _steering:
     TargetAgent1: {fileID: 0}
@@ -535,25 +482,10 @@ MonoBehaviour:
       x: 0
       y: 0
     Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
     _steeringForce:
       x: 0
       y: 0
---- !u!114 &11430892
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: c00f97f4-64cf-456b-9324-d7fceda4afd2
-  componentName: 
-  _rqName: MainSprite RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: f1df87ff-6b2b-4f93-8beb-d2bdba618008
-  _componentRepository: {fileID: 11431128}
 --- !u!114 &11431128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -629,22 +561,6 @@ MonoBehaviour:
   _rqName: Conditions RQ.Entity.StatesV2.Conditions.IsCompleteCondition
   _rqName2: 636768a4-8a13-4c89-8e8c-408f7700cb3d
   _name: Is Complete
---- !u!114 &11439890
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: d0bfb18e-80ed-47b9-afc1-8f5b2a8431ad
-  componentName: 
-  _rqName: Bomb RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: 4f71bd1e-2958-4c68-8635-74850e5f22a9
-  _componentRepository: {fileID: 11431128}
 --- !u!114 &11445026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -844,20 +760,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 0
-  _levelTwoLayer:
-    _layerIndex: 0
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 490768}
   _autoChangeLayers: 0
 --- !u!114 &11489846
@@ -965,6 +872,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128412}
   m_IsPrefabParent: 1
+--- !u!54 &54247648499854714
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128412}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!114 &114152748193342840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -995,3 +917,21 @@ MonoBehaviour:
     Gravity:
       x: 0
       y: -0.05
+    StopWhenHitGround: 0
+--- !u!114 &114386398026195042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 150a4844-67ca-4143-bc26-aea8ebc1d304
+  componentName: 
+  _rqName: Bomb RQ.Physics.Components.FloorComponent
+  _rqName2: 646a02ef-8985-48ba-bceb-e5a1fa8ba136
+  _componentRepository: {fileID: 11431128}
+  Floor: 1
