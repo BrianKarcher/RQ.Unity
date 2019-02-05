@@ -1,5 +1,7 @@
 // (c) Copyright HutongGames, LLC 2010-2013. All rights reserved.
 
+using UnityEngine;
+
 namespace HutongGames.PlayMaker.Actions
 {
 	[ActionCategory(ActionCategory.Debug)]
@@ -23,6 +25,8 @@ namespace HutongGames.PlayMaker.Actions
 		{
 		    if (!string.IsNullOrEmpty(text.Value))
 		    {
+                if (sendToUnityLog)
+                    Debug.LogError(text.Value);
 		        ActionHelpers.DebugLog(Fsm, logLevel, text.Value, sendToUnityLog);
 		    }
 
