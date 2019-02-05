@@ -127,8 +127,10 @@ namespace RQ2.UI
             for (int layerIndex = 0; layerIndex < _tileMap.data.Layers.Count(); layerIndex++)
             {
                 var layer = _tileMap.data.Layers[layerIndex];
-                if (!layer.name.Contains("Collider"))
+                if (!layer.name.Contains("Water"))
                     continue;
+                if (!layer.name.Contains("Collider"))
+                continue;
 
                 GameObject go = new GameObject("poly collider");
                 go.layer = LayerMask.NameToLayer("Environment");

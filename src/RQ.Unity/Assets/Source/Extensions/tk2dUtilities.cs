@@ -82,6 +82,7 @@ namespace RQ2.Controller.tk2d_Extensions
                 //float z = 0.01f;
                 switch (layer.name)
                 {
+                    case "Water Collider":
                     case "Water Level 1 Collider":
                         layer.z = 0.001f;
                         //layer.z = 0.5f;

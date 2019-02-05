@@ -100,12 +100,12 @@ namespace RQ2.Editor._2D_Toolkit
             _tileMapSetup.ColliderConverter(_tileMapSetup.TileMapTest);
         }
 
-        [MenuItem("Tools/Ground Collider Converter")]
-        public static void GroundColliderConverter()
-        {
-            Init();
-            _tileMapSetup.CreateGroundCollider(_tileMapSetup.TileMapTest);
-        }
+        //[MenuItem("Tools/Ground Collider Converter")]
+        //public static void GroundColliderConverter()
+        //{
+        //    Init();
+        //    _tileMapSetup.CreateGroundCollider(_tileMapSetup.TileMapTest);
+        //}
 
         [MenuItem("Tools/Delete Converted Tiles")]
         public static void DeleteConvertedColliders()
