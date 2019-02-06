@@ -15,10 +15,18 @@ namespace RQ.AI.Atom.UI
     {
         public string ComponentName;
         private ConversationTriggerComponent _conversationTriggerComponent;
+        public GameObject _externalConversation;
+        //public bool CastUseOnSelf = false;
 
         public override void Start(IComponentRepository entity)
         {
             base.Start(entity);
+            if (_externalConversation != null)
+            {
+                _externalConversation.gameObject.SendMessage("OnUse", entity.transform, SendMessageOptions.DontRequireReceiver);
+                return;
+            }
+                
             _conversationTriggerComponent = entity.Components.GetComponent<ConversationTriggerComponent>(ComponentName);
             _conversationTriggerComponent.Trigger(entity.transform);
         }

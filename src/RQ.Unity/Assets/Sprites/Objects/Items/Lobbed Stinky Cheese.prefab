@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 11439816}
   - component: {fileID: 11480272}
   - component: {fileID: 11420878}
+  - component: {fileID: 114554151771041038}
   m_Layer: 0
   m_Name: MainSprite
   m_TagString: Untagged
@@ -179,11 +180,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 450626}
-  - component: {fileID: 5046454}
   - component: {fileID: 11400126}
   - component: {fileID: 11414222}
-  - component: {fileID: 11458278}
   - component: {fileID: 11411890}
+  - component: {fileID: 54915999813236840}
+  - component: {fileID: 114561239795507886}
   m_Layer: 0
   m_Name: Lobbed Stinky Cheese
   m_TagString: Untagged
@@ -282,7 +283,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6085262, y: 2.9247308, z: -0.15}
+  m_LocalPosition: {x: 3.6826613, y: 0.9976304, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406090}
@@ -357,7 +358,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 20a07074aa9be974ea2e6dde878ae704, type: 2}
+  - {fileID: 2100000, guid: 2df2d0d4c044bc146b82e300bb8aa284, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -389,7 +390,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -422,26 +423,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140040}
   m_Mesh: {fileID: 0}
---- !u!50 &5046454
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193760}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &6199902
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -554,12 +535,11 @@ MonoBehaviour:
   _rqName2: e27e6058-3564-44b6-9a34-a3e21b92df7d
   _componentRepository: {fileID: 11400126}
   _physicsData:
-    Velocity:
-      x: 0.5
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0.5, y: 0}
     Heading:
       x: 1
       y: 0
@@ -574,24 +554,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -603,26 +576,22 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0.16
-    IsAirborn: 1
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 1.5
-    Gravity:
-      x: 0
-      y: -0.05
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _originalMaxForce: 1
+    _maxSpeed: 1
+    _maxSpeedMultiplier: 1
+    _mass: 0
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -637,24 +606,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -666,19 +628,6 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
   _autoUpdateHeading: 1
   _steering:
     TargetAgent1: {fileID: 0}
@@ -686,6 +635,7 @@ MonoBehaviour:
       x: 0
       y: 0
     Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
     _steeringForce:
       x: 0
       y: 0
@@ -710,8 +660,8 @@ MonoBehaviour:
     FacingDirection: 1
     PreviousFacingDirection: 9
     _isAnimationComplete: 0
-    AutoPlayAnimationType: 
-    PlayAutomatically: 0
+    AutoPlayAnimationType: ab9a91d1-f27a-46c5-bb7d-26c9c67ccbea
+    PlayAutomatically: 1
     AutoUpdateFacingDirection: 1
     AutoFace: 0
   SpriteAnimator2: {fileID: 11480272}
@@ -810,20 +760,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 19
-  _sharedLayer:
-    _layerIndex: 17
   _mainCollider: {fileID: 475374}
   _autoChangeLayers: 0
 --- !u!114 &11436030
@@ -895,9 +836,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  library: {fileID: 11400330, guid: 34219cc0ab72de845962cc8aebd9fddf, type: 2}
-  defaultClipId: 18
-  playAutomatically: 0
+  library: {fileID: 114984412661701918, guid: 8be832186274ff747aa16871a6c89ca8, type: 2}
+  defaultClipId: 1
+  playAutomatically: 1
 --- !u!114 &11444540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -914,22 +855,6 @@ MonoBehaviour:
   _rqName: Conditions RQ.Entity.StatesV2.Conditions.IsCompleteCondition
   _rqName2: 2f253d21-6896-425a-bdee-e64cdc97aa03
   _name: Is Complete
---- !u!114 &11458278
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 39693db5-2dc5-4c35-be7b-220c851de98a
-  componentName: 
-  _rqName: Lobbed Stinky Cheese RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: 5425b3c9-f122-4498-87fb-e1d01ae11dd2
-  _componentRepository: {fileID: 11400126}
 --- !u!114 &11458718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1043,10 +968,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 0}
+  collection: {fileID: 114594741054311606, guid: df34bd1b95140084c8f3694de6a1a02e,
+    type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 310
+  _spriteId: 12
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -1071,8 +997,8 @@ MonoBehaviour:
     _id: ab9a91d1-f27a-46c5-bb7d-26c9c67ccbea
     _spriteAnimations:
     - _direction: 10
-      _animationName: Stinky Cheese
-      _clipId: 18
+      _animationName: Stinky Cheeze
+      _clipId: 1
       hFlip: 0
   _spriteAnimationsConfig: {fileID: 0}
   _manualHFlip: 0
@@ -1153,3 +1079,66 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 193760}
   m_IsPrefabParent: 1
+--- !u!54 &54915999813236840
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193760}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!114 &114554151771041038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2119558580, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 4d3df699-ab68-40c5-9045-49eb3d839f83
+  componentName: 
+  _rqName: MainSprite RQ.Physics.Components.AltitudePhysicsComponent
+  _rqName2: 7c8bfb40-695a-4cde-93d6-3f5ccb71fc1d
+  _componentRepository: {fileID: 11400126}
+  _altitudeData:
+    Altitude:
+      x: 0
+      y: 0
+    IsAirborn: 0
+    AirVelocity:
+      x: 0
+      y: 0
+    JumpVelocity:
+      x: 0
+      y: 0
+    Gravity:
+      x: 0
+      y: 0
+    StopWhenHitGround: 0
+--- !u!114 &114561239795507886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: bf176a09-ae2b-4c3f-86da-92b7a09a1b79
+  componentName: 
+  _rqName: Lobbed Stinky Cheese RQ.Physics.Components.FloorComponent
+  _rqName2: c8323b69-62f5-44a3-bce9-56407ceb3a33
+  _componentRepository: {fileID: 11400126}
+  Floor: 1
