@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 11457138}
   - component: {fileID: 11428694}
   - component: {fileID: 11416588}
+  - component: {fileID: 114504928959929774}
   m_Layer: 10
   m_Name: Invincible
   m_TagString: Untagged
@@ -635,10 +636,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 412022}
-  - component: {fileID: 11472826}
   - component: {fileID: 114607229166034398}
   - component: {fileID: 114457571002924240}
   - component: {fileID: 114056585103706392}
+  - component: {fileID: 114894106813859196}
   m_Layer: 10
   m_Name: Item Grab
   m_TagString: Untagged
@@ -2941,7 +2942,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112932}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1612900848, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
@@ -2981,11 +2982,11 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11472826}
+    TargetState: {fileID: 114607229166034398}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   - _name: Item Grab to Fall In
-    CurrentState: {fileID: 11472826}
+    CurrentState: {fileID: 114607229166034398}
     UniqueId: 
     Conditions:
     - UniqueId: 
@@ -3002,7 +3003,7 @@ MonoBehaviour:
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   - _name: Item Grab to Item Hold
-    CurrentState: {fileID: 11472826}
+    CurrentState: {fileID: 114607229166034398}
     UniqueId: 
     Conditions:
     - UniqueId: 
@@ -3546,40 +3547,6 @@ MonoBehaviour:
     TargetUniqueId: 
     EventName: SetDeflecting
     Data: 0
---- !u!114 &11472826
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187502}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 986810119, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 4ff46fee-94e4-40e2-a243-b6d5e5f5b31d
-  componentName: 
-  _rqName: Item Grab State
-  _rqName2: ee00497b-9d90-4ea4-bc59-c2bd3197552b
-  _componentRepository: {fileID: 11448810}
-  _stateMachine: {fileID: 11492314}
-  _soundInfo:
-    AudioClips: []
-    ClearPreviousClips: 0
-    StopAudioOnExit: 0
-    PlaySound: 0
-    DelaySound: 0
-    PlayAsOneShot: 0
-    LoopSound: 0
-    PlayOnMusicTrack: 0
-    ForcePlay: 1
-    Volume: 1
-  _takesDamage: 0
-  _setDeflectStatus: 0
-  _deflectValue: 0
-  _animationType: 5c7bc155-d292-4ac1-a203-d15c9f8cc3ee
-  _animationComponent: {fileID: 11457028}
-  _spriteAnimationsConfig: {fileID: 0}
 --- !u!114 &11473058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4377,6 +4344,23 @@ MonoBehaviour:
   _animationType: 5c7bc155-d292-4ac1-a203-d15c9f8cc3ee
   _animationComponent: {fileID: 11457028}
   _spriteAnimationsConfig: {fileID: 0}
+--- !u!114 &114504928959929774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1933226191, guid: a8ccd5a3f4d739a41ab5cd9fa724a43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: aef07066-4fb0-4d5b-895b-ac90d56700cb
+  componentName: 
+  _rqName: Invincible RQ.Controller.Actions.Damaged
+  _rqName2: 5f68f21a-6a9a-440f-a7ab-7f142bcfb174
+  _atom:
+    UseDamageColor: 1
 --- !u!114 &114539026324065348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4411,6 +4395,24 @@ MonoBehaviour:
   _rqName2: a49501d4-67fb-4164-88f7-c37156923a1e
   _componentRepository: {fileID: 11448810}
   _stateMachine: {fileID: 11492314}
+--- !u!114 &114894106813859196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1805908543, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: f85ae967-71ba-415a-8866-9338b23a6e89
+  componentName: 
+  _rqName: Item Grab RQ.Controller.Actions.SetFacingDirection
+  _rqName2: 43e57fad-aa5a-4f7c-bbe8-b184c4314c1b
+  everyFrame: 1
+  atom:
+    FacingDirection: 2
 --- !u!135 &135012700545274486
 SphereCollider:
   m_ObjectHideFlags: 1
