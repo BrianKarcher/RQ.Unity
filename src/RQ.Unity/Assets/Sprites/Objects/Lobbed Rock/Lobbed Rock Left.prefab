@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2340394}
   - component: {fileID: 3319088}
   - component: {fileID: 11486448}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShadowSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,9 +26,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410200}
-  - component: {fileID: 6112328}
   - component: {fileID: 11483182}
-  m_Layer: 13
+  - component: {fileID: 65124425416865950}
+  - component: {fileID: 114504191461557796}
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -44,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 419832}
   - component: {fileID: 11492032}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Flying
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +60,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 407652}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Destroyed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +79,7 @@ GameObject:
   - component: {fileID: 11470452}
   - component: {fileID: 11423342}
   - component: {fileID: 11482896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Conditions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,13 +94,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 414128}
-  - component: {fileID: 5094144}
   - component: {fileID: 11445512}
   - component: {fileID: 11490304}
   - component: {fileID: 11480126}
   - component: {fileID: 11480636}
   - component: {fileID: 11410584}
-  m_Layer: 9
+  - component: {fileID: 54382649442623180}
+  m_Layer: 10
   m_Name: Lobbed Rock Left
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -116,7 +117,7 @@ GameObject:
   - component: {fileID: 407284}
   - component: {fileID: 11445452}
   - component: {fileID: 11471248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lobbed States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412796}
   - component: {fileID: 11417242}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: KillSelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +148,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 427138}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HitObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +170,7 @@ GameObject:
   - component: {fileID: 11400872}
   - component: {fileID: 11422060}
   - component: {fileID: 114607001331070680}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +241,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7248799, y: 2.0600557, z: -0.76}
+  m_LocalPosition: {x: 4.4854665, y: 1.7671825, z: -0.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 424758}
@@ -394,51 +395,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177728}
   m_Mesh: {fileID: 0}
---- !u!50 &5094144
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 157354}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &6112328
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109712}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.11, y: 0.12}
-  m_EdgeRadius: 0
 --- !u!114 &11400872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -482,7 +438,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157354}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
@@ -767,20 +723,11 @@ MonoBehaviour:
     Level: 3
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 414128}
   _autoChangeLayers: 0
 --- !u!114 &11482896
@@ -822,20 +769,11 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 410200}
   _autoChangeLayers: 0
 --- !u!114 &11484396
@@ -921,6 +859,7 @@ MonoBehaviour:
     OriginalZ: -0.5
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -941,6 +880,7 @@ MonoBehaviour:
     _mass: 0
     _enabled: 1
     Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
     InitialVelocity: {x: 0, y: 0}
     Size:
@@ -971,6 +911,7 @@ MonoBehaviour:
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -1056,7 +997,7 @@ GameObject:
   - component: {fileID: 4649498116284594}
   - component: {fileID: 114637348501769510}
   - component: {fileID: 114763357791787936}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: FSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1076,6 +1017,49 @@ Transform:
   m_Father: {fileID: 414128}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54382649442623180
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157354}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!65 &65124425416865950
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.12, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114504191461557796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: cd7dd44a-59bb-4610-89e5-522431618b66
+  componentName: 
+  _rqName: Collider Assets.Source.CollisionProcessor
+  _rqName2: 7b7edba4-f622-46a3-8020-947d847900f3
+  _componentRepository: {fileID: 11445512}
 --- !u!114 &114607001331070680
 MonoBehaviour:
   m_ObjectHideFlags: 1
