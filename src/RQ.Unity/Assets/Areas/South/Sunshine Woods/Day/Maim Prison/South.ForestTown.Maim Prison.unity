@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 9579759}
   - component: {fileID: 9579760}
   - component: {fileID: 9579761}
+  - component: {fileID: 9579762}
   m_Layer: 0
   m_Name: Don't hide!
   m_TagString: Untagged
@@ -162,7 +163,7 @@ MonoBehaviour:
   exclusive: 0
   conversant: {fileID: 0}
   useConversationTitlePicker: 1
-  selectedDatabase: {fileID: 0}
+  selectedDatabase: {fileID: 11400000, guid: b681a4301228afe4897484b025d4781a, type: 2}
   actor: {fileID: 0}
   trigger: 32
   stopConversationOnTriggerExit: 0
@@ -186,6 +187,22 @@ MonoBehaviour:
   EntityType: 0
   EntityPrefabUniqueId: 
   _parentRepo: {fileID: 0}
+--- !u!114 &9579762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 9579758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6c0097ba3f3f146b917418874fee2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: c0999add-e361-4473-93dc-01a3e6c45726
+  componentName: 
+  _rqName: Don't hide! RQ.Physics.Components.ConversationTriggerComponent
+  _rqName2: 9be6230a-bad1-4c54-89bf-da6893ab4ba3
+  _componentRepository: {fileID: 9579761}
 --- !u!1 &18048152
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,11 +859,6 @@ MonoBehaviour:
   m_Script: {fileID: -840757662, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 142fd5f9-86a2-4c33-84f9-cc6bed8fc142
-  _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
-  _rqName2: 8a10f628-4e53-45a5-84f6-535a4f52555d
-  _trigger: {fileID: 1627322948}
-  _conversationTrigger: {fileID: 1627322949}
 --- !u!114 &259029694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,6 +875,34 @@ MonoBehaviour:
   duration: -1
   serializedAdditionalObjectsPaths: []
   _runOnGameController: 0
+--- !u!1 &272853935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 272853936}
+  m_Layer: 0
+  m_Name: Top
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272853936
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272853935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 631770887}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &281229446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,6 +1146,18 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2300830, guid: 66e5e324f55475048a942c682d319e86, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325524, guid: 66e5e324f55475048a942c682d319e86, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467052, guid: 66e5e324f55475048a942c682d319e86, type: 2}
+      propertyPath: Data.AutoFace
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66e5e324f55475048a942c682d319e86, type: 2}
   m_IsPrefabParent: 0
@@ -1186,8 +1238,8 @@ GameObject:
   - component: {fileID: 378542534}
   - component: {fileID: 378542533}
   - component: {fileID: 378542536}
-  - component: {fileID: 378542535}
   - component: {fileID: 378542537}
+  - component: {fileID: 378542535}
   m_Layer: 0
   m_Name: Maim Prisoners
   m_TagString: Untagged
@@ -1234,15 +1286,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 378542532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -543274237, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Script: {fileID: -543274237, guid: a8ccd5a3f4d739a41ab5cd9fa724a43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 531a6e73-07da-428a-b479-51dae99996b0
+  _uniqueId: 44c0e096-adcc-4e12-b2f9-2326ad0a955e
+  componentName: 
   _rqName: Maim Prisoners RQ.Controller.Actions.PlaySequence
-  _rqName2: 07edcc16-7fa3-4e62-9050-a0078e262e11
-  _sequence: {fileID: 1031460066}
-  _sequencer: {fileID: 1031460068}
-  _sequencerLink: {fileID: 0}
+  _rqName2: c5d561c9-2018-4228-aeee-d158a8b422ee
+  _atom:
+    SequenceName: 
+    PlayDirectly: 0
+    _sequencerLink: {fileID: 1031460067}
 --- !u!114 &378542536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,7 +1320,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378542532}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1525535083, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
@@ -1423,7 +1477,7 @@ Prefab:
     - target: {fileID: 2307938, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400202, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: _spriteId
       value: 151
@@ -1458,6 +1512,15 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114569367213186226, guid: 8a2f71a983d0ae14faac7493fae7d626,
+        type: 2}
+      propertyPath: _uniqueId
+      value: 2fa4bdc6-6810-4381-a8a4-350eb3aea108
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313596, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
   m_IsPrefabParent: 0
@@ -1475,6 +1538,7 @@ GameObject:
   - component: {fileID: 407613211}
   - component: {fileID: 407613212}
   - component: {fileID: 407613213}
+  - component: {fileID: 407613214}
   m_Layer: 0
   m_Name: Ruined
   m_TagString: Untagged
@@ -1519,7 +1583,7 @@ MonoBehaviour:
   exclusive: 0
   conversant: {fileID: 0}
   useConversationTitlePicker: 1
-  selectedDatabase: {fileID: 0}
+  selectedDatabase: {fileID: 11400000, guid: b681a4301228afe4897484b025d4781a, type: 2}
   actor: {fileID: 0}
   trigger: 32
   stopConversationOnTriggerExit: 0
@@ -1543,6 +1607,22 @@ MonoBehaviour:
   EntityType: 0
   EntityPrefabUniqueId: 
   _parentRepo: {fileID: 0}
+--- !u!114 &407613214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 407613210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6c0097ba3f3f146b917418874fee2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 1963643e-1e96-4fd4-a413-62680fe34132
+  componentName: 
+  _rqName: Ruined RQ.Physics.Components.ConversationTriggerComponent
+  _rqName2: 5b0db6a3-3db0-4403-8c42-6ffd78baabe7
+  _componentRepository: {fileID: 407613213}
 --- !u!1 &411220894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1633,7 @@ GameObject:
   - component: {fileID: 411220895}
   - component: {fileID: 411220896}
   - component: {fileID: 411220897}
+  - component: {fileID: 411220898}
   m_Layer: 0
   m_Name: Rolan!
   m_TagString: Untagged
@@ -1597,7 +1678,7 @@ MonoBehaviour:
   exclusive: 0
   conversant: {fileID: 0}
   useConversationTitlePicker: 1
-  selectedDatabase: {fileID: 0}
+  selectedDatabase: {fileID: 11400000, guid: b681a4301228afe4897484b025d4781a, type: 2}
   actor: {fileID: 0}
   trigger: 32
   stopConversationOnTriggerExit: 0
@@ -1621,6 +1702,22 @@ MonoBehaviour:
   EntityType: 0
   EntityPrefabUniqueId: 
   _parentRepo: {fileID: 0}
+--- !u!114 &411220898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 411220894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6c0097ba3f3f146b917418874fee2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: bf0c64d1-34e2-46e9-a82c-574697b64061
+  componentName: 
+  _rqName: Rolan! RQ.Physics.Components.ConversationTriggerComponent
+  _rqName2: 9f3eb95d-e8fd-4f05-9342-ea5212b3f599
+  _componentRepository: {fileID: 411220897}
 --- !u!1 &421696338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,11 +1759,6 @@ MonoBehaviour:
   m_Script: {fileID: -840757662, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: ed35aa44-86ca-42ae-ba34-58871ab5babf
-  _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
-  _rqName2: 6a4cac5b-64b7-4196-9582-1022efb58ce2
-  _trigger: {fileID: 411220896}
-  _conversationTrigger: {fileID: 411220897}
 --- !u!114 &421696341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,11 +1889,6 @@ MonoBehaviour:
   m_Script: {fileID: -840757662, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 55c29111-ad95-4cb0-85b8-a2a29a85429d
-  _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
-  _rqName2: e7cf8594-e0e4-4918-90d8-a4ca38da7cf5
-  _trigger: {fileID: 975269696}
-  _conversationTrigger: {fileID: 975269697}
 --- !u!114 &474270951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2129,7 +2216,42 @@ Transform:
   - {fileID: 1865937441}
   - {fileID: 1991770928}
   - {fileID: 1742636133}
+  - {fileID: 1821675853}
+  - {fileID: 1557409579}
+  - {fileID: 1472280687}
+  - {fileID: 668926752}
+  - {fileID: 1478303146}
+  - {fileID: 272853936}
+  - {fileID: 1889540556}
   m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &668926751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 668926752}
+  m_Layer: 15
+  m_Name: Level 1 Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &668926752
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668926751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 631770887}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &698510735
@@ -2173,11 +2295,6 @@ MonoBehaviour:
   m_Script: {fileID: -840757662, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 37a025d7-0541-46a7-922a-6c1217a4ed0a
-  _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
-  _rqName2: dd83f412-5f70-4ef1-8679-01d158f18662
-  _trigger: {fileID: 759056288}
-  _conversationTrigger: {fileID: 759056289}
 --- !u!114 &698510738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2226,7 +2343,7 @@ MonoBehaviour:
   renderData: {fileID: 1818973643}
   spriteCollection: {fileID: 114345350600330248, guid: 5b7ac477cc348ce428c4d9bc0471590c,
     type: 2}
-  spriteCollectionKey: 1683010145
+  spriteCollectionKey: 1213305572
   width: 35
   height: 20
   partitionSizeX: 32
@@ -2322,6 +2439,7 @@ GameObject:
   - component: {fileID: 759056287}
   - component: {fileID: 759056288}
   - component: {fileID: 759056289}
+  - component: {fileID: 759056290}
   m_Layer: 0
   m_Name: What's going on?
   m_TagString: Untagged
@@ -2366,7 +2484,7 @@ MonoBehaviour:
   exclusive: 0
   conversant: {fileID: 0}
   useConversationTitlePicker: 1
-  selectedDatabase: {fileID: 0}
+  selectedDatabase: {fileID: 11400000, guid: b681a4301228afe4897484b025d4781a, type: 2}
   actor: {fileID: 0}
   trigger: 32
   stopConversationOnTriggerExit: 0
@@ -2390,6 +2508,22 @@ MonoBehaviour:
   EntityType: 0
   EntityPrefabUniqueId: 
   _parentRepo: {fileID: 0}
+--- !u!114 &759056290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 759056286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6c0097ba3f3f146b917418874fee2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 77d6b96c-9177-4b75-b4b0-903c9d525978
+  componentName: 
+  _rqName: What's going on? RQ.Physics.Components.ConversationTriggerComponent
+  _rqName2: c0e09a71-6583-4fa4-b04f-9fc34b9e1b24
+  _componentRepository: {fileID: 759056289}
 --- !u!1 &776262340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,6 +2798,7 @@ GameObject:
   - component: {fileID: 975269695}
   - component: {fileID: 975269696}
   - component: {fileID: 975269697}
+  - component: {fileID: 975269698}
   m_Layer: 0
   m_Name: Run!
   m_TagString: Untagged
@@ -2708,7 +2843,7 @@ MonoBehaviour:
   exclusive: 0
   conversant: {fileID: 0}
   useConversationTitlePicker: 1
-  selectedDatabase: {fileID: 0}
+  selectedDatabase: {fileID: 11400000, guid: b681a4301228afe4897484b025d4781a, type: 2}
   actor: {fileID: 0}
   trigger: 32
   stopConversationOnTriggerExit: 0
@@ -2732,6 +2867,22 @@ MonoBehaviour:
   EntityType: 0
   EntityPrefabUniqueId: 
   _parentRepo: {fileID: 0}
+--- !u!114 &975269698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 975269694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6c0097ba3f3f146b917418874fee2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 2941bd47-32b3-4372-8c08-c6850ee6b79c
+  componentName: 
+  _rqName: Run! RQ.Physics.Components.ConversationTriggerComponent
+  _rqName2: afc98573-6a47-41af-b7d8-11c8fcf3b0e6
+  _componentRepository: {fileID: 975269697}
 --- !u!1 &1030159172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,6 +3214,10 @@ Prefab:
     - target: {fileID: 193534, guid: 82e95fdcd4a7b3146b9fe25da4fc07b7, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321056, guid: 82e95fdcd4a7b3146b9fe25da4fc07b7, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82e95fdcd4a7b3146b9fe25da4fc07b7, type: 2}
@@ -3931,6 +4086,10 @@ Prefab:
       propertyPath: Data.AutoUpdateFacingDirection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2313596, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
   m_IsPrefabParent: 0
@@ -4124,14 +4283,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1445893391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -840757662, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Script: {fileID: 11500000, guid: c3ee07f5e718e504cbbcd0fdf5efd2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 4ce7d33b-85cb-43b2-b14c-05f1c0369298
+  _uniqueId: 8e4eb735-41ff-4b1f-b1c0-278a5765c92c
+  componentName: 
   _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
-  _rqName2: b60a25d8-1f20-4c92-8dd3-65f2030b9489
+  _rqName2: 8b8f57fb-b49e-4351-bebf-f257a263e793
   _trigger: {fileID: 2064859185}
-  _conversationTrigger: {fileID: 2064859186}
+  _atom:
+    ComponentName: 
+    _externalConversation: {fileID: 2064859183}
 --- !u!114 &1445893393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4252,6 +4414,62 @@ Transform:
   m_Father: {fileID: 61793825}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1472280686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1472280687}
+  m_Layer: 15
+  m_Name: Level 1 Overlay 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1472280687
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472280686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 631770887}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1478303145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1478303146}
+  m_Layer: 0
+  m_Name: Top Additive
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1478303146
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1478303145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0050000004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 631770887}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1494179553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4284,7 +4502,7 @@ MonoBehaviour:
   renderData: {fileID: 631770886}
   spriteCollection: {fileID: 114345350600330248, guid: 5b7ac477cc348ce428c4d9bc0471590c,
     type: 2}
-  spriteCollectionKey: 1683010145
+  spriteCollectionKey: 1213305572
   width: 35
   height: 20
   partitionSizeX: 32
@@ -4312,6 +4530,160 @@ MonoBehaviour:
     divX: 32
     divY: 32
     gameObject: {fileID: 1279359348}
+  - hash: 750904688
+    spriteChannel:
+      chunks:
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+    width: 35
+    height: 20
+    numColumns: 2
+    numRows: 1
+    divX: 32
+    divY: 32
+    gameObject: {fileID: 1821675852}
+  - hash: 353094913
+    spriteChannel:
+      chunks:
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+    width: 35
+    height: 20
+    numColumns: 2
+    numRows: 1
+    divX: 32
+    divY: 32
+    gameObject: {fileID: 1557409578}
+  - hash: 1696088438
+    spriteChannel:
+      chunks:
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+    width: 35
+    height: 20
+    numColumns: 2
+    numRows: 1
+    divX: 32
+    divY: 32
+    gameObject: {fileID: 1472280686}
+  - hash: 807263205
+    spriteChannel:
+      chunks:
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+    width: 35
+    height: 20
+    numColumns: 2
+    numRows: 1
+    divX: 32
+    divY: 32
+    gameObject: {fileID: 668926751}
+  - hash: 1492973133
+    spriteChannel:
+      chunks:
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+    width: 35
+    height: 20
+    numColumns: 2
+    numRows: 1
+    divX: 32
+    divY: 32
+    gameObject: {fileID: 1478303145}
+  - hash: 2143815630
+    spriteChannel:
+      chunks:
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+    width: 35
+    height: 20
+    numColumns: 2
+    numRows: 1
+    divX: 32
+    divY: 32
+    gameObject: {fileID: 272853935}
+  - hash: 567556386
+    spriteChannel:
+      chunks:
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+      - spriteIds: 
+        gameObject: {fileID: 0}
+        mesh: {fileID: 0}
+        meshCollider: {fileID: 0}
+        colliderMesh: {fileID: 0}
+        edgeColliders: []
+    width: 35
+    height: 20
+    numColumns: 2
+    numRows: 1
+    divX: 32
+    divY: 32
+    gameObject: {fileID: 1889540555}
   colorChannel:
     clearColor: {r: 1, g: 1, b: 1, a: 1}
     chunks: []
@@ -4363,6 +4735,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 631770887}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1557409578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1557409579}
+  m_Layer: 15
+  m_Name: Level 1 Overlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1557409579
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1557409578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 631770887}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1577863389
 GameObject:
@@ -4522,6 +4922,7 @@ GameObject:
   - component: {fileID: 1627322947}
   - component: {fileID: 1627322948}
   - component: {fileID: 1627322949}
+  - component: {fileID: 1627322950}
   m_Layer: 0
   m_Name: Lovely
   m_TagString: Untagged
@@ -4566,7 +4967,7 @@ MonoBehaviour:
   exclusive: 0
   conversant: {fileID: 0}
   useConversationTitlePicker: 1
-  selectedDatabase: {fileID: 0}
+  selectedDatabase: {fileID: 11400000, guid: b681a4301228afe4897484b025d4781a, type: 2}
   actor: {fileID: 0}
   trigger: 32
   stopConversationOnTriggerExit: 0
@@ -4590,6 +4991,22 @@ MonoBehaviour:
   EntityType: 0
   EntityPrefabUniqueId: 
   _parentRepo: {fileID: 0}
+--- !u!114 &1627322950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1627322946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6c0097ba3f3f146b917418874fee2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 46904e3e-df16-4d15-9346-d62c5b9089c4
+  componentName: 
+  _rqName: Lovely RQ.Physics.Components.ConversationTriggerComponent
+  _rqName2: 7a5940df-7c38-4e74-8ae9-a43d38499a83
+  _componentRepository: {fileID: 1627322949}
 --- !u!1 &1659675283
 GameObject:
   m_ObjectHideFlags: 0
@@ -4771,6 +5188,7 @@ GameObject:
   - component: {fileID: 1710653824}
   - component: {fileID: 1710653825}
   - component: {fileID: 1710653826}
+  - component: {fileID: 1710653827}
   m_Layer: 0
   m_Name: Scene Setup
   m_TagString: Untagged
@@ -4853,6 +5271,18 @@ MonoBehaviour:
   _tilemapFileName: 
   _tileMapTmx: {fileID: 4900000, guid: 685f98d7cd9c49e42851894df85c2bec, type: 3}
   _camera: {fileID: 227558978}
+--- !u!114 &1710653827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710653823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b5cfb04ef379a45b37c54aba8036ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueDatabase: {fileID: 11400000, guid: b681a4301228afe4897484b025d4781a, type: 2}
 --- !u!1 &1720240742
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,11 +5499,6 @@ MonoBehaviour:
   m_Script: {fileID: -840757662, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 17aad03a-f692-4186-811f-a67dda0881cf
-  _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
-  _rqName2: a115ab82-b798-4769-a1b2-7e7ca57d43f1
-  _trigger: {fileID: 9579760}
-  _conversationTrigger: {fileID: 9579761}
 --- !u!114 &1789068641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5188,6 +5613,34 @@ Transform:
   - {fileID: 487020898}
   m_Father: {fileID: 0}
   m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1821675852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1821675853}
+  m_Layer: 15
+  m_Name: Level 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1821675853
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1821675852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 631770887}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1826708295
 GameObject:
@@ -5499,6 +5952,34 @@ Transform:
   m_Father: {fileID: 631770887}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1889540555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1889540556}
+  m_Layer: 0
+  m_Name: Top Overlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1889540556
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1889540555}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 631770887}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918766354
 GameObject:
   m_ObjectHideFlags: 0
@@ -5620,6 +6101,7 @@ GameObject:
   - component: {fileID: 2064859184}
   - component: {fileID: 2064859185}
   - component: {fileID: 2064859186}
+  - component: {fileID: 2064859187}
   m_Layer: 0
   m_Name: Grandpa spots Rolan
   m_TagString: Untagged
@@ -5664,7 +6146,7 @@ MonoBehaviour:
   exclusive: 0
   conversant: {fileID: 0}
   useConversationTitlePicker: 1
-  selectedDatabase: {fileID: 0}
+  selectedDatabase: {fileID: 11400000, guid: b681a4301228afe4897484b025d4781a, type: 2}
   actor: {fileID: 0}
   trigger: 32
   stopConversationOnTriggerExit: 0
@@ -5688,6 +6170,22 @@ MonoBehaviour:
   EntityType: 0
   EntityPrefabUniqueId: 
   _parentRepo: {fileID: 0}
+--- !u!114 &2064859187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2064859183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6c0097ba3f3f146b917418874fee2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: d50fb5e3-f35c-455b-a646-1d32a5c83f76
+  componentName: 
+  _rqName: Grandpa spots Rolan RQ.Physics.Components.ConversationTriggerComponent
+  _rqName2: 891588aa-19cb-4b3d-b9a0-72e3cd973910
+  _componentRepository: {fileID: 2064859186}
 --- !u!1 &2066550044
 GameObject:
   m_ObjectHideFlags: 0

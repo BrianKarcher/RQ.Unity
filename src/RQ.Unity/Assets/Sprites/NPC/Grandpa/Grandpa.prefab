@@ -146,15 +146,16 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410744}
-  - component: {fileID: 5039822}
   - component: {fileID: 11473810}
   - component: {fileID: 11410628}
   - component: {fileID: 11434684}
   - component: {fileID: 11446778}
   - component: {fileID: 11446038}
+  - component: {fileID: 54318430398648842}
+  - component: {fileID: 114396506214454146}
   m_Layer: 0
   m_Name: Grandpa
-  m_TagString: Companion
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,7 +227,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9909558, y: 1.1723891, z: -0.1}
+  m_LocalPosition: {x: 2.5727875, y: 0.6730504, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 462114}
@@ -359,7 +360,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -391,7 +392,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 20a07074aa9be974ea2e6dde878ae704, type: 2}
+  - {fileID: 2100000, guid: 2df2d0d4c044bc146b82e300bb8aa284, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -424,26 +425,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128824}
   m_Mesh: {fileID: 0}
---- !u!50 &5039822
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 184614}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!58 &5888074
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -533,7 +514,7 @@ MonoBehaviour:
   exclusive: 0
   conversant: {fileID: 410744}
   useConversationTitlePicker: 0
-  selectedDatabase: {fileID: 11400000, guid: 6ea56954fd436bf49a3d5b483573516a, type: 2}
+  selectedDatabase: {fileID: 0}
   actor: {fileID: 0}
   trigger: 32
   stopConversationOnTriggerExit: 0
@@ -615,10 +596,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 0}
+  collection: {fileID: 114594741054311606, guid: df34bd1b95140084c8f3694de6a1a02e,
+    type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 244
+  _spriteId: 13
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -644,12 +626,11 @@ MonoBehaviour:
   _rqName2: d48c12bb-a092-48d0-b28d-f9679070190e
   _componentRepository: {fileID: 11410628}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -664,24 +645,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 0.1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -693,26 +667,22 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _originalMaxForce: 1
+    _maxSpeed: 1
+    _maxSpeedMultiplier: 1
+    _mass: 0
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -727,24 +697,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -756,19 +719,6 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
   _autoUpdateHeading: 1
   _steering:
     TargetAgent1: {fileID: 0}
@@ -776,6 +726,7 @@ MonoBehaviour:
       x: 0
       y: 0
     Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
     _steeringForce:
       x: 0
       y: 0
@@ -798,20 +749,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 0
-  _levelTwoLayer:
-    _layerIndex: 0
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 410744}
   _autoChangeLayers: 0
 --- !u!114 &11446778
@@ -839,6 +781,7 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
+  _avoidLayersMasks: []
   _follow: {fileID: 0}
   _targetingData:
     Waypoints: {fileID: 0}
@@ -918,8 +861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  library: {fileID: 11400330, guid: 34219cc0ab72de845962cc8aebd9fddf, type: 2}
-  defaultClipId: 12
+  library: {fileID: 114984412661701918, guid: 8be832186274ff747aa16871a6c89ca8, type: 2}
+  defaultClipId: 2
   playAutomatically: 1
 --- !u!114 &11470142
 MonoBehaviour:
@@ -1011,38 +954,38 @@ MonoBehaviour:
     _spriteAnimations:
     - _direction: 1
       _animationName: Grandpa_idle_r
-      _clipId: 13
+      _clipId: 3
       hFlip: 0
     - _direction: 0
       _animationName: Grandpa_idle_r
-      _clipId: 13
+      _clipId: 3
       hFlip: 0
     - _direction: 2
       _animationName: Grandpa_idle_u
-      _clipId: 14
+      _clipId: 4
       hFlip: 0
     - _direction: 3
       _animationName: Grandpa_idle_d
-      _clipId: 12
+      _clipId: 2
       hFlip: 0
   - _type: Walk
     _id: f1e2efd8-10f1-4c6d-a73c-ed3a8cf11c31
     _spriteAnimations:
     - _direction: 1
       _animationName: Grandpa_walk_r
-      _clipId: 16
+      _clipId: 6
       hFlip: 0
     - _direction: 0
       _animationName: Grandpa_walk_r
-      _clipId: 16
+      _clipId: 6
       hFlip: 0
     - _direction: 2
       _animationName: Grandpa_walk_u
-      _clipId: 17
+      _clipId: 7
       hFlip: 0
     - _direction: 3
       _animationName: Grandpa_walk_d
-      _clipId: 15
+      _clipId: 5
       hFlip: 0
   _spriteAnimationsConfig: {fileID: 0}
   _manualHFlip: 0
@@ -1074,20 +1017,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 19
-  _sharedLayer:
-    _layerIndex: 17
   _mainCollider: {fileID: 401640}
   _autoChangeLayers: 0
 --- !u!114 &11492476
@@ -1109,20 +1043,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 498656}
   _autoChangeLayers: 0
 --- !u!114 &11499050
@@ -1184,3 +1109,35 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184614}
   m_IsPrefabParent: 1
+--- !u!54 &54318430398648842
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184614}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!114 &114396506214454146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: d5d5754f-ff4a-40b8-8fd4-2e614f1c47b1
+  componentName: 
+  _rqName: Grandpa RQ.Physics.Components.FloorComponent
+  _rqName2: a7c4cdcf-626a-42bd-8b7e-5c74fb801dc9
+  _componentRepository: {fileID: 11410628}
+  Floor: 1
