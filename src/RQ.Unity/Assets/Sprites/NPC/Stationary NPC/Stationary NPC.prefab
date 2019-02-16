@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 488786}
-  - component: {fileID: 6197932}
   - component: {fileID: 11400492}
+  - component: {fileID: 65542394235271400}
   m_Layer: 12
   m_Name: Body Collider
   m_TagString: NPC
@@ -217,7 +217,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.29, y: 2.98, z: -0.5}
+  m_LocalPosition: {x: 1.748525, y: 1.566416, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 416936}
@@ -316,7 +316,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100704}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -428,31 +428,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147516}
   m_Mesh: {fileID: 0}
---- !u!61 &6197932
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100704}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.01, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.08, y: 0.24}
-  m_EdgeRadius: 0
 --- !u!114 &11400202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -642,7 +617,7 @@ MonoBehaviour:
       x: 0
       y: 0
     Mass: 1
-    MaxSpeed: 0.3
+    MaxSpeed: 0.6
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
@@ -655,8 +630,8 @@ MonoBehaviour:
       y: 0
     OriginalZ: -0.1
     _headingDirection: 1
-    MaxForce: 0.1
-    ForceMultiplier: 1
+    MaxForce: 3
+    ForceMultiplier: 3
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -673,8 +648,7 @@ MonoBehaviour:
     _maxForce: 1
     _originalMaxForce: 1
     _maxSpeed: 1
-    _maxSpeedMultiplier: 1
-    _mass: 0
+    _mass: 1
     _enabled: 1
     Friction: 0
     ForceMultiplier: 1
@@ -1192,10 +1166,22 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!65 &65542394235271400
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.24, z: 0.5}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!65 &65732283639749738
 BoxCollider:
   m_ObjectHideFlags: 1

@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 18768511}
   - component: {fileID: 18768512}
   - component: {fileID: 18768514}
+  - component: {fileID: 18768515}
   - component: {fileID: 18768513}
   m_Layer: 0
   m_Name: PlayActionsEvent
@@ -311,6 +312,21 @@ MonoBehaviour:
   _rqName: PlayActionsEvent RQ.Controller.Actions.Conditionals.SetGameProgress
   _rqName2: cdb07cbb-eb87-44f5-a388-40609bda1888
   _storySceneConfig: {fileID: 11400000, guid: c8c9775e3dd69b549b2617002f6935cc, type: 2}
+--- !u!114 &18768515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18768510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 840746453, guid: a8ccd5a3f4d739a41ab5cd9fa724a43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: ee053d29-1bfd-41a7-b444-a523bd440dff
+  componentName: 
+  _rqName: PlayActionsEvent RQ.Controller.Actions.StopSequence
+  _rqName2: ac3f9b8a-2ff9-42ae-9f57-f219abc18bd3
 --- !u!1 &61793824
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,11 +721,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 499334, guid: 0714dc773a3f3f542a8a65819518792a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.8900001
+      value: 2.89
       objectReference: {fileID: 0}
     - target: {fileID: 499334, guid: 0714dc773a3f3f542a8a65819518792a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.46000004
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 499334, guid: 0714dc773a3f3f542a8a65819518792a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -827,7 +843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 259029692}
   - component: {fileID: 259029694}
-  - component: {fileID: 259029693}
+  - component: {fileID: 259029695}
   m_Layer: 0
   m_Name: PlayActionsEvent
   m_TagString: Untagged
@@ -848,17 +864,6 @@ Transform:
   m_Father: {fileID: 586325454}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &259029693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 259029691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -840757662, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &259029694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,6 +880,25 @@ MonoBehaviour:
   duration: -1
   serializedAdditionalObjectsPaths: []
   _runOnGameController: 0
+--- !u!114 &259029695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 259029691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ee07f5e718e504cbbcd0fdf5efd2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 90bdfb1f-6207-4784-abb8-c4736aaf25d4
+  componentName: 
+  _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
+  _rqName2: e0cc4828-6311-4622-9ad3-4c180db1ed98
+  _trigger: {fileID: 0}
+  _atom:
+    ComponentName: 
+    _externalConversation: {fileID: 1627322946}
 --- !u!1 &272853935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,15 +1128,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 420414, guid: 66e5e324f55475048a942c682d319e86, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.79999995
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 420414, guid: 66e5e324f55475048a942c682d319e86, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .239999995
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 420414, guid: 66e5e324f55475048a942c682d319e86, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 420414, guid: 66e5e324f55475048a942c682d319e86, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1347,15 +1371,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 432038, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.86500001
+      value: 2.865
       objectReference: {fileID: 0}
     - target: {fileID: 432038, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.06700003
+      value: 1.067
       objectReference: {fileID: 0}
     - target: {fileID: 432038, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.100000001
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 432038, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1864,10 +1888,10 @@ GameObject:
   m_Component:
   - component: {fileID: 474270949}
   - component: {fileID: 474270951}
-  - component: {fileID: 474270950}
   - component: {fileID: 474270952}
+  - component: {fileID: 474270953}
   m_Layer: 0
-  m_Name: PlayActionsEvent
+  m_Name: Run
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1886,17 +1910,6 @@ Transform:
   m_Father: {fileID: 1303788228}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &474270950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 474270948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -840757662, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &474270951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1931,6 +1944,25 @@ MonoBehaviour:
   _animationType: e8daf706-ba5a-4b53-aca9-bd971a405884
   _animationComponent: {fileID: 1621105372}
   _spriteAnimationsConfig: {fileID: 0}
+--- !u!114 &474270953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 474270948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ee07f5e718e504cbbcd0fdf5efd2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 34bd1c9b-1658-46de-a747-dde6ef174c67
+  componentName: 
+  _rqName: Run RQ.Controller.Actions.StartConversation
+  _rqName2: d8fc7828-952f-47b1-8637-a57299a11430
+  _trigger: {fileID: 0}
+  _atom:
+    ComponentName: 
+    _externalConversation: {fileID: 975269694}
 --- !u!1 &485012547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,6 +2304,7 @@ GameObject:
   - component: {fileID: 698510736}
   - component: {fileID: 698510738}
   - component: {fileID: 698510737}
+  - component: {fileID: 698510739}
   m_Layer: 0
   m_Name: PlayActionsEvent
   m_TagString: Untagged
@@ -2319,6 +2352,25 @@ MonoBehaviour:
   duration: -1
   serializedAdditionalObjectsPaths: []
   _runOnGameController: 0
+--- !u!114 &698510739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 698510735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ee07f5e718e504cbbcd0fdf5efd2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 363e80e7-61ab-45b8-8e23-addfe71d217d
+  componentName: 
+  _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
+  _rqName2: 427d5536-5080-4f90-b9fc-f5e40b87d557
+  _trigger: {fileID: 0}
+  _atom:
+    ComponentName: 
+    _externalConversation: {fileID: 759056286}
 --- !u!1 &708257316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,7 +3057,7 @@ MonoBehaviour:
   runningTime: 0
   playbackRate: 1
   version: 16
-  duration: 32
+  duration: 26
   isLoopingSequence: 0
   isPingPongingSequence: 0
   updateOnFixedUpdate: 0
@@ -3125,15 +3177,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 487008, guid: 82e95fdcd4a7b3146b9fe25da4fc07b7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.43999982
+      value: 3.4399998
       objectReference: {fileID: 0}
     - target: {fileID: 487008, guid: 82e95fdcd4a7b3146b9fe25da4fc07b7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.15999985
+      value: 2.1599998
       objectReference: {fileID: 0}
     - target: {fileID: 487008, guid: 82e95fdcd4a7b3146b9fe25da4fc07b7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 487008, guid: 82e95fdcd4a7b3146b9fe25da4fc07b7, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3266,7 +3318,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1088076959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.76, y: 0.09, z: 0}
+  m_LocalPosition: {x: 2.76, y: -0.382, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 974834830}
@@ -3851,7 +3903,6 @@ Transform:
   - {fileID: 474270949}
   - {fileID: 205179289}
   - {fileID: 18768511}
-  - {fileID: 2066550045}
   m_Father: {fileID: 1415673343}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4001,11 +4052,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 432038, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.40300012
+      value: 2.403
       objectReference: {fileID: 0}
     - target: {fileID: 432038, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.09399998
+      value: 1.094
       objectReference: {fileID: 0}
     - target: {fileID: 432038, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4076,7 +4127,7 @@ Prefab:
         type: 2}
     - target: {fileID: 432038, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.100000001
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 11431648, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: _animationType
@@ -4098,13 +4149,17 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11456356, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
-      propertyPath: Data.AutoUpdateFacingDirection
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2313596, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456356, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
+      propertyPath: Data.AutoPlayAnimationType
+      value: d24745d8-cc41-406b-8a18-7a66f88a469a
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456356, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
+      propertyPath: Data.PlayAutomatically
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a2f71a983d0ae14faac7493fae7d626, type: 2}
@@ -4322,7 +4377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireOnSkip: 0
-  firetime: 1.1015934
+  firetime: 1.1015928
   duration: -1
   serializedAdditionalObjectsPaths: []
   _runOnGameController: 0
@@ -5819,15 +5874,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 421404, guid: 6cf675ee0ccfa6245956d159d37b8fe3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.39999998
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 421404, guid: 6cf675ee0ccfa6245956d159d37b8fe3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.07000005
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 421404, guid: 6cf675ee0ccfa6245956d159d37b8fe3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 421404, guid: 6cf675ee0ccfa6245956d159d37b8fe3, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6210,89 +6265,6 @@ MonoBehaviour:
   _rqName: Grandpa spots Rolan RQ.Physics.Components.ConversationTriggerComponent
   _rqName2: 891588aa-19cb-4b3d-b9a0-72e3cd973910
   _componentRepository: {fileID: 2064859186}
---- !u!1 &2066550044
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2066550045}
-  - component: {fileID: 2066550047}
-  - component: {fileID: 2066550046}
-  - component: {fileID: 2066550048}
-  m_Layer: 0
-  m_Name: PlayActionsEvent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2066550045
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2066550044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1303788228}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2066550046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2066550044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 202819422, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 14779b6d-53c9-47ad-9d59-65e0f4d74f27
-  componentName: 
-  _rqName: PlayActionsEvent RQ.Controller.Actions.EnableInput
-  _rqName2: b5cec4b6-c795-4281-84c0-cc1f16fd67e7
-  _enable: 1
---- !u!114 &2066550047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2066550044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3225c3611edf5834b80d97580de4c3fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireOnSkip: 0
-  firetime: 28.063705
-  duration: -1
-  serializedAdditionalObjectsPaths: []
-  _runOnGameController: 0
---- !u!114 &2066550048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2066550044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -769831817, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 4e6ce766-3568-409a-b41b-1909faead1e5
-  componentName: 
-  _rqName: PlayActionsEvent RQ.Controller.Actions.SendMessage
-  _rqName2: bf711eba-1b28-410c-ae91-22275070d6d4
-  _sendToGameController: 0
-  _sendToUIManager: 0
-  _target: {fileID: 0}
-  _telegram: 84
-  _data: 0
 --- !u!1 &2090596704
 GameObject:
   m_ObjectHideFlags: 0
