@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 445308}
   - component: {fileID: 11495798}
   - component: {fileID: 11404022}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 430924}
   - component: {fileID: 11469802}
   - component: {fileID: 11403442}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Invisible Change Scene Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,10 +43,10 @@ GameObject:
   m_Component:
   - component: {fileID: 406468}
   - component: {fileID: 11421406}
-  - component: {fileID: 6122822}
   - component: {fileID: 11471374}
   - component: {fileID: 11415362}
-  m_Layer: 13
+  - component: {fileID: 65681060939957714}
+  m_Layer: 15
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 417072}
   - component: {fileID: 11490300}
   - component: {fileID: 11451214}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Enabled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 425262}
   - component: {fileID: 11409848}
   - component: {fileID: 11490622}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Disabled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.3209966, y: 0.43591547, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 445308}
@@ -156,31 +156,6 @@ Transform:
   m_Father: {fileID: 430924}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &6122822
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140690}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &11403442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,20 +175,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 15
-  _levelTwoLayer:
-    _layerIndex: 16
-  _levelThreeLayer:
-    _layerIndex: 20
-  _sharedLayer:
-    _layerIndex: 18
   _mainCollider: {fileID: 406468}
   _autoChangeLayers: 0
 --- !u!114 &11404022
@@ -474,3 +440,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138906}
   m_IsPrefabParent: 1
+--- !u!65 &65681060939957714
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
