@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 427248}
   - component: {fileID: 11446128}
   - component: {fileID: 11467392}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 490260}
   - component: {fileID: 11448364}
   - component: {fileID: 11414258}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Enabled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 486292}
   - component: {fileID: 11412284}
   - component: {fileID: 11494150}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Disabled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,8 @@ GameObject:
   - component: {fileID: 402894}
   - component: {fileID: 11452374}
   - component: {fileID: 11442412}
-  m_Layer: 13
+  - component: {fileID: 114038007947296226}
+  m_Layer: 15
   m_Name: Sequence Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,10 +78,9 @@ GameObject:
   m_Component:
   - component: {fileID: 419428}
   - component: {fileID: 11477858}
-  - component: {fileID: 6136648}
-  - component: {fileID: 11470384}
-  - component: {fileID: 11420224}
-  m_Layer: 13
+  - component: {fileID: 65827193617558074}
+  - component: {fileID: 114534645289258502}
+  m_Layer: 15
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.669653, y: 5.123936, z: 0}
+  m_LocalPosition: {x: 6.617505, y: 0.85771537, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 427248}
@@ -156,31 +156,6 @@ Transform:
   m_Father: {fileID: 427248}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &6136648
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190458}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &11412284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,22 +193,6 @@ MonoBehaviour:
   - {fileID: 11442412}
   _enableOnEnter: 1
   _enableOnExit: 1
---- !u!114 &11420224
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: bbdc1f9f-bf39-41b2-93be-a4d8289fc1db
-  componentName: 
-  _rqName: Trigger RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: de9512b2-363c-403f-b2f1-5378bdf4e374
-  _componentRepository: {fileID: 11452374}
 --- !u!114 &11442412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,20 +212,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 15
-  _levelTwoLayer:
-    _layerIndex: 16
-  _levelThreeLayer:
-    _layerIndex: 20
-  _sharedLayer:
-    _layerIndex: 18
   _mainCollider: {fileID: 419428}
   _autoChangeLayers: 0
 --- !u!114 &11446128
@@ -382,24 +332,6 @@ MonoBehaviour:
     IsActive: 1
   ConditionsList: {fileID: 0}
   ConditionsListTransform: {fileID: 0}
---- !u!114 &11470384
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -543274237, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 5d5f3b78-9ed3-4cdf-83ea-4847e260b2c1
-  componentName: 
-  _rqName: Trigger RQ.Controller.Actions.PlaySequence
-  _rqName2: 3ec10577-8a08-4b74-b0ce-bc5306c50dde
-  _sequence: {fileID: 0}
-  _sequencer: {fileID: 0}
-  _sequencerLink: {fileID: 0}
 --- !u!114 &11477858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -456,3 +388,48 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 158300}
   m_IsPrefabParent: 1
+--- !u!65 &65827193617558074
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114038007947296226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: dfd0563c-b6f3-4efc-b48c-9fadc5c8b04e
+  componentName: 
+  _rqName: Sequence Collider RQ.Physics.Components.FloorComponent
+  _rqName2: 23cb36f1-fa5d-4eee-90f9-53d578589e2a
+  _componentRepository: {fileID: 11452374}
+  Floor: 1
+--- !u!114 &114534645289258502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 0d8d11e4-16d5-4816-84cc-839c18205368
+  componentName: 
+  _rqName: Trigger Assets.Source.CollisionProcessor
+  _rqName2: b6b46209-1270-40c1-8379-43b5f2dadd12
+  _componentRepository: {fileID: 11452374}

@@ -8,8 +8,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 461276}
-  - component: {fileID: 6101736}
   - component: {fileID: 11418808}
+  - component: {fileID: 65175376039468500}
+  - component: {fileID: 114339115407854720}
   m_Layer: 15
   m_Name: Collider
   m_TagString: Tilemap
@@ -27,7 +28,7 @@ GameObject:
   - component: {fileID: 429598}
   - component: {fileID: 11455422}
   - component: {fileID: 11420010}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,10 +45,10 @@ GameObject:
   - component: {fileID: 454768}
   - component: {fileID: 11496430}
   - component: {fileID: 11469726}
-  - component: {fileID: 11412640}
   - component: {fileID: 11492004}
   - component: {fileID: 11456388}
-  m_Layer: 0
+  - component: {fileID: 114808652586126002}
+  m_Layer: 15
   m_Name: Toggle Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +67,7 @@ GameObject:
   - component: {fileID: 11462794}
   - component: {fileID: 11497416}
   - component: {fileID: 11461810}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Disabled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +88,7 @@ GameObject:
   - component: {fileID: 11408354}
   - component: {fileID: 11464808}
   - component: {fileID: 11409498}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +106,7 @@ GameObject:
   - component: {fileID: 11477340}
   - component: {fileID: 11429464}
   - component: {fileID: 11456086}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Enabled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6, y: 1.76, z: -0.1}
+  m_LocalPosition: {x: 5.28, y: 1.6, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 416074}
@@ -234,31 +235,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177488}
   m_Mesh: {fileID: 0}
---- !u!61 &6101736
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 102102}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
 --- !u!114 &11408354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,22 +277,6 @@ MonoBehaviour:
   SpriteAnimator2: {fileID: 11464808}
   _use8Directions: 0
   _isMain: 1
---- !u!114 &11412640
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 9e1a1798-1a75-4624-9f6a-92e0bbede80d
-  componentName: 
-  _rqName: Barrel Blocker RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: b0991123-f158-400a-8191-f90fa76ee6ec
-  _componentRepository: {fileID: 11496430}
 --- !u!114 &11418808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -336,20 +296,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 19
-  _sharedLayer:
-    _layerIndex: 17
   _mainCollider: {fileID: 461276}
   _autoChangeLayers: 0
 --- !u!114 &11420010
@@ -577,7 +528,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159010}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1696332522, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
@@ -691,3 +642,48 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 159010}
   m_IsPrefabParent: 1
+--- !u!65 &65175376039468500
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102102}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114339115407854720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 3d370212-cb96-47c0-b71d-124d05382e66
+  componentName: 
+  _rqName: Collider Assets.Source.CollisionProcessor
+  _rqName2: e2c7cf9a-e168-4139-a43e-46777efaf816
+  _componentRepository: {fileID: 11496430}
+--- !u!114 &114808652586126002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 43c4474b-2703-4a6d-a4c2-1d184bb33750
+  componentName: 
+  _rqName: Toggle Collider RQ.Physics.Components.FloorComponent
+  _rqName2: cf34c765-5b3f-4173-a507-d52cebe4ce5f
+  _componentRepository: {fileID: 11496430}
+  Floor: 1
