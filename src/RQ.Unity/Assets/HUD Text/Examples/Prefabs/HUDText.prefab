@@ -5,10 +5,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400000}
-  - 114: {fileID: 11400002}
+  - component: {fileID: 400000}
+  - component: {fileID: 11400002}
   m_Layer: 8
   m_Name: HUDText
   m_TagString: Untagged
@@ -28,6 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -42,63 +43,73 @@ MonoBehaviour:
   font: {fileID: 0}
   bitmapFont: {fileID: 11400000, guid: d7697c83b7b91a241a155eafa142c00b, type: 2}
   trueTypeFont: {fileID: 0}
-  fontSize: 34
-  fontStyle: 0
+  fontSize: 50
+  fontStyle: 1
   applyGradient: 1
   gradientTop: {r: 1, g: 1, b: 1, a: 1}
-  gradienBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
-  effect: 1
+  gradienBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  effect: 2
   effectColor: {r: 0, g: 0, b: 0, a: 1}
   offsetCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 3
+    - serializedVersion: 2
+      time: 3
       value: 40
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   alphaCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 1
+    - serializedVersion: 2
+      time: 1
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 3
+    - serializedVersion: 2
+      time: 3
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   scaleCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: .119671553
-      value: 1.41355228
-      inSlope: 5.98311424
-      outSlope: 5.98311424
+    - serializedVersion: 2
+      time: 0.11967155
+      value: 1.4135523
+      inSlope: 5.9831142
+      outSlope: 5.9831142
       tangentMode: 0
-    - time: .25
+    - serializedVersion: 2
+      time: 0.25
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
