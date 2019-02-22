@@ -554,7 +554,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1599998, y: 1.36, z: -0.83}
+  m_LocalPosition: {x: 4.88, y: 1.36, z: -0.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 472518}
@@ -639,7 +639,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 238aaebc85d5aa44982b31c27dde8cc7, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -671,7 +671,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1244,6 +1244,8 @@ MonoBehaviour:
   _audioSource: {fileID: 8221648}
   _tweenSpeed: 0
   _fadeOut: 0
+  _volume: 1
+  AudioType: 0
 --- !u!114 &11428634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1340,7 +1342,7 @@ MonoBehaviour:
   _rqName: HUD Text RQ.Physics.Components.HudTextComponent
   _rqName2: 93e65fb5-ee33-4ecd-8f98-c74ffc254604
   _componentRepository: {fileID: 11469510}
-  HudTextPrefab: {fileID: 400000, guid: da1dd9b479a126b4b87cee97599c6ed7, type: 2}
+  HudTextPrefab: {fileID: 0}
 --- !u!114 &11437500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1393,20 +1395,11 @@ MonoBehaviour:
     Tags:
     - Player
     - Companion
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 15
-  _levelTwoLayer:
-    _layerIndex: 16
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 425538}
   _autoChangeLayers: 0
 --- !u!114 &11442038
@@ -1430,20 +1423,11 @@ MonoBehaviour:
     Tags:
     - Player
     - Companion
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 478686}
   _autoChangeLayers: 0
 --- !u!114 &11446904
@@ -1506,6 +1490,7 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
+  _avoidLayersMasks: []
   _follow: {fileID: 0}
   _targetingData:
     Waypoints: {fileID: 0}
@@ -1740,12 +1725,11 @@ MonoBehaviour:
   _rqName2: a0d1fb0d-b687-4247-a3ed-5b1530dc39fe
   _componentRepository: {fileID: 11469510}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -1760,24 +1744,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -1789,26 +1766,21 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: -0.4
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _originalMaxForce: 1
+    _maxSpeed: 1
+    _mass: 0
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
@@ -1823,24 +1795,17 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -1852,19 +1817,6 @@ MonoBehaviour:
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
   _autoUpdateHeading: 1
   _steering:
     TargetAgent1: {fileID: 0}
@@ -1872,6 +1824,7 @@ MonoBehaviour:
       x: 0
       y: 0
     Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
     _steeringForce:
       x: 0
       y: 0
@@ -2109,7 +2062,7 @@ MonoBehaviour:
     y: 0
   _minSpeed: 1.5
   _maxSpeed: 1.5
-  _sameLevel: 0
+  _sameLevel: 1
   _objectLevel: 3
 --- !u!1001 &100100000
 Prefab:
