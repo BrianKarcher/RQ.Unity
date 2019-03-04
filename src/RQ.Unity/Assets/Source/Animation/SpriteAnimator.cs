@@ -205,15 +205,16 @@ namespace RQ2.AnimationV2
         }
 
         [Obsolete]
-        public override IEnumerable<string> GetAllClipNames()
+        public override string[] GetAllClipNames()
         {
             if (anim == null)
-                return new List<string>();
+                return new string[0];
 
-            List<string> clips = new List<string>();
+            string[] clips = new string[anim.Library.clips.Length];
             for (int i = 0; i < anim.Library.clips.Length; i++)
             {
-                clips.Add(anim.Library.clips[i].name);
+                clips[i] = anim.Library.clips[i].name;
+                //clips.Add(anim.Library.clips[i].name);
             }
             //anim.Library.clips.
             return clips;

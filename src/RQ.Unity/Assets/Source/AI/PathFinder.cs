@@ -1,7 +1,9 @@
 ﻿using Pathfinding;
 using RQ.FSM.Components;
+using RQ.Model.ObjectPool;
 using RQ.Model.Physics;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Source.AI
@@ -12,6 +14,8 @@ namespace Assets.Source.AI
         [SerializeField]
         private Seeker _seeker;
         public Seeker Seeker { get { return _seeker; } set { _seeker = value; } }
+
+        //private List<Vector3> _path = new List<Vector3>();
 
         public event Action<PathfindingData> OnPathComplete;
 
@@ -56,17 +60,21 @@ namespace Assets.Source.AI
 
             //Release the previous path
             //if (path != null) path.Release(this);
-            var pathfindingData = new PathfindingData();
-            pathfindingData.path = new Vector2[p.vectorPath.Count];
-            pathfindingData.originalStartPoint = p.originalStartPoint;
-            pathfindingData.originalEndPoint = p.originalEndPoint;
+            var path = ObjectPool.Instance.PullFromPool<List<Vector3>>(ObjectPoolType.Vector3List);
+            path.Clear();
+            for (int i = 0; i < p.vectorPath.Count; i++)
+            {
+                path.Add(p.vectorPath[i]);
+            }
+            PathfindingData pathfindingData = new PathfindingData(path, p.originalStartPoint, p.originalEndPoint);
+            
+            //pathfindingData.path = new List<Vector3>(p.vectorPath.Count);
+            //pathfindingData.originalStartPoint = p.originalStartPoint;
+            //pathfindingData.originalEndPoint = p.originalEndPoint;
             //var newPath = 
             //Data.Path.Clear();
             //path.
-            for (int i = 0; i < p.vectorPath.Count; i++)
-            {
-                pathfindingData.path[i] = p.vectorPath[i];
-            }
+
             OnPathComplete(pathfindingData);
         }
     }

@@ -30,7 +30,7 @@ namespace RQ.Editor
 
         public void Awake()
         {
-
+            States = new List<IState>();
         }
 
         public override void OnEnable()
@@ -49,7 +49,7 @@ namespace RQ.Editor
             //        States.Add(state);
             //}
 
-            States = _stAgent.transform.GetComponentsInChildrenOneDeep<IState>().ToList();
+            _stAgent.transform.GetComponentsInChildrenOneDeep<IState>(States);
 
             StateItems = new List<KeyValuePair<string, string>>();
             StateItems.Add(new KeyValuePair<string, string>(" ", "Any"));
