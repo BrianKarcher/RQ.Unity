@@ -1,12 +1,6 @@
-﻿using RQ.Controller.ManageScene;
-using RQ.Entity.StatesV2.Conditions;
-using RQ.Messaging;
-using RQ.Model.Item;
-using RQ.UI;
-using System;
+﻿using RQ.Model.Item;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using RQ.Entity.Item;
 using UnityEngine;
 
 namespace RQ2.Controller.UI.Grid
@@ -25,7 +19,16 @@ namespace RQ2.Controller.UI.Grid
             var skillConfig = ItemConfig as SkillConfig;
             foreach (var orbLabel in OrbLabels)
             {
-                var orbConfig = skillConfig.Orbs.FirstOrDefault(i => i.Orb == orbLabel.Orb);
+                OrbCost orbConfig = null;
+                foreach (var orb in skillConfig.Orbs)
+                {
+                    if (orb.Orb == orbLabel.Orb)
+                    {
+                        orbConfig = orb;
+                        break;
+                    }
+                }
+                //var orbConfig = skillConfig.Orbs.FirstOrDefault(i => i.Orb == orbLabel.Orb);
                 // Could not locate the orb in the skill cost structure, this orb costs zero
                 if (orbConfig == null)
                 {

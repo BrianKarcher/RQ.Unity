@@ -1,12 +1,7 @@
 ﻿using RQ.Controller.Actions;
 using RQ.Controller.ManageScene;
-using RQ.Controller.UI.Grid;
 using RQ.Model.Item;
 using RQ2.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace RQ2.Controller.Actions

@@ -1,10 +1,7 @@
-﻿using RQ.Common;
+﻿using System.Linq;
+using RQ.Common;
 using RQ.Common.Container;
 using RQ.Entity.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace UtilityManager
 {
@@ -29,7 +26,7 @@ namespace UtilityManager
             _dse = dse;
             var dc = new DecisionContext();
             dc.Self = new AICharacter(repo, intelligenceDef);
-            if (allyTags != null && allyTags.Any())
+            if (allyTags != null && allyTags.Length != 0)
             {
                 var ally = _entityContainer.GetEntitiesFromTag(allyTags[0]).FirstOrDefault();
                 dc.AllyEntity = new AICharacter((IComponentRepository)ally, null);

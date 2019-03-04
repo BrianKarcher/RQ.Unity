@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-//using UnityEditor;
 using System.Collections.Generic;
-using System.Linq;
 
 using tk2dRuntime.TileMap;
 
@@ -159,7 +157,7 @@ namespace RQ2.TileMap
             //tk2dUndo.RecordObjects(objectsToUndo.ToArray(), "Delete layer");
 
             tileMap.data.tileMapLayers.RemoveAt(layerToDelete);
-            if (layerToDelete < tileMap.Layers.Count() && tileMap.Layers[layerToDelete].gameObject != null)
+            if (layerToDelete < tileMap.Layers.Length && tileMap.Layers[layerToDelete].gameObject != null)
             {
                 tk2dUtil.DestroyImmediate(tileMap.Layers[layerToDelete].gameObject);
             }

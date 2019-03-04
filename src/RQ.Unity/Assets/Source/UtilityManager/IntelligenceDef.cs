@@ -175,7 +175,7 @@ namespace UtilityManager
         {
             _dSExTargets = new LinkedList<DSExTarget>();
             var allEnemies = _entityContainer.GetEntitiesFromTags(_enemyTags).Where(i => i.isActiveAndEnabled);
-            var dseList = _dm.DSEList;
+            var dseList = _dm.GetDSEList();
             foreach (var dse in dseList)
             {
                 var dseDef = dse;

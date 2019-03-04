@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace UtilityManager
@@ -18,7 +16,17 @@ namespace UtilityManager
         private string _description;
         [SerializeField]
         private List<DSEAsset> _dse;
-        public IEnumerable<IDSE> DSEList { get { return _dse.Select(i => (IDSE)i.GetDSE()); } }
+        //public IEnumerable<IDSE> DSEList { get { return _dse.Select(i => (IDSE)i.GetDSE()); } }
+
+        public IDSE[] GetDSEList()
+        {
+            var dseList = new IDSE[_dse.Count];
+            for (int i = 0; i < _dse.Count; i++)
+            {
+                dseList[i] = (IDSE)_dse[i].GetDSE();
+            }
+            return dseList;
+        }
 
         // Todo Make it a list of decisions instead of DSE's
         // Decisions are a DSE + target pair
@@ -52,9 +60,9 @@ namespace UtilityManager
             dse.RunDecision(decisionContext);
         }
 
-        public IEnumerable<IDSE> GetDSEList()
-        {
-            return _dse.Select(i => (IDSE)i.GetDSE());
-        }
+        //public IEnumerable<IDSE> GetDSEList()
+        //{
+        //    return _dse.Select(i => (IDSE)i.GetDSE());
+        //}
     }
 }

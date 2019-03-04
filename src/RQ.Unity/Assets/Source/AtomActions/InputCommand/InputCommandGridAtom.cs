@@ -2,14 +2,9 @@
 using RQ.AI;
 using RQ.Entity.AtomAction;
 using RQ.Entity.Components;
-using RQ.Model.Serialization.Input;
 using RQ2.Controller.UI.Grid;
 using RQ2.UI;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
 
 namespace Assets.Source.Actions
 {

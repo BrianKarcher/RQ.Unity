@@ -1,8 +1,6 @@
 ﻿using RQ2.TileMap;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using tk2dRuntime.TileMap;
 using UnityEngine;
 
 namespace RQ2.Controller.tk2d_Extensions
@@ -62,8 +60,16 @@ namespace RQ2.Controller.tk2d_Extensions
             };
             for (int i = tileMap.data.tileMapLayers.Count - 1; i >= 0; i--)
             {
-                if (layersToDelte.Select(p => p.ToUpper()).Contains(tileMap.data.tileMapLayers[i].name.ToUpper()))
-                    TileMapUtility.DeleteLayer(tileMap, i);
+                foreach (var layerToDelete in layersToDelte)
+                {
+                    if (layerToDelete.ToUpper() == tileMap.data.tileMapLayers[i].name.ToUpper())
+                    {
+                        TileMapUtility.DeleteLayer(tileMap, i);
+                        continue;
+                    }
+                }
+                //if (layersToDelte.Select(p => p.ToUpper()).Contains(tileMap.data.tileMapLayers[i].name.ToUpper()))
+                //    TileMapUtility.DeleteLayer(tileMap, i);
             }
             //tileMap.ForceBuild();
             //tileMap.EndEditMode();
@@ -233,11 +239,14 @@ namespace RQ2.Controller.tk2d_Extensions
                 //layer.z = z;
             }
 
-            var level2Shadows = tileMap.data.Layers.FirstOrDefault(i => i.name == "Level 2 Shadows");
+
+            var level2Shadows = SearchForLayer(tileMap, "Level 2 Shadows");
+            //var level2Shadows = tileMap.data.Layers.FirstOrDefault(i => i.name == "Level 2 Shadows");
 
             if (level2Shadows != null)
             {
-                var level2 = tileMap.data.Layers.FirstOrDefault(i => i.name == "Level 2");
+                var level2 = SearchForLayer(tileMap, "Level 2");
+                //var level2 = tileMap.data.Layers.FirstOrDefault(i => i.name == "Level 2");
                 level2.z = 0.001f;
                 level2Shadows.z = 1.0f;
             }
@@ -247,6 +256,16 @@ namespace RQ2.Controller.tk2d_Extensions
             //tileMap.data.tileMapLayers.Clear();
             //tileMap.EndEditMode();
             //tileMap.
+        }
+
+        public static LayerInfo SearchForLayer(tk2dTileMap tileMap, string name)
+        {
+            foreach (var layer in tileMap.data.Layers)
+            {
+                if (layer.name == name)
+                    return layer;
+            }
+            return null;
         }
     }
 }

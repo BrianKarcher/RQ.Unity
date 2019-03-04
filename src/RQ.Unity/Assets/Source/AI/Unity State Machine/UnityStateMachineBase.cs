@@ -1,9 +1,6 @@
 ﻿using RQ.Entity.Components;
 using RQ.Physics.Components;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace Assets.Source.AI.Unity_State_Machine

@@ -1,9 +1,7 @@
-﻿using RQ.Common.UniqueId;
+﻿using System;
 using RQ.Entity.AtomAction;
 using RQ.Entity.Components;
-using RQ.Physics.Components;
 using RQ2.UI;
-using System.Linq;
 using UnityEngine;
 
 namespace RQ.AI.Action
@@ -59,7 +57,8 @@ namespace RQ.AI.Action
             {
                 var currentTile = tileMap.GetTile(x, y, i);
 
-                if (!tileToChange.Contains(currentTile))
+                var hasTileToChange = Array.IndexOf(tileToChange, currentTile) > -1;
+                if (!hasTileToChange)
                     continue;
                 tileMap.SetTile(x, y, i, changeTo);
             }

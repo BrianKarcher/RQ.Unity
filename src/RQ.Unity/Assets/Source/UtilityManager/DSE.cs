@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 using UtilityManager.Decisions;
 
@@ -32,7 +30,7 @@ namespace UtilityManager
         [SerializeField]
         private List<Consideration> _considerations;
         //public IEnumerable<IConsideration> Considerations { get { return _considerations.Select(i => (IConsideration)i); } set { _considerations = value.Select(i => (Consideration)i).ToList(); } }
-        public IEnumerable<IConsideration> Considerations { get; set; }
+        //public IEnumerable<IConsideration> Considerations { get; set; }
         [SerializeField]
         private FsmTemplate _fsmTemplate;
         public FsmTemplate FsmTemplate { get { return _fsmTemplate; } }
@@ -42,7 +40,7 @@ namespace UtilityManager
 
         public void Init()
         {
-            Considerations = _considerations.Select(i => (IConsideration)i);
+            //Considerations = _considerations.Select(i => (IConsideration)i);
             _decision = DecisionFactory.Create(_decisionEnum);
         }
         
@@ -58,14 +56,14 @@ namespace UtilityManager
         public float Score(IDecisionContext context, float bonus, float min)
         {
             float finalScore = bonus;
-            if (Considerations == null)
+            if (_considerations == null)
                 Init();
-            if (Considerations == null)
+            if (_considerations == null)
             {
                 Debug.LogError("DSE " + this.Name + " has no decisions");
                 return 0f;
             }
-            foreach (var consideration in Considerations)
+            foreach (var consideration in _considerations)
             {
                 if (!consideration.IsActive)
                     continue;
@@ -78,7 +76,7 @@ namespace UtilityManager
                 finalScore *= Mathf.Clamp01(response);
             }
             var normalizedFinalScore = (float)finalScore / bonus;
-            int considerationCount = Considerations.Count();
+            int considerationCount = _considerations.Count;
             finalScore = MakeUpFactor(considerationCount, normalizedFinalScore) * bonus;
             return finalScore;
         }

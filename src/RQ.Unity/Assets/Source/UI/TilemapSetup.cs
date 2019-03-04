@@ -1,10 +1,8 @@
-﻿using Assets.Source.Utility;
-using ClipperLib;
+﻿using ClipperLib;
 using RQ;
 using RQ2.Controller.tk2d_Extensions;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Path = System.Collections.Generic.List<ClipperLib.IntPoint>;
 using Paths = System.Collections.Generic.List<System.Collections.Generic.List<ClipperLib.IntPoint>>;
@@ -112,9 +110,9 @@ namespace RQ2.UI
             // This prevents the user from accidently removing all tile colliders from the map
             // ie, first run turns all edge colliders into polygon colliders.  Second run deletes
             // all polygon colliders.
-            if (meshCollider.Any())
+            if (meshCollider.Length != 0)
             {
-                for (int i = polygonColliders.Count() - 1; i > 0; i--)
+                for (int i = polygonColliders.Length - 1; i > 0; i--)
                 {
                     GameObject.DestroyImmediate(polygonColliders[i]);
                 }
@@ -124,7 +122,7 @@ namespace RQ2.UI
             int tileMapHeight = _tileMap.height;
 
 
-            for (int layerIndex = 0; layerIndex < _tileMap.data.Layers.Count(); layerIndex++)
+            for (int layerIndex = 0; layerIndex < _tileMap.data.Layers.Length; layerIndex++)
             {
                 var layer = _tileMap.data.Layers[layerIndex];
                 if (!layer.name.Contains("Water"))
@@ -204,9 +202,9 @@ namespace RQ2.UI
             // This prevents the user from accidently removing all tile colliders from the map
             // ie, first run turns all edge colliders into polygon colliders.  Second run deletes
             // all polygon colliders.
-            if (meshCollider.Any())
+            if (meshCollider.Length != 0)
             {
-                for (int i = polygonColliders.Count() - 1; i > 0; i--)
+                for (int i = polygonColliders.Length - 1; i > 0; i--)
                 {
                     GameObject.DestroyImmediate(polygonColliders[i]);
                 }
@@ -216,7 +214,7 @@ namespace RQ2.UI
             int tileMapHeight = _tileMap.height;
 
 
-            for (int layerIndex = 0; layerIndex < _tileMap.data.Layers.Count(); layerIndex++)
+            for (int layerIndex = 0; layerIndex < _tileMap.data.Layers.Length; layerIndex++)
             {
                 var layer = _tileMap.data.Layers[layerIndex];
                 if (!layer.name.Contains("Collider"))

@@ -5,7 +5,7 @@ namespace UtilityManager
     public interface IDSE
     {
         string Name { get; }
-        IEnumerable<IConsideration> Considerations { get; set; }
+        //IEnumerable<IConsideration> Considerations { get; set; }
         bool RunForAllTargets { get; }
         FsmTemplate FsmTemplate { get; }
         float Weight { get; set; }

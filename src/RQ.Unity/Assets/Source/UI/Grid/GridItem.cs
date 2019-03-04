@@ -1,9 +1,5 @@
-﻿//using RQ.Controller.UI;
-using RQ.FSM.V2.Conditionals;
-using System;
+﻿using RQ.FSM.V2.Conditionals;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace RQ2.Controller.UI.Grid

@@ -1,10 +1,4 @@
-﻿using RQ.Entity.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace UtilityManager.Decisions
+﻿namespace UtilityManager.Decisions
 {
     public class MoveToTarget : DecisionBase
     {

@@ -1,10 +1,8 @@
-﻿using RQ.FSM.V2.Conditionals;
-using RQ.Messaging;
+﻿using RQ.Messaging;
 using RQ2.Common.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace RQ2.Controller.UI.Grid
@@ -33,7 +31,7 @@ namespace RQ2.Controller.UI.Grid
             }
             Grid.Reposition();
             ScrollView.ResetPosition();
-            if (!itemGridData.Any())
+            if (itemGridData.Count() == 0)
             {
                 UICamera.hoveredObject = _cancelButton.gameObject;
             }

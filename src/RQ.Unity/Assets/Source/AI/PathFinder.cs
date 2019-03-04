@@ -1,11 +1,7 @@
 ﻿using Pathfinding;
 using RQ.FSM.Components;
 using RQ.Model.Physics;
-using RQ.Physics;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace Assets.Source.AI
