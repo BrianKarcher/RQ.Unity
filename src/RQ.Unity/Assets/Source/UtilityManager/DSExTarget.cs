@@ -28,7 +28,7 @@ namespace UtilityManager
             dc.Self = new AICharacter(repo, intelligenceDef);
             if (allyTags != null && allyTags.Length != 0)
             {
-                var ally = _entityContainer.GetEntitiesFromTag(allyTags[0]).FirstOrDefault();
+                var ally = _entityContainer.GetEntityFromTag(allyTags[0]);
                 dc.AllyEntity = new AICharacter((IComponentRepository)ally, null);
             }
             if (enemyTags != null && enemyTags.Any())
