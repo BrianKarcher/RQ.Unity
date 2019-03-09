@@ -26,9 +26,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400506}
-  - component: {fileID: 11443982}
+  - component: {fileID: 114123214578056516}
+  - component: {fileID: 114808057140345060}
   m_Layer: 0
-  m_Name: KillSelf
+  m_Name: SendToPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.2553086, y: 4.6063466, z: -0.5}
+  m_LocalPosition: {x: 5.750496, y: 3.2346458, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464990}
@@ -580,43 +581,6 @@ MonoBehaviour:
   _fadeOut: 0
   _volume: 1
   AudioType: 0
---- !u!114 &11443982
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1087292713, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 36aec894-5a35-43b6-b617-fd5814d8a87c
-  componentName: 
-  _rqName: KillSelf RQ.Entity.StatesV2.KillSelf
-  _rqName2: 55ded70f-d56c-43e4-ab37-c6663cdb028b
-  _componentRepository: {fileID: 11438668}
-  _stateMachine: {fileID: 11420322}
-  _soundInfo:
-    AudioClips: []
-    ClearPreviousClips: 0
-    StopAudioOnExit: 0
-    PlaySound: 0
-    DelaySound: 0
-    PlayAsOneShot: 0
-    LoopSound: 0
-    PlayOnMusicTrack: 0
-    ForcePlay: 1
-    Volume: 1
-  _takesDamage: 1
-  _setDeflectStatus: 0
-  _deflectValue: 0
-  _animationType: 199bd89e-e25c-4b9a-88b5-8aae311848ee
-  _animationComponent: {fileID: 11480774}
-  _spriteAnimationsConfig: {fileID: 0}
-  _killSelfAtom:
-    _delay: 0
-    _killWhenAnimationCompletes: 0
 --- !u!114 &11470044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -794,7 +758,6 @@ MonoBehaviour:
     _maxForce: 1
     _originalMaxForce: 1
     _maxSpeed: 1
-    _maxSpeedMultiplier: 1
     _mass: 0
     _enabled: 1
     Friction: 0
@@ -879,7 +842,7 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11443982}
+    TargetState: {fileID: 114123214578056516}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   ConditionsList: {fileID: 11473882}
@@ -924,6 +887,23 @@ MonoBehaviour:
   _rqName2: 62b6e982-1b32-4639-903d-c61d195d8022
   _componentRepository: {fileID: 11438668}
   Floor: 1
+--- !u!114 &114123214578056516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 6b73d570-e5b2-42c3-ab63-7d2575270ab8
+  componentName: 
+  _rqName: KillSelf RQ.FSM.V2.States.RunActionsState
+  _rqName2: f39e96d9-d624-4db1-877a-95f3f05177b1
+  _componentRepository: {fileID: 11438668}
+  _stateMachine: {fileID: 11420322}
 --- !u!114 &114315537127136020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -940,3 +920,20 @@ MonoBehaviour:
   _rqName: Trigger Assets.Source.CollisionProcessor
   _rqName2: 9084aa3b-a312-4151-94cc-c83901983164
   _componentRepository: {fileID: 11438668}
+--- !u!114 &114808057140345060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -795176632, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 4a170197-496c-4005-8ecf-86a3d884716f
+  componentName: 
+  _rqName: KillSelf RQ.Controller.Actions.SendSelfToPool
+  _rqName2: fc94d5cb-5362-4e9a-afb3-655d731707bb
+  _atom:
+    PoolName: BombExplosion

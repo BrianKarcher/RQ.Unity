@@ -40637,6 +40637,7 @@ GameObject:
   - component: {fileID: 1481995922}
   - component: {fileID: 1481995921}
   - component: {fileID: 1481995920}
+  - component: {fileID: 1481995924}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -40766,6 +40767,32 @@ MonoBehaviour:
   _fpsLabel: {fileID: 0}
   _storySceneLabel: {fileID: 200213178}
   _debugPanel: {fileID: 200213177}
+--- !u!114 &1481995924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114263819845657006, guid: 284784aea7692d54495fab4bdf4f9080,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481995917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -433453102, guid: 803308af027b8574c9d78d82b6bb21f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pools:
+  - Prefab: {fileID: 128412, guid: b848281bc1fb867468304624b03e63dd, type: 2}
+    Name: Bomb
+    Qty: 3
+  - Prefab: {fileID: 182012, guid: edc880950331d9f4c893d3cb9a414530, type: 2}
+    Name: BombExplosion
+    Qty: 3
+  - Prefab: {fileID: 102088, guid: 75f162e6629cce347aa094639aa4ecec, type: 2}
+    Name: Arrow
+    Qty: 2
+  - Prefab: {fileID: 193456, guid: ff2f434da5b0c6d4fbbd851cb6c674eb, type: 2}
+    Name: EnemyDeath
+    Qty: 1
+  DebugData: []
 --- !u!1 &1488275283
 GameObject:
   m_ObjectHideFlags: 0

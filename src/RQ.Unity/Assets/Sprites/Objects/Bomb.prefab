@@ -62,9 +62,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 487770}
-  - component: {fileID: 11491318}
+  - component: {fileID: 114564751400898728}
+  - component: {fileID: 114643141182832774}
   m_Layer: 0
-  m_Name: KillSelf
+  m_Name: SendToPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,7 +246,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4844813, y: 4.4060636, z: -0.15}
+  m_LocalPosition: {x: 6.6335874, y: 2.739921, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475142}
@@ -428,7 +429,6 @@ MonoBehaviour:
     _maxForce: 1
     _originalMaxForce: 1
     _maxSpeed: 1
-    _maxSpeedMultiplier: 1
     _mass: 0
     _enabled: 1
     Friction: 0
@@ -545,6 +545,7 @@ MonoBehaviour:
   _offset: {x: 0, y: 0, z: -0.3}
   _sameLevel: 1
   _objectLevel: 1
+  ObjectPoolName: BombExplosion
 --- !u!114 &11438880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -807,48 +808,11 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11491318}
+    TargetState: {fileID: 114564751400898728}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   ConditionsList: {fileID: 11453080}
   ConditionsListTransform: {fileID: 0}
---- !u!114 &11491318
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1087292713, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: a431e5a8-4a5b-4a93-8b1b-b78545fe6535
-  componentName: 
-  _rqName: KillSelf RQ.Entity.StatesV2.KillSelf
-  _rqName2: 28016d88-3d8c-4b5b-b718-d104bcd0c0c4
-  _componentRepository: {fileID: 11431128}
-  _stateMachine: {fileID: 11445026}
-  _soundInfo:
-    AudioClips: []
-    ClearPreviousClips: 0
-    StopAudioOnExit: 0
-    PlaySound: 0
-    DelaySound: 0
-    PlayAsOneShot: 0
-    LoopSound: 0
-    PlayOnMusicTrack: 0
-    ForcePlay: 1
-    Volume: 1
-  _takesDamage: 1
-  _setDeflectStatus: 0
-  _deflectValue: 0
-  _animationType: ab9a91d1-f27a-46c5-bb7d-26c9c67ccbea
-  _animationComponent: {fileID: 11449682}
-  _spriteAnimationsConfig: {fileID: 0}
-  _killSelfAtom:
-    _delay: 0
-    _killWhenAnimationCompletes: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -935,3 +899,37 @@ MonoBehaviour:
   _rqName2: 646a02ef-8985-48ba-bceb-e5a1fa8ba136
   _componentRepository: {fileID: 11431128}
   Floor: 1
+--- !u!114 &114564751400898728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 62a86e3b-0956-4363-9c9a-09e0bf8bd3fb
+  componentName: 
+  _rqName: SendToPool RQ.FSM.V2.States.RunActionsState
+  _rqName2: 6beb2f5f-b67f-4b83-83d8-f10f0349f793
+  _componentRepository: {fileID: 11431128}
+  _stateMachine: {fileID: 11445026}
+--- !u!114 &114643141182832774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -795176632, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 675728c5-a27f-429a-9b30-9243c6ede0c8
+  componentName: 
+  _rqName: KillSelf RQ.Controller.Actions.SendSelfToPool
+  _rqName2: 89a3ca03-d1be-4c97-910f-16cbdb4675bd
+  _atom:
+    PoolName: Bomb
