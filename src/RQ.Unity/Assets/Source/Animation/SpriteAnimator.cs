@@ -52,17 +52,17 @@ namespace RQ2.AnimationV2
             AnimComplete();
         }
 
-        public void Pause()
+        public override void Pause()
         {
             anim.Pause();
         }
 
-        public void StopAnim()
+        public override void  StopAnim()
         {
             anim.Stop();
         }
 
-        public void Resume()
+        public override void Resume()
         {
             anim.Resume();            
         }
@@ -88,25 +88,25 @@ namespace RQ2.AnimationV2
                 anim.Library = spriteAnimation;
         }
 
-        public override void SetColor(string name, Color color)
+        public override void SetColor(string colorName, Color color)
         {
             if (anim.Sprite == null)
                 Debug.LogError("Sprite not found");
-            if (name == null)
+            if (colorName == null)
             {
                 //Debug.LogError("(SetColor) name is null");
                 return;
             }
-            colors[name] = color;
+            colors[colorName] = color;
             ProcessColor();
         }
 
-        public override void RemoveColor(string name)
+        public override void RemoveColor(string colorName)
         {
             if (name == null)
                 return;
-            if (colors.ContainsKey(name))
-                colors.Remove(name);
+            if (colors.ContainsKey(colorName))
+                colors.Remove(colorName);
             ProcessColor();
         }
 
@@ -240,7 +240,7 @@ namespace RQ2.AnimationV2
             return clip.frames.Length / clip.fps;
         }
 
-        public float GetCurrentClipLength()
+        public override float GetCurrentClipLength()
         {
             return GetClipLength(anim.CurrentClip);
         }
