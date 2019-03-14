@@ -22,10 +22,27 @@ namespace RQ.Animation.BasicAction.Action
         public ItemClass[] _itemClasses;
         public InventoryGrid _inventoryGrid;
         private UIManager _entity;
+        private long _itemSelectedId;
+        private Action<Telegram2> _itemSelectedDelegate;
 
         public override void Start(IComponentRepository entity)
         {
             base.Start(entity);
+            if (_itemSelectedDelegate == null)
+            {
+                _itemSelectedDelegate = (data) =>
+                {
+                    var item = (ItemInInventoryData)data.ExtraInfo;
+                    GameDataController.Instance.Data.SelectedSkill = item.ItemUniqueId;
+                    MessageDispatcher2.Instance.DispatchMsg("SetHUDSkill", 0f, entity.UniqueId, "UI Manager", item.ItemUniqueId);
+
+                    //UIManager.
+                    Debug.Log("Selected item " + item.ItemUniqueId);
+                    //item.
+                    //Complete();
+                    _isRunning = false;
+                };
+            }
             _entity = entity.GetComponent<UIManager>();
             _inventoryGrid = _entity.SkillGrid;
             //_inventoryGrid = GameObject.FindObjectOfType<InventoryGrid>();
@@ -37,24 +54,15 @@ namespace RQ.Animation.BasicAction.Action
         public override void StartListening(IComponentRepository entity)
         {
             base.StartListening(entity);
-            entity.StartListening("ItemSelected", entity.UniqueId, (data) =>
-            {
-                var item = (ItemInInventoryData)data.ExtraInfo;
-                GameDataController.Instance.Data.SelectedSkill = item.ItemUniqueId;
-                MessageDispatcher2.Instance.DispatchMsg("SetHUDSkill", 0f, entity.UniqueId, "UI Manager", item.ItemUniqueId);
-
-                //UIManager.
-                Debug.Log("Selected item " + item.ItemUniqueId);
-                //item.
-                //Complete();
-                _isRunning = false;
-            });
+            _itemSelectedId = MessageDispatcher2.Instance.StartListening("ItemSelected", entity.UniqueId, _itemSelectedDelegate);
+            //entity.StartListening("ItemSelected", entity.UniqueId, );
         }
 
         public override void StopListening(IComponentRepository entity)
         {
             base.StopListening(entity);
-            entity.StopListening("ItemSelected", entity.UniqueId);
+            MessageDispatcher2.Instance.StopListening("ItemSelected", entity.UniqueId, _itemSelectedId);
+            //entity.StopListening("ItemSelected", entity.UniqueId);
         }
 
         public override AtomActionResults OnUpdate()

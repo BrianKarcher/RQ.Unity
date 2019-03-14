@@ -1,6 +1,7 @@
 ﻿using RQ.Common.Components;
 using RQ.Messaging;
 using RQ.Model.UI;
+using System;
 using UnityEngine;
 
 namespace RQ2.Physics.Components
@@ -10,6 +11,32 @@ namespace RQ2.Physics.Components
     {
         public HUDText HudTextPrefab;
         private HUDText _hudText;
+
+        private long _setHudTextId, _addHudTextId;
+
+        private Action<Telegram2> _setHudTextDelegate, _addHudTextDelegate;
+
+        public override void Awake()
+        {
+            base.Awake();
+            _setHudTextDelegate = (data) =>
+            {
+                var parentName = transform.parent.name;
+                var hudText = (HUDText)data.ExtraInfo;
+                _hudText = hudText;
+            };
+            _addHudTextDelegate = (data) =>
+            {
+                var parentName = transform.parent.name;
+                var hudTextEntryData = (HudTextEntryData)data.ExtraInfo;
+                if (_hudText == null)
+                {
+                    Debug.LogError("HUD Text is null in " + _componentRepository.name);
+                    return;
+                }
+                _hudText.Add(hudTextEntryData.Data, hudTextEntryData.Color, hudTextEntryData.Duration);
+            };
+        }
 
         public override void Start()
         {
@@ -33,24 +60,10 @@ namespace RQ2.Physics.Components
             base.StartListening();
             if (!Application.isPlaying)
                 return;
-            MessageDispatcher2.Instance.StartListening("SetHudText", this.UniqueId, (data) =>
-            {
-                var parentName = transform.parent.name;
-                var hudText = (HUDText)data.ExtraInfo;
-                _hudText = hudText;
-            });
+            _setHudTextId = MessageDispatcher2.Instance.StartListening("SetHudText", this.UniqueId, _setHudTextDelegate);
 
-            _componentRepository.StartListening("AddHudText", this.UniqueId, (data) =>
-            {
-                var parentName = transform.parent.name;
-                var hudTextEntryData = (HudTextEntryData)data.ExtraInfo;
-                if (_hudText == null)
-                {
-                    Debug.LogError("HUD Text is null in " + _componentRepository.name);
-                    return;
-                }
-                _hudText.Add(hudTextEntryData.Data, hudTextEntryData.Color, hudTextEntryData.Duration);
-            });
+            _addHudTextId = MessageDispatcher2.Instance.StartListening("AddHudText", _componentRepository.UniqueId, _addHudTextDelegate);
+            //_componentRepository.StartListening("AddHudText", this.UniqueId, );
         }
 
         public override void StopListening()
@@ -58,8 +71,9 @@ namespace RQ2.Physics.Components
             base.StopListening();
             if (!Application.isPlaying)
                 return;
-            MessageDispatcher2.Instance.StopListening("SetHudText", this.UniqueId, -1);
-            _componentRepository.StopListening("AddHudText", this.UniqueId);
+            MessageDispatcher2.Instance.StopListening("SetHudText", this.UniqueId, _setHudTextId);
+            MessageDispatcher2.Instance.StopListening("AddHudText", _componentRepository.UniqueId, _addHudTextId);
+            //_componentRepository.StopListening("AddHudText", this.UniqueId);
         }
 
         public override void Destroy()

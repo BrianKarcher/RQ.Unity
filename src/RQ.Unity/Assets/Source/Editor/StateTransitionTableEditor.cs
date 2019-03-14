@@ -54,7 +54,7 @@ namespace RQ.Editor
             StateItems = new List<KeyValuePair<string, string>>();
             StateItems.Add(new KeyValuePair<string, string>(" ", "Any"));
 
-            StateItems.AddRange(States.Select(i => new KeyValuePair<string, string>(i.name, i.name)));
+            StateItems.AddRange(States.Select(i => new KeyValuePair<string, string>(i.Name, i.Name)));
 
 
             if (_stAgent.ConditionsList != null)
@@ -373,7 +373,7 @@ namespace RQ.Editor
         {
             string currentState = state == null ? string.Empty : state.name;
             string newCurrentState = ControlExtensions.Popup(label, currentState, StateItems/*, GUILayout.Width(100)*/);
-            return States.FirstOrDefault(j => j.name == newCurrentState) as StateBase; //StateItems.First(j => j.Key == newCurrentState);
+            return States.FirstOrDefault(j => j.Name == newCurrentState) as StateBase; //StateItems.First(j => j.Key == newCurrentState);
         }
 
         private StateTransitionConditionBase CreateConditionalPopup(string label, StateTransitionConditionBase condition)
