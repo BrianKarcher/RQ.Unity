@@ -1,12 +1,10 @@
 ﻿using RQ.Animation;
 using RQ.Animation.V2;
-//using RQ.Entities.Common;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using RQ.AnimationV2;
 using RQ;
-using RQ.Logging;
 
 namespace RQ2.AnimationV2
 {
@@ -15,8 +13,8 @@ namespace RQ2.AnimationV2
     public class SpriteAnimator : SpriteRendererBase2, ISpriteAnimator
     {
         public tk2dSpriteAnimator anim;
-        public event Action AnimComplete;
-        private Dictionary<string, Color> colors = new Dictionary<string, Color>();
+        //public event Action AnimComplete;
+        private readonly Dictionary<string, Color> _colors = new Dictionary<string, Color>();
 
         public void Awake(/*IBaseGameEntity sprite*/)
         {
@@ -47,9 +45,7 @@ namespace RQ2.AnimationV2
 
         public void AnimationComplete(tk2dSpriteAnimator animator, tk2dSpriteAnimationClip clip)
         {
-            if (AnimComplete == null)
-                return;
-            AnimComplete();
+            base.InvokeAnimComplete();
         }
 
         public override void Pause()
@@ -97,7 +93,7 @@ namespace RQ2.AnimationV2
                 //Debug.LogError("(SetColor) name is null");
                 return;
             }
-            colors[colorName] = color;
+            _colors[colorName] = color;
             ProcessColor();
         }
 
@@ -105,15 +101,15 @@ namespace RQ2.AnimationV2
         {
             if (name == null)
                 return;
-            if (colors.ContainsKey(colorName))
-                colors.Remove(colorName);
+            if (_colors.ContainsKey(colorName))
+                _colors.Remove(colorName);
             ProcessColor();
         }
 
         private void ProcessColor()
         {
             var newColor = Color.white;
-            foreach (var oneColor in colors)
+            foreach (var oneColor in _colors)
             {
                 newColor = newColor * oneColor.Value;
             }

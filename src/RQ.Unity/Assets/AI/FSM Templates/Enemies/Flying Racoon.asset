@@ -103,13 +103,15 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.SetVisibility
         - Assets.Source.AI.PM_State_Machine.EnableCollider
+        - HutongGames.PlayMaker.Actions.RandomWait
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 4864de01ec2b1f02
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000300000007000000
+        actionHashCodes: 4864de01ec2b1f020d5f5c01
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -124,7 +126,19 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -134,14 +148,15 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        byteData: 00010001
+        - 
+        byteData: 0001000100
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 0200000003000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetVisibilityAtom
         - RQ.Animation.BasicAction.Action.EnableColliderAtom
-        paramDataType: 28000000010000000100000028000000010000000100000003000000
+        paramDataType: 280000000100000001000000280000000100000001000000030000000f0000000f0000001700000001000000
         paramName:
         - _atom
         - VisibilityOnEnter
@@ -150,8 +165,12 @@ MonoBehaviour:
         - _enableOnEnter
         - _enableOnExit
         - name
-        paramDataPos: 00000000000000000100000001000000020000000300000000000000
-        paramByteDataSize: 00000000010000000100000000000000010000000100000000000000
+        - min
+        - max
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000000000000010000000100000002000000030000000000000000000000010000000100000004000000
+        paramByteDataSize: 0000000001000000010000000000000001000000010000000000000000000000000000000000000001000000
     - name: Rise
       description: 
       colorIndex: 0
@@ -190,7 +209,7 @@ MonoBehaviour:
         - 
         actionEnabled: 010101010101
         actionIsOpen: 010101010101
-        actionStartIndex: 0000000003000000140000001a0000001e00000022000000
+        actionStartIndex: 0000000003000000140000001a0000001e00000021000000
         actionHashCodes: 45f0a300ac126d047943b701ec2b1f02724fda0482737300
         unityObjectParams: []
         fsmGameObjectParams:
@@ -231,7 +250,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: rise
+          value: spin
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams:
@@ -264,7 +283,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: {x: 0, y: 0}
+          value: {x: 0, y: 0.75}
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
@@ -275,11 +294,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        byteData: 090000000000000000000000000000010100000009000000000000000000000000000000000000000001000000000000403f010100
+        byteData: 090000000000000000000000000000010100000009000000000000000000000000000000000000000001010100
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 010000000b00000004000000030000000200000004000000
+        customTypeSizes: 010000000b00000004000000030000000100000004000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetGameObjectVariableAtom2
         - RQ.Animation.BasicAction.Action.SendMessageAtom
@@ -287,7 +306,7 @@ MonoBehaviour:
         - RQ.Animation.BasicAction.Action.EnableColliderAtom
         - RQ.Animation.BasicAction.Action.SetAirVelocityAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
-        paramDataType: 130000002800000007000000290000001200000013000000120000000100000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000002500000028000000070000000700000008000000080000002800000001000000010000000300000025000000280000000800000001000000120000002800000003000000030000000100000001000000
+        paramDataType: 130000002800000007000000290000001200000013000000120000000100000028000000030000000c00000003000000010000000100000001000000010000000100000001000000070000000100000025000000280000000700000007000000080000000800000028000000010000000100000003000000250000002800000001000000120000002800000003000000030000000100000001000000
         paramName:
         - Variable
         - _atom
@@ -321,7 +340,6 @@ MonoBehaviour:
         - name
         - Velocity
         - _atom
-        - AirVelocity
         - IsAirborn
         - _animation
         - _animationAtom
@@ -329,8 +347,8 @@ MonoBehaviour:
         - _animation
         - WaitForAnimationCompletion
         - StopOnExit
-        paramDataPos: 00000000000000000000000000000000000000000100000001000000040000000100000000000000000000000100000005000000060000000700000008000000090000000a0000000b0000000f0000000000000002000000100000001400000018000000200000000300000028000000290000000200000001000000040000002a00000032000000020000000500000003000000040000003300000034000000
-        paramByteDataSize: 00000000000000000400000000000000000000000000000000000000010000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000000000000040000000400000008000000080000000000000001000000010000000000000000000000000000000800000001000000000000000000000000000000000000000100000001000000
+        paramDataPos: 00000000000000000000000000000000000000000100000001000000040000000100000000000000000000000100000005000000060000000700000008000000090000000a0000000b0000000f0000000000000002000000100000001400000018000000200000000300000028000000290000000200000001000000040000002a000000020000000500000003000000040000002b0000002c000000
+        paramByteDataSize: 000000000000000004000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000000000000400000004000000080000000800000000000000010000000100000000000000000000000000000001000000000000000000000000000000000000000100000001000000
     - name: Swoop
       description: 
       colorIndex: 0
@@ -339,7 +357,7 @@ MonoBehaviour:
         x: 411
         y: 196
         width: 100
-        height: 32
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -352,20 +370,61 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: Continue
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: FlyHorizontal
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.ChooseRandomTarget
+        - RQ.AI.PlayMaker.Variables.GetGameObjectVariable
         - Assets.Source.AI.PM_State_Machine.SetSteeringTargetToEntity
+        - Assets.Source.AI.PM_State_Machine.SteeringBehavior
+        - Assets.Source.AI.PM_State_Machine.SetFloatVariable2
+        - HutongGames.PlayMaker.Actions.FloatCompare
+        - Assets.Source.AI.PM_State_Machine.SetFloatVariable2
+        - HutongGames.PlayMaker.Actions.FloatCompare
+        - Assets.Source.AI.PM_State_Machine.SetPhysicsFloatValue
+        - Assets.Source.AI.PM_State_Machine.SetPhysicsFloatValue
+        - Assets.Source.AI.PM_State_Machine.PlayRandomSoundOneShot
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000006000000
-        actionHashCodes: 827373007fbd4f04
-        unityObjectParams: []
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 010101010101010101010101
+        actionIsOpen: 010101010101010101010101
+        actionStartIndex: 0000000006000000080000000c00000014000000160000001c000000230000002900000030000000350000003a000000
+        actionHashCodes: 8273730081bff5022f44f3027fbd4f04ae351404a082bf001bcdca04a082bf001bcdca04ffa3f204ffa3f2042b347e01
+        unityObjectParams:
+        - {fileID: 8300000, guid: 76200c8436828074c98100a092cd4c71, type: 3}
         fsmGameObjectParams:
-        - useVariable: 0
+        - useVariable: 1
+          name: target
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: target
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
@@ -388,13 +447,13 @@ MonoBehaviour:
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams:
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           type: -1
-          objectTypeName: 
+          objectTypeName: UnityEngine.Object
           floatValues: []
           intValues: 
           boolValues: 
@@ -402,7 +461,55 @@ MonoBehaviour:
           vector4Values: []
           objectReferences: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: AirVelocity
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: AirVelocity
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: DistanceSqToTarget
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: DistanceSqToTarget
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.09
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
@@ -410,7 +517,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -421,15 +528,35 @@ MonoBehaviour:
         - 
         - 
         - 
-        byteData: 010000000000
-        arrayParamSizes: 00000000
+        - 
+        - 
+        - 
+        - 
+        - Continue
+        - 
+        - 
+        - FINISHED
+        - 
+        - 
+        - 
+        byteData: 0100020000000000000000000000010000000008000000010100000000030000000105000000000000c000060000000ad7a33d00000000803f
+        arrayParamSizes: 0000000001000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 0400000004000000
+        - UnityEngine.AudioClip
+        customTypeSizes: 04000000000000000200000004000000010000000300000003000000040000000400000003000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.AI.AtomAction.AI.ChooseRandomTargetAtom
+        - RQ.AI.AtomAction.Variables.GetGameObjectVariableAtom
         - RQ.Animation.BasicAction.Action.SetSteeringTargetToEntityAtom
-        paramDataType: 12000000280000000300000003000000010000000100000029000000130000001100000028000000070000000c0000000300000003000000
+        - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
+        - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
+        - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
+        - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
+        - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
+        - RQ.Entity.AtomAction.Action.PlayRandomSoundOneShotAtom
+        paramDataType: 12000000280000000300000003000000010000000100000013000000280000001300000028000000070000000300000029000000130000001100000028000000070000000c000000030000000300000028000000070000000f00000001000000280000000200000007000000030000000f0000000f0000000f000000170000001700000017000000010000000f00000001000000280000000200000007000000030000000f0000000f0000000f00000017000000170000001700000001000000280000000700000002000000010000000300000028000000070000000200000001000000030000002800000001000000020000000c00000005000000
         paramName:
         - _animation
         - _animationAtom
@@ -437,6 +564,12 @@ MonoBehaviour:
         - _animation
         - WaitForAnimationCompletion
         - StopOnExit
+        - storeResult
+        - _atom
+        - GameObject
+        - _atom
+        - _variable
+        - VariableName
         - _messageReceivers
         - _messageReceiver
         - _sendToSelf
@@ -445,8 +578,51 @@ MonoBehaviour:
         - _messageReceivers
         - physicsComponentName
         - waypointName
-        paramDataPos: 0000000000000000000000000100000000000000010000000000000000000000000000000100000002000000000000000200000003000000
-        paramByteDataSize: 0000000000000000000000000000000001000000010000000000000000000000000000000000000004000000000000000000000000000000
+        - _sbAtom
+        - SteeringBehavior
+        - storeResult
+        - everyFrame
+        - _getFloatVariableAtom
+        - Value
+        - _variable
+        - VariableName
+        - float1
+        - float2
+        - tolerance
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        - storeResult
+        - everyFrame
+        - _getFloatVariableAtom
+        - Value
+        - _variable
+        - VariableName
+        - float1
+        - float2
+        - tolerance
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        - _atom
+        - _variable
+        - _value
+        - _setToOriginal
+        - PhysicsAffector
+        - _atom
+        - _variable
+        - _value
+        - _setToOriginal
+        - PhysicsAffector
+        - _soundAtom
+        - _playOnMusicTrack
+        - _volume
+        - _audioClips
+        - 
+        paramDataPos: 0000000000000000000000000100000000000000010000000000000001000000010000000200000002000000020000000000000002000000000000000300000006000000000000000300000004000000040000000a000000000000000e000000050000000f000000130000000500000001000000020000000300000006000000070000000800000017000000040000001800000006000000190000001d000000090000000500000006000000070000000a0000000b0000000c000000210000000700000022000000260000002a0000000d000000080000002b0000002f000000330000000e0000000900000034000000350000000100000000000000
+        paramByteDataSize: 000000000000000000000000000000000100000001000000000000000000000000000000000000000400000000000000000000000000000000000000000000000400000000000000000000000000000000000000040000000000000001000000000000000400000004000000000000000000000000000000000000000000000000000000000000000100000000000000010000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000000000000400000004000000010000000000000000000000040000000400000001000000000000000000000001000000040000000000000000000000
     - name: TargetReached
       description: 
       colorIndex: 0
@@ -469,12 +645,16 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SetPhysicsFloatValue
+        - Assets.Source.AI.PM_State_Machine.SetPhysicsFloatValue
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: ffa3f204ffa3f204
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -497,23 +677,181 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - 
+        - 
+        byteData: 050000000000000000060000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        customTypeSizes: 0400000004000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
+        - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
+        paramDataType: 28000000070000000200000001000000030000002800000007000000020000000100000003000000
+        paramName:
+        - _atom
+        - _variable
+        - _value
+        - _setToOriginal
+        - PhysicsAffector
+        - _atom
+        - _variable
+        - _value
+        - _setToOriginal
+        - PhysicsAffector
+        paramDataPos: 000000000000000004000000080000000000000001000000090000000d0000001100000001000000
+        paramByteDataSize: 00000000040000000400000001000000000000000000000004000000040000000100000000000000
+    - name: FlyHorizontal
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 456
+        y: 293
+        width: 118
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: TargetReached
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SteeringBehavior
+        - Assets.Source.AI.PM_State_Machine.SetFloatVariable2
+        - HutongGames.PlayMaker.Actions.FloatCompare
+        - Assets.Source.AI.PM_State_Machine.SetPhysicsFloatValue
+        - Assets.Source.AI.PM_State_Machine.SetPhysicsFloatValue
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000002000000080000000f00000014000000
+        actionHashCodes: ae351404a082bf001bcdca04ffa3f204ffa3f204
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: DistanceSqToTarget
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: DistanceSqToTarget
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.09
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - FINISHED
+        - 
+        - 
+        - 
+        byteData: 0000000001000000000300000001050000000000000000060000000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 01000000030000000400000004000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
+        - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
+        - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
+        - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
+        paramDataType: 28000000070000000f00000001000000280000000200000007000000030000000f0000000f0000000f0000001700000017000000170000000100000028000000070000000200000001000000030000002800000007000000020000000100000003000000
+        paramName:
+        - _sbAtom
+        - SteeringBehavior
+        - storeResult
+        - everyFrame
+        - _getFloatVariableAtom
+        - Value
+        - _variable
+        - VariableName
+        - float1
+        - float2
+        - tolerance
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        - _atom
+        - _variable
+        - _value
+        - _setToOriginal
+        - PhysicsAffector
+        - _atom
+        - _variable
+        - _value
+        - _setToOriginal
+        - PhysicsAffector
+        paramDataPos: 00000000000000000000000004000000010000000500000009000000000000000100000002000000030000000100000002000000030000000d000000020000000e00000012000000160000000400000003000000170000001b0000001f00000005000000
+        paramByteDataSize: 00000000040000000000000001000000000000000400000004000000000000000000000000000000000000000000000000000000000000000100000000000000040000000400000001000000000000000000000004000000040000000100000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
+    - name: Continue
+      isSystemEvent: 0
+      isGlobal: 0
     globalTransitions: []
     variables:
-      floatVariables: []
+      floatVariables:
+      - useVariable: 1
+        name: AirVelocity
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: DistanceSqToTarget
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -529,6 +867,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: target
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -536,7 +880,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
