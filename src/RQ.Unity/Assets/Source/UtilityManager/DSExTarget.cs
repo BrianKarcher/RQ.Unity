@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using RQ.Common;
 using RQ.Common.Container;
 using RQ.Entity.Components;
@@ -33,8 +34,16 @@ namespace UtilityManager
             }
             if (enemyTags != null && enemyTags.Any())
             {
-                var allEnemies = _entityContainer.GetEntitiesFromTags(enemyTags);
-                dc.EnemyEntities = allEnemies.Select(i => new AICharacter((IComponentRepository)i, null)).Cast<IAICharacter>().ToList();
+                if (dc.EnemyEntities == null)
+                    dc.EnemyEntities = new List<IAICharacter>();
+                dc.EnemyEntities.Clear();
+                for (int i = 0; i < enemyTags.Length; i++)
+                {
+                    var enemyTag = enemyTags[i];
+                    var enemy = _entityContainer.GetEntityFromTag(enemyTag);
+                    var aiCharacter = new AICharacter((IComponentRepository)enemy, null);
+                    dc.EnemyEntities.Add(aiCharacter);
+                }
             }
             if (target != null)
             {

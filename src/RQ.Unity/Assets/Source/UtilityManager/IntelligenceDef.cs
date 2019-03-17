@@ -174,7 +174,16 @@ namespace UtilityManager
         private void CreateDSExTargets(IComponentRepository repo)
         {
             _dSExTargets = new LinkedList<DSExTarget>();
-            var allEnemies = _entityContainer.GetEntitiesFromTags(_enemyTags).Where(i => i.isActiveAndEnabled);
+            var allEnemies = new List<IEntity>();
+            for (int i = 0; i < _enemyTags.Length; i++)
+            {
+                var enemyTag = _enemyTags[i];
+                var enemy = _entityContainer.GetEntityFromTag(enemyTag);
+                if (!enemy.isActiveAndEnabled)
+                    continue;
+                allEnemies.Add(enemy);
+            }
+            //var allEnemies = _entityContainer.GetEntitiesFromTags(_enemyTags).Where(i => i.isActiveAndEnabled);
             var dseList = _dm.GetDSEList();
             foreach (var dse in dseList)
             {

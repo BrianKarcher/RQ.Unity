@@ -49,8 +49,8 @@ namespace UtilityManager
                 return false;
             if (Repo.transform == null)
                 return false;
-            else
-                return true;
+
+            return true;
         }
     }
 }
