@@ -695,23 +695,33 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 56
-        y: 308
+        x: 64
+        y: 304
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Idle
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.SetBoolVariable2
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 82737300
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000006000000
+        actionHashCodes: 82737300c0cc1d04
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -727,14 +737,20 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: Attack
+          value: Walk
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: Pushing
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -743,13 +759,17 @@ MonoBehaviour:
         stringParams:
         - 
         - 
-        byteData: 0100
+        - 
+        - 
+        - FINISHED
+        byteData: 00000100000100000007000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 04000000
+        customTypeSizes: 0400000005000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.AnimationAtom
-        paramDataType: 120000002800000003000000030000000100000001000000
+        - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
+        paramDataType: 12000000280000000300000003000000010000000100000011000000010000002800000001000000010000000700000007000000030000001700000017000000
         paramName:
         - _animation
         - _animationAtom
@@ -757,8 +777,18 @@ MonoBehaviour:
         - _animation
         - WaitForAnimationCompletion
         - StopOnExit
-        paramDataPos: 000000000000000000000000010000000000000001000000
-        paramByteDataSize: 000000000000000000000000000000000100000001000000
+        - storeResult
+        - everyFrame
+        - _atom
+        - Value
+        - InvertValue
+        - ActionTarget
+        - _variable
+        - VariableName
+        - TrueEvent
+        - FalseEvent
+        paramDataPos: 00000000000000000000000001000000000000000100000000000000020000000100000003000000040000000500000009000000020000000300000004000000
+        paramByteDataSize: 00000000000000000000000000000000010000000100000000000000010000000000000001000000010000000400000004000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
