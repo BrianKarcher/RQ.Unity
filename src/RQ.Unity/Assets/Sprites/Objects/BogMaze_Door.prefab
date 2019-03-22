@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114614094035608280}
   - component: {fileID: 114746563175728804}
   - component: {fileID: 114969091890177488}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 4173116393332070}
   - component: {fileID: 114825433992047680}
   - component: {fileID: 114076124899930498}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Logic SM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4112178131649918}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: UsableIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,8 @@ GameObject:
   - component: {fileID: 114971355990421302}
   - component: {fileID: 114249880635545250}
   - component: {fileID: 114731473793254232}
-  m_Layer: 13
+  - component: {fileID: 114089158976027826}
+  m_Layer: 15
   m_Name: BogMaze_Door
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -168,7 +169,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1530969024080556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.796, y: 3.958, z: -0.06}
+  m_LocalPosition: {x: 5.277484, y: 1.0847064, z: -0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4194598855090348}
@@ -255,7 +256,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
@@ -417,6 +418,23 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 2cd0bb64c9f99834cbfc34ed34181d66, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114089158976027826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530969024080556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1696332522, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: ae41fd6f-edc2-48de-b869-efc0db60f1e4
+  componentName: 
+  _rqName: BogMaze_Door RQ.Sprite.AdjustDepthByY
+  _rqName2: 3664b5d9-f23b-400d-b7e1-5a127df0d496
+  _componentRepository: {fileID: 114721496365638930}
+  FootPositionY: 0
 --- !u!114 &114162964730497400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -437,6 +455,9 @@ MonoBehaviour:
   - Player
   _excludedTags:
   - Tilemap
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   _message: 
   _bubbleText: 
   _castRay: 0
@@ -464,20 +485,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 4628813144518970}
   _autoChangeLayers: 0
 --- !u!114 &114474517081816558
@@ -502,7 +514,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1530969024080556}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
@@ -542,6 +554,7 @@ MonoBehaviour:
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -558,10 +571,10 @@ MonoBehaviour:
     _maxForce: 1
     _originalMaxForce: 1
     _maxSpeed: 1
-    _maxSpeedMultiplier: 1
     _mass: 0
     _enabled: 1
     Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
     InitialVelocity: {x: 0, y: 0}
     Size:
@@ -592,6 +605,7 @@ MonoBehaviour:
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
@@ -723,6 +737,9 @@ MonoBehaviour:
   - Player
   _excludedTags:
   - Tilemap
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   _message: 
   _bubbleText: 
   _castRay: 0
@@ -767,20 +784,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 4727741668105312}
   _autoChangeLayers: 0
 --- !u!114 &114957338833940792
@@ -802,20 +810,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 4942394704844384}
   _autoChangeLayers: 0
 --- !u!114 &114969091890177488
