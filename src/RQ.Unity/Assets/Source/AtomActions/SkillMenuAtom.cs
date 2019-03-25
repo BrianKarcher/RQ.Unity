@@ -27,7 +27,6 @@ namespace RQ.Animation.BasicAction.Action
 
         public override void Start(IComponentRepository entity)
         {
-            base.Start(entity);
             if (_itemSelectedDelegate == null)
             {
                 _itemSelectedDelegate = (data) =>
@@ -43,6 +42,8 @@ namespace RQ.Animation.BasicAction.Action
                     _isRunning = false;
                 };
             }
+            base.Start(entity);
+
             _entity = entity.GetComponent<UIManager>();
             _inventoryGrid = _entity.SkillGrid;
             //_inventoryGrid = GameObject.FindObjectOfType<InventoryGrid>();
