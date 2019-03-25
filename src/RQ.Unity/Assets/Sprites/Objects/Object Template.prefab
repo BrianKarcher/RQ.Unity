@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4712312328272058}
   - component: {fileID: 114680451033161362}
   - component: {fileID: 114623056314704156}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Logic SM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,8 +61,9 @@ GameObject:
   - component: {fileID: 114482311110597686}
   - component: {fileID: 114071185022848316}
   - component: {fileID: 114888987903236062}
-  m_Layer: 13
-  m_Name: Template
+  - component: {fileID: 114139743180170236}
+  m_Layer: 15
+  m_Name: Object Template
   m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +77,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4217887477098744}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: UsableIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +116,7 @@ GameObject:
   - component: {fileID: 114531376033893686}
   - component: {fileID: 114503529006472772}
   - component: {fileID: 114431095269866168}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +156,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1455002213825352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 6.5605707, y: 3.6500392, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4292790968451266}
@@ -294,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 15ccfae7-9819-47b0-8379-8c3b920c6c5a
+  _uniqueId: e8733b18-ccd0-4365-9945-03b490bac7a3
   componentName: 
   _rqName: HardWind_BogMiniboss RQ.Physics.Components.GameObjectStatePersistenceComponent
   _rqName2: 17006f75-b28b-4bcb-81da-edd881e1df14
@@ -305,12 +306,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1455002213825352}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 39e05be4-cac2-48a0-a3d6-1d5849b0df46
+  _uniqueId: b058f73a-7dd1-4f4b-9398-8161e4464232
   componentName: 
   _rqName: HardWind_BogMiniboss RQ.Physics.Components.PhysicsComponent
   _rqName2: 0156d565-99b5-4420-81e2-ec5c1c7350b7
@@ -419,6 +420,23 @@ MonoBehaviour:
     _steeringForce:
       x: 0
       y: 0
+--- !u!114 &114139743180170236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1455002213825352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1696332522, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 3fc48216-3607-4fae-8067-f714cbfa9147
+  componentName: 
+  _rqName: Template RQ.Sprite.AdjustDepthByY
+  _rqName2: e9f7fe2f-654f-4bc7-bcb0-d06a5fc52aac
+  _componentRepository: {fileID: 114873807812875278}
+  FootPositionY: 0
 --- !u!114 &114230273149741472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 3a442c5b-1372-4543-86ba-44f1f8b4836f
+  _uniqueId: 0450c465-f5c1-429e-9634-dad0b5596637
   componentName: 
   _rqName: BodyCollider Assets.Source.CollisionProcessor
   _rqName2: 49f549f3-517d-4aa7-9c9c-445731675a6d
@@ -446,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: -881182047, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: e9ecd324-4c87-4df2-8e3e-a4dfec53a508
+  _uniqueId: a6752b3e-6f2b-4548-a7ca-27de0726237e
   componentName: Usable
   _rqName: BodyCollider RQ.Physics.Components.UsableComponent
   _rqName2: 833fcd56-dc69-4270-8b14-5c23b79c72c3
@@ -477,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: -881182047, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 1c7964b6-c56e-462e-ab41-5a67bc8d0829
+  _uniqueId: 0e3de1aa-d0e4-4934-9c4c-320c45d90b47
   componentName: Usable
   _rqName: BodyCollider RQ.Physics.Components.UsableComponent
   _rqName2: 833fcd56-dc69-4270-8b14-5c23b79c72c3
@@ -508,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: -1951438886, guid: 12d8c4a4410b9684983f5d6c8463d1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 5bb58eae-b160-49b7-88b9-153e5f12bc38
+  _uniqueId: 5bdcaab7-373c-4bbc-99fe-0f610a2bae75
   componentName: 
   _rqName: MainSprite RQ.Animation.AnimationComponent
   _rqName2: 3fc48f10-f0c9-4fd1-a968-0ca33c020783
@@ -536,7 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: b3a2116b-c893-44b4-b5f1-0f81414936ef
+  _uniqueId: 7f7e0afe-da62-403a-aa00-be259b77d935
   componentName: 
   _rqName: HardWind_BogMiniboss RQ.Physics.Components.CollisionComponent
   _rqName2: e25576fa-a7d8-4f9c-9de1-83f72a8fce4a
@@ -733,7 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 17726617-8c30-4b0d-9504-ef60b0020b1e
+  _uniqueId: 219e5480-9212-43dc-8501-8688f8ecbee6
   componentName: 
   _rqName: Logic SM RQ.Physics.Components.PlayMakerStateMachineComponent
   _rqName2: 33d8f08a-9f0c-4b41-88ba-a29858f1c653
@@ -750,7 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: fb714daf-07b0-4e25-9e55-f0243e40b3ff
+  _uniqueId: b9a57d4d-8058-4b65-9274-9acce6039310
   componentName: 
   _rqName: BodyCollider Assets.Source.CollisionProcessor
   _rqName2: 49f549f3-517d-4aa7-9c9c-445731675a6d
@@ -766,7 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: a01db53f-136e-440f-a7f2-8ee1ad37315a
+  _uniqueId: 0a46d79c-a2ea-4b3c-89a0-a93bb7df350f
   componentName: 
   _rqName: BodyCollider RQ.Physics.Components.CollisionComponent
   _rqName2: 1b0f03a5-a679-4a0f-9319-f4e562b96c77
@@ -792,7 +810,7 @@ MonoBehaviour:
   m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 20a01555-0ae6-42f3-81b5-df389adbb937
+  _uniqueId: b71c15fa-2fea-4877-b828-274199f7a706
   componentName: 
   _rqName: BodyCollider RQ.Physics.Components.CollisionComponent
   _rqName2: 1b0f03a5-a679-4a0f-9319-f4e562b96c77
@@ -818,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: dbf1f524-eea3-4885-b81f-3ce6d5f4d955
+  _uniqueId: 3e2f0c53-1730-4bb7-a7a4-7ff2eb833853
   componentName: 
   _rqName: HardWind_BogMiniboss RQ.Entity.Common.SpriteBaseComponent
   _rqName2: 720e09fb-37ea-463e-a31b-df5b2fc80d53

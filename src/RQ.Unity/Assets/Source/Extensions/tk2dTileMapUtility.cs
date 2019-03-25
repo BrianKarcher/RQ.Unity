@@ -146,7 +146,7 @@ namespace RQ2.TileMap
         public static void DeleteLayer(tk2dTileMap tileMap, int layerToDelete)
         {
             // Just in case
-            if (tileMap.data.NumLayers <= 1)
+            if (tileMap.data.NumLayers <= 0)
                 return;
 
             // Find all objects that will be affected by this operation			
