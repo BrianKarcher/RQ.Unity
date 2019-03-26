@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4364984315556570}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lily Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4217660112051478}
   - component: {fileID: 114410753473601062}
   - component: {fileID: 114793465382078684}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Controller FSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4991462024079476}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: UsablePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4948712811652128}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Landpoint Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4539709454553288}
   - component: {fileID: 114000030629736112}
   - component: {fileID: 114970663651197088}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Boarding Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,8 +383,11 @@ MonoBehaviour:
   - Player
   _excludedTags:
   - Tilemap
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 32768
   _message: 
-  _bubbleText: Get Off
+  _bubbleText: Use
   _castRay: 1
   _usable: {fileID: 4991462024079476}
   _usableObjects: []
@@ -410,20 +413,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 15
-  _levelTwoLayer:
-    _layerIndex: 15
-  _levelThreeLayer:
-    _layerIndex: 19
-  _sharedLayer:
-    _layerIndex: 17
   _mainCollider: {fileID: 4276698317029860}
   _autoChangeLayers: 0
 --- !u!114 &114793465382078684
