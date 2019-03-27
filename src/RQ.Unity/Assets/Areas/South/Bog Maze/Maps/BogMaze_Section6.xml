@@ -1,75 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="25" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="1">
- <tileset firstgid="1" source="Bog-maze_tiles.tsx"/>
- <tileset firstgid="2136" name="Common Collider Tileset" tilewidth="16" tileheight="16" tilecount="6" columns="3">
-  <image source="Common Collider Tileset.png" width="48" height="32"/>
+<map version="1.2" tiledversion="1.2.2" orientation="orthogonal" renderorder="right-down" width="45" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="57" nextobjectid="1">
+ <tileset firstgid="1" source="Dungeon_2_Bog Maze Tileset.tsx"/>
+ <tileset firstgid="1297" name="Common Collider Tileset" tilewidth="16" tileheight="16" tilecount="6" columns="3">
+  <image source="Common Collider Tileset.png" trans="ff00ff" width="48" height="32"/>
  </tileset>
- <tileset firstgid="2142" name="Shadow Tileset 2" tilewidth="16" tileheight="16" tilecount="60" columns="12">
-  <image source="Shadow Tileset 2.png" width="192" height="80"/>
+ <tileset firstgid="1303" name="Shadow Tileset 2" tilewidth="16" tileheight="16" tilecount="60" columns="12">
+  <image source="Shadow Tileset 2.png" trans="ff00ff" width="192" height="80"/>
  </tileset>
- <layer id="1" name="Water" width="25" height="16">
+ <tileset firstgid="1363" name="BogMaze Tileset - Extension" tilewidth="16" tileheight="16" tilecount="1296" columns="36">
+  <image source="Bog Maze Tileset 2 - Extension.png" trans="ff00ff" width="576" height="576"/>
+ </tileset>
+ <layer id="42" name="Level 1" width="45" height="30">
   <data encoding="base64" compression="zlib">
-   eJy7wMDAcBGILwHxBRqxR8EoGAWjYBQMPwAAw+UUaQ==
+   eJzt0zkKwkAUxvHnmNYFtFYre/UG6hWijaBHEfQogl7EBbT0DIILaG0s/ISoSchkMZkE4QX+TciEH8N7hwzRgeM4jvtUJ3X9m1eVm83Jm4nNbGZzquY43G7nw5qWaIXWIcxRn6jmIzqhs8SvYhaimnOCKI8Kwu73u+80Z7kBaxO1hN2fhPnXHdPh66G+sPvj3uU4ss6uIb69/b/88467M8weEe4xyO5Zze+c3w+yREM0ysr/WUFVs5qCe7bOrpvZ6R7DOkFTD3Mbdcy6CszO2fVzz2Cdo4WHee8obrPuMrte7g2sW7RL0SxLZr7AekU3D7PqHQzjfr0rakQlVNbk51TvYFBzmHOqd/AJar+cWw==
   </data>
  </layer>
- <layer id="2" name="Level 1" width="25" height="16">
+ <layer id="43" name="Level 1 Overlay 1" width="45" height="30">
   <data encoding="base64" compression="zlib">
-   eJxjYKA9OEwP8xlpbAnQfFsa2wEyn9ZhBQ4nOviD1mF1mIH2djDQIT5s6RAfhxmGT7qiR1kylMIKPQ/A+LA8aAfE9jRkAwC9cBA7
+   eJzVVklOA0EMHCYcwvINNiksN94AXMJy4wAfYLuzHOADCLgDQoIPANewvoQl/IKyNBaNsbt70hOklFTKTNrY1cax3erLsgfwEXwCn0GJlmJTz7NsABwEh8Dh3LZ18Yb3d/AD/ATbSjwJGSvGh2bTwN9OglPgNDiTx2my7uq7r4zl8+GL0wQXwSVwGVzJw5q0+DPOuXVfGcvnIyZOWVvrrjH3jfFRxqYT29j7ypqRsGqKPnKHm+KTnzeFnfu9dsasee4ra0ZCq6kNfH8GjnaRp+CWkX9ZM6FzqqmJwm8/eAfOF7Se3fc78ayd7RT+x4t8S8iaCZ1TTZG/bfDeyEMqbh3dJ8q5rJnQ+Upu+6oSx1l8nNDc0nxVWceMkeJ9LEJzaG6xL6mZamXeoFbbVg374lgI9XHt/rH58IH/f/I95Lfl2RtCmlPru1PNVBehudWtPLPfsprrEXNV88UzQOulMaCfDPd8Rmw9N0po1voG6ZbzW5vXcm5PZH/7Rmyva3ao2dVdRZ8jlOkbsZpprlr7QBUo059jffn2gVTQDsb1kpLnXYjbA+eyn/7PurW9U9Z0zP7J57wz0g62kKD5HHoviqS6O0y3SHN1FtxP0PwMvS+1n3yTbm2vtHZMa46789u1J72r4GWC5jZ0ftV+59vFnkELlj2T9B6ArwmaGTLfjAuDFix7ZlV6CVa+XwxaKGNbFTjfvQTOtw9rOF/vsXsdQu9RD2m+gtZr8OYfNH8DSVfiZw==
   </data>
  </layer>
- <layer id="3" name="Level 1 Overlay 1" width="25" height="16">
+ <layer id="44" name="Level 1 Overlay 2" width="45" height="30">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApIBwAGQAAB
+   eJztlEsKwjAQhqct3Yn4Okh94FLPoTuXHsWlN/A2ehQfK5fuTKhDQzRN00yiwXzwUxjS6ccwKUAkEgmBM8tFSl+IWJOfdWcwVwe+J+KeMkeWAVGvHsshIWqmgXtTzLvjyRfpEnzPt/OcoEecs54QnSl2Y0bQw4R/3ec4Zz0h7nOI/w0K54L1GNm3aQyFM8eX941lbXB+kpeZviJTON6RIZj5chZ55T2p8V5BmXFSPTG7FGCfvr+HdTyHPcQ+pr7ojFE569hkANuseZ0C0XvZwvnOvB4f3FR1Ktr6clS74XLOtqjcXM/ZBt0d/EW+cQdt8XUHnwfRM70=
   </data>
  </layer>
- <layer id="4" name="Level 1 Overlay 2" width="25" height="16">
+ <layer id="50" name="Top" width="45" height="30">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApIBwAGQAAB
+   eJztVlkKw1AINPnqdpRuR+l24G5H6XaMTj8C8jBP+xJiCw4MhESSUZ9jiAKBQCAQCAS6Y1QTjcEJOAVntbciHXNoXIBLcAWu/0DzBhq34A7cg4cf12w5E8eK6ASewQt4rYbVmMJyJm7QeAcf4BN8OWu2nAlpRr31a74hzai3x+R8g2vj/fD2x5xv8Dw+s9fEevqjVi+eBz+7Up5D1Vurl9Z/j3pr+0TT41nvNlj3o1Rvrx1k7bdUb+7hJfqt3pTGNdffeFpfO8g6K2lcyYyV7CApT6l3ljj+nVyv+DP+jtJadYnj93Pxbc+s/7l9xr0B5+xEcQ==
   </data>
  </layer>
- <layer id="5" name="Level 2" width="25" height="16">
+ <layer id="51" name="Top Overlay 1" width="45" height="30">
   <data encoding="base64" compression="zlib">
-   eJytVNtthDAQXLuF5Mrh7J98R0pFV0CKQsJuIUk5GQ4GhsXOQ7qVRvixj9mHMftZLsBLsJs/+68MwewKJGDCvgB1vsA+ADHsOr37lu7sjzLZbgvdDN0M3cyzg83qi3dFbBmDZ1XyKHawzdhn3GcTXz6exuLa8ygSg3vqKE/qay4+L19H7oPUSnm1eIa554Cr6catNuo10e8q1do9JVd8b8MSp8vF12u7XyWGM7/YmBnq0I/6kjy2nKPEOPWpx8nFIge1Z87FzrOr/KRnd05ab35T40215nsfrO4c3TlFl2erx+QDmxE2I2eaMjR6SV86p0l4+3qSD85GW7D4dbXyPn/7ryTHK4Xj/FTJoTUnun63/hvU9QfwCXwBr7B5c31/hDxFs2fgEh/r9y8xvgFePHBk
+   eJztlEsOwyAMRB1W6eco6V3aG7dNj9LfMTobSwgBxjQqpPKTvAkmGsYDRIZhGIbx35wHogvqippRt6G1Ipk7ND5QT9QL9V6B5jVhmTAkNBnpJU+5jITauLcX7THCc4yOaOPa3gWtXxP0Hlz9/iWQ/Ar1HKH35Mr3t0DSw1nZun7znaInv0s98/1eitK7EvaxZ5qZ8z++pXR2YV/NzHmPRn+tp7E+/3uuP7Xm6y85p9bTWJ//PdefWuOc/5KUfznPd9C4b/j2pfyTZtTy7fsA2VSo4w==
   </data>
  </layer>
- <layer id="6" name="Level 2 Overlay 1" width="25" height="16">
+ <layer id="55" name="Top Overlay 2" width="45" height="30">
   <data encoding="base64" compression="zlib">
-   eJzFlElKxEAUhl80cSsatW+gvVPbheBKFHeCtHoBh945XUCMa3E4gqfQlThs9DAqOLtx+J55oUNIdWwI9A8fqfqr6n+8TN2eiA9B5joHtyJyxvU8tZb4d/I3jnyHl+zvgRnIUx0WoR+WYN78IziGA/MTT+cL5k35zZxZ8vc9mR7KqaHnluEQThzrab/u2BtRYxdCxq46efl5cu21PuTD+39WK13DZ8aLcp5HzfF8XLqAyRZntI+9NjPbVV4fZauTffSWWKMTfVzClcTv4E0J+QNWQ/vQ8aDE3+EXfMOPzdNrRUrusZ7huz+tWA2VjvXfFNqeJ/w+m1fMC81/hhd4hTd492L/0Wv+01QP5t/DcJfICFRhFMZgHCYy81qBpxkrgchqEPdTTeWuwTo0YAM2YQt2MvPtAk8zEmk/jVTuL4wmRYc=
+   eJzt1LcNgEAUBNF/RLhScKXgCsaVgiuDSYghg5P2SZNvtGYiIiIiIiL/NDizkSaaaXFfL3q2snGjnQ46PdgcBmYRxZRQGny96FnGxpwKKqnyYHPNxoZa6qj3YLNP7r8QEXnrApvBDKY=
   </data>
  </layer>
- <layer id="7" name="Level 2 Overlay 2" width="25" height="16">
+ <layer id="52" name="Level 1 Collider" width="45" height="30" visible="0">
   <data encoding="base64" compression="zlib">
-   eJzVUtsJwlAMTa3/FREHqS+cw0HEDRzBMfxwAQXxsYND+OurVVs1gcTepre1iD8eOITGk+QkXoD/Q78KUPugWRoUeADjTzVlsEKukQHywjEsUTdn/cKYRX02yK2lf8sBaDvpGBb4PENWL7kHxqehjZAxJHnZw4za15XzHe5rakdO1o+nvNn20b4IPuZvrBet3E0wdLP30v4D9poHn/vqGrrxzE1rTf/U0ze83fNHvOfo3bUvua3cV3KkJ09FM2R/vYetxlezu7yL7X/QiCG9B/XxlCbCu8Wurbo8ek5CE82Cmob61r7KYIq+Bxj3OPeIPNE7pzfCPg4qfyx4W4Sd+v3E35MvvOWhXvlhsy9mvACdj2Mi
+   eJztllsKgCAURP1xAbZCl9ZSXFpdqIjQ8nEfCXMg6GvmUBnjHABgFhYvd0kQvEsyyVd+ZM5LnHkvPZEjR+q9SfbBWacPzjp9cNbpg7NOH5x1+mZ13rfLOp70TWB+PtLeo76lHd6736U3//EtJLrv2bMlZ0me+a3ef3AmWrwtnInceav1tnImct413ZbOxN07VJ5va+ezr+V/pOG8AfyOEUQ=
   </data>
  </layer>
- <layer id="8" name="Level 2 Overlay 3" width="25" height="16">
+ <layer id="53" name="Level 2 Collider" width="45" height="30" visible="0">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRQAuQxcGwgNZ2NHMwPKC1HU047AAAwJsD6A==
+   eJztlkEKgDAMBHvsE+utT+tTfJoUGikSA6ZJqLADIh7cHaqHTQkAHUf2uzwoOZ0+yXd+Nc47LfOEnmqR4/XdPPvgHNMH55g+OMf0wTmmD85+fRGbS+rWvEObqG+W8dxszXjKwhk/cuq4tzUjGa1vh/s25K3d7xGbnzvTedtKHW/OEXDe1L2rc2f2LvkfztT35Z/bwRkAEMcFAi8vug==
   </data>
  </layer>
- <layer id="9" name="Top" width="25" height="16">
+ <layer id="54" name="Shared Collider" width="45" height="30" visible="0">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApIBwAGQAAB
-  </data>
- </layer>
- <layer id="10" name="Top Overlay 1" width="25" height="16">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApIBwAGQAAB
-  </data>
- </layer>
- <layer id="11" name="Level 1 Collider" width="25" height="16" visible="0">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApIBwAGQAAB
-  </data>
- </layer>
- <layer id="12" name="Level 2 Collider" width="25" height="16" visible="0">
-  <data encoding="base64" compression="zlib">
-   eJyL5WA4EMPB4EArHAuhHzBQEcDMRuInUNsOLHaO2jFqx6gdBOyI5KC9HbQyH+R2kB3AMmtBDIRNMUZzPxgDzQfbRS2M7gdaYGQ/IYsDALeRRgM=
-  </data>
- </layer>
- <layer id="13" name="Shared Collider" width="25" height="16" visible="0">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApIBwAGQAAB
+   eJztwQEBAAAAgiD/r25IQAEAAAAAfBkVGAAB
   </data>
  </layer>
 </map>
