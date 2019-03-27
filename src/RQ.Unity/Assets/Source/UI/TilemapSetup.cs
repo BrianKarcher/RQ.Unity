@@ -145,6 +145,7 @@ namespace RQ2.UI
                 {
                     if (collidergo.name == layer.name)
                     {
+                        go.transform.position = Vector3.zero;
                         go.transform.SetParent(collidergo);
                         break;
                     }
@@ -185,8 +186,9 @@ namespace RQ2.UI
                     }
                 }
 
-                polygons = UnitePolygons(polygons);
-                Create2DPolygonCollider(polygons, go);
+                //polygons = UnitePolygons(polygons);
+                //Create2DPolygonCollider(polygons, go);
+                CreateMeshCollider(polygons, go);
                 //sdf
                 // Only do first layer for now
                 //break;
