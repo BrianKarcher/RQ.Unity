@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="48" height="18" tilewidth="16" tileheight="16" infinite="0" nextlayerid="849" nextobjectid="1">
+<map version="1.2" tiledversion="1.2.2" orientation="orthogonal" renderorder="right-down" width="48" height="18" tilewidth="16" tileheight="16" infinite="0" nextlayerid="882" nextobjectid="1">
  <tileset firstgid="1" source="Dungeon_2_Bog Maze Tileset.tsx"/>
- <tileset firstgid="2593" name="Common Collider Tileset" tilewidth="16" tileheight="16" tilecount="6" columns="3">
+ <tileset firstgid="1297" name="Common Collider Tileset" tilewidth="16" tileheight="16" tilecount="6" columns="3">
   <image source="Common Collider Tileset.png" trans="ff00ff" width="48" height="32"/>
  </tileset>
- <layer id="822" name="Level 1" width="48" height="18">
+ <tileset firstgid="1303" name="Shadow Tileset 2" tilewidth="16" tileheight="16" tilecount="60" columns="12">
+  <image source="Shadow Tileset 2.png" trans="ff00ff" width="192" height="80"/>
+ </tileset>
+ <tileset firstgid="1363" name="Bog Maze Tileset 2 - Extension" tilewidth="16" tileheight="16" tilecount="1296" columns="36">
+  <image source="Bog Maze Tileset 2 - Extension.png" trans="ff00ff" width="576" height="576"/>
+ </tileset>
+ <layer id="875" name="Level 1" width="48" height="18">
   <data encoding="base64" compression="zlib">
-   eJwLZGJgCCSA85gZGPKB2IsBgWFihPTSGs8kAuNzPzH6aYkfEoHxuZ8Y/bTEmsyEMT73E6OfltiPiTCGufUSIwPDZSC+wogQI0Y/NtzFwsDQzYIaJuRgUtwvBWRLA7EM09B0P7b0M+r+oe1+ZBqbGC4axh6o/HsJaPdlFlQamxguGsamNP8uYKE9pjSssKWfbUD+diB+wUJ7TAv31wD5tcyU5z9iMC3cfwTIPzqE3U9PPNLdD8uruMpQapY1sHKdmm0VQmUoLcoaYt0PADyjcAg=
+   eJzFVjtOw0AQXdsiQnzCJcA9cAMqaIEL0CAhQUu4QkquQpNwAKBEEekCLd8KAZIJFLyVPOJl8awWf5SRnnb8mB3PDm8nNqbYFmNj2sASMIiM+YiKV44LteukPmi2inrWgPVYr92uHBdqb0l9uEANl8BVNPkO5n391/ZrxvFZniOjnMP8WVbm3Jh31P+E9Rl4cd7PvK//2n7NOF7qy5yczLscP1vT9NuU/jme+zyknPx/Yc6N8RnreoznrwJ8m7/6T3OEWBZVg7UQ/fv0U7Q/Dcxr/R7QB85L+NZC9O/TT9H+NDCv9UfALXBXwj8zzek/hGdfm+83OZqa/138/TSP495qvwvMs6/Nd8lfZf777u8echwk1XSs+XaV/PczxjwAj8B2y5gdYLcVplNf/a/I/ZlU07Hm23UZvV8B5lDrPLAAHAMd4KQ1qUHuOfM+/TS9buL9W8BsVAyt523S5rRqH/yzfu65rV3uzjT7f4j3H3nqD7lLG8pZhCt7R3sOL/nkW2FInFZ/yF3aj3/nAPdHuLJ3dOTwko/r5/kmZ+nTmUO/s2UOcP+Fq+tbXvKNab4J16Ue2jPImX8AVbsR8A==
   </data>
  </layer>
- <layer id="825" name="Level 1 Colliders" width="48" height="18" visible="0">
+ <layer id="876" name="Level 1 Overlay 1" width="48" height="18">
   <data encoding="base64" compression="zlib">
-   eJxjYCAMlLggWJWLwQGGoWILiNA+4ADmfixiC6hhLiV41P0j2/2UAGA+TCDWnlH3YzeXEjAY3D+U0z+9wKj7BxbgcT9dsCKV8tlAAUrtHnU/5fZTqn84uJ+eeZia7kc2RxUJ0yJOYO4n1h4ACo0sEA==
+   eJztzrERQEAUhOFN7gqRog0NoAnFaAm1oA8bXiTwgsXsN7PJRj9g9kylDgjq1AFBX++f1AFBszrgp5YErNyW7r836dk1cCO3cwd3Fq3lV2eg4dqs6zUzM60LjBUNXA==
   </data>
  </layer>
- <layer id="824" name="Top" width="48" height="18">
+ <layer id="878" name="Level 1 Colliders" width="48" height="18" visible="0">
   <data encoding="base64" compression="zlib">
-   eJzVlksOwjAMRA3J4YByFn7lIBQ4C//DMd1aYylGyGksvc1sMor7lIrEzS6J7MEB9OCYAg//wzzQ9wle4A0+jfWXLDIDc5BAzrUL+WaBvkuwAh1YN9b/hL4DOIMLuDbQ33K2FZctZ5tx2XKW5GwntfdkOctytpPae7Kc/dVlvQ+WTdWlcfQ+WBa5ow3O2nrOU96wLPJdvKH73dFfe8OyyHfRe//aG5aNLkX54Ln/Uk8jffDcf3GvQB9c339hr6n+J7JeX0DqVFY=
+   eJxjYMAPhFgpkx9oQEv3g/RSggeD+ykBgqwMCZTaMZDup4Ydo+6nLRjM+ReY/hcMpPvpAUbdP7BgJLiflpjW7qc1oNT+UfcPrP340iM90jw1w4+WZtPDjsHofgAMBQxR
+  </data>
+ </layer>
+ <layer id="879" name="Top" width="48" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztlEkKgDAMRWNXTkdxOorT/bd6DANuihjamDoU8+BvxPzKaxBgJzUAGSbHFJjSAAtqXtrrS4W9NabBtJiOeQ41L+11cXQzGn9nZ+9R85xeDhJnXOd33MXgcDZhZuKc3rjnr/Re4en9XxKANZF/t+6/7n8I/vj/t7HvwnZLPQ/FG85CItn/LxGT8zP6CJ0ripQNVBArbw==
+  </data>
+ </layer>
+ <layer id="880" name="Top Overlay 2" width="48" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztlVsKwjAQRdN++VqKVpei1QVb7VJ8LcMTaKGU5KPJdOZDDxwKQwiTYbhtCudueMcWPVe+TaA+JnZuaj2HJ3e88I2f7r5HEa6PiZ2bWpcgdzaaMw+ROxuLmXtyZvbL+y/9Fu39l94r7f1flM4tcYVr3JRpfVtlxpZ+d1jhHg+J/VtkhudIvyes8YyXxP57tHJ6LjRmPgeW/0wJrPZfimGG9UhlmxVS2WaFdLb9ifMF8Ke0aA==
   </data>
  </layer>
 </map>
