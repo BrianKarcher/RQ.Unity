@@ -151,7 +151,7 @@ namespace RQ2.UI
                     }
                 }
 
-                List<List<Vector2>> polygons = new List<List<Vector2>>();
+                List<List<Vector3>> polygons = new List<List<Vector3>>();
                 for (int y = 0; y < tileMapHeight; y++)
                 {
                     for (int x = 0; x < tileMapWidth; x++)
@@ -161,12 +161,19 @@ namespace RQ2.UI
                             continue;
                         var tilePos = _tileMap.GetTilePosition(x, y);
                         // Create points representing a square polygon at this spot.
-                        List<Vector2> polygon = new List<Vector2>()
+                        List<Vector3> polygon = new List<Vector3>()
                         {
-                                new Vector2(tilePos.x, tilePos.y),
-                                new Vector2(tilePos.x + 0.16f, tilePos.y),
-                                new Vector2(tilePos.x + 0.16f, tilePos.y + 0.16f),
-                                new Vector2(tilePos.x, tilePos.y + 0.16f)
+                            new Vector3(tilePos.x, tilePos.y),
+                            new Vector3(tilePos.x, tilePos.y + 0.16f),
+                            new Vector3(tilePos.x + 0.16f, tilePos.y + 0.16f),
+                            new Vector3(tilePos.x + 0.16f, tilePos.y),
+                            
+                            
+
+                                //new Vector2(tilePos.x, tilePos.y),
+                                //new Vector2(tilePos.x + 0.16f, tilePos.y),
+                                //new Vector2(tilePos.x + 0.16f, tilePos.y + 0.16f),
+                                //new Vector2(tilePos.x, tilePos.y + 0.16f)
                         };
                         polygons.Add(polygon);
 
@@ -188,11 +195,155 @@ namespace RQ2.UI
 
                 //polygons = UnitePolygons(polygons);
                 //Create2DPolygonCollider(polygons, go);
-                CreateMeshCollider(polygons, go);
+                CreateMeshColliderFromSquares(polygons, go);
                 //sdf
                 // Only do first layer for now
                 //break;
             }
+        }
+
+        //create the collider in unity from the list of polygons shaped like squares
+        public void CreateMeshColliderFromSquares(List<List<Vector3>> polygons, GameObject colliderObj)
+        {
+            //GameObject colliderObj = new GameObject("LevelCollision");
+            //colliderObj.layer = GR.inst.GetLayerID(Layer.PLATFORM);
+            //colliderObj.transform.SetParent(level.levelObj.transform);
+
+            //PolygonCollider2D collider = colliderObj.AddComponent<PolygonCollider2D>();
+
+            //collider.pathCount = polygons.Count;
+
+            //for (int i = 0; i < polygons.Count; i++)
+            //{
+            //    Vector2[] points = polygons[i].ToArray();
+
+            //    collider.SetPath(i, points);
+            //}
+
+            //var vertices2D = polygons.SelectMany(i => i).ToArray();
+
+            // Use the triangulator to get indices for creating triangles
+            //Triangulator tr = new Triangulator(vertices2D);
+            //int[] indices = tr.Triangulate();
+
+            List<int> indices = new List<int>();
+            List<Vector3> vertices = new List<Vector3>();
+            int vertexCount = 0;
+            foreach (var polygon in polygons)
+            {
+                vertices.AddRange(polygon);
+                var v1 = vertexCount++;
+                var v2 = vertexCount++;
+                var v3 = vertexCount++;
+                var v4 = vertexCount++;
+                indices.Add(v1);
+                indices.Add(v2);
+                indices.Add(v3);
+                indices.Add(v3);
+                indices.Add(v4);
+                indices.Add(v1);
+
+                //int vertexInPolygonCount = 0;
+                //for (int i = 0; i < polygon.Count; i++)
+                //{
+                //    vertices.Add(polygon[i]);
+                //    if (i >= 2)
+                //    {
+                //        // Create triangle
+                //        indices.Add(vertexCount - 2);
+                //        indices.Add(vertexCount - 1);
+                //        indices.Add(vertexCount);
+                //    }
+                //    vertexCount++;
+                //}
+            }
+
+            // Create the Vector3 vertices
+            //Vector3[] vertices = new Vector3[vertices2D.Length];
+            //for (int i = 0; i < vertices.Length; i++)
+            //{
+            //    vertices[i] = new Vector3(vertices2D[i].x, vertices2D[i].y, 0);
+            //}
+
+            // Create the mesh
+            Mesh msh = new Mesh();
+            msh.vertices = vertices.ToArray();
+            msh.triangles = indices.ToArray();
+            //msh.vertices = new Vector3[] { new Vector3(0, 0), new Vector3(0, 5), new Vector3(5, 0), new Vector3(5, 5) };
+            //msh.triangles = new int[] { 0, 1, 2, 1, 3, 2 };
+            msh.RecalculateNormals();
+            msh.RecalculateBounds();
+
+            // Set up game object with mesh;
+            //gameObject.colliderObj(typeof(MeshRenderer));
+            MeshCollider filter = colliderObj.AddComponent(typeof(MeshCollider)) as MeshCollider;
+            filter.sharedMesh = msh;
+        }
+
+        //create the collider in unity from the list of polygons shaped like squares
+        public void CreateMeshCollider(List<List<Vector2>> polygons, GameObject colliderObj)
+        {
+            //GameObject colliderObj = new GameObject("LevelCollision");
+            //colliderObj.layer = GR.inst.GetLayerID(Layer.PLATFORM);
+            //colliderObj.transform.SetParent(level.levelObj.transform);
+
+            //PolygonCollider2D collider = colliderObj.AddComponent<PolygonCollider2D>();
+
+            //collider.pathCount = polygons.Count;
+
+            //for (int i = 0; i < polygons.Count; i++)
+            //{
+            //    Vector2[] points = polygons[i].ToArray();
+
+            //    collider.SetPath(i, points);
+            //}
+
+            //var vertices2D = polygons.SelectMany(i => i).ToArray();
+
+            // Use the triangulator to get indices for creating triangles
+            //Triangulator tr = new Triangulator(vertices2D);
+            //int[] indices = tr.Triangulate();
+
+            List<int> indices = new List<int>();
+            List<Vector3> vertices = new List<Vector3>();
+            int vertexCount = 0;
+            foreach (var polygon in polygons)
+            {
+                //int vertexInPolygonCount = 0;
+                for (int i = 0; i < polygon.Count; i++)
+                {
+                    vertices.Add(polygon[i]);
+                    if (i >= 2)
+                    {
+                        // Create triangle
+                        indices.Add(vertexCount - 2);
+                        indices.Add(vertexCount - 1);
+                        indices.Add(vertexCount);
+                    }
+                    vertexCount++;
+                }
+            }
+
+            // Create the Vector3 vertices
+            //Vector3[] vertices = new Vector3[vertices2D.Length];
+            //for (int i = 0; i < vertices.Length; i++)
+            //{
+            //    vertices[i] = new Vector3(vertices2D[i].x, vertices2D[i].y, 0);
+            //}
+
+            // Create the mesh
+            Mesh msh = new Mesh();
+            msh.vertices = vertices.ToArray();
+            msh.triangles = indices.ToArray();
+            //msh.vertices = new Vector3[] { new Vector3(0, 0), new Vector3(0, 5), new Vector3(5, 0), new Vector3(5, 5) };
+            //msh.triangles = new int[] { 0, 1, 2, 1, 3, 2 };
+            msh.RecalculateNormals();
+            msh.RecalculateBounds();
+
+            // Set up game object with mesh;
+            //gameObject.colliderObj(typeof(MeshRenderer));
+            MeshCollider filter = colliderObj.AddComponent(typeof(MeshCollider)) as MeshCollider;
+            filter.sharedMesh = msh;
         }
 
         public void CreateGroundCollider(tk2dTileMap _tileMap)
@@ -562,72 +713,6 @@ namespace RQ2.UI
 
                 collider.SetPath(i, points);
             }
-        }
-
-        //create the collider in unity from the list of polygons
-        public void CreateMeshCollider(List<List<Vector2>> polygons, GameObject colliderObj)
-        {
-            //GameObject colliderObj = new GameObject("LevelCollision");
-            //colliderObj.layer = GR.inst.GetLayerID(Layer.PLATFORM);
-            //colliderObj.transform.SetParent(level.levelObj.transform);
-
-            //PolygonCollider2D collider = colliderObj.AddComponent<PolygonCollider2D>();
-
-            //collider.pathCount = polygons.Count;
-
-            //for (int i = 0; i < polygons.Count; i++)
-            //{
-            //    Vector2[] points = polygons[i].ToArray();
-
-            //    collider.SetPath(i, points);
-            //}
-
-            //var vertices2D = polygons.SelectMany(i => i).ToArray();
-
-            // Use the triangulator to get indices for creating triangles
-            //Triangulator tr = new Triangulator(vertices2D);
-            //int[] indices = tr.Triangulate();
-
-            List<int> indices = new List<int>();
-            List<Vector3> vertices = new List<Vector3>();
-            int vertexCount = 0;
-            foreach (var polygon in polygons)
-            {
-                //int vertexInPolygonCount = 0;
-                for (int i = 0; i < polygon.Count; i++)
-                {
-                    vertices.Add(polygon[i]);
-                    if (i >= 2)
-                    {
-                        // Create triangle
-                        indices.Add(vertexCount - 2);
-                        indices.Add(vertexCount - 1);
-                        indices.Add(vertexCount);
-                    }
-                    vertexCount++;
-                }
-            }
-
-            // Create the Vector3 vertices
-            //Vector3[] vertices = new Vector3[vertices2D.Length];
-            //for (int i = 0; i < vertices.Length; i++)
-            //{
-            //    vertices[i] = new Vector3(vertices2D[i].x, vertices2D[i].y, 0);
-            //}
-
-            // Create the mesh
-            Mesh msh = new Mesh();
-            msh.vertices = vertices.ToArray();
-            msh.triangles = indices.ToArray();
-            //msh.vertices = new Vector3[] { new Vector3(0, 0), new Vector3(0, 5), new Vector3(5, 0), new Vector3(5, 5) };
-            //msh.triangles = new int[] { 0, 1, 2, 1, 3, 2 };
-            msh.RecalculateNormals();
-            msh.RecalculateBounds();
-
-            // Set up game object with mesh;
-            //gameObject.colliderObj(typeof(MeshRenderer));
-            MeshCollider filter = colliderObj.AddComponent(typeof(MeshCollider)) as MeshCollider;
-            filter.sharedMesh = msh;
         }
 
         //create the collider in unity from the list of polygons
