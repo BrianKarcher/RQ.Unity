@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 11480854}
   - component: {fileID: 11477298}
   - component: {fileID: 11428224}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Conversation
   m_TagString: Conversation
   m_Icon: {fileID: 0}
@@ -774,6 +774,7 @@ GameObject:
   - component: {fileID: 114001749091326982}
   - component: {fileID: 114500476103595010}
   - component: {fileID: 114313320543457428}
+  - component: {fileID: 114716504370963500}
   m_Layer: 9
   m_Name: Rolan
   m_TagString: Player
@@ -10035,6 +10036,26 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 33bcda08be0a5144c8812dddbb5be116, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114716504370963500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -426688739, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 1b1cca17-73dd-45db-93c2-bf1729a11560
+  componentName: 
+  _rqName: Rolan RQ.Entity.Components.SpriteCommonComponent
+  _rqName2: 8ca21044-3dca-4418-8a15-950cee8e5d2c
+  _componentRepository: {fileID: 11418054}
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 16
+  _lastGoodPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114720481189012492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11423,7 +11444,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135898029429026182
 SphereCollider:
