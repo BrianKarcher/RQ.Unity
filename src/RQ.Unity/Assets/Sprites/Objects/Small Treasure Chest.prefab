@@ -179,7 +179,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4, y: 0.64, z: -0.1}
+  m_LocalPosition: {x: 1.92, y: 4.96, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479956}
@@ -266,7 +266,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.102, z: 0}
+  m_LocalPosition: {x: 0, y: 0.102, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 409374}
@@ -324,7 +324,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98a4fc9d503150b4ebbe6edd7aa5b08a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -533,20 +533,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 15
-  _levelTwoLayer:
-    _layerIndex: 15
-  _levelThreeLayer:
-    _layerIndex: 19
-  _sharedLayer:
-    _layerIndex: 17
   _mainCollider: {fileID: 429714}
   _autoChangeLayers: 0
 --- !u!114 &11437336
@@ -695,7 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 1901831675, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 884e4a26-7062-46cb-9d05-b08f284ea5ba
+  _uniqueId: 2a87599e-ffdb-4239-887a-8046fa19c3b2
   componentName: 
   _rqName: Open RQ.Entity.StatesV2.TreasureOpenState
   _rqName2: 0e28c42e-d7e0-4dbe-8b33-32c5503d462c
@@ -738,6 +729,9 @@ MonoBehaviour:
   - Player
   _excludedTags:
   - Tilemap
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   _message: 
   _bubbleText: Open
   _castRay: 1
