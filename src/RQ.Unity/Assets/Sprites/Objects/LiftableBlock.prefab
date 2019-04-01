@@ -1,0 +1,929 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1055457464504050}
+  m_IsPrefabParent: 1
+--- !u!1 &1055457464504050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4081141235551428}
+  - component: {fileID: 54019344455070200}
+  - component: {fileID: 114432979463777724}
+  - component: {fileID: 114498005467035362}
+  - component: {fileID: 114734942401302244}
+  - component: {fileID: 114085484048617566}
+  - component: {fileID: 114092289627673162}
+  - component: {fileID: 114795249873662304}
+  - component: {fileID: 114507083514635636}
+  - component: {fileID: 114840713162264444}
+  m_Layer: 15
+  m_Name: LiftableBlock
+  m_TagString: Environment
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1447234304249814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4997458566255050}
+  - component: {fileID: 65830068800992906}
+  - component: {fileID: 114058319298808942}
+  - component: {fileID: 114080892771076742}
+  - component: {fileID: 114986640135354928}
+  m_Layer: 15
+  m_Name: BodyCollider
+  m_TagString: Environment
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1472985573452316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4861431076069226}
+  m_Layer: 15
+  m_Name: UsableIndicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1655182969003534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4714191093476378}
+  - component: {fileID: 114632982751418252}
+  - component: {fileID: 114791217054462900}
+  m_Layer: 15
+  m_Name: Logic SM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1667291750239764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4391991638872436}
+  - component: {fileID: 65374997684526496}
+  - component: {fileID: 114887242919094808}
+  - component: {fileID: 114099389645881300}
+  - component: {fileID: 114922157010036062}
+  m_Layer: 0
+  m_Name: BodyTrigger
+  m_TagString: Environment
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1847525295258002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4254555089233502}
+  - component: {fileID: 23494977970598122}
+  - component: {fileID: 33861758717782400}
+  - component: {fileID: 114076142204442984}
+  - component: {fileID: 114193270920514550}
+  - component: {fileID: 114241638634787384}
+  m_Layer: 15
+  m_Name: MainSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4081141235551428
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.9307685, y: 0.9411564, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4254555089233502}
+  - {fileID: 4997458566255050}
+  - {fileID: 4391991638872436}
+  - {fileID: 4714191093476378}
+  - {fileID: 4861431076069226}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4254555089233502
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847525295258002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.005, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4081141235551428}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4391991638872436
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667291750239764}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4081141235551428}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4714191093476378
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1655182969003534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4081141235551428}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4861431076069226
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1472985573452316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4081141235551428}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4997458566255050
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447234304249814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4081141235551428}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23494977970598122
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847525295258002}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33861758717782400
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847525295258002}
+  m_Mesh: {fileID: 0}
+--- !u!54 &54019344455070200
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!65 &65374997684526496
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667291750239764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 0.35, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65830068800992906
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447234304249814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.31, y: 0.31, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114058319298808942
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447234304249814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 90013f51-a7ca-4181-9e02-a78773ff44f5
+  componentName: 
+  _rqName: BodyCollider RQ.Physics.Components.CollisionComponent
+  _rqName2: 1b0f03a5-a679-4a0f-9319-f4e562b96c77
+  _componentRepository: {fileID: 114432979463777724}
+  _collisionData:
+    Level: 0
+    Tags: []
+    ReceivesDamage: 1
+    DamageCollider: 0
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _mainCollider: {fileID: 4997458566255050}
+  _autoChangeLayers: 0
+--- !u!114 &114076142204442984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847525295258002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 11459162, guid: f21af56a5c262804f83903a5195ec516, type: 2}
+  _color: {r: 1, g: 0.851927, b: 0.46323532, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 330
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
+--- !u!114 &114080892771076742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447234304249814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 8fa0b08a-c35b-4567-90c3-1070f6923306
+  componentName: 
+  _rqName: BodyCollider Assets.Source.CollisionProcessor
+  _rqName2: 49f549f3-517d-4aa7-9c9c-445731675a6d
+  _componentRepository: {fileID: 114432979463777724}
+--- !u!114 &114085484048617566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 73b5e2dd-72c2-426f-8aae-56e1e49a9a49
+  componentName: 
+  _rqName: HardWind_BogMiniboss RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 17006f75-b28b-4bcb-81da-edd881e1df14
+  _componentRepository: {fileID: 114432979463777724}
+--- !u!114 &114092289627673162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 954f37a9-6723-4575-a96d-a9aa3c29246b
+  componentName: 
+  _rqName: BogMaze_Door RQ.Physics.Components.FloorComponent
+  _rqName2: 597afcf4-bfd1-4356-b5b7-98a875c45018
+  _componentRepository: {fileID: 114432979463777724}
+  Floor: 1
+--- !u!114 &114099389645881300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667291750239764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: c2c0e852-1679-43c9-868c-0fea19c54227
+  componentName: 
+  _rqName: BodyCollider Assets.Source.CollisionProcessor
+  _rqName2: 49f549f3-517d-4aa7-9c9c-445731675a6d
+  _componentRepository: {fileID: 114432979463777724}
+--- !u!114 &114193270920514550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847525295258002}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11467102, guid: 9f36c26d7d2fd5c49af24ef806561ca5, type: 2}
+  defaultClipId: 0
+  playAutomatically: 0
+--- !u!114 &114241638634787384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847525295258002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1951438886, guid: 12d8c4a4410b9684983f5d6c8463d1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 5adbeacb-56f3-44ad-b4e3-8f40ee3b26ca
+  componentName: 
+  _rqName: MainSprite RQ.Animation.AnimationComponent
+  _rqName2: 3fc48f10-f0c9-4fd1-a968-0ca33c020783
+  _componentRepository: {fileID: 114432979463777724}
+  Data:
+    FacingDirectionMode: 0
+    FacingDirection: 1
+    PreviousFacingDirection: 9
+    _isAnimationComplete: 0
+    AutoPlayAnimationType: 
+    PlayAutomatically: 0
+    PlayDefaultOnEnable: 0
+    AutoUpdateFacingDirection: 1
+    AutoFace: 0
+  SpriteAnimator2: {fileID: 0}
+  _use8Directions: 0
+  _isMain: 1
+--- !u!114 &114432979463777724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: e3c03d40-2146-4cf8-9807-d25fdf18683a
+  componentName: 
+  _rqName: HardWind_BogMiniboss RQ.Entity.Common.SpriteBaseComponent
+  _rqName2: 720e09fb-37ea-463e-a31b-df5b2fc80d53
+  _recreateOnLoadGame: 1
+  _addToEntityContainer: 1
+  EntityType: 5
+  EntityPrefabUniqueId: 
+  _parentRepo: {fileID: 0}
+--- !u!114 &114498005467035362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: ee5a2f10-2bb2-420c-99c8-c290b0f736b1
+  componentName: 
+  _rqName: HardWind_BogMiniboss RQ.Physics.Components.PhysicsComponent
+  _rqName2: 0156d565-99b5-4420-81e2-ec5c1c7350b7
+  _componentRepository: {fileID: 114432979463777724}
+  _physicsData:
+    InitialVelocity: {x: 0, y: 0}
+    Size:
+      x: 0
+      y: 0
+    Velocity: {x: 0, y: 0}
+    Heading:
+      x: 0
+      y: 0
+    Side: {x: 0, y: 0}
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 1
+    OriginalMaxSpeed: 1
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    MaxDistanceToTarget: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalVelocity:
+      x: 0
+      y: 0
+    OriginalZ: -1
+    _headingDirection: 1
+    MaxForce: 1
+    ForceMultiplier: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _foot: {fileID: 0}
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _originalMaxForce: 1
+    _maxSpeed: 1
+    _mass: 0
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
+  _originalPhysicsData:
+    InitialVelocity: {x: 0, y: 0}
+    Size:
+      x: 0
+      y: 0
+    Velocity: {x: 0, y: 0}
+    Heading:
+      x: 0
+      y: 0
+    Side: {x: 0, y: 0}
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 1
+    OriginalMaxSpeed: 1
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    MaxDistanceToTarget: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalVelocity:
+      x: 0
+      y: 0
+    OriginalZ: 0
+    _headingDirection: 1
+    MaxForce: 1
+    ForceMultiplier: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _foot: {fileID: 0}
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+  _autoUpdateHeading: 1
+  _steering:
+    TargetAgent1: {fileID: 0}
+    Target:
+      x: 0
+      y: 0
+    Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
+    _steeringForce:
+      x: 0
+      y: 0
+--- !u!114 &114507083514635636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1696332522, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: bd43efe4-99a5-4a5f-b747-57de649f9b7b
+  componentName: 
+  _rqName: PushableBlock RQ.Sprite.AdjustDepthByY
+  _rqName2: e862132c-65df-4b6d-83f8-33baae3be48b
+  _componentRepository: {fileID: 114432979463777724}
+  FootPositionY: 0
+--- !u!114 &114632982751418252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1655182969003534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 63e46f52-0d79-4031-8580-251a2794c2f7
+  componentName: 
+  _rqName: Logic SM RQ.Physics.Components.PlayMakerStateMachineComponent
+  _rqName2: 33d8f08a-9f0c-4b41-88ba-a29858f1c653
+  _componentRepository: {fileID: 114432979463777724}
+  pm: {fileID: 0}
+--- !u!114 &114734942401302244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 2cfb5bae-e33b-4550-a334-3800cf019240
+  componentName: 
+  _rqName: HardWind_BogMiniboss RQ.Physics.Components.CollisionComponent
+  _rqName2: e25576fa-a7d8-4f9c-9de1-83f72a8fce4a
+  _componentRepository: {fileID: 114432979463777724}
+  _collisionData:
+    Level: 0
+    Tags: []
+    ReceivesDamage: 1
+    DamageCollider: 0
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _mainCollider: {fileID: 4081141235551428}
+  _autoChangeLayers: 0
+--- !u!114 &114791217054462900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1655182969003534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables: []
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 
+    description: 
+    docUrl: 
+    showStateLabel: 1
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 0
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 0}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &114795249873662304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1405551376, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: c8ed8ecf-e581-4ed6-a324-2b2fbcc2d223
+  componentName: 
+  _rqName: PushableBlock (2) RQ.Physics.Components.PushableComponent
+  _rqName2: b61ed501-4cc2-41a1-bc1a-740ed85d9ed1
+  _componentRepository: {fileID: 114432979463777724}
+  _moveSpeed: 0.2
+  _waitBetweenMoves: 0.2
+  _obstacleRayLength: 0.155
+  _radius: 0.08
+  _obstacles:
+    serializedVersion: 2
+    m_Bits: 32768
+--- !u!114 &114840713162264444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 926039264, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: dee2dff9-e680-4dc7-9edf-b5d3e7ca347e
+  componentName: 
+  _rqName: LiftableBlock RQ.FSM.V2.AIComponent
+  _rqName2: b6904cac-0b09-4c7d-97c7-e405496d2d71
+  _componentRepository: {fileID: 114432979463777724}
+  _pathFinder: {fileID: 0}
+  _targetType: 0
+  _target: {fileID: 0}
+  _targets: []
+  TargetTags: []
+  _locations: []
+  _parent: {fileID: 0}
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _avoidLayersMasks: []
+  _follow: {fileID: 0}
+  _targetingData:
+    Waypoints: {fileID: 0}
+    GoToType: 0
+    Target: {fileID: 0}
+    Targets: []
+    TargetTags: []
+  _homePosition:
+    x: 2.9307685
+    y: 0.9411564
+  _homeLevelLayer: 0
+  _homeSickDistance: 0
+  _runHomeSpeed: 0
+  _setHomePositonToStartPosition: 0
+--- !u!114 &114887242919094808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667291750239764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: cad4c66f-9799-4119-abb0-db197462769c
+  componentName: 
+  _rqName: BodyCollider RQ.Physics.Components.CollisionComponent
+  _rqName2: 1b0f03a5-a679-4a0f-9319-f4e562b96c77
+  _componentRepository: {fileID: 114432979463777724}
+  _collisionData:
+    Level: 0
+    Tags: []
+    ReceivesDamage: 1
+    DamageCollider: 0
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _mainCollider: {fileID: 4391991638872436}
+  _autoChangeLayers: 0
+--- !u!114 &114922157010036062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667291750239764}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -881182047, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 75d25134-cb35-45b9-be2b-467903ca6af7
+  componentName: Usable
+  _rqName: BodyCollider RQ.Physics.Components.UsableComponent
+  _rqName2: 833fcd56-dc69-4270-8b14-5c23b79c72c3
+  _componentRepository: {fileID: 114432979463777724}
+  _tags:
+  - Player
+  _excludedTags:
+  - Tilemap
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _message: 
+  _bubbleText: 
+  _castRay: 0
+  _usable: {fileID: 4861431076069226}
+  _usableObjects: []
+  _autoUse: 1
+  _isEnabled: 1
+  _setStorySceneConfig: {fileID: 0}
+--- !u!114 &114986640135354928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447234304249814}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -881182047, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 5cee59fa-385a-4570-84b1-67591a985d0c
+  componentName: Usable
+  _rqName: BodyCollider RQ.Physics.Components.UsableComponent
+  _rqName2: 833fcd56-dc69-4270-8b14-5c23b79c72c3
+  _componentRepository: {fileID: 114432979463777724}
+  _tags:
+  - Player
+  _excludedTags:
+  - Tilemap
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _message: 
+  _bubbleText: 
+  _castRay: 0
+  _usable: {fileID: 4861431076069226}
+  _usableObjects: []
+  _autoUse: 1
+  _isEnabled: 1
+  _setStorySceneConfig: {fileID: 0}

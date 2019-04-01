@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1028677868277496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1607833, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4124121795718576}
@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1010782802509610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.925, y: 13.043, z: -1}
+  m_LocalPosition: {x: 3.925, y: 12.694, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4123402226147436}
@@ -283,8 +283,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.31, y: 0.3722725, z: 1}
-  m_Center: {x: 0, y: -0.13195896, z: 0}
+  m_Size: {x: 0.31, y: 0.31462383, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114258370895471602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -690,6 +690,7 @@ MonoBehaviour:
   _moveSpeed: 0.2
   _waitBetweenMoves: 0.2
   _obstacleRayLength: 0.155
+  _radius: 0.155
   _obstacles:
     serializedVersion: 2
     m_Bits: 32768
@@ -732,9 +733,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -758,7 +757,8 @@ MonoBehaviour:
     _maxTurnRate: 6
     _footOffset:
       x: 0
-      y: -0.08
+      y: 0
+    _foot: {fileID: 1028677868277496}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -783,9 +783,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -810,6 +808,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
