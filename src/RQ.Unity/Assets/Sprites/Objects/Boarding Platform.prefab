@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 4539709454553288}
   - component: {fileID: 114000030629736112}
   - component: {fileID: 114970663651197088}
+  - component: {fileID: 114614302973881752}
   m_Layer: 15
   m_Name: Boarding Platform
   m_TagString: Untagged
@@ -150,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119984471839424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4539709454553288}
@@ -163,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1022457957029524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.235, z: 0}
+  m_LocalPosition: {x: -0.237, y: -0.235, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4539709454553288}
@@ -176,7 +177,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992896466466478}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.115, y: 11.628, z: -0.1}
+  m_LocalPosition: {x: 6.7999997, y: 1.36, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4754534814606660}
@@ -208,7 +209,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1456583098102426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.321, y: 0.31, z: 0}
+  m_LocalPosition: {x: 0.41, y: 0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4539709454553288}
@@ -276,7 +277,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.25, z: 1}
+  m_Size: {x: 0.21, y: 0.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114000030629736112
 MonoBehaviour:
@@ -289,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 3b38912e-7861-4bd8-b6a6-c4e83f1cb2b2
+  _uniqueId: 39137359-bc23-408b-995d-dac1df75bc38
   componentName: 
   _rqName: Treasure Chest RQ.Entity.Common.SpriteBaseComponent
   _rqName2: 96f87097-d9ba-470c-aa9b-8993a945a21c
@@ -327,16 +328,16 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706353763936376}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 2119558580, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 66ed2244-5f09-4499-97ba-3cede8c4819d
+  _uniqueId: c59df755-7f83-457b-91b3-ea9341d6e90c
   componentName: 
   _rqName: MainSprite RQ.Physics.Components.AltitudePhysicsComponent
   _rqName2: eef5954c-0aa6-4234-8660-9ddad08bd71e
-  _componentRepository: {fileID: 0}
+  _componentRepository: {fileID: 114000030629736112}
   _altitudeData:
     Altitude:
       x: 0
@@ -517,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: -881182047, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: b25a2e84-ae80-46c4-a863-b5c97613dae5
+  _uniqueId: 4719398b-8cd7-4b89-a1c2-74a645f0aade
   componentName: 
   _rqName: Collider RQ.Physics.Components.UsableComponent
   _rqName2: 85c2d9c9-4e06-4508-a83d-9397761504f2
@@ -549,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: bef02144-9258-4c1d-838a-2a16db9128aa
+  _uniqueId: 972d6d0f-78fb-4a76-a147-862c81fc75cc
   componentName: 
   _rqName: Collider RQ.Physics.Components.CollisionComponent
   _rqName2: 2d4162bb-416b-448a-bf52-500ae7a4179f
@@ -570,16 +571,16 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706353763936376}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1951438886, guid: 12d8c4a4410b9684983f5d6c8463d1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 3437e062-31e4-425e-bbf4-d3ca68253db5
+  _uniqueId: f0b12444-1a61-4a03-846b-a4f338336e32
   componentName: 
   _rqName: MainSprite RQ.Animation.AnimationComponent
   _rqName2: 16e6ef34-807e-4ae2-ae1d-df0c8952fd90
-  _componentRepository: {fileID: 0}
+  _componentRepository: {fileID: 114000030629736112}
   Data:
     FacingDirectionMode: 0
     FacingDirection: 1
@@ -593,6 +594,19 @@ MonoBehaviour:
   SpriteAnimator2: {fileID: 114117374864815020}
   _use8Directions: 0
   _isMain: 1
+--- !u!114 &114614302973881752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992896466466478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1896214989, guid: c47d312bb140f21409c92b406c845994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SnapToGrid: 1
+  tileOffset: {x: 0.08, y: 0.08, z: 0}
 --- !u!114 &114793465382078684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -604,7 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: b502410d-1d81-4853-8a07-164813f071cb
+  _uniqueId: 0cee42bf-85ac-418a-8f27-e2a1d892e855
   componentName: 
   _rqName: Controller FSM RQ.Physics.Components.PlayMakerStateMachineComponent
   _rqName2: 9bf7b8b4-dd51-4442-b2fc-7ee0c36b2373
@@ -621,7 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: -2109884187, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: f215ac89-2b8e-47d4-9207-14ae2bfa2d1e
+  _uniqueId: 9ff64113-44c7-4f3c-a88f-f71c85067339
   componentName: 
   _rqName: Boarding Platform RQ.Physics.Components.WaypointComponent
   _rqName2: 121e99be-ccd9-49b2-b879-069e64292d7d
@@ -643,7 +657,7 @@ MonoBehaviour:
   collection: {fileID: 11459162, guid: f21af56a5c262804f83903a5195ec516, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 338
+  _spriteId: 339
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &138906
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3209966, y: 0.43591547, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 445308}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 045aa0a6-46b6-4ca2-9a3a-a4fce180d612
+  _uniqueId: a8f68abf-e87a-44a7-b227-31895add795d
   componentName: 
   _rqName: To Scene 3 RQ.Physics.Components.CollisionComponent
   _rqName2: f2c5b622-c4ca-4176-adef-02b193f9cde4
@@ -193,14 +193,14 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 9ff2497f-1149-4fdc-9590-c3321d5b7f05
+  _uniqueId: bff92efc-a829-47ca-851b-79c3b0c22607
   componentName: 
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: 66894712-9ffc-4f3c-a2d7-eb83ef8853e6
   _componentRepository: {fileID: 11469802}
   Records:
   - _name: Enabled to Disabled
-    CurrentState: {fileID: 11490300}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: c79d9520-b821-4719-982d-de77a275d88e
@@ -209,11 +209,11 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11409848}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   - _name: Disabled to Enabled
-    CurrentState: {fileID: 11409848}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: ea88c86a-dfea-4497-ba0a-2e8126fa8cb2
@@ -222,7 +222,7 @@ MonoBehaviour:
       IsNot: 1
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11490300}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   ConditionsList: {fileID: 0}
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 0eef22c7-dc28-4d3f-98df-649dbb5957eb
+  _uniqueId: be411f28-44a4-4c0c-afb9-6303ed8d6dfe
   componentName: 
   _rqName: Disabled RQ.FSM.V2.States.RunActionsState
   _rqName2: 80529dfc-d3bc-4995-aec3-14a7d6ba8bc8
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 63d3f658-ee5d-4045-a58f-281828fa5eea
+  _uniqueId: f6a64bf3-83bd-4598-ae34-5459926479ff
   componentName: 
   _rqName: Trigger RQ.Physics.Components.GameObjectStatePersistenceComponent
   _rqName2: 821e9d06-caad-4e6e-a595-346711fc3f41
@@ -287,13 +287,11 @@ MonoBehaviour:
   m_Script: {fileID: -502829363, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 1ad82ea2-0571-4aae-8d58-999f2fdcb485
+  _uniqueId: 0202ed76-b107-4dcb-8faa-e4b2c3e2507e
   componentName: 
   _rqName: Enabled RQ.Controller.Actions.EnableCollider
   _rqName2: bb361087-d96e-4a7f-812a-f3f190c26860
   _allColliders: 1
-  _collisionComponentTypes:
-  - {fileID: 11403442}
   _enableOnEnter: 1
   _enableOnExit: 1
 --- !u!114 &11469802
@@ -307,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 8d1cccf1-21b8-4b7b-9ce4-d28888861cfb
+  _uniqueId: 4072a609-c12e-4c7c-a34c-201edd69d7c5
   componentName: 
   _rqName: To Scene 3 RQ.Entity.Common.SpriteBaseComponent
   _rqName2: a17cbdf2-5ad0-441b-ae1a-40807659cf46
@@ -327,12 +325,12 @@ MonoBehaviour:
   m_Script: {fileID: 1714474004, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 3408046c-493b-45e9-a9c8-fc60ee32a9b1
+  _uniqueId: 09ab4c21-e3ed-4023-a27f-a0f9825b6969
   componentName: 
   _rqName: Trigger RQ.Controller.Actions.ChangeScenes
   _rqName2: d78d1e49-929b-427b-843e-2212ac2fc7e6
-  sceneConfig: {fileID: 0}
-  spawnPointUniqueId: -1
+  sceneConfig: {fileID: 11400000, guid: 4b3ef72825494454b8a817f45434cd67, type: 2}
+  spawnPointUniqueId: fda276a8-8706-43df-b84c-5038e627b156
 --- !u!114 &11490300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -344,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 5c11bb2a-59b5-4c56-93d3-65c6eba8533d
+  _uniqueId: 425c32b9-51ce-42d8-8bdf-42eda839541e
   componentName: 
   _rqName: Enabled RQ.FSM.V2.States.RunActionsState
   _rqName2: d156af01-cf20-4401-8fd7-6f641a243102
@@ -361,13 +359,11 @@ MonoBehaviour:
   m_Script: {fileID: -502829363, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: a795edb1-2e7b-4d63-9de5-49073cee2d80
+  _uniqueId: ce545e84-b732-4e03-80bd-8e219ce77864
   componentName: 
   _rqName: Disabled RQ.Controller.Actions.EnableCollider
   _rqName2: 2555a9b1-babe-4058-8ca9-58b7d259aad2
   _allColliders: 1
-  _collisionComponentTypes:
-  - {fileID: 11403442}
   _enableOnEnter: 0
   _enableOnExit: 0
 --- !u!114 &11495798
@@ -381,12 +377,12 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 02edd032-7849-4c75-bafe-1893c37c86d6
+  _uniqueId: 8abc6423-cc46-4ba1-bb61-d5ecc633070f
   componentName: 
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: a8bd5ddc-0235-433f-8521-0bd31f93ac31
   _componentRepository: {fileID: 11469802}
-  _initialState: {fileID: 11490300}
+  _initialState: {fileID: 0}
   _stateTransitionTable: {fileID: 11404022}
   _currentState: {fileID: 0}
   _stateMachineReentry: 0
@@ -397,7 +393,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: 02edd032-7849-4c75-bafe-1893c37c86d6
+    StateMachineUniqueId: 8abc6423-cc46-4ba1-bb61-d5ecc633070f
     StateMachineName: States
     StateData: []
   _logTransitions: 0
@@ -450,5 +446,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.140245, y: 0.16353393, z: 1}
+  m_Center: {x: 1.9133532, y: 0.002504468, z: 0}
