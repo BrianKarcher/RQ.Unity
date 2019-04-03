@@ -181,7 +181,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Disperse Helix Act
+        toState: Disperse Helix Grab
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -343,15 +343,15 @@ MonoBehaviour:
         paramName: []
         paramDataPos: 
         paramByteDataSize: 
-    - name: Disperse Helix Act
+    - name: Disperse Helix Grab
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 389
         y: 107
-        width: 141
-        height: 32
+        width: 162
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -364,26 +364,52 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: Failed
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: End
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
         - Assets.Source.AI.PM_State_Machine.WaitForAnimationCompletion
         - Assets.Source.AI.PM_State_Machine.StopMoving
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.LocateLiftable
+        - Assets.Source.AI.PM_State_Machine.SendMessage
+        - Rewired.Integration.PlayMaker.RewiredPlayerGetButton
         customNames:
         - 
         - 
         - 
         - 
-        actionEnabled: 01000101
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000080000000b00000010000000
-        actionHashCodes: ee6bbe012ea472009f005d002334d000
+        - 
+        - 
+        - 
+        actionEnabled: 01000101010101
+        actionIsOpen: 01010101010101
+        actionStartIndex: 00000000080000000b00000010000000150000001a0000002b000000
+        actionHashCodes: ee6bbe012ea472009f005d002334d0005b063d02ac126d04b9d24e00
         unityObjectParams:
         - {fileID: 194792, guid: b8e2792929f891347ac1ccce756cb226, type: 2}
         fsmGameObjectParams:
         - useVariable: 1
           name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: tempGameObject
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: tempGameObject
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -395,14 +421,63 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Special
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 15
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -417,16 +492,25 @@ MonoBehaviour:
         - FINISHED
         - ObjectCaptured
         - 
-        byteData: 9a99993e0000000000000000010000000000010000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 06000000010000000300000002000000
+        - Failed
+        - Grab
+        - 
+        - 
+        - Failed
+        - 
+        byteData: 9a99993e00000000000000000100000000000100000000a04000000000000000000000000101
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - System.String
+        customTypeSizes: 06000000010000000300000002000000010000000b000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.WaitForAnimationCompletionAtom
         - RQ.AI.Action.StopMovingAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 13000000280000001b000000090000000100000001000000020000000300000028000000030000001700000001000000280000000300000003000000010000001700000001000000280000000300000003000000
+        - RQ.AI.Action.LocateLiftableAtom
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        paramDataType: 13000000280000001b0000000900000001000000010000000200000003000000280000000300000017000000010000002800000003000000030000000100000017000000010000002800000003000000030000001300000010000000170000002800000002000000290000001200000013000000120000000100000028000000030000000c00000003000000010000000100000001000000010000000100000001000000070000000100000011000000170000001700000017000000120000001000000001000000
         paramName:
         - storeResult
         - _instantiatePrefabAtom
@@ -449,8 +533,37 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 000000000000000000000000000000000c0000000d0000000e0000000000000001000000010000000200000012000000020000000300000004000000130000000500000014000000030000000600000007000000
-        paramByteDataSize: 0000000000000000000000000c0000000100000001000000040000000000000000000000000000000000000001000000000000000000000000000000010000000000000001000000000000000000000000000000
+        - StoreObject
+        - ObstacleLayer
+        - NoneFoundEvent
+        - _atom
+        - MaxDistance
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - Log
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        - storeValue
+        - isTrueEvent
+        - isFalseEvent
+        - valueChangedEvent
+        - actionName
+        - playerId
+        - everyFrame
+        paramDataPos: 000000000000000000000000000000000c0000000d0000000e0000000000000001000000010000000200000012000000020000000300000004000000130000000500000014000000030000000600000007000000010000000000000008000000040000001500000000000000000000000200000001000000190000000500000009000000000000000a0000001a0000001b0000001c0000001d0000001e0000001f0000002000000024000000000000000b0000000c0000000d000000020000000100000025000000
+        paramByteDataSize: 0000000000000000000000000c00000001000000010000000400000000000000000000000000000000000000010000000000000000000000000000000100000000000000010000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000001000000
     - name: No Action Found
       description: 
       colorIndex: 0
@@ -966,6 +1079,9 @@ MonoBehaviour:
     - name: Disperse Helix
       isSystemEvent: 0
       isGlobal: 0
+    - name: Failed
+      isSystemEvent: 0
+      isGlobal: 0
     - name: None Found
       isSystemEvent: 0
       isGlobal: 0
@@ -990,6 +1106,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: tempGameObject
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -997,7 +1119,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
