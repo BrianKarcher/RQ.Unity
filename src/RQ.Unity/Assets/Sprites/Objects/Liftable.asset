@@ -184,21 +184,25 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - Assets.Source.AI.PM_State_Machine.EnableCollider
         - Assets.Source.AI.PM_State_Machine.SteeringBehavior
         - Assets.Source.AI.PM_State_Machine.SetSteeringTargetToVector
         - Assets.Source.AI.PM_State_Machine.SetFloatVariable2
         - HutongGames.PlayMaker.Actions.FloatCompare
         - Assets.Source.AI.PM_State_Machine.SendMessage
+        - Assets.Source.AI.PM_State_Machine.GetBoolVariable2
         customNames:
         - 
         - 
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 00000000020000000b0000001100000018000000
-        actionHashCodes: ae351404d3320502a082bf001bcdca04ac126d04
+        - 
+        - 
+        actionEnabled: 01010101010001
+        actionIsOpen: 01010101010101
+        actionStartIndex: 0000000004000000060000000f000000150000001c0000002d000000
+        actionHashCodes: ec2b1f02ae351404d3320502a082bf001bcdca04ac126d0407377b01
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -289,13 +293,20 @@ MonoBehaviour:
           networkSync: 0
           value: 0
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - Collider
         - 
         - 
         - 
@@ -304,18 +315,25 @@ MonoBehaviour:
         - 
         - ObjectCaptured
         - 
-        byteData: 000000000109000000000000000101000000000700000001000000010000000000000001
+        - 
+        byteData: 0000000000000109000000000000000101000000000700000001000000010000000000000001000100000008000000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 0100000005000000030000000b000000
+        customTypeSizes: 030000000100000005000000030000000b00000004000000
         customTypeNames:
+        - RQ.Animation.BasicAction.Action.EnableColliderAtom
         - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
         - RQ.Animation.BasicAction.Action.SetSteeringTargetToVectorAtom
         - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
         - RQ.Animation.BasicAction.Action.SendMessageAtom
-        paramDataType: 28000000070000002900000013000000010000002800000007000000000000000100000003000000030000000f00000001000000280000000200000007000000030000000f0000000f0000000f00000017000000170000001700000001000000290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
+        - RQ.Animation.BasicAction.Action.GetBoolVariableAtom2
+        paramDataType: 2800000001000000010000000300000028000000070000002900000013000000010000002800000007000000000000000100000003000000030000000f00000001000000280000000200000007000000030000000f0000000f0000000f00000017000000170000001700000001000000290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000110000002800000001000000070000000700000003000000
         paramName:
+        - _atom
+        - _enableOnEnter
+        - _enableOnExit
+        - name
         - _sbAtom
         - SteeringBehavior
         - _messageReceivers
@@ -357,8 +375,14 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 00000000000000000000000000000000040000000100000005000000090000000d0000000000000001000000000000000e000000020000000f000000130000000200000001000000020000000300000003000000040000000500000017000000010000000000000001000000010000001800000003000000060000000000000007000000190000001a0000001b0000001c0000001d0000001e0000001f00000023000000
-        paramByteDataSize: 0000000004000000000000000000000001000000000000000400000004000000010000000000000000000000000000000100000000000000040000000400000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+        - Variable
+        - _atom
+        - Value
+        - ActionTarget
+        - VariableToSet
+        - VariableName
+        paramDataPos: 00000000000000000100000000000000010000000200000000000000000000000600000002000000070000000b0000000f000000010000000200000000000000100000000300000011000000150000000300000001000000020000000300000004000000050000000600000019000000010000000000000001000000010000001a000000040000000700000000000000080000001b0000001c0000001d0000001e0000001f000000200000002100000025000000000000000500000026000000270000002b00000009000000
+        paramByteDataSize: 000000000100000001000000000000000000000004000000000000000000000001000000000000000400000004000000010000000000000000000000000000000100000000000000040000000400000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000001000000040000000400000000000000
     - name: Hold
       description: 
       colorIndex: 0
@@ -381,14 +405,24 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SendMessage
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000011000000
+        actionHashCodes: ac126d042334d000
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -396,10 +430,35 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
@@ -409,16 +468,46 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        stringParams:
+        - ObjectCaptured
+        - 
+        - FINISHED
+        - Shoot
+        - 
+        byteData: 00000001000000000000000100
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - System.String
+        customTypeSizes: 0b00000002000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 290000001200000013000000120000000100000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001700000001000000280000000300000003000000
+        paramName:
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - Log
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        paramDataPos: 000000000000000000000000010000000000000000000000000000000000000001000000010000000200000003000000040000000500000006000000070000000b000000020000000c000000010000000300000004000000
+        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000001000000000000000000000000000000
     - name: Shoot
       description: 
       colorIndex: 0
@@ -441,12 +530,14 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.EnableCollider
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: ec2b1f02
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -469,16 +560,22 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - Trigger
+        byteData: 0101
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        customTypeSizes: 03000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.EnableColliderAtom
+        paramDataType: 28000000010000000100000003000000
+        paramName:
+        - _atom
+        - _enableOnEnter
+        - _enableOnExit
+        - name
+        paramDataPos: 00000000000000000100000000000000
+        paramByteDataSize: 00000000010000000100000000000000
     - name: Kill
       description: 
       colorIndex: 0
