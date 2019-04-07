@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114507083514635636}
   - component: {fileID: 114840713162264444}
   - component: {fileID: 114754086155654522}
+  - component: {fileID: 114121777381804180}
   m_Layer: 15
   m_Name: LiftableBlock
   m_TagString: Environment
@@ -401,6 +402,40 @@ MonoBehaviour:
   _rqName: BodyCollider Assets.Source.CollisionProcessor
   _rqName2: 49f549f3-517d-4aa7-9c9c-445731675a6d
   _componentRepository: {fileID: 114432979463777724}
+--- !u!114 &114121777381804180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055457464504050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 541568650, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: a0dc0d25-a73c-45cc-b4e8-6bac8f3691e3
+  componentName: 
+  _rqName: LiftableBlock RQ.Physics.Components.DamageComponent
+  _rqName2: fa09045d-56bf-4210-a4d4-54a6d7e4da2f
+  _componentRepository: {fileID: 114432979463777724}
+  _damageData:
+    DamageTargetOnCollision: 0
+    DamageTargetOnTrigger: 1
+    DamageOnTouch: 1
+    TakesDamage: 1
+    TakesSkillDamage: 1
+    Vulnerable: 1
+    CollisionDamageType: 1
+  _ourDamageTags: []
+  _useDamageColor: 0
+  _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _tagsYouDamage:
+  - Enemy
+  - Boss
+  _hitEffect: {fileID: 0}
+  _killSound: {fileID: 0}
+  _damageSound: {fileID: 0}
+  _death: {fileID: 0}
 --- !u!114 &114193270920514550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -494,8 +529,8 @@ MonoBehaviour:
       x: 0
       y: 0
     Mass: 1
-    MaxSpeed: 1
-    OriginalMaxSpeed: 1
+    MaxSpeed: 5
+    OriginalMaxSpeed: 5
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
     MaxDistanceToTarget: 0
@@ -544,8 +579,8 @@ MonoBehaviour:
       x: 0
       y: 0
     Mass: 1
-    MaxSpeed: 1
-    OriginalMaxSpeed: 1
+    MaxSpeed: 5
+    OriginalMaxSpeed: 5
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
     MaxDistanceToTarget: 0
@@ -890,7 +925,7 @@ MonoBehaviour:
     Level: 0
     Tags: []
     ReceivesDamage: 1
-    DamageCollider: 0
+    DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1

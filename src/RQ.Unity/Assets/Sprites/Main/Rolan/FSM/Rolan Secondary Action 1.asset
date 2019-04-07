@@ -304,15 +304,37 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.SetGameObject
+        - RQ.AI.PlayMaker.Variables.GetGameObjectVariable
         - HutongGames.PlayMaker.Actions.FinishFSM
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 00000000
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000300000007000000
+        actionHashCodes: 4d51cf042f44f30200000000
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: tempGameObject
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: tempGameObject
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -333,16 +355,25 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - 
+        byteData: 0004000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        customTypeSizes: 02000000
+        customTypeNames:
+        - RQ.AI.AtomAction.Variables.GetGameObjectVariableAtom
+        paramDataType: 13000000130000000100000013000000280000000700000003000000
+        paramName:
+        - variable
+        - gameObject
+        - everyFrame
+        - GameObject
+        - _atom
+        - _variable
+        - VariableName
+        paramDataPos: 00000000010000000000000002000000000000000100000000000000
+        paramByteDataSize: 00000000000000000100000000000000000000000400000000000000
     - name: Disperse Helix Grab
       description: 
       colorIndex: 0
@@ -397,7 +428,7 @@ MonoBehaviour:
         - {fileID: 194792, guid: b8e2792929f891347ac1ccce756cb226, type: 2}
         fsmGameObjectParams:
         - useVariable: 1
-          name: 
+          name: Helix
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -857,6 +888,7 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.DestroyObject
         - HutongGames.PlayMaker.Actions.Wait
         - Assets.Source.AI.PM_State_Machine.ButtonDown
         - Rewired.Integration.PlayMaker.RewiredPlayerGetButton
@@ -868,12 +900,19 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0000010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 00000000030000000a0000001100000016000000
-        actionHashCodes: 48c01101f5599401b9d24e00866e76002f44f302
+        - 
+        actionEnabled: 010000010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 0000000003000000060000000d0000001400000019000000
+        actionHashCodes: 9ff80c0248c01101f5599401b9d24e00866e76002f44f302
         unityObjectParams: []
         fsmGameObjectParams:
+        - useVariable: 1
+          name: Helix
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 1
           name: tempGameObject
           tooltip: 
@@ -904,6 +943,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 0.3
         fsmIntParams:
         - useVariable: 0
@@ -913,6 +958,12 @@ MonoBehaviour:
           networkSync: 0
           value: 0
         fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: 
           tooltip: 
@@ -946,8 +997,11 @@ MonoBehaviour:
         - RQ.AI.Action.ButtonDownAtom
         - RQ.Entity.AtomAction.Action.PlayerMoveAtom
         - RQ.AI.AtomAction.Variables.GetGameObjectVariableAtom
-        paramDataType: 0f00000017000000010000001100000017000000170000000100000001000000280000000700000011000000170000001700000017000000120000001000000001000000280000000100000000000000010000000100000013000000280000000700000003000000
+        paramDataType: 130000000f000000110000000f00000017000000010000001100000017000000170000000100000001000000280000000700000011000000170000001700000017000000120000001000000001000000280000000100000000000000010000000100000013000000280000000700000003000000
         paramName:
+        - gameObject
+        - delay
+        - detachChildren
         - time
         - finishEvent
         - realTime
@@ -974,8 +1028,8 @@ MonoBehaviour:
         - _atom
         - _variable
         - VariableName
-        paramDataPos: 00000000000000000000000000000000010000000200000001000000020000000000000003000000010000000300000004000000050000000000000000000000070000000100000008000000090000000d0000000e00000000000000020000000f00000006000000
-        paramByteDataSize: 0000000000000000010000000000000000000000000000000100000001000000000000000400000000000000000000000000000000000000000000000000000001000000000000000100000004000000010000000100000000000000000000000400000000000000
+        paramDataPos: 00000000000000000000000001000000000000000000000001000000010000000200000001000000020000000000000003000000020000000300000004000000050000000000000000000000070000000100000008000000090000000d0000000e00000001000000020000000f00000006000000
+        paramByteDataSize: 0000000000000000000000000000000000000000010000000000000000000000000000000100000001000000000000000400000000000000000000000000000000000000000000000000000001000000000000000100000004000000010000000100000000000000000000000400000000000000
     - name: Disperse Helix Shoot
       description: 
       colorIndex: 0
@@ -1001,16 +1055,46 @@ MonoBehaviour:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.SendMessage
         - Assets.Source.AI.PM_State_Machine.SendMessage
+        - Assets.Source.AI.PM_State_Machine.ShootObject2
+        - HutongGames.PlayMaker.Actions.SetGameObject
+        - RQ.AI.PlayMaker.Variables.GetGameObjectVariable
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000011000000
-        actionHashCodes: ac126d04ac126d04
+        - 
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000011000000220000002d00000030000000
+        actionHashCodes: ac126d04ac126d04444f0a034d51cf042f44f302
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: tempGameObject
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: tempGameObject
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: tempGameObject
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
@@ -1097,16 +1181,20 @@ MonoBehaviour:
         - 
         - Shoot
         - 
-        byteData: 000001000000000000000001000000000000000000000001
+        - 
+        - 
+        byteData: 000001000000000000000001000000000000000000000001000000000000000000000000000000000000000000000000000060400000604001010000000004000000
         arrayParamSizes: 0000000000000000
         arrayParamTypes:
         - System.String
         - System.String
-        customTypeSizes: 0b0000000b000000
+        customTypeSizes: 0b0000000b0000000900000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
-        paramDataType: 290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
+        - RQ.AI.AtomAction.Physics.ShootObject2Atom
+        - RQ.AI.AtomAction.Variables.GetGameObjectVariableAtom
+        paramDataType: 290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000130000002800000008000000020000000700000008000000020000000200000001000000070000000300000013000000130000000100000013000000280000000700000003000000
         paramName:
         - Targets
         - Target
@@ -1142,8 +1230,26 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 000000000000000000000000010000000000000000000000000000000000000001000000010000000200000003000000040000000500000006000000070000000b000000010000000200000001000000030000000c000000010000000200000001000000030000000d0000000e0000000f0000001000000011000000120000001300000017000000
-        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+        - GameObject
+        - _atom
+        - _offset
+        - _delay
+        - _shootTarget
+        - _location
+        - _minSpeed
+        - _maxSpeed
+        - _sameLevel
+        - _objectLevel
+        - ObjectPoolName
+        - variable
+        - gameObject
+        - everyFrame
+        - GameObject
+        - _atom
+        - _variable
+        - VariableName
+        paramDataPos: 000000000000000000000000010000000000000000000000000000000000000001000000010000000200000003000000040000000500000006000000070000000b000000010000000200000001000000030000000c000000010000000200000001000000030000000d0000000e0000000f0000001000000011000000120000001300000017000000020000000200000018000000200000002400000028000000300000003400000038000000390000000400000003000000040000003d00000005000000030000003e00000005000000
+        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000008000000040000000400000008000000040000000400000001000000040000000000000000000000000000000100000000000000000000000400000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -1173,6 +1279,12 @@ MonoBehaviour:
       quaternionVariables: []
       gameObjectVariables:
       - useVariable: 1
+        name: Helix
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
         name: Spawn Point
         tooltip: 
         showInInspector: 0
@@ -1191,7 +1303,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1

@@ -532,12 +532,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.EnableCollider
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: ec2b1f02
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000004000000
+        actionHashCodes: ec2b1f022334d000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -562,20 +564,29 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - Trigger
-        byteData: 0101
+        - 
+        - End
+        - 
+        byteData: 010100
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 03000000
+        customTypeSizes: 0300000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.EnableColliderAtom
-        paramDataType: 28000000010000000100000003000000
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 280000000100000001000000030000001700000001000000280000000300000003000000
         paramName:
         - _atom
         - _enableOnEnter
         - _enableOnExit
         - name
-        paramDataPos: 00000000000000000100000000000000
-        paramByteDataSize: 00000000010000000100000000000000
+        - Received
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        paramDataPos: 000000000000000001000000000000000100000002000000010000000200000003000000
+        paramByteDataSize: 000000000100000001000000000000000000000001000000000000000000000000000000
     - name: Kill
       description: 
       colorIndex: 0
