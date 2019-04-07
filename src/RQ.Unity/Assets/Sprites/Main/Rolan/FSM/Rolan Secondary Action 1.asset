@@ -200,7 +200,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 000101010000
+        actionEnabled: 000100010000
         actionIsOpen: 010101010101
         actionStartIndex: 0000000003000000090000000e0000001300000016000000
         actionHashCodes: 48c01101827373002b347e019f005d002ea472002ea47200
@@ -304,19 +304,29 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
+        - Assets.Source.AI.PM_State_Machine.SendMessage
         - HutongGames.PlayMaker.Actions.SetGameObject
         - RQ.AI.PlayMaker.Variables.GetGameObjectVariable
+        - HutongGames.PlayMaker.Actions.DestroyObject
         - HutongGames.PlayMaker.Actions.FinishFSM
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000300000007000000
-        actionHashCodes: 4d51cf042f44f30200000000
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 000000001100000014000000180000001b000000
+        actionHashCodes: ac126d044d51cf042f44f3029ff80c0200000000
         unityObjectParams: []
         fsmGameObjectParams:
+        - useVariable: 1
+          name: tempGameObject
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 1
           name: tempGameObject
           tooltip: 
@@ -335,6 +345,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
+        - useVariable: 1
+          name: Helix
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -342,29 +358,87 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - SkillComplete
         - 
-        byteData: 0004000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 02000000
+        - 
+        byteData: 0000000000000000000000010004000000
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - System.String
+        customTypeSizes: 0b00000002000000
         customTypeNames:
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.AI.AtomAction.Variables.GetGameObjectVariableAtom
-        paramDataType: 13000000130000000100000013000000280000000700000003000000
+        paramDataType: 290000001200000013000000120000000100000028000000030000000c00000003000000010000000100000001000000010000000100000001000000070000000100000013000000130000000100000013000000280000000700000003000000130000000f00000011000000
         paramName:
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - Log
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
         - variable
         - gameObject
         - everyFrame
@@ -372,8 +446,11 @@ MonoBehaviour:
         - _atom
         - _variable
         - VariableName
-        paramDataPos: 00000000010000000000000002000000000000000100000000000000
-        paramByteDataSize: 00000000000000000100000000000000000000000400000000000000
+        - gameObject
+        - delay
+        - detachChildren
+        paramDataPos: 000000000000000000000000010000000000000000000000000000000000000001000000010000000200000003000000040000000500000006000000070000000b00000001000000020000000c00000003000000010000000d00000002000000040000000000000000000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000000000000100000000000000000000000400000000000000000000000000000000000000
     - name: Disperse Helix Grab
       description: 
       colorIndex: 0
@@ -1053,6 +1130,7 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - Assets.Source.AI.PM_State_Machine.PlayRandomSoundOneShot
         - Assets.Source.AI.PM_State_Machine.SendMessage
         - Assets.Source.AI.PM_State_Machine.SendMessage
         - Assets.Source.AI.PM_State_Machine.ShootObject2
@@ -1064,11 +1142,13 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 0000000011000000220000002d00000030000000
-        actionHashCodes: ac126d04ac126d04444f0a034d51cf042f44f302
-        unityObjectParams: []
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 000000000500000016000000270000003200000035000000
+        actionHashCodes: 2b347e01ac126d04ac126d04444f0a034d51cf042f44f302
+        unityObjectParams:
+        - {fileID: 8300000, guid: 853733c4ed1f9fb47a3b3bd44d9eb630, type: 3}
         fsmGameObjectParams:
         - useVariable: 1
           name: 
@@ -1183,19 +1263,26 @@ MonoBehaviour:
         - 
         - 
         - 
-        byteData: 000001000000000000000001000000000000000000000001000000000000000000000000000000000000000000000000000060400000604001010000000004000000
-        arrayParamSizes: 0000000000000000
+        byteData: 000000803f000001000000000000000001000000000000000000000001000000000000000000000000000000000000000000000000000060400000604001010000000004000000
+        arrayParamSizes: 010000000000000000000000
         arrayParamTypes:
+        - UnityEngine.AudioClip
         - System.String
         - System.String
-        customTypeSizes: 0b0000000b0000000900000002000000
+        customTypeSizes: 030000000b0000000b0000000900000002000000
         customTypeNames:
+        - RQ.Entity.AtomAction.Action.PlayRandomSoundOneShotAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.AI.AtomAction.Physics.ShootObject2Atom
         - RQ.AI.AtomAction.Variables.GetGameObjectVariableAtom
-        paramDataType: 290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000130000002800000008000000020000000700000008000000020000000200000001000000070000000300000013000000130000000100000013000000280000000700000003000000
+        paramDataType: 2800000001000000020000000c00000005000000290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000130000002800000008000000020000000700000008000000020000000200000001000000070000000300000013000000130000000100000013000000280000000700000003000000
         paramName:
+        - _soundAtom
+        - _playOnMusicTrack
+        - _volume
+        - _audioClips
+        - 
         - Targets
         - Target
         - TargetGO
@@ -1248,8 +1335,8 @@ MonoBehaviour:
         - _atom
         - _variable
         - VariableName
-        paramDataPos: 000000000000000000000000010000000000000000000000000000000000000001000000010000000200000003000000040000000500000006000000070000000b000000010000000200000001000000030000000c000000010000000200000001000000030000000d0000000e0000000f0000001000000011000000120000001300000017000000020000000200000018000000200000002400000028000000300000003400000038000000390000000400000003000000040000003d00000005000000030000003e00000005000000
-        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000008000000040000000400000008000000040000000400000001000000040000000000000000000000000000000100000000000000000000000400000000000000
+        paramDataPos: 0000000000000000010000000000000000000000000000000000000000000000010000000500000001000000000000000100000001000000060000000700000008000000090000000a0000000b0000000c00000010000000010000000200000001000000030000001100000002000000020000000200000003000000120000001300000014000000150000001600000017000000180000001c00000002000000030000001d00000025000000290000002d00000035000000390000003d0000003e0000000400000003000000040000004200000005000000040000004300000005000000
+        paramByteDataSize: 000000000100000004000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000008000000040000000400000008000000040000000400000001000000040000000000000000000000000000000100000000000000000000000400000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
