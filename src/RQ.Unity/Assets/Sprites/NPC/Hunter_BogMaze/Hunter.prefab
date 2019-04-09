@@ -115,9 +115,25 @@ GameObject:
   - component: {fileID: 114113900693155450}
   - component: {fileID: 114120174619475476}
   - component: {fileID: 114363819061873632}
+  - component: {fileID: 114160428430988984}
   m_Layer: 13
   m_Name: Hunter
   m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1415910972853834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4034727988640634}
+  m_Layer: 13
+  m_Name: Raft Position
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,6 +195,7 @@ GameObject:
   - component: {fileID: 4786390985874160}
   - component: {fileID: 114297584819477182}
   - component: {fileID: 114297383444096482}
+  - component: {fileID: 114572687236936568}
   m_Layer: 0
   m_Name: PlayActionsEvent
   m_TagString: Untagged
@@ -293,6 +310,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1914552814648804
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4237133716156900}
+  - component: {fileID: 114140058221033906}
+  - component: {fileID: 114722627250614898}
+  m_Layer: 0
+  m_Name: PlayActionsEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1933469071213170
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +357,19 @@ Transform:
   m_Father: {fileID: 4449049998113122}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4034727988640634
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415910972853834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.208, y: -1.207, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4449049998113122}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4043300675663208
 Transform:
   m_ObjectHideFlags: 1
@@ -335,6 +382,7 @@ Transform:
   m_Children:
   - {fileID: 4965439936408466}
   - {fileID: 4786390985874160}
+  - {fileID: 4237133716156900}
   m_Father: {fileID: 4915739034707124}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -392,6 +440,19 @@ Transform:
   m_Father: {fileID: 4449049998113122}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4237133716156900
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914552814648804}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.49399996, y: -0.941, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4043300675663208}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4278114854976134
 Transform:
   m_ObjectHideFlags: 1
@@ -438,7 +499,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1252737972029832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.52, y: 5.404, z: -0.1}
+  m_LocalPosition: {x: 4.014, y: 6.345, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4011424262948724}
@@ -451,6 +512,7 @@ Transform:
   - {fileID: 4342012464249510}
   - {fileID: 4124972771285166}
   - {fileID: 4836178267450426}
+  - {fileID: 4034727988640634}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -732,7 +794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   once: 1
-  conversation: 01.01.01 Hunter_help
+  conversation: 01.01.01 HunterHelp2
   condition:
     luaConditions: []
     questConditions: []
@@ -745,7 +807,7 @@ MonoBehaviour:
   exclusive: 0
   conversant: {fileID: 4449049998113122}
   useConversationTitlePicker: 1
-  selectedDatabase: {fileID: 0}
+  selectedDatabase: {fileID: 11400000, guid: 38c7b35a41c122245923530f43ffe4de, type: 2}
   actor: {fileID: 0}
   trigger: 8
   stopConversationOnTriggerExit: 0
@@ -895,7 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   once: 0
-  conversation: 01.01.01 HunterRescue
+  conversation: 01.01.01 HunterHelp3
   condition:
     luaConditions: []
     questConditions: []
@@ -979,6 +1041,40 @@ MonoBehaviour:
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '
     subtitleColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &114140058221033906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914552814648804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3225c3611edf5834b80d97580de4c3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireOnSkip: 0
+  firetime: 2.481752
+  duration: -1
+  serializedAdditionalObjectsPaths: []
+  _runOnGameController: 0
+--- !u!114 &114160428430988984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1252737972029832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2109884187, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 083799c6-fa0d-4a11-aa40-aaebf71e2f57
+  componentName: 
+  _rqName: Hunter RQ.Physics.Components.WaypointComponent
+  _rqName2: 8d92a666-662d-4877-9ebf-802e124a910b
+  _componentRepository: {fileID: 114923192451001284}
+  _waypoints:
+  - {fileID: 1415910972853834}
 --- !u!114 &114170785795723396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1064,7 +1160,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1642259189759098}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3ee07f5e718e504cbbcd0fdf5efd2b6, type: 3}
   m_Name: 
@@ -1277,6 +1373,29 @@ MonoBehaviour:
   layersToIgnore:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &114572687236936568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1642259189759098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1964737085, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: c7ccb6bb-218b-4a51-b2e8-e94ae060c2b5
+  componentName: 
+  _rqName: PlayActionsEvent RQ.Controller.Actions.GoToRequest
+  _rqName2: ac80f74e-2fec-44c9-aacd-a7bf317515a0
+  _goToType: 5
+  _immediate: 0
+  _waypoint: {fileID: 4034727988640634}
+  _velocity:
+    x: 0
+    y: 0
+  _animationComponent: {fileID: 0}
+  _startAnimation: 
 --- !u!114 &114588238803857206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1302,9 +1421,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -1329,6 +1446,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -1353,9 +1471,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -1380,6 +1496,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -1498,6 +1615,25 @@ MonoBehaviour:
     x: 0
     y: 0
   anim: {fileID: 114982590549214594}
+--- !u!114 &114722627250614898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914552814648804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ee07f5e718e504cbbcd0fdf5efd2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 34e7480d-f4a8-4710-a5b1-eaecc3673aea
+  componentName: 
+  _rqName: PlayActionsEvent RQ.Controller.Actions.StartConversation
+  _rqName2: fc858adf-6844-47f2-b815-4c5488c39a84
+  _trigger: {fileID: 0}
+  _atom:
+    ComponentName: 
+    _externalConversation: {fileID: 0}
 --- !u!114 &114745288820059416
 MonoBehaviour:
   m_ObjectHideFlags: 1

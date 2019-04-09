@@ -88,8 +88,8 @@ Properties
                 fixed4 finalGrabText = tex2D(_GrabTexture, grabTexcoord);
  
                 //return Overlay(finalGrabText, color);
-				return Difference(color, finalGrabText);
-				return finalGrabText;
+				//return Difference(color, finalGrabText);
+				//return finalGrabText;
 				return Difference(finalGrabText, color);
             }
 
