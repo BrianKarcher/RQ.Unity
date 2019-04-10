@@ -653,6 +653,8 @@ MonoBehaviour:
     SendToGameController: 0
     SendToUIManager: 1
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: BeginModal
     Data: 
@@ -956,6 +958,64 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 47057b82e1bd82d479c1287d8eff5837, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!1001 &214755518
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 459158, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 459158, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.9199998
+      objectReference: {fileID: 0}
+    - target: {fileID: 459158, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 459158, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459158, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459158, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459158, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 459158, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343820, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397046, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313644, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308046, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 854001b1578de204eaf42ba5601bd52d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &237838254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1616,8 @@ MonoBehaviour:
     SendToGameController: 0
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: TweenToWhite
     Data: 2
@@ -2456,6 +2518,8 @@ MonoBehaviour:
     SendToGameController: 0
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: StopMovement
     Data: 
@@ -2954,6 +3018,8 @@ MonoBehaviour:
     SendToGameController: 1
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: SendBossVictoryNotification
     Data: 
@@ -3173,6 +3239,8 @@ MonoBehaviour:
     SendToGameController: 0
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: StartInvertGrow
     Data: 
@@ -4138,6 +4206,8 @@ MonoBehaviour:
     SendToGameController: 0
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: Follow Target
     Data: 
@@ -4517,6 +4587,8 @@ MonoBehaviour:
     SendToGameController: 0
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: VictoryPose
     Data: 
@@ -4784,7 +4856,7 @@ Transform:
   - {fileID: 712874029}
   - {fileID: 408890377}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1443954691
 GameObject:
@@ -5272,6 +5344,8 @@ MonoBehaviour:
     SendToGameController: 1
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: Playtime
     Data: 
@@ -5300,6 +5374,8 @@ MonoBehaviour:
     SendToGameController: 0
     SendToUIManager: 0
     SendToMainCharacter: 1
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: HealHP
     Data: 5
@@ -5422,7 +5498,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1795050834
 Prefab:
@@ -5565,6 +5641,8 @@ MonoBehaviour:
     SendToGameController: 1
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: KillBosses
     Data: 
@@ -6141,6 +6219,8 @@ MonoBehaviour:
     SendToGameController: 0
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: Shake
     Data: 
@@ -6443,6 +6523,8 @@ MonoBehaviour:
     SendToGameController: 0
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: DestroyInvertGrow
     Data: 
@@ -6471,6 +6553,8 @@ MonoBehaviour:
     SendToGameController: 0
     SendToUIManager: 0
     SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
     TargetUniqueId: 
     EventName: TweenToTransparent
     Data: 2
