@@ -28,6 +28,8 @@ namespace RQ.AI.Atom.UI
             }
                 
             _conversationTriggerComponent = entity.Components.GetComponent<ConversationTriggerComponent>(ComponentName);
+            if (_conversationTriggerComponent == null)
+                return;
             _conversationTriggerComponent.Trigger(entity.transform);
         }
 
