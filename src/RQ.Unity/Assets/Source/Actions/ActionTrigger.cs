@@ -1,6 +1,10 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using PixelCrushers.DialogueSystem;
 using RQ.AI.Atom.UI;
+using RQ.Entity.Components;
+using RQ.Model;
+using RQ.Model.Interfaces;
 using UnityEngine;
 
 namespace RQ.Controller.Actions
@@ -43,6 +47,8 @@ namespace RQ.Controller.Actions
         private float earliestTimeToAllowTriggerExit = 0;
 
         private const float MarginToAllowTriggerExit = 0.2f;
+
+        private IAction[] _actions;
 
         /// <summary>
         /// Only start if no other conversation is active.
@@ -141,7 +147,7 @@ namespace RQ.Controller.Actions
         private void TryStartConversationOnTriggerEnter(Transform otherTransform)
         {
             if ((otherTransform != this.actor) && !condition.IsTrue(otherTransform)) return;
-            TryStartConversation(Tools.Select(this.actor, otherTransform), otherTransform);
+            TryRunActions(Tools.Select(this.actor, otherTransform), otherTransform);
             earliestTimeToAllowTriggerExit = Time.time + MarginToAllowTriggerExit;
         }
 
@@ -163,6 +169,12 @@ namespace RQ.Controller.Actions
             {
                 TryStartConversationOnTriggerEnter(otherTransform);
             }
+        }
+
+        public void Awake()
+        {
+            if (_actions == null)
+                _actions = GetComponents<IAction>();
         }
 
         public void Start()
@@ -215,7 +227,7 @@ namespace RQ.Controller.Actions
         /// <param name='actor'>The actor to converse with.</param>
         public void TryStartConversation(Transform actor)
         {
-            TryStartConversation(actor, actor);
+            TryRunActions(actor, actor);
         }
 
         private bool tryingToStart = false;
@@ -226,7 +238,7 @@ namespace RQ.Controller.Actions
         /// </summary>
         /// <param name="actor">Actor.</param>
         /// <param name="interactor">Interactor to check the condition against.</param>
-        public void TryStartConversation(Transform actor, Transform interactor)
+        public void TryRunActions(Transform actor, Transform interactor)
         {
             if (!tryingToStart)
             {
@@ -235,19 +247,29 @@ namespace RQ.Controller.Actions
                 {
                     if ((condition == null) || condition.IsTrue(interactor))
                     {
-                        if (string.IsNullOrEmpty(conversation))
+                        var componentBase = interactor.GetComponent<IComponentBase>();
+                        if (componentBase != null)
                         {
-                            if (DialogueDebug.logErrors) Debug.LogError(string.Format("{0}: Conversation triggered on {1}, but conversation name is blank.", new System.Object[] { DialogueDebug.Prefix, name }));
+                            var repo = componentBase.GetComponentRepository();
+                            if (repo != null)
+                            {
+                                RunActions(repo);
+                                DestroyIfOnce();
+                            }
                         }
-                        else if ((DialogueManager.isConversationActive && !DialogueManager.allowSimultaneousConversations) || (exclusive && DialogueManager.isConversationActive))
-                        {
-                            if (DialogueDebug.logInfo) Debug.Log(string.Format("{0}: Conversation triggered on {1}, but another conversation is already active.", new System.Object[] { DialogueDebug.Prefix, name }));
-                        }
-                        else
-                        {
-                            StartConversation(actor);
-                        }
-                        DestroyIfOnce();
+                        //if (string.IsNullOrEmpty(conversation))
+                        //{
+                        //    if (DialogueDebug.logErrors) Debug.LogError(string.Format("{0}: Conversation triggered on {1}, but conversation name is blank.", new System.Object[] { DialogueDebug.Prefix, name }));
+                        //}
+                        //else if ((DialogueManager.isConversationActive && !DialogueManager.allowSimultaneousConversations) || (exclusive && DialogueManager.isConversationActive))
+                        //{
+                        //    if (DialogueDebug.logInfo) Debug.Log(string.Format("{0}: Conversation triggered on {1}, but another conversation is already active.", new System.Object[] { DialogueDebug.Prefix, name }));
+                        //}
+                        //else
+                        //{
+                        //    StartConversation(actor);
+                        //}
+                        
                     }
                 }
                 finally
@@ -257,19 +279,32 @@ namespace RQ.Controller.Actions
             }
         }
 
-        private void StartConversation(Transform actor)
+        private void RunActions(IComponentRepository repo)
         {
-            Transform actualConversant = Tools.Select(conversant, this.transform);
-            bool skip = skipIfNoValidEntries && !DialogueManager.ConversationHasValidEntry(conversation, actor, actualConversant);
-            if (skip)
+            for (int i = 0; i < _actions.Length; i++)
             {
-                if (DialogueDebug.logInfo) Debug.Log(string.Format("{0}: Conversation triggered on {1}, but skipping because no entries are currently valid.", new System.Object[] { DialogueDebug.Prefix, name }));
-            }
-            else
-            {
-                DialogueManager.StartConversation(conversation, actor, actualConversant);
+                var action = _actions[i];
+                if (!action.isActiveAndEnabled)
+                    continue;
+                action.SetComponentRepository(repo);
+                action.InitAction();
+                action.Act(null);
             }
         }
+
+        //private void StartConversation(Transform actor)
+        //{
+        //    Transform actualConversant = Tools.Select(conversant, this.transform);
+        //    bool skip = skipIfNoValidEntries && !DialogueManager.ConversationHasValidEntry(conversation, actor, actualConversant);
+        //    if (skip)
+        //    {
+        //        if (DialogueDebug.logInfo) Debug.Log(string.Format("{0}: Conversation triggered on {1}, but skipping because no entries are currently valid.", new System.Object[] { DialogueDebug.Prefix, name }));
+        //    }
+        //    else
+        //    {
+        //        DialogueManager.StartConversation(conversation, actor, actualConversant);
+        //    }
+        //}
 
         /// <summary>
         /// Set <c>true</c> if this event should only happen once.
