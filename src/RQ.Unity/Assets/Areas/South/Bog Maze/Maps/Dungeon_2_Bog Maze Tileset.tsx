@@ -12,7 +12,7 @@
   <terrain name="Border - Roof Deck 1" tile="534"/>
   <terrain name="Border - Roof Deck 2" tile="465"/>
   <terrain name="Heights - Top 1" tile="15"/>
-  <terrain name="Heights - Top 2" tile="22"/>
+  <terrain name="Heights - Floor 1" tile="22"/>
  </terraintypes>
  <tile id="0" terrain=",,,0"/>
  <tile id="1" terrain=",,0,0"/>
@@ -60,6 +60,8 @@
  <tile id="58" terrain=",10,,10"/>
  <tile id="59" terrain="10,10,10,10"/>
  <tile id="60" terrain="10,,10,"/>
+ <tile id="61" terrain="10,,10,10"/>
+ <tile id="62" terrain=",10,10,10"/>
  <tile id="72" terrain=",0,,"/>
  <tile id="73" terrain="0,0,,"/>
  <tile id="74" terrain="0,,,"/>
@@ -113,8 +115,6 @@
  <tile id="192" terrain="2,,,"/>
  <tile id="198" terrain="9,,9,9"/>
  <tile id="199" terrain=",9,9,9"/>
- <tile id="205" terrain="10,,10,10"/>
- <tile id="206" terrain=",10,10,10"/>
  <tile id="216" terrain=",,,3"/>
  <tile id="217" terrain=",,3,3"/>
  <tile id="218" terrain=",,3,"/>
@@ -130,16 +130,6 @@
  <tile id="228" terrain=",,5,"/>
  <tile id="229" terrain="5,5,5,"/>
  <tile id="230" terrain="5,5,,5"/>
- <tile id="231" terrain=",,,9"/>
- <tile id="232" terrain=",,9,9"/>
- <tile id="233" terrain=",,9,"/>
- <tile id="234" terrain="9,9,9,"/>
- <tile id="235" terrain="9,9,,9"/>
- <tile id="238" terrain=",,,10"/>
- <tile id="239" terrain=",,10,10"/>
- <tile id="240" terrain=",,10,"/>
- <tile id="241" terrain="10,10,10,"/>
- <tile id="242" terrain="10,10,,10"/>
  <tile id="252" terrain=",3,,3"/>
  <tile id="253" terrain="3,3,3,3"/>
  <tile id="254" terrain="3,,3,"/>
@@ -155,10 +145,6 @@
  <tile id="264" terrain="5,,5,"/>
  <tile id="265" terrain="5,,5,5"/>
  <tile id="266" terrain=",5,5,5"/>
- <tile id="267" terrain=",9,,9"/>
- <tile id="269" terrain="9,,9,"/>
- <tile id="274" terrain=",10,,10"/>
- <tile id="276" terrain="10,,10,"/>
  <tile id="288" terrain=",3,,"/>
  <tile id="289" terrain="3,3,,"/>
  <tile id="290" terrain="3,,,"/>
@@ -168,12 +154,6 @@
  <tile id="298" terrain=",5,,"/>
  <tile id="299" terrain="5,5,,"/>
  <tile id="300" terrain="5,,,"/>
- <tile id="303" terrain=",9,,"/>
- <tile id="304" terrain="9,9,,"/>
- <tile id="305" terrain="9,,,"/>
- <tile id="310" terrain=",10,,"/>
- <tile id="311" terrain="10,10,,"/>
- <tile id="312" terrain="10,,,"/>
  <tile id="324" terrain=",,,3"/>
  <tile id="325" terrain=",,3,3"/>
  <tile id="326" terrain=",,3,"/>
@@ -210,10 +190,6 @@
  <tile id="406" terrain=",5,,"/>
  <tile id="407" terrain="5,5,,"/>
  <tile id="408" terrain="5,,,"/>
- <tile id="414" terrain="9,,9,9"/>
- <tile id="415" terrain=",9,9,9"/>
- <tile id="421" terrain="10,,10,10"/>
- <tile id="422" terrain=",10,10,10"/>
  <tile id="432" terrain=",,,6"/>
  <tile id="433" terrain=",,6,6"/>
  <tile id="434" terrain=",,6,"/>
