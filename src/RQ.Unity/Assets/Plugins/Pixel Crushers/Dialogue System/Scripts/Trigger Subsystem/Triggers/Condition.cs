@@ -3,6 +3,9 @@
 using UnityEngine;
 using System;
 using System.Linq;
+using RQ.Model.Game_Data.Quest;
+using RQ;
+using RQ.Common.Controllers;
 
 namespace PixelCrushers.DialogueSystem
 {
@@ -110,26 +113,44 @@ namespace PixelCrushers.DialogueSystem
     [Serializable]
     public class QuestCondition
     {
+        public QuestConfig questConfig;
 
         /// <summary>
         /// The name of the quest. If you are using the QuestLog class, this should be the name of an entry in the
         /// Lua table "Item[]". If the name is blank, there is no quest condition.
         /// </summary>
-        public string questName = string.Empty;
+        public int Id = 0;
 
         /// <summary>
         /// The allowable quest states for the condition to be true.
         /// </summary>
-        [BitMask(typeof(QuestState))]
-        [QuestState]
-        public QuestState questState;
+        //[BitMask(typeof(QuestState))]
+        //[QuestState]
+        public QuestStatus questState;
 
         /// <summary>
         /// Indicates whether this QuestCondition is true.
         /// </summary>
         public bool IsTrue
         {
-            get { return string.IsNullOrEmpty(questName) || QuestLog.IsQuestInStateMask(questName, questState); }
+            get
+            {
+                QuestData quest;
+                if (!GameDataController.Instance.Data.QuestDatas.TryGetValue(questConfig.UniqueId, out quest))
+                    return true;
+
+                for (int i = 0; i < quest.QuestEntryDatas.Count; i++)
+                {
+                    var questEntry = quest.QuestEntryDatas[i];
+                    if (questEntry.Id == Id)
+                    {
+                        return questEntry.Status == questState;
+                    }
+                }
+
+                return false;
+                //return string.IsNullOrEmpty(questName) || QuestLog.IsQuestInStateMask(questName, questState);
+            }
         }
 
     }

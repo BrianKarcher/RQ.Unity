@@ -3,6 +3,9 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using RQ;
+using RQ.Model.Game_Data.Quest;
+using System;
 
 namespace PixelCrushers.DialogueSystem
 {
@@ -27,21 +30,23 @@ namespace PixelCrushers.DialogueSystem
             Rect questStateRect = new Rect(questNameRect.x + questNameRect.width + 2, position.y, questStateWidth, position.height);
 
             // Draw fields - pass GUIContent.none to each so they are drawn without labels
-            var questName = property.FindPropertyRelative("questName");
-            if (EditorTools.selectedDatabase == null)
-            {
-                EditorGUI.PropertyField(questNameRect, questName, GUIContent.none);
-            }
-            else
-            {
+            var questConfigProp = property.FindPropertyRelative("questConfig");
+            var questConfig = questConfigProp.objectReferenceValue as QuestConfig;
+            var questId = property.FindPropertyRelative("Id");
+            //if (EditorTools.selectedDatabase == null)
+            //{
+            //    EditorGUI.PropertyField(questNameRect, questName, GUIContent.none);
+            //}
+            //else
+            //{
                 int questNameIndex;
-                string[] questNames = GetQuestNames(questName.stringValue, out questNameIndex);
+                string[] questNames = GetQuestIds(questConfig, questId.intValue, out questNameIndex);
                 int newQuestNameIndex = EditorGUI.Popup(questNameRect, questNameIndex, questNames);
                 if (newQuestNameIndex != questNameIndex)
                 {
-                    questName.stringValue = GetQuestName(questNames, newQuestNameIndex);
+                    questId.intValue = GetQuestName(questNames, newQuestNameIndex);
                 }
-            }
+            //}
 
             var questState = property.FindPropertyRelative("questState");
             EditorGUI.PropertyField(questStateRect, questState, GUIContent.none, false);
@@ -49,36 +54,64 @@ namespace PixelCrushers.DialogueSystem
             EditorGUI.EndProperty();
         }
 
-        private string[] GetQuestNames(string currentQuestName, out int questNameIndex)
+        private string[] GetQuestIds(QuestConfig questConfig, int currentQuestId, out int questNameIndex)
         {
             questNameIndex = -1;
-            var database = EditorTools.selectedDatabase;
-            if (database == null || database.items == null)
+            //var questConfig = GameController.Instance.GameConfig.GetAsset<QuestConfig>(uniqueId);
+            //var database = EditorTools.selectedDatabase;
+            if (questConfig == null || questConfig.QuestEntries == null)
             {
                 return new string[0];
             }
             else
             {
                 List<string> questNames = new List<string>();
-                foreach (var item in database.items)
+                foreach (var item in questConfig.QuestEntries)
                 {
-                    if (!item.IsItem)
-                    {
-                        string questName = item.Name;
-                        if (string.Equals(currentQuestName, questName))
+                    //if (!item.IsItem)
+                    //{
+                        int questName = item.Id;
+                        if (currentQuestId == questName)
                         {
                             questNameIndex = questNames.Count;
                         }
-                        questNames.Add(questName);
-                    }
+                        questNames.Add(questName.ToString());
+                    //}
                 }
                 return questNames.ToArray();
             }
         }
 
-        private string GetQuestName(string[] questNames, int questNameIndex)
+        //private string[] GetQuestNames(string currentQuestName, out int questNameIndex)
+        //{
+        //    questNameIndex = -1;
+        //    var database = EditorTools.selectedDatabase;
+        //    if (database == null || database.items == null)
+        //    {
+        //        return new string[0];
+        //    }
+        //    else
+        //    {
+        //        List<string> questNames = new List<string>();
+        //        foreach (var item in database.items)
+        //        {
+        //            if (!item.IsItem)
+        //            {
+        //                string questName = item.Name;
+        //                if (string.Equals(currentQuestName, questName))
+        //                {
+        //                    questNameIndex = questNames.Count;
+        //                }
+        //                questNames.Add(questName);
+        //            }
+        //        }
+        //        return questNames.ToArray();
+        //    }
+        //}
+
+        private int GetQuestName(string[] questNames, int questNameIndex)
         {
-            return (0 <= questNameIndex && questNameIndex < questNames.Length) ? questNames[questNameIndex] : string.Empty;
+            return (0 <= questNameIndex && questNameIndex < questNames.Length) ? Int32.Parse(questNames[questNameIndex]) : 0;
         }
 
     }
