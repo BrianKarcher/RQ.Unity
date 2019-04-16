@@ -23,10 +23,11 @@ namespace PixelCrushers.DialogueSystem
             EditorGUI.BeginProperty(position, label, property);
 
             // Calculate rects:
-            float halfWidth = position.width / 2;
-            float questStateWidth = Mathf.Min(halfWidth, 120f);
+            float thirdWidth = position.width / 3;
+            float questStateWidth = Mathf.Min(thirdWidth, 120f);
             float questNameWidth = position.width - questStateWidth - 2;
-            Rect questNameRect = new Rect(position.x, position.y, questNameWidth, position.height);
+            Rect questConfigRect = new Rect(position.x, position.y, questNameWidth, position.height);
+            Rect questNameRect = new Rect(questConfigRect.x + questConfigRect.width + 2, position.y, questNameWidth, position.height);
             Rect questStateRect = new Rect(questNameRect.x + questNameRect.width + 2, position.y, questStateWidth, position.height);
 
             // Draw fields - pass GUIContent.none to each so they are drawn without labels
@@ -39,17 +40,24 @@ namespace PixelCrushers.DialogueSystem
             //}
             //else
             //{
-                int questNameIndex;
+            EditorGUI.PropertyField(questConfigRect, questConfigProp, GUIContent.none, false);
+            int questNameIndex;
                 string[] questNames = GetQuestIds(questConfig, questId.intValue, out questNameIndex);
-                int newQuestNameIndex = EditorGUI.Popup(questNameRect, questNameIndex, questNames);
-                if (newQuestNameIndex != questNameIndex)
+            int newQuestNameIndex = EditorGUI.Popup(questNameRect, questNameIndex, questNames);
+            //int newQuestNameIndex = EditorGUILayout.Popup(questNameIndex, questNames);
+            if (newQuestNameIndex != questNameIndex)
                 {
                     questId.intValue = GetQuestName(questNames, newQuestNameIndex);
                 }
             //}
 
             var questState = property.FindPropertyRelative("questState");
+            //EditorGUI.PropertyField()
             EditorGUI.PropertyField(questStateRect, questState, GUIContent.none, false);
+            
+            //EditorGUILayout.PropertyField(questConfigProp, GUIContent.none, false);
+            //EditorGUILayout.PropertyField(questState, GUIContent.none, false);
+
 
             EditorGUI.EndProperty();
         }
