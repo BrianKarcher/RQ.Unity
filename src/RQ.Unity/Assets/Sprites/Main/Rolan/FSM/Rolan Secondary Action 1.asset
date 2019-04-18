@@ -886,7 +886,7 @@ MonoBehaviour:
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000008000000
+        actionStartIndex: 0000000009000000
         actionHashCodes: ee6bbe012ea47200
         unityObjectParams:
         - {fileID: 1995259694063076, guid: 762d3f9a7aadf634ba4a50f81d97d80b, type: 2}
@@ -921,14 +921,14 @@ MonoBehaviour:
         - 
         - Hammer Pound
         - 
-        byteData: 000000000000000000000000000000000000
+        byteData: 00000000000000000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0600000001000000
+        customTypeSizes: 0700000001000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.WaitForAnimationCompletionAtom
-        paramDataType: 13000000280000001b0000000900000001000000010000000200000003000000280000000300000017000000
+        paramDataType: 13000000280000001b000000090000000100000001000000020000000100000003000000280000000300000017000000
         paramName:
         - storeResult
         - _instantiatePrefabAtom
@@ -937,12 +937,13 @@ MonoBehaviour:
         - _rotateOffsetByFacingDirection
         - _rotateHorizontalOffsetByFacingDirection
         - Delay
+        - SetAIParent
         - ObjectPoolName
         - _animCompleteAtom
         - AnimationType
         - FinishEvent
-        paramDataPos: 000000000000000000000000000000000c0000000d0000000e00000000000000010000000100000002000000
-        paramByteDataSize: 0000000000000000000000000c00000001000000010000000400000000000000000000000000000000000000
+        paramDataPos: 000000000000000000000000000000000c0000000d0000000e0000001200000000000000010000000100000002000000
+        paramByteDataSize: 0000000000000000000000000c0000000100000001000000040000000100000000000000000000000000000000000000
     - name: Disperse Helix Hold
       description: 
       colorIndex: 0
@@ -972,6 +973,7 @@ MonoBehaviour:
         - RQ.Entity.AI.PlayMaker.PlayerMove
         - RQ.AI.PlayMaker.Variables.GetGameObjectVariable
         - Rewired.Integration.PlayMaker.RewiredPlayerGetButton
+        - Assets.Source.AI.PM_State_Machine.CarryObject
         customNames:
         - 
         - 
@@ -979,14 +981,21 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010000010101
-        actionIsOpen: 010101010101
-        actionStartIndex: 0000000003000000060000000d0000001200000016000000
-        actionHashCodes: 9ff80c0248c01101f5599401866e76002f44f302b9d24e00
+        - 
+        actionEnabled: 01000001010001
+        actionIsOpen: 01010101010101
+        actionStartIndex: 0000000003000000060000000d00000012000000160000001d000000
+        actionHashCodes: 9ff80c0248c01101f5599401866e76002f44f302b9d24e0043223b00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
           name: Helix
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: tempGameObject
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -1067,15 +1076,19 @@ MonoBehaviour:
         - 
         - FINISHED
         - 
+        - FINISHED
+        - Abort
+        - Special
         byteData: 00000101000000010000000001010400000001
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 010000000400000002000000
+        customTypeSizes: 01000000040000000200000002000000
         customTypeNames:
         - RQ.AI.Action.ButtonDownAtom
         - RQ.Entity.AtomAction.Action.PlayerMoveAtom
         - RQ.AI.AtomAction.Variables.GetGameObjectVariableAtom
-        paramDataType: 130000000f000000110000000f00000017000000010000001100000017000000170000000100000001000000280000000700000028000000010000000000000001000000010000001300000028000000070000000300000011000000170000001700000017000000120000001000000001000000
+        - RQ.AI.Action.CarryObjectAtom
+        paramDataType: 130000000f000000110000000f000000170000000100000011000000170000001700000001000000010000002800000007000000280000000100000000000000010000000100000013000000280000000700000003000000110000001700000017000000170000001200000010000000010000001300000017000000280000000300000003000000
         paramName:
         - gameObject
         - delay
@@ -1106,8 +1119,13 @@ MonoBehaviour:
         - actionName
         - playerId
         - everyFrame
-        paramDataPos: 000000000000000000000000010000000000000000000000010000000100000002000000010000000200000000000000030000000100000007000000080000000c0000000d00000001000000020000000e0000000300000002000000040000000500000006000000000000000000000012000000
-        paramByteDataSize: 0000000000000000000000000000000000000000010000000000000000000000000000000100000001000000000000000400000000000000010000000400000001000000010000000000000000000000040000000000000000000000000000000000000000000000000000000000000001000000
+        - LiftedObject
+        - FinishEvent
+        - _atom
+        - MessageToLiftableOnAbort
+        - ButtonHeldActionName
+        paramDataPos: 000000000000000000000000010000000000000000000000010000000100000002000000010000000200000000000000030000000100000007000000080000000c0000000d00000001000000020000000e00000003000000020000000400000005000000060000000000000000000000120000000200000007000000030000000800000009000000
+        paramByteDataSize: 00000000000000000000000000000000000000000100000000000000000000000000000001000000010000000000000004000000000000000100000004000000010000000100000000000000000000000400000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000
     - name: Disperse Helix Shoot
       description: 
       colorIndex: 0
@@ -1144,7 +1162,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101000101
+        actionEnabled: 010101000100
         actionIsOpen: 010101010101
         actionStartIndex: 000000000500000016000000270000003300000036000000
         actionHashCodes: 2b347e01ac126d04ac126d04444f0a034d51cf042f44f302

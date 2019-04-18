@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &404608
 Transform:
   m_ObjectHideFlags: 1
@@ -246,12 +246,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.6335874, y: 2.739921, z: -0.15}
+  m_LocalPosition: {x: 3.7352862, y: 0.7949265, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475142}
   - {fileID: 404608}
   - {fileID: 435406}
+  - {fileID: 4706020737972574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -391,9 +392,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: -0
-      y: 0
+    Side: {x: -0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -418,6 +417,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -442,9 +442,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -469,6 +467,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -517,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 751370667, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 6ceb0c58-bcfc-413f-b338-451920f16db4
+  _uniqueId: 62e643a4-2801-4c2a-a013-f9bb13e21914
   componentName: 
   _rqName: Explode RQ.Entity.StatesV2.InstantiatePrefab
   _rqName2: eae2df75-0e84-4ca6-a0e7-8ef85561dce5
@@ -573,12 +572,12 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 743ee7b4-5f4b-4625-91e0-7e1007184d36
+  _uniqueId: b511acd9-2bd5-4b98-9fc4-7250d45b48bb
   componentName: 
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: f5d3ae68-8cc6-4dd5-ad66-af3da7ee0409
   _componentRepository: {fileID: 11431128}
-  _initialState: {fileID: 11452342}
+  _initialState: {fileID: 0}
   _stateTransitionTable: {fileID: 11489846}
   _currentState: {fileID: 0}
   _stateMachineReentry: 1
@@ -589,7 +588,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: 743ee7b4-5f4b-4625-91e0-7e1007184d36
+    StateMachineUniqueId: b511acd9-2bd5-4b98-9fc4-7250d45b48bb
     StateMachineName: States
     StateData: []
   _logTransitions: 0
@@ -646,6 +645,7 @@ MonoBehaviour:
     _isAnimationComplete: 0
     AutoPlayAnimationType: 
     PlayAutomatically: 0
+    PlayDefaultOnEnable: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
   SpriteAnimator2: {fileID: 11448120}
@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: -2131402593, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 4dfa9749-e9e9-4332-98be-09745002d114
+  _uniqueId: b8bfb421-d9bb-40d7-ac14-2a76fef232f2
   componentName: 
   _rqName: Flying RQ.Entity.StatesV2.LaunchSelf
   _rqName2: da63e62f-c047-4eac-ad4d-60e654cc7ac3
@@ -779,14 +779,14 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: e44031d3-f8c3-434e-88f8-86aa4e096dd3
+  _uniqueId: aec2984b-41e9-4077-9d29-44b4dccbcd6e
   componentName: 
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: 630bd968-17fe-43e7-af1b-845104d74bdf
   _componentRepository: {fileID: 11431128}
   Records:
   - _name: Flying to Explode
-    CurrentState: {fileID: 11452342}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: 
@@ -795,11 +795,11 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11431600}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   - _name: Explode to Kill Self
-    CurrentState: {fileID: 11431600}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: 
@@ -808,7 +808,7 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 114564751400898728}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   ConditionsList: {fileID: 11453080}
@@ -836,6 +836,36 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128412}
   m_IsPrefabParent: 1
+--- !u!1 &1613729088844372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4706020737972574}
+  - component: {fileID: 114911204212227228}
+  - component: {fileID: 114644556202874274}
+  m_Layer: 0
+  m_Name: FSM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4706020737972574
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613729088844372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 490768}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &54247648499854714
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -910,7 +940,7 @@ MonoBehaviour:
   m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 62a86e3b-0956-4363-9c9a-09e0bf8bd3fb
+  _uniqueId: 3627fe0a-990f-44b8-a901-2ea4db452960
   componentName: 
   _rqName: SendToPool RQ.FSM.V2.States.RunActionsState
   _rqName2: 6beb2f5f-b67f-4b83-83d8-f10f0349f793
@@ -933,3 +963,154 @@ MonoBehaviour:
   _rqName2: 89a3ca03-d1be-4c97-910f-16cbdb4675bd
   _atom:
     PoolName: Bomb
+--- !u!114 &114644556202874274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613729088844372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 030c34c9-a6fc-469a-a50d-a7d1df91ebed
+  componentName: 
+  _rqName: FSM RQ.Physics.Components.PlayMakerStateMachineComponent
+  _rqName2: 14424ff1-0610-4290-aae2-cc5040825781
+  _componentRepository: {fileID: 11431128}
+  pm: {fileID: 114911204212227228}
+--- !u!114 &114911204212227228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613729088844372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables: []
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 1
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 26c6fb8659fbb9442a385e2a1a2bfbd8, type: 2}
+  eventHandlerComponentsAdded: 1
