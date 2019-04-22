@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1149883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 734639593}
@@ -3626,7 +3626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &102494877
 Transform:
   m_ObjectHideFlags: 0
@@ -3660,7 +3660,7 @@ MonoBehaviour:
   componentName: 
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: 26cffb69-c938-496e-9626-3456a62280f6
-  _componentRepository: {fileID: 2034350887}
+  _componentRepository: {fileID: 0}
   _initialState: {fileID: 494934809}
   _stateTransitionTable: {fileID: 102494879}
   _currentState: {fileID: 0}
@@ -3692,7 +3692,7 @@ MonoBehaviour:
   componentName: 
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: bdf9c7e0-6c0c-4cf1-9560-72eabb25b429
-  _componentRepository: {fileID: 2034350887}
+  _componentRepository: {fileID: 0}
   Records:
   - _name: Reset
     CurrentState: {fileID: 1573719063}
@@ -14993,7 +14993,7 @@ MonoBehaviour:
   componentName: 
   _rqName: Inactive RQ.Entity.StatesV2.EmptyState
   _rqName2: 3a6cd28a-106e-46f1-8211-0bcb286fd2ed
-  _componentRepository: {fileID: 2034350887}
+  _componentRepository: {fileID: 0}
   _stateMachine: {fileID: 102494878}
 --- !u!4 &494934810
 Transform:
@@ -22150,7 +22150,7 @@ MonoBehaviour:
   componentName: 
   _rqName: Reset RQ.Entity.StatesV2.EmptyState
   _rqName2: d00e88a1-ff04-4ef1-92d5-76407e240d40
-  _componentRepository: {fileID: 2034350887}
+  _componentRepository: {fileID: 0}
   _stateMachine: {fileID: 102494878}
 --- !u!1 &795343537
 GameObject:
@@ -29728,7 +29728,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -30427,6 +30427,191 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!1 &1063784502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1968669739805560, guid: 284784aea7692d54495fab4bdf4f9080,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1063784503}
+  - component: {fileID: 1063784505}
+  - component: {fileID: 1063784504}
+  m_Layer: 0
+  m_Name: FSM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1063784503
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4788481650019506, guid: 284784aea7692d54495fab4bdf4f9080,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1063784502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2034350886}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1063784504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114762399449553700, guid: 284784aea7692d54495fab4bdf4f9080,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1063784502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: c5ceb57b-3cca-4015-a69b-ea83d0980378
+  componentName: 
+  _rqName: FSM RQ.Physics.Components.PlayMakerStateMachineComponent
+  _rqName2: adbac2f5-9f87-4577-a2c4-dd2e993de59c
+  _componentRepository: {fileID: 0}
+  pm: {fileID: 1063784505}
+--- !u!114 &1063784505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114942961673927854, guid: 284784aea7692d54495fab4bdf4f9080,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1063784502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables: []
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 1
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: ef14eb43ebc756445b767e7557220b1d, type: 2}
+  eventHandlerComponentsAdded: 1
 --- !u!1 &1071612619
 GameObject:
   m_ObjectHideFlags: 0
@@ -43523,7 +43708,7 @@ MonoBehaviour:
   componentName: 
   _rqName: Set State
   _rqName2: 0cb14fee-87ba-4d74-b0e7-9d1a14cbef39
-  _componentRepository: {fileID: 2034350887}
+  _componentRepository: {fileID: 0}
   _stateMachine: {fileID: 102494878}
 --- !u!114 &1573719064
 MonoBehaviour:
@@ -43543,7 +43728,7 @@ MonoBehaviour:
   _rqName2: 3018a057-b38f-47de-ab10-869d61b56dc4
   _sendToGameController: 0
   _sendToUIManager: 0
-  _target: {fileID: 2034350887}
+  _target: {fileID: 0}
   _telegram: 75
   _data: 
 --- !u!4 &1573719065
@@ -56546,28 +56731,30 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 102494877}
+  - {fileID: 1063784503}
   m_Father: {fileID: 1481995918}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2034350887
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11471436, guid: 284784aea7692d54495fab4bdf4f9080,
+  m_PrefabParentObject: {fileID: 114895051908141736, guid: 284784aea7692d54495fab4bdf4f9080,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2034350885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1887060615, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Script: {fileID: 1887060615, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: dc562373-e682-4a74-ad6c-680d41689f93
+  _uniqueId: 94263734-7953-4a82-839f-7b82a80a9467
   componentName: 
   _rqName: UsableContainer RQ.Controller.Contianers.UsableContainerController
-  _rqName2: b1ad23f5-80f0-406a-b8ac-243e1c3c2ddb
-  _recreateOnLoadGame: 0
+  _rqName2: 54d0b9b1-1b26-4866-b1a0-3d2e23162a6d
+  _recreateOnLoadGame: 1
   _addToEntityContainer: 1
   _usableToken: {fileID: 140720, guid: 6e9cde67ee150034e9eeb3f97c559638, type: 2}
+  goUIManager: {fileID: 200213174}
 --- !u!1 &2039519623
 GameObject:
   m_ObjectHideFlags: 0

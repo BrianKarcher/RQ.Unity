@@ -23,6 +23,9 @@ using WellFired;
 using RQ.Model.Enums;
 using RQ.Controller.Sequencer;
 using PixelCrushers.DialogueSystem.NGUISupport;
+using RQ.Model.Interfaces;
+using RQ.UI;
+
 //using RQ.Common.UI;
 //using RQ.FSM.Game;
 
@@ -79,7 +82,7 @@ namespace RQ2.UI
         private RQ.UI.ConversationLink _conversationLink = null;
 
         //public USSequencer StartSequenceOnConversationEnd { get; set; }
-        public SequencerLink CurrentSequence { get; set; }
+        public ISequencerLink CurrentSequence { get; set; }
 
         public SaveSlotData ClickedSaveSlotData { get; set; }
         /// <summary>
@@ -761,7 +764,7 @@ namespace RQ2.UI
                 hasCancelButton);
         }
 
-        public RQ.UI.ButtonManager GetButtonManager()
+        public IButtonManager GetButtonManager()
         {
             return ButtonManager;
         }
