@@ -978,6 +978,11 @@ MonoBehaviour:
   _rqName2: 706b84ce-acdb-49f7-88bc-29f1174606d9
   _componentRepository: {fileID: 114374114521081708}
   _waypoints: []
+  _followPathData:
+    PathType: 0
+    PathWalkingDirection: 0
+    FacingDirectionMode: 0
+    FacingDirection: 0
 --- !u!114 &114281129737016432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1174,9 +1179,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -1201,6 +1204,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -1212,7 +1216,6 @@ MonoBehaviour:
     _maxForce: 1
     _originalMaxForce: 1
     _maxSpeed: 1
-    _maxSpeedMultiplier: 1
     _mass: 1
     _enabled: 1
     Friction: 0
@@ -1226,9 +1229,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -1253,6 +1254,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -1345,6 +1347,7 @@ MonoBehaviour:
     _isAnimationComplete: 0
     AutoPlayAnimationType: 
     PlayAutomatically: 0
+    PlayDefaultOnEnable: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
   SpriteAnimator2: {fileID: 114031157239499732}
@@ -1424,6 +1427,7 @@ MonoBehaviour:
   _rqName2: 5fa32231-58e8-4742-9263-0fa467348352
   _componentRepository: {fileID: 114374114521081708}
   _pathFinder: {fileID: 0}
+  _targetType: 0
   _target: {fileID: 0}
   _targets: []
   TargetTags: []
@@ -1446,7 +1450,7 @@ MonoBehaviour:
   _homeLevelLayer: 0
   _homeSickDistance: 0
   _runHomeSpeed: 0
-  _stateMachine2: {fileID: 0}
+  _setHomePositonToStartPosition: 0
 --- !u!114 &114831014467065668
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -830,6 +830,7 @@ MonoBehaviour:
   _rqName2: 8606af1b-b634-408e-87e9-4bf77de6bba3
   _componentRepository: {fileID: 114377946090814848}
   _pathFinder: {fileID: 0}
+  _targetType: 0
   _target: {fileID: 0}
   _targets: []
   TargetTags: []
@@ -852,7 +853,7 @@ MonoBehaviour:
   _homeLevelLayer: 0
   _homeSickDistance: 0
   _runHomeSpeed: 0
-  _stateMachine2: {fileID: 0}
+  _setHomePositonToStartPosition: 0
 --- !u!114 &114275686739951830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1022,6 +1023,7 @@ MonoBehaviour:
     _isAnimationComplete: 0
     AutoPlayAnimationType: 
     PlayAutomatically: 0
+    PlayDefaultOnEnable: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
   SpriteAnimator2: {fileID: 114925318432036612}
@@ -1194,6 +1196,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _followPathData:
+    PathType: 0
+    PathWalkingDirection: 0
+    FacingDirectionMode: 0
+    FacingDirection: 0
 --- !u!114 &114710634979460832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1266,9 +1273,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -1293,6 +1298,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -1304,7 +1310,6 @@ MonoBehaviour:
     _maxForce: 0.5
     _originalMaxForce: 0.5
     _maxSpeed: 1
-    _maxSpeedMultiplier: 1
     _mass: 1
     _enabled: 1
     Friction: 0
@@ -1318,9 +1323,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -1345,6 +1348,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0

@@ -1312,7 +1312,7 @@ MonoBehaviour:
   _rqName: HUD Text RQ.Physics.Components.HudTextComponent
   _rqName2: 45eb4cb8-f62a-40eb-8df9-90b5e804c400
   _componentRepository: {fileID: 114485216641894638}
-  HudTextPrefab: {fileID: 400000, guid: da1dd9b479a126b4b87cee97599c6ed7, type: 2}
+  HudTextPrefab: {fileID: 0}
 --- !u!114 &114382802642824800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1333,20 +1333,11 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4434788850620656}
   _autoChangeLayers: 0
 --- !u!114 &114429927262281392
@@ -1675,6 +1666,8 @@ MonoBehaviour:
   _audioSource: {fileID: 82531266539700320}
   _tweenSpeed: 0
   _fadeOut: 0
+  _volume: 1
+  AudioType: 0
 --- !u!114 &114590585780927152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1774,18 +1767,15 @@ MonoBehaviour:
   _rqName2: 5c004ef7-f2bd-4440-9999-03ff1b09e375
   _componentRepository: {fileID: 114485216641894638}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
-    Side:
-      x: -0
-      y: 0
+    Side: {x: -0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -1794,61 +1784,48 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: -0.1
     _headingDirection: 1
     MaxForce: 0.2
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _originalMaxForce: 1
+    _maxSpeed: 1
+    _mass: 0
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
+    Velocity: {x: 0, y: 0}
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -1857,48 +1834,29 @@ MonoBehaviour:
     OriginalMaxSpeed: 1
     MaxSpeedMultiplier: 1
     BoundingRadius: 0
+    MaxDistanceToTarget: 0
     _directionRotate: 0
     DamagedBounceForce: 1
     DamageDrag: 1
-    _externalForce:
-      x: 0
-      y: 0
-    _inputForce:
-      x: 0
-      y: 0
     _externalVelocity:
-      x: 0
-      y: 0
-    _inputVelocity:
       x: 0
       y: 0
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
     ZOffset: 0
-    Altitude:
-      x: 0
-      y: 0
-    IsAirborn: 0
-    AirVelocity:
-      x: 0
-      y: 0
-    JumpVelocity:
-      x: 0
-      y: 0
-    Gravity:
-      x: 0
-      y: 0
   _autoUpdateHeading: 1
   _steering:
     TargetAgent1: {fileID: 0}
@@ -1906,6 +1864,7 @@ MonoBehaviour:
       x: 0
       y: 0
     Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
     _steeringForce:
       x: 0
       y: 0
@@ -1932,6 +1891,7 @@ MonoBehaviour:
     _isAnimationComplete: 0
     AutoPlayAnimationType: 
     PlayAutomatically: 0
+    PlayDefaultOnEnable: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
   SpriteAnimator2: {fileID: 114865055860456050}
@@ -2127,6 +2087,7 @@ MonoBehaviour:
   _animationComponent: {fileID: 114633619811376552}
   _spriteAnimationsConfig: {fileID: 0}
   _enemyDeath: {fileID: 193456, guid: ff2f434da5b0c6d4fbbd851cb6c674eb, type: 2}
+  ObjectPoolName: 
 --- !u!114 &114893628832407898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2176,6 +2137,7 @@ MonoBehaviour:
   _maxSpeed: 0.7
   _sameLevel: 1
   _objectLevel: 0
+  ObjectPoolName: 
 --- !u!114 &114909309075619370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2196,20 +2158,11 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 13
-  _levelTwoLayer:
-    _layerIndex: 14
-  _levelThreeLayer:
-    _layerIndex: 0
-  _sharedLayer:
-    _layerIndex: 0
   _mainCollider: {fileID: 4997785005959908}
   _autoChangeLayers: 0
 --- !u!114 &114995643822653532
