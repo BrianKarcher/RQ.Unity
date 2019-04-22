@@ -32,6 +32,7 @@ namespace PixelCrushers.DialogueSystem
         /// Quest conditions. The Condition is true only if all quest conditions are true.
         /// </summary>
         public QuestCondition[] questConditions = new QuestCondition[0];
+        public RQQuestCondition[] rqQuestConditions = new RQQuestCondition[0];
 
         /// <summary>
         /// The accepted tags. The Condition is true only if the interactor's tag is in the list of accepted 
@@ -90,6 +91,14 @@ namespace PixelCrushers.DialogueSystem
                     if ((questCondition != null) && !questCondition.IsTrue) return false;
                 }
             }
+            if (rqQuestConditions != null)
+            {
+                for (int i = 0; i < rqQuestConditions.Length; i++)
+                {
+                    var questCondition = rqQuestConditions[i];
+                    if ((questCondition != null) && !questCondition.IsTrue) return false;
+                }
+            }
             return true;
         }
 
@@ -107,11 +116,89 @@ namespace PixelCrushers.DialogueSystem
 
     }
 
+    ///// <summary>
+    ///// A quest condition checks the state of a quest. Question conditions are part of a Condition.
+    ///// </summary>
+    //[Serializable]
+    //public class QuestCondition
+    //{
+    //    public QuestConfig questConfig;
+
+    //    /// <summary>
+    //    /// The name of the quest. If you are using the QuestLog class, this should be the name of an entry in the
+    //    /// Lua table "Item[]". If the name is blank, there is no quest condition.
+    //    /// </summary>
+    //    public int Id = 0;
+
+    //    /// <summary>
+    //    /// The allowable quest states for the condition to be true.
+    //    /// </summary>
+    //    //[BitMask(typeof(QuestState))]
+    //    //[QuestState]
+    //    public QuestStatus questState;
+
+    //    /// <summary>
+    //    /// Indicates whether this QuestCondition is true.
+    //    /// </summary>
+    //    public bool IsTrue
+    //    {
+    //        get
+    //        {
+    //            QuestData quest;
+    //            if (!GameDataController.Instance.Data.QuestDatas.TryGetValue(questConfig.UniqueId, out quest))
+    //                return true;
+
+    //            for (int i = 0; i < quest.QuestEntryDatas.Count; i++)
+    //            {
+    //                var questEntry = quest.QuestEntryDatas[i];
+    //                if (questEntry.Id == Id)
+    //                {
+    //                    return questEntry.Status == questState;
+    //                }
+    //            }
+
+    //            return false;
+    //            //return string.IsNullOrEmpty(questName) || QuestLog.IsQuestInStateMask(questName, questState);
+    //        }
+    //    }
+
+    //}
+
     /// <summary>
     /// A quest condition checks the state of a quest. Question conditions are part of a Condition.
     /// </summary>
     [Serializable]
     public class QuestCondition
+    {
+
+        /// <summary>
+        /// The name of the quest. If you are using the QuestLog class, this should be the name of an entry in the
+        /// Lua table "Item[]". If the name is blank, there is no quest condition.
+        /// </summary>
+        public string questName = string.Empty;
+
+        /// <summary>
+        /// The allowable quest states for the condition to be true.
+        /// </summary>
+        [BitMask(typeof(QuestState))]
+        [QuestState]
+        public QuestState questState;
+
+        /// <summary>
+        /// Indicates whether this QuestCondition is true.
+        /// </summary>
+        public bool IsTrue
+        {
+            get { return string.IsNullOrEmpty(questName) || QuestLog.IsQuestInStateMask(questName, questState); }
+        }
+
+    }
+
+    /// <summary>
+    /// A quest condition checks the state of a quest. Question conditions are part of a Condition.
+    /// </summary>
+    [Serializable]
+    public class RQQuestCondition
     {
         public QuestConfig questConfig;
 
