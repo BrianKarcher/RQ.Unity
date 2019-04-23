@@ -11,13 +11,13 @@ namespace PixelCrushers.DialogueSystem
 {
 
     [CustomPropertyDrawer(typeof(RQQuestCondition))]
-    public class RQQuestConditionPropertyDrawer : PropertyDrawer
+    public class RQQuestConditionDrawer : PropertyDrawer
     {
 
         // Draw the property inside the given rect
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-
+            Debug.LogError("RQQuestConditionPropertyDrawer.OnGUI called");
             // Using BeginProperty / EndProperty on the parent property means that
             // prefab override logic works on the entire property.
             EditorGUI.BeginProperty(position, label, property);

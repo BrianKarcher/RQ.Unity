@@ -17,6 +17,7 @@ namespace PixelCrushers.DialogueSystem
 
         private SerializedProperty luaConditionsProperty = null;
         private SerializedProperty questConditionsProperty = null;
+        private SerializedProperty rqQuestConditionsProperty = null;
         private SerializedProperty acceptedTagsProperty = null;
         private SerializedProperty acceptedGameObjectsProperty = null;
 
@@ -34,6 +35,7 @@ namespace PixelCrushers.DialogueSystem
             height += luaConditionWizardHeight;
             height += GetTextAreaArrayHeight(luaConditionsProperty);
             height += GetArrayHeight(questConditionsProperty);
+            height += GetArrayHeight(rqQuestConditionsProperty);
             height += GetArrayHeight(acceptedTagsProperty);
             height += GetArrayHeight(acceptedGameObjectsProperty);
             return height;
@@ -172,6 +174,12 @@ namespace PixelCrushers.DialogueSystem
                     EditorGUI.PropertyField(rect, questConditionsProperty, true);
                     y += rect.height;
 
+                    // RQ Quest conditions:
+                    rect = new Rect(x, y, width, GetArrayHeight(rqQuestConditionsProperty));
+                    EditorGUI.PropertyField(rect, rqQuestConditionsProperty, true);
+                    y += rect.height;
+                    //rqQuestConditionsProperty
+
                     // Accepted tags:
                     rect = new Rect(x, y, width, GetArrayHeight(acceptedTagsProperty));
                     EditorGUI.PropertyField(rect, acceptedTagsProperty, true);
@@ -199,6 +207,7 @@ namespace PixelCrushers.DialogueSystem
         {
             luaConditionsProperty = property.FindPropertyRelative("luaConditions");
             questConditionsProperty = property.FindPropertyRelative("questConditions");
+            rqQuestConditionsProperty = property.FindPropertyRelative("rqQuestConditions");
             acceptedTagsProperty = property.FindPropertyRelative("acceptedTags");
             acceptedGameObjectsProperty = property.FindPropertyRelative("acceptedGameObjects");
         }
