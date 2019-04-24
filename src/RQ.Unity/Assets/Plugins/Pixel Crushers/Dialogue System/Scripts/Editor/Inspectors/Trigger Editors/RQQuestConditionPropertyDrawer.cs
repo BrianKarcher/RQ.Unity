@@ -17,18 +17,21 @@ namespace PixelCrushers.DialogueSystem
         // Draw the property inside the given rect
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            Debug.LogError("RQQuestConditionPropertyDrawer.OnGUI called");
+            //Debug.LogError("RQQuestConditionPropertyDrawer.OnGUI called");
             // Using BeginProperty / EndProperty on the parent property means that
             // prefab override logic works on the entire property.
             EditorGUI.BeginProperty(position, label, property);
 
             // Calculate rects:
             float thirdWidth = position.width / 3;
+            //float questNameWidth = position.width - questStateWidth - 2;
             float questStateWidth = Mathf.Min(thirdWidth, 120f);
-            float questNameWidth = position.width - questStateWidth - 2;
-            Rect questConfigRect = new Rect(position.x, position.y, questNameWidth, position.height);
-            Rect questNameRect = new Rect(questConfigRect.x + questConfigRect.width + 2, position.y, questNameWidth, position.height);
-            Rect questStateRect = new Rect(questNameRect.x + questNameRect.width + 2, position.y, questStateWidth, position.height);
+            Rect questConfigRect = new Rect(position.x, position.y, thirdWidth, position.height);
+            Rect questNameRect = new Rect(questConfigRect.x + questConfigRect.width, position.y, thirdWidth, position.height);
+            Rect questStateRect = new Rect(questNameRect.x + questNameRect.width, position.y, thirdWidth, position.height);
+            //Rect questConfigRect = new Rect(position.x, position.y, questNameWidth, position.height);
+            //Rect questNameRect = new Rect(questConfigRect.x + questConfigRect.width + 2, position.y, questNameWidth, position.height);
+            //Rect questStateRect = new Rect(questNameRect.x + questNameRect.width + 2, position.y, questStateWidth, position.height);
 
             // Draw fields - pass GUIContent.none to each so they are drawn without labels
             var questConfigProp = property.FindPropertyRelative("questConfig");
@@ -74,6 +77,7 @@ namespace PixelCrushers.DialogueSystem
             else
             {
                 List<string> questNames = new List<string>();
+                questNames.Add(" ");
                 foreach (var item in questConfig.QuestEntries)
                 {
                     //if (!item.IsItem)
