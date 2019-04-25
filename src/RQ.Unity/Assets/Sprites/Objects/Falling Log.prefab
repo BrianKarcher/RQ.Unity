@@ -284,6 +284,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1724499387871040
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4197644115408626}
+  - component: {fileID: 114765202883791942}
+  - component: {fileID: 114566172829886334}
+  m_Layer: 0
+  m_Name: PlayActionsEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1784091893909810
 GameObject:
   m_ObjectHideFlags: 1
@@ -361,7 +378,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4167367583385722}
+  - {fileID: 4197644115408626}
   m_Father: {fileID: 4445196119190520}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4197644115408626
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724499387871040}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4180446739935166}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4225475238611160
@@ -1074,6 +1105,25 @@ MonoBehaviour:
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
   renderLayer: 0
+--- !u!114 &114566172829886334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724499387871040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2114728755, guid: a8ccd5a3f4d739a41ab5cd9fa724a43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 86d5f630-c927-48da-bab2-6b3a171707e8
+  componentName: 
+  _rqName: PlayActionsEvent RQ.Controller.Actions.SetQuestStatus
+  _rqName2: 89c70d43-831f-4977-85b6-92c7fb1c655c
+  _atom:
+    QuestConfig: {fileID: 11400000, guid: 97a5d60dc8dcd1241b29b6c2440ba831, type: 2}
+    Id: 20
+    Status: 2
 --- !u!114 &114605168162493018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1344,7 +1394,7 @@ MonoBehaviour:
   m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 482dee0e-b81e-46bc-8460-ba6004afb832
+  _uniqueId: 412ba32c-59e3-491f-aa8e-3dc3b7cedaa3
   componentName: Collider
   _rqName: BodyCollider Assets.Source.CollisionProcessor
   _rqName2: 49f549f3-517d-4aa7-9c9c-445731675a6d
@@ -1360,7 +1410,7 @@ MonoBehaviour:
   m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 4841c594-809e-4f11-bdaa-f4adf4a73020
+  _uniqueId: b6049663-3679-49fb-898e-6af8a9faa31e
   componentName: Water
   _rqName: BodyCollider RQ.Physics.Components.CollisionComponent
   _rqName2: 1b0f03a5-a679-4a0f-9319-f4e562b96c77
@@ -1375,6 +1425,22 @@ MonoBehaviour:
     IsEnabled: 1
   _mainCollider: {fileID: 4662374265040786}
   _autoChangeLayers: 0
+--- !u!114 &114765202883791942
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724499387871040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3225c3611edf5834b80d97580de4c3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireOnSkip: 0
+  firetime: 5.790203
+  duration: -1
+  serializedAdditionalObjectsPaths: []
+  _runOnGameController: 0
 --- !u!114 &114774814022499004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1393,6 +1459,11 @@ MonoBehaviour:
   _componentRepository: {fileID: 114873807812875278}
   _waypoints:
   - {fileID: 1276883439906670}
+  _followPathData:
+    PathType: 0
+    PathWalkingDirection: 0
+    FacingDirectionMode: 0
+    FacingDirection: 0
 --- !u!114 &114795353141878732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1487,11 +1558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   observerKeyframes: []
-  currentSnapshots:
-  - camera: {fileID: 0}
-    listener: {fileID: 0}
-    target: {fileID: 0}
-    state: 1
+  currentSnapshots: []
   layersToIgnore:
     serializedVersion: 2
     m_Bits: 0
