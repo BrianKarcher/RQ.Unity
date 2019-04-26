@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 470864}
   - component: {fileID: 11422520}
   - component: {fileID: 135054458498785744}
-  m_Layer: 15
+  m_Layer: 13
   m_Name: Foot Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -532,6 +532,7 @@ Transform:
   - {fileID: 427562}
   - {fileID: 4905643295905766}
   - {fileID: 4738021233234562}
+  - {fileID: 4663591511269394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1510,64 +1511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41880b8380ca71346a1bc3912eb8f03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _storedSpriteAnimations:
-  - _type: Walk
-    _id: 7f0585c0-7819-4456-a2f3-ffb4b40e7ffb
-    _spriteAnimations:
-    - _direction: 0
-      _animationName: wolfbowman_walkr
-      _clipId: 9
-      hFlip: 0
-    - _direction: 1
-      _animationName: wolfbowman_walkr
-      _clipId: 9
-      hFlip: 0
-    - _direction: 2
-      _animationName: wolfbowman_walku
-      _clipId: 11
-      hFlip: 0
-    - _direction: 3
-      _animationName: wolfbowman_walkd
-      _clipId: 7
-      hFlip: 0
-  - _type: Shoot Arrow
-    _id: cf86015b-c591-465f-a916-fb49811277a0
-    _spriteAnimations:
-    - _direction: 0
-      _animationName: wolfbowman_attackr
-      _clipId: 8
-      hFlip: 0
-    - _direction: 1
-      _animationName: wolfbowman_attackr
-      _clipId: 8
-      hFlip: 0
-    - _direction: 2
-      _animationName: wolfbowman_attacku
-      _clipId: 10
-      hFlip: 0
-    - _direction: 3
-      _animationName: wolfbowman_attackd
-      _clipId: 6
-      hFlip: 0
-  - _type: Idle
-    _id: 980d54b2-3e53-4dad-8fa0-88c1f19d8a28
-    _spriteAnimations:
-    - _direction: 0
-      _animationName: wolfbowman_idler
-      _clipId: 23
-      hFlip: 0
-    - _direction: 1
-      _animationName: wolfbowman_idler
-      _clipId: 23
-      hFlip: 0
-    - _direction: 2
-      _animationName: wolfbowman_idleu
-      _clipId: 24
-      hFlip: 0
-    - _direction: 3
-      _animationName: wolfbowman_idled
-      _clipId: 22
-      hFlip: 0
+  _storedSpriteAnimations: []
   _spriteAnimationsConfig: {fileID: 0}
   _manualHFlip: 0
   _hFlip: 1
@@ -1947,6 +1891,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119196}
   m_IsPrefabParent: 1
+--- !u!1 &1030936137659052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4663591511269394}
+  - component: {fileID: 114450266078786848}
+  m_Layer: 10
+  m_Name: Waypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1141344749796906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,6 +1941,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4663591511269394
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030936137659052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 469790}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4738021233234562
 Transform:
   m_ObjectHideFlags: 1
@@ -2119,11 +2092,24 @@ MonoBehaviour:
       objectVariables: []
       materialVariables: []
       textureVariables: []
-      arrayVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: waypoints
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        type: 0
+        objectTypeName: UnityEngine.Object
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences: []
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 00000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -2133,7 +2119,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -2166,8 +2152,8 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  fsmTemplate: {fileID: 11400000, guid: 82a08e865e225d3409d882f794dc6b4c, type: 2}
+  eventHandlerComponentsAdded: 1
 --- !u!114 &114098904586711396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2185,6 +2171,28 @@ MonoBehaviour:
   _rqName2: a3bfe0a8-d4ec-4f6d-b516-f826164e370e
   _componentRepository: {fileID: 11407068}
   pm: {fileID: 114899713014724322}
+--- !u!114 &114450266078786848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030936137659052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2109884187, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 690102da-e019-47e4-a2ac-5500a7881dc5
+  componentName: 
+  _rqName: Waypoints RQ.Physics.Components.WaypointComponent
+  _rqName2: 0a11e4f1-0204-4aa3-8022-478a626cb758
+  _componentRepository: {fileID: 11407068}
+  _waypoints: []
+  _followPathData:
+    PathType: 0
+    PathWalkingDirection: 0
+    FacingDirectionMode: 0
+    FacingDirection: 0
 --- !u!114 &114579924790731194
 MonoBehaviour:
   m_ObjectHideFlags: 1
