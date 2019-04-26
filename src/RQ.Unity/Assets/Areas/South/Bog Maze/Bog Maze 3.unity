@@ -1215,7 +1215,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 940255464}
   - {fileID: 342123123}
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -1308,7 +1307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 302324069}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &352960857
 Prefab:
@@ -1653,7 +1652,7 @@ MonoBehaviour:
   renderData: {fileID: 302324068}
   spriteCollection: {fileID: 114343961678440854, guid: 3cd75f9130d8ba742bee52dc72744bd5,
     type: 2}
-  spriteCollectionKey: 716841702
+  spriteCollectionKey: 1512740112
   width: 25
   height: 28
   partitionSizeX: 32
@@ -1682,7 +1681,7 @@ MonoBehaviour:
     numRows: 1
     divX: 32
     divY: 32
-  prefabsRoot: {fileID: 940255463}
+  prefabsRoot: {fileID: 0}
   tilePrefabsList: []
   _inEditMode: 0
   serializedMeshPath: 
@@ -2073,7 +2072,7 @@ MonoBehaviour:
   renderData: {fileID: 668539949}
   spriteCollection: {fileID: 114343961678440854, guid: 3cd75f9130d8ba742bee52dc72744bd5,
     type: 2}
-  spriteCollectionKey: 716841702
+  spriteCollectionKey: 1512740112
   width: 128
   height: 128
   partitionSizeX: 32
@@ -2196,34 +2195,6 @@ MonoBehaviour:
   tilePrefabsList: []
   _inEditMode: 0
   serializedMeshPath: 
---- !u!1 &940255463
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 940255464}
-  m_Layer: 0
-  m_Name: Prefabs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &940255464
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 940255463}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 302324069}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &940519223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,6 +2222,7 @@ Transform:
   m_Children:
   - {fileID: 1681660477}
   - {fileID: 1728344631}
+  - {fileID: 1148265060}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2591,6 +2563,80 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 222ddfe122bd04b4b93c4d7dce89c4c9, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1148265059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1148265060}
+  - component: {fileID: 1148265062}
+  - component: {fileID: 1148265061}
+  m_Layer: 0
+  m_Name: HasDisperseHelixTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1148265060
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1148265059}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 940519224}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1148265061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1148265059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1525535083, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: ba3f9435-5543-40ff-8619-41878dd85c50
+  componentName: 
+  _rqName: HasDisperseHelixTrigger RQ.Controller.Actions.KillObject
+  _rqName2: eafdeea1-bb33-48d4-b92e-c950c261a540
+  Transform: {fileID: 303302533}
+  GameObjects: []
+--- !u!114 &1148265062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1148265059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6821da17c7cbb46b57a30d9c75e7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition:
+    luaConditions: []
+    questConditions: []
+    rqQuestConditions:
+    - questConfig: {fileID: 11400000, guid: 97a5d60dc8dcd1241b29b6c2440ba831, type: 2}
+      Id: 60
+      questState: 2
+    acceptedTags: []
+    acceptedGameObjects: []
+    luaWizardIndex: -1
+    lastEvaluationValue: 0
+  actor: {fileID: 352960858}
+  trigger: 16
+  stopConversationOnTriggerExit: 0
+  exclusive: 0
+  once: 0
 --- !u!1001 &1159728791
 Prefab:
   m_ObjectHideFlags: 0

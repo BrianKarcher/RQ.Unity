@@ -438,8 +438,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 980265081}
-  - {fileID: 333770500}
+  - {fileID: 1659890027}
+  - {fileID: 1038277224}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -718,34 +718,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &333770499
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 333770500}
-  m_Layer: 0
-  m_Name: Layer 0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &333770500
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 333770499}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 269113973}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &347138772
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,9 +911,9 @@ GameObject:
   - component: {fileID: 405726868}
   - component: {fileID: 405726872}
   - component: {fileID: 405726871}
+  - component: {fileID: 405726873}
   - component: {fileID: 405726870}
   - component: {fileID: 405726869}
-  - component: {fileID: 405726873}
   m_Layer: 0
   m_Name: GateTrigger
   m_TagString: Untagged
@@ -1042,16 +1014,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 405726867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2077481831, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Script: {fileID: -2114728755, guid: a8ccd5a3f4d739a41ab5cd9fa724a43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 464acb06-cb51-47fe-88ad-643c34ddbf9a
+  _uniqueId: 74147e54-4c97-4f8a-9bf1-436e5dc387c8
   componentName: 
-  _rqName: GateTrigger RQ.Controller.Actions.Enable
-  _rqName2: 85ce91b0-493b-4f31-a28d-a25ecf5f0667
-  _enableOnEnter: 0
-  _enableOnExit: 0
-  _transform: {fileID: 952092091}
+  _rqName: GateTrigger RQ.Controller.Actions.SetQuestStatus
+  _rqName2: 15243a72-0b82-489f-9250-8155962e8f37
+  _atom:
+    QuestConfig: {fileID: 11400000, guid: 97a5d60dc8dcd1241b29b6c2440ba831, type: 2}
+    Id: 70
+    Status: 2
 --- !u!1 &407424347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2249,155 +2222,33 @@ Transform:
   m_Father: {fileID: 407424348}
   m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &952092090
+--- !u!1 &1038277223
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 952092091}
-  - component: {fileID: 952092095}
-  - component: {fileID: 952092094}
-  - component: {fileID: 952092093}
-  - component: {fileID: 952092092}
-  - component: {fileID: 952092096}
+  - component: {fileID: 1038277224}
   m_Layer: 0
-  m_Name: PuzzleSolved_From Section4
+  m_Name: Layer 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &952092091
+--- !u!4 &1038277224
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952092090}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.812, y: 1.608, z: -0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1632609488}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &952092092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952092090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1525535083, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 96e0bb69-7528-4d00-9185-b9b6a846bc7a
-  componentName: 
-  _rqName: PuzzleSolved RQ.Controller.Actions.KillObject
-  _rqName2: 3183a5b9-475e-4c1f-a60b-eb2b0f004875
-  Transform: {fileID: 405726868}
-  GameObjects: []
---- !u!114 &952092093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952092090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1525535083, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: c1f25ecf-746d-464c-a7de-8ea0e36fc1c9
-  componentName: 
-  _rqName: PuzzleSolved RQ.Controller.Actions.KillObject
-  _rqName2: aa804dd8-6962-435d-aa75-4ca3056e9422
-  Transform: {fileID: 1573287752}
-  GameObjects: []
---- !u!114 &952092094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952092090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c6821da17c7cbb46b57a30d9c75e7a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  condition:
-    luaConditions: []
-    questConditions: []
-    rqQuestConditions: []
-    acceptedTags:
-    - Player
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  actor: {fileID: 0}
-  trigger: 8
-  stopConversationOnTriggerExit: 0
-  exclusive: 0
-  once: 1
---- !u!65 &952092095
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952092090}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.56224155, y: 0.71010303, z: 1}
-  m_Center: {x: 0.35745907, y: 0.56565905, z: 0}
---- !u!114 &952092096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952092090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -2077481831, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: fe3674d9-b61f-43fa-a8b9-9bb39229b1c9
-  componentName: 
-  _rqName: PuzzleSolved_From Section4 RQ.Controller.Actions.Enable
-  _rqName2: 2fa104b6-2d02-4562-8d87-62a73e7a78f6
-  _enableOnEnter: 0
-  _enableOnExit: 0
-  _transform: {fileID: 1336436100}
---- !u!1 &980265080
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 980265081}
-  m_Layer: 0
-  m_Name: Prefabs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &980265081
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 980265080}
+  m_GameObject: {fileID: 1038277223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 269113973}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1048943085
 GameObject:
@@ -3072,7 +2923,7 @@ MonoBehaviour:
   renderData: {fileID: 269113972}
   spriteCollection: {fileID: 114819065249925636, guid: eabb1ab5d35ca2042b06fbbc95cdd606,
     type: 2}
-  spriteCollectionKey: 2021989663
+  spriteCollectionKey: 972485173
   width: 48
   height: 18
   partitionSizeX: 32
@@ -3099,7 +2950,7 @@ MonoBehaviour:
     numRows: 1
     divX: 32
     divY: 32
-    gameObject: {fileID: 333770499}
+    gameObject: {fileID: 1038277223}
   colorChannel:
     clearColor: {r: 1, g: 1, b: 1, a: 1}
     chunks: []
@@ -3107,7 +2958,7 @@ MonoBehaviour:
     numRows: 1
     divX: 32
     divY: 32
-  prefabsRoot: {fileID: 980265080}
+  prefabsRoot: {fileID: 1659890026}
   tilePrefabsList: []
   _inEditMode: 0
   serializedMeshPath: 
@@ -3365,11 +3216,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1336436100}
-  - component: {fileID: 1336436104}
   - component: {fileID: 1336436103}
   - component: {fileID: 1336436102}
   - component: {fileID: 1336436101}
-  - component: {fileID: 1336436105}
   m_Layer: 0
   m_Name: PuzzleSolved
   m_TagString: Untagged
@@ -3438,47 +3287,20 @@ MonoBehaviour:
   condition:
     luaConditions: []
     questConditions: []
-    rqQuestConditions: []
+    rqQuestConditions:
+    - questConfig: {fileID: 11400000, guid: 97a5d60dc8dcd1241b29b6c2440ba831, type: 2}
+      Id: 70
+      questState: 2
     acceptedTags:
     - Player
     acceptedGameObjects: []
     luaWizardIndex: -1
     lastEvaluationValue: 0
-  actor: {fileID: 0}
-  trigger: 8
+  actor: {fileID: 352960858}
+  trigger: 16
   stopConversationOnTriggerExit: 0
   exclusive: 0
   once: 1
---- !u!65 &1336436104
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1336436099}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.56224155, y: 0.71010303, z: 1}
-  m_Center: {x: 0.35745907, y: 0.56565905, z: 0}
---- !u!114 &1336436105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1336436099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -2077481831, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: b4532d25-960a-40bc-ae23-9fcf23ee91fa
-  componentName: 
-  _rqName: PuzzleSolved RQ.Controller.Actions.Enable
-  _rqName2: d4e83b80-8b8c-440e-b4d4-0378d0726b49
-  _enableOnEnter: 0
-  _enableOnExit: 0
-  _transform: {fileID: 952092091}
 --- !u!1 &1341763976
 GameObject:
   m_ObjectHideFlags: 0
@@ -3679,7 +3501,7 @@ MonoBehaviour:
   renderData: {fileID: 407424347}
   spriteCollection: {fileID: 114819065249925636, guid: eabb1ab5d35ca2042b06fbbc95cdd606,
     type: 2}
-  spriteCollectionKey: 2021989663
+  spriteCollectionKey: 972485173
   width: 128
   height: 128
   partitionSizeX: 32
@@ -4212,7 +4034,6 @@ Transform:
   - {fileID: 1336436100}
   - {fileID: 1215007097}
   - {fileID: 1573287752}
-  - {fileID: 952092091}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4245,6 +4066,34 @@ Transform:
   - {fileID: 1700159574}
   m_Father: {fileID: 332859437}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1659890026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1659890027}
+  m_Layer: 0
+  m_Name: Prefabs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1659890027
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659890026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 269113973}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1681660476
 GameObject:
