@@ -8013,6 +8013,141 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &218918568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1543264999378646, guid: 284784aea7692d54495fab4bdf4f9080,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 218918569}
+  - component: {fileID: 218918571}
+  - component: {fileID: 218918570}
+  m_Layer: 0
+  m_Name: SoundEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &218918569
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4355063293785816, guid: 284784aea7692d54495fab4bdf4f9080,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218918568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1481995918}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &218918570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114409424982178958, guid: 284784aea7692d54495fab4bdf4f9080,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218918568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 532289593, guid: 006a8b386a33add439ec4b3aaf50b64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: b47c39b3-0ae4-4816-bae1-4b769ee5ad56
+  componentName: Audio
+  _rqName: SoundEffects RQ.Audio.AudioComponent
+  _rqName2: 2ae4bb5c-9e40-409d-81f4-e23f9aaf1073
+  _componentRepository: {fileID: 1481995919}
+  _audioSource: {fileID: 218918571}
+  _tweenSpeed: 0
+  _fadeOut: 0
+  _volume: 1
+  AudioType: 0
+--- !u!82 &218918571
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 82610732168159248, guid: 284784aea7692d54495fab4bdf4f9080,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218918568}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &222616244
 GameObject:
   m_ObjectHideFlags: 0
@@ -30475,7 +30610,7 @@ MonoBehaviour:
   componentName: 
   _rqName: FSM RQ.Physics.Components.PlayMakerStateMachineComponent
   _rqName2: adbac2f5-9f87-4577-a2c4-dd2e993de59c
-  _componentRepository: {fileID: 0}
+  _componentRepository: {fileID: 2034350887}
   pm: {fileID: 1063784505}
 --- !u!114 &1063784505
 MonoBehaviour:
@@ -40867,6 +41002,7 @@ Transform:
   - {fileID: 2034350886}
   - {fileID: 1703190823}
   - {fileID: 469137987}
+  - {fileID: 218918569}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40894,6 +41030,8 @@ MonoBehaviour:
   goUIManager: {fileID: 200213174}
   GameConfig: {fileID: 11400000, guid: 2ea71bb36ebe86b41a9ade1128253a64, type: 2}
   AutoSaveFileName: Rolan.auto
+  _musicTrack: {fileID: 1052449039}
+  _soundEffectTrack: {fileID: 218918570}
   _storyConfig: {fileID: 11400000, guid: e11ac681f4baed94bb597f58182a693b, type: 2}
   _beginningStorySceneConfig: {fileID: 11400000, guid: 0b0fba2bd35c30c40a9460613ed646ea,
     type: 2}

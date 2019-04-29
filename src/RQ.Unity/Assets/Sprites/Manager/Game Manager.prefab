@@ -1746,6 +1746,7 @@ Transform:
   - {fileID: 464632}
   - {fileID: 469892}
   - {fileID: 422930}
+  - {fileID: 4355063293785816}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2621,6 +2622,8 @@ MonoBehaviour:
   goUIManager: {fileID: 0}
   GameConfig: {fileID: 11400000, guid: 2ea71bb36ebe86b41a9ade1128253a64, type: 2}
   AutoSaveFileName: Rolan.auto
+  _musicTrack: {fileID: 11471612}
+  _soundEffectTrack: {fileID: 114409424982178958}
   _storyConfig: {fileID: 11400000, guid: e11ac681f4baed94bb597f58182a693b, type: 2}
   _beginningStorySceneConfig: {fileID: 11400000, guid: 0b0fba2bd35c30c40a9460613ed646ea,
     type: 2}
@@ -5173,6 +5176,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1543264999378646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4355063293785816}
+  - component: {fileID: 82610732168159248}
+  - component: {fileID: 114409424982178958}
+  m_Layer: 0
+  m_Name: SoundEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1948161912734112
 GameObject:
   m_ObjectHideFlags: 1
@@ -5220,6 +5240,19 @@ Transform:
   m_Father: {fileID: 499290}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4355063293785816
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1543264999378646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449440}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4731946243655368
 Transform:
   m_ObjectHideFlags: 1
@@ -5246,6 +5279,86 @@ Transform:
   m_Father: {fileID: 464632}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82610732168159248
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1543264999378646}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114031934931736226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5478,6 +5591,27 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 47057b82e1bd82d479c1287d8eff5837, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114409424982178958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1543264999378646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 532289593, guid: 006a8b386a33add439ec4b3aaf50b64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: b47c39b3-0ae4-4816-bae1-4b769ee5ad56
+  componentName: Audio
+  _rqName: SoundEffects RQ.Audio.AudioComponent
+  _rqName2: 2ae4bb5c-9e40-409d-81f4-e23f9aaf1073
+  _componentRepository: {fileID: 11404276}
+  _audioSource: {fileID: 82610732168159248}
+  _tweenSpeed: 0
+  _fadeOut: 0
+  _volume: 1
+  AudioType: 0
 --- !u!114 &114511597953104254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5655,7 +5789,7 @@ MonoBehaviour:
   componentName: 
   _rqName: FSM RQ.Physics.Components.PlayMakerStateMachineComponent
   _rqName2: adbac2f5-9f87-4577-a2c4-dd2e993de59c
-  _componentRepository: {fileID: 0}
+  _componentRepository: {fileID: 114895051908141736}
   pm: {fileID: 114942961673927854}
 --- !u!114 &114829499299855978
 MonoBehaviour:
