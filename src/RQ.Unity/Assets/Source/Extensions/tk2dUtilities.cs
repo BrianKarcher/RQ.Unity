@@ -108,11 +108,23 @@ namespace RQ2.Controller.tk2d_Extensions
                         layer.skipMeshGeneration = true;
                         layer.generateCollider = true;
                         break;
+                    case "Level 1 Low Collider":
+                        layer.z = 0.001f;
+                        layer.unityLayer = LayerMask.NameToLayer("Low Environment");
+                        layer.skipMeshGeneration = true;
+                        layer.generateCollider = true;
+                        break;
                     case "Level 2 Colliders":
                     case "Level 2 Collider":
                         //layer.z = 0.5f;
                         layer.z = 0.001f;
                         layer.unityLayer = LayerMask.NameToLayer("Environment");
+                        layer.skipMeshGeneration = true;
+                        layer.generateCollider = true;
+                        break;
+                    case "Level 2 Low Collider":
+                        layer.z = 0.001f;
+                        layer.unityLayer = LayerMask.NameToLayer("Low Environment");
                         layer.skipMeshGeneration = true;
                         layer.generateCollider = true;
                         break;
