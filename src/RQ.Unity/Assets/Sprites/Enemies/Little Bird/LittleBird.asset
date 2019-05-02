@@ -572,8 +572,8 @@ MonoBehaviour:
         - 
         actionEnabled: 01010101010101
         actionIsOpen: 01010101010101
-        actionStartIndex: 000000000400000006000000100000001a0000002000000027000000
-        actionHashCodes: 724fda04ae351404d3320502c0cc1d04a082bf001bcdca04ffa3f204
+        actionStartIndex: 0000000003000000050000000e000000190000001f00000026000000
+        actionHashCodes: 724fda04ae351404d33205022795d101a082bf001bcdca04ffa3f204
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -589,7 +589,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams:
@@ -654,7 +660,6 @@ MonoBehaviour:
         stringParams:
         - 
         - 
-        - 
         - PlayerHide
         - 
         - 
@@ -662,11 +667,10 @@ MonoBehaviour:
         - Attack
         - 
         - Steering
-        byteData: 0000000000000000010000000001000000000000000001010000000000000000000001000000000300000001000000000000000001
-        arrayParamSizes: 00000000
-        arrayParamTypes:
-        - System.String
-        customTypeSizes: 020000000100000006000000050000000300000004000000
+        byteData: 01000000000100000000000000000101000000000000000000000001000000000300000001000000000000000001
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 010000000100000005000000050000000300000004000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetAirVelocityAtom
         - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
@@ -674,11 +678,10 @@ MonoBehaviour:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
         - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
         - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
-        paramDataType: 2500000028000000080000000100000028000000070000002900000013000000010000002800000007000000000000000c000000010000000300000003000000110000000100000028000000010000000100000007000000070000000300000017000000170000000f00000001000000280000000200000007000000030000000f0000000f0000000f000000170000001700000017000000010000002800000007000000020000000100000003000000
+        paramDataType: 250000002800000001000000280000000700000029000000130000000100000028000000070000000000000001000000030000000300000011000000010000002800000001000000010000000100000007000000070000001700000017000000120000000f00000001000000280000000200000007000000030000000f0000000f0000000f000000170000001700000017000000010000002800000007000000020000000100000003000000
         paramName:
         - Velocity
         - _atom
-        - AirVelocity
         - IsAirborn
         - _sbAtom
         - SteeringBehavior
@@ -688,7 +691,6 @@ MonoBehaviour:
         - _setSteeringAtom
         - _goToType
         - WaypointIndex
-        - _messageReceivers
         - sendToSelf
         - physicsComponentName
         - waypointName
@@ -696,12 +698,13 @@ MonoBehaviour:
         - everyFrame
         - _atom
         - Value
+        - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - VariableName
         - TrueEvent
         - FalseEvent
+        - VariableName
         - storeResult
         - everyFrame
         - _getFloatVariableAtom
@@ -720,8 +723,8 @@ MonoBehaviour:
         - _value
         - _setToOriginal
         - PhysicsAffector
-        paramDataPos: 00000000000000000000000008000000010000000900000000000000000000000d000000020000000e000000120000000000000016000000000000000100000000000000170000000300000018000000190000001a0000001e0000000200000003000000040000000000000022000000040000002300000027000000050000000100000002000000030000000600000007000000080000002b000000050000002c000000300000003400000009000000
-        paramByteDataSize: 0000000000000000080000000100000000000000040000000000000000000000010000000000000004000000040000000000000001000000000000000000000000000000010000000000000001000000010000000400000004000000000000000000000000000000000000000100000000000000040000000400000000000000000000000000000000000000000000000000000000000000010000000000000004000000040000000100000000000000
+        paramDataPos: 000000000000000000000000010000000100000000000000000000000500000002000000060000000a0000000e0000000000000001000000000000000f000000030000001000000011000000120000001300000017000000020000000300000000000000000000001b000000040000001c0000002000000004000000010000000200000003000000050000000600000007000000240000000500000025000000290000002d00000008000000
+        paramByteDataSize: 00000000000000000100000000000000040000000000000000000000010000000000000004000000040000000100000000000000000000000000000001000000000000000100000001000000010000000400000004000000000000000000000000000000000000000100000000000000040000000400000000000000000000000000000000000000000000000000000000000000010000000000000004000000040000000100000000000000
     - name: Attack
       description: 
       colorIndex: 0
@@ -760,8 +763,8 @@ MonoBehaviour:
         - 
         actionEnabled: 000100000101
         actionIsOpen: 010101010101
-        actionStartIndex: 000000000a0000000f00000015000000180000001b000000
-        actionHashCodes: c0cc1d049f005d00827373002ea4720048c011010efa4704
+        actionStartIndex: 000000000b0000001000000016000000190000001c000000
+        actionHashCodes: 2795d1019f005d00827373002ea4720048c011010efa4704
         unityObjectParams:
         - {fileID: 4908006406328516, guid: 3985b1b6a1dc77c45836e9044233580a, type: 2}
         fsmGameObjectParams: []
@@ -773,6 +776,12 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         - useVariable: 0
           name: 
           tooltip: 
@@ -816,7 +825,6 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - 
         - PlayerHide
         - 
         - 
@@ -828,7 +836,7 @@ MonoBehaviour:
         - FINISHED
         - 
         - 
-        byteData: 010000000000000000000000000100000000000000000000000000000100000000000000000000000000003f0000003f0101000000
+        byteData: 01000000000000000000000000000100000000000000000000000000000100000000000000000000000000003f0000003f0101000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 050000000300000004000000010000000b000000
@@ -838,18 +846,19 @@ MonoBehaviour:
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Animation.BasicAction.Action.WaitForAnimationCompletionAtom
         - RQ.AI.Action.ShootObjectAtom
-        paramDataType: 1100000001000000280000000100000001000000070000000700000003000000170000001700000001000000280000000300000003000000010000001200000028000000030000000300000001000000010000002800000003000000170000000f00000017000000010000000f0000000f000000280000000300000005000000080000000200000007000000080000000200000002000000010000000700000003000000
+        paramDataType: 110000000100000028000000010000000100000001000000070000000700000017000000170000001200000001000000280000000300000003000000010000001200000028000000030000000300000001000000010000002800000003000000170000000f00000017000000010000000f0000000f000000280000000300000005000000080000000200000007000000080000000200000002000000010000000700000003000000
         paramName:
         - storeResult
         - everyFrame
         - _atom
         - Value
+        - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - VariableName
         - TrueEvent
         - FalseEvent
+        - VariableName
         - everyFrame
         - _stopMovingAtom
         - _uniqueId
@@ -881,8 +890,8 @@ MonoBehaviour:
         - _sameLevel
         - _objectLevel
         - ObjectPoolName
-        paramDataPos: 000000000000000000000000010000000200000003000000070000000000000001000000020000000b0000000100000003000000040000000c000000000000000200000005000000060000000d0000000e00000003000000070000000800000000000000090000000f0000000100000002000000040000000a0000000000000010000000180000001c00000020000000280000002c00000030000000310000000b000000
-        paramByteDataSize: 0000000001000000000000000100000001000000040000000400000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000001000000010000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000080000000400000004000000080000000400000004000000010000000400000000000000
+        paramDataPos: 00000000000000000000000001000000020000000300000004000000080000000000000001000000000000000c0000000100000002000000030000000d000000010000000200000004000000050000000e0000000f000000030000000600000007000000000000000800000010000000010000000200000004000000090000000000000011000000190000001d00000021000000290000002d00000031000000320000000a000000
+        paramByteDataSize: 000000000100000000000000010000000100000001000000040000000400000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000001000000010000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000080000000400000004000000080000000400000004000000010000000400000000000000
     - name: AttackGrass
       description: Attack the grass if come from agressive state
       colorIndex: 0
@@ -925,8 +934,8 @@ MonoBehaviour:
         - 
         actionEnabled: 01010101
         actionIsOpen: 01010101
-        actionStartIndex: 0000000005000000130000001d000000
-        actionHashCodes: 9f005d000efa4704c0cc1d04ffa3f204
+        actionStartIndex: 0000000005000000130000001e000000
+        actionHashCodes: 9f005d000efa47042795d101ffa3f204
         unityObjectParams:
         - {fileID: 4908006406328516, guid: 3985b1b6a1dc77c45836e9044233580a, type: 2}
         fsmGameObjectParams: []
@@ -937,7 +946,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -973,11 +988,10 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
         - PlayerHide
         - FINISHED
         - Steering
-        byteData: 00000000000000000000000000000000000000000000000000000000003f0000004001010000000100000000000000000000000000000000000001
+        byteData: 00000000000000000000000000000000000000000000000000000000003f000000400101000000010000000000000000000000000000000000000001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 030000000b0000000500000004000000
@@ -986,7 +1000,7 @@ MonoBehaviour:
         - RQ.AI.Action.ShootObjectAtom
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
         - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
-        paramDataType: 01000000280000000300000003000000010000000f0000000f000000280000000300000005000000080000000200000007000000080000000200000002000000010000000700000003000000110000000100000028000000010000000100000007000000070000000300000017000000170000002800000007000000020000000100000003000000
+        paramDataType: 01000000280000000300000003000000010000000f0000000f00000028000000030000000500000008000000020000000700000008000000020000000200000001000000070000000300000011000000010000002800000001000000010000000100000007000000070000001700000017000000120000002800000007000000020000000100000003000000
         paramName:
         - everyFrame
         - _stopMovingAtom
@@ -1011,19 +1025,20 @@ MonoBehaviour:
         - everyFrame
         - _atom
         - Value
+        - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - VariableName
         - TrueEvent
         - FalseEvent
+        - VariableName
         - _atom
         - _variable
         - _value
         - _setToOriginal
         - PhysicsAffector
-        paramDataPos: 00000000000000000000000001000000010000000000000001000000010000000200000000000000020000000a0000000e000000120000001a0000001e00000022000000230000000300000000000000270000000200000028000000290000002a0000002e0000000400000005000000060000000300000032000000360000003a00000007000000
-        paramByteDataSize: 01000000000000000000000000000000010000000000000000000000000000000000000000000000080000000400000004000000080000000400000004000000010000000400000000000000000000000100000000000000010000000100000004000000040000000000000000000000000000000000000004000000040000000100000000000000
+        paramDataPos: 00000000000000000000000001000000010000000000000001000000010000000200000000000000020000000a0000000e000000120000001a0000001e00000022000000230000000300000000000000270000000200000028000000290000002a0000002b0000002f0000000400000005000000000000000300000033000000370000003b00000006000000
+        paramByteDataSize: 0100000000000000000000000000000001000000000000000000000000000000000000000000000008000000040000000400000008000000040000000400000001000000040000000000000000000000010000000000000001000000010000000100000004000000040000000000000000000000000000000000000004000000040000000100000000000000
     - name: PlayerHide
       description: 
       colorIndex: 0
@@ -1260,7 +1275,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: c0cc1d04
+        actionHashCodes: 2795d101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1270,7 +1285,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -1290,29 +1311,29 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - 
         - Failed
         - FINISHED
-        byteData: 0100000000000000000000
+        byteData: 010000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 05000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
-        paramDataType: 11000000010000002800000001000000010000000700000007000000030000001700000017000000
+        paramDataType: 1100000001000000280000000100000001000000010000000700000007000000170000001700000012000000
         paramName:
         - storeResult
         - everyFrame
         - _atom
         - Value
+        - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - VariableName
         - TrueEvent
         - FalseEvent
-        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000
-        paramByteDataSize: 00000000010000000000000001000000010000000400000004000000000000000000000000000000
+        - VariableName
+        paramDataPos: 0000000000000000000000000100000002000000030000000400000008000000000000000100000000000000
+        paramByteDataSize: 0000000001000000000000000100000001000000010000000400000004000000000000000000000000000000
     - name: Player Hidden Check(agressive)
       description: 
       colorIndex: 0
@@ -1350,7 +1371,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: c0cc1d04
+        actionHashCodes: 2795d101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1360,7 +1381,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -1380,29 +1407,29 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - 
         - Failed
         - FINISHED
-        byteData: 0100000000000000000000
+        byteData: 010000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 05000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
-        paramDataType: 11000000010000002800000001000000010000000700000007000000030000001700000017000000
+        paramDataType: 1100000001000000280000000100000001000000010000000700000007000000170000001700000012000000
         paramName:
         - storeResult
         - everyFrame
         - _atom
         - Value
+        - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - VariableName
         - TrueEvent
         - FalseEvent
-        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000
-        paramByteDataSize: 00000000010000000000000001000000010000000400000004000000000000000000000000000000
+        - VariableName
+        paramDataPos: 0000000000000000000000000100000002000000030000000400000008000000000000000100000000000000
+        paramByteDataSize: 0000000001000000000000000100000001000000010000000400000004000000000000000000000000000000
     - name: Wander
       description: 
       colorIndex: 0
@@ -1449,8 +1476,8 @@ MonoBehaviour:
         - 
         actionEnabled: 010101010101
         actionIsOpen: 010101010101
-        actionStartIndex: 00000000020000000c000000110000001300000016000000
-        actionHashCodes: ae351404d3320502ffa3f204ae35140448c01101c0cc1d04
+        actionStartIndex: 00000000020000000b000000100000001200000015000000
+        actionHashCodes: ae351404d3320502ffa3f204ae35140448c011012795d101
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -1466,7 +1493,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams:
@@ -1510,20 +1543,18 @@ MonoBehaviour:
         - Steering
         - FINISHED
         - 
-        - 
         - PlayerDetected
-        byteData: 0c00000000000000000000000001000000000000803f0007000000000100000000000000000000
-        arrayParamSizes: 00000000
-        arrayParamTypes:
-        - System.String
-        customTypeSizes: 0100000006000000040000000100000005000000
+        byteData: 0c00000000000000000000000001000000000000803f000700000000010000000000000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0100000005000000040000000100000005000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
         - RQ.Animation.BasicAction.Action.SetSteeringTargetToVectorAtom
         - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
         - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
-        paramDataType: 28000000070000002900000013000000010000002800000007000000000000000c000000010000000300000003000000280000000700000002000000010000000300000028000000070000000f000000170000000100000011000000010000002800000001000000010000000700000007000000030000001700000017000000
+        paramDataType: 2800000007000000290000001300000001000000280000000700000000000000010000000300000003000000280000000700000002000000010000000300000028000000070000000f00000017000000010000001100000001000000280000000100000001000000010000000700000007000000170000001700000012000000
         paramName:
         - _sbAtom
         - SteeringBehavior
@@ -1533,7 +1564,6 @@ MonoBehaviour:
         - _setSteeringAtom
         - _goToType
         - WaypointIndex
-        - _messageReceivers
         - sendToSelf
         - physicsComponentName
         - waypointName
@@ -1551,14 +1581,15 @@ MonoBehaviour:
         - everyFrame
         - _atom
         - Value
+        - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - VariableName
         - TrueEvent
         - FalseEvent
-        paramDataPos: 0000000000000000000000000000000004000000010000000500000009000000000000000d0000000000000001000000020000000e000000120000001600000002000000030000001700000000000000030000001b000000000000001c000000040000001d0000001e0000001f00000023000000040000000500000006000000
-        paramByteDataSize: 0000000004000000000000000000000001000000000000000400000004000000000000000100000000000000000000000000000004000000040000000100000000000000000000000400000000000000000000000100000000000000010000000000000001000000010000000400000004000000000000000000000000000000
+        - VariableName
+        paramDataPos: 00000000000000000000000000000000040000000100000005000000090000000d0000000000000001000000020000000e000000120000001600000002000000030000001700000000000000030000001b000000000000001c000000040000001d0000001e0000001f0000002000000024000000040000000500000000000000
+        paramByteDataSize: 0000000004000000000000000000000001000000000000000400000004000000010000000000000000000000000000000400000004000000010000000000000000000000040000000000000000000000010000000000000001000000000000000100000001000000010000000400000004000000000000000000000000000000
     - name: SleepMode
       description: 
       colorIndex: 0
@@ -1721,7 +1752,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: c0cc1d04
+        actionHashCodes: 2795d101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1731,7 +1762,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -1751,29 +1788,29 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - 
         - Failed
         - FINISHED
-        byteData: 0100000000000000000000
+        byteData: 010000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 05000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
-        paramDataType: 11000000010000002800000001000000010000000700000007000000030000001700000017000000
+        paramDataType: 1100000001000000280000000100000001000000010000000700000007000000170000001700000012000000
         paramName:
         - storeResult
         - everyFrame
         - _atom
         - Value
+        - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - VariableName
         - TrueEvent
         - FalseEvent
-        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000
-        paramByteDataSize: 00000000010000000000000001000000010000000400000004000000000000000000000000000000
+        - VariableName
+        paramDataPos: 0000000000000000000000000100000002000000030000000400000008000000000000000100000000000000
+        paramByteDataSize: 0000000001000000000000000100000001000000010000000400000004000000000000000000000000000000
     - name: WaitToAwake
       description: 
       colorIndex: 0
@@ -1813,7 +1850,7 @@ MonoBehaviour:
         actionEnabled: 0101
         actionIsOpen: 0101
         actionStartIndex: 0000000003000000
-        actionHashCodes: 48c01101c0cc1d04
+        actionHashCodes: 48c011012795d101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1823,7 +1860,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -1850,16 +1893,15 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
-        - 
         - Failed
         - 
-        byteData: 000100000000000000000000
+        byteData: 00010000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 05000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
-        paramDataType: 0f000000170000000100000011000000010000002800000001000000010000000700000007000000030000001700000017000000
+        paramDataType: 0f00000017000000010000001100000001000000280000000100000001000000010000000700000007000000170000001700000012000000
         paramName:
         - time
         - finishEvent
@@ -1868,14 +1910,15 @@ MonoBehaviour:
         - everyFrame
         - _atom
         - Value
+        - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - VariableName
         - TrueEvent
         - FalseEvent
-        paramDataPos: 00000000000000000000000000000000010000000000000002000000030000000400000008000000010000000200000003000000
-        paramByteDataSize: 00000000000000000100000000000000010000000000000001000000010000000400000004000000000000000000000000000000
+        - VariableName
+        paramDataPos: 0000000000000000000000000000000001000000000000000200000003000000040000000500000009000000010000000200000000000000
+        paramByteDataSize: 0000000000000000010000000000000001000000000000000100000001000000010000000400000004000000000000000000000000000000
     - name: StartFlying
       description: 
       colorIndex: 0

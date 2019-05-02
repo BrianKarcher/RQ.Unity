@@ -50,8 +50,8 @@ MonoBehaviour:
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 000000000a0000000c000000
-        actionHashCodes: c0cc1d04fe4e7a01ec2b1f02
+        actionStartIndex: 000000000b0000000e000000
+        actionHashCodes: 2795d101fe4e7a01ec2b1f02
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -61,7 +61,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -81,38 +87,40 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - 
         - FINISHED
         - 
+        - 
         - Aggro
-        byteData: 01000001000000000000000000803f0000803f0000803f0000803f0100
+        byteData: 0100000001000000000000000000803f0000803f0000803f0000803f0100
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 050000000100000003000000
+        customTypeSizes: 050000000200000003000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
         - RQ.Animation.BasicAction.Action.SetColorAtom
         - RQ.Animation.BasicAction.Action.EnableColliderAtom
-        paramDataType: 11000000010000002800000001000000010000000700000007000000030000001700000017000000280000000400000028000000010000000100000003000000
+        paramDataType: 110000000100000028000000010000000100000001000000070000000700000017000000170000001200000028000000030000000400000028000000010000000100000003000000
         paramName:
         - storeResult
         - everyFrame
         - _atom
         - Value
+        - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - VariableName
         - TrueEvent
         - FalseEvent
+        - VariableName
         - _atom
+        - name
         - color
         - _atom
         - _enableOnEnter
         - _enableOnExit
         - name
-        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000010000000b000000020000001b0000001c00000003000000
-        paramByteDataSize: 00000000010000000000000001000000010000000400000004000000000000000000000000000000000000001000000000000000010000000100000000000000
+        paramDataPos: 000000000000000000000000010000000200000003000000040000000800000000000000010000000000000001000000020000000c000000020000001c0000001d00000003000000
+        paramByteDataSize: 000000000100000000000000010000000100000001000000040000000400000000000000000000000000000000000000000000001000000000000000010000000100000000000000
     - name: Hiding
       description: 
       colorIndex: 0
@@ -145,8 +153,8 @@ MonoBehaviour:
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 000000000a0000000c000000
-        actionHashCodes: c0cc1d04fe4e7a01ec2b1f02
+        actionStartIndex: 000000000b0000000e000000
+        actionHashCodes: 2795d101fe4e7a01ec2b1f02
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -156,7 +164,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -177,37 +191,39 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        - 
         - FINISHED
+        - 
         - Aggro
-        byteData: 0100000100000000000000000000000000803f000000000000803f0001
+        byteData: 010000000100000000000000000000000000803f000000000000803f0001
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 050000000100000003000000
+        customTypeSizes: 050000000200000003000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
         - RQ.Animation.BasicAction.Action.SetColorAtom
         - RQ.Animation.BasicAction.Action.EnableColliderAtom
-        paramDataType: 11000000010000002800000001000000010000000700000007000000030000001700000017000000280000000400000028000000010000000100000003000000
+        paramDataType: 110000000100000028000000010000000100000001000000070000000700000017000000170000001200000028000000030000000400000028000000010000000100000003000000
         paramName:
         - storeResult
         - everyFrame
         - _atom
         - Value
+        - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - VariableName
         - TrueEvent
         - FalseEvent
+        - VariableName
         - _atom
+        - name
         - color
         - _atom
         - _enableOnEnter
         - _enableOnExit
         - name
-        paramDataPos: 00000000000000000000000001000000020000000300000007000000000000000100000002000000010000000b000000020000001b0000001c00000003000000
-        paramByteDataSize: 00000000010000000000000001000000010000000400000004000000000000000000000000000000000000001000000000000000010000000100000000000000
+        paramDataPos: 000000000000000000000000010000000200000003000000040000000800000000000000010000000000000001000000020000000c000000020000001c0000001d00000003000000
+        paramByteDataSize: 000000000100000000000000010000000100000001000000040000000400000000000000000000000000000000000000000000001000000000000000010000000100000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -276,6 +292,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0

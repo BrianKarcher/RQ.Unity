@@ -15,6 +15,8 @@ namespace UtilityManager
         public override void Start()
         {
             base.Start();
+            if (!Application.isPlaying)
+                return;
             _intelligenceBehavior = GetComponent<IntelligenceBehavior>();
             _intelligenceBehavior.Init(GetComponentRepository());
         }
