@@ -203,7 +203,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 2795d101
+        actionHashCodes: b094ff01
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -215,9 +215,9 @@ MonoBehaviour:
         layoutOptionParams: []
         fsmStringParams:
         - useVariable: 1
-          name: 
+          name: GlobalOpenStateVariableName
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: 
         fsmObjectParams: []
@@ -247,21 +247,21 @@ MonoBehaviour:
         customTypeSizes: 05000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
-        paramDataType: 1100000001000000280000000100000001000000010000000700000007000000170000001700000012000000
+        paramDataType: 1100000001000000170000001700000012000000280000000100000001000000010000000700000007000000
         paramName:
         - storeResult
         - everyFrame
+        - TrueEvent
+        - FalseEvent
+        - VariableName
         - _atom
         - Value
         - DefaultValue
         - InvertValue
         - ActionTarget
         - _variable
-        - TrueEvent
-        - FalseEvent
-        - VariableName
-        paramDataPos: 0000000000000000000000000100000002000000030000000400000008000000000000000100000000000000
-        paramByteDataSize: 0000000001000000000000000100000001000000010000000400000004000000000000000000000000000000
+        paramDataPos: 0000000000000000000000000100000000000000000000000100000002000000030000000400000008000000
+        paramByteDataSize: 0000000001000000000000000000000000000000000000000100000001000000010000000400000004000000
     - name: Kill
       description: 
       colorIndex: 0
@@ -276,12 +276,14 @@ MonoBehaviour:
       hideUnused: 0
       transitions: []
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.KillSelf
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 927b0a04
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -308,12 +310,14 @@ MonoBehaviour:
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        customTypeSizes: 00000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.KillSelfAtom
+        paramDataType: 28000000
+        paramName:
+        - _killSelfAtom
+        paramDataPos: 00000000
+        paramByteDataSize: 00000000
     events:
     - name: FINISHED
       isSystemEvent: 1
