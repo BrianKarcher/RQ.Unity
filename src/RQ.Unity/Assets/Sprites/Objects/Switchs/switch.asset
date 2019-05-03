@@ -104,6 +104,7 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
         - Assets.Source.AI.PM_State_Machine.SetQuestStatus
         - HutongGames.PlayMaker.Actions.DestroyObject
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
@@ -111,10 +112,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000400000007000000
-        actionHashCodes: 661f69009ff80c0282737300
+        - 
+        actionEnabled: 01000101
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000005000000090000000c000000
+        actionHashCodes: b2cf1000661f69009ff80c0282737300
         unityObjectParams:
         - {fileID: 11400000, guid: 97a5d60dc8dcd1241b29b6c2440ba831, type: 2}
         fsmGameObjectParams:
@@ -124,7 +126,15 @@ MonoBehaviour:
           showInInspector: 1
           networkSync: 0
           value: {fileID: 0}
-        fsmOwnerDefaultParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: QuestToActivate
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -156,6 +166,18 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 0
         fsmVector2Params: []
         fsmVector3Params: []
@@ -165,15 +187,20 @@ MonoBehaviour:
         stringParams:
         - 
         - switch
-        byteData: 4b000000020000000000
+        byteData: 00004b000000020000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 0300000004000000
         customTypeNames:
         - RQ.AI.Action.SetQuestStatusAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
-        paramDataType: 28000000050000000000000007000000130000000f00000011000000120000002800000003000000030000000100000001000000
+        paramDataType: 140000001100000011000000010000000100000028000000050000000000000007000000130000000f00000011000000120000002800000003000000030000000100000001000000
         paramName:
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
         - _atom
         - QuestConfig
         - Id
@@ -187,8 +214,8 @@ MonoBehaviour:
         - _animation
         - WaitForAnimationCompletion
         - StopOnExit
-        paramDataPos: 00000000000000000000000004000000000000000000000000000000000000000100000000000000010000000800000009000000
-        paramByteDataSize: 00000000000000000400000004000000000000000000000000000000000000000000000000000000000000000100000001000000
+        paramDataPos: 000000000000000001000000000000000100000000000000000000000200000006000000000000000000000002000000000000000100000000000000010000000a0000000b000000
+        paramByteDataSize: 000000000000000000000000010000000100000000000000000000000400000004000000000000000000000000000000000000000000000000000000000000000100000001000000
     events:
     - name: isUsable
       isSystemEvent: 0
@@ -211,6 +238,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: QuestToActivate
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -218,7 +251,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -228,7 +261,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
