@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 114000030629736112}
   - component: {fileID: 114970663651197088}
   - component: {fileID: 114614302973881752}
+  - component: {fileID: 114069548255477954}
   m_Layer: 15
   m_Name: Boarding Platform
   m_TagString: Untagged
@@ -177,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992896466466478}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.7999997, y: 1.36, z: -0.1}
+  m_LocalPosition: {x: 4.08, y: 2.6399999, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4754534814606660}
@@ -299,6 +300,47 @@ MonoBehaviour:
   EntityType: 5
   EntityPrefabUniqueId: 423770cc-987e-49e7-94ca-9eba27dcd475
   _parentRepo: {fileID: 0}
+--- !u!114 &114069548255477954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992896466466478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 926039264, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 887d77d3-1fa9-411c-aec9-9a3e94664554
+  componentName: 
+  _rqName: Boarding Platform RQ.FSM.V2.AIComponent
+  _rqName2: c939e948-69d5-4c3f-8267-5fb8a2de53af
+  _componentRepository: {fileID: 114000030629736112}
+  _pathFinder: {fileID: 0}
+  _targetType: 0
+  _target: {fileID: 0}
+  _targets: []
+  TargetTags: []
+  _locations: []
+  _parent: {fileID: 0}
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _avoidLayersMasks: []
+  _follow: {fileID: 0}
+  _targetingData:
+    Waypoints: {fileID: 0}
+    GoToType: 0
+    Target: {fileID: 0}
+    Targets: []
+    TargetTags: []
+  _homePosition:
+    x: 4.08
+    y: 2.6399999
+  _homeLevelLayer: 0
+  _homeSickDistance: 0
+  _runHomeSpeed: 0
+  _setHomePositonToStartPosition: 0
 --- !u!114 &114117374864815020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -536,7 +578,7 @@ MonoBehaviour:
   _usable: {fileID: 4991462024079476}
   _usableObjects:
   - {fileID: 0}
-  _autoUse: 1
+  _autoUse: 0
   _isEnabled: 1
   _setStorySceneConfig: {fileID: 0}
 --- !u!114 &114507764474063860
@@ -643,6 +685,11 @@ MonoBehaviour:
   _waypoints:
   - {fileID: 1456583098102426}
   - {fileID: 1022457957029524}
+  _followPathData:
+    PathType: 0
+    PathWalkingDirection: 0
+    FacingDirectionMode: 0
+    FacingDirection: 0
 --- !u!114 &114975747853829588
 MonoBehaviour:
   m_ObjectHideFlags: 1

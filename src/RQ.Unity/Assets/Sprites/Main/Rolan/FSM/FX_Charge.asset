@@ -47,9 +47,15 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 2334d000
+        actionHashCodes: c284f001
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -80,15 +86,16 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 1700000001000000280000000300000003000000
+        paramDataType: 170000001300000001000000280000000300000003000000
         paramName:
         - Received
+        - storeSender
         - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 0000000000000000000000000100000002000000
-        paramByteDataSize: 0000000001000000000000000000000000000000
+        paramDataPos: 000000000000000000000000000000000100000002000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000
     - name: EnableFX
       description: 
       colorIndex: 0
@@ -126,9 +133,15 @@ MonoBehaviour:
         actionEnabled: 0101010101
         actionIsOpen: 0101010101
         actionStartIndex: 0000000004000000080000000c00000010000000
-        actionHashCodes: 2f2ef2042f2ef2042f2ef2042f2ef2042334d000
+        actionHashCodes: 2f2ef2042f2ef2042f2ef2042f2ef204c284f001
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -167,7 +180,7 @@ MonoBehaviour:
         - RQ.Animation.BasicAction.Action.EnableComponentAtom
         - RQ.Animation.BasicAction.Action.EnableComponentAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 280000000100000001000000030000002800000001000000010000000300000028000000010000000100000003000000280000000100000001000000030000001700000001000000280000000300000003000000
+        paramDataType: 28000000010000000100000003000000280000000100000001000000030000002800000001000000010000000300000028000000010000000100000003000000170000001300000001000000280000000300000003000000
         paramName:
         - _atom
         - EnableOnEnter
@@ -186,12 +199,13 @@ MonoBehaviour:
         - EnableOnExit
         - ComponentName
         - Received
+        - storeSender
         - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 000000000000000001000000000000000100000002000000030000000100000002000000040000000500000002000000030000000600000007000000030000000400000008000000040000000500000006000000
-        paramByteDataSize: 000000000100000001000000000000000000000001000000010000000000000000000000010000000100000000000000000000000100000001000000000000000000000001000000000000000000000000000000
+        paramDataPos: 00000000000000000100000000000000010000000200000003000000010000000200000004000000050000000200000003000000060000000700000003000000040000000000000008000000040000000500000006000000
+        paramByteDataSize: 00000000010000000100000000000000000000000100000001000000000000000000000001000000010000000000000000000000010000000100000000000000000000000000000001000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1

@@ -60,10 +60,16 @@ MonoBehaviour:
         - 
         actionEnabled: 01010101
         actionIsOpen: 01010101
-        actionStartIndex: 0000000002000000070000000a000000
-        actionHashCodes: ae3514042334d0004303fc0248c01101
+        actionStartIndex: 0000000002000000080000000c000000
+        actionHashCodes: ae351404c284f0014303fc0248c01101
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -94,20 +100,22 @@ MonoBehaviour:
         - FINISHED
         - SeismicLift
         - 
+        - 
         - Skip
         byteData: 00000000000000003f0000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 010000000200000002000000
+        customTypeSizes: 010000000200000003000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.Animation.BasicAction.Action.SetMaxSpeedAtom
-        paramDataType: 280000000700000017000000010000002800000003000000030000002800000002000000010000000f0000001700000001000000
+        paramDataType: 2800000007000000170000001300000001000000280000000300000003000000280000000200000001000000030000000f0000001700000001000000
         paramName:
         - _sbAtom
         - SteeringBehavior
         - Received
+        - storeSender
         - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
@@ -115,11 +123,12 @@ MonoBehaviour:
         - _setMaxSpeedAtom
         - _speed
         - _resetToOriginal
+        - PhysicsAffectorName
         - time
         - finishEvent
         - realTime
-        paramDataPos: 0000000000000000000000000400000001000000010000000200000002000000050000000900000000000000030000000a000000
-        paramByteDataSize: 00000000040000000000000001000000000000000000000000000000000000000400000001000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000040000000100000001000000020000000200000005000000090000000300000000000000040000000a000000
+        paramByteDataSize: 000000000400000000000000000000000100000000000000000000000000000000000000040000000100000000000000000000000000000001000000
     - name: Seismic Lift
       description: 
       colorIndex: 0

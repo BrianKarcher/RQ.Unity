@@ -51,10 +51,16 @@ MonoBehaviour:
         actionEnabled: 000000
         actionIsOpen: 010101
         actionStartIndex: 00000000030000000a000000
-        actionHashCodes: 48c0110118dc36002334d000
+        actionHashCodes: 48c0110118dc3600c284f001
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
@@ -107,7 +113,7 @@ MonoBehaviour:
         customTypeNames:
         - RQ.Animation.BasicAction.Action.OnTriggerAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 0f0000001700000001000000070000001300000012000000170000002800000003000000030000001700000001000000280000000300000003000000
+        paramDataType: 0f000000170000000100000007000000130000001200000017000000280000000300000003000000170000001300000001000000280000000300000003000000
         paramName:
         - time
         - finishEvent
@@ -120,12 +126,13 @@ MonoBehaviour:
         - triggerType
         - collideTag
         - Received
+        - storeSender
         - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 000000000000000000000000010000000000000000000000010000000000000002000000030000000400000005000000010000000500000006000000
-        paramByteDataSize: 000000000000000001000000040000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
+        paramDataPos: 00000000000000000000000001000000000000000000000001000000000000000200000003000000040000000100000005000000010000000500000006000000
+        paramByteDataSize: 00000000000000000100000004000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
     - name: Death
       description: 
       colorIndex: 0
@@ -742,9 +749,15 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 2334d000
+        actionHashCodes: c284f001
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -775,15 +788,16 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 1700000001000000280000000300000003000000
+        paramDataType: 170000001300000001000000280000000300000003000000
         paramName:
         - Received
+        - storeSender
         - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 0000000000000000000000000100000002000000
-        paramByteDataSize: 0000000001000000000000000000000000000000
+        paramDataPos: 000000000000000000000000000000000100000002000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000
     - name: Push
       description: 
       colorIndex: 0
@@ -1002,9 +1016,15 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 2334d000
+        actionHashCodes: c284f001
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -1035,15 +1055,16 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 1700000001000000280000000300000003000000
+        paramDataType: 170000001300000001000000280000000300000003000000
         paramName:
         - Received
+        - storeSender
         - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 0000000000000000000000000100000002000000
-        paramByteDataSize: 0000000001000000000000000000000000000000
+        paramDataPos: 000000000000000000000000000000000100000002000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000
     - name: Push2
       description: 
       colorIndex: 0

@@ -47,9 +47,15 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 2334d000
+        actionHashCodes: c284f001
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -80,15 +86,16 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 1700000001000000280000000300000003000000
+        paramDataType: 170000001300000001000000280000000300000003000000
         paramName:
         - Received
+        - storeSender
         - GotoPreviousState
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 0000000000000000000000000100000002000000
-        paramByteDataSize: 0000000001000000000000000000000000000000
+        paramDataPos: 000000000000000000000000000000000100000002000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000
     - name: Open
       description: 
       colorIndex: 0
