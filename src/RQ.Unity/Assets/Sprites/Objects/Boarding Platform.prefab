@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 114970663651197088}
   - component: {fileID: 114614302973881752}
   - component: {fileID: 114069548255477954}
+  - component: {fileID: 114675840274875146}
   m_Layer: 15
   m_Name: Boarding Platform
   m_TagString: Untagged
@@ -197,7 +198,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706353763936376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4539709454553288}
@@ -223,7 +224,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1178866056406398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.102, z: 0}
+  m_LocalPosition: {x: 0, y: 0.102, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4539709454553288}
@@ -576,9 +577,9 @@ MonoBehaviour:
   _bubbleText: Use
   _castRay: 0
   _usable: {fileID: 4991462024079476}
-  _usableObjects:
-  - {fileID: 0}
-  _autoUse: 0
+  _usableObjects: []
+  _autoUse: 1
+  _messageToUser: Board
   _isEnabled: 1
   _setStorySceneConfig: {fileID: 0}
 --- !u!114 &114507764474063860
@@ -649,6 +650,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SnapToGrid: 1
   tileOffset: {x: 0.08, y: 0.08, z: 0}
+--- !u!114 &114675840274875146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992896466466478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1696332522, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: c67224fc-faee-4846-980b-fa8ecc948fee
+  componentName: 
+  _rqName: Boarding Platform RQ.Sprite.AdjustDepthByY
+  _rqName2: ab43ce4c-d2c0-44c5-9edb-d461f41ea6ae
+  _componentRepository: {fileID: 114000030629736112}
+  FootPositionY: 0
 --- !u!114 &114793465382078684
 MonoBehaviour:
   m_ObjectHideFlags: 1

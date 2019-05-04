@@ -68,13 +68,13 @@ MonoBehaviour:
         actionHashCodes: c284f001c284f001cb5eaf0530525b012b71670256681405
         unityObjectParams: []
         fsmGameObjectParams:
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
@@ -450,15 +450,17 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         - Assets.Source.AI.PM_State_Machine.StopMoving
         - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         customNames:
         - 
         - 
         - 
         - 
-        actionEnabled: 01000101
-        actionIsOpen: 01010101
-        actionStartIndex: 0000000011000000170000001c000000
-        actionHashCodes: ac126d04c284f0019f005d00c284f001
+        - 
+        actionEnabled: 0100010001
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000011000000170000001c00000022000000
+        actionHashCodes: ac126d04c284f0019f005d00c284f001c284f001
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -467,13 +469,19 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
@@ -535,17 +543,21 @@ MonoBehaviour:
         - FINISHED
         - OnUse
         - 
-        byteData: 00010000000000000000000100000000
+        - FINISHED
+        - Boarded
+        - 
+        byteData: 0001000000000000000000010000000000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 0b000000020000000300000002000000
+        customTypeSizes: 0b00000002000000030000000200000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.SendMessageAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.AI.Action.StopMovingAtom
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 290000001200000013000000120000000100000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001700000013000000010000002800000003000000030000000100000028000000030000000300000001000000170000001300000001000000280000000300000003000000
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 290000001200000013000000120000000100000028000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001700000013000000010000002800000003000000030000000100000028000000030000000300000001000000170000001300000001000000280000000300000003000000170000001300000001000000280000000300000003000000
         paramName:
         - Targets
         - Target
@@ -581,8 +593,14 @@ MonoBehaviour:
         - _isMessageReceivedAtom
         - Message
         - Data
-        paramDataPos: 000000000000000000000000010000000000000000000000000000000000000001000000010000000200000003000000040000000500000006000000070000000b00000002000000010000000c0000000100000003000000040000000d0000000200000005000000060000000e00000007000000020000000f000000030000000800000009000000
-        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000001000000000000000000000000000000
+        - Received
+        - storeSender
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        paramDataPos: 000000000000000000000000010000000000000000000000000000000000000001000000010000000200000003000000040000000500000006000000070000000b00000002000000010000000c0000000100000003000000040000000d0000000200000005000000060000000e00000007000000020000000f0000000300000008000000090000000a0000000300000010000000040000000b0000000c000000
+        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000
     - name: Board
       description: 
       colorIndex: 0
@@ -621,7 +639,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 00000000000101
+        actionEnabled: 00000000000100
         actionIsOpen: 01010101010101
         actionStartIndex: 000000000600000017000000280000002e0000003200000043000000
         actionHashCodes: a859b302ac126d04ac126d047943b701b0565f02ac126d04ac126d04
