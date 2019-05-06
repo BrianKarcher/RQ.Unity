@@ -76,17 +76,20 @@ namespace RQ.Controller.Actions
 
         public void OnUse(Transform actor)
         {
+            Debug.Log("(ActionTrigger) OnUse(Transform) called");
             if (enabled && (trigger == DialogueTriggerEvent.OnUse))
                 TryStartConversation(Tools.Select(this.actor, actor));
         }
 
         public void OnUse(string message)
         {
+            Debug.Log("(ActionTrigger) OnUse(Message) called");
             if (enabled && (trigger == DialogueTriggerEvent.OnUse)) TryStartConversation(this.actor);
         }
 
         public void OnUse()
         {
+            Debug.Log("(ActionTrigger) OnUse called");
             if (enabled && (trigger == DialogueTriggerEvent.OnUse)) TryStartConversation(this.actor);
         }
 
