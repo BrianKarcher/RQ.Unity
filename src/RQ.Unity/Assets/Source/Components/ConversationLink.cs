@@ -1,6 +1,5 @@
 ﻿using PixelCrushers.DialogueSystem;
 using RQ.Common.Controllers;
-using RQ.Logging;
 using RQ.Messaging;
 using System;
 using UnityEngine;
@@ -35,7 +34,7 @@ namespace RQ.UI
             if (!_hasStarted)
                 return;
 
-            Debug.LogError("(Conversation Link) OnConversationStart called");
+            Debug.Log("(Conversation Link) OnConversationStart called");
             //MessageDispatcher.Instance.DispatchMsg(0f, "UI Manager", "UI Manager", Enums.Telegrams.ConversationBegin,
             //    actor);
             //MessageDispatcher.Instance.DispatchMsg(0f, string.Empty, "Game Controller", Enums.Telegrams.Pause,

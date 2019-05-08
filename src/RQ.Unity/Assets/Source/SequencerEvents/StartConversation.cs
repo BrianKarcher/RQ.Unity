@@ -1,9 +1,8 @@
 using UnityEngine;
-using System.Collections;
 using PixelCrushers.DialogueSystem;
 using WellFired;
-using RQ.Logging;
 using RQ.Messaging;
+
 namespace RQ.SequencerEvents
 {
     /// <summary>

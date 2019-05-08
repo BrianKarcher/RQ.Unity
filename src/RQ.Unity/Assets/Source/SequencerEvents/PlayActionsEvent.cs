@@ -1,8 +1,5 @@
 using UnityEngine;
-using System.Collections;
-using PixelCrushers.DialogueSystem;
 using WellFired;
-using RQ.Logging;
 using RQ.Model;
 using RQ.Entity.Components;
 using RQ.Messaging;
