@@ -985,6 +985,7 @@ MonoBehaviour:
         - RQ.AI.PlayMaker.Variables.GetGameObjectVariable
         - Rewired.Integration.PlayMaker.RewiredPlayerGetButton
         - Assets.Source.AI.PM_State_Machine.CarryObject
+        - HutongGames.PlayMaker.Actions.RunFSM
         customNames:
         - 
         - 
@@ -994,10 +995,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0100010001010001
-        actionIsOpen: 0101010101010101
-        actionStartIndex: 0000000003000000060000000c00000013000000180000001c00000023000000
-        actionHashCodes: 9ff80c0248c0110182737300f5599401866e76002f44f302b9d24e0043223b00
+        - 
+        actionEnabled: 010000000101000101
+        actionIsOpen: 010101010101010101
+        actionStartIndex: 0000000003000000060000000c00000013000000180000001c0000002300000028000000
+        actionHashCodes: 9ff80c0248c0110182737300f5599401866e76002f44f302b9d24e0043223b00fe058700
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -1021,7 +1023,74 @@ MonoBehaviour:
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
-        fsmTemplateControlParams: []
+        fsmTemplateControlParams:
+        - fsmTemplate: {fileID: 11400000, guid: e4feaa4f615b96b489d5c26397acc7c7,
+            type: 2}
+          fsmVarOverrides:
+          - variable:
+              useVariable: 1
+              name: IdleAnim
+              tooltip: 
+              showInInspector: 1
+              networkSync: 0
+            fsmVar:
+              variableName: IdleAnim
+              objectType: UnityEngine.Object
+              useVariable: 0
+              type: 4
+              floatValue: 0
+              intValue: 0
+              boolValue: 0
+              stringValue: HelixIdle
+              vector4Value: {x: 0, y: 0, z: 0, w: 0}
+              objectReference: {fileID: 0}
+              arrayValue:
+                useVariable: 0
+                name: 
+                tooltip: 
+                showInInspector: 0
+                networkSync: 0
+                type: -1
+                objectTypeName: 
+                floatValues: []
+                intValues: 
+                boolValues: 
+                stringValues: []
+                vector4Values: []
+                objectReferences: []
+            isEdited: 0
+          - variable:
+              useVariable: 1
+              name: RunAnim
+              tooltip: 
+              showInInspector: 1
+              networkSync: 0
+            fsmVar:
+              variableName: RunAnim
+              objectType: UnityEngine.Object
+              useVariable: 0
+              type: 4
+              floatValue: 0
+              intValue: 0
+              boolValue: 0
+              stringValue: HelixMove
+              vector4Value: {x: 0, y: 0, z: 0, w: 0}
+              objectReference: {fileID: 0}
+              arrayValue:
+                useVariable: 0
+                name: 
+                tooltip: 
+                showInInspector: 0
+                networkSync: 0
+                type: -1
+                objectTypeName: 
+                floatValues: []
+                intValues: 
+                boolValues: 
+                stringValues: []
+                vector4Values: []
+                objectReferences: []
+            isEdited: 0
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
@@ -1057,6 +1126,12 @@ MonoBehaviour:
           value: 0.3
         fsmIntParams:
         - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
@@ -1099,6 +1174,7 @@ MonoBehaviour:
         - FINISHED
         - Abort
         - Special
+        - 
         byteData: 000000000101000000010000000001010400000001
         arrayParamSizes: 
         arrayParamTypes: []
@@ -1109,7 +1185,7 @@ MonoBehaviour:
         - RQ.Entity.AtomAction.Action.PlayerMoveAtom
         - RQ.AI.AtomAction.Variables.GetGameObjectVariableAtom
         - RQ.AI.Action.CarryObjectAtom
-        paramDataType: 130000000f000000110000000f000000170000000100000012000000280000000300000003000000010000000100000011000000170000001700000001000000010000002800000007000000280000000100000000000000010000000100000013000000280000000700000003000000110000001700000017000000170000001200000010000000010000001300000017000000280000000300000003000000
+        paramDataType: 130000000f000000110000000f000000170000000100000012000000280000000300000003000000010000000100000011000000170000001700000001000000010000002800000007000000280000000100000000000000010000000100000013000000280000000700000003000000110000001700000017000000170000001200000010000000010000001300000017000000280000000300000003000000260000001000000017000000
         paramName:
         - gameObject
         - delay
@@ -1151,8 +1227,11 @@ MonoBehaviour:
         - _atom
         - MessageToLiftableOnAbort
         - ButtonHeldActionName
-        paramDataPos: 0000000000000000000000000100000000000000000000000000000000000000010000000200000001000000020000000100000003000000040000000300000004000000010000000500000002000000090000000a0000000e0000000f00000001000000030000001000000005000000020000000600000007000000080000000100000000000000140000000200000009000000040000000a0000000b000000
-        paramByteDataSize: 00000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000000000000000000000000000001000000010000000000000004000000000000000100000004000000010000000100000000000000000000000400000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000
+        - fsmTemplateControl
+        - storeID
+        - finishEvent
+        paramDataPos: 0000000000000000000000000100000000000000000000000000000000000000010000000200000001000000020000000100000003000000040000000300000004000000010000000500000002000000090000000a0000000e0000000f00000001000000030000001000000005000000020000000600000007000000080000000100000000000000140000000200000009000000040000000a0000000b00000000000000010000000c000000
+        paramByteDataSize: 00000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000000000000000000000000000001000000010000000000000004000000000000000100000004000000010000000100000000000000000000000400000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000
     - name: Disperse Helix Shoot
       description: 
       colorIndex: 0
