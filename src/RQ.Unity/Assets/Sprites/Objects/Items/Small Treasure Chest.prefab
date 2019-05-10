@@ -124,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &179024
 GameObject:
   m_ObjectHideFlags: 1
@@ -429,7 +429,7 @@ MonoBehaviour:
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: 06e1076d-ec33-48bd-860f-41788c0476c5
   _componentRepository: {fileID: 11456750}
-  _initialState: {fileID: 11404392}
+  _initialState: {fileID: 0}
   _stateTransitionTable: {fileID: 11426454}
   _currentState: {fileID: 0}
   _stateMachineReentry: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
   _componentRepository: {fileID: 11456750}
   Records:
   - _name: Player Nearby to Opening
-    CurrentState: {fileID: 11404392}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: 
@@ -471,11 +471,11 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11475302}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   - _name: Opening to Process
-    CurrentState: {fileID: 11475302}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: 
@@ -484,11 +484,11 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11464074}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   - _name: Closed to Open
-    CurrentState: {fileID: 11404392}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: a0a9bf22-b06a-4d81-a15e-e4fa331a67f1
@@ -497,11 +497,11 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11467286}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   - _name: Process to Open
-    CurrentState: {fileID: 11464074}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: 41095368-487d-4a01-800e-fb48704be64a
@@ -510,7 +510,7 @@ MonoBehaviour:
       IsNot: 0
     Type: 0
     PreviousState: 0
-    TargetState: {fileID: 11467286}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   ConditionsList: {fileID: 11411948}
@@ -761,6 +761,8 @@ MonoBehaviour:
   _componentRepository: {fileID: 11456750}
   _item: {fileID: 0}
   _quantity: 1
+  _acquireOnTrigger: 0
+  _tagsThatAcquire: []
 --- !u!114 &11474660
 MonoBehaviour:
   m_ObjectHideFlags: 1
