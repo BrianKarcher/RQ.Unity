@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 11486864}
   - component: {fileID: 11405534}
   - component: {fileID: 11473002}
+  - component: {fileID: 114531365982042920}
   m_Layer: 12
   m_Name: Small Treasure Chest
   m_TagString: Environment
@@ -179,7 +180,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.96, y: 0.8, z: -0.5}
+  m_LocalPosition: {x: -0.32, y: 0, z: -1.1640625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479956}
@@ -187,6 +188,7 @@ Transform:
   - {fileID: 461364}
   - {fileID: 463116}
   - {fileID: 4059344944408468}
+  - {fileID: 4275815833323760}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -362,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 986810119, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 4be3392f-fa8b-40d3-8df6-53366f0bc70c
+  _uniqueId: 3af7b542-7e1d-406d-8745-00e0f40027cc
   componentName: 
   _rqName: Closed RQ.Entity.StatesV2.AnimatorState
   _rqName2: 6af06707-ce99-4500-8880-4f16f179a042
@@ -424,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 9f060cd0-8b0f-473b-9688-0fda5a0a5efd
+  _uniqueId: 5dbf7c5a-a985-4a84-9ed3-7d47dd45331a
   componentName: 
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: 06e1076d-ec33-48bd-860f-41788c0476c5
@@ -440,7 +442,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: 9f060cd0-8b0f-473b-9688-0fda5a0a5efd
+    StateMachineUniqueId: 5dbf7c5a-a985-4a84-9ed3-7d47dd45331a
     StateMachineName: States
     StateData: []
   _logTransitions: 0
@@ -455,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 15cb75a6-9f72-43b4-a5d0-a1969aa84a16
+  _uniqueId: c3cfa74c-fc92-491b-8a51-16eca956b090
   componentName: 
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: ba2636e2-64e7-4298-9b76-0428b4be0cd8
@@ -527,7 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: d4603a5e-874f-4411-bac6-bade9510e2b4
-  componentName: 
+  componentName: Interactive
   _rqName: Collider RQ.Physics.Components.CollisionComponent
   _rqName2: 2d4162bb-416b-448a-bf52-500ae7a4179f
   _componentRepository: {fileID: 11456750}
@@ -654,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 1383295343, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 17565c47-49be-457b-925e-8ac4a972661f
+  _uniqueId: 9b286309-a89e-462e-b0de-1027d813236f
   componentName: 
   _rqName: Process RQ.Entity.StatesV2.TreasureProcessingState
   _rqName2: b7afeab1-b4d1-447f-8b3f-9f12ee15aa1a
@@ -688,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 1901831675, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 2a87599e-ffdb-4239-887a-8046fa19c3b2
+  _uniqueId: 7519ae82-7c2c-47ac-9264-2b718d922d9c
   componentName: 
   _rqName: Open RQ.Entity.StatesV2.TreasureOpenState
   _rqName2: 0e28c42e-d7e0-4dbe-8b33-32c5503d462c
@@ -759,7 +761,7 @@ MonoBehaviour:
   _rqName: Small Treasure Chest RQ.Entity.Components.TreasureComponent
   _rqName2: b2015633-29b0-4ae6-afbc-e41f0c2e8a16
   _componentRepository: {fileID: 11456750}
-  _item: {fileID: 0}
+  _item: {fileID: 11400000, guid: 107fa5d8e7a99194490ef5e63729f356, type: 2}
   _quantity: 1
   _acquireOnTrigger: 0
   _tagsThatAcquire: []
@@ -796,7 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 1096904777, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: b32f096b-55e3-4c7c-8ba3-156c67e3cbb0
+  _uniqueId: 67a474a7-4607-453c-a61d-b8846ffb584e
   componentName: 
   _rqName: Opening RQ.Entity.StatesV2.TreasureOpeningState
   _rqName2: 44e8e1bd-9e52-4ec0-bee8-83de90740ee5
@@ -888,6 +890,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 161460}
   m_IsPrefabParent: 1
+--- !u!1 &1179255756507370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4275815833323760}
+  - component: {fileID: 65371780507588360}
+  m_Layer: 15
+  m_Name: Foot Collider
+  m_TagString: Environment
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1566576138586390
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +936,31 @@ Transform:
   m_Father: {fileID: 409374}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4275815833323760
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179255756507370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 409374}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65371780507588360
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179255756507370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65574964153531194
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -925,10 +968,10 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108662}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16, z: 1}
+  m_Size: {x: 0.17, y: 0.17, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114024866392665990
 MonoBehaviour:
@@ -1004,8 +1047,20 @@ MonoBehaviour:
     variables:
       floatVariables: []
       intVariables: []
-      boolVariables: []
-      stringVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: IsOpen
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      stringVariables:
+      - useVariable: 1
+        name: GlobalOpenStateVariableName
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 
       vector2Variables: []
       vector3Variables: []
       colorVariables: []
@@ -1019,7 +1074,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -1029,12 +1084,12 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
     EnableBreakpoints: 1
-    editorFlags: 1
+    editorFlags: 3
     activeStateName: 
     mouseEvents: 0
     handleLevelLoaded: 0
@@ -1062,8 +1117,8 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  fsmTemplate: {fileID: 11400000, guid: ddad73cc4b6962242bf4c201407ff21a, type: 2}
+  eventHandlerComponentsAdded: 1
 --- !u!114 &114124635359702244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1081,3 +1136,20 @@ MonoBehaviour:
   _rqName2: 832afdf8-0f31-48c0-95dd-535c844e35ec
   _componentRepository: {fileID: 11456750}
   pm: {fileID: 114024866392665990}
+--- !u!114 &114531365982042920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: bb96491c-f51f-422f-a36d-9d4a0affb53a
+  componentName: 
+  _rqName: Small Treasure Chest RQ.Physics.Components.FloorComponent
+  _rqName2: f44230b4-bf58-448e-9bc1-0a6d8bef17fe
+  _componentRepository: {fileID: 11456750}
+  Floor: 1
