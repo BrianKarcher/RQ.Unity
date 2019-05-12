@@ -425,13 +425,17 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
-        - Assets.Source.AI.PM_State_Machine.KillSelf
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.EnableCollider
+        - Assets.Source.AI.PM_State_Machine.EnableComponent
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 927b0a04
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000060000000a000000
+        actionHashCodes: 82737300ec2b1f022f2ef204
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -441,7 +445,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Open
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -454,18 +464,37 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - 
+        - 
+        - Interactive
+        - Interactive
+        byteData: 010000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 00000000
+        customTypeSizes: 040000000300000003000000
         customTypeNames:
-        - RQ.Animation.BasicAction.Action.KillSelfAtom
-        paramDataType: 28000000
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Animation.BasicAction.Action.EnableColliderAtom
+        - RQ.Animation.BasicAction.Action.EnableComponentAtom
+        paramDataType: 1200000028000000030000000300000001000000010000002800000001000000010000000300000028000000010000000100000003000000
         paramName:
-        - _killSelfAtom
-        paramDataPos: 00000000
-        paramByteDataSize: 00000000
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - _atom
+        - _enableOnEnter
+        - _enableOnExit
+        - name
+        - _atom
+        - EnableOnEnter
+        - EnableOnExit
+        - ComponentName
+        paramDataPos: 0000000000000000000000000100000000000000010000000100000002000000030000000200000002000000040000000500000003000000
+        paramByteDataSize: 0000000000000000000000000000000001000000010000000000000001000000010000000000000000000000010000000100000000000000
     - name: Opening
       description: 
       colorIndex: 0
