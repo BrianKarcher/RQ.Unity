@@ -1,0 +1,846 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1574414680851250}
+  m_IsPrefabParent: 1
+--- !u!1 &1053586905446746
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4977047083798772}
+  m_Layer: 0
+  m_Name: Usable Token Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1343877321340326
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4355273552179494}
+  - component: {fileID: 114527799321747920}
+  m_Layer: 0
+  m_Name: Idle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1378975811308268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4101569550087022}
+  - component: {fileID: 114677711215341038}
+  - component: {fileID: 114780704347314826}
+  m_Layer: 0
+  m_Name: States
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1440990907852858
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4004765345565814}
+  - component: {fileID: 114216309659005206}
+  - component: {fileID: 114212518368635730}
+  - component: {fileID: 114750051067141872}
+  m_Layer: 0
+  m_Name: Use
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1515313319978108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4836718174268040}
+  - component: {fileID: 23876112957121096}
+  - component: {fileID: 33240044881092272}
+  - component: {fileID: 114304645005926480}
+  - component: {fileID: 114193881324426392}
+  - component: {fileID: 114403048800442674}
+  - component: {fileID: 114982363220340066}
+  m_Layer: 0
+  m_Name: MainSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1574414680851250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4383646786130392}
+  - component: {fileID: 114816612423849726}
+  - component: {fileID: 114430191916182676}
+  - component: {fileID: 114785440587566246}
+  - component: {fileID: 114587920069558744}
+  m_Layer: 0
+  m_Name: Healing Pod
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1600213199004264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4228617005161428}
+  - component: {fileID: 65650749504862014}
+  - component: {fileID: 114321953468328436}
+  - component: {fileID: 114536993618613092}
+  m_Layer: 0
+  m_Name: Usable Collider
+  m_TagString: Conversation
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1605415833528076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4950345002875670}
+  - component: {fileID: 114563428857615994}
+  - component: {fileID: 65462430390619708}
+  m_Layer: 15
+  m_Name: Body Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4004765345565814
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440990907852858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4101569550087022}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4101569550087022
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1378975811308268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4355273552179494}
+  - {fileID: 4004765345565814}
+  m_Father: {fileID: 4383646786130392}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4228617005161428
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600213199004264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4383646786130392}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4355273552179494
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1343877321340326}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4101569550087022}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4383646786130392
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574414680851250}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.21, y: 2.69, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4836718174268040}
+  - {fileID: 4950345002875670}
+  - {fileID: 4228617005161428}
+  - {fileID: 4101569550087022}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4836718174268040
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515313319978108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4977047083798772}
+  m_Father: {fileID: 4383646786130392}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4950345002875670
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605415833528076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4383646786130392}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4977047083798772
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1053586905446746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.16, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4836718174268040}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23876112957121096
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515313319978108}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 2df2d0d4c044bc146b82e300bb8aa284, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33240044881092272
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515313319978108}
+  m_Mesh: {fileID: 0}
+--- !u!65 &65462430390619708
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605415833528076}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22870588, y: 0.29397708, z: 0.5}
+  m_Center: {x: 0, y: -0.06698856, z: 0}
+--- !u!65 &65650749504862014
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600213199004264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114193881324426392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515313319978108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 114984412661701918, guid: 8be832186274ff747aa16871a6c89ca8, type: 2}
+  defaultClipId: 0
+  playAutomatically: 1
+--- !u!114 &114212518368635730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440990907852858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2078136773, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 1f4dc950-438e-45ed-bbcd-d4ecffb5d2f6
+  componentName: 
+  _rqName: Use RQ.Controller.Actions.SendMessage2
+  _rqName2: de0e8399-70f7-4d8a-9c0b-475d4d32c329
+  _sendToGameController: 0
+  _sendToUIManager: 0
+  _target: {fileID: 0}
+  eventName: 
+  _data: 
+  MessageData:
+    SendToGameController: 0
+    SendToUIManager: 0
+    SendToMainCharacter: 1
+    SendToAll: 0
+    SendToSelf: 1
+    TargetUniqueId: 
+    EventName: FullHeal
+    Data: 
+--- !u!114 &114216309659005206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440990907852858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: f5c95c69-a8f9-4fc9-a86e-2783ee76f198
+  componentName: 
+  _rqName: Use RQ.FSM.V2.States.RunActionsState
+  _rqName2: 5ebf95e3-27f1-4d2e-b470-5686096f90a4
+  _componentRepository: {fileID: 114816612423849726}
+  _stateMachine: {fileID: 114677711215341038}
+--- !u!114 &114304645005926480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515313319978108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 114594741054311606, guid: df34bd1b95140084c8f3694de6a1a02e,
+    type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 0
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
+--- !u!114 &114321953468328436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600213199004264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 16e1e51d-5247-42bb-a439-e2ce367b61c5
+  componentName: 
+  _rqName: Usable Collider RQ.Physics.Components.CollisionComponent
+  _rqName2: 767b83ae-7ce1-4420-9828-fd1423a31b3b
+  _componentRepository: {fileID: 114816612423849726}
+  _collisionData:
+    Level: 0
+    Tags: []
+    ReceivesDamage: 0
+    DamageCollider: 0
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _mainCollider: {fileID: 4228617005161428}
+  _autoChangeLayers: 0
+--- !u!114 &114403048800442674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515313319978108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41880b8380ca71346a1bc3912eb8f03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _storedSpriteAnimations: []
+  _spriteAnimationsConfig: {fileID: 11400000, guid: 4e7bf8c50bb55424cb674a6cb04c3b9e,
+    type: 2}
+  _manualHFlip: 0
+  _hFlip: 0
+  _directionRotate: 0
+  OrigSpritePosition:
+    x: 0
+    y: 0
+  SpriteOffsetPos:
+    x: 0
+    y: 0
+  anim: {fileID: 114193881324426392}
+--- !u!114 &114430191916182676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574414680851250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1696332522, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 0b000c30-2434-41be-b566-a7fed9d3ece4
+  componentName: 
+  _rqName: Heal Pod RQ.Sprite.AdjustDepthByY
+  _rqName2: 94e0813d-7480-4994-baaf-50254a9be649
+  _componentRepository: {fileID: 114816612423849726}
+  FootPositionY: 0
+--- !u!114 &114527799321747920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1343877321340326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 986810119, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 057346ca-e235-4464-bf58-e6c70be1d890
+  componentName: 
+  _rqName: Idle RQ.Entity.StatesV2.AnimatorState
+  _rqName2: 414dffa6-29b9-4914-a19a-ae20c597cb19
+  _componentRepository: {fileID: 114816612423849726}
+  _stateMachine: {fileID: 114677711215341038}
+  _soundInfo:
+    AudioClips: []
+    ClearPreviousClips: 0
+    StopAudioOnExit: 0
+    PlaySound: 0
+    DelaySound: 0
+    PlayAsOneShot: 0
+    LoopSound: 0
+    PlayOnMusicTrack: 0
+    ForcePlay: 1
+    Volume: 1
+  _takesDamage: 0
+  _setDeflectStatus: 0
+  _deflectValue: 0
+  _animationType: 
+  _animationComponent: {fileID: 114982363220340066}
+  _spriteAnimationsConfig: {fileID: 0}
+--- !u!114 &114536993618613092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600213199004264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -881182047, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 45d3efa2-52d5-4821-b837-7965dc7c6074
+  componentName: 
+  _rqName: Usable Collider RQ.Physics.Components.UsableComponent
+  _rqName2: dd68bc93-bc3b-4ab6-a5ee-5d9c5c88a197
+  _componentRepository: {fileID: 114816612423849726}
+  _tags:
+  - Player
+  _excludedTags: []
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _message: 
+  _bubbleText: Heal
+  _castRay: 0
+  _usable: {fileID: 4977047083798772}
+  _usableObjects: []
+  _autoUse: 1
+  _messageToUser: 
+  _isEnabled: 1
+  _setStorySceneConfig: {fileID: 0}
+--- !u!114 &114563428857615994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605415833528076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: f9131087-bcf7-43f1-9d50-df0d4028b4e3
+  componentName: 
+  _rqName: Body Collider RQ.Physics.Components.CollisionComponent
+  _rqName2: 6c652e82-fe79-4458-b4c2-7c15a32558f2
+  _componentRepository: {fileID: 114816612423849726}
+  _collisionData:
+    Level: 0
+    Tags: []
+    ReceivesDamage: 0
+    DamageCollider: 0
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _mainCollider: {fileID: 4950345002875670}
+  _autoChangeLayers: 0
+--- !u!114 &114587920069558744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574414680851250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 35ecce65-4523-4f89-b0ea-3cf8333bd696
+  componentName: 
+  _rqName: Gem Tree RQ.Physics.Components.FloorComponent
+  _rqName2: 4bbca275-87a9-4569-ac0d-a54bb0ba0728
+  _componentRepository: {fileID: 114816612423849726}
+  Floor: 1
+--- !u!114 &114677711215341038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1378975811308268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 5d90137f-1cb0-41a6-9c59-b88d0beda3c2
+  componentName: 
+  _rqName: States RQ.FSM.V2.StateMachine
+  _rqName2: cc0eedac-16b2-4673-bbae-efce04d9bfba
+  _componentRepository: {fileID: 114816612423849726}
+  _initialState: {fileID: 114527799321747920}
+  _stateTransitionTable: {fileID: 114780704347314826}
+  _currentState: {fileID: 0}
+  _stateMachineReentry: 0
+  _stateInfo:
+    IsComplete: 0
+    IsStuck: 0
+    SwitchToBattle: 0
+    StateStartTime: 0
+    ChangeScene: 0
+    CurrentStateUniqueId: 
+    StateMachineUniqueId: 5d90137f-1cb0-41a6-9c59-b88d0beda3c2
+    StateMachineName: States
+    StateData: []
+  _logTransitions: 0
+--- !u!114 &114750051067141872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440990907852858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1281370591, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 78da2023-c7e5-4dda-b194-ede15267c656
+  componentName: 
+  _rqName: Use RQ.Controller.Actions.ShowModal
+  _rqName2: a5a84e13-3a57-447e-b365-71aee00c3e48
+  _text: Player fully healed.
+--- !u!114 &114780704347314826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1378975811308268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 84ac7aa1-bddc-41cb-ad10-8c650231b2a9
+  componentName: 
+  _rqName: States RQ.FSM.V2.StateTransitionTable
+  _rqName2: 71bb01c9-17e5-4753-b3e8-cbbe33fa67fb
+  _componentRepository: {fileID: 114816612423849726}
+  Records:
+  - _name: Idle to Use
+    CurrentState: {fileID: 114527799321747920}
+    UniqueId: 
+    Conditions:
+    - UniqueId: f6f24b25-acf2-41e2-8eca-4e06369d3221
+      Condition: {fileID: 0}
+      Condition2: {fileID: 11400000, guid: 74cae7bc653c87645ab6db2612aef52d, type: 2}
+      IsNot: 0
+    Type: 0
+    PreviousState: 0
+    TargetState: {fileID: 114216309659005206}
+    TargetStateSelected: {fileID: 0}
+    IsActive: 1
+  - _name: Use to Idle
+    CurrentState: {fileID: 114216309659005206}
+    UniqueId: 
+    Conditions:
+    - UniqueId: 31f69348-4be1-486b-83c8-5dc7474241ad
+      Condition: {fileID: 0}
+      Condition2: {fileID: 11400000, guid: f35f938b819694f4ca91dfb660980e89, type: 2}
+      IsNot: 0
+    Type: 0
+    PreviousState: 0
+    TargetState: {fileID: 114527799321747920}
+    TargetStateSelected: {fileID: 0}
+    IsActive: 1
+  ConditionsList: {fileID: 0}
+  ConditionsListTransform: {fileID: 0}
+--- !u!114 &114785440587566246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574414680851250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 9d12753e-2b79-43be-a282-51d66a103c94
+  componentName: 
+  _rqName: Heal Pod RQ.Physics.Components.PhysicsComponent
+  _rqName2: 38b83a68-abd9-444e-8234-5fe792a66439
+  _componentRepository: {fileID: 114816612423849726}
+  _physicsData:
+    InitialVelocity: {x: 0, y: 0}
+    Size:
+      x: 0
+      y: 0
+    Velocity: {x: 0, y: 0}
+    Heading:
+      x: 0
+      y: 0
+    Side: {x: -0, y: 0}
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 1
+    OriginalMaxSpeed: 1
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    MaxDistanceToTarget: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalVelocity:
+      x: 0
+      y: 0
+    OriginalZ: -0.1
+    _headingDirection: 1
+    MaxForce: 1
+    ForceMultiplier: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _foot: {fileID: 0}
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _originalMaxForce: 1
+    _maxSpeed: 1
+    _mass: 0
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
+  _originalPhysicsData:
+    InitialVelocity: {x: 0, y: 0}
+    Size:
+      x: 0
+      y: 0
+    Velocity: {x: 0, y: 0}
+    Heading:
+      x: 0
+      y: 0
+    Side: {x: 0, y: 0}
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 1
+    OriginalMaxSpeed: 1
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    MaxDistanceToTarget: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalVelocity:
+      x: 0
+      y: 0
+    OriginalZ: 0
+    _headingDirection: 1
+    MaxForce: 1
+    ForceMultiplier: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _foot: {fileID: 0}
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+  _autoUpdateHeading: 1
+  _steering:
+    TargetAgent1: {fileID: 0}
+    Target:
+      x: 0
+      y: 0
+    Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
+    _steeringForce:
+      x: 0
+      y: 0
+--- !u!114 &114816612423849726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574414680851250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 6623a0b2-8942-4c57-b0c4-62e01e25d398
+  componentName: 
+  _rqName: Heal Pod RQ.Entity.Common.SpriteBaseComponent
+  _rqName2: fe9f8407-2ad0-4be5-bfc3-39320c444562
+  _recreateOnLoadGame: 0
+  _addToEntityContainer: 1
+  EntityType: 0
+  EntityPrefabUniqueId: 
+  _parentRepo: {fileID: 0}
+--- !u!114 &114982363220340066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515313319978108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1951438886, guid: 12d8c4a4410b9684983f5d6c8463d1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 279b8964-27ed-418c-98f6-86e58b1c516a
+  componentName: 
+  _rqName: MainSprite RQ.Animation.AnimationComponent
+  _rqName2: 0bd91d0b-f37d-4228-a884-bc571447dc3a
+  _componentRepository: {fileID: 114816612423849726}
+  Data:
+    FacingDirectionMode: 0
+    FacingDirection: 1
+    PreviousFacingDirection: 9
+    _isAnimationComplete: 0
+    AutoPlayAnimationType: 57250273-2fd4-4eaf-90ad-b82f948138da
+    PlayAutomatically: 1
+    PlayDefaultOnEnable: 0
+    AutoUpdateFacingDirection: 0
+    AutoFace: 0
+  SpriteAnimator2: {fileID: 114403048800442674}
+  _use8Directions: 0
+  _isMain: 1
