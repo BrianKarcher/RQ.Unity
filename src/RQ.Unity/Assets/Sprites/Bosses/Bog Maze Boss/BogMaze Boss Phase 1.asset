@@ -1,0 +1,1081 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: BogMaze Boss Phase 1
+  m_EditorClassIdentifier: 
+  category: General
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 11400000}
+    name: FSM
+    startState: Wander
+    states:
+    - name: Wander
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 76
+        y: 115
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Wind Up
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SetCollisionDamageType
+        - HutongGames.PlayMaker.Actions.RunFSM
+        - RQ.AI.PM_State_Machine.TargetInFOV
+        - Assets.Source.AI.PM_State_Machine.SetPhysicsFloatValue
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.SetSteeringTargetToVector
+        - Assets.Source.AI.PM_State_Machine.SteeringBehavior
+        - Assets.Source.AI.PM_State_Machine.SetBoolVariable2
+        - HutongGames.PlayMaker.Actions.BoolAllTrue
+        - HutongGames.PlayMaker.Actions.SetBoolValue
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 01000101010101010101
+        actionIsOpen: 01010101010101010101
+        actionStartIndex: 0000000002000000050000000c000000110000001700000020000000220000002d00000033000000
+        actionHashCodes: 93687a04fe05870073534d03ffa3f20482737300d3320502ae351404b094ff018076870527fbe103
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams:
+        - fsmTemplate: {fileID: 11400000, guid: 9f0b2eed44820104986a5bd74abe3379,
+            type: 2}
+          fsmVarOverrides: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Walk
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 1
+          name: InFOV
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: TargetIsHiding
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: InFOV
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: TargetIsHiding
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Awake
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        - 
+        - Walk
+        - 
+        - 
+        - 
+        - 
+        - FINISHED
+        byteData: 010000000000000000ffffffff010000000000000001000000080000000000000001090000000100000100000000000000000100
+        arrayParamSizes: 02000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmBool
+        customTypeSizes: 0100000004000000000000000400000004000000050000000100000005000000
+        customTypeNames:
+        - RQ.AI.Action.Damage.SetCollisionActionTypeAtom
+        - RQ.AI.Action.TargetInFOVAtom
+        - System.Collections.Generic.List`1[[System.String, mscorlib, Version=2.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+        - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Animation.BasicAction.Action.SetSteeringTargetToVectorAtom
+        - RQ.Animation.BasicAction.Action.SteeringBehaviorAtom
+        - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
+        paramDataType: 2800000007000000260000001000000017000000280000000700000001000000000000002800000017000000110000002800000007000000020000000100000003000000120000002800000003000000030000000100000001000000290000001300000001000000280000000700000000000000010000000300000003000000280000000700000011000000010000001700000017000000120000002800000001000000010000000100000007000000070000000c0000001100000011000000170000001100000001000000110000001100000001000000
+        paramName:
+        - _atom
+        - CollisionDamageType
+        - fsmTemplateControl
+        - storeID
+        - finishEvent
+        - _atom
+        - _directionToCheck
+        - _castRay
+        - _obstacleLayerMask
+        - _tagsThatCancelRaycast
+        - InFOVEvent
+        - storeResult
+        - _atom
+        - _variable
+        - _value
+        - _setToOriginal
+        - PhysicsAffector
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - _messageReceivers
+        - _messageReceiver
+        - everyFrame
+        - _setSteeringAtom
+        - _goToType
+        - WaypointIndex
+        - sendToSelf
+        - physicsComponentName
+        - waypointName
+        - _sbAtom
+        - SteeringBehavior
+        - storeResult
+        - everyFrame
+        - TrueEvent
+        - FalseEvent
+        - VariableName
+        - _atom
+        - Value
+        - DefaultValue
+        - InvertValue
+        - ActionTarget
+        - _variable
+        - boolVariables
+        - 
+        - 
+        - sendEvent
+        - storeResult
+        - everyFrame
+        - boolVariable
+        - boolValue
+        - everyFrame
+        paramDataPos: 000000000000000000000000000000000000000001000000040000000800000009000000020000000100000000000000030000000d00000011000000150000000200000000000000040000000300000004000000160000001700000000000000000000001800000005000000190000001d00000021000000050000000600000006000000220000000100000026000000070000000800000001000000070000002700000028000000290000002a0000002e000000000000000200000003000000090000000400000032000000050000000600000033000000
+        paramByteDataSize: 000000000400000000000000000000000000000000000000040000000100000004000000000000000000000000000000000000000400000004000000010000000000000000000000000000000000000000000000010000000100000000000000000000000100000000000000040000000400000001000000000000000000000000000000040000000000000001000000000000000000000000000000000000000100000001000000010000000400000004000000000000000000000000000000000000000000000001000000000000000000000001000000
+    - name: Wind Up
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 548.02344
+        y: 142
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Charge
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.StopMoving
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.EnableComponent
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000003000000080000000e00000014000000
+        actionHashCodes: 48c011019f005d0082737300827373002f2ef204
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Pawing
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Pawing Dust
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1.25
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        - 
+        - Pawing
+        - PawDust
+        - Pawing Dust
+        - PawDust
+        byteData: 000000000000000100
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 03000000040000000400000003000000
+        customTypeNames:
+        - RQ.AI.Action.StopMovingAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Animation.BasicAction.Action.EnableComponentAtom
+        paramDataType: 0f0000001700000001000000010000002800000003000000030000000100000012000000280000000300000003000000010000000100000012000000280000000300000003000000010000000100000028000000010000000100000003000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        - everyFrame
+        - _stopMovingAtom
+        - _uniqueId
+        - _physicsAffector
+        - _firstFrameOnly
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - _atom
+        - EnableOnEnter
+        - EnableOnExit
+        - ComponentName
+        paramDataPos: 000000000000000000000000010000000000000001000000020000000200000000000000010000000300000004000000030000000400000001000000020000000500000006000000050000000600000003000000070000000800000007000000
+        paramByteDataSize: 000000000000000001000000010000000000000000000000000000000100000000000000000000000000000000000000010000000100000000000000000000000000000000000000010000000100000000000000010000000100000000000000
+    - name: Charge
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 423
+        y: 286
+        width: 100
+        height: 64
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Skid
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Hit Wall
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Skid
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Hit Tree
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: HitTree
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Vector2Multiply
+        - HutongGames.PlayMaker.Actions.Vector2Add
+        - Assets.Source.AI.PM_State_Machine.SetVelocity
+        - HutongGames.PlayMaker.Actions.RandomWait
+        - Assets.Source.AI.PM_State_Machine.SetPhysicsFloatValue
+        - RQ.AI.PM_State_Machine.HasRunIntoWall
+        - Assets.Source.AI.PM_State_Machine.StandingOnCollider
+        - Assets.Source.AI.PM_State_Machine.SetBoolVariable2
+        - RQ.AI.PM_State_Machine.TargetInFOV
+        - HutongGames.PlayMaker.Actions.BoolTest
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.EnableComponent
+        - Assets.Source.AI.PM_State_Machine.SetCollisionDamageType
+        - Assets.Source.AI.PM_State_Machine.StandingOnCollider
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0000010101010101010101010101
+        actionIsOpen: 0101010101010101010101010101
+        actionStartIndex: 00000000030000000700000014000000180000001d00000020000000240000002f000000360000003a000000400000004400000046000000
+        actionHashCodes: 30525b012c934104848648000d5f5c01ffa3f204328034033673bd03b094ff0173534d03a4c8bf00827373002f2ef20493687a043673bd03
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Run Dust
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1.2
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 4
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 1
+          name: TargetIsHiding
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: InFOV
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: InFOV
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params:
+        - useVariable: 1
+          name: direction
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        - useVariable: 1
+          name: direction
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - Steering
+        - FINISHED
+        - 
+        - Tile
+        - Hit Wall
+        - 
+        - FINISHED
+        - 
+        - 
+        - 
+        - FINISHED
+        - RunDust
+        - Run Dust
+        - RunDust
+        - Hit Tree
+        byteData: 0000000000000000000000000000000100000000000000000000000000803f0000803f010100000000000100000000000040000100000000000000000000000000000000ffffffff010000010002000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0a00000004000000010000000000000005000000040000000000000004000000030000000100000000000000
+        customTypeNames:
+        - RQ.AI.Action.SetVelocityAtom
+        - RQ.Animation.BasicAction.Action.SetPhysicsFloatValueAtom
+        - RQ.AI.Action.HasRunIntoWallAtom
+        - RQ.Animation.BasicAction.Action.StandingOnColliderAtom
+        - RQ.Animation.BasicAction.Action.SetBoolVariableAtom2
+        - RQ.AI.Action.TargetInFOVAtom
+        - System.Collections.Generic.List`1[[System.String, mscorlib, Version=2.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Animation.BasicAction.Action.EnableComponentAtom
+        - RQ.AI.Action.Damage.SetCollisionActionTypeAtom
+        - RQ.Animation.BasicAction.Action.StandingOnColliderAtom
+        paramDataType: 250000000f0000000100000025000000250000000100000001000000250000002800000008000000020000000300000007000000080000000200000002000000010000000700000003000000010000000f0000000f00000017000000010000002800000007000000020000000100000003000000280000000300000017000000100000001000000017000000280000001100000001000000170000001700000012000000280000000100000001000000010000000700000007000000280000000700000001000000000000002800000017000000110000001100000017000000170000000100000012000000280000000300000003000000010000000100000028000000010000000100000003000000280000000700000010000000100000001700000028000000
+        paramName:
+        - vector2Variable
+        - multiplyBy
+        - everyFrame
+        - vector2Variable
+        - addVector
+        - everyFrame
+        - perSecond
+        - Velocity
+        - _atom
+        - _offset
+        - _delay
+        - _physicsComponentName
+        - _shootTarget
+        - _location
+        - _minSpeed
+        - _maxSpeed
+        - _sameLevel
+        - _objectLevel
+        - _physicsAffector
+        - everyFrame
+        - min
+        - max
+        - finishEvent
+        - realTime
+        - _atom
+        - _variable
+        - _value
+        - _setToOriginal
+        - PhysicsAffector
+        - _atom
+        - TileColliderName
+        - RunIntoWallEvent
+        - LayerMask
+        - CancelLayerMask
+        - ColliderEvent
+        - _atom
+        - storeResult
+        - everyFrame
+        - TrueEvent
+        - FalseEvent
+        - VariableName
+        - _atom
+        - Value
+        - DefaultValue
+        - InvertValue
+        - ActionTarget
+        - _variable
+        - _atom
+        - _directionToCheck
+        - _castRay
+        - _obstacleLayerMask
+        - _tagsThatCancelRaycast
+        - InFOVEvent
+        - storeResult
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - _atom
+        - EnableOnEnter
+        - EnableOnExit
+        - ComponentName
+        - _atom
+        - CollisionDamageType
+        - LayerMask
+        - CancelLayerMask
+        - ColliderEvent
+        - _atom
+        paramDataPos: 000000000000000000000000010000000200000001000000020000000300000000000000030000000b000000000000000f000000130000001b0000001f0000002300000024000000010000002800000001000000020000000200000029000000010000002a0000002e000000320000000300000002000000040000000500000000000000010000000600000003000000000000003300000007000000080000000000000004000000340000003500000036000000370000003b000000050000003f0000004300000044000000060000000900000001000000020000000a0000000b0000004800000001000000070000000c0000000d000000490000004a000000080000004b0000004c0000000e000000090000004d00000002000000030000000f0000000a000000
+        paramByteDataSize: 0000000000000000010000000000000000000000010000000100000000000000000000000800000004000000000000000400000008000000040000000400000001000000040000000000000001000000000000000000000000000000010000000000000004000000040000000100000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000100000001000000010000000400000004000000000000000400000001000000040000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000000000000010000000100000000000000000000000400000000000000000000000000000000000000
+    - name: Hit Wall
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 59.015625
+        y: 441
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.StopMoving
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 9f005d00
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 03000000
+        customTypeNames:
+        - RQ.AI.Action.StopMovingAtom
+        paramDataType: 0100000028000000030000000300000001000000
+        paramName:
+        - everyFrame
+        - _stopMovingAtom
+        - _uniqueId
+        - _physicsAffector
+        - _firstFrameOnly
+        paramDataPos: 0000000000000000000000000100000001000000
+        paramByteDataSize: 0100000000000000000000000000000001000000
+    - name: Skid
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 59.984375
+        y: 299
+        width: 100
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Wander
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Hit Tree
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: HitTree
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.DragMaxSpeed
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.EnableComponent
+        - Assets.Source.AI.PM_State_Machine.StandingOnCollider
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 0000000006000000080000000b0000001100000015000000
+        actionHashCodes: 82737300a0c5220348c01101827373002f2ef2043673bd03
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Skid
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Skid Dust
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1.4
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - Skid
+        - FINISHED
+        - SkidDust
+        - Skid Dust
+        - SkidDust
+        - Hit Tree
+        byteData: 00000000403f0000010100
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0400000001000000040000000300000000000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Animation.BasicAction.Action.DragMaxSpeedAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Animation.BasicAction.Action.EnableComponentAtom
+        - RQ.Animation.BasicAction.Action.StandingOnColliderAtom
+        paramDataType: 12000000280000000300000003000000010000000100000028000000020000000f00000017000000010000001200000028000000030000000300000001000000010000002800000001000000010000000300000010000000100000001700000028000000
+        paramName:
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - _dragMaxSpeedAtom
+        - Speed
+        - time
+        - finishEvent
+        - realTime
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - _atom
+        - EnableOnEnter
+        - EnableOnExit
+        - ComponentName
+        - LayerMask
+        - CancelLayerMask
+        - ColliderEvent
+        - _atom
+        paramDataPos: 000000000000000000000000010000000000000001000000010000000200000000000000020000000600000001000000020000000300000004000000070000000800000003000000090000000a0000000500000000000000010000000600000004000000
+        paramByteDataSize: 00000000000000000000000000000000010000000100000000000000040000000000000000000000010000000000000000000000000000000000000001000000010000000000000001000000010000000000000000000000000000000000000000000000
+    - name: HitTree
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 396
+        y: 450
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Wander
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.StopMoving
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 9f005d0048c01101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 2
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - FINISHED
+        byteData: 000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 03000000
+        customTypeNames:
+        - RQ.AI.Action.StopMovingAtom
+        paramDataType: 01000000280000000300000003000000010000000f0000001700000001000000
+        paramName:
+        - everyFrame
+        - _stopMovingAtom
+        - _uniqueId
+        - _physicsAffector
+        - _firstFrameOnly
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000000000000000000000100000001000000000000000200000002000000
+        paramByteDataSize: 0100000000000000000000000000000001000000000000000000000001000000
+    events:
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: Failed
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: FallInWater
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Hit Tree
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Hit Wall
+      isSystemEvent: 0
+      isGlobal: 0
+    globalTransitions: []
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: Awake
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: InFOV
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: TargetIsHiding
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      stringVariables: []
+      vector2Variables:
+      - useVariable: 1
+        name: direction
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 0, y: 0}
+      - useVariable: 1
+        name: footPosition
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 0, y: 0}
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables: []
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 0000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 1
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
