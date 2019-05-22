@@ -209,8 +209,9 @@ GameObject:
   - component: {fileID: 4158528548441992}
   - component: {fileID: 114373608705554118}
   - component: {fileID: 135066120349240030}
+  - component: {fileID: 114416147266499876}
   m_Layer: 10
-  m_Name: TileCollider
+  m_Name: BodyCollider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +424,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896976730737982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.559999, y: 1.36, z: -0.5}
+  m_LocalPosition: {x: 2.32, y: 2.8, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4231169473042546}
@@ -1114,14 +1115,31 @@ MonoBehaviour:
   _componentRepository: {fileID: 114890941582495346}
   _collisionData:
     Level: 0
-    Tags: []
+    Tags:
+    - Player
     ReceivesDamage: 1
-    DamageCollider: 0
+    DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
   _mainCollider: {fileID: 4158528548441992}
   _autoChangeLayers: 0
+--- !u!114 &114416147266499876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1840720849773924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: b1ae812b-320e-4105-8451-f1bd19519f63
+  componentName: 
+  _rqName: BodyCollider Assets.Source.CollisionProcessor
+  _rqName2: 4468298e-5954-4318-9d7f-7051fe5bd818
+  _componentRepository: {fileID: 114890941582495346}
 --- !u!114 &114417695129341338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1527,7 +1545,7 @@ MonoBehaviour:
     _externalVelocity:
       x: 0
       y: 0
-    OriginalZ: -0.1
+    OriginalZ: 0
     _headingDirection: 1
     MaxForce: 0.5
     ForceMultiplier: 1
@@ -1542,7 +1560,7 @@ MonoBehaviour:
     _dragForce: 0
     ZDepthByY: 0
     ZOffsetByLevel: 0
-    ZOffset: -0.5
+    ZOffset: 0
   _steeringPhysicsAffector:
     _force: {x: 0, y: 0}
     _maxForce: 0.5
@@ -1641,8 +1659,8 @@ MonoBehaviour:
   _rqName2: 9a5ea023-522e-4ebe-8fbf-3727dfc162bb
   _componentRepository: {fileID: 114890941582495346}
   _damageData:
-    DamageTargetOnCollision: 0
-    DamageTargetOnTrigger: 0
+    DamageTargetOnCollision: 1
+    DamageTargetOnTrigger: 1
     DamageOnTouch: 1
     TakesDamage: 1
     TakesSkillDamage: 1
@@ -1651,11 +1669,12 @@ MonoBehaviour:
   _ourDamageTags: []
   _useDamageColor: 0
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
-  _tagsYouDamage: []
-  _hitEffect: {fileID: 0}
-  _killSound: {fileID: 0}
-  _damageSound: {fileID: 0}
-  _death: {fileID: 0}
+  _tagsYouDamage:
+  - Player
+  _hitEffect: {fileID: 139848, guid: a199e99bdc92eef4f8561f5a0b7e84a6, type: 2}
+  _killSound: {fileID: 8300000, guid: ac2c8b5116e2c2643b2e5d27a37a9cdc, type: 3}
+  _damageSound: {fileID: 8300000, guid: a7092625bdc7b1540b4ffb5834c9b755, type: 3}
+  _death: {fileID: 193456, guid: ff2f434da5b0c6d4fbbd851cb6c674eb, type: 2}
 --- !u!114 &114964522508631212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1712,7 +1731,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1840720849773924}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
