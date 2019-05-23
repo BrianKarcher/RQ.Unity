@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4229079511567296}
   - component: {fileID: 114445215975803214}
   - component: {fileID: 135900288803366152}
+  - component: {fileID: 114851865917572544}
   m_Layer: 15
   m_Name: TileCollider
   m_TagString: Tilemap
@@ -109,7 +110,8 @@ GameObject:
   - component: {fileID: 4320798611357612}
   - component: {fileID: 114840443508687330}
   - component: {fileID: 135439251881134058}
-  m_Layer: 2
+  - component: {fileID: 114395556800903152}
+  m_Layer: 4
   m_Name: BodyCollider
   m_TagString: Tilemap
   m_Icon: {fileID: 0}
@@ -409,7 +411,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506824051627202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.56, y: 2.56, z: -0.5}
+  m_LocalPosition: {x: 1.12, y: 4, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4264097054363334}
@@ -736,9 +738,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: -0
-      y: 0
+    Side: {x: -0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -763,6 +763,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0.4
@@ -787,9 +788,7 @@ MonoBehaviour:
     Heading:
       x: 0
       y: 0
-    Side:
-      x: 0
-      y: 0
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -814,6 +813,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 45
     _lineOfSight: 1
     _dragForce: 0
@@ -894,6 +894,7 @@ MonoBehaviour:
     _isAnimationComplete: 0
     AutoPlayAnimationType: 
     PlayAutomatically: 0
+    PlayDefaultOnEnable: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
   SpriteAnimator2: {fileID: 114393893439070956}
@@ -955,6 +956,22 @@ MonoBehaviour:
     x: 0
     y: 0
   anim: {fileID: 114181377381242346}
+--- !u!114 &114395556800903152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442672958682374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: c0659cba-7a5a-497c-ad56-85314d4e3600
+  componentName: 
+  _rqName: BodyCollider Assets.Source.CollisionProcessor
+  _rqName2: 253e23cc-07db-4c4e-b6e4-778b0d9fd6ec
+  _componentRepository: {fileID: 114486825354388632}
 --- !u!114 &114445215975803214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1030,6 +1047,7 @@ MonoBehaviour:
   _usable: {fileID: 4682668529804756}
   _usableObjects: []
   _autoUse: 1
+  _messageToUser: 
   _isEnabled: 1
   _setStorySceneConfig: {fileID: 0}
 --- !u!114 &114575378629241958
@@ -1226,6 +1244,7 @@ MonoBehaviour:
   _rqName2: e26ffea3-0228-46e0-9943-a4ac946456db
   _componentRepository: {fileID: 114486825354388632}
   _pathFinder: {fileID: 0}
+  _targetType: 0
   _target: {fileID: 0}
   _targets: []
   TargetTags:
@@ -1250,7 +1269,7 @@ MonoBehaviour:
   _homeLevelLayer: 0
   _homeSickDistance: 0
   _runHomeSpeed: 0
-  _stateMachine2: {fileID: 0}
+  _setHomePositonToStartPosition: 0
 --- !u!114 &114840443508687330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1291,6 +1310,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SnapToGrid: 1
   tileOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &114851865917572544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314532467867844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 155ecb2a-9e2b-4ed6-83af-4b059cb1c8dc
+  componentName: 
+  _rqName: TileCollider Assets.Source.CollisionProcessor
+  _rqName2: e3a5eff5-9b5a-47fd-b547-9e8072ff3ea5
+  _componentRepository: {fileID: 114486825354388632}
 --- !u!114 &114852857440769634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1519,7 +1554,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.16
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135900288803366152
 SphereCollider:
