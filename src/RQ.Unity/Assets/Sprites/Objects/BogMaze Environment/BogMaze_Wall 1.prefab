@@ -1,0 +1,503 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1346382576654342}
+  m_IsPrefabParent: 1
+--- !u!1 &1081392372243058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4422270777932398}
+  - component: {fileID: 23957165058158738}
+  - component: {fileID: 33714605279661432}
+  - component: {fileID: 114132565114169760}
+  - component: {fileID: 114584395172993430}
+  m_Layer: 0
+  m_Name: MainSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1346382576654342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4254920477173420}
+  - component: {fileID: 114165145297559854}
+  - component: {fileID: 114540952023642936}
+  - component: {fileID: 114814596036987250}
+  - component: {fileID: 114787024125783748}
+  - component: {fileID: 114947678385921058}
+  m_Layer: 0
+  m_Name: BogMaze_Wall 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1544717852224546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4706948194657104}
+  - component: {fileID: 114699821895552130}
+  - component: {fileID: 65582432007118534}
+  m_Layer: 13
+  m_Name: Base Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1685285536729506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4440800661921152}
+  - component: {fileID: 33603157082810990}
+  - component: {fileID: 23078132211914142}
+  - component: {fileID: 114218495297276046}
+  m_Layer: 0
+  m_Name: Shadow Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4254920477173420
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346382576654342}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.2, y: 2.88, z: -0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4422270777932398}
+  - {fileID: 4440800661921152}
+  - {fileID: 4706948194657104}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4422270777932398
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1081392372243058}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4254920477173420}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4440800661921152
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685285536729506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.001085043, y: -0.096, z: 0.099999994}
+  m_LocalScale: {x: 3, y: 3, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4254920477173420}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4706948194657104
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544717852224546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4254920477173420}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23078132211914142
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685285536729506}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23957165058158738
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1081392372243058}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33603157082810990
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685285536729506}
+  m_Mesh: {fileID: 0}
+--- !u!33 &33714605279661432
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1081392372243058}
+  m_Mesh: {fileID: 0}
+--- !u!65 &65582432007118534
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544717852224546}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.47732496, y: 0.16053438, z: 0.5}
+  m_Center: {x: -0.0025250912, y: -0.07435131, z: 0}
+--- !u!114 &114132565114169760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1081392372243058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 11459162, guid: f21af56a5c262804f83903a5195ec516, type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 349
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
+--- !u!114 &114165145297559854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346382576654342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 542821586, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: c038ed63-a430-4814-adc7-90ad2c658a32
+  componentName: 
+  _rqName: Tree RQ.Entity.Common.SpriteBaseComponent
+  _rqName2: bcfd9ac1-d65a-493b-98ce-df8725665d5c
+  _recreateOnLoadGame: 1
+  _addToEntityContainer: 1
+  EntityType: 5
+  EntityPrefabUniqueId: 8f790c24-837a-4ff2-a6aa-7ffa01b199f8
+  _parentRepo: {fileID: 0}
+--- !u!114 &114218495297276046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685285536729506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 11459162, guid: f21af56a5c262804f83903a5195ec516, type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 0.99951667, y: 1, z: 1}
+  _spriteId: 14
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
+--- !u!114 &114540952023642936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346382576654342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1696332522, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: a7ea16ad-78e4-4a4e-9d67-ee06e87eb01b
+  componentName: 
+  _rqName: Tree RQ.Sprite.AdjustDepthByY
+  _rqName2: b1b37d0a-3230-4ed8-8cde-bb3c44e85a1a
+  _componentRepository: {fileID: 114165145297559854}
+  FootPositionY: -0.15
+--- !u!114 &114584395172993430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1081392372243058}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11482968, guid: 844202ce5dcce0044b46a7d6a5c17d74, type: 2}
+  defaultClipId: 5
+  playAutomatically: 1
+--- !u!114 &114699821895552130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544717852224546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: bc5429af-4642-4753-8e67-fc9fdd537061
+  componentName: 
+  _rqName: Base Collider RQ.Physics.Components.CollisionComponent
+  _rqName2: dc655751-fcce-4842-ad81-a327bd4a95df
+  _componentRepository: {fileID: 114165145297559854}
+  _collisionData:
+    Level: 0
+    Tags: []
+    ReceivesDamage: 1
+    DamageCollider: 0
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _mainCollider: {fileID: 4706948194657104}
+  _autoChangeLayers: 0
+--- !u!114 &114787024125783748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346382576654342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1896214989, guid: c47d312bb140f21409c92b406c845994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SnapToGrid: 1
+  tileOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &114814596036987250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346382576654342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 0f29360b-f0f0-4900-915e-d520e40e200c
+  componentName: 
+  _rqName: Tree RQ.Physics.Components.PhysicsComponent
+  _rqName2: 4f394d83-987e-4aae-b6d2-a77785273cdc
+  _componentRepository: {fileID: 114165145297559854}
+  _physicsData:
+    InitialVelocity: {x: 0, y: 0}
+    Size:
+      x: 0
+      y: 0
+    Velocity: {x: 0, y: 0}
+    Heading:
+      x: 0
+      y: 0
+    Side: {x: -0, y: 0}
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 1
+    OriginalMaxSpeed: 1
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    MaxDistanceToTarget: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalVelocity:
+      x: 0
+      y: 0
+    OriginalZ: -0.1
+    _headingDirection: 1
+    MaxForce: 1
+    ForceMultiplier: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _foot: {fileID: 0}
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 1
+    _originalMaxForce: 1
+    _maxSpeed: 1
+    _mass: 0
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
+  _originalPhysicsData:
+    InitialVelocity: {x: 0, y: 0}
+    Size:
+      x: 0
+      y: 0
+    Velocity: {x: 0, y: 0}
+    Heading:
+      x: 0
+      y: 0
+    Side: {x: 0, y: 0}
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 1
+    OriginalMaxSpeed: 1
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    MaxDistanceToTarget: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalVelocity:
+      x: 0
+      y: 0
+    OriginalZ: 0
+    _headingDirection: 1
+    MaxForce: 1
+    ForceMultiplier: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _foot: {fileID: 0}
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+  _autoUpdateHeading: 1
+  _steering:
+    TargetAgent1: {fileID: 0}
+    Target:
+      x: 0
+      y: 0
+    Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
+    _steeringForce:
+      x: 0
+      y: 0
+--- !u!114 &114947678385921058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346382576654342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 504469258, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 2abccf91-b76e-4eb6-882c-9f82de564f81
+  componentName: 
+  _rqName: Tree RQ.Physics.Components.FloorComponent
+  _rqName2: f42ab126-8bae-4c7d-bf25-772c5b28e484
+  _componentRepository: {fileID: 114165145297559854}
+  Floor: 1
