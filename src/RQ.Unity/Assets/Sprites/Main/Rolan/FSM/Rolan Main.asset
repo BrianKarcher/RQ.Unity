@@ -665,19 +665,19 @@ MonoBehaviour:
         actionHashCodes: 9572fc0048c01101c284f001c284f0011bcdca04c284f00182737300ac126d04fcd32404
         unityObjectParams: []
         fsmGameObjectParams:
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
@@ -1696,6 +1696,7 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.IsDamaged
         - HutongGames.PlayMaker.Actions.RunFSM
         - Assets.Source.AI.PM_State_Machine.PlayerBoard
+        - HutongGames.PlayMaker.Actions.RunFSM
         customNames:
         - 
         - 
@@ -1704,10 +1705,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01000100010101
-        actionIsOpen: 01010101010101
-        actionStartIndex: 00000000040000000a0000000f00000015000000180000001b000000
-        actionHashCodes: ec2b1f02a859b302866e7600c284f001343beb01fe0587001605b602
+        - 
+        actionEnabled: 0100010000010101
+        actionIsOpen: 0101010101010101
+        actionStartIndex: 00000000040000000a0000000f00000015000000180000001b0000001e000000
+        actionHashCodes: ec2b1f02a859b302866e7600c284f001343beb01fe0587001605b602fe058700
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -1761,6 +1763,9 @@ MonoBehaviour:
                 vector4Values: []
                 objectReferences: []
             isEdited: 0
+        - fsmTemplate: {fileID: 11400000, guid: f91852b8713abbd458fd7d0f97a4bbe9,
+            type: 2}
+          fsmVarOverrides: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
@@ -1777,6 +1782,12 @@ MonoBehaviour:
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: 
           tooltip: 
@@ -1803,6 +1814,7 @@ MonoBehaviour:
         - Damaged
         - 
         - FINISHED
+        - 
         byteData: 0001000100000002000000000200000001010001000000
         arrayParamSizes: 
         arrayParamTypes: []
@@ -1814,7 +1826,7 @@ MonoBehaviour:
         - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
         - RQ.AI.Conditions.IsDamagedConditionAI
         - RQ.Animation.BasicAction.Action.PlayerBoardAtom
-        paramDataType: 280000000100000001000000030000001100000012000000280000000100000007000000070000002800000001000000000000000100000001000000170000001300000001000000280000000300000003000000170000002800000007000000260000001000000017000000170000001300000028000000
+        paramDataType: 280000000100000001000000030000001100000012000000280000000100000007000000070000002800000001000000000000000100000001000000170000001300000001000000280000000300000003000000170000002800000007000000260000001000000017000000170000001300000028000000260000001000000017000000
         paramName:
         - _atom
         - _enableOnEnter
@@ -1846,8 +1858,11 @@ MonoBehaviour:
         - FinishEvent
         - BoardPlatform
         - _atom
-        paramDataPos: 00000000000000000100000000000000000000000000000001000000020000000300000007000000020000000b0000000c0000001000000011000000010000000000000012000000030000000200000003000000040000000400000013000000000000000000000005000000060000000100000005000000
-        paramByteDataSize: 000000000100000001000000000000000000000000000000000000000100000004000000040000000000000001000000040000000100000001000000000000000000000001000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000
+        - fsmTemplateControl
+        - storeID
+        - finishEvent
+        paramDataPos: 00000000000000000100000000000000000000000000000001000000020000000300000007000000020000000b0000000c0000001000000011000000010000000000000012000000030000000200000003000000040000000400000013000000000000000000000005000000060000000100000005000000010000000100000007000000
+        paramByteDataSize: 000000000100000001000000000000000000000000000000000000000100000004000000040000000000000001000000040000000100000001000000000000000000000001000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000
     - name: Paused
       description: 
       colorIndex: 0
@@ -2584,19 +2599,19 @@ MonoBehaviour:
         actionHashCodes: 9572fc0048c01101c284f001c284f0011bcdca04c284f00182737300ac126d04fcd32404
         unityObjectParams: []
         fsmGameObjectParams:
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
