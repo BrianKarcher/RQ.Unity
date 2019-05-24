@@ -53,7 +53,7 @@ MonoBehaviour:
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
-          name: 
+          name: boss
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -144,14 +144,33 @@ MonoBehaviour:
       actionData:
         actionNames:
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.SendMessage
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 82737300
-        unityObjectParams: []
-        fsmGameObjectParams: []
+        - 
+        - 
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000060000000f00000012000000
+        actionHashCodes: 82737300ee6bbe0148c01101ac126d04
+        unityObjectParams:
+        - {fileID: 1900464689961712, guid: 4b1b0f60106158c4689f66b8eef90b87, type: 2}
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: boss
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -166,11 +185,42 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: tree_shake
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 5
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -181,13 +231,20 @@ MonoBehaviour:
         stringParams:
         - 
         - 
-        byteData: 0100
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 04000000
+        - 
+        - FINISHED
+        - StopMoving
+        - 
+        byteData: 0100000000009a9919bf000000000000000000000000000000000000000000000001
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - System.String
+        customTypeSizes: 04000000070000000b000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.AnimationAtom
-        paramDataType: 120000002800000003000000030000000100000001000000
+        - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        paramDataType: 12000000280000000300000003000000010000000100000013000000280000001b0000000900000001000000010000000200000001000000030000000f0000001700000001000000290000001200000013000000120000000100000028000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
         - _animation
         - _animationAtom
@@ -195,8 +252,37 @@ MonoBehaviour:
         - _animation
         - WaitForAnimationCompletion
         - StopOnExit
-        paramDataPos: 000000000000000000000000010000000000000001000000
-        paramByteDataSize: 000000000000000000000000000000000100000001000000
+        - storeResult
+        - _instantiatePrefabAtom
+        - _gameObject
+        - _offset
+        - _rotateOffsetByFacingDirection
+        - _rotateHorizontalOffsetByFacingDirection
+        - Delay
+        - SetAIParent
+        - ObjectPoolName
+        - time
+        - finishEvent
+        - realTime
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - Log
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        paramDataPos: 000000000000000000000000010000000000000001000000000000000100000000000000020000000e0000000f0000001000000014000000020000000000000003000000150000000000000001000000010000000200000016000000020000000400000000000000050000001700000018000000190000001a0000001b0000001c0000001d00000021000000
+        paramByteDataSize: 0000000000000000000000000000000001000000010000000000000000000000000000000c00000001000000010000000400000001000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -212,7 +298,13 @@ MonoBehaviour:
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: boss
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -220,7 +312,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 00000000
     description: 
     docUrl: 
     showStateLabel: 1
