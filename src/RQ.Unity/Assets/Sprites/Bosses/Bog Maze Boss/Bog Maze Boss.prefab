@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: -805546059, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 94d16dd9-0870-4e4c-ba67-35ce695f395b
+  _uniqueId: 40d703de-0505-4c23-a72f-79ff87d6cb2d
   componentName: AI
   _rqName: Logic SM 2 RQ.Physics.Components.PlayMakerStateMachineComponent
   _rqName2: 9a155b6d-c47c-4a85-8026-dc8c580b16a0
@@ -957,10 +957,10 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    ReceivesDamage: 1
-    DamageCollider: 1
-    DeflectingCollider: 0
-    CurrentlyDeflecting: 0
+    ReceivesDamage: 0
+    DamageCollider: 0
+    DeflectingCollider: 1
+    CurrentlyDeflecting: 1
     IsEnabled: 1
   _mainCollider: {fileID: 4909512176581592}
   _autoChangeLayers: 0
@@ -1126,21 +1126,21 @@ MonoBehaviour:
   _rqName2: 5c004ef7-f2bd-4440-9999-03ff1b09e375
   _componentRepository: {fileID: 114967114903305136}
   _physicsData:
+    SteeringData:
+      FeelerOffset: 0.2
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 1
+    Heading: {x: 0, y: 1}
     Side: {x: -0, y: 0}
     Offset:
       x: 0
       y: 0
     Mass: 1
-    MaxSpeed: 0.3
-    OriginalMaxSpeed: 0.3
+    MaxSpeed: 0.8
+    OriginalMaxSpeed: 0.8
     MaxSpeedMultiplier: 1
     BoundingRadius: 0.2
     MaxDistanceToTarget: 0.5
@@ -1170,20 +1170,20 @@ MonoBehaviour:
     _force: {x: 0, y: 0}
     _maxForce: 3
     _originalMaxForce: 3
-    _maxSpeed: 0.3
+    _maxSpeed: 0.8
     _mass: 1
     _enabled: 1
     Friction: 0
     ForceMultiplier: 1
   _originalPhysicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
     Side: {x: 0, y: 0}
     Offset:
       x: 0
