@@ -5696,7 +5696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1777066461529924
 GameObject:
   m_ObjectHideFlags: 1
@@ -6755,6 +6755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4010456355777974}
   - component: {fileID: 114730631501552974}
+  - component: {fileID: 114271287362611588}
   m_Layer: 0
   m_Name: NGUI Dialogue UI
   m_TagString: Untagged
@@ -24094,7 +24095,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11468604, guid: d9c0c97b4ea4f924098c7cebf4eb5f8b, type: 2}
-  mText: Left Control or Mouse 1 or Controller Button 1
+  mText: A or Mouse 1 or Controller Button 1
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -25475,6 +25476,33 @@ MonoBehaviour:
   hideInactive: 0
   keepWithinPanel: 1
   sorted: 0
+--- !u!114 &114271287362611588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867495353797192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f409847c1acbc4a95e876f56fd6ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerId: 0
+  _submitAction:
+    NGUIKey: 13
+    rewiredAction: Attack
+  _cancelAction:
+    NGUIKey: 27
+    rewiredAction: Special
+  _horizontalAction:
+    NGUIAxis: Horizontal
+    rewiredAction: Horizontal
+  _verticalAction:
+    NGUIAxis: Vertical
+    rewiredAction: Vertical
+  _scrollAction:
+    NGUIAxis: Mouse ScrollWheel
+    rewiredAction: UIScroll
 --- !u!114 &114271482556492590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -27046,7 +27074,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11468604, guid: d9c0c97b4ea4f924098c7cebf4eb5f8b, type: 2}
-  mText: W, A, S, D or Arrow Keys or Controller axis
+  mText: Arrow Keys or Controller axis
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -29155,7 +29183,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.7611111
+  aspectRatio: 1.7777778
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -31269,7 +31297,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 21.905882
+  aspectRatio: 15.058824
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11486456, guid: a5c6b075b999262418ca9c68a69b7b56, type: 2}
@@ -34123,7 +34151,7 @@ MonoBehaviour:
   _rqName: New Game Button RQ.Common.UI.OnClickLoadScene
   _rqName2: 9c18e1dd-3688-418a-8507-0d60a0d9f825
   _button: StartNew
-  _scene: {fileID: 11400000, guid: 6a86b768b0489854782778f5a13e08e2, type: 2}
+  _scene: {fileID: 11400000, guid: 19ebf03d37763b34bba2d441b7f1a1cf, type: 2}
 --- !u!114 &114574204407702826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41470,7 +41498,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 1800
+  mWidth: 1218
   mHeight: 552
   mDepth: 0
   mMat: {fileID: 0}
@@ -41715,7 +41743,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
-  mWidth: 1332
+  mWidth: 1331
   mHeight: 776
   mDepth: -1
   mMat: {fileID: 0}
@@ -43653,7 +43681,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 0
   renderQueue: 0
-  startingRenderQueue: 3001
+  startingRenderQueue: 3000
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -47033,7 +47061,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 0
-  mWidth: 1764
+  mWidth: 1182
   mHeight: 420
   mDepth: 1
   mMat: {fileID: 0}

@@ -98,8 +98,8 @@ namespace RQ2.Controller.UI.Grid
             {
                 FileName = fileName,
                 Chapter = "Forest Town",
-                Gold = gameData.SceneSnapshot.Inventory.Gold,
-                Level = gameData.SceneSnapshot.EntityStats.Level,
+                Gold = gameData.SceneSnapshot.Inventory == null ? 0 : gameData.SceneSnapshot.Inventory.Gold,
+                Level = gameData.SceneSnapshot.EntityStats == null ? 1 : gameData.SceneSnapshot.EntityStats.Level,
                 SaveCount = saveCount,
                 Date = gameData.SaveDate
             };

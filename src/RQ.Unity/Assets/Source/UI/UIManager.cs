@@ -183,15 +183,15 @@ namespace RQ2.UI
 
         }
 
-        public override void Start()
-        {
-            base.Start();
-            if (!Application.isPlaying)
-                return;
-            if (UICamera != null)
-                GameController.Instance.SetCamera(UICamera.GetComponent<RQ.Common.UI.IUICamera>());
-                //InputManager.Instance.SetCamera(UICamera.GetComponent<RQ.Common.UI.IUICamera>());
-        }
+        //public override void Start()
+        //{
+        //    base.Start();
+        //    if (!Application.isPlaying)
+        //        return;
+        //    if (UICamera != null)
+        //        GameController.Instance.SetCamera(UICamera.GetComponent<RQ.Common.UI.IUICamera>());
+        //        //InputManager.Instance.SetCamera(UICamera.GetComponent<RQ.Common.UI.IUICamera>());
+        //}
 
         public override void Update()
         {

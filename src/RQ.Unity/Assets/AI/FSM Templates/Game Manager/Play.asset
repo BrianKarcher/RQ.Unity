@@ -23,10 +23,10 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 226
-        y: 113
-        width: 113
-        height: 48
+        x: 211
+        y: 102
+        width: 150
+        height: 64
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -47,17 +47,33 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: StartConversation
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Conversation
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - RQ.AI.PlayMaker.LoadScene
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 8664b502
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000004000000
+        actionHashCodes: 8664b502c284f001
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -81,20 +97,30 @@ MonoBehaviour:
         stringParams:
         - 
         - StartCutscene
-        byteData: 01
+        - StartConversation
+        - StartConversation
+        - 
+        byteData: 0100
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 02000000
+        customTypeSizes: 0200000002000000
         customTypeNames:
         - RQ.AI.Atom.GameManager.LoadSceneAtom
-        paramDataType: 28000000030000000100000017000000
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 28000000030000000100000017000000170000001300000001000000280000000300000003000000
         paramName:
         - _atom
         - SceneName
         - LoadNextScene
         - LoadCutscene
-        paramDataPos: 00000000000000000000000001000000
-        paramByteDataSize: 00000000000000000100000000000000
+        - Received
+        - storeSender
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        paramDataPos: 00000000000000000000000001000000020000000000000001000000010000000300000004000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000001000000000000000000000000000000
     - name: Cutscene
       description: 
       colorIndex: 0
@@ -396,31 +422,31 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
@@ -446,7 +472,7 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
