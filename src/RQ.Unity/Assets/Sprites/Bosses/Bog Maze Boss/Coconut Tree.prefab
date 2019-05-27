@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4687243717645656}
   - component: {fileID: 114768935741963950}
   - component: {fileID: 65620611381127204}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Base Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,9 +73,9 @@ GameObject:
   - component: {fileID: 4950362658466300}
   - component: {fileID: 114778682470600842}
   - component: {fileID: 65384373857071094}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Boss Trigger
-  m_TagString: Untagged
+  m_TagString: BossHazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1850888015285894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.76, y: 2.24, z: -0.5}
+  m_LocalPosition: {x: 1.76, y: 3.52, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4690737778123322}
@@ -308,7 +308,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1711471286995906}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.55947745, y: 0.26954293, z: 0.5}
@@ -539,14 +539,14 @@ MonoBehaviour:
   _rqName2: 4f394d83-987e-4aae-b6d2-a77785273cdc
   _componentRepository: {fileID: 114644645011644936}
   _physicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
     Side: {x: -0, y: 0}
     Offset:
       x: 0
@@ -589,14 +589,14 @@ MonoBehaviour:
     Friction: 0
     ForceMultiplier: 1
   _originalPhysicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
     Side: {x: 0, y: 0}
     Offset:
       x: 0
