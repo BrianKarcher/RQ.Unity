@@ -53,8 +53,11 @@ namespace RQ2.Controller.UI.Grid
                 {
                     int saveCountDump = 0;
                     var slotData = GetSaveData(autoSaveFileName, ref saveCountDump);
-                    slotData.IsAutoSave = true;
-                    saveSlot = AddSaveSlotToGrid(slotData, onClickLoad);
+                    if (slotData != null)
+                    {
+                        slotData.IsAutoSave = true;
+                        saveSlot = AddSaveSlotToGrid(slotData, onClickLoad);
+                    }
                 }
             }
             var saveFiles = Persistence.GetSaveFiles();
@@ -68,6 +71,8 @@ namespace RQ2.Controller.UI.Grid
                 //var saveSlot = GameObject.Instantiate(SaveSlot, new Vector3(0, 0, 0), Quaternion.identity) as SaveSlot;
                 //
                 var saveSlotData = GetSaveData(saveFileName, ref saveCount);
+                if (saveSlotData == null)
+                    continue;
                 saveSlotDatas.Add(saveSlotData);
             }
 
@@ -94,6 +99,8 @@ namespace RQ2.Controller.UI.Grid
         private SaveSlotData GetSaveData(string fileName, ref int saveCount)
         {
             var gameData = Persistence.LoadGame(fileName);
+            if (gameData.SceneSnapshot == null)
+                return null;
             var saveSlotData = new SaveSlotData()
             {
                 FileName = fileName,

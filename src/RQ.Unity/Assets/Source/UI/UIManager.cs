@@ -634,6 +634,7 @@ namespace RQ2.UI
         {
             if (panel != null)
                 NGUITools.SetActive(panel.gameObject, state);
+
         }
 
         public void MessageBoxOkClicked()
@@ -827,7 +828,8 @@ namespace RQ2.UI
         public void HoverContinueButton()
         {
             var continueButton = ContinueButton;
-            UICamera.currentScheme = UICamera.ControlScheme.Controller;
+            //UICamera.currentScheme = UICamera.ControlScheme.Controller;
+            UICamera.hoveredObject = null;
             UICamera.hoveredObject = continueButton.gameObject;
         }
 
