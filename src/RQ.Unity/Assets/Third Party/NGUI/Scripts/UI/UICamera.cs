@@ -2452,9 +2452,8 @@ public class UICamera : MonoBehaviour
 
 		if (submitKeyDown) currentTouch.pressTime = RealTime.time;
 
-        //if ((submitKeyDown || submitKeyUp) && currentScheme == ControlScheme.Controller)
-	    if ((submitKeyDown || submitKeyUp))
-        {
+		if ((submitKeyDown || submitKeyUp) && currentScheme == ControlScheme.Controller)
+		{
 			currentTouch.current = controllerNavigationObject;
 			ProcessTouch(submitKeyDown, submitKeyUp);
 			currentTouch.last = currentTouch.current;
