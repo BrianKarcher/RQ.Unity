@@ -1553,7 +1553,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.88, y: 1.84, z: -0.5}
+  m_LocalPosition: {x: 1.84, y: 0.88, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414904}
@@ -4490,6 +4490,7 @@ MonoBehaviour:
   TargetTags: []
   _locations: []
   _parent: {fileID: 0}
+  _children: []
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
@@ -5374,14 +5375,14 @@ MonoBehaviour:
   _rqName2: b7126fa1-d782-4ee3-a019-182889885d8f
   _componentRepository: {fileID: 11418054}
   _physicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
     Side: {x: -0, y: 0}
     Offset:
       x: 0
@@ -5424,14 +5425,14 @@ MonoBehaviour:
     Friction: 0
     ForceMultiplier: 5
   _originalPhysicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
     Side: {x: 0, y: 0}
     Offset:
       x: 0
@@ -6356,6 +6357,25 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 148196}
   m_IsPrefabParent: 1
+--- !u!1 &1117165008839450
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4888010700164072}
+  - component: {fileID: 114879860686399288}
+  - component: {fileID: 65892179521261548}
+  - component: {fileID: 114552489090752190}
+  - component: {fileID: 114798297649236426}
+  m_Layer: 9
+  m_Name: Shield
+  m_TagString: Shield
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1148874789738972
 GameObject:
   m_ObjectHideFlags: 0
@@ -6633,6 +6653,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4910429042600720}
+  - {fileID: 4888010700164072}
   m_Father: {fileID: 420414}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6783,6 +6804,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 420414}
   m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4888010700164072
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117165008839450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4167584970690130}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4910429042600720
 Transform:
@@ -7018,6 +7052,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.12, y: 0.2, z: 1}
   m_Center: {x: -0.03, y: 0, z: 0}
+--- !u!65 &65892179521261548
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117165008839450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.5, z: 1}
+  m_Center: {x: 0.2, y: 0, z: 0}
 --- !u!114 &114001749091326982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7637,6 +7683,31 @@ MonoBehaviour:
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
   renderLayer: 0
+--- !u!114 &114552489090752190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117165008839450}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6821da17c7cbb46b57a30d9c75e7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition:
+    luaConditions: []
+    questConditions: []
+    rqQuestConditions: []
+    acceptedTags:
+    - Projectile
+    acceptedGameObjects: []
+    luaWizardIndex: -1
+    lastEvaluationValue: 0
+  actor: {fileID: 0}
+  trigger: 8
+  stopConversationOnTriggerExit: 0
+  exclusive: 0
+  once: 0
 --- !u!114 &114644611587074702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9191,6 +9262,35 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114798297649236426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117165008839450}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2078136773, guid: 81b6f57c83cca4f42a865cbcfe4080e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 5fc4d879-8e75-4b1e-8f30-75738efaffec
+  componentName: 
+  _rqName: Shield RQ.Controller.Actions.SendMessage2
+  _rqName2: 681336a3-3ee6-4324-a0ae-57978354b8b9
+  _sendToGameController: 0
+  _sendToUIManager: 0
+  _target: {fileID: 0}
+  eventName: 
+  _data: 
+  MessageData:
+    SendToGameController: 0
+    SendToUIManager: 0
+    SendToMainCharacter: 0
+    SendToAll: 0
+    SendToSelf: 1
+    TargetUniqueId: 
+    EventName: Block
+    Data: 
 --- !u!114 &114830128623541804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9307,6 +9407,22 @@ MonoBehaviour:
   componentName: Charge_D
   _rqName: FX_HammerCharge RQ.Physics.Components.GameObjectStatePersistenceComponent
   _rqName2: 3adf6b2e-772c-4ab0-95fb-148d803b5816
+  _componentRepository: {fileID: 11418054}
+--- !u!114 &114879860686399288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117165008839450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 290b206d-f310-4587-a205-118a17a2980c
+  componentName: Shield
+  _rqName: Shield RQ.Physics.Components.GameObjectStatePersistenceComponent
+  _rqName2: 21274cd4-9b56-42cd-9a91-83b665e4f78c
   _componentRepository: {fileID: 11418054}
 --- !u!114 &114915480736034000
 MonoBehaviour:
