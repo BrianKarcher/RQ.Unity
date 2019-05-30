@@ -278,13 +278,20 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
-        unityObjectParams: []
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.PlayRandomSoundOneShot
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.StopMoving
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000060000000c000000
+        actionHashCodes: 2b347e01827373009f005d00
+        unityObjectParams:
+        - {fileID: 8300000, guid: 435ee3d4426762d4b95ff7ced6ddf059, type: 3}
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
@@ -293,7 +300,13 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Destroyed
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -306,16 +319,41 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        stringParams:
+        - 
+        - 
+        - 
+        - 
+        byteData: 00010000803f01000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - UnityEngine.AudioClip
+        customTypeSizes: 040000000400000003000000
+        customTypeNames:
+        - RQ.Entity.AtomAction.Action.PlayRandomSoundOneShotAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.AI.Action.StopMovingAtom
+        paramDataType: 280000000100000001000000020000000c000000050000001200000028000000030000000300000001000000010000000100000028000000030000000300000001000000
+        paramName:
+        - _soundAtom
+        - _playOnMusicTrack
+        - _playOnSoundEffectTrack
+        - _volume
+        - _audioClips
+        - 
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - everyFrame
+        - _stopMovingAtom
+        - _uniqueId
+        - _physicsAffector
+        - _firstFrameOnly
+        paramDataPos: 0000000000000000010000000200000000000000000000000000000001000000000000000100000006000000070000000800000002000000020000000300000009000000
+        paramByteDataSize: 0000000001000000010000000400000000000000000000000000000000000000000000000000000001000000010000000100000000000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
