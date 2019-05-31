@@ -59,7 +59,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1271731430252098
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +903,20 @@ MonoBehaviour:
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: Projectile
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1473031211625358, guid: cc6aa65b14d380644bac0113dea6d19f,
+          type: 2}
+      - useVariable: 1
+        name: tree
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -911,7 +924,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
@@ -954,7 +967,7 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: 37c84567a552bd9429ca9fd385eb03a3, type: 2}
+  fsmTemplate: {fileID: 11400000, guid: b8e0ed5610fd77b40a84c54ad51d3c88, type: 2}
   eventHandlerComponentsAdded: 1
 --- !u!114 &114350716910960568
 MonoBehaviour:
@@ -990,10 +1003,10 @@ MonoBehaviour:
     Level: 0
     Tags:
     - Player
-    ReceivesDamage: 0
-    DamageCollider: 0
-    DeflectingCollider: 1
-    CurrentlyDeflecting: 1
+    ReceivesDamage: 1
+    DamageCollider: 1
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
     IsEnabled: 1
   _mainCollider: {fileID: 4752791946326040}
   _autoChangeLayers: 0
@@ -1358,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 5464afb0-937d-4412-897e-28cb0f7cc632
+  _uniqueId: a1f95dec-66d9-43f8-a854-7a29dc503a7f
   componentName: 
   _rqName: HornCollider RQ.Physics.Components.CollisionComponent
   _rqName2: 14b5175b-504b-4222-a4f2-5937d3e3c635
@@ -1589,7 +1602,7 @@ MonoBehaviour:
     TargetTags: []
   _homePosition:
     x: 3.52
-    y: 2.72
+    y: 2.08
   _homeLevelLayer: 0
   _homeSickDistance: 1
   _runHomeSpeed: 0
