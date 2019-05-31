@@ -2,6 +2,7 @@
 using RQ.Common.Controllers;
 using RQ.Messaging;
 using System;
+using Rewired;
 using UnityEngine;
 
 namespace RQ.UI
@@ -13,6 +14,9 @@ namespace RQ.UI
     [AddComponentMenu("Dialogue System/Actor/Conversation Link")]
     public class ConversationLink : MonoBehaviour
     {
+        //private string[] RewiredActions;
+        private ActionElementMap[] RewiredActions;
+
         private bool _hasStarted = false;
 
         public event Action ConversationEnd;
@@ -28,7 +32,22 @@ namespace RQ.UI
         public void Start()
         {
             _hasStarted = true;
+            RewiredActions = new ActionElementMap[Rewired.ReInput.mapping.Actions.Count];
+            Player player = Rewired.ReInput.players.GetPlayer(0);
+            for (int i = 0; i < Rewired.ReInput.mapping.Actions.Count; i++)
+            {
+                
+                //player.action
+                var actionName = Rewired.ReInput.mapping.Actions[i].name;
+                var locatedAction = player.controllers.maps.GetFirstElementMapWithAction(actionName, true);
+                //if (locatedAction != null)
+                //    locatedAction.actionDescriptiveName =
+                //        locatedAction.actionDescriptiveName.Replace(" ", string.Empty);
+                //RewiredActions[i] = Rewired.ReInput.mapping.Actions[i].name.Replace(" ", string.Empty);
+                RewiredActions[i] = locatedAction;
+            }
         }
+
         public void OnConversationStart(Transform actor)
         {
             if (!_hasStarted)
@@ -69,8 +88,26 @@ namespace RQ.UI
 
         public void OnConversationLine(Subtitle subtitle)
         {
-            if (!_hasStarted)
-                return;
+            for (int i = 0; i < RewiredActions.Length; i++)
+            {
+                subtitle.formattedText.text = ReplaceButton(subtitle.formattedText.text, RewiredActions[i]);
+            }
+            
+            //subtitle.formattedText.text = subtitle.formattedText.text.Replace("", )
+        }
+
+        private string ReplaceButton(string line, ActionElementMap action)
+        {
+            if (action == null)
+                return line;
+            //Rewired.action
+            //Player player = Rewired.ReInput.players.GetPlayer(0);
+            //player.action
+            //var locatedAction = player.controllers.maps.GetFirstElementMapWithAction(action, true);
+            //if (locatedAction == null)
+            //    return line;
+            var buttonName = action.elementIdentifierName;
+            return line.Replace("{" + action.actionDescriptiveName + "Action}", buttonName);
         }
     }
 }

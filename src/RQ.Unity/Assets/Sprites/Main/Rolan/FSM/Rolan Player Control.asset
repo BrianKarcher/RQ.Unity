@@ -274,7 +274,7 @@ MonoBehaviour:
         - Block
         - 
         - 
-        byteData: 0101000000000100000001000000000a00000001010001000000000001000000000101000000010000000700000001
+        byteData: 0101000000000100000001000000000b00000001010001000000000001000000000101000000010000000700000001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 00000000010000000100000003000000040000000400000005000000
@@ -369,7 +369,7 @@ MonoBehaviour:
         x: 572.02344
         y: 210
         width: 145
-        height: 64
+        height: 80
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -398,6 +398,14 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: Block
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Roll
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - Rewired.Integration.PlayMaker.RewiredPlayerGetButtonDown
@@ -409,6 +417,8 @@ MonoBehaviour:
         - Assets.Source.AI.PM_State_Machine.PlayAnimation
         - RQ.Entity.AI.PlayMaker.PlayerMove
         - HutongGames.PlayMaker.Actions.DebugLog
+        - Rewired.Integration.PlayMaker.RewiredPlayerGetButtonDown
+        - Assets.Source.AI.PM_State_Machine.SetMaxSpeed
         customNames:
         - 
         - 
@@ -419,10 +429,12 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010100000101010100
-        actionIsOpen: 010101010101010101
-        actionStartIndex: 00000000070000000e00000012000000160000001c00000023000000290000002e000000
-        actionHashCodes: b9d24e00b9d24e00f74b7803f74b7803a082bf001bcdca0482737300866e76009c59e501
+        - 
+        - 
+        actionEnabled: 0101000001010101000101
+        actionIsOpen: 0101010101010101010101
+        actionStartIndex: 00000000070000000e00000012000000160000001c00000023000000290000002e0000003100000038000000
+        actionHashCodes: b9d24e00b9d24e00f74b7803f74b7803a082bf001bcdca0482737300866e76009c59e501b9d24e004303fc02
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -457,6 +469,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Run
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Block
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -499,7 +517,19 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: 
           tooltip: 
@@ -544,17 +574,22 @@ MonoBehaviour:
         - 
         - 
         - Run
-        byteData: 0101000000000100000001000000000a000000010100010000000000010000000001
+        - Block
+        - 
+        - 
+        - 
+        byteData: 0101000000000100000001000000000b000000010100010000000000010000000001010000004001
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0100000001000000030000000400000004000000
+        customTypeSizes: 010000000100000003000000040000000400000003000000
         customTypeNames:
         - RQ.AI.Action.ButtonPressedAtom
         - RQ.AI.Action.ButtonPressedAtom
         - RQ.Animation.BasicAction.Action.SetFloatVariableAtom2
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Entity.AtomAction.Action.PlayerMoveAtom
-        paramDataType: 110000001700000017000000170000001200000010000000010000001100000017000000170000001700000012000000100000000100000017000000110000002800000007000000170000001100000028000000070000000f00000001000000280000000200000007000000030000000f0000000f0000000f000000170000001700000017000000010000001200000028000000030000000300000001000000010000002800000001000000000000000100000001000000070000001200000001000000
+        - RQ.Animation.BasicAction.Action.SetMaxSpeedAtom
+        paramDataType: 110000001700000017000000170000001200000010000000010000001100000017000000170000001700000012000000100000000100000017000000110000002800000007000000170000001100000028000000070000000f00000001000000280000000200000007000000030000000f0000000f0000000f0000001700000017000000170000000100000012000000280000000300000003000000010000000100000028000000010000000000000001000000010000000700000012000000010000001100000017000000170000001700000012000000100000000100000028000000020000000100000003000000
         paramName:
         - storeValue
         - isTrueEvent
@@ -605,8 +640,19 @@ MonoBehaviour:
         - logLevel
         - text
         - sendToUnityLog
-        paramDataPos: 00000000000000000100000002000000000000000000000000000000010000000300000004000000050000000100000001000000010000000600000002000000000000000200000007000000030000000100000006000000000000000a000000020000000b0000000f00000008000000010000000200000003000000090000000a0000000b0000001300000002000000030000000c0000000d00000014000000150000000400000016000000170000001b0000001c0000001d0000000300000021000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000000000000000000000400000000000000000000000000000004000000000000000100000000000000040000000400000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000010000000000000001000000040000000100000001000000040000000000000001000000
+        - storeValue
+        - isTrueEvent
+        - isFalseEvent
+        - valueChangedEvent
+        - actionName
+        - playerId
+        - everyFrame
+        - _setMaxSpeedAtom
+        - _speed
+        - _resetToOriginal
+        - PhysicsAffectorName
+        paramDataPos: 00000000000000000100000002000000000000000000000000000000010000000300000004000000050000000100000001000000010000000600000002000000000000000200000007000000030000000100000006000000000000000a000000020000000b0000000f00000008000000010000000200000003000000090000000a0000000b0000001300000002000000030000000c0000000d00000014000000150000000400000016000000170000001b0000001c0000001d0000000300000021000000040000000e0000000f0000001000000004000000020000002200000005000000230000002700000011000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000100000000000000000000000000000004000000000000000000000000000000040000000000000001000000000000000400000004000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000000000000010000000400000001000000010000000400000000000000010000000000000000000000000000000000000000000000000000000100000000000000040000000100000000000000
     - name: Primary Action
       description: 
       colorIndex: 0
@@ -1075,6 +1121,135 @@ MonoBehaviour:
         - _firstFrameOnly
         paramDataPos: 0000000000000000010000000000000001000000020000000300000001000000000000000200000003000000040000000000000000000000040000000100000002000000050000000600000005000000060000000700000003000000070000000800000008000000
         paramByteDataSize: 0000000001000000010000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000010000000100000000000000000000000000000001000000
+    - name: Roll
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 758.0078
+        y: 129
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Run
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SetMaxSpeed
+        - Assets.Source.AI.PM_State_Machine.SetVelocity
+        - HutongGames.PlayMaker.Actions.Wait
+        - Assets.Source.AI.PM_State_Machine.PlayAnimation
+        - Assets.Source.AI.PM_State_Machine.EnableCollider
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 000000000400000011000000140000001a000000
+        actionHashCodes: 4303fc028486480048c0110182737300ec2b1f02
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Jump
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.5
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        byteData: 00000040000000000000000000000000000000000000000000000000006666e63f6666e63f0101000000000000000001
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 030000000a0000000400000003000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.SetMaxSpeedAtom
+        - RQ.AI.Action.SetVelocityAtom
+        - RQ.Animation.BasicAction.Action.AnimationAtom
+        - RQ.Animation.BasicAction.Action.EnableColliderAtom
+        paramDataType: 28000000020000000100000003000000250000002800000008000000020000000300000007000000080000000200000002000000010000000700000003000000010000000f000000170000000100000012000000280000000300000003000000010000000100000028000000010000000100000003000000
+        paramName:
+        - _setMaxSpeedAtom
+        - _speed
+        - _resetToOriginal
+        - PhysicsAffectorName
+        - Velocity
+        - _atom
+        - _offset
+        - _delay
+        - _physicsComponentName
+        - _shootTarget
+        - _location
+        - _minSpeed
+        - _maxSpeed
+        - _sameLevel
+        - _objectLevel
+        - _physicsAffector
+        - everyFrame
+        - time
+        - finishEvent
+        - realTime
+        - _animation
+        - _animationAtom
+        - _animComponentName
+        - _animation
+        - WaitForAnimationCompletion
+        - StopOnExit
+        - _atom
+        - _enableOnEnter
+        - _enableOnExit
+        - name
+        paramDataPos: 000000000000000004000000000000000000000001000000050000000d0000000100000011000000150000001d000000210000002500000026000000020000002a00000000000000030000002b000000000000000200000004000000050000002c0000002d000000030000002e0000002f00000006000000
+        paramByteDataSize: 000000000400000001000000000000000000000000000000080000000400000000000000040000000800000004000000040000000100000004000000000000000100000000000000000000000100000000000000000000000000000000000000010000000100000000000000010000000100000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
