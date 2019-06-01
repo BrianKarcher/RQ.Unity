@@ -408,17 +408,15 @@ MonoBehaviour:
   _rqName2: 1c08085e-ae5b-467d-9939-5cf919fe7963
   _componentRepository: {fileID: 11473454}
   _physicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 1.5, y: 0}
-    Heading:
-      x: 1
-      y: 0
-    Side:
-      x: -0
-      y: 1
+    Heading: {x: 1, y: 0}
+    Side: {x: -0, y: 1}
     Offset:
       x: 0
       y: 0
@@ -443,6 +441,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -454,23 +453,20 @@ MonoBehaviour:
     _maxForce: 1
     _originalMaxForce: 1
     _maxSpeed: 1
-    _maxSpeedMultiplier: 1
     _mass: 0
     _enabled: 1
     Friction: 0
     ForceMultiplier: 1
   _originalPhysicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
-    Side:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -495,6 +491,7 @@ MonoBehaviour:
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -595,7 +592,7 @@ MonoBehaviour:
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: 8813d2b5-9478-496c-8eca-a0765329f809
   _componentRepository: {fileID: 11473454}
-  _initialState: {fileID: 11408202}
+  _initialState: {fileID: 0}
   _stateTransitionTable: {fileID: 11424422}
   _currentState: {fileID: 0}
   _stateMachineReentry: 0
@@ -655,7 +652,7 @@ MonoBehaviour:
   _componentRepository: {fileID: 11473454}
   Records:
   - _name: Kill self in 5 seconds
-    CurrentState: {fileID: 11408202}
+    CurrentState: {fileID: 0}
     UniqueId: 
     Conditions:
     - UniqueId: 7854b911-aade-42d0-bc5e-873b4b463805
@@ -668,7 +665,7 @@ MonoBehaviour:
       IsNot: 1
     Type: 1
     PreviousState: 0
-    TargetState: {fileID: 11440470}
+    TargetState: {fileID: 0}
     TargetStateSelected: {fileID: 0}
     IsActive: 1
   ConditionsList: {fileID: 11403628}
@@ -796,6 +793,7 @@ MonoBehaviour:
     _isAnimationComplete: 0
     AutoPlayAnimationType: 
     PlayAutomatically: 0
+    PlayDefaultOnEnable: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
   SpriteAnimator2: {fileID: 11489742}

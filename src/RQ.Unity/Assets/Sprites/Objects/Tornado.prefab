@@ -775,20 +775,11 @@ MonoBehaviour:
   _collisionData:
     Level: 0
     Tags: []
-    _levelLayer: 1
     ReceivesDamage: 1
     DamageCollider: 0
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 9
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 4908006406328516}
   _autoChangeLayers: 0
 --- !u!114 &114240320332020400
@@ -1044,18 +1035,15 @@ MonoBehaviour:
   _rqName2: c35cd37b-c6b9-4ec7-96d7-7f5181b35e22
   _componentRepository: {fileID: 114698953656117946}
   _physicsData:
-    Velocity:
-      x: 0
-      y: 0
+    SteeringData:
+      FeelerOffset: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
-    Heading:
-      x: 0
-      y: 0
-    Side:
-      x: 0
-      y: 0
+    Velocity: {x: 0, y: 0}
+    Heading: {x: 0, y: 0}
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -1074,11 +1062,13 @@ MonoBehaviour:
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -1086,29 +1076,24 @@ MonoBehaviour:
     ZOffsetByLevel: 0
     ZOffset: 0
   _steeringPhysicsAffector:
-    _velocity: {x: 0, y: 0}
-    _originaVelocity: {x: 0, y: 0}
     _force: {x: 0, y: 0}
     _maxForce: 1
     _originalMaxForce: 1
     _maxSpeed: 0.7
-    _maxSpeedMultiplier: 1
     _mass: 1
     _enabled: 1
     Friction: 0
+    ForceMultiplier: 1
   _originalPhysicsData:
-    Velocity:
-      x: 0
-      y: 0
+    SteeringData:
+      FeelerOffset: 0
+    InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
-    Heading:
-      x: 0
-      y: 0
-    Side:
-      x: 0
-      y: 0
+    Velocity: {x: 0, y: 0}
+    Heading: {x: 0, y: 0}
+    Side: {x: 0, y: 0}
     Offset:
       x: 0
       y: 0
@@ -1127,11 +1112,13 @@ MonoBehaviour:
     OriginalZ: 0
     _headingDirection: 1
     MaxForce: 1
+    ForceMultiplier: 1
     _friction: 0
     _maxTurnRate: 6
     _footOffset:
       x: 0
       y: 0
+    _foot: {fileID: 0}
     _fieldOfView: 0
     _lineOfSight: 0
     _dragForce: 0
@@ -1282,6 +1269,7 @@ MonoBehaviour:
     _isAnimationComplete: 0
     AutoPlayAnimationType: 
     PlayAutomatically: 0
+    PlayDefaultOnEnable: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
   SpriteAnimator2: {fileID: 0}
@@ -1355,20 +1343,11 @@ MonoBehaviour:
     Level: 3
     Tags:
     - Player
-    _levelLayer: 1
     ReceivesDamage: 0
     DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
-  _levelOneLayer:
-    _layerIndex: 10
-  _levelTwoLayer:
-    _layerIndex: 10
-  _levelThreeLayer:
-    _layerIndex: 12
-  _sharedLayer:
-    _layerIndex: 11
   _mainCollider: {fileID: 4362540017330526}
   _autoChangeLayers: 0
 --- !u!114 &114932343883423754

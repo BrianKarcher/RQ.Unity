@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 114483276706211028}
   - component: {fileID: 114388351467995888}
   - component: {fileID: 114948155100340882}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BodyTrigger
   m_TagString: LiftableBlock
   m_Icon: {fileID: 0}
@@ -357,6 +357,7 @@ MonoBehaviour:
   TargetTags: []
   _locations: []
   _parent: {fileID: 0}
+  _children: []
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
@@ -482,7 +483,9 @@ MonoBehaviour:
   _componentRepository: {fileID: 114286532991050784}
   _collisionData:
     Level: 0
-    Tags: []
+    Tags:
+    - Enemy
+    - Boss
     ReceivesDamage: 1
     DamageCollider: 1
     DeflectingCollider: 0
@@ -817,14 +820,14 @@ MonoBehaviour:
   _rqName2: 0156d565-99b5-4420-81e2-ec5c1c7350b7
   _componentRepository: {fileID: 114286532991050784}
   _physicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
     Side: {x: 0, y: 0}
     Offset:
       x: 0
@@ -867,14 +870,14 @@ MonoBehaviour:
     Friction: 0
     ForceMultiplier: 1
   _originalPhysicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
     Side: {x: 0, y: 0}
     Offset:
       x: 0

@@ -11,6 +11,24 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1473031211625358}
   m_IsPrefabParent: 1
+--- !u!1 &1038490857089330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4951871128643026}
+  - component: {fileID: 65396604136983472}
+  - component: {fileID: 114517120612923904}
+  - component: {fileID: 114797015443008926}
+  m_Layer: 15
+  m_Name: EnemyTrigger
+  m_TagString: LiftableBlock
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1393732935532222
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,10 +57,8 @@ GameObject:
   - component: {fileID: 54107068753320804}
   - component: {fileID: 114053506299567632}
   - component: {fileID: 114758944061225302}
-  - component: {fileID: 114896129037411592}
   - component: {fileID: 114333658046707116}
   - component: {fileID: 114299856538808308}
-  - component: {fileID: 114482338029699828}
   - component: {fileID: 114805337391685228}
   - component: {fileID: 114920805103893532}
   - component: {fileID: 114626672716538106}
@@ -69,6 +85,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &1614076527332760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4931201659483460}
+  - component: {fileID: 65364113519919542}
+  m_Layer: 15
+  m_Name: GrabTrigger
+  m_TagString: LiftableBlock
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1645540242779744
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,14 +112,13 @@ GameObject:
   - component: {fileID: 65243746913224518}
   - component: {fileID: 114783884540412140}
   - component: {fileID: 114660091485714646}
-  - component: {fileID: 114244799770399700}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BodyTrigger
   m_TagString: LiftableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1719114471415448
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,16 +128,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4548146887166370}
   - component: {fileID: 65602161823057850}
-  - component: {fileID: 114989307491933766}
-  - component: {fileID: 114489313925118172}
-  - component: {fileID: 114566547728642330}
+  - component: {fileID: 114986871137866396}
+  - component: {fileID: 114273558857387116}
   m_Layer: 15
   m_Name: BodyCollider
   m_TagString: LiftableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1861129510673254
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +190,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1473031211625358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.5283566, y: 8.508025, z: -0.5}
+  m_LocalPosition: {x: 3.4521723, y: 1.8280926, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4991939200971468}
@@ -168,6 +198,8 @@ Transform:
   - {fileID: 4900425399809048}
   - {fileID: 4932227704817240}
   - {fileID: 4840338080674848}
+  - {fileID: 4951871128643026}
+  - {fileID: 4931201659483460}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -184,6 +216,19 @@ Transform:
   m_Father: {fileID: 4856826176151310}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4931201659483460
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614076527332760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4856826176151310}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4932227704817240
 Transform:
   m_ObjectHideFlags: 1
@@ -196,6 +241,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4856826176151310}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4951871128643026
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038490857089330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4856826176151310}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4991939200971468
 Transform:
@@ -270,6 +328,30 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645540242779744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 0.35, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65364113519919542
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614076527332760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 0.35, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65396604136983472
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038490857089330}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -356,38 +438,32 @@ MonoBehaviour:
   library: {fileID: 11467102, guid: 9f36c26d7d2fd5c49af24ef806561ca5, type: 2}
   defaultClipId: 0
   playAutomatically: 0
---- !u!114 &114244799770399700
+--- !u!114 &114273558857387116
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1645540242779744}
+  m_GameObject: {fileID: 1719114471415448}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: -881182047, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 0986254d-38e9-4482-a726-b34475dbf0f1
-  componentName: Usable
-  _rqName: BodyCollider RQ.Physics.Components.UsableComponent
-  _rqName2: 833fcd56-dc69-4270-8b14-5c23b79c72c3
-  _componentRepository: {fileID: 114053506299567632}
-  _tags:
-  - Player
-  _excludedTags:
-  - Tilemap
-  _obstacleLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  _message: 
-  _bubbleText: 
-  _castRay: 0
-  _usable: {fileID: 4840338080674848}
-  _usableObjects: []
-  _autoUse: 1
-  _messageToUser: 
-  _isEnabled: 1
-  _setStorySceneConfig: {fileID: 0}
+  _uniqueId: 0f4fbcae-05be-4ead-8fa1-7b647b248443
+  componentName: Collider
+  _rqName: 
+  _rqName2: 
+  _componentRepository: {fileID: 0}
+  _collisionData:
+    Level: 0
+    Tags: []
+    ReceivesDamage: 1
+    DamageCollider: 0
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _mainCollider: {fileID: 0}
+  _autoChangeLayers: 0
 --- !u!114 &114299856538808308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -608,47 +684,6 @@ MonoBehaviour:
   SpriteAnimator2: {fileID: 0}
   _use8Directions: 0
   _isMain: 1
---- !u!114 &114482338029699828
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1473031211625358}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1405551376, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: cb510a0d-2d28-41bb-b579-1043bd0c47ea
-  componentName: 
-  _rqName: PushableBlock (2) RQ.Physics.Components.PushableComponent
-  _rqName2: b61ed501-4cc2-41a1-bc1a-740ed85d9ed1
-  _componentRepository: {fileID: 114053506299567632}
-  _moveSpeed: 0.2
-  _waitBetweenMoves: 0.2
-  _obstacleRayLength: 0.155
-  _radius: 0.08
-  _obstacles:
-    serializedVersion: 2
-    m_Bits: 32768
-  _message: 
-  _isOn: 1
---- !u!114 &114489313925118172
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1719114471415448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 3a9c64de-8ac8-407f-a2a4-89f7bf54405d
-  componentName: Collider
-  _rqName: BodyCollider Assets.Source.CollisionProcessor
-  _rqName2: 49f549f3-517d-4aa7-9c9c-445731675a6d
-  _componentRepository: {fileID: 114053506299567632}
 --- !u!114 &114491218233642748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -666,38 +701,34 @@ MonoBehaviour:
   _rqName2: 33d8f08a-9f0c-4b41-88ba-a29858f1c653
   _componentRepository: {fileID: 114053506299567632}
   pm: {fileID: 0}
---- !u!114 &114566547728642330
+--- !u!114 &114517120612923904
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1719114471415448}
-  m_Enabled: 0
+  m_GameObject: {fileID: 1038490857089330}
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -881182047, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 0769de88-cc7a-4996-a86f-f59df8ec0dc6
-  componentName: Usable
-  _rqName: BodyCollider RQ.Physics.Components.UsableComponent
-  _rqName2: 833fcd56-dc69-4270-8b14-5c23b79c72c3
+  _uniqueId: 07707795-1a2a-4377-b788-6bd10c50dfd7
+  componentName: EnemyTrigger
+  _rqName: EnemyTrigger RQ.Physics.Components.CollisionComponent
+  _rqName2: 9bed53cb-0da9-4a8b-8e5a-777bee4c48d2
   _componentRepository: {fileID: 114053506299567632}
-  _tags:
-  - Player
-  _excludedTags:
-  - Tilemap
-  _obstacleLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  _message: 
-  _bubbleText: 
-  _castRay: 0
-  _usable: {fileID: 4840338080674848}
-  _usableObjects: []
-  _autoUse: 1
-  _messageToUser: 
-  _isEnabled: 1
-  _setStorySceneConfig: {fileID: 0}
+  _collisionData:
+    Level: 0
+    Tags:
+    - Enemy
+    - Boss
+    ReceivesDamage: 0
+    DamageCollider: 1
+    DeflectingCollider: 0
+    CurrentlyDeflecting: 0
+    IsEnabled: 1
+  _mainCollider: {fileID: 4951871128643026}
+  _autoChangeLayers: 0
 --- !u!114 &114626672716538106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -862,20 +893,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uniqueId: 255e465a-52a9-4050-b3d4-efc7f4599106
-  componentName: Trigger
+  componentName: PlayerTrigger
   _rqName: BodyCollider RQ.Physics.Components.CollisionComponent
   _rqName2: 1b0f03a5-a679-4a0f-9319-f4e562b96c77
   _componentRepository: {fileID: 114053506299567632}
   _collisionData:
     Level: 0
-    Tags: []
-    ReceivesDamage: 1
+    Tags:
+    - Player
+    ReceivesDamage: 0
     DamageCollider: 1
     DeflectingCollider: 0
     CurrentlyDeflecting: 0
     IsEnabled: 1
   _mainCollider: {fileID: 4900425399809048}
   _autoChangeLayers: 0
+--- !u!114 &114797015443008926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038490857089330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 04964895-e575-4e09-9286-c387467725be
+  componentName: 
+  _rqName: EnemyTrigger Assets.Source.CollisionProcessor
+  _rqName2: 9b7a5b35-2f0d-4ee9-8f41-e833b09602c8
+  _componentRepository: {fileID: 114053506299567632}
 --- !u!114 &114805337391685228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -893,32 +941,6 @@ MonoBehaviour:
   _rqName2: e862132c-65df-4b6d-83f8-33baae3be48b
   _componentRepository: {fileID: 114053506299567632}
   FootPositionY: 0
---- !u!114 &114896129037411592
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1473031211625358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 62a9a432-618d-4e84-a9fb-c8a40140f300
-  componentName: 
-  _rqName: HardWind_BogMiniboss RQ.Physics.Components.CollisionComponent
-  _rqName2: e25576fa-a7d8-4f9c-9de1-83f72a8fce4a
-  _componentRepository: {fileID: 114053506299567632}
-  _collisionData:
-    Level: 0
-    Tags: []
-    ReceivesDamage: 1
-    DamageCollider: 0
-    DeflectingCollider: 0
-    CurrentlyDeflecting: 0
-    IsEnabled: 1
-  _mainCollider: {fileID: 4856826176151310}
-  _autoChangeLayers: 0
 --- !u!114 &114920805103893532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -984,29 +1006,19 @@ MonoBehaviour:
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
   renderLayer: 0
---- !u!114 &114989307491933766
+--- !u!114 &114986871137866396
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1719114471415448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1067196316, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: d07f2594-f5ae-41bc-834d-99c0fc6228aa
+  _uniqueId: ea117c3a-256c-4448-8992-ad6d02f83836
   componentName: Collider
-  _rqName: BodyCollider RQ.Physics.Components.CollisionComponent
-  _rqName2: 1b0f03a5-a679-4a0f-9319-f4e562b96c77
+  _rqName: 
+  _rqName2: 
   _componentRepository: {fileID: 114053506299567632}
-  _collisionData:
-    Level: 0
-    Tags: []
-    ReceivesDamage: 1
-    DamageCollider: 0
-    DeflectingCollider: 0
-    CurrentlyDeflecting: 0
-    IsEnabled: 1
-  _mainCollider: {fileID: 4548146887166370}
-  _autoChangeLayers: 0
