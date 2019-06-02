@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 4873011615790518}
   - component: {fileID: 135477848940566616}
   - component: {fileID: 114834892136060232}
+  - component: {fileID: 114852477525341586}
   m_Layer: 10
   m_Name: BodyCollider
   m_TagString: Enemy
@@ -891,7 +892,9 @@ MonoBehaviour:
   _componentRepository: {fileID: 114139793779844086}
   _collisionData:
     Level: 0
-    Tags: []
+    Tags:
+    - Player
+    - Companion
     ReceivesDamage: 0
     DamageCollider: 0
     DeflectingCollider: 1
@@ -1615,6 +1618,7 @@ MonoBehaviour:
   - Companion
   _locations: []
   _parent: {fileID: 0}
+  _children: []
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
@@ -1891,6 +1895,22 @@ MonoBehaviour:
     IsEnabled: 1
   _mainCollider: {fileID: 4873011615790518}
   _autoChangeLayers: 0
+--- !u!114 &114852477525341586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433929972865626}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2098325370, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 3f152435-4171-435a-b5f2-34aa1edb271b
+  componentName: 
+  _rqName: BodyCollider Assets.Source.CollisionProcessor
+  _rqName2: ac479da3-d5ef-4d2c-acc2-afd480f03664
+  _componentRepository: {fileID: 114139793779844086}
 --- !u!114 &114858489884976926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1908,14 +1928,14 @@ MonoBehaviour:
   _rqName2: 5c004ef7-f2bd-4440-9999-03ff1b09e375
   _componentRepository: {fileID: 114139793779844086}
   _physicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 1
+    Heading: {x: 0, y: 1}
     Side: {x: -0, y: 0}
     Offset:
       x: 0
@@ -1958,14 +1978,14 @@ MonoBehaviour:
     Friction: 0
     ForceMultiplier: 1
   _originalPhysicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
     Side: {x: 0, y: 0}
     Offset:
       x: 0
