@@ -39,15 +39,15 @@ namespace RQ2.UI
         //public Transform DialogManager;
         //public DialogueManager DialogManager; // This is a static type and a singleton, access through that
         public NGUIDialogueUI NguiDialogUI;
-        public DisplayDebugInfo DisplayDebugInfo;
-        public FPSCounter FPSCounter;
-        public SpriteBaseComponent PortraitEntity;
-        public UILabel HPLabel;
-        public UIProgressBar HPBar;
-        public UILabel MPLabel;
-        public UILabel LevelLabel;
-        public UIProgressBar MPBar;
-        public UILabel GoldLabel;
+        //public DisplayDebugInfo DisplayDebugInfo;
+        //public FPSCounter FPSCounter;
+        //public SpriteBaseComponent PortraitEntity;
+        //public UILabel HPLabel;
+        //public UIProgressBar HPBar;
+        //public UILabel MPLabel;
+        //public UILabel LevelLabel;
+        //public UIProgressBar MPBar;
+        //public UILabel GoldLabel;
         //public UISprite LifeBar;
         public UILabel ConversationTextBox;
         public UILabel MessageBoxTextBox;
@@ -60,9 +60,10 @@ namespace RQ2.UI
         public UIButton SaveButton;
         public List<PanelInfo> PanelList;
         private int _stopSaveRequestCount;
-        public Transform HudRoot;
-        public GameObject FloatingLabel;
-        public List<HUDText> hudTextList;
+        //public Transform HudRoot;
+        // TODO: Remove
+        //public GameObject FloatingLabel;
+        //public List<HUDText> hudTextList;
         public UIPanel MinimapPanel;
 
         [SerializeField]
@@ -72,7 +73,7 @@ namespace RQ2.UI
         public InventoryGrid SkillGrid;
         public InputCommandGrid InputGrid;
 
-        public UITexture HUDSkill;
+        //public UITexture HUDSkill;
 
         //[SerializeField]
         //private ItemSlot _itemSlot;
@@ -85,22 +86,6 @@ namespace RQ2.UI
         public ISequencerLink CurrentSequence { get; set; }
 
         public SaveSlotData ClickedSaveSlotData { get; set; }
-        /// <summary>
-        /// Click event listener.
-        /// </summary>
-
-        //[Obsolete]
-        //public List<EventDelegate> onClickSave = new List<EventDelegate>();
-        //[Obsolete]
-        //public List<EventDelegate> onClickNewSave = new List<EventDelegate>();
-        /// <summary>
-        /// Click event listener.
-        /// </summary>
-        //[Obsolete]
-        //public List<EventDelegate> onClickLoad = new List<EventDelegate>();
-        //public event void DialogOkClikedEvent;
-        //public event Action DialogOkDelegate;
-        //public event Action DialogCancelDelegate;
 
         public RQ.UI.ButtonManager ButtonManager;
         [SerializeField]
@@ -109,23 +94,23 @@ namespace RQ2.UI
 
         //Dictionary<RQ.Enum.Panels, UIPanel> panels;
         Dictionary<string, UIPanel> panels;
-        [SerializeField]
-        private AudioClip _levelUp;
+        //[SerializeField]
+        //private AudioClip _levelUp;
         //private GameManager _gameManager;
         //private GameController _gameController
         //private Action _eventDelegate;
         //private bool _isTypewriter;
         public TypewriterEffect ConversationTypewriter;
-        private RQ.CameraClass _camera;
-        public UILabel CreationLabel;
-        public UILabel JusticeLabel;
-        public UILabel TemperanceLabel;
-        public UILabel SpiritLabel;
+        
+        //public UILabel CreationLabel;
+        //public UILabel JusticeLabel;
+        //public UILabel TemperanceLabel;
+        //public UILabel SpiritLabel;
 
-        public ItemConfig CreationOrb;
-        public ItemConfig JusticeOrb;
-        public ItemConfig TemperanceOrb;
-        public ItemConfig SpiritOrb;
+        //public ItemConfig CreationOrb;
+        //public ItemConfig JusticeOrb;
+        //public ItemConfig TemperanceOrb;
+        //public ItemConfig SpiritOrb;
 
         public UICamera UICamera;
 
@@ -159,7 +144,6 @@ namespace RQ2.UI
             if (!Application.isPlaying)
                 return;
 
-            hudTextList = new List<HUDText>();
             _stopSaveRequestCount = 0;
             if (panels == null)
                 SetupPanels();
@@ -181,25 +165,6 @@ namespace RQ2.UI
             //    _dialogManager = DialogManager.GetComponent<DialogueManager>();
             //DialogueManager.Instance.DialogueUI.
 
-        }
-
-        //public override void Start()
-        //{
-        //    base.Start();
-        //    if (!Application.isPlaying)
-        //        return;
-        //    if (UICamera != null)
-        //        GameController.Instance.SetCamera(UICamera.GetComponent<RQ.Common.UI.IUICamera>());
-        //        //InputManager.Instance.SetCamera(UICamera.GetComponent<RQ.Common.UI.IUICamera>());
-        //}
-
-        public override void Update()
-        {
-            base.Update();
-            if (DisplayDebugInfo != null && FPSCounter != null)
-            {
-                DisplayDebugInfo.AverageFPS = FPSCounter.AverageFPS;
-            }
         }
 
         public override void OnEnable()
@@ -252,111 +217,10 @@ namespace RQ2.UI
             {
                 _stopSaveRequestCount = 0;
             });
-            MessageDispatcher2.Instance.StartListening("SetCamera", this.UniqueId, (data) => 
-            {
-                _camera = data.ExtraInfo as RQ.CameraClass;
-                if (_camera == null)
-                    return;
-                var uiFollowTargets = HudRoot.GetComponentsInChildren<UIFollowTarget>(true);
-                foreach (var uiFollowTarget in uiFollowTargets)
-                {
-                    uiFollowTarget.gameCamera = _camera.GetComponent<Camera>();
-                }
-            });
-            MessageDispatcher2.Instance.StartListening("AddHudText", this.UniqueId, (data) =>
-            {
-                var hudTextSetupData = (HudTextSetupData)data.ExtraInfo;
-                GameObject child = NGUITools.AddChild(HudRoot.gameObject, hudTextSetupData.HudText);
-                var hudText = child.GetComponentInChildren<HUDText>();
-                hudTextList.Add(hudText);
-                var uiFollowTarget = child.AddComponent<UIFollowTarget>();
-                uiFollowTarget.target = hudTextSetupData.Target;
-                if (_camera == null)
-                    _camera = LocateCamera();
-                //uiFollowTarget.gameCamera = GameController.Instance.GetCamera().GetComponent<Camera>();
-                //if (_camera != null)
-                    uiFollowTarget.gameCamera = _camera.GetComponent<Camera>();
-                MessageDispatcher2.Instance.DispatchMsg("SetHudText", 0f, this.UniqueId, 
-                    data.SenderId, hudText);
-            });
-            MessageDispatcher2.Instance.StartListening("RemoveHudText", this.UniqueId, (data) =>
-            {
-                var hudText = (HUDText)data.ExtraInfo;
-                hudTextList.Remove(hudText);
-                //var hud = HudRoot.GetComponentsInChildren<HUDText>().FirstOrDefault(i => i == hudText);
-
-                if (hudText != null)
-                    NGUITools.Destroy(hudText.gameObject);
-                    //GameObject.Destroy(hud.gameObject);
-            });
             MessageDispatcher2.Instance.StartListening("DisplayModal", this.UniqueId, (data) =>
                 {
                     DisplayModal((string)data.ExtraInfo);
                 });
-            MessageDispatcher2.Instance.StartListening("LevelUp", this.UniqueId, (data) =>
-                {
-                    if (PortraitEntity == null)
-                        return;
-                    MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
-                    var entityStats = data.ExtraInfo as EntityStatsData;
-                    SetHealth(entityStats.CurrentHP, entityStats.MaxHP);
-                    SetMP(entityStats.CurrentSP, entityStats.MaxSP);
-                    SetLevel(entityStats.Level);
-                    MessageDispatcher2.Instance.DispatchMsg("PlayOneShot", 0f, this.UniqueId, "Game Controller", _levelUp);
-                });
-            MessageDispatcher2.Instance.StartListening("UpdateHud", this.UniqueId, (data) =>
-            {
-                if (PortraitEntity == null)
-                    return;
-                var entityStats = data.ExtraInfo as EntityStatsData;
-                SetHealth(entityStats.CurrentHP, entityStats.MaxHP);
-                SetMP(entityStats.CurrentSP, entityStats.MaxSP);
-                SetLevel(entityStats.Level);
-                SetOrbs(entityStats);
-                SetHUDSkillColor();
-                //MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
-            });
-            MessageDispatcher2.Instance.StartListening("UpdateStatsInHud", this.UniqueId, (data) =>
-            {
-                if (PortraitEntity == null)
-                    return;
-                var entityStats = data.ExtraInfo as EntityStatsData;
-                if (entityStats == null)
-                {
-                    var mainCharacter = EntityContainer._instance.GetMainCharacter();
-                    if (mainCharacter != null)
-                        entityStats = mainCharacter.Components.GetComponent<EntityStatsComponent>().GetEntityStats();
-                }
-                if (entityStats == null)
-                    return;
-                SetHealth(entityStats.CurrentHP, entityStats.MaxHP);
-                SetMP(entityStats.CurrentSP, entityStats.MaxSP);
-                SetLevel(entityStats.Level);
-                SetOrbs(entityStats);
-                SetHUDSkillColor();
-                //MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
-            });
-            MessageDispatcher2.Instance.StartListening("SetGold", this.UniqueId, (data) =>
-            {
-                var gold = (int)data.ExtraInfo;
-                GoldLabel.text = gold.ToString();
-                //MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
-            });
-            MessageDispatcher2.Instance.StartListening("SetHUDSkill", this.UniqueId, (data) =>
-            {
-                //var gold = (int)data.ExtraInfo;
-                var itemUniqueId = (string)data.ExtraInfo;
-                //var itemConfig = ConfigsContainer.Instance.GetConfig<ItemConfig>(itemUniqueId);
-                if (itemUniqueId == null)
-                {
-                    HUDSkill.mainTexture = null;
-                    return;
-                }
-                var itemConfig = GameDataController.Instance.GetGameConfig().GetAsset<ItemConfig>(itemUniqueId);
-                HUDSkill.mainTexture = itemConfig == null ? null : itemConfig.GridTexture;
-                SetHUDSkillColor();
-                //MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
-            });
             MessageDispatcher2.Instance.StartListening("ShowMinimap", this.UniqueId, (data) =>
             {
                 //var gold = (int)data.ExtraInfo;
@@ -436,34 +300,11 @@ namespace RQ2.UI
             MessageDispatcher2.Instance.StopListening("StopSaveRequest", this.UniqueId, -1);
             MessageDispatcher2.Instance.StopListening("ResumeSaveRequest", this.UniqueId, -1);
             MessageDispatcher2.Instance.StopListening("ClearSaveRequest", this.UniqueId, -1);
-            MessageDispatcher2.Instance.StopListening("SetCamera", this.UniqueId, -1);
-            MessageDispatcher2.Instance.StopListening("AddHudText", this.UniqueId, -1);
-            MessageDispatcher2.Instance.StopListening("RemoveHudText", this.UniqueId, -1);
             MessageDispatcher2.Instance.StopListening("DisplayModal", this.UniqueId, -1);
-            MessageDispatcher2.Instance.StopListening("LevelUp", this.UniqueId, -1);
-            MessageDispatcher2.Instance.StopListening("UpdateHud", this.UniqueId, -1);
-            MessageDispatcher2.Instance.StopListening("UpdateStatsInHud", this.UniqueId, -1);
-            MessageDispatcher2.Instance.StopListening("SetGold", this.UniqueId, -1);
-            MessageDispatcher2.Instance.StopListening("SetHUDSkill", this.UniqueId, -1);
             MessageDispatcher2.Instance.StopListening("ShowMinimap", this.UniqueId, -1);
             //MessageDispatcher2.Instance.StopListening("EnablePanelButtons", this.UniqueId);
 
             //MessageDispatcher2.Instance.StopListening("SetMinimapCamera", this.UniqueId);
-        }
-
-        private void SetHUDSkillColor()
-        {
-            Color color;
-            //if (Utility.IsSelectedSkillAffordable())
-                color = new Color(1, 1, 1, 1);
-            //else
-            //    color = new Color(.8f, 0, 0, .9f);
-            HUDSkill.color = color;
-        }
-
-        private RQ.CameraClass LocateCamera()
-        {
-            return GameObject.FindObjectOfType<RQ.CameraClass>();
         }
 
         private void AddStopSave()
@@ -678,74 +519,6 @@ namespace RQ2.UI
             ShowPanel("MessageBox", true);
         }
 
-        public override bool HandleMessage(Telegram msg)
-        {
-            if (base.HandleMessage(msg))
-                return true;
-
-            switch(msg.Msg)
-            {
-                case RQ.Enums.Telegrams.SetCurrentHealth:
-                    var entityStatsData = msg.ExtraInfo as EntityStatsData;
-                    //if (health < 0)
-                    //    health = 0;
-                    SetHealth(entityStatsData.CurrentHP, entityStatsData.MaxHP);
-                    SetMP(entityStatsData.CurrentSP, entityStatsData.MaxSP);
-                    //LifeBar.transform.localScale = new Vector3(health, 1, 1);
-                    break;
-                //case Enums.Telegrams.SetStartSequenceOnConversationEnd:
-                //    StartSequenceOnConversationEnd = msg.ExtraInfo as USSequencer;
-                //    break;
-            }
-            return false;
-        }
-
-        public void SetHealth(float current, float max)
-        {
-            HPBar.value = current / max;
-            var iCurrent = (int)current;
-            HPLabel.text = String.Format("{0:D3}", iCurrent);
-        }
-
-        public void SetMP(float current, float max)
-        {
-            MPBar.value = current / max;
-            var iCurrent = (int)current;
-            MPLabel.text = String.Format("{0:D3}", iCurrent);
-        }
-
-        public void SetLevel(int level)
-        {
-            LevelLabel.text = level.ToString();
-        }
-
-        public void SetOrbs(EntityStatsData entityStats)
-        {
-            SetOrb(CreationLabel, CreationOrb);
-            SetOrb(JusticeLabel, JusticeOrb);
-            SetOrb(SpiritLabel, SpiritOrb);
-            SetOrb(TemperanceLabel, TemperanceOrb);
-
-            //InventoryController.Instance.GetItem();
-
-            //CreationLabel.text = entityStats.CreationOrbCount.ToString();
-            //JusticeLabel.text = entityStats.JusticeOrbCount.ToString();
-            //SpiritLabel.text = entityStats.SpiritOrbCount.ToString();
-            //TemperanceLabel.text = entityStats.TemperanceOrbCount.ToString();
-        }
-
-        public void SetOrb(UILabel nguiLabel, ItemConfig orbItem)
-        {
-            if (orbItem == null)
-                return;
-            var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(orbItem.UniqueId);
-            int count = 0;
-            if (itemInInventory != null)
-                count = itemInInventory.Quantity;
-                //return;
-            nguiLabel.text = count.ToString();
-        }
-
         public void DisplayModal(string text)
         {
             SetModalDialogCancelButton(false);
@@ -831,18 +604,6 @@ namespace RQ2.UI
             //UICamera.currentScheme = UICamera.ControlScheme.Controller;
             UICamera.hoveredObject = null;
             UICamera.hoveredObject = continueButton.gameObject;
-        }
-
-        public void AddFollowingLabel(string text, Transform target)
-        {
-            var floatingLabel = NGUITools.AddChild(HudRoot.gameObject, FloatingLabel);
-            //FloatingLabel
-            var label = floatingLabel.GetComponent<UILabel>();
-
-            label.text = text;
-            var uiFollowTarget = floatingLabel.AddComponent<UIFollowTarget>();
-            uiFollowTarget.gameCamera = GameController.Instance.GetCamera().GetCamera();
-            uiFollowTarget.target = target;
         }
     }
 }
