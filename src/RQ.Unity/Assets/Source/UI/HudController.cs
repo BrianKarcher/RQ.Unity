@@ -222,8 +222,10 @@ namespace RQ.UI
 
         public void SetOrbs(EntityStatsData entityStats)
         {
-            var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.Materials;
-            for (int i = 0; i < sceneMaterials.Count; i++)
+            if (GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig == null)
+                return;
+            var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig.Materials;
+            for (int i = 0; i < sceneMaterials.Length; i++)
             {
                 var sceneMaterial = sceneMaterials[i] as ItemConfig;
                 SetOrb(MaterialLabels[i], sceneMaterial);
