@@ -136,7 +136,10 @@ namespace RQ.UI
                         entityStats = mainCharacter.Components.GetComponent<EntityStatsComponent>().GetEntityStats();
                 }
                 if (entityStats == null)
+                {
+                    Debug.LogError("Could not locate Main Character's Entity Stats Component");
                     return;
+                }
                 SetHealth(entityStats.CurrentHP, entityStats.MaxHP);
                 SetMP(entityStats.CurrentSP, entityStats.MaxSP);
                 SetLevel(entityStats.Level);
@@ -223,7 +226,10 @@ namespace RQ.UI
         public void SetOrbs(EntityStatsData entityStats)
         {
             if (GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig == null)
+            {
+                Debug.LogError("Scene Config " + GameController.Instance.GetSceneSetup().SceneConfig.name + " has no Scene Material Config, cannot update HUD");
                 return;
+            }
             var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig.Materials;
             for (int i = 0; i < sceneMaterials.Length; i++)
             {
