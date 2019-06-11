@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4471626509876152}
   - component: {fileID: 114810037802795152}
-  - component: {fileID: 114319762843787878}
   m_Layer: 0
   m_Name: Equipment
   m_TagString: Untagged
@@ -41,8 +40,8 @@ GameObject:
   - component: {fileID: 114745798529914666}
   - component: {fileID: 114384275531126370}
   - component: {fileID: 114186219208598322}
-  - component: {fileID: 114625128077592924}
   - component: {fileID: 114916107185229902}
+  - component: {fileID: 114278610046428510}
   m_Layer: 0
   m_Name: MainSprite
   m_TagString: Untagged
@@ -121,7 +120,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d14513669aee934bb16bc5091888354, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -173,25 +172,33 @@ MonoBehaviour:
     PlayDefaultOnEnable: 0
     AutoUpdateFacingDirection: 1
     AutoFace: 0
-  SpriteAnimator2: {fileID: 0}
+  SpriteAnimator2: {fileID: 114278610046428510}
   _use8Directions: 0
   _isMain: 1
---- !u!114 &114319762843787878
+--- !u!114 &114278610046428510
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1089073203013924}
+  m_GameObject: {fileID: 1094032503990950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
+  m_Script: {fileID: 11500000, guid: 41880b8380ca71346a1bc3912eb8f03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: ac18c7db-d87d-4f9b-a920-6def9ea07086
-  componentName: 
-  _rqName: Equipment RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: a6db1346-fdea-42ec-97ae-736012d7ed44
-  _componentRepository: {fileID: 114810037802795152}
+  _storedSpriteAnimations: []
+  _spriteAnimationsConfig: {fileID: 11400000, guid: e155abfa3a63cc84f81260125b0dd6d2,
+    type: 2}
+  _manualHFlip: 0
+  _hFlip: 0
+  _directionRotate: 0
+  OrigSpritePosition:
+    x: 0
+    y: 0
+  SpriteOffsetPos:
+    x: 0
+    y: 0
+  anim: {fileID: 114384275531126370}
 --- !u!114 &114384275531126370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -357,22 +364,6 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
   eventHandlerComponentsAdded: 0
---- !u!114 &114625128077592924
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1094032503990950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 107143911, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 788de819-48f2-4f11-b10c-f598d17e7232
-  componentName: 
-  _rqName: MainSprite RQ.Physics.Components.GameObjectStatePersistenceComponent
-  _rqName2: 0f3a8f69-7c35-4d02-8f5b-f325dc92f6c4
-  _componentRepository: {fileID: 114810037802795152}
 --- !u!114 &114745798529914666
 MonoBehaviour:
   m_ObjectHideFlags: 1
