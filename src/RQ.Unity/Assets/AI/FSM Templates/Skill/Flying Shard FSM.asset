@@ -35,107 +35,17 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Slashed
+        toState: Fly to player
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
-        actionNames:
-        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
-        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
-        customNames:
-        - 
-        - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000006000000
-        actionHashCodes: c284f001c284f001
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - FINISHED
-        - HammerAttack
-        - 
-        - FINISHED
-        - RolanAttack
-        - 
-        byteData: 0000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 0200000002000000
-        customTypeNames:
-        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
-        paramDataType: 170000001300000001000000280000000300000003000000170000001300000001000000280000000300000003000000
-        paramName:
-        - Received
-        - storeSender
-        - GotoPreviousState
-        - _isMessageReceivedAtom
-        - Message
-        - Data
-        - Received
-        - storeSender
-        - GotoPreviousState
-        - _isMessageReceivedAtom
-        - Message
-        - Data
-        paramDataPos: 000000000000000000000000000000000100000002000000030000000100000001000000010000000400000005000000
-        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000
-    - name: Slashed
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 250
-        y: 101
-        width: 100
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
-        actionNames:
-        - Assets.Source.AI.PM_State_Machine.KillSelf
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 927b0a04
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -162,14 +72,237 @@ MonoBehaviour:
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 00000000
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    - name: Get
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 422
+        y: 108
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.SendMessage
+        - RQ.AI.PlayMaker.Audio.PlayRandomSound2
+        - Assets.Source.AI.PM_State_Machine.KillSelf
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000001100000018000000
+        actionHashCodes: ac126d0478a75202927b0a04
+        unityObjectParams:
+        - {fileID: 8300000, guid: e49154c74fa50844b8878ebfb794d629, type: 3}
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - AcquireItem
+        - 
+        byteData: 000100000000000000000001020000000000803f0100
+        arrayParamSizes: 0000000001000000
+        arrayParamTypes:
+        - System.String
+        - UnityEngine.AudioClip
+        customTypeSizes: 0b0000000500000000000000
         customTypeNames:
+        - RQ.Animation.BasicAction.Action.SendMessageAtom
+        - RQ.AI.AtomAction.Audio.PlayRandomSound2Atom
         - RQ.Animation.BasicAction.Action.KillSelfAtom
-        paramDataType: 28000000
+        paramDataType: 290000001200000013000000120000000100000028000000030000000c00000003000000010000000100000001000000010000000100000001000000070000000100000028000000070000000200000001000000010000000c0000000500000028000000
         paramName:
+        - Targets
+        - Target
+        - TargetGO
+        - collideTag
+        - Log
+        - _sendMessageAtom
+        - Message
+        - TargetUniqueIds
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        - _atom
+        - PlayOn
+        - _volume
+        - OneShot
+        - Looping
+        - _audioClips
+        - 
         - _killSelfAtom
-        paramDataPos: 00000000
-        paramByteDataSize: 00000000
+        paramDataPos: 000000000000000000000000010000000000000000000000000000000000000001000000010000000200000003000000040000000500000006000000070000000b000000010000000c000000100000001400000015000000010000000000000002000000
+        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000004000000040000000100000001000000000000000000000000000000
+    - name: Fly to player
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 225
+        y: 106
+        width: 113
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Get
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - Assets.Source.AI.PM_State_Machine.OnTrigger
+        - Assets.Source.AI.PM_State_Machine.IsMessageReceived
+        customNames:
+        - 
+        - 
+        actionEnabled: 0001
+        actionIsOpen: 0101
+        actionStartIndex: 0000000007000000
+        actionHashCodes: 18dc3600c284f001
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Player
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        - 
+        - UseUsable
+        - 
+        byteData: 0000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0200000002000000
+        customTypeNames:
+        - RQ.Animation.BasicAction.Action.OnTriggerAtom
+        - RQ.Entity.AtomAction.Condition.IsMessageReceivedAtom
+        paramDataType: 07000000130000001200000017000000280000000300000003000000170000001300000001000000280000000300000003000000
+        paramName:
+        - trigger
+        - _storeCollider
+        - collideTag
+        - sendEvent
+        - _atom
+        - triggerType
+        - collideTag
+        - Received
+        - storeSender
+        - GotoPreviousState
+        - _isMessageReceivedAtom
+        - Message
+        - Data
+        paramDataPos: 00000000000000000000000000000000000000000100000002000000030000000100000004000000010000000400000005000000
+        paramByteDataSize: 04000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1

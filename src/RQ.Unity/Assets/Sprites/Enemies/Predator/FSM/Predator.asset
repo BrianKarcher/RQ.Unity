@@ -1079,10 +1079,16 @@ MonoBehaviour:
         actionEnabled: 010101
         actionIsOpen: 010101
         actionStartIndex: 00000000060000000a000000
-        actionHashCodes: 827373009f005d00ee6bbe01
+        actionHashCodes: 827373009f005d0039a0fa04
         unityObjectParams:
         - {fileID: 122172, guid: 6cc7849c502facd48b8b6d03265ad422, type: 2}
         fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 0
           name: 
           tooltip: 
@@ -1120,15 +1126,16 @@ MonoBehaviour:
         - Drowning
         - 
         - 
-        byteData: 0100000000000000000000cdccccbd0000
+        - 
+        byteData: 0100000000000000000000cdccccbd00000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 040000000200000004000000
+        customTypeSizes: 040000000200000007000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.AI.Action.StopMovingAtom
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
-        paramDataType: 1200000028000000030000000300000001000000010000000100000028000000030000000300000013000000280000001b000000090000000100000001000000
+        paramDataType: 120000002800000003000000030000000100000001000000010000002800000003000000030000001300000013000000280000001b000000090000000100000001000000020000000100000003000000
         paramName:
         - _animation
         - _animationAtom
@@ -1140,14 +1147,18 @@ MonoBehaviour:
         - _stopMovingAtom
         - _uniqueId
         - _physicsAffector
+        - Instantiate
         - storeResult
         - _instantiatePrefabAtom
         - _gameObject
         - _offset
         - _rotateOffsetByFacingDirection
         - _rotateHorizontalOffsetByFacingDirection
-        paramDataPos: 00000000000000000000000001000000000000000100000002000000010000000200000003000000000000000200000000000000030000000f00000010000000
-        paramByteDataSize: 000000000000000000000000000000000100000001000000010000000000000000000000000000000000000000000000000000000c0000000100000001000000
+        - Delay
+        - SetAIParent
+        - ObjectPoolName
+        paramDataPos: 0000000000000000000000000100000000000000010000000200000001000000020000000300000000000000010000000200000000000000030000000f00000010000000110000001500000004000000
+        paramByteDataSize: 00000000000000000000000000000000010000000100000001000000000000000000000000000000000000000000000000000000000000000c0000000100000001000000040000000100000000000000
     - name: Death
       description: Predator Death in the water.
       colorIndex: 7
@@ -1354,10 +1365,16 @@ MonoBehaviour:
         actionEnabled: 0100010001
         actionIsOpen: 0101010101
         actionStartIndex: 0000000003000000070000000d00000010000000
-        actionHashCodes: 48c011019f005d0082737300f1483a02ee6bbe01
+        actionHashCodes: 48c011019f005d0082737300f1483a0239a0fa04
         unityObjectParams:
         - {fileID: 122172, guid: 71e7bad76137a2742aae34848abe6387, type: 2}
         fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 1
           name: alertGO
           tooltip: 
@@ -1402,16 +1419,17 @@ MonoBehaviour:
         - 
         - 
         - Hunch
-        byteData: 0000010000010000000000803e0000803ecdccccbd0001
+        - 
+        byteData: 0000010000010000000000803e0000803ecdccccbd00010000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 02000000040000000100000004000000
+        customTypeSizes: 02000000040000000100000007000000
         customTypeNames:
         - RQ.AI.Action.StopMovingAtom
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Animation.BasicAction.Action.SetFacingDirectionAtom
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
-        paramDataType: 0f00000017000000010000000100000028000000030000000300000012000000280000000300000003000000010000000100000001000000280000000700000013000000280000001b000000090000000100000001000000
+        paramDataType: 0f0000001700000001000000010000002800000003000000030000001200000028000000030000000300000001000000010000000100000028000000070000001300000013000000280000001b000000090000000100000001000000020000000100000003000000
         paramName:
         - time
         - finishEvent
@@ -1429,14 +1447,18 @@ MonoBehaviour:
         - everyFrame
         - _atom
         - FacingDirection
+        - Instantiate
         - storeResult
         - _instantiatePrefabAtom
         - _gameObject
         - _offset
         - _rotateOffsetByFacingDirection
         - _rotateHorizontalOffsetByFacingDirection
-        paramDataPos: 00000000000000000000000001000000000000000100000002000000000000000100000003000000040000000200000003000000040000000200000005000000000000000300000000000000090000001500000016000000
-        paramByteDataSize: 000000000000000001000000010000000000000000000000000000000000000000000000000000000000000001000000010000000100000000000000040000000000000000000000000000000c0000000100000001000000
+        - Delay
+        - SetAIParent
+        - ObjectPoolName
+        paramDataPos: 0000000000000000000000000100000000000000010000000200000000000000010000000300000004000000020000000300000004000000020000000500000000000000010000000300000000000000090000001500000016000000170000001b00000005000000
+        paramByteDataSize: 00000000000000000100000001000000000000000000000000000000000000000000000000000000000000000100000001000000010000000000000004000000000000000000000000000000000000000c0000000100000001000000040000000100000000000000
     - name: HeadShake
       description: 
       colorIndex: 7

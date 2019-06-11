@@ -181,11 +181,17 @@ MonoBehaviour:
         - 
         actionEnabled: 000101
         actionIsOpen: 010101
-        actionStartIndex: 00000000010000000a000000
-        actionHashCodes: 927b0a04ee6bbe01d9358301
+        actionStartIndex: 00000000010000000b000000
+        actionHashCodes: 927b0a0439a0fa04d9358301
         unityObjectParams:
         - {fileID: 182012, guid: edc880950331d9f4c893d3cb9a414530, type: 2}
         fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 1
           name: 
           tooltip: 
@@ -229,9 +235,10 @@ MonoBehaviour:
         - RQ.Animation.BasicAction.Action.KillSelfAtom
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.SendSelfToPoolAtom
-        paramDataType: 2800000013000000280000001b000000090000000100000001000000020000000100000003000000120000002800000003000000
+        paramDataType: 280000001300000013000000280000001b000000090000000100000001000000020000000100000003000000120000002800000003000000
         paramName:
         - _killSelfAtom
+        - Instantiate
         - storeResult
         - _instantiatePrefabAtom
         - _gameObject
@@ -244,8 +251,8 @@ MonoBehaviour:
         - Pool
         - _atom
         - PoolName
-        paramDataPos: 00000000000000000100000000000000000000000c0000000d0000000e0000001200000000000000000000000200000001000000
-        paramByteDataSize: 000000000000000000000000000000000c0000000100000001000000040000000100000000000000000000000000000000000000
+        paramDataPos: 0000000000000000010000000100000000000000000000000c0000000d0000000e0000001200000000000000000000000200000001000000
+        paramByteDataSize: 00000000000000000000000000000000000000000c0000000100000001000000040000000100000000000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1

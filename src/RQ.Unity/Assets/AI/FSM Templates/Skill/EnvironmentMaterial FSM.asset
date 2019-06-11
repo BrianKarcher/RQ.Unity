@@ -129,15 +129,30 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
+        - Assets.Source.AI.PM_State_Machine.InstantiatePrefab
         - Assets.Source.AI.PM_State_Machine.KillSelf
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 927b0a04
-        unityObjectParams: []
-        fsmGameObjectParams: []
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 000000000a000000
+        actionHashCodes: 39a0fa04927b0a04
+        unityObjectParams:
+        - {fileID: 0}
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Shard
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
@@ -158,18 +173,30 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - 
+        byteData: 00000000000000000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 00000000
+        customTypeSizes: 0700000000000000
         customTypeNames:
+        - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.Animation.BasicAction.Action.KillSelfAtom
-        paramDataType: 28000000
+        paramDataType: 1300000013000000280000001b00000009000000010000000100000002000000010000000300000028000000
         paramName:
+        - Instantiate
+        - storeResult
+        - _instantiatePrefabAtom
+        - _gameObject
+        - _offset
+        - _rotateOffsetByFacingDirection
+        - _rotateHorizontalOffsetByFacingDirection
+        - Delay
+        - SetAIParent
+        - ObjectPoolName
         - _killSelfAtom
-        paramDataPos: 00000000
-        paramByteDataSize: 00000000
+        paramDataPos: 00000000010000000000000000000000000000000c0000000d0000000e000000120000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000c000000010000000100000004000000010000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -185,7 +212,13 @@ MonoBehaviour:
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: Shard
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -193,7 +226,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 00000000
     description: 
     docUrl: 
     showStateLabel: 1

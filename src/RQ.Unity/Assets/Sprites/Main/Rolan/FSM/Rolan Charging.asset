@@ -178,12 +178,18 @@ MonoBehaviour:
         - 
         actionEnabled: 01010101
         actionIsOpen: 01010101
-        actionStartIndex: 00000000060000000c00000010000000
-        actionHashCodes: 82737300ee6bbe019f005d002ab21704
+        actionStartIndex: 00000000060000001000000014000000
+        actionHashCodes: 8273730039a0fa049f005d002ab21704
         unityObjectParams:
         - {fileID: 1748154173668028, guid: 8a801f31f1bbe6e4287c441ccae95ff9, type: 2}
         - {fileID: 0}
         fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 1
           name: 
           tooltip: 
@@ -221,17 +227,18 @@ MonoBehaviour:
         - Slash
         - 
         - 
+        - 
         - ChargeSlash
-        byteData: 01000000003f0000000000000000010000
+        byteData: 01000000003f00000000000000000100000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 04000000040000000200000002000000
+        customTypeSizes: 04000000070000000200000002000000
         customTypeNames:
         - RQ.Animation.BasicAction.Action.AnimationAtom
         - RQ.Animation.BasicAction.Action.InstantiatePrefabAtom
         - RQ.AI.Action.StopMovingAtom
         - RQ.Entity.AtomAction.Action.AttackAtom
-        paramDataType: 12000000280000000300000003000000010000000100000013000000280000001b00000009000000010000000100000001000000280000000300000003000000280000000500000003000000
+        paramDataType: 1200000028000000030000000300000001000000010000001300000013000000280000001b00000009000000010000000100000002000000010000000300000001000000280000000300000003000000280000000500000003000000
         paramName:
         - _animation
         - _animationAtom
@@ -239,12 +246,16 @@ MonoBehaviour:
         - _animation
         - WaitForAnimationCompletion
         - StopOnExit
+        - Instantiate
         - storeResult
         - _instantiatePrefabAtom
         - _gameObject
         - _offset
         - _rotateOffsetByFacingDirection
         - _rotateHorizontalOffsetByFacingDirection
+        - Delay
+        - SetAIParent
+        - ObjectPoolName
         - everyFrame
         - _stopMovingAtom
         - _uniqueId
@@ -252,8 +263,8 @@ MonoBehaviour:
         - _attackAtom
         - _skill
         - AttackComponentName
-        paramDataPos: 000000000000000000000000010000000000000001000000000000000100000000000000020000000e0000000f00000010000000020000000200000003000000030000000100000004000000
-        paramByteDataSize: 0000000000000000000000000000000001000000010000000000000000000000000000000c000000010000000100000001000000000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000000000000000000001000000000000000100000000000000010000000100000000000000020000000e0000000f00000010000000140000000200000015000000020000000300000004000000030000000100000005000000
+        paramByteDataSize: 000000000000000000000000000000000100000001000000000000000000000000000000000000000c000000010000000100000004000000010000000000000001000000000000000000000000000000000000000000000000000000
     - name: Walk
       description: 
       colorIndex: 0
