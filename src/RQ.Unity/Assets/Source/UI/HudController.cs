@@ -42,6 +42,8 @@ namespace RQ.UI
         public ItemConfig TemperanceOrb;
         public ItemConfig SpiritOrb;
 
+        private ItemInInventoryData[] ShardQuantities;
+
         private RQ.CameraClass _camera;
 
         public override void Awake()
@@ -226,32 +228,36 @@ namespace RQ.UI
 
         public void SetOrbs(EntityStatsData entityStats)
         {
-            if (GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig == null)
+            if (ShardQuantities == null)
             {
-                Debug.LogError("Scene Config " + GameController.Instance.GetSceneSetup().SceneConfig.name + " has no Scene Material Config, cannot update HUD");
+                Debug.LogError("(HudController) No Shard Quantities array");
                 return;
             }
-            var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig.Materials;
+            //if (GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig == null)
+            //{
+            //    Debug.LogError("Scene Config " + GameController.Instance.GetSceneSetup().SceneConfig.name + " has no Scene Material Config, cannot update HUD");
+            //    return;
+            //}
+            //var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig.Materials;
             for (int i = 0; i < 3; i++)
             {
-                var sceneMaterial = sceneMaterials.Length <= i ? null : sceneMaterials[i] as ItemConfig;
+                var shardQuantity = ShardQuantities.Length <= i ? null : ShardQuantities[i] as ItemInInventoryData;
                 var shard = Shards.Length <= i ? null : Shards[i];
-                SetOrb(shard, sceneMaterial);
+                SetOrb(shard, shardQuantity);
             }
         }
 
-        public void SetOrb(ShardHudData shardData, ItemConfig orbItem)
+        public void SetOrb(ShardHudData shardData, ItemInInventoryData shardQuantity)
         {
-            if (orbItem == null)
+            if (shardQuantity == null)
             {
                 NGUITools.SetActive(shardData.shard, false);
                 return;
             }
             NGUITools.SetActive(shardData.shard, true);
-            var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(orbItem.UniqueId);
-            int count = 0;
-            if (itemInInventory != null)
-                count = itemInInventory.Quantity;
+            //var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(orbItem.UniqueId);
+            int count;
+            count = shardQuantity.Quantity;
             //return;
             shardData.label.text = count.ToString();
         }
