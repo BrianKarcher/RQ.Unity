@@ -1,4 +1,5 @@
-﻿using RQ.Common.Components;
+﻿using Assets.Source.UI;
+using RQ.Common.Components;
 using RQ.Common.Container;
 using RQ.Common.Controllers;
 using RQ.Entity.Common;
@@ -34,7 +35,7 @@ namespace RQ.UI
         private List<HUDText> hudTextList;
         [SerializeField]
         private AudioClip _levelUp;
-        public UILabel[] MaterialLabels;
+        public ShardHudData[] Shards;
 
         public ItemConfig CreationOrb;
         public ItemConfig JusticeOrb;
@@ -231,23 +232,28 @@ namespace RQ.UI
                 return;
             }
             var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig.Materials;
-            for (int i = 0; i < sceneMaterials.Length; i++)
+            for (int i = 0; i < 3; i++)
             {
-                var sceneMaterial = sceneMaterials[i] as ItemConfig;
-                SetOrb(MaterialLabels[i], sceneMaterial);
+                var sceneMaterial = sceneMaterials.Length <= i ? null : sceneMaterials[i] as ItemConfig;
+                var shard = Shards.Length <= i ? null : Shards[i];
+                SetOrb(shard, sceneMaterial);
             }
         }
 
-        public void SetOrb(UILabel nguiLabel, ItemConfig orbItem)
+        public void SetOrb(ShardHudData shardData, ItemConfig orbItem)
         {
             if (orbItem == null)
+            {
+                NGUITools.SetActive(shardData.shard, false);
                 return;
+            }
+            NGUITools.SetActive(shardData.shard, true);
             var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(orbItem.UniqueId);
             int count = 0;
             if (itemInInventory != null)
                 count = itemInInventory.Quantity;
             //return;
-            nguiLabel.text = count.ToString();
+            shardData.label.text = count.ToString();
         }
 
         public override bool HandleMessage(Telegram msg)
