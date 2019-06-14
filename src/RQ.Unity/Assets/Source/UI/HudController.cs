@@ -12,6 +12,7 @@ using RQ.Render;
 using RQ2.Controller.ManageScene;
 using System;
 using System.Collections.Generic;
+using RQ.Entity.Skill;
 using UnityEngine;
 
 namespace RQ.UI
@@ -123,6 +124,14 @@ namespace RQ.UI
                 SetHealth(entityStats.CurrentHP, entityStats.MaxHP);
                 SetMP(entityStats.CurrentSP, entityStats.MaxSP);
                 SetLevel(entityStats.Level);
+                var mold = GameDataController.Instance.CurrentMold as MoldConfig;
+                ShardQuantities = new ItemInInventoryData[mold.ShardConfigs.Length];
+                for (int i = 0; i < mold.ShardConfigs.Length; i++)
+                {
+                    var shardConfig = mold.ShardConfigs[i].ItemConfig;
+                    var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(shardConfig.UniqueId);
+                    ShardQuantities[i] = itemInInventory;
+                }
                 SetOrbs(entityStats);
                 SetHUDSkillColor();
                 //MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
