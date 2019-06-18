@@ -114,6 +114,8 @@ namespace RQ2.UI
 
         public UICamera UICamera;
 
+        private HudController _hudController;
+
         //private DialogueManager _dialogManager;
         //private DialogManager _dialogManager;
         //private d
@@ -604,6 +606,13 @@ namespace RQ2.UI
             //UICamera.currentScheme = UICamera.ControlScheme.Controller;
             UICamera.hoveredObject = null;
             UICamera.hoveredObject = continueButton.gameObject;
+        }
+
+        public void ToggleShard()
+        {
+            if (_hudController == null)
+                _hudController = Components.GetComponent<HudController>();
+            _hudController.ToggleShard();
         }
     }
 }

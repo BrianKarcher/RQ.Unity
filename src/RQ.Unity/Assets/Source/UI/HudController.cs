@@ -36,16 +36,15 @@ namespace RQ.UI
         private List<HUDText> hudTextList;
         [SerializeField]
         private AudioClip _levelUp;
-        public ShardHudData[] Shards;
 
-        public ItemConfig CreationOrb;
-        public ItemConfig JusticeOrb;
-        public ItemConfig TemperanceOrb;
-        public ItemConfig SpiritOrb;
-
-        private ItemInInventoryData[] ShardQuantities;
+        //public ItemConfig CreationOrb;
+        //public ItemConfig JusticeOrb;
+        //public ItemConfig TemperanceOrb;
+        //public ItemConfig SpiritOrb;
 
         private RQ.CameraClass _camera;
+
+        public ShardHudInfo ShardHudInfo;
 
         public override void Awake()
         {
@@ -125,12 +124,12 @@ namespace RQ.UI
                 SetMP(entityStats.CurrentSP, entityStats.MaxSP);
                 SetLevel(entityStats.Level);
                 var mold = GameDataController.Instance.CurrentMold as MoldConfig;
-                ShardQuantities = new ItemInInventoryData[mold.ShardConfigs.Length];
+                ShardHudInfo.ShardQuantities = new ItemInInventoryData[mold.ShardConfigs.Length];
                 for (int i = 0; i < mold.ShardConfigs.Length; i++)
                 {
                     var shardConfig = mold.ShardConfigs[i].ItemConfig;
                     var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(shardConfig.UniqueId);
-                    ShardQuantities[i] = itemInInventory;
+                    ShardHudInfo.ShardQuantities[i] = itemInInventory;
                 }
                 SetOrbs(entityStats);
                 SetHUDSkillColor();
@@ -237,7 +236,7 @@ namespace RQ.UI
 
         public void SetOrbs(EntityStatsData entityStats)
         {
-            if (ShardQuantities == null)
+            if (ShardHudInfo.ShardQuantities == null)
             {
                 Debug.LogError("(HudController) No Shard Quantities array");
                 return;
@@ -250,7 +249,7 @@ namespace RQ.UI
             //var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig.Materials;
             for (int i = 0; i < 3; i++)
             {
-                var shardQuantity = ShardQuantities.Length <= i ? null : ShardQuantities[i] as ItemInInventoryData;
+                var shardQuantity = ShardHudInfo.ShardQuantities.Length <= i ? null : ShardHudInfo.ShardQuantities[i] as ItemInInventoryData;
                 var shard = Shards.Length <= i ? null : Shards[i];
                 SetOrb(shard, shardQuantity);
             }
@@ -303,6 +302,14 @@ namespace RQ.UI
             var uiFollowTarget = floatingLabel.AddComponent<UIFollowTarget>();
             uiFollowTarget.gameCamera = GameController.Instance.GetCamera().GetCamera();
             uiFollowTarget.target = target;
+        }
+
+        public void ToggleShard()
+        {
+            ShardHudInfo.CurrentShardIndex++;
+            if (ShardHudInfo.CurrentShardIndex > ShardHudInfo.CurrentShardCount)
+                ShardHudInfo.CurrentShardIndex = 0;
+
         }
     }
 }

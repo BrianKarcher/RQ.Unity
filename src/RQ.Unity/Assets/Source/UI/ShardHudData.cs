@@ -6,8 +6,9 @@ namespace Assets.Source.UI
     [Serializable]
     public class ShardHudData
     {
-        public UILabel label;
-        public GameObject shard;
-
+        public UILabel Label;
+        public GameObject Shard;
+        public GameObject Arrow;
+        public bool IsHammer;
     }
 }
