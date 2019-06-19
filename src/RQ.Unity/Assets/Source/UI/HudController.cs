@@ -115,6 +115,21 @@ namespace RQ.UI
                 SetLevel(entityStats.Level);
                 MessageDispatcher2.Instance.DispatchMsg("PlayOneShot", 0f, this.UniqueId, "Game Controller", _levelUp);
             });
+            MessageDispatcher2.Instance.StartListening("SetMold", _componentRepository.UniqueId, (data) =>
+            {
+                var mold = data.ExtraInfo as MoldConfig;
+                GameDataController.Instance.CurrentMold = mold;
+                // The +1 is for the plain mold
+                ShardHudInfo.CurrentShardCount = mold.ShardConfigs.Length + 1;
+                //ShardHudInfo.ShardQuantities = new ItemInInventoryData[mold.ShardConfigs.Length];
+                for (int i = 0; i < mold.ShardConfigs.Length; i++)
+                {
+                    var shardConfig = mold.ShardConfigs[i].ItemConfig;
+                    var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(shardConfig.UniqueId);
+                    // Shift 1 for the Plain mold
+                    ShardHudInfo.Shards[i + 1].Quantity = itemInInventory;
+                }
+            });
             MessageDispatcher2.Instance.StartListening("UpdateHud", _componentRepository.UniqueId, (data) =>
             {
                 if (PortraitEntity == null)
@@ -123,14 +138,7 @@ namespace RQ.UI
                 SetHealth(entityStats.CurrentHP, entityStats.MaxHP);
                 SetMP(entityStats.CurrentSP, entityStats.MaxSP);
                 SetLevel(entityStats.Level);
-                var mold = GameDataController.Instance.CurrentMold as MoldConfig;
-                ShardHudInfo.ShardQuantities = new ItemInInventoryData[mold.ShardConfigs.Length];
-                for (int i = 0; i < mold.ShardConfigs.Length; i++)
-                {
-                    var shardConfig = mold.ShardConfigs[i].ItemConfig;
-                    var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(shardConfig.UniqueId);
-                    ShardHudInfo.ShardQuantities[i] = itemInInventory;
-                }
+
                 SetOrbs(entityStats);
                 SetHUDSkillColor();
                 //MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
@@ -236,21 +244,22 @@ namespace RQ.UI
 
         public void SetOrbs(EntityStatsData entityStats)
         {
-            if (ShardHudInfo.ShardQuantities == null)
-            {
-                Debug.LogError("(HudController) No Shard Quantities array");
-                return;
-            }
+            //if (ShardHudInfo.ShardQuantities == null)
+            //{
+            //    Debug.LogError("(HudController) No Shard Quantities array");
+            //    return;
+            //}
             //if (GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig == null)
             //{
             //    Debug.LogError("Scene Config " + GameController.Instance.GetSceneSetup().SceneConfig.name + " has no Scene Material Config, cannot update HUD");
             //    return;
             //}
             //var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig.Materials;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < ShardHudInfo.Shards.Length; i++)
             {
-                var shardQuantity = ShardHudInfo.ShardQuantities.Length <= i ? null : ShardHudInfo.ShardQuantities[i] as ItemInInventoryData;
-                var shard = Shards.Length <= i ? null : Shards[i];
+                var shard = ShardHudInfo.Shards[i];
+                var shardQuantity = shard.Quantity;       
+                NGUITools.SetActive(shard.Arrow, ShardHudInfo.CurrentShardIndex == i);
                 SetOrb(shard, shardQuantity);
             }
         }
@@ -259,15 +268,15 @@ namespace RQ.UI
         {
             if (shardQuantity == null)
             {
-                NGUITools.SetActive(shardData.shard, false);
+                NGUITools.SetActive(shardData.Shard, false);
                 return;
             }
-            NGUITools.SetActive(shardData.shard, true);
+            NGUITools.SetActive(shardData.Shard, true);
             //var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(orbItem.UniqueId);
             int count;
             count = shardQuantity.Quantity;
             //return;
-            shardData.label.text = count.ToString();
+            shardData.Label.text = count.ToString();
         }
 
         public override bool HandleMessage(Telegram msg)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RQ.Model.Item;
+using System;
 using UnityEngine;
 
 namespace Assets.Source.UI
@@ -10,5 +11,6 @@ namespace Assets.Source.UI
         public GameObject Shard;
         public GameObject Arrow;
         public bool IsHammer;
+        public ItemInInventoryData Quantity { get; set; }
     }
 }

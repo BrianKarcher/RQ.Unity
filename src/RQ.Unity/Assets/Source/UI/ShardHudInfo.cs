@@ -6,7 +6,7 @@ namespace Assets.Source.UI
     [Serializable]
     public class ShardHudInfo
     {
-        public ItemInInventoryData[] ShardQuantities { get; set; }
+        //public ItemInInventoryData[] ShardQuantities { get; set; }
         public ShardHudData[] Shards;
 
         public int CurrentShardIndex { get; set; }
