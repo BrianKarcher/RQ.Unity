@@ -1,33 +1,17 @@
 ﻿using PixelCrushers.DialogueSystem;
-//using PixelCrushers.DialogueSystem.NGUI;
-using RQ;
 using RQ.Common.Container;
 using RQ.Common.Controllers;
-//using RQ.Controller.ManageScene;
-//using RQ.Controller.UI.Grid;
-using RQ.Entity.Common;
-using RQ.Entity.Data;
 using RQ.Messaging;
 using RQ.Model.Game_Data.StoryProgress;
-using RQ.Model.Item;
 using RQ.Model.UI;
-using RQ.Physics.Components;
-using RQ.Render;
-using RQ2.Controller.ManageScene;
 using RQ2.Controller.UI.Grid;
-//using Assets.Scripts.Enums;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using WellFired;
 using RQ.Model.Enums;
-using RQ.Controller.Sequencer;
 using PixelCrushers.DialogueSystem.NGUISupport;
 using RQ.Model.Interfaces;
 using RQ.UI;
-
-//using RQ.Common.UI;
-//using RQ.FSM.Game;
 
 namespace RQ2.UI
 {
@@ -114,7 +98,7 @@ namespace RQ2.UI
 
         public UICamera UICamera;
 
-        private HudController _hudController;
+        private IHudController _hudController;
 
         //private DialogueManager _dialogManager;
         //private DialogManager _dialogManager;
@@ -608,11 +592,9 @@ namespace RQ2.UI
             UICamera.hoveredObject = continueButton.gameObject;
         }
 
-        public void ToggleShard()
+        public IHudController GetHudController()
         {
-            if (_hudController == null)
-                _hudController = Components.GetComponent<HudController>();
-            _hudController.ToggleShard();
+            return _hudController;
         }
     }
 }

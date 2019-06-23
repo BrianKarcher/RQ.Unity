@@ -18,7 +18,7 @@ using UnityEngine;
 namespace RQ.UI
 {
     [AddComponentMenu("RQ/UI/HUD Controller")]
-    public class HudController : ComponentPersistence<HudController>
+    public class HudController : ComponentPersistence<HudController>, IHudController
     {
         //public override string UniqueId { get { return "UI Manager"; } set { } }
         public DisplayDebugInfo DisplayDebugInfo;
@@ -37,14 +37,10 @@ namespace RQ.UI
         [SerializeField]
         private AudioClip _levelUp;
 
-        //public ItemConfig CreationOrb;
-        //public ItemConfig JusticeOrb;
-        //public ItemConfig TemperanceOrb;
-        //public ItemConfig SpiritOrb;
-
         private RQ.CameraClass _camera;
+        //private bool _togglingEnabled = true;
 
-        public ShardHudInfo ShardHudInfo;
+        public RQUIToggleGroup ShardGroup;
 
         public override void Awake()
         {
@@ -120,15 +116,17 @@ namespace RQ.UI
                 var mold = data.ExtraInfo as MoldConfig;
                 GameDataController.Instance.CurrentMold = mold;
                 // The +1 is for the plain mold
-                ShardHudInfo.CurrentShardCount = mold.ShardConfigs.Length + 1;
+                //ShardHudInfo.CurrentShardCount = mold.ShardConfigs.Length + 1;
+                ShardGroup.SetShardCount(mold.ShardConfigs.Length + 1);
                 //ShardHudInfo.ShardQuantities = new ItemInInventoryData[mold.ShardConfigs.Length];
-                for (int i = 0; i < mold.ShardConfigs.Length; i++)
-                {
-                    var shardConfig = mold.ShardConfigs[i].ItemConfig;
-                    var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(shardConfig.UniqueId);
-                    // Shift 1 for the Plain mold
-                    ShardHudInfo.Shards[i + 1].Quantity = itemInInventory;
-                }
+                //for (int i = 0; i < mold.ShardConfigs.Length; i++)
+                //{
+                //    var shardConfig = mold.ShardConfigs[i].ItemConfig;
+                //    var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(shardConfig.UniqueId);
+                //    // Shift 1 for the Plain mold
+                //    ShardHudInfo.Shards[i + 1].Quantity = itemInInventory;
+                //}
+                UpdateShardQuantities();
             });
             MessageDispatcher2.Instance.StartListening("UpdateHud", _componentRepository.UniqueId, (data) =>
             {
@@ -139,7 +137,8 @@ namespace RQ.UI
                 SetMP(entityStats.CurrentSP, entityStats.MaxSP);
                 SetLevel(entityStats.Level);
 
-                SetOrbs(entityStats);
+                //SetOrbs(entityStats);
+                UpdateShardQuantities();
                 SetHUDSkillColor();
                 //MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
             });
@@ -162,7 +161,8 @@ namespace RQ.UI
                 SetHealth(entityStats.CurrentHP, entityStats.MaxHP);
                 SetMP(entityStats.CurrentSP, entityStats.MaxSP);
                 SetLevel(entityStats.Level);
-                SetOrbs(entityStats);
+                //SetOrbs(entityStats);
+                UpdateShardQuantities();
                 SetHUDSkillColor();
                 //MessageDispatcher2.Instance.DispatchMsg("LevelUp", 0f, this.UniqueId, PortraitEntity.UniqueId, null);
             });
@@ -242,7 +242,7 @@ namespace RQ.UI
             LevelLabel.text = level.ToString();
         }
 
-        public void SetOrbs(EntityStatsData entityStats)
+        public void UpdateShardQuantities()
         {
             //if (ShardHudInfo.ShardQuantities == null)
             //{
@@ -255,29 +255,30 @@ namespace RQ.UI
             //    return;
             //}
             //var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig.Materials;
-            for (int i = 0; i < ShardHudInfo.Shards.Length; i++)
+            var shards = this.ShardGroup.GetItems();
+            var mold = GameDataController.Instance.CurrentMold as MoldConfig;
+            for (int i = 0; i < shards.Length; i++)
             {
-                var shard = ShardHudInfo.Shards[i];
-                var shardQuantity = shard.Quantity;       
-                NGUITools.SetActive(shard.Arrow, ShardHudInfo.CurrentShardIndex == i);
-                SetOrb(shard, shardQuantity);
+                var shard = shards[i];
+                var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(mold.ShardConfigs[i].ItemConfig.UniqueId);
+                shard.SetQuantity(itemInInventory.Quantity);
             }
         }
 
-        public void SetOrb(ShardHudData shardData, ItemInInventoryData shardQuantity)
-        {
-            if (shardQuantity == null)
-            {
-                NGUITools.SetActive(shardData.Shard, false);
-                return;
-            }
-            NGUITools.SetActive(shardData.Shard, true);
-            //var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(orbItem.UniqueId);
-            int count;
-            count = shardQuantity.Quantity;
-            //return;
-            shardData.Label.text = count.ToString();
-        }
+        //public void SetOrb(ShardHudData shardData, ItemInInventoryData shardQuantity)
+        //{
+        //    //if (shardQuantity == null)
+        //    //{
+        //    //    NGUITools.SetActive(shardData.Shard, false);
+        //    //    return;
+        //    //}
+        //    //NGUITools.SetActive(shardData.Shard, true);
+        //    //var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(orbItem.UniqueId);
+        //    int count;
+        //    count = shardQuantity.Quantity;
+        //    //return;
+        //    shardData.Label.text = count.ToString();
+        //}
 
         public override bool HandleMessage(Telegram msg)
         {
@@ -313,12 +314,14 @@ namespace RQ.UI
             uiFollowTarget.target = target;
         }
 
-        public void ToggleShard()
+        public void SetTogglingEnabled(bool enabled)
         {
-            ShardHudInfo.CurrentShardIndex++;
-            if (ShardHudInfo.CurrentShardIndex > ShardHudInfo.CurrentShardCount)
-                ShardHudInfo.CurrentShardIndex = 0;
+            ShardGroup.TogglingEnabled = enabled;
+        }
 
+        public bool GetTogglingEnabled()
+        {
+            return ShardGroup.TogglingEnabled;
         }
     }
 }
