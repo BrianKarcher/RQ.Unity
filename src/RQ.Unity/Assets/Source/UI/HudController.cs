@@ -117,6 +117,7 @@ namespace RQ.UI
                 GameDataController.Instance.CurrentMold = mold;
                 // The +1 is for the plain mold
                 //ShardHudInfo.CurrentShardCount = mold.ShardConfigs.Length + 1;
+                Debug.Log("Setting Mold Shard count to " + mold.ShardConfigs.Length + 1);
                 ShardGroup.SetShardCount(mold.ShardConfigs.Length + 1);
                 //ShardHudInfo.ShardQuantities = new ItemInInventoryData[mold.ShardConfigs.Length];
                 //for (int i = 0; i < mold.ShardConfigs.Length; i++)
@@ -257,6 +258,11 @@ namespace RQ.UI
             //var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig.Materials;
             var shards = this.ShardGroup.GetItems();
             var mold = GameDataController.Instance.CurrentMold as MoldConfig;
+            if (mold == null)
+            {
+                Debug.Log("(HudController) UpdateShardQuantities - No mold selected");
+                return;
+            }
             for (int i = 0; i < shards.Length; i++)
             {
                 var shard = shards[i];
