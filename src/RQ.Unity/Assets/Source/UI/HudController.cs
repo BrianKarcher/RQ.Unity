@@ -266,7 +266,14 @@ namespace RQ.UI
             for (int i = 0; i < shards.Length; i++)
             {
                 var shard = shards[i];
+                if (mold.ShardConfigs[i] == null)
+                    continue;
                 var itemInInventory = GameDataController.Instance.Data.Inventory.GetItem(mold.ShardConfigs[i].ItemConfig.UniqueId);
+                if (itemInInventory == null)
+                {
+                    Debug.LogError("Could not find item " + mold.ShardConfigs[i].ItemConfig.name + " in Inventory");
+                    continue;
+                }
                 shard.SetQuantity(itemInInventory.Quantity);
             }
         }
