@@ -77,7 +77,7 @@ namespace Assets.Source.UI
             for (int i = 0; i < _items.Length; i++)
             {
                 var go = _items[i].gameObject;
-                if (i <= count)
+                if (i < count)
                     NGUITools.SetActive(go, true);
                 else
                     NGUITools.SetActive(go, false);

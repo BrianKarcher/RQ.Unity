@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RQ.Model.Item;
+using UnityEngine;
 
 namespace Assets.Source.UI
 {
@@ -8,6 +9,10 @@ namespace Assets.Source.UI
         public UILabel Label;
         public GameObject Arrow;
         public bool IsHammer;
+        /// <summary>
+        /// Ties a shard to an Item Config
+        /// </summary>
+        public ItemConfig ItemConfig { get; set; }
 
         public void Awake()
         {

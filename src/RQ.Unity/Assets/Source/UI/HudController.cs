@@ -118,6 +118,13 @@ namespace RQ.UI
                 // The +1 is for the plain mold
                 //ShardHudInfo.CurrentShardCount = mold.ShardConfigs.Length + 1;
                 Debug.Log("Setting Mold Shard count to " + mold.ShardConfigs.Length + 1);
+                var shardItems = ShardGroup.GetItems();
+                shardItems[0].ItemConfig = mold;
+                for (int i = 0; i < mold.ShardConfigs.Length; i++)
+                {
+                    shardItems[i + 1].ItemConfig = mold.ShardConfigs[i].ItemConfig;
+                }
+                // The +1 is for the Mold
                 ShardGroup.SetShardCount(mold.ShardConfigs.Length + 1);
                 //ShardHudInfo.ShardQuantities = new ItemInInventoryData[mold.ShardConfigs.Length];
                 //for (int i = 0; i < mold.ShardConfigs.Length; i++)
@@ -257,24 +264,30 @@ namespace RQ.UI
             //}
             //var sceneMaterials = GameController.Instance.GetSceneSetup().SceneConfig.SceneMaterialConfig.Materials;
             var shards = this.ShardGroup.GetItems();
-            var mold = GameDataController.Instance.CurrentMold as MoldConfig;
-            if (mold == null)
-            {
-                Debug.Log("(HudController) UpdateShardQuantities - No mold selected");
-                return;
-            }
+            //var mold = GameDataController.Instance.CurrentMold as MoldConfig;
+            //if (mold == null)
+            //{
+            //    Debug.Log("(HudController) UpdateShardQuantities - No mold selected");
+            //    return;
+            //}
             for (int i = 0; i < shards.Length; i++)
             {
                 var shard = shards[i];
-                if (mold.ShardConfigs[i] == null)
-                    continue;
-                var itemInInventoryQuantity = GameDataController.Instance.Data.Inventory.GetItemQuantity(mold.ShardConfigs[i].ItemConfig.UniqueId);
+                int quantity;
+                if (shards.Length <= i)
+                {
+                    quantity = 0;
+                }
+                else if (shards[i].ItemConfig == null)
+                    quantity = 0;
+                else
+                    quantity = GameDataController.Instance.Data.Inventory.GetItemQuantity(shards[i].ItemConfig.UniqueId);
                 //if (itemInInventory == null)
                 //{
                 //    Debug.LogError("Could not find item " + mold.ShardConfigs[i].ItemConfig.name + " in Inventory");
                 //    continue;
                 //}
-                shard.SetQuantity(itemInInventoryQuantity);
+                shard.SetQuantity(quantity);
             }
         }
 
