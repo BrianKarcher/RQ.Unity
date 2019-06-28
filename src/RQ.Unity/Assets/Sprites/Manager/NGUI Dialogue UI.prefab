@@ -216,6 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4999197615963070}
   - component: {fileID: 114054605680138010}
+  - component: {fileID: 114777731936247136}
   m_Layer: 0
   m_Name: BlueprintBar
   m_TagString: Untagged
@@ -1477,7 +1478,6 @@ GameObject:
   - component: {fileID: 114961633310814014}
   - component: {fileID: 114833653016438442}
   - component: {fileID: 114810276780730978}
-  - component: {fileID: 114029858527314080}
   - component: {fileID: 114672910187944864}
   - component: {fileID: 114203685326290676}
   - component: {fileID: 114503929488081086}
@@ -2547,6 +2547,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4904203496650590}
+  - component: {fileID: 114037917586764086}
   m_Layer: 0
   m_Name: Shard_Container_02
   m_TagString: Untagged
@@ -3930,6 +3931,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4437121943895696}
+  - component: {fileID: 114040054001705632}
   m_Layer: 0
   m_Name: Mold Container
   m_TagString: Untagged
@@ -5009,6 +5011,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4907936138785058}
+  - component: {fileID: 114597161538959872}
   m_Layer: 0
   m_Name: Shard_Container_01
   m_TagString: Untagged
@@ -5985,6 +5988,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4074739485063458}
+  - component: {fileID: 114987777940271542}
   m_Layer: 0
   m_Name: Shard_Container_03
   m_TagString: Untagged
@@ -19789,44 +19793,6 @@ MonoBehaviour:
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}
   useSortingOrder: 0
---- !u!114 &114029858527314080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1168124937772234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 858a20c1b21a3f94bb5b2d3b901c9aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 0
-  rightAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 48
-  bottomAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 0
-  topAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 0
-  updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
-  mPivot: 4
-  mWidth: 2
-  mHeight: 2
-  mDepth: 0
-  mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
-  hideIfOffScreen: 0
-  keepAspectRatio: 0
-  aspectRatio: 1
 --- !u!114 &114031260304342058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19983,6 +19949,20 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &114037917586764086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1313422444531798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d03e1d43f6fa9e4797873799ff39b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: {fileID: 114415496659918216}
+  Arrow: {fileID: 1173476094730444}
+  IsHammer: 0
 --- !u!114 &114039456201922634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20124,6 +20104,20 @@ MonoBehaviour:
   onClick: {fileID: 0}
   onTab: {fileID: 0}
   startsSelected: 0
+--- !u!114 &114040054001705632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461387616605864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d03e1d43f6fa9e4797873799ff39b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: {fileID: 0}
+  Arrow: {fileID: 1117446271587054}
+  IsHammer: 1
 --- !u!114 &114040317739542940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37153,6 +37147,20 @@ MonoBehaviour:
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
   onClick: []
+--- !u!114 &114597161538959872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1602508970053798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d03e1d43f6fa9e4797873799ff39b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: {fileID: 114405556263057034}
+  Arrow: {fileID: 1065994006687820}
+  IsHammer: 0
 --- !u!114 &114598329403073500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -38743,7 +38751,7 @@ MonoBehaviour:
   HudRoot: {fileID: 4056360990083882}
   HudSkill: {fileID: 114346071936230118}
   _levelUp: {fileID: 8300000, guid: 8dfe880c02770c64c955b7b0cb47332f, type: 3}
-  ShardGroup: {fileID: 0}
+  ShardGroup: {fileID: 114777731936247136}
 --- !u!114 &114643156484795112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43044,6 +43052,26 @@ MonoBehaviour:
   mFixedAspect: 0
   mPixelSize: 1
   nextSprite: {fileID: 0}
+--- !u!114 &114777731936247136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1031338983844018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b19c63bd436f0489fe822b75cef3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AxisName: Toggle Shard
+  _items:
+  - {fileID: 114040054001705632}
+  - {fileID: 114597161538959872}
+  - {fileID: 114037917586764086}
+  - {fileID: 114987777940271542}
+  Deadzone: 0.3
+  ToggleDirection: 1
+  CurrentItem: 0
 --- !u!114 &114778490556520586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -44006,21 +44034,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 0
+    target: {fileID: 4676080440109250}
+    relative: 1
+    absolute: -127
   rightAnchor:
-    target: {fileID: 0}
+    target: {fileID: 4676080440109250}
     relative: 1
-    absolute: 0
+    absolute: -27
   bottomAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 0
-  topAnchor:
-    target: {fileID: 0}
+    target: {fileID: 4676080440109250}
     relative: 1
-    absolute: 0
+    absolute: -131
+  topAnchor:
+    target: {fileID: 4676080440109250}
+    relative: 1
+    absolute: -31
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 2
@@ -44123,21 +44151,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnchor:
-    target: {fileID: 0}
+    target: {fileID: 4676080440109250}
     relative: 0
-    absolute: 0
+    absolute: 7
   rightAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 0
-  bottomAnchor:
-    target: {fileID: 0}
+    target: {fileID: 4676080440109250}
     relative: 0
-    absolute: 0
-  topAnchor:
-    target: {fileID: 0}
+    absolute: 151
+  bottomAnchor:
+    target: {fileID: 4676080440109250}
     relative: 1
-    absolute: 0
+    absolute: -152
+  topAnchor:
+    target: {fileID: 4676080440109250}
+    relative: 1
+    absolute: -8
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
@@ -51026,6 +51054,20 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &114987777940271542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762717790316770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d03e1d43f6fa9e4797873799ff39b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: {fileID: 114544637592720420}
+  Arrow: {fileID: 1216078321460654}
+  IsHammer: 0
 --- !u!114 &114988940031015242
 MonoBehaviour:
   m_ObjectHideFlags: 1
