@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 5038246}
   - component: {fileID: 11495490}
   - component: {fileID: 11495986}
+  - component: {fileID: 114113527191588878}
   m_Layer: 0
   m_Name: Normal Camera
   m_TagString: MainCamera
@@ -182,7 +183,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4310434, y: 3.543122, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 458450}
@@ -297,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: d21f0e63-d6f0-4ab6-b089-e27bed0aa6ca
+  _uniqueId: 641f5a8d-1173-49fe-b187-458fe90721cd
   componentName: 
   _rqName: Follow Target RQ.FSM.V2.States.RunActionsState
   _rqName2: 4d721d1e-16a3-4404-899f-da01e31a0bef
@@ -332,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 1089657161, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 5f74ea6e-3e3b-4615-9805-c006c1a10bc9
+  _uniqueId: 1c84d8aa-e257-45cf-8140-79874f56deb8
   componentName: 
   _rqName: States RQ.FSM.V2.StateTransitionTable
   _rqName2: 1ff9a340-e65e-4f2e-a77f-798426135699
@@ -416,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: -785339418, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: bfd6e805-10d3-4639-8902-7ef7c500316b
+  _uniqueId: 458f43be-ea84-438e-8c04-83b89ef5c6d2
   componentName: 
   _rqName: Manual RQ.FSM.V2.States.RunActionsState
   _rqName2: 9ffef491-0704-45dc-829b-37703ce13ea3
@@ -439,9 +440,9 @@ MonoBehaviour:
   _rqName2: 38ea4467-136f-4689-bcb2-2f0b1bfc0f04
   _componentRepository: {fileID: 11495986}
   _viewportMargin: {x: 0.32, y: 0.32}
-  minCamera: {x: NaN, y: 1.08}
+  minCamera: {x: 1.9200001, y: 1.08}
   maxCamera: {x: 0, y: 0}
-  _screenSize: {x: NaN, y: 2.16}
+  _screenSize: {x: 3.8400002, y: 2.16}
   _lockX: 0
   _lockY: 0
   _lockPos:
@@ -458,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: -1879554623, guid: aac7e42b3283df04bbb4a28b78c8321c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 3ef3b3c9-2205-4e5f-b60a-2a923cc5ed6f
+  _uniqueId: 81a8dae0-07bc-4c80-8162-71f1b29d4f12
   componentName: 
   _rqName: Shake RQ.Entity.StatesV2.Physics.ShakeState
   _rqName2: 4bf32e26-735d-4224-b621-5a217b4ee97b
@@ -506,6 +507,7 @@ MonoBehaviour:
   TargetTags: []
   _locations: []
   _parent: {fileID: 0}
+  _children: []
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
@@ -555,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: -1581650748, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueId: 3f618306-1396-4241-bc27-122a04ae4061
+  _uniqueId: e2f22da0-0254-4cdd-bb86-46c1209cf64a
   componentName: 
   _rqName: States RQ.FSM.V2.StateMachine
   _rqName2: 0ebbaf1f-288e-42e8-8fb5-d4c7216f9f68
@@ -571,7 +573,7 @@ MonoBehaviour:
     StateStartTime: 0
     ChangeScene: 0
     CurrentStateUniqueId: 
-    StateMachineUniqueId: 3f618306-1396-4241-bc27-122a04ae4061
+    StateMachineUniqueId: e2f22da0-0254-4cdd-bb86-46c1209cf64a
     StateMachineName: States
     StateData: []
   _logTransitions: 0
@@ -672,6 +674,32 @@ Transform:
   m_Father: {fileID: 499334}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114113527191588878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9441d5450817c342a45e4b8dd66de6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showEditorMainBehavior: 1
+  showEditorBloomBehavior: 0
+  showEditorLensSurfaceBehavior: 0
+  showEditorLensFlareBehavior: 0
+  showEditorGlareBehavior: 0
+  debugView: 0
+  workflow: 1
+  selectiveRenderLayerMask:
+    serializedVersion: 2
+    m_Bits: 8388608
+  bloomThreshold:
+    minValue: 1
+    maxValue: 10
+  bloomScattering: 7
+  bloomIntensity: 1
 --- !u!114 &114170504790667286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -689,14 +717,14 @@ MonoBehaviour:
   _rqName2: e3d71a4e-9775-427b-aa28-d58060c34cff
   _componentRepository: {fileID: 11495986}
   _physicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
     Side: {x: 0, y: 0}
     Offset:
       x: 0
@@ -739,14 +767,14 @@ MonoBehaviour:
     Friction: 0
     ForceMultiplier: 1
   _originalPhysicsData:
+    SteeringData:
+      FeelerOffset: 0
     InitialVelocity: {x: 0, y: 0}
     Size:
       x: 0
       y: 0
     Velocity: {x: 0, y: 0}
-    Heading:
-      x: 0
-      y: 0
+    Heading: {x: 0, y: 0}
     Side: {x: 0, y: 0}
     Offset:
       x: 0
