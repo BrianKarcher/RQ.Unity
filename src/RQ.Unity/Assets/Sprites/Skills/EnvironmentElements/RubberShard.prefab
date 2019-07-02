@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114748518770957474}
   - component: {fileID: 54261690947505710}
   - component: {fileID: 114748627481405410}
+  - component: {fileID: 114590877289343346}
+  - component: {fileID: 114250555076605690}
   m_Layer: 15
   m_Name: RubberShard
   m_TagString: Environment
@@ -367,6 +369,48 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 5db5f7c670692a446bac1b220d7dd511, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &114250555076605690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1004373341679964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 926039264, guid: e2fb15ad4383041448e1422c305d9466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 768fff7e-5fee-4ce2-bbde-5aaa862d0d6a
+  componentName: 
+  _rqName: RubberShard RQ.FSM.V2.AIComponent
+  _rqName2: 79001cb3-7f0d-432b-8935-7bd9dd2e44ee
+  _componentRepository: {fileID: 114748518770957474}
+  _pathFinder: {fileID: 0}
+  _targetType: 1
+  _target: {fileID: 0}
+  _targets: []
+  TargetTags: []
+  _locations: []
+  _parent: {fileID: 0}
+  _children: []
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _avoidLayersMasks: []
+  _follow: {fileID: 0}
+  _targetingData:
+    Waypoints: {fileID: 0}
+    GoToType: 0
+    Target: {fileID: 0}
+    Targets: []
+    TargetTags: []
+  _homePosition:
+    x: 2.73
+    y: 0.59
+  _homeLevelLayer: 0
+  _homeSickDistance: 0
+  _runHomeSpeed: 0
+  _setHomePositonToStartPosition: 0
 --- !u!114 &114282391794650486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -384,6 +428,124 @@ MonoBehaviour:
   _rqName2: eb197016-6e26-459c-99f8-f87a004b48c6
   _componentRepository: {fileID: 114748518770957474}
   pm: {fileID: 114100723269058500}
+--- !u!114 &114590877289343346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1004373341679964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1212866343, guid: 7c15d745b34f14f48ba2c35173338f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: a8e21031-8ce4-4738-b4e0-ee6b42fabf80
+  componentName: 
+  _rqName: RubberShard RQ.Physics.Components.PhysicsComponent
+  _rqName2: d4c5925c-f864-47cb-b2b2-feab8d5f42f2
+  _componentRepository: {fileID: 114748518770957474}
+  _physicsData:
+    SteeringData:
+      FeelerOffset: 0
+    InitialVelocity: {x: 0, y: 0}
+    Size:
+      x: 0
+      y: 0
+    Velocity: {x: 0, y: 0}
+    Heading: {x: 0, y: 0}
+    Side: {x: 0, y: 0}
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 3
+    OriginalMaxSpeed: 3
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    MaxDistanceToTarget: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalVelocity:
+      x: 0
+      y: 0
+    OriginalZ: -0.5
+    _headingDirection: 1
+    MaxForce: 7
+    ForceMultiplier: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _foot: {fileID: 0}
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+  _steeringPhysicsAffector:
+    _force: {x: 0, y: 0}
+    _maxForce: 7
+    _originalMaxForce: 7
+    _maxSpeed: 3
+    _mass: 1
+    _enabled: 1
+    Friction: 0
+    ForceMultiplier: 1
+  _originalPhysicsData:
+    SteeringData:
+      FeelerOffset: 0
+    InitialVelocity: {x: 0, y: 0}
+    Size:
+      x: 0
+      y: 0
+    Velocity: {x: 0, y: 0}
+    Heading: {x: 0, y: 0}
+    Side: {x: 0, y: 0}
+    Offset:
+      x: 0
+      y: 0
+    Mass: 1
+    MaxSpeed: 1
+    OriginalMaxSpeed: 1
+    MaxSpeedMultiplier: 1
+    BoundingRadius: 0
+    MaxDistanceToTarget: 0
+    _directionRotate: 0
+    DamagedBounceForce: 1
+    DamageDrag: 1
+    _externalVelocity:
+      x: 0
+      y: 0
+    OriginalZ: -0.5
+    _headingDirection: 1
+    MaxForce: 1
+    ForceMultiplier: 1
+    _friction: 0
+    _maxTurnRate: 6
+    _footOffset:
+      x: 0
+      y: 0
+    _foot: {fileID: 0}
+    _fieldOfView: 0
+    _lineOfSight: 0
+    _dragForce: 0
+    ZDepthByY: 0
+    ZOffsetByLevel: 0
+    ZOffset: 0
+  _autoUpdateHeading: 1
+  _steering:
+    TargetAgent1: {fileID: 0}
+    Target:
+      x: 0
+      y: 0
+    Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
+    _steeringForce:
+      x: 0
+      y: 0
 --- !u!114 &114610172910161074
 MonoBehaviour:
   m_ObjectHideFlags: 1

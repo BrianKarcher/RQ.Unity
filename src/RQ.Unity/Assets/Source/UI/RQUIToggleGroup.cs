@@ -26,24 +26,23 @@ namespace Assets.Source.UI
 
         public void Awake()
         {
-            _currentShardCount = _items.Length;
-            _items[CurrentItem].Selected();
+            //_items[CurrentItem].Selected();
         }
 
         public void Start()
         {
             _player = Rewired.ReInput.players.GetPlayer(0);
+            SetCurrentItem(-1);
         }
 
         public void Update()
         {
             var currentAxis = _player.GetAxis(AxisName);
+            int newItem;
             if (currentAxis < -Deadzone && !_axisExtendedLeft)
             {
-                _items[CurrentItem].UnSelected();
-                CurrentItem = ToggleDirection == ToggleDirection.Right ? CurrentItem - 1 : CurrentItem + 1;
-                CheckBounds();
-                _items[CurrentItem].Selected();
+                newItem = ToggleDirection == ToggleDirection.Right ? CurrentItem - 1 : CurrentItem + 1;
+                SetCurrentItem(newItem);
                 _axisExtendedLeft = true;
                 _axisExtendedRight = false;
             }
@@ -54,10 +53,8 @@ namespace Assets.Source.UI
             }
             if (currentAxis > Deadzone && !_axisExtendedRight)
             {
-                _items[CurrentItem].UnSelected();
-                CurrentItem = ToggleDirection == ToggleDirection.Right ? CurrentItem + 1 : CurrentItem - 1;
-                CheckBounds();
-                _items[CurrentItem].Selected();
+                newItem = ToggleDirection == ToggleDirection.Right ? CurrentItem + 1 : CurrentItem - 1;
+                SetCurrentItem(newItem);
                 _axisExtendedLeft = false;
                 _axisExtendedRight = true;
             }
@@ -82,6 +79,16 @@ namespace Assets.Source.UI
                 else
                     NGUITools.SetActive(go, false);
             }
+            // Perform a bounds check in case the shard slot is no longer available
+            SetCurrentItem(CurrentItem);
+        }
+
+        public void SetCurrentItem(int index)
+        {
+            _items[CurrentItem].UnSelected();
+            CurrentItem = index;
+            CheckBounds();
+            _items[CurrentItem].Selected();
         }
 
         public RQUIToggleShard[] GetItems()
